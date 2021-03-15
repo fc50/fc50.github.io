@@ -1,0 +1,575 @@
+<!-- udacimak v1.4.4 -->
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="ie=edge" http-equiv="X-UA-Compatible"/>
+  <title>
+   PID Control Example
+  </title>
+  <link href="../assets/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="../assets/css/plyr.css" rel="stylesheet"/>
+  <link href="../assets/css/katex.min.css" rel="stylesheet"/>
+  <link href="../assets/css/jquery.mCustomScrollbar.min.css" rel="stylesheet"/>
+  <link href="../assets/css/styles.css" rel="stylesheet"/>
+  <link href="../assets/img/udacimak.png" rel="shortcut icon" type="image/png">
+  </link>
+ </head>
+ <body>
+  <div class="wrapper">
+   <nav id="sidebar">
+    <div class="sidebar-header">
+     <h3>
+      Introduction to Vehicle Control
+     </h3>
+    </div>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled components">
+     <li class="">
+      <a href="01. Sebastian Introduction.html">
+       01. Sebastian Introduction
+      </a>
+     </li>
+     <li class="">
+      <a href="02. Lesson Introduction.html">
+       02. Lesson Introduction
+      </a>
+     </li>
+     <li class="">
+      <a href="03. Perfect Control.html">
+       03. Perfect Control
+      </a>
+     </li>
+     <li class="">
+      <a href="04. The problem with open loop control Exercise.html">
+       04. The problem with open loop control Exercise
+      </a>
+     </li>
+     <li class="">
+      <a href="05. Perfect is Impossible.html">
+       05. Perfect is Impossible
+      </a>
+     </li>
+     <li class="">
+      <a href="06. Simple Control Diagrams.html">
+       06. Simple Control Diagrams
+      </a>
+     </li>
+     <li class="">
+      <a href="07. P Controllers.html">
+       07. P Controllers
+      </a>
+     </li>
+     <li class="">
+      <a href="08. Implement P Controller Exercise.html">
+       08. Implement P Controller Exercise
+      </a>
+     </li>
+     <li class="">
+      <a href="09. Two Problems with P Control.html">
+       09. Two Problems with P Control
+      </a>
+     </li>
+     <li class="">
+      <a href="10. P Controller Tuning Exercise.html">
+       10. P Controller Tuning Exercise
+      </a>
+     </li>
+     <li class="">
+      <a href="11. Limitations of P Control.html">
+       11. Limitations of P Control
+      </a>
+     </li>
+     <li class="">
+      <a href="12. PD Control.html">
+       12. PD Control
+      </a>
+     </li>
+     <li class="">
+      <a href="13. Implement PD Controller Exercise.html">
+       13. Implement PD Controller Exercise
+      </a>
+     </li>
+     <li class="">
+      <a href="14. PD Incorporating Feedforward Control.html">
+       14. PD Incorporating Feedforward Control
+      </a>
+     </li>
+     <li class="">
+      <a href="15. Implement PD with Feedforward Exercise.html">
+       15. Implement PD with Feedforward Exercise
+      </a>
+     </li>
+     <li class="">
+      <a href="16. PD Math and Reparametrization.html">
+       16. PD Math and Reparametrization
+      </a>
+     </li>
+     <li class="">
+      <a href="17. Overshoot, Rise Time, Settling Time.html">
+       17. Overshoot, Rise Time, Settling Time
+      </a>
+     </li>
+     <li class="">
+      <a href="18. More Model Errors.html">
+       18. More Model Errors
+      </a>
+     </li>
+     <li class="">
+      <a href="19. PID Control.html">
+       19. PID Control
+      </a>
+     </li>
+     <li class="">
+      <a href="20. PID Control Exercise.html">
+       20. PID Control Exercise
+      </a>
+     </li>
+     <li class="">
+      <a href="21. PID Control Example.html">
+       21. PID Control Example
+      </a>
+     </li>
+     <li class="">
+      <a href="22. PID controller in practice.html">
+       22. PID controller in practice
+      </a>
+     </li>
+     <li class="">
+      <a href="23. Summary.html">
+       23. Summary
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+   </nav>
+   <div id="content">
+    <header class="container-fluild header">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <div class="align-items-middle">
+         <button class="btn btn-toggle-sidebar" id="sidebarCollapse" type="button">
+          <div>
+          </div>
+          <div>
+          </div>
+          <div>
+          </div>
+         </button>
+         <h1 style="display: inline-block">
+          21. PID Control Example
+         </h1>
+        </div>
+       </div>
+      </div>
+     </div>
+    </header>
+    <main class="container">
+     <div class="row">
+      <div class="col-12">
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <p>
+          After all this math, it might be a good idea to recap what we have seen so far through an example to intuitively see how the PID controller works for a quadrotor.
+          <br/>
+          Let’s approach every single parameter independently, so you can see how they affect the behavior of the drone.
+         </p>
+         <p>
+          In this example, we want to build a controller that allows us to control the altitude of the drone (this is again a one-dimensional world).
+          <br/>
+          As you recall, the diagram for our system is simplified below:
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <figure class="figure">
+          <img alt="" class="img img-fluid" src="img/1.png"/>
+          <figcaption class="figure-caption">
+          </figcaption>
+         </figure>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <p>
+          As we have seen earlier in the lessons and the exercises, the input to our system is the thrust we can command to the propellers (generated by the propellers’ speed), and the output is the altitude from the ground.
+          <br/>
+          Conversely, the input of the controller is the measured error, and the output is the thrust that the controller signals to the drone.
+         </p>
+         <p>
+          The error in our example is the difference between the actual (present) altitude and the target altitude.
+          <br/>
+          <br/>
+         </p>
+         <p>
+          <strong>
+           Proportional component
+          </strong>
+          :
+         </p>
+         <p>
+          Our starting state sees the drone on the ground, and our goal is to lift the drone up to reach the desired (target) altitude.
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <figure class="figure">
+          <img alt="" class="img img-fluid" src="img/2.png"/>
+          <figcaption class="figure-caption">
+          </figcaption>
+         </figure>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <p>
+          To compensate for the error, we will input a thrust (derived from the propellers’ speed), which will allow the drone to lift off and therefore reduce the error.
+         </p>
+         <p>
+          On the other hand, let’s see what happens when the drone reaches the target altitude:
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <figure class="figure">
+          <img alt="" class="img img-fluid" src="img/3.png"/>
+          <figcaption class="figure-caption">
+          </figcaption>
+         </figure>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <p>
+          In this case, since the error is zero, the command to the drone will demand zero thrust, and therefore will stop the propellers’ speed and cause the drone to fall.
+          <br/>
+          As soon as it starts falling, the error increases and the controller will send a signal to increase the thrust, to compensate for that error between the current and the target altitude.
+         </p>
+         <p>
+          Let’s take a step further and add the goal of hovering the drone to the target location.
+         </p>
+         <p>
+          Hovering implies a lift thrust equal to the weight of the drone.
+         </p>
+         <p>
+          Let’s see how the proportional controller influences the behavior of the drone. Let’s assume that the equilibrium (hovering state) is reached when the thrust is equal to 100N.
+         </p>
+         <p>
+          If we pick a proportional gain (Kp) equal to 1, then the commanded thrust would be equivalent to 100 (error = 100; Kp=1 =&gt; thrust = 100*1 = 100N) and the drone would continue to hover at ground level.
+          <br/>
+          If we increase Kp to 5, then the drone will hover at an altitude of 80m, since the drone will reach the commanded thrust when the error is equal to 20m.
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <figure class="figure">
+          <img alt="" class="img img-fluid" src="img/4.png"/>
+          <figcaption class="figure-caption">
+          </figcaption>
+         </figure>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <p>
+          We can see that the more we increase Kp, the smaller the error will be.
+          <br/>
+          Unfortunately, this error won’t ever go away. No matter how big Kp is, we won’t be able to get the error to zero. Not cool, right?
+         </p>
+         <p>
+          So far, the proportional gain hasn’t helped our drone reach the target altitude. It certainly got us closer to it, but it still carries a constant error (called “steady state error”).
+         </p>
+         <p>
+          The proportional controller uses only present information. We were comparing actual altitude with target altitude. But to help us get rid of this constant error introduced by the proportional gain, we can use an integrator path into our controller.
+          <br/>
+          <br/>
+         </p>
+         <p>
+          <strong>
+           Integral component
+          </strong>
+         </p>
+         <p>
+          The integrator path (identified by the integral-gain Ki) looks, instead, at information coming from the past. Thus, the integral part keeps in memory what has happened before.
+         </p>
+         <p>
+          This is how our system diagram looks like with these two controllers running in parallel:
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <figure class="figure">
+          <img alt="" class="img img-fluid" src="img/5.png"/>
+          <figcaption class="figure-caption">
+          </figcaption>
+         </figure>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <p>
+          The integrator controller sums up the input signal (the error in our case) over time, and it adjusts the system to counter the accumulation of the error.
+         </p>
+         <p>
+          A situation of “steady-state” error causes a residual error between current and actual position. This bias keeps the drone from flying at exactly the target altitude, but always a bit off from it.
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <figure class="figure">
+          <img alt="" class="img img-fluid" src="img/6.png"/>
+          <figcaption class="figure-caption">
+          </figcaption>
+         </figure>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <p>
+          The integral component looks at the past error, and tries to reduce the accumulated error by signaling an increase of thrust. The more time we spend below our goal, the more thrust will be applied.
+         </p>
+         <p>
+          While the proportional term adjusts the output based on the present error, the integral term adjusts the output based on past errors.
+         </p>
+         <p>
+          Therefore, if the drone is flying below the target altitude, then the integral component will provide a thrust higher than 100N (the equilibrium thrust).
+          <br/>
+          To remove the excess of thrust, we will need to have a negative error so that the accumulated sum of error lowers, and the integral component sends a signal to slow down the thrust.
+          <br/>
+          But, to get a negative error, the drone has to overshoot the target, then undershoot a bit until it finally reaches the target altitude.
+         </p>
+         <p>
+          Although a controller with proportional and integral components can help us eventually reach the target altitude, this overshooting is not ideal, and should be minimized it as much as possible.
+         </p>
+         <p>
+          It would be great if we had something that could predict the
+          <strong>
+           future
+          </strong>
+          and tell us how fast we will be approaching the goal in order to regulate it! That’s what the
+          <strong>
+           derivative
+          </strong>
+          term of our controller does!
+          <br/>
+          <br/>
+         </p>
+         <p>
+          <strong>
+           Derivative component
+          </strong>
+         </p>
+         <p>
+          The derivative term measures the error’s rate of change. Therefore, it sees how fast the error is increasing/decreasing.
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <figure class="figure">
+          <img alt="" class="img img-fluid" src="img/7.png"/>
+          <figcaption class="figure-caption">
+          </figcaption>
+         </figure>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <p>
+          If the error is decreasing quickly, then the rate of change is negative (think about the derivative as the slope of the curve), and the output from our derivative term of the controller is a negative output. This means that it lowers the thrust (essentially the propellers’ speed).
+         </p>
+         <p>
+          In this case, looking at the rate of change of the error helps the controller determine how the drone is approaching the goal. The controller then slows it down the drone appropriately to prevent overshooting.
+         </p>
+         <p>
+          These three components (proportional, integral, derivative) contribute to the output of the controller, and we can decide how to weigh each contribution by adjusting the gain terms (Kp, Ki, Kd).
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <figure class="figure">
+          <img alt="" class="img img-fluid" src="img/8.png"/>
+          <figcaption class="figure-caption">
+          </figcaption>
+         </figure>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+      </div>
+      <div class="col-12">
+       <p class="text-right">
+        <a class="btn btn-outline-primary mt-4" href="22. PID controller in practice.html" role="button">
+         Next Concept
+        </a>
+       </p>
+      </div>
+     </div>
+    </main>
+    <footer class="footer">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <p class="text-center">
+         udacity2.0 If you need the newest courses Plase add me wechat: udacity6
+        </p>
+       </div>
+      </div>
+     </div>
+    </footer>
+   </div>
+  </div>
+  <script src="../assets/js/jquery-3.3.1.min.js">
+  </script>
+  <script src="../assets/js/plyr.polyfilled.min.js">
+  </script>
+  <script src="../assets/js/bootstrap.min.js">
+  </script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js">
+  </script>
+  <script src="../assets/js/katex.min.js">
+  </script>
+  <script>
+   // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('21. PID Control Example')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+ </body>
+</html>

@@ -1,0 +1,365 @@
+<!-- udacimak v1.4.4 -->
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="ie=edge" http-equiv="X-UA-Compatible"/>
+  <title>
+   F Equals MA
+  </title>
+  <link href="../assets/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="../assets/css/plyr.css" rel="stylesheet"/>
+  <link href="../assets/css/katex.min.css" rel="stylesheet"/>
+  <link href="../assets/css/jquery.mCustomScrollbar.min.css" rel="stylesheet"/>
+  <link href="../assets/css/styles.css" rel="stylesheet"/>
+  <link href="../assets/img/udacimak.png" rel="shortcut icon" type="image/png">
+  </link>
+ </head>
+ <body>
+  <div class="wrapper">
+   <nav id="sidebar">
+    <div class="sidebar-header">
+     <h3>
+      Vehicle Dynamics
+     </h3>
+    </div>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled components">
+     <li class="">
+      <a href="01. Sebastian Introduction.html">
+       01. Sebastian Introduction
+      </a>
+     </li>
+     <li class="">
+      <a href="02. Introduction to Vehicle Dynamics.html">
+       02. Introduction to Vehicle Dynamics
+      </a>
+     </li>
+     <li class="">
+      <a href="03. The Forces on A Quadrotor.html">
+       03. The Forces on A Quadrotor
+      </a>
+     </li>
+     <li class="">
+      <a href="04. Force and Translational Equilibrium.html">
+       04. Force and Translational Equilibrium
+      </a>
+     </li>
+     <li class="">
+      <a href="05. Rotational Equilibrium 1.html">
+       05. Rotational Equilibrium 1
+      </a>
+     </li>
+     <li class="">
+      <a href="06. Rotational Equilibrium 2.html">
+       06. Rotational Equilibrium 2
+      </a>
+     </li>
+     <li class="">
+      <a href="07. Rotor Physics.html">
+       07. Rotor Physics
+      </a>
+     </li>
+     <li class="">
+      <a href="08. Unbalanced Forces Cause Linear Acceleration.html">
+       08. Unbalanced Forces Cause Linear Acceleration
+      </a>
+     </li>
+     <li class="">
+      <a href="09. F Equals MA.html">
+       09. F Equals MA
+      </a>
+     </li>
+     <li class="">
+      <a href="10. Unbalanced Moments cause Rotational Acceleration.html">
+       10. Unbalanced Moments cause Rotational Acceleration
+      </a>
+     </li>
+     <li class="">
+      <a href="11. Coaxial Drone Dynamics Exercise.html">
+       11. Coaxial Drone Dynamics Exercise
+      </a>
+     </li>
+     <li class="">
+      <a href="12. Coaxial Dynamics Explained.html">
+       12. Coaxial Dynamics Explained
+      </a>
+     </li>
+     <li class="">
+      <a href="13. Tracking Changes to State.html">
+       13. Tracking Changes to State
+      </a>
+     </li>
+     <li class="">
+      <a href="14. Second Order Systems.html">
+       14. Second Order Systems
+      </a>
+     </li>
+     <li class="">
+      <a href="15. Tracking Changes to State Exercise.html">
+       15. Tracking Changes to State Exercise
+      </a>
+     </li>
+     <li class="">
+      <a href="16. Compact Representations of State.html">
+       16. Compact Representations of State
+      </a>
+     </li>
+     <li class="">
+      <a href="17. Uncontrolled Drone Exercise.html">
+       17. Uncontrolled Drone Exercise
+      </a>
+     </li>
+     <li class="">
+      <a href="18. Motion in Two Dimensions.html">
+       18. Motion in Two Dimensions
+      </a>
+     </li>
+     <li class="">
+      <a href="19. Decomposing Thrust Vectors.html">
+       19. Decomposing Thrust Vectors
+      </a>
+     </li>
+     <li class="">
+      <a href="20. Calculating Moments.html">
+       20. Calculating Moments
+      </a>
+     </li>
+     <li class="">
+      <a href="21. Rotation Rates to Moments and Thrusts.html">
+       21. Rotation Rates to Moments and Thrusts
+      </a>
+     </li>
+     <li class="">
+      <a href="22. Calculating Accelerations in 2D Exercise.html">
+       22. Calculating Accelerations in 2D Exercise
+      </a>
+     </li>
+     <li class="">
+      <a href="23. Controlling a 2D Quad.html">
+       23. Controlling a 2D Quad
+      </a>
+     </li>
+     <li class="">
+      <a href="24. Controlling a 2D Drone Exercise.html">
+       24. Controlling a 2D Drone Exercise
+      </a>
+     </li>
+     <li class="">
+      <a href="25. Summary.html">
+       25. Summary
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+   </nav>
+   <div id="content">
+    <header class="container-fluild header">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <div class="align-items-middle">
+         <button class="btn btn-toggle-sidebar" id="sidebarCollapse" type="button">
+          <div>
+          </div>
+          <div>
+          </div>
+          <div>
+          </div>
+         </button>
+         <h1 style="display: inline-block">
+          09. F Equals MA
+         </h1>
+        </div>
+       </div>
+      </div>
+     </div>
+    </header>
+    <main class="container">
+     <div class="row">
+      <div class="col-12">
+       <div class="ud-atom">
+        <h3>
+         <p>
+          C3 C1 L8 Fma V1
+         </p>
+        </h3>
+        <video controls="">
+         <source src="09. C3 C1 L8 Fma V1-dA82iMkJMC4.mp4" type="video/mp4"/>
+         <track default="true" kind="subtitles" label="en" src="09. C3 C1 L8 Fma V1-dA82iMkJMC4.en.vtt" srclang="en"/>
+        </video>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <form>
+          <fieldset>
+           <legend>
+            <p>
+             What thrust would a
+             <strong>
+              2.2 kg monorotor
+             </strong>
+             need in order to accelerate upwards at
+             <span class="mathquill ud-math">
+              -4.0 m / s^2
+             </span>
+             (remember, z is positive downwards)?
+            </p>
+           </legend>
+          </fieldset>
+          <div>
+           <input id="a1520877555383" name="561738" type="radio" value="a1520877555383"/>
+           <label for="a1520877555383">
+            <p>
+             30.4 N
+            </p>
+           </label>
+          </div>
+          <div>
+           <input id="a1520877860960" name="561738" type="radio" value="a1520877860960"/>
+           <label for="a1520877860960">
+            <p>
+             12.8 N
+            </p>
+           </label>
+          </div>
+          <div>
+           <input id="a1520877872209" name="561738" type="radio" value="a1520877872209"/>
+           <label for="a1520877872209">
+            <p>
+             8.8 N
+            </p>
+           </label>
+          </div>
+          <div>
+           <input id="a1520877890106" name="561738" type="radio" value="a1520877890106"/>
+           <label for="a1520877890106">
+            <p>
+             21.6 N
+            </p>
+           </label>
+          </div>
+         </form>
+         <details>
+          <summary>
+           <strong>
+            SOLUTION:
+           </strong>
+          </summary>
+          30.4 N
+         </details>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+      </div>
+      <div class="col-12">
+       <p class="text-right">
+        <a class="btn btn-outline-primary mt-4" href="10. Unbalanced Moments cause Rotational Acceleration.html" role="button">
+         Next Concept
+        </a>
+       </p>
+      </div>
+     </div>
+    </main>
+    <footer class="footer">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <p class="text-center">
+         udacity2.0 If you need the newest courses Plase add me wechat: udacity6
+        </p>
+       </div>
+      </div>
+     </div>
+    </footer>
+   </div>
+  </div>
+  <script src="../assets/js/jquery-3.3.1.min.js">
+  </script>
+  <script src="../assets/js/plyr.polyfilled.min.js">
+  </script>
+  <script src="../assets/js/bootstrap.min.js">
+  </script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js">
+  </script>
+  <script src="../assets/js/katex.min.js">
+  </script>
+  <script>
+   // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('09. F Equals MA')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+ </body>
+</html>

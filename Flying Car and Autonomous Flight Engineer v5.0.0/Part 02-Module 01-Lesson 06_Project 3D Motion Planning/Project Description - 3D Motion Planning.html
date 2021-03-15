@@ -1,0 +1,415 @@
+<!-- udacimak v1.4.4 -->
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="ie=edge" http-equiv="X-UA-Compatible"/>
+  <title>
+   3D Motion Planning
+  </title>
+  <link href="../assets/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="../assets/css/plyr.css" rel="stylesheet"/>
+  <link href="../assets/css/katex.min.css" rel="stylesheet"/>
+  <link href="../assets/css/jquery.mCustomScrollbar.min.css" rel="stylesheet"/>
+  <link href="../assets/css/styles.css" rel="stylesheet"/>
+  <link href="../assets/img/udacimak.png" rel="shortcut icon" type="image/png">
+  </link>
+ </head>
+ <body>
+  <div class="wrapper">
+   <nav id="sidebar">
+    <div class="sidebar-header">
+     <h3>
+      Project: 3D Motion Planning
+     </h3>
+    </div>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled components">
+     <li class="">
+      <a href="01. Sebastian Introduction.html">
+       01. Sebastian Introduction
+      </a>
+     </li>
+     <li class="">
+      <a href="02. Project Intro.html">
+       02. Project Intro
+      </a>
+     </li>
+     <li class="">
+      <a href="03. Workspace Intro.html">
+       03. Workspace Intro
+      </a>
+     </li>
+     <li class="">
+      <a href="04. 3D Motion Planning.html">
+       04. 3D Motion Planning
+      </a>
+     </li>
+     <li class="">
+      <a href="Project Description - 3D Motion Planning.html">
+       Project Description - 3D Motion Planning
+      </a>
+     </li>
+     <li class="">
+      <a href="Project Rubric - 3D Motion Planning.html">
+       Project Rubric - 3D Motion Planning
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+   </nav>
+   <div id="content">
+    <header class="container-fluild header">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <div class="align-items-middle">
+         <button class="btn btn-toggle-sidebar" id="sidebarCollapse" type="button">
+          <div>
+          </div>
+          <div>
+          </div>
+          <div>
+          </div>
+         </button>
+         <h1 style="display: inline-block">
+          3D Motion Planning
+         </h1>
+        </div>
+       </div>
+      </div>
+     </div>
+    </header>
+    <main class="container">
+     <div class="row">
+      <div class="col-12">
+       <h2 id="project-completion-steps">
+        Project completion steps:
+       </h2>
+       <ol>
+        <li>
+         <p>
+          You can do this project in a classroom workspace virtual machine (VM)! The starter files linked below are already on the VM in the folder called
+          <code>
+           /home/workspace/3D_motion_planning
+          </code>
+          .
+          <strong>
+           NOTE: if you have already checked out the VM be sure to "Reset data" to get the latest files!
+          </strong>
+          If you choose to complete the project in the VM, follow the instructions
+          <a href="https://classroom.udacity.com/nanodegrees/nd787/parts/5aa0a956-4418-4a41-846f-cb7ea63349b3/modules/0c12632a-b59a-41c1-9694-2b3508f47ce7/lessons/5f628104-5857-4a3f-93f0-d8a53fe6a8fd/concepts/ab09b378-f85f-49f4-8845-d59025dd8a8e?contentVersion=1.0.0&amp;contentLocale=en-us" rel="noopener noreferrer" target="_blank">
+           here
+          </a>
+          to get setup.
+         </p>
+        </li>
+        <li>
+         <p>
+          If you're not going to work in the classroom VM, Download the Motion-Planning simulator for this project that's appropriate for your operating system from the
+          <a href="https://github.com/udacity/FCND-Simulator-Releases/releases" rel="noopener noreferrer" target="_blank">
+           simulator releases respository
+          </a>
+         </p>
+        </li>
+        <li>
+         <p>
+          Clone the
+          <a href="https://github.com/udacity/FCND-Motion-Planning" rel="noopener noreferrer" target="_blank">
+           project repository
+          </a>
+         </p>
+        </li>
+       </ol>
+       <pre><code class="sh language-sh">git clone https://github.com/udacity/FCND-Motion-Planning</code></pre>
+       <ol start="4">
+        <li>
+         <p>
+          Run the
+          <code>
+           backyard_flyer_solution.py
+          </code>
+          script to fly a square flight pattern in this new environment as a test to see if everything is working as expected.
+         </p>
+        </li>
+        <li>
+         <p>
+          Follow along with the
+          <a href="https://github.com/udacity/FCND-Motion-Planning/blob/master/README.md" rel="noopener noreferrer" target="_blank">
+           README
+          </a>
+          and the
+          <a href="https://review.udacity.com/#!/rubrics/1534/view" rel="noopener noreferrer" target="_blank">
+           Project Rubric
+          </a>
+          to complete the steps to a passing submission of this project.
+         </p>
+        </li>
+       </ol>
+       <p>
+        This project is a continuation of the Backyard Flyer project where you executed a simple square shaped flight path. In this project you will integrate the techniques that you have learned throughout the last several lessons to plan a path through an urban environment.
+       </p>
+       <h2 id="evaluation">
+        Evaluation
+       </h2>
+       <p>
+        Once you have completed your project, use the
+        <a href="https://review.udacity.com/#!/rubrics/1534/view" rel="noopener noreferrer" target="_blank">
+         <strong>
+          Project Rubric
+         </strong>
+        </a>
+        to review the project. If you have covered all of the points in the rubric, then you are ready to submit! If you see room for improvement in
+        <strong>
+         any
+        </strong>
+        category in which you do not meet specifications, keep working!
+       </p>
+       <h2 id="submission">
+        Submission
+       </h2>
+       <p>
+        You may submit your project as a zip file or with a link to a GitHub repo. The submission must include
+       </p>
+       <ol>
+        <li>
+         A detailed writeup of your results including how you addressed each rubric point and where it appears in your code.
+        </li>
+        <li>
+         The entire FCND-Motion-Planning folder with all of your code as scripts and / or notebooks.
+        </li>
+       </ol>
+       <p>
+        When you are ready to submit the project. Click on the "Submit Project" button and follow the instructions to submit!
+       </p>
+       <h2 id="feedback">
+        Feedback
+       </h2>
+       <p>
+        Please fill out the
+        <a href="https://goo.gl/forms/Biyb3q2AXVIxXqf62" rel="noopener noreferrer" target="_blank">
+         3D Motion Planning Project Feedback Form
+        </a>
+        after you have completed the project.
+       </p>
+       <h2 id="share-your-project">
+        Share Your Project
+       </h2>
+       <p>
+        Have something fun to share? Did your drone fly safely from A to B or fly in upward circles around the same building? Perhaps your drone thought it was a frog and jumped from building top to building top? Either way, we love to see any and all of your creations!
+       </p>
+       <p>
+        What you’ve accomplished is no small feat. Give yourself a pat on the back and some well-deserved recognition by sharing your amazing project with your network.
+       </p>
+       <p>
+        Create a gif or youtube video of your project implementation in the simulator and share with us in the
+        <a href="https://udacity-flying-car.slack.com/messages/C77GCKZ8U" rel="noopener noreferrer" target="_blank">
+         Flying Car Slack Community
+        </a>
+        and on social media using the links below!
+       </p>
+       <p>
+        Make sure to use
+        <strong>
+         @Udacity
+        </strong>
+        ,
+        <strong>
+         #flyingcarnd
+        </strong>
+        ,
+        <strong>
+         #3dplanning
+        </strong>
+        , and
+        <strong>
+         #madewithudacity
+        </strong>
+        in your posts!
+       </p>
+       <iframe height="28" scrolling="no" src="https://platform.twitter.com/widgets/tweet_button.html?size=l&amp;url=www.udacity.com&amp;text=I%20engineered%20an%20autonomous%20drone%20to%20navigate%20in%20a%20city%20environment%20using%20path%20planning%20algorithms.%20Check%20it%20out!%20[Insert%20your%20Gif%20or%20youtube%20url%20here]&amp;hashtags=flyingcarnd, 3dplanning, madewithudacity" width="140">
+       </iframe>
+       <p>
+        <html>
+        </html>
+       </p>
+       <p>
+        <head>
+        </head>
+       </p>
+       <style>
+        .fb {color: white;
+  background-color: #4661b0;
+  border-radius: 4px;
+  font-weight: bold;
+  height: 28px;
+  font-size: 14px;}
+.fb:hover {color: #4661b0;
+  background-color: white;
+  border-color: #4661b0;
+  transition: background-color 0.4s}
+.linkedin {color: white;
+  background-color: #0077B5;
+  border-radius: 4px;
+  font-weight: bold;
+  height: 28px;
+  font-size: 14px;}
+.linkedin:hover {color: #0077B5;
+  background-color: white;
+  border-color: #0077B5;
+  transition: background-color 0.4s}
+       </style>
+       <p>
+       </p>
+       <p>
+        <body>
+        </body>
+       </p>
+       <form action="https://www.facebook.com/sharer.php?">
+        Enter the full URL of your Gif or Youtube video:
+        <br/>
+        <input name="u" placeholder="Paste URL here" type="url"/>
+        <input name="hashtag" type="hidden" value="#flyingcarnd"/>
+        <button class="fb">
+         Share on Facebook
+        </button>
+       </form>
+       <form action="https://www.linkedin.com/shareArticle?mini=true">
+        <input name="url" placeholder="Paste URL here" type="url"/>
+        <input name="title" type="hidden" value="Finding Lane Lines"/>
+        <input name="summary" type="hidden" value="I engineered an autonomous drone to navigate in a city environment using path planning algorithms. Check it out! @udacity #flyingcarnd #3dplanning #madewithudacity"/>
+        <button class="linkedin">
+         Share on LinkedIn
+        </button>
+       </form>
+       <p>
+       </p>
+      </div>
+     </div>
+    </main>
+   </div>
+  </div>
+ </body>
+ <p>
+ </p>
+</html>
+<h2 id="project-submission-checklist">
+ Project Submission Checklist
+</h2>
+<p>
+ <strong>
+  Before submitting your project, please review and confirm the following items.
+ </strong>
+ <br>
+  <input type="checkbox"/>
+  I am confident all rubric items have been met and my project will pass as submitted.
+  <br/>
+  <input type="checkbox"/>
+  Project builds correctly without errors and runs.
+  <br/>
+  <input type="checkbox"/>
+  All required functionality exists and my project behaves as expected per the project's specifications.
+ </br>
+</p>
+<p>
+ <strong>
+  Once you have checked all these items, you are ready to submit!
+ </strong>
+</p>
+<div class="col-12">
+ <p class="text-right">
+ </p>
+</div>
+<footer class="footer">
+ <div class="container">
+  <div class="row">
+   <div class="col-12">
+    <p class="text-center">
+     udacity2.0 If you need the newest courses Plase add me wechat: udacity6
+    </p>
+   </div>
+  </div>
+ </div>
+</footer>
+<script src="../assets/js/jquery-3.3.1.min.js">
+</script>
+<script src="../assets/js/plyr.polyfilled.min.js">
+</script>
+<script src="../assets/js/bootstrap.min.js">
+</script>
+<script src="../assets/js/jquery.mCustomScrollbar.concat.min.js">
+</script>
+<script src="../assets/js/katex.min.js">
+</script>
+<script>
+ // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('3D Motion Planning')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+</script>

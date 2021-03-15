@@ -1,0 +1,100 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:04.125
+It turns out, that no matter how you adjust your Kp,
+
+00:00:04.125 --> 00:00:06.915
+you'll never get rid of these oscillations.
+
+00:00:06.915 --> 00:00:10.544
+To convince yourself that this is the case,
+
+00:00:10.544 --> 00:00:15.780
+imagine a monorotor hovering exactly at its target altitude.
+
+00:00:15.779 --> 00:00:17.309
+In a perfect world,
+
+00:00:17.309 --> 00:00:19.244
+without any model errors,
+
+00:00:19.245 --> 00:00:23.520
+a P controller would do a pretty good job keeping the vehicle in place
+
+00:00:23.519 --> 00:00:28.094
+by commanding a thrust that is equal to the weight of the vehicle.
+
+00:00:28.094 --> 00:00:30.449
+Now imagine that suddenly,
+
+00:00:30.449 --> 00:00:34.439
+the target altitude is shifted upwards by one meter.
+
+00:00:34.439 --> 00:00:36.689
+So now, the vehicle is here,
+
+00:00:36.689 --> 00:00:39.464
+but the target said it's way up here.
+
+00:00:39.465 --> 00:00:41.385
+What's the controller going to do?
+
+00:00:41.384 --> 00:00:45.704
+Well, it's going to immediately command a large thrust upwards,
+
+00:00:45.704 --> 00:00:49.739
+and that means that the vehicle is going to accelerate upwards.
+
+00:00:49.740 --> 00:00:51.765
+And with a P controller,
+
+00:00:51.765 --> 00:00:55.155
+as long as the vehicle is below the target z,
+
+00:00:55.155 --> 00:01:00.810
+then it's going to continue to command a thrust that causes upward acceleration.
+
+00:01:00.810 --> 00:01:06.210
+This means that by the time the vehicle gets to that target z,
+
+00:01:06.209 --> 00:01:08.983
+it will have a substantial adverse velocity,
+
+00:01:08.983 --> 00:01:12.030
+which will cause it to overshoot the target.
+
+00:01:12.030 --> 00:01:18.045
+When plotted over time,
+
+00:01:18.045 --> 00:01:22.829
+the resulting trajectory will always have the oscillations you've already seen.
+
+00:01:22.829 --> 00:01:27.390
+Another way to think about these oscillations is mathematically.
+
+00:01:27.390 --> 00:01:32.010
+Our controller commands accelerations in proportion to the error.
+
+00:01:32.010 --> 00:01:35.160
+But this, unfortunately, does not lead to
+
+00:01:35.159 --> 00:01:39.420
+zero velocity when the vehicle gets to the target location.
+
+00:01:39.420 --> 00:01:45.030
+Instead, the vehicle gets to the target altitude with some vertical speed,
+
+00:01:45.030 --> 00:01:50.805
+and this causes it to overshoot and it begins a cycle of oscillations.
+
+00:01:50.805 --> 00:01:53.550
+Instead of a picture like this,
+
+00:01:53.549 --> 00:01:59.459
+we want the trajectory where our vehicle reaches the target value and then stays there.
+
+00:01:59.459 --> 00:02:03.669
+And that means we want a graph that looks something like this.
+

@@ -1,0 +1,91 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:04.155
+PID control is one of the most amazing techniques in all of robotics.
+
+00:00:04.155 --> 00:00:06.735
+I taught it many times at Stanford,
+
+00:00:06.735 --> 00:00:09.090
+and for every student there was a before and
+
+00:00:09.090 --> 00:00:12.285
+after knowing about it, which was transformational.
+
+00:00:12.285 --> 00:00:14.460
+Let me explain PID in an example.
+
+00:00:14.460 --> 00:00:16.080
+Suppose you have a hovering drone,
+
+00:00:16.080 --> 00:00:17.550
+and just for the example,
+
+00:00:17.550 --> 00:00:19.365
+I'm going to restrict myself to one dimension,
+
+00:00:19.365 --> 00:00:21.435
+which is the vertical dimension, the z dimension.
+
+00:00:21.435 --> 00:00:23.490
+Suppose it's hovering right here,
+
+00:00:23.490 --> 00:00:27.690
+and your desire is to make it hover up here. What would you do?
+
+00:00:27.690 --> 00:00:30.150
+Well, you could say there's a difference between
+
+00:00:30.150 --> 00:00:32.775
+your current z value and the desired z value.
+
+00:00:32.775 --> 00:00:36.305
+So let's add thrust maybe in proportion to that difference.
+
+00:00:36.305 --> 00:00:39.200
+So drone will come up and accelerate.
+
+00:00:39.200 --> 00:00:41.465
+As it hits your target level,
+
+00:00:41.465 --> 00:00:43.760
+it will unfortunately overshoot,
+
+00:00:43.760 --> 00:00:45.710
+and the reason why it overshoot is it has inertia,
+
+00:00:45.710 --> 00:00:47.210
+it can't just stop on the spot.
+
+00:00:47.210 --> 00:00:50.750
+Now your controller that you're [inaudible] when I say you're too high,
+
+00:00:50.750 --> 00:00:52.205
+the error is just reversed.
+
+00:00:52.205 --> 00:00:53.660
+So let's reduce thrust,
+
+00:00:53.660 --> 00:00:56.450
+and what you'll find is that your drone ends up oscillating.
+
+00:00:56.450 --> 00:01:01.170
+That's not good. What I just described is called a P controller,
+
+00:01:01.170 --> 00:01:03.555
+and P stands for proportional.
+
+00:01:03.555 --> 00:01:08.520
+PID stands for proportional, integration, and differentiation.
+
+00:01:08.520 --> 00:01:12.605
+So you're going to add additional terms to avoid the oscillation effect,
+
+00:01:12.605 --> 00:01:17.260
+in PID controller that can safely hover the drone at exactly the right level.
+
+00:01:17.260 --> 00:01:19.870
+PID control.
+

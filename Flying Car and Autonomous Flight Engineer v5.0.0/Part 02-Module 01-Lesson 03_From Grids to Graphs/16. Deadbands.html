@@ -1,0 +1,470 @@
+<!-- udacimak v1.4.4 -->
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="ie=edge" http-equiv="X-UA-Compatible"/>
+  <title>
+   Deadbands
+  </title>
+  <link href="../assets/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="../assets/css/plyr.css" rel="stylesheet"/>
+  <link href="../assets/css/katex.min.css" rel="stylesheet"/>
+  <link href="../assets/css/jquery.mCustomScrollbar.min.css" rel="stylesheet"/>
+  <link href="../assets/css/styles.css" rel="stylesheet"/>
+  <link href="../assets/img/udacimak.png" rel="shortcut icon" type="image/png">
+  </link>
+ </head>
+ <body>
+  <div class="wrapper">
+   <nav id="sidebar">
+    <div class="sidebar-header">
+     <h3>
+      From Grids to Graphs
+     </h3>
+    </div>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled components">
+     <li class="">
+      <a href="01. Sebastian Introduction.html">
+       01. Sebastian Introduction
+      </a>
+     </li>
+     <li class="">
+      <a href="02. Introduction to Graphs.html">
+       02. Introduction to Graphs
+      </a>
+     </li>
+     <li class="">
+      <a href="03. Waypoint Extraction.html">
+       03. Waypoint Extraction
+      </a>
+     </li>
+     <li class="">
+      <a href="04. Collinearity.html">
+       04. Collinearity
+      </a>
+     </li>
+     <li class="">
+      <a href="05. Collinearity Exercise.html">
+       05. Collinearity Exercise
+      </a>
+     </li>
+     <li class="">
+      <a href="06. Ray Tracing.html">
+       06. Ray Tracing
+      </a>
+     </li>
+     <li class="">
+      <a href="07. Bresenham.html">
+       07. Bresenham
+      </a>
+     </li>
+     <li class="">
+      <a href="08. Bresenham Exercise.html">
+       08. Bresenham Exercise
+      </a>
+     </li>
+     <li class="">
+      <a href="09. Putting it Together Exercise.html">
+       09. Putting it Together Exercise
+      </a>
+     </li>
+     <li class="">
+      <a href="10. Grids to Graphs.html">
+       10. Grids to Graphs
+      </a>
+     </li>
+     <li class="">
+      <a href="11. Graph Tradeoffs.html">
+       11. Graph Tradeoffs
+      </a>
+     </li>
+     <li class="">
+      <a href="12. Generating Graphs.html">
+       12. Generating Graphs
+      </a>
+     </li>
+     <li class="">
+      <a href="13. Medial Axis Exercise.html">
+       13. Medial Axis Exercise
+      </a>
+     </li>
+     <li class="">
+      <a href="14. Voronoi Graph Exercise.html">
+       14. Voronoi Graph Exercise
+      </a>
+     </li>
+     <li class="">
+      <a href="15. Graph Search Exercise.html">
+       15. Graph Search Exercise
+      </a>
+     </li>
+     <li class="">
+      <a href="16. Deadbands.html">
+       16. Deadbands
+      </a>
+     </li>
+     <li class="">
+      <a href="17. Summary.html">
+       17. Summary
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+   </nav>
+   <div id="content">
+    <header class="container-fluild header">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <div class="align-items-middle">
+         <button class="btn btn-toggle-sidebar" id="sidebarCollapse" type="button">
+          <div>
+          </div>
+          <div>
+          </div>
+          <div>
+          </div>
+         </button>
+         <h1 style="display: inline-block">
+          16. Deadbands
+         </h1>
+        </div>
+       </div>
+      </div>
+     </div>
+    </header>
+    <main class="container">
+     <div class="row">
+      <div class="col-12">
+       <div class="ud-atom">
+        <h3>
+         <p>
+          09 Deadbands V4
+         </p>
+        </h3>
+        <video controls="">
+         <source src="16. 09 Deadbands V4-kswcczWbszA.mp4" type="video/mp4"/>
+         <track default="true" kind="subtitles" label="en" src="16. 09 Deadbands V4-kswcczWbszA.en.vtt" srclang="en"/>
+        </video>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+         <p>
+          Deadbands
+         </p>
+        </h3>
+        <div>
+         <form>
+          <fieldset>
+           <legend>
+            <p>
+             Check out the
+             <code>
+              local_position_callback()
+             </code>
+             function in the
+             <a href="https://github.com/udacity/FCND-Backyard-Flyer/blob/solution/backyard_flyer.py" rel="noopener noreferrer" target="_blank">
+              backyard_flyer.py
+             </a>
+             script. What is the deadband radius being used there?
+            </p>
+           </legend>
+          </fieldset>
+          <div>
+           <input id="a1520468884675" name="559357" type="radio" value="a1520468884675"/>
+           <label for="a1520468884675">
+            <p>
+             0.1 m
+            </p>
+           </label>
+          </div>
+          <div>
+           <input id="a1520469038789" name="559357" type="radio" value="a1520469038789"/>
+           <label for="a1520469038789">
+            <p>
+             1 m
+            </p>
+           </label>
+          </div>
+          <div>
+           <input id="a1520469040829" name="559357" type="radio" value="a1520469040829"/>
+           <label for="a1520469040829">
+            <p>
+             10 m
+            </p>
+           </label>
+          </div>
+         </form>
+         <details>
+          <summary>
+           <strong>
+            SOLUTION:
+           </strong>
+          </summary>
+          1 m
+         </details>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+         <p>
+          Deadband test
+         </p>
+        </h3>
+        <div>
+         <p>
+          <strong>
+           QUIZ QUESTION:
+          </strong>
+          :
+          <p>
+           Try resetting the deadband radius in the
+           <a href="https://github.com/udacity/FCND-Backyard-Flyer/blob/solution/backyard_flyer.py" rel="noopener noreferrer" target="_blank">
+            backyard_flyer.py
+           </a>
+           script to 0.01, 0.1 and 5 and running the script with the simulator. Match each deadband radius with the with the appropriate description of the behaviour of the quad.
+          </p>
+         </p>
+         <p>
+          <strong>
+           ANSWER CHOICES:
+          </strong>
+         </p>
+         <button class="btn btn-primary">
+          <p>
+           The quad executes the path quickly but it appears almost circular instead of square
+          </p>
+         </button>
+         <button class="btn btn-primary">
+          <p>
+           The quad executes the path more precisely but more slowly than with a 1 m radius.
+          </p>
+         </button>
+         <button class="btn btn-primary">
+          <p>
+           The quad executes the path precisely, but gets stuck at each waypoint struggling to land within the deadband radius.
+          </p>
+         </button>
+         <br/>
+         <br/>
+         <table class="table">
+          <tr class="thead-dark table-hover">
+           <th>
+            <p>
+             Behaviour
+            </p>
+           </th>
+           <th>
+            <p>
+             Deadband radius
+            </p>
+           </th>
+          </tr>
+          <tr>
+           <td>
+            <p>
+             5 m
+            </p>
+           </td>
+           <td>
+           </td>
+          </tr>
+          <tr>
+           <td>
+            <p>
+             0.1 m
+            </p>
+           </td>
+           <td>
+           </td>
+          </tr>
+          <tr>
+           <td>
+            <p>
+             0.01 m
+            </p>
+           </td>
+           <td>
+           </td>
+          </tr>
+         </table>
+         <details>
+          <summary>
+           <strong>
+            SOLUTION:
+           </strong>
+          </summary>
+          <table class="table">
+           <tr class="thead-dark table-hover">
+            <th>
+             <p>
+              Behaviour
+             </p>
+            </th>
+            <th>
+             <p>
+              Deadband radius
+             </p>
+            </th>
+           </tr>
+           <tr>
+            <td>
+             <p>
+              5 m
+             </p>
+            </td>
+            <td>
+             <button class="btn btn-primary">
+              <p>
+               The quad executes the path quickly but it appears almost circular instead of square
+              </p>
+             </button>
+            </td>
+           </tr>
+           <tr>
+            <td>
+             <p>
+              0.1 m
+             </p>
+            </td>
+            <td>
+             <button class="btn btn-primary">
+              <p>
+               The quad executes the path more precisely but more slowly than with a 1 m radius.
+              </p>
+             </button>
+            </td>
+           </tr>
+           <tr>
+            <td>
+             <p>
+              0.01 m
+             </p>
+            </td>
+            <td>
+             <button class="btn btn-primary">
+              <p>
+               The quad executes the path precisely, but gets stuck at each waypoint struggling to land within the deadband radius.
+              </p>
+             </button>
+            </td>
+           </tr>
+          </table>
+         </details>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+      </div>
+      <div class="col-12">
+       <p class="text-right">
+        <a class="btn btn-outline-primary mt-4" href="17. Summary.html" role="button">
+         Next Concept
+        </a>
+       </p>
+      </div>
+     </div>
+    </main>
+    <footer class="footer">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <p class="text-center">
+         udacity2.0 If you need the newest courses Plase add me wechat: udacity6
+        </p>
+       </div>
+      </div>
+     </div>
+    </footer>
+   </div>
+  </div>
+  <script src="../assets/js/jquery-3.3.1.min.js">
+  </script>
+  <script src="../assets/js/plyr.polyfilled.min.js">
+  </script>
+  <script src="../assets/js/bootstrap.min.js">
+  </script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js">
+  </script>
+  <script src="../assets/js/katex.min.js">
+  </script>
+  <script>
+   // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('16. Deadbands')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+ </body>
+</html>

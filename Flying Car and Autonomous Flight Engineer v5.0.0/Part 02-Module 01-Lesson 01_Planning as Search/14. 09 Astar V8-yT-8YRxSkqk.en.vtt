@@ -1,0 +1,163 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.175
+To give guidance to the search process,
+
+00:00:02.175 --> 00:00:04.365
+we have two functions that we can now use.
+
+00:00:04.365 --> 00:00:07.790
+We have the cost function of the actions in the actual partial plan.
+
+00:00:07.790 --> 00:00:11.895
+Let's call that G. That's the sum of the actions we've taken so far in the plan.
+
+00:00:11.895 --> 00:00:13.815
+We have our heuristic function,
+
+00:00:13.815 --> 00:00:16.200
+which is an underestimate of the remaining cost to
+
+00:00:16.200 --> 00:00:19.545
+get from the last state of a partial plan to the goal.
+
+00:00:19.545 --> 00:00:22.980
+Let's call that H. If we add those two quantities together,
+
+00:00:22.980 --> 00:00:25.000
+will say F equals G plus H,
+
+00:00:25.000 --> 00:00:29.160
+we get an estimate of the total cost of the plan from the start all the way to the goal.
+
+00:00:29.160 --> 00:00:33.040
+Even though we don't know exactly how to get all the way to the goal yet.
+
+00:00:33.040 --> 00:00:35.360
+Because we're adding costs together,
+
+00:00:35.360 --> 00:00:39.515
+we need to add one more property to the heuristic in addition to being admissible.
+
+00:00:39.515 --> 00:00:43.370
+The heuristic function has to obey the triangle inequality theorem,
+
+00:00:43.370 --> 00:00:47.310
+which states that for any three points, x1, x2,
+
+00:00:47.310 --> 00:00:51.710
+and x3, the heuristic estimate for x1 to x3 has to be
+
+00:00:51.710 --> 00:00:56.765
+less than the heuristic estimate from x1 to x2 plus the heuristic estimate from x2 to x3.
+
+00:00:56.765 --> 00:01:00.835
+A heuristic that obeys the triangle inequality theorem is said to be consistent.
+
+00:01:00.835 --> 00:01:04.925
+To use my heuristic in combination with a cost of the actions taken so far,
+
+00:01:04.925 --> 00:01:08.860
+I have to have a heuristic that is admissible, consistent.
+
+00:01:08.860 --> 00:01:11.315
+If for each partial plan,
+
+00:01:11.315 --> 00:01:13.460
+I add that heuristic to the cost function to get
+
+00:01:13.460 --> 00:01:16.300
+a value for each plan is F equals G plus H,
+
+00:01:16.300 --> 00:01:20.590
+then I can use that information to decide which plan to expand next.
+
+00:01:20.590 --> 00:01:22.605
+Let's go back to our example.
+
+00:01:22.605 --> 00:01:25.060
+I'll show the heuristic estimate for each cell.
+
+00:01:25.060 --> 00:01:27.530
+In this case, I'm using the Manhattan distance.
+
+00:01:27.530 --> 00:01:31.475
+I'll start at the start state and expand all the neighboring states to the left,
+
+00:01:31.475 --> 00:01:33.575
+right, up, and down.
+
+00:01:33.575 --> 00:01:38.930
+I can label each one of those partial plans with a total cost of the actions G. For now,
+
+00:01:38.930 --> 00:01:41.180
+let's just say the actual cost is still just one.
+
+00:01:41.180 --> 00:01:44.600
+That means the G value of each of these partial plans is equal to one,
+
+00:01:44.600 --> 00:01:46.730
+but the heuristic is very different.
+
+00:01:46.730 --> 00:01:50.555
+The value of H at the start position is four, moving to the left,
+
+00:01:50.555 --> 00:01:55.175
+up or down where the heuristic value is five is actually moving me away from the goal.
+
+00:01:55.175 --> 00:01:57.575
+Moving right has the lowest total cost,
+
+00:01:57.575 --> 00:02:00.355
+so that is the direction I'll choose to expand in next
+
+00:02:00.355 --> 00:02:03.860
+and then if I were to consider expanding my partial plan to the right,
+
+00:02:03.860 --> 00:02:06.260
+again, I see that that's infeasible.
+
+00:02:06.260 --> 00:02:08.960
+Moving up or down have equal total costs
+
+00:02:08.960 --> 00:02:12.355
+and either one of those would be a valid choice for the next expansion.
+
+00:02:12.355 --> 00:02:15.110
+This process of expanding the partial plan that has
+
+00:02:15.110 --> 00:02:18.500
+the lowest total cost in terms of the sum of the actual cost of the actions
+
+00:02:18.500 --> 00:02:21.400
+in the partial plan plus the heuristic from the last day
+
+00:02:21.400 --> 00:02:24.700
+in a partial plan is the famous algorithm known as A-star.
+
+00:02:24.700 --> 00:02:27.620
+This algorithm has two very useful properties.
+
+00:02:27.620 --> 00:02:32.405
+The first is that it's guaranteed to find the lowest cost plan first before any others,
+
+00:02:32.405 --> 00:02:34.190
+just like uniform cost search.
+
+00:02:34.190 --> 00:02:38.045
+Secondly, A-star doesn't suffer the inefficiencies of breadth-first search,
+
+00:02:38.045 --> 00:02:40.625
+where the list of partial plans can get unwieldy.
+
+00:02:40.625 --> 00:02:44.075
+This last property is dependent on the quality of your heuristic.
+
+00:02:44.075 --> 00:02:45.530
+The better your heuristic,
+
+00:02:45.530 --> 00:02:49.050
+the better your A-star implementation will perform.
+

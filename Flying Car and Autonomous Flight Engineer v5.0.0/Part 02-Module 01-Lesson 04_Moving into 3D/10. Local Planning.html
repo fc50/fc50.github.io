@@ -1,0 +1,318 @@
+<!-- udacimak v1.4.4 -->
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="ie=edge" http-equiv="X-UA-Compatible"/>
+  <title>
+   Local Planning
+  </title>
+  <link href="../assets/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="../assets/css/plyr.css" rel="stylesheet"/>
+  <link href="../assets/css/katex.min.css" rel="stylesheet"/>
+  <link href="../assets/css/jquery.mCustomScrollbar.min.css" rel="stylesheet"/>
+  <link href="../assets/css/styles.css" rel="stylesheet"/>
+  <link href="../assets/img/udacimak.png" rel="shortcut icon" type="image/png">
+  </link>
+ </head>
+ <body>
+  <div class="wrapper">
+   <nav id="sidebar">
+    <div class="sidebar-header">
+     <h3>
+      Moving into 3D
+     </h3>
+    </div>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled components">
+     <li class="">
+      <a href="01. Sebastian Introduction.html">
+       01. Sebastian Introduction
+      </a>
+     </li>
+     <li class="">
+      <a href="02. Introduction.html">
+       02. Introduction
+      </a>
+     </li>
+     <li class="">
+      <a href="03. 3D Grids.html">
+       03. 3D Grids
+      </a>
+     </li>
+     <li class="">
+      <a href="04. Voxel Map Exercise.html">
+       04. Voxel Map Exercise
+      </a>
+     </li>
+     <li class="">
+      <a href="05. 2.5D Maps.html">
+       05. 2.5D Maps
+      </a>
+     </li>
+     <li class="">
+      <a href="06. Random Sampling.html">
+       06. Random Sampling
+      </a>
+     </li>
+     <li class="">
+      <a href="07. Random Sampling Exercise.html">
+       07. Random Sampling Exercise
+      </a>
+     </li>
+     <li class="">
+      <a href="08. Probabilistic Roadmap.html">
+       08. Probabilistic Roadmap
+      </a>
+     </li>
+     <li class="">
+      <a href="09. Probabilistic Roadmap Exercise.html">
+       09. Probabilistic Roadmap Exercise
+      </a>
+     </li>
+     <li class="">
+      <a href="10. Local Planning.html">
+       10. Local Planning
+      </a>
+     </li>
+     <li class="">
+      <a href="11. Receding Horizon.html">
+       11. Receding Horizon
+      </a>
+     </li>
+     <li class="">
+      <a href="12. Receding Horizon Exercise.html">
+       12. Receding Horizon Exercise
+      </a>
+     </li>
+     <li class="">
+      <a href="13. Replanning.html">
+       13. Replanning
+      </a>
+     </li>
+     <li class="">
+      <a href="14. Summary.html">
+       14. Summary
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+   </nav>
+   <div id="content">
+    <header class="container-fluild header">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <div class="align-items-middle">
+         <button class="btn btn-toggle-sidebar" id="sidebarCollapse" type="button">
+          <div>
+          </div>
+          <div>
+          </div>
+          <div>
+          </div>
+         </button>
+         <h1 style="display: inline-block">
+          10. Local Planning
+         </h1>
+        </div>
+       </div>
+      </div>
+     </div>
+    </header>
+    <main class="container">
+     <div class="row">
+      <div class="col-12">
+       <div class="ud-atom">
+        <h3>
+         <p>
+          C2 L4 A07 Local Planning V4
+         </p>
+        </h3>
+        <video controls="">
+         <source src="10. C2 L4 A07 Local Planning V4-DsUE1rYvRyw.mp4" type="video/mp4"/>
+         <track default="true" kind="subtitles" label="en" src="10. C2 L4 A07 Local Planning V4-DsUE1rYvRyw.en.vtt" srclang="en"/>
+        </video>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+         <p>
+          Local Planning
+         </p>
+        </h3>
+        <div>
+         <form>
+          <fieldset>
+           <legend>
+            <p>
+             What are the reasons you might choose to repeatedly search a local volume around your vehicle for a high-resolution, possibly  3D plan but only run your global planner once at low-resolution and potentially in 2D?
+            </p>
+           </legend>
+          </fieldset>
+          <div>
+           <input id="a1520373164535" name="559012" type="checkbox" value="a1520373164535"/>
+           <label for="a1520373164535">
+            <p>
+             You can usually assume that your map of the environment is roughly correct and so can serve as a way to make a coarse plan from start to goal.
+            </p>
+           </label>
+          </div>
+          <div>
+           <input id="a1520373308174" name="559012" type="checkbox" value="a1520373308174"/>
+           <label for="a1520373308174">
+            <p>
+             Environments change and even if your map was correct yesterday, it might not be today, so replanning over a local volume to check for unmapped obstacles may be necessary.
+            </p>
+           </label>
+          </div>
+          <div>
+           <input id="a1520373309101" name="559012" type="checkbox" value="a1520373309101"/>
+           <label for="a1520373309101">
+            <p>
+             Dynamic obstacles, like other flying vehicles, may appear at any time so constant replanning over a local volume may be necessary.
+            </p>
+           </label>
+          </div>
+          <div>
+           <input id="a1520373311748" name="559012" type="checkbox" value="a1520373311748"/>
+           <label for="a1520373311748">
+            <p>
+             Sensor errors or other factors like getting blown off course by wind may mean that the plan you made just a moment ago is no longer valid over the local volume, so you need to replan.
+            </p>
+           </label>
+          </div>
+         </form>
+         <details>
+          <summary>
+           <strong>
+            SOLUTION:
+           </strong>
+          </summary>
+          <ul>
+           <li>
+            You can usually assume that your map of the environment is roughly correct and so can serve as a way to make a coarse plan from start to goal.
+           </li>
+           <li>
+            Environments change and even if your map was correct yesterday, it might not be today, so replanning over a local volume to check for unmapped obstacles may be necessary.
+           </li>
+           <li>
+            Dynamic obstacles, like other flying vehicles, may appear at any time so constant replanning over a local volume may be necessary.
+           </li>
+           <li>
+            Sensor errors or other factors like getting blown off course by wind may mean that the plan you made just a moment ago is no longer valid over the local volume, so you need to replan.
+           </li>
+          </ul>
+         </details>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+      </div>
+      <div class="col-12">
+       <p class="text-right">
+        <a class="btn btn-outline-primary mt-4" href="11. Receding Horizon.html" role="button">
+         Next Concept
+        </a>
+       </p>
+      </div>
+     </div>
+    </main>
+    <footer class="footer">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <p class="text-center">
+         udacity2.0 If you need the newest courses Plase add me wechat: udacity6
+        </p>
+       </div>
+      </div>
+     </div>
+    </footer>
+   </div>
+  </div>
+  <script src="../assets/js/jquery-3.3.1.min.js">
+  </script>
+  <script src="../assets/js/plyr.polyfilled.min.js">
+  </script>
+  <script src="../assets/js/bootstrap.min.js">
+  </script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js">
+  </script>
+  <script src="../assets/js/katex.min.js">
+  </script>
+  <script>
+   // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('10. Local Planning')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+ </body>
+</html>

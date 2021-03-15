@@ -1,0 +1,91 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.810
+Here, we have a vehicle inclined at some angle phi.
+
+00:00:03.810 --> 00:00:07.140
+And note, when I say it's inclined at some angle,
+
+00:00:07.139 --> 00:00:11.894
+I'm saying that the vehicle is inclined with respect to the world reference frame.
+
+00:00:11.894 --> 00:00:15.089
+And the reference frame has a z-axis which points
+
+00:00:15.089 --> 00:00:18.660
+downwards and a y-axis that points to the right.
+
+00:00:18.660 --> 00:00:21.600
+And that means that the thrust vector makes
+
+00:00:21.600 --> 00:00:25.865
+an angle with the vertical axis of the world frame.
+
+00:00:25.864 --> 00:00:29.169
+Now, we want to decompose this vector into
+
+00:00:29.170 --> 00:00:31.420
+vertical and horizontal components in
+
+00:00:31.420 --> 00:00:35.065
+the directions of the coordinate axis of our world frame.
+
+00:00:35.064 --> 00:00:37.359
+That will look like this.
+
+00:00:37.359 --> 00:00:40.075
+Now, since this is a right angle,
+
+00:00:40.075 --> 00:00:42.880
+we can use the tools of trigonometry to
+
+00:00:42.880 --> 00:00:47.515
+solve for the horizontal and the vertical components of the thrust.
+
+00:00:47.515 --> 00:00:50.484
+The way we do that is by writing out
+
+00:00:50.484 --> 00:00:55.810
+trigonometric relationships and then solving for what we don't know.
+
+00:00:55.810 --> 00:00:59.679
+So, for example, I know that the sine of phi is equal to
+
+00:00:59.679 --> 00:01:03.795
+the opposite side divided by the hypotenuse,
+
+00:01:03.795 --> 00:01:09.465
+which in this case, it's the horizontal component of force divided by the total force.
+
+00:01:09.465 --> 00:01:13.770
+We can solve this equation to find that the horizontal component of
+
+00:01:13.769 --> 00:01:19.655
+thrust is just the total thrust times the sine of the angle phi.
+
+00:01:19.655 --> 00:01:24.879
+We can apply similar reasoning to find that the vertical component of
+
+00:01:24.879 --> 00:01:29.799
+thrust is just the total thrust times the cosine of phi.
+
+00:01:29.799 --> 00:01:34.479
+It's worth noting that we worked exclusively in the world frame here.
+
+00:01:34.480 --> 00:01:37.990
+And generally, we can figure out this dynamics in
+
+00:01:37.989 --> 00:01:41.485
+two dimension without having to work in the body frame,
+
+00:01:41.486 --> 00:01:46.870
+which, remember, is the coordinate frame that's fixed to the vehicle body.
+
+00:01:46.870 --> 00:01:50.680
+When we get to three-dimensional dynamics in the fourth lesson,
+
+00:01:50.680 --> 00:01:52.920
+that will no longer be the case.
+

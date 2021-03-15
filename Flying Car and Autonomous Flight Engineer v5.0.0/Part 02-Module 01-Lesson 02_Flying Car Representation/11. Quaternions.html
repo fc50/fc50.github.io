@@ -1,0 +1,317 @@
+<!-- udacimak v1.4.4 -->
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="ie=edge" http-equiv="X-UA-Compatible"/>
+  <title>
+   Quaternions
+  </title>
+  <link href="../assets/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="../assets/css/plyr.css" rel="stylesheet"/>
+  <link href="../assets/css/katex.min.css" rel="stylesheet"/>
+  <link href="../assets/css/jquery.mCustomScrollbar.min.css" rel="stylesheet"/>
+  <link href="../assets/css/styles.css" rel="stylesheet"/>
+  <link href="../assets/img/udacimak.png" rel="shortcut icon" type="image/png">
+  </link>
+ </head>
+ <body>
+  <div class="wrapper">
+   <nav id="sidebar">
+    <div class="sidebar-header">
+     <h3>
+      Flying Car Representation
+     </h3>
+    </div>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled components">
+     <li class="">
+      <a href="01. Sebastian Introduction.html">
+       01. Sebastian Introduction
+      </a>
+     </li>
+     <li class="">
+      <a href="02. Introduction.html">
+       02. Introduction
+      </a>
+     </li>
+     <li class="">
+      <a href="03. Geodetic Frame.html">
+       03. Geodetic Frame
+      </a>
+     </li>
+     <li class="">
+      <a href="04. ECEF Frame.html">
+       04. ECEF Frame
+      </a>
+     </li>
+     <li class="">
+      <a href="05. Geodetic to NED Exercise.html">
+       05. Geodetic to NED Exercise
+      </a>
+     </li>
+     <li class="">
+      <a href="06. Body Frame.html">
+       06. Body Frame
+      </a>
+     </li>
+     <li class="">
+      <a href="07. Euler Angles.html">
+       07. Euler Angles
+      </a>
+     </li>
+     <li class="">
+      <a href="08. Gimbal Lock.html">
+       08. Gimbal Lock
+      </a>
+     </li>
+     <li class="">
+      <a href="09. Rotation Matrices.html">
+       09. Rotation Matrices
+      </a>
+     </li>
+     <li class="">
+      <a href="10. Euler Rotations Exercise.html">
+       10. Euler Rotations Exercise
+      </a>
+     </li>
+     <li class="">
+      <a href="11. Quaternions.html">
+       11. Quaternions
+      </a>
+     </li>
+     <li class="">
+      <a href="12. Quaternion Exercise.html">
+       12. Quaternion Exercise
+      </a>
+     </li>
+     <li class="">
+      <a href="13. Motions as Transformations.html">
+       13. Motions as Transformations
+      </a>
+     </li>
+     <li class="">
+      <a href="14. Configuration Space.html">
+       14. Configuration Space
+      </a>
+     </li>
+     <li class="">
+      <a href="15. Configuration Space Exercise.html">
+       15. Configuration Space Exercise
+      </a>
+     </li>
+     <li class="">
+      <a href="16. Summary.html">
+       16. Summary
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+   </nav>
+   <div id="content">
+    <header class="container-fluild header">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <div class="align-items-middle">
+         <button class="btn btn-toggle-sidebar" id="sidebarCollapse" type="button">
+          <div>
+          </div>
+          <div>
+          </div>
+          <div>
+          </div>
+         </button>
+         <h1 style="display: inline-block">
+          11. Quaternions
+         </h1>
+        </div>
+       </div>
+      </div>
+     </div>
+    </header>
+    <main class="container">
+     <div class="row">
+      <div class="col-12">
+       <div class="ud-atom">
+        <h3>
+         <p>
+          C2 L2 A08 Quaternions V2
+         </p>
+        </h3>
+        <video controls="">
+         <source src="11. C2 L2 A08 Quaternions V2-Jwelviv1ZNY.mp4" type="video/mp4"/>
+         <track default="true" kind="subtitles" label="en" src="11. C2 L2 A08 Quaternions V2-Jwelviv1ZNY.en.vtt" srclang="en"/>
+        </video>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h2 id="quaternion-summary">
+          Quaternion Summary
+         </h2>
+         <p>
+          The Quaternion is another way of representing 3 dimension orientation. Instead of using three Euler Angles which describe roll, pitch, and yaw, the quaternion uses four numbers (which we label
+          <span class="mathquill ud-math">
+           a, b, c, d
+          </span>
+          ).
+         </p>
+         <p>
+          These numbers don't have the same intuitive significance as the Euler Angles, but they can also be used to unambiguously represent orientations and rotations in three dimensions.
+         </p>
+         <p>
+          You can convert from one representation to the other using the following math:
+         </p>
+         <h4 id="quaternion-to-euler">
+          Quaternion to Euler
+         </h4>
+         <div class="mathquill">
+          \begin{bmatrix}
+\phi \\ 
+\theta \\ 
+\psi
+\end{bmatrix}
+=
+\begin{bmatrix}
+\tan^{-1}  \frac{2(ab+cd)}{1 - 2(b^2+c^2)}  \\ 
+\sin^{-1} 2(ac-db)\\ 
+\tan^{-1}  \frac{2(ad+bc)}{1 - 2(c^2+d^2)} 
+\end{bmatrix}
+         </div>
+         <h4 id="euler-to-quaternion">
+          Euler to Quaternion
+         </h4>
+         <div class="mathquill">
+          {\begin{aligned}
+\begin{bmatrix}
+a\\ 
+b\\ 
+c\\ 
+d
+\end{bmatrix}
+
+ &amp;={\begin{bmatrix}\cos(\psi /2)\\0\\0\\\sin(\psi /2)\end{bmatrix}}{\begin{bmatrix}\cos(\theta /2)\\0\\\sin(\theta /2)\\0\end{bmatrix}}{\begin{bmatrix}\cos(\phi /2)\\\sin(\phi /2)\\0\\0\end{bmatrix}}\\&amp;={\begin{bmatrix}\cos(\phi /2)\cos(\theta /2)\cos(\psi /2)+\sin(\phi /2)\sin(\theta /2)\sin(\psi /2)\\\sin(\phi /2)\cos(\theta /2)\cos(\psi /2)-\cos(\phi /2)\sin(\theta /2)\sin(\psi /2)\\\cos(\phi /2)\sin(\theta /2)\cos(\psi /2)+\sin(\phi /2)\cos(\theta /2)\sin(\psi /2)\\\cos(\phi /2)\cos(\theta /2)\sin(\psi /2)-\sin(\phi /2)\sin(\theta /2)\cos(\psi /2)\end{bmatrix}}\\\end{aligned}}
+         </div>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+      </div>
+      <div class="col-12">
+       <p class="text-right">
+        <a class="btn btn-outline-primary mt-4" href="12. Quaternion Exercise.html" role="button">
+         Next Concept
+        </a>
+       </p>
+      </div>
+     </div>
+    </main>
+    <footer class="footer">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <p class="text-center">
+         udacity2.0 If you need the newest courses Plase add me wechat: udacity6
+        </p>
+       </div>
+      </div>
+     </div>
+    </footer>
+   </div>
+  </div>
+  <script src="../assets/js/jquery-3.3.1.min.js">
+  </script>
+  <script src="../assets/js/plyr.polyfilled.min.js">
+  </script>
+  <script src="../assets/js/bootstrap.min.js">
+  </script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js">
+  </script>
+  <script src="../assets/js/katex.min.js">
+  </script>
+  <script>
+   // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('11. Quaternions')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+ </body>
+</html>

@@ -1,0 +1,145 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:01.560
+At the end of the day,
+
+00:00:01.560 --> 00:00:03.360
+it's tough to get around the problems and
+
+00:00:03.360 --> 00:00:06.285
+complexity of representing 3D geometry using a grid,
+
+00:00:06.285 --> 00:00:08.160
+and we saw this in 2D as well.
+
+00:00:08.160 --> 00:00:10.830
+But remember from your work in two dimensions that you have
+
+00:00:10.830 --> 00:00:13.470
+graphs as another option for representing your search space,
+
+00:00:13.470 --> 00:00:17.430
+and while they may not capture every detail of the geometry of the world,
+
+00:00:17.430 --> 00:00:20.175
+they can provide a more efficient way of expressing
+
+00:00:20.175 --> 00:00:24.765
+the connectivity of free-space that allows you to get from one place to another.
+
+00:00:24.765 --> 00:00:26.265
+In the previous lesson,
+
+00:00:26.265 --> 00:00:31.950
+you saw how to use the medial axis transform to extract a graph, and in principle,
+
+00:00:31.950 --> 00:00:37.335
+you could do the same thing in 3D but that would require you to first build a 3D grid,
+
+00:00:37.335 --> 00:00:39.585
+and that's the thing we're trying to avoid doing.
+
+00:00:39.585 --> 00:00:42.000
+So what's the alternative?
+
+00:00:42.000 --> 00:00:44.480
+Well, while building an explicit model of
+
+00:00:44.480 --> 00:00:47.630
+the free part of the configuration space can be quite expensive,
+
+00:00:47.630 --> 00:00:53.315
+it's surprisingly cheap to evaluate if any given state is feasible or infeasible.
+
+00:00:53.315 --> 00:00:57.590
+Given a description of the polyhedron representing a particular obstacle,
+
+00:00:57.590 --> 00:01:02.575
+it's not hard to evaluate whether a given state is inside the obstacle or not.
+
+00:01:02.575 --> 00:01:07.550
+With that, the surprisingly effective strategy is to sample states at random,
+
+00:01:07.550 --> 00:01:09.755
+then check to see if these samples like
+
+00:01:09.755 --> 00:01:13.565
+inside obstacles and keep track of all the states that are in free space.
+
+00:01:13.565 --> 00:01:15.420
+Let's look at an example.
+
+00:01:15.420 --> 00:01:18.340
+Here is my environment and here are some obstacles,
+
+00:01:18.340 --> 00:01:21.080
+I can scatter a bunch of points randomly throughout
+
+00:01:21.080 --> 00:01:25.615
+the environment that represent candidate states I need to evaluate.
+
+00:01:25.615 --> 00:01:27.770
+I'll throw out all the states that are
+
+00:01:27.770 --> 00:01:31.460
+inside obstacles and what I'm left with is a set of states that could
+
+00:01:31.460 --> 00:01:33.380
+function as nodes in a graph of
+
+00:01:33.380 --> 00:01:37.565
+my search space without having had to explicitly construct a grid.
+
+00:01:37.565 --> 00:01:40.790
+In general, figuring out whether a point in
+
+00:01:40.790 --> 00:01:44.570
+3D space is in collision with obstacles is not a trivial problem,
+
+00:01:44.570 --> 00:01:47.480
+but what we'll do here is take advantage of the fact
+
+00:01:47.480 --> 00:01:50.380
+that in the two-and-a-half-D map you'll be using in the project,
+
+00:01:50.380 --> 00:01:56.200
+the polyhedra are represented as polygons in 2D with an associated height.
+
+00:01:56.200 --> 00:01:58.905
+So for a given sample,
+
+00:01:58.905 --> 00:02:02.010
+X, Y, Z, you can check to see if the X,
+
+00:02:02.010 --> 00:02:04.670
+Y component lies within the ground plane polygon,
+
+00:02:04.670 --> 00:02:08.590
+and if so whether the Z component is above the height of the obstacle.
+
+00:02:08.590 --> 00:02:12.770
+If the point is not inside any of the obstacle ground plane polygons,
+
+00:02:12.770 --> 00:02:16.340
+or if it's inside the ground plane polygon of an obstacle,
+
+00:02:16.340 --> 00:02:19.025
+but the Z component is above the height of that obstacle,
+
+00:02:19.025 --> 00:02:22.355
+then you know you're okay and the state lies in free space.
+
+00:02:22.355 --> 00:02:25.520
+Otherwise, you know, that point is not feasible.
+
+00:02:25.520 --> 00:02:27.140
+In the next exercise,
+
+00:02:27.140 --> 00:02:29.840
+you'll get a chance to implement random sampling of
+
+00:02:29.840 --> 00:02:33.570
+an environment using a two-and-a-half-D map representation.
+

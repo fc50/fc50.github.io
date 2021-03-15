@@ -1,0 +1,474 @@
+<!-- udacimak v1.4.4 -->
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="ie=edge" http-equiv="X-UA-Compatible"/>
+  <title>
+   Geodetic to NED Exercise
+  </title>
+  <link href="../assets/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="../assets/css/plyr.css" rel="stylesheet"/>
+  <link href="../assets/css/katex.min.css" rel="stylesheet"/>
+  <link href="../assets/css/jquery.mCustomScrollbar.min.css" rel="stylesheet"/>
+  <link href="../assets/css/styles.css" rel="stylesheet"/>
+  <link href="../assets/img/udacimak.png" rel="shortcut icon" type="image/png">
+  </link>
+ </head>
+ <body>
+  <div class="wrapper">
+   <nav id="sidebar">
+    <div class="sidebar-header">
+     <h3>
+      Flying Car Representation
+     </h3>
+    </div>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled components">
+     <li class="">
+      <a href="01. Sebastian Introduction.html">
+       01. Sebastian Introduction
+      </a>
+     </li>
+     <li class="">
+      <a href="02. Introduction.html">
+       02. Introduction
+      </a>
+     </li>
+     <li class="">
+      <a href="03. Geodetic Frame.html">
+       03. Geodetic Frame
+      </a>
+     </li>
+     <li class="">
+      <a href="04. ECEF Frame.html">
+       04. ECEF Frame
+      </a>
+     </li>
+     <li class="">
+      <a href="05. Geodetic to NED Exercise.html">
+       05. Geodetic to NED Exercise
+      </a>
+     </li>
+     <li class="">
+      <a href="06. Body Frame.html">
+       06. Body Frame
+      </a>
+     </li>
+     <li class="">
+      <a href="07. Euler Angles.html">
+       07. Euler Angles
+      </a>
+     </li>
+     <li class="">
+      <a href="08. Gimbal Lock.html">
+       08. Gimbal Lock
+      </a>
+     </li>
+     <li class="">
+      <a href="09. Rotation Matrices.html">
+       09. Rotation Matrices
+      </a>
+     </li>
+     <li class="">
+      <a href="10. Euler Rotations Exercise.html">
+       10. Euler Rotations Exercise
+      </a>
+     </li>
+     <li class="">
+      <a href="11. Quaternions.html">
+       11. Quaternions
+      </a>
+     </li>
+     <li class="">
+      <a href="12. Quaternion Exercise.html">
+       12. Quaternion Exercise
+      </a>
+     </li>
+     <li class="">
+      <a href="13. Motions as Transformations.html">
+       13. Motions as Transformations
+      </a>
+     </li>
+     <li class="">
+      <a href="14. Configuration Space.html">
+       14. Configuration Space
+      </a>
+     </li>
+     <li class="">
+      <a href="15. Configuration Space Exercise.html">
+       15. Configuration Space Exercise
+      </a>
+     </li>
+     <li class="">
+      <a href="16. Summary.html">
+       16. Summary
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+   </nav>
+   <div id="content">
+    <header class="container-fluild header">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <div class="align-items-middle">
+         <button class="btn btn-toggle-sidebar" id="sidebarCollapse" type="button">
+          <div>
+          </div>
+          <div>
+          </div>
+          <div>
+          </div>
+         </button>
+         <h1 style="display: inline-block">
+          05. Geodetic to NED Exercise
+         </h1>
+        </div>
+       </div>
+      </div>
+     </div>
+    </header>
+    <main class="container">
+     <div class="row">
+      <div class="col-12">
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h1 id="geodetic-to-ned">
+          Geodetic to NED
+         </h1>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <figure class="figure">
+          <img alt="" class="img img-fluid" src="img/03-ecef-frame-1718-v1.png"/>
+          <figcaption class="figure-caption">
+          </figcaption>
+         </figure>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <p>
+          In general, converting between spherical and Cartesian coordinates is a little tricky, but in this exercise we're going to make things easy by using a Python library called
+          <a href="https://pypi.python.org/pypi/utm" rel="noopener noreferrer" target="_blank">
+           utm
+          </a>
+          . UTM stands for
+          <a href="https://en.wikipedia.org/wiki/Universal_Transverse_Mercator_coordinate_system" rel="noopener noreferrer" target="_blank">
+           Universal Transverse Mercator
+          </a>
+          and it's a common coordinate system used in all kinds of mapping applications for describing positions on the earth in Cartesian coordinates.
+         </p>
+         <p>
+          For the projects in this program, you won't be particularly concerned with the actual UTM coordinates of your vehicle, but rather, the difference in your position, or the position of some obstacle relative to a "global home" position or origin.  In principle, you could define your global home position to be anywhere, but it usually makes the most sense to define home as either where your vehicle starts off from or some other local home base position.
+         </p>
+         <p>
+          The UTM system divides the surface of the Earth into a number of zones that look like this:
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <figure class="figure">
+          <img alt="" class="img img-fluid" src="img/utm-zones.jpg"/>
+          <figcaption class="figure-caption">
+          </figcaption>
+         </figure>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <p>
+          There are 60 numbered UTM zones covering the entire globe in the east-west direction and 24 zones labeled with letters of the alphabet from south to north. UTM coordinates are in units of metres, and your position within any zone is given as
+          <a href="https://en.wikipedia.org/wiki/Easting_and_northing" rel="noopener noreferrer" target="_blank">
+           "eastings" and "northings"
+          </a>
+          , which you can think of as your position in metres along the east-west and north-south axes, respectively.
+         </p>
+         <p>
+          With the Python
+          <code>
+           utm
+          </code>
+          library, you can quickly find the zone number and letter as well as easting and northing for a particular latitude and longitude (given in decimal degrees) like this:
+         </p>
+         <pre><code class="python language-python">import utm
+(easting, northing, zone_number, zone_letter) = utm.from_latlon(latitude, longitude)</code></pre>
+         <p>
+          Similarly, you can convert from a UTM position back to latitude and longitude:
+         </p>
+         <pre><code class="python language-python">(latitude, longitude) = utm.to_latlon(easting, northing, zone_number, zone_letter)</code></pre>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+         <p>
+          Decimal Degrees Precision
+         </p>
+        </h3>
+        <div>
+         <form>
+          <fieldset>
+           <legend>
+            <p>
+             At the equator, the distance on the surface of the Earth corresponding to one degree of latitude and one degree of longitude is the same, and runs a little more than 100 km / degree. If you need to retain an accuracy of less than 1 meter in your geodetic coordinates, how many significant figures should you carry beyond the decimal point?
+            </p>
+           </legend>
+          </fieldset>
+          <div>
+           <input id="a1519001524330" name="550526" type="radio" value="a1519001524330"/>
+           <label for="a1519001524330">
+            <p>
+             3 (0.001)
+            </p>
+           </label>
+          </div>
+          <div>
+           <input id="a1519264224682" name="550526" type="radio" value="a1519264224682"/>
+           <label for="a1519264224682">
+            <p>
+             4 (0.0001)
+            </p>
+           </label>
+          </div>
+          <div>
+           <input id="a1519264225761" name="550526" type="radio" value="a1519264225761"/>
+           <label for="a1519264225761">
+            <p>
+             5 (0.00001)
+            </p>
+           </label>
+          </div>
+          <div>
+           <input id="a1519264245617" name="550526" type="radio" value="a1519264245617"/>
+           <label for="a1519264245617">
+            <p>
+             6 (0.000001)
+            </p>
+           </label>
+          </div>
+         </form>
+         <details>
+          <summary>
+           <strong>
+            SOLUTION:
+           </strong>
+          </summary>
+          6 (0.000001)
+         </details>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h3 id="geodetic-to-ned-exercise">
+          Geodetic to NED Exercise
+         </h3>
+         <p>
+          Now that you've seen the fundamentals of coordinate systems, it's your turn to implement a
+          <code>
+           global_to_local()
+          </code>
+          function that converts from global geodetic (longitude, latitude, altitude) to UTM (easting, northing, zone_number, zone_letter) and then to local NED (north, east, down). You will also implement the
+          <code>
+           local_to_global()
+          </code>
+          function that does the opposite.
+         </p>
+         <p>
+          For the purposes of this exercise, we will assume that all positions are in the same UTM zone. So when we convert from geodetic to NED, you can simply ignore the zone number and letter. But keep in mind that in order to go back to geodetic coordinates from NED you need to first convert to UTM and specify the zone number and letter as well as actual eastings and northings in the zone!
+         </p>
+         <p>
+          To convert from UTM to local NED, you will take the north and east differences between the current UTM and the "home" position. You can assume that the zero position of the "altitude" and "down" axes correspond to the same place along the z-axis, so the transformation of that coordinate just requires multiplying by -1.
+         </p>
+         <p>
+          Good luck! You can check out
+          <a href="https://github.com/udacity/udacidrone/blob/master/udacidrone/frame_utils.py" rel="noopener noreferrer" target="_blank">
+           how this is implemented in the Udacidrone API
+          </a>
+          , and to have a peek at our solution scroll to the link at the bottom of the notebook.
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div class="jumbotron">
+         <h3>
+          Workspace
+         </h3>
+         <p class="lead">
+          This section contains either a workspace (it can be a
+          <a href="http://jupyter.org/" target="_blank">
+           Jupyter
+      Notebook
+          </a>
+          workspace or an online code editor work space, etc.) and it cannot be automatically downloaded to be
+    generated here. Please access the classroom with your account and manually download the workspace to your local
+    machine. Note that for some courses, Udacity upload the workspace files onto
+          <a href="https://github.com/udacity" target="_blank">
+           https://github.com/udacity
+          </a>
+          , so you may be able to download them there.
+         </p>
+         <h4>
+          Workspace Information:
+         </h4>
+         <ul>
+          <li>
+           <strong>
+            Default file path:
+           </strong>
+          </li>
+          <li>
+           <strong>
+            Workspace type:
+           </strong>
+           jupyter
+          </li>
+          <li>
+           <strong>
+            Opened files (when workspace is loaded):
+           </strong>
+           n/a
+          </li>
+         </ul>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+      </div>
+      <div class="col-12">
+       <p class="text-right">
+        <a class="btn btn-outline-primary mt-4" href="06. Body Frame.html" role="button">
+         Next Concept
+        </a>
+       </p>
+      </div>
+     </div>
+    </main>
+    <footer class="footer">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <p class="text-center">
+         udacity2.0 If you need the newest courses Plase add me wechat: udacity6
+        </p>
+       </div>
+      </div>
+     </div>
+    </footer>
+   </div>
+  </div>
+  <script src="../assets/js/jquery-3.3.1.min.js">
+  </script>
+  <script src="../assets/js/plyr.polyfilled.min.js">
+  </script>
+  <script src="../assets/js/bootstrap.min.js">
+  </script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js">
+  </script>
+  <script src="../assets/js/katex.min.js">
+  </script>
+  <script>
+   // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('05. Geodetic to NED Exercise')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+ </body>
+</html>

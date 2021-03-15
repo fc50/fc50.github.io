@@ -1,0 +1,479 @@
+<!-- udacimak v1.4.4 -->
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="ie=edge" http-equiv="X-UA-Compatible"/>
+  <title>
+   Bresenham Exercise
+  </title>
+  <link href="../assets/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="../assets/css/plyr.css" rel="stylesheet"/>
+  <link href="../assets/css/katex.min.css" rel="stylesheet"/>
+  <link href="../assets/css/jquery.mCustomScrollbar.min.css" rel="stylesheet"/>
+  <link href="../assets/css/styles.css" rel="stylesheet"/>
+  <link href="../assets/img/udacimak.png" rel="shortcut icon" type="image/png">
+  </link>
+ </head>
+ <body>
+  <div class="wrapper">
+   <nav id="sidebar">
+    <div class="sidebar-header">
+     <h3>
+      From Grids to Graphs
+     </h3>
+    </div>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled components">
+     <li class="">
+      <a href="01. Sebastian Introduction.html">
+       01. Sebastian Introduction
+      </a>
+     </li>
+     <li class="">
+      <a href="02. Introduction to Graphs.html">
+       02. Introduction to Graphs
+      </a>
+     </li>
+     <li class="">
+      <a href="03. Waypoint Extraction.html">
+       03. Waypoint Extraction
+      </a>
+     </li>
+     <li class="">
+      <a href="04. Collinearity.html">
+       04. Collinearity
+      </a>
+     </li>
+     <li class="">
+      <a href="05. Collinearity Exercise.html">
+       05. Collinearity Exercise
+      </a>
+     </li>
+     <li class="">
+      <a href="06. Ray Tracing.html">
+       06. Ray Tracing
+      </a>
+     </li>
+     <li class="">
+      <a href="07. Bresenham.html">
+       07. Bresenham
+      </a>
+     </li>
+     <li class="">
+      <a href="08. Bresenham Exercise.html">
+       08. Bresenham Exercise
+      </a>
+     </li>
+     <li class="">
+      <a href="09. Putting it Together Exercise.html">
+       09. Putting it Together Exercise
+      </a>
+     </li>
+     <li class="">
+      <a href="10. Grids to Graphs.html">
+       10. Grids to Graphs
+      </a>
+     </li>
+     <li class="">
+      <a href="11. Graph Tradeoffs.html">
+       11. Graph Tradeoffs
+      </a>
+     </li>
+     <li class="">
+      <a href="12. Generating Graphs.html">
+       12. Generating Graphs
+      </a>
+     </li>
+     <li class="">
+      <a href="13. Medial Axis Exercise.html">
+       13. Medial Axis Exercise
+      </a>
+     </li>
+     <li class="">
+      <a href="14. Voronoi Graph Exercise.html">
+       14. Voronoi Graph Exercise
+      </a>
+     </li>
+     <li class="">
+      <a href="15. Graph Search Exercise.html">
+       15. Graph Search Exercise
+      </a>
+     </li>
+     <li class="">
+      <a href="16. Deadbands.html">
+       16. Deadbands
+      </a>
+     </li>
+     <li class="">
+      <a href="17. Summary.html">
+       17. Summary
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+   </nav>
+   <div id="content">
+    <header class="container-fluild header">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <div class="align-items-middle">
+         <button class="btn btn-toggle-sidebar" id="sidebarCollapse" type="button">
+          <div>
+          </div>
+          <div>
+          </div>
+          <div>
+          </div>
+         </button>
+         <h1 style="display: inline-block">
+          08. Bresenham Exercise
+         </h1>
+        </div>
+       </div>
+      </div>
+     </div>
+    </header>
+    <main class="container">
+     <div class="row">
+      <div class="col-12">
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h1 id="bresenhams-algorithm">
+          Bresenham's Algorithm
+         </h1>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <figure class="figure">
+          <img alt="" class="img img-fluid" src="img/screen-shot-2018-02-23-at-3.52.54-pm.png"/>
+          <figcaption class="figure-caption">
+          </figcaption>
+         </figure>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <p>
+          The
+          <a href="https://www.cs.helsinki.fi/group/goa/mallinnus/lines/bresenh.html" rel="noopener noreferrer" target="_blank">
+           Bresenham algorithm
+          </a>
+          is a way of computing which cells are intersected by a line using only integer arithmetic.
+         </p>
+         <p>
+          Bresenham developed this algorithm to draw lines in a graphics environment. It is simple, fast and can show which pixels need to be illuminated on a screen to plot a particular line. In our case, the screen is our grid map and the pixels are nodes or grid cells. Because we're using this algorithm for collision detection instead of illuminating pixels, we'll implement it in a slightly different way.
+         </p>
+         <p>
+          Your goal here is to figure out how to get from
+          <span class="mathquill ud-math">
+           p_1 = (x_1, y_1)
+          </span>
+          to
+          <span class="mathquill ud-math">
+           p_2 = (x_2, y_2)
+          </span>
+          by starting at
+          <span class="mathquill ud-math">
+           p_1
+          </span>
+          and moving 1 unit in the x or y direction until you arrive at
+          <span class="mathquill ud-math">
+           p_2
+          </span>
+          . Whether you decide to move vertically or horizontally is determined by your current position with respect to the line connecting
+          <span class="mathquill ud-math">
+           p_1
+          </span>
+          and
+          <span class="mathquill ud-math">
+           p_2
+          </span>
+          . For example, moving from the point (0, 0) to (7, 5) would look like this:
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <figure class="figure">
+          <img alt="Identifying all possible cells in collision with the line" class="img img-fluid" src="img/screen-shot-2018-02-24-at-3.43.29-pm.png"/>
+          <figcaption class="figure-caption">
+           <p>
+            Identifying all possible cells in collision with the line
+           </p>
+          </figcaption>
+         </figure>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <p>
+          The difference between this method and the typical computer graphics implementation is that in computer graphics, it's about drawing lines with pixels rather than collision detection so the cells illuminated end up missing some potential collisions along the way from
+          <span class="mathquill ud-math">
+           p_1
+          </span>
+          to
+          <span class="mathquill ud-math">
+           p_2
+          </span>
+          .
+         </p>
+         <p>
+          There's a
+          <a href="https://pypi.python.org/pypi/bresenham/0.1" rel="noopener noreferrer" target="_blank">
+           Python package called Bresenham
+          </a>
+          that uses the computer graphics method. We can use this package and run the same process of identifying the cells that lie along a line from (0, 0) to (7, 5) as we did above and you'll see that the result looks a bit different:
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <figure class="figure">
+          <img alt="Computer graphics Bresenham method, where some cells in collision may be missed." class="img img-fluid" src="img/screen-shot-2018-02-25-at-12.17.12-pm.png"/>
+          <figcaption class="figure-caption">
+           <p>
+            Computer graphics Bresenham method, where some cells in collision may be missed.
+           </p>
+          </figcaption>
+         </figure>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <p>
+          With this second method, there are cells the line crosses that are not identified in the plot and this is because the restriction of only being able to move one step in either x or y is not imposed here. In other words, diagonal motions are allowed in the computer graphics version of this drawing method.
+         </p>
+         <p>
+          What that means is that if you're using the graphics method, you could potentially miss some cells that are in collision if you're planning a trajectory that flies close to obstacles. This is probably fine if you've padded obstacles with a safety margin in creation of your grid map.
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h3 id="bresenham-exercise">
+          Bresenham Exercise
+         </h3>
+         <p>
+          In this exercise, you'll get a chance to both implement your own version of Bresenham's algorithm as well as play with the Python Bresenham package implementation.  The reason for doing both is that sometimes just using the prebuilt version is fine, but you also need to understand how it can impact your planning solution and how to modify the algorithm to suit your needs if necessary.
+         </p>
+         <p>
+          To keep things relatively simple, in the notebook below you'll implement a method for detecting cells that are in collision with a line from points
+          <span class="mathquill ud-math">
+           p_1 = (x_1, y_1)
+          </span>
+          and
+          <span class="mathquill ud-math">
+           p_2 = (x_2, y_2)
+          </span>
+          , where
+          <span class="mathquill ud-math">
+           x_1 &lt; x_2
+          </span>
+          and
+          <span class="mathquill ud-math">
+           y_1 &lt; y_2
+          </span>
+          .  Extending this method to work with any
+          <span class="mathquill ud-math">
+           p_1
+          </span>
+          and
+          <span class="mathquill ud-math">
+           p_2
+          </span>
+          is left as an extra challenge to you!
+         </p>
+         <p>
+          After that you'll have a chance to play around with the package implementation of Bresenham's algorithm. Follow along with the TODOs in the notebook below and if you get stuck, you can check out our solution by scrolling down to the link at the bottom of the notebook.
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div class="jumbotron">
+         <h3>
+          Workspace
+         </h3>
+         <p class="lead">
+          This section contains either a workspace (it can be a
+          <a href="http://jupyter.org/" target="_blank">
+           Jupyter
+      Notebook
+          </a>
+          workspace or an online code editor work space, etc.) and it cannot be automatically downloaded to be
+    generated here. Please access the classroom with your account and manually download the workspace to your local
+    machine. Note that for some courses, Udacity upload the workspace files onto
+          <a href="https://github.com/udacity" target="_blank">
+           https://github.com/udacity
+          </a>
+          , so you may be able to download them there.
+         </p>
+         <h4>
+          Workspace Information:
+         </h4>
+         <ul>
+          <li>
+           <strong>
+            Default file path:
+           </strong>
+          </li>
+          <li>
+           <strong>
+            Workspace type:
+           </strong>
+           jupyter
+          </li>
+          <li>
+           <strong>
+            Opened files (when workspace is loaded):
+           </strong>
+           n/a
+          </li>
+         </ul>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+      </div>
+      <div class="col-12">
+       <p class="text-right">
+        <a class="btn btn-outline-primary mt-4" href="09. Putting it Together Exercise.html" role="button">
+         Next Concept
+        </a>
+       </p>
+      </div>
+     </div>
+    </main>
+    <footer class="footer">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <p class="text-center">
+         udacity2.0 If you need the newest courses Plase add me wechat: udacity6
+        </p>
+       </div>
+      </div>
+     </div>
+    </footer>
+   </div>
+  </div>
+  <script src="../assets/js/jquery-3.3.1.min.js">
+  </script>
+  <script src="../assets/js/plyr.polyfilled.min.js">
+  </script>
+  <script src="../assets/js/bootstrap.min.js">
+  </script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js">
+  </script>
+  <script src="../assets/js/katex.min.js">
+  </script>
+  <script>
+   // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('08. Bresenham Exercise')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+ </body>
+</html>

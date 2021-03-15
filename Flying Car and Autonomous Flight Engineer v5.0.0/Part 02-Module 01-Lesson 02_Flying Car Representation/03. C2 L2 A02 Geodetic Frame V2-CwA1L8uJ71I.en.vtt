@@ -1,0 +1,97 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.285
+In our investigation of the planning problems so far,
+
+00:00:03.285 --> 00:00:05.519
+we've talked about the fact that different choices of
+
+00:00:05.519 --> 00:00:09.309
+representation can make the problem easier or harder to solve.
+
+00:00:09.310 --> 00:00:12.885
+In this context, one of the most basic questions to consider is,
+
+00:00:12.884 --> 00:00:14.625
+how do you represent the vehicle?
+
+00:00:14.625 --> 00:00:18.780
+The way that you represent location in the world is typically using a coordinate frame.
+
+00:00:18.780 --> 00:00:20.850
+For flying cars, we're actually going to have
+
+00:00:20.850 --> 00:00:23.515
+to keep track of a few different coordinate frames.
+
+00:00:23.515 --> 00:00:25.199
+The first frame you're going to have to keep track
+
+00:00:25.199 --> 00:00:27.390
+of is the one that you're probably most familiar
+
+00:00:27.390 --> 00:00:32.460
+with which is latitude and longitude for specifying a location on the earth.
+
+00:00:32.460 --> 00:00:34.785
+This will be a lot easier to explain if I actually had a globe
+
+00:00:34.784 --> 00:00:38.029
+to show you. Thanks, globe fairy.
+
+00:00:38.030 --> 00:00:40.605
+Latitude and longitude on the globe,
+
+00:00:40.604 --> 00:00:43.504
+they define what's known as the geodetic frame.
+
+00:00:43.505 --> 00:00:45.500
+Of course, for flying cars,
+
+00:00:45.500 --> 00:00:47.710
+we need to keep track of altitude as well.
+
+00:00:47.710 --> 00:00:51.140
+The geodetic frame is just a spherical coordinate system where
+
+00:00:51.140 --> 00:00:55.774
+the typical coordinates are theta and phi are represented by altitude,
+
+00:00:55.774 --> 00:00:58.159
+longitude, and latitude respectively.
+
+00:00:58.159 --> 00:01:01.019
+Altitude, of course, is your height above the earth's surface.
+
+00:01:01.020 --> 00:01:05.540
+And so unlike a typical spherical coordinate system with r equals to zero at the origin,
+
+00:01:05.540 --> 00:01:08.690
+we set altitude to be zero at the surface of the earth.
+
+00:01:08.689 --> 00:01:11.840
+Latitude and longitude then specify
+
+00:01:11.840 --> 00:01:15.049
+your position on that spherical surface and they can be given in degrees,
+
+00:01:15.049 --> 00:01:16.929
+minutes, seconds, or degrees decimals.
+
+00:01:16.930 --> 00:01:19.130
+So, its important to know the units you're working with.
+
+00:01:19.129 --> 00:01:23.030
+It's also important to know the order in which you're being given latitude and longitude.
+
+00:01:23.030 --> 00:01:26.420
+A spherical coordinate system can be a little bit difficult for actually doing
+
+00:01:26.420 --> 00:01:30.484
+motion planning because it's hard to compute distances using angular quantities.
+
+00:01:30.484 --> 00:01:33.170
+So next, we'll convert to a more convenient local frame.
+

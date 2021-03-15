@@ -1,0 +1,106 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:01.598
+By the end of this course,
+
+00:00:01.598 --> 00:00:03.322
+you will understand, in detail,
+
+00:00:03.322 --> 00:00:06.169
+how to command these force thrust vectors to make a quadrotor
+
+00:00:06.169 --> 00:00:09.132
+to do all sorts of amazing things.
+
+00:00:09.132 --> 00:00:11.934
+But before we get into the full three-dimensional case,
+
+00:00:11.935 --> 00:00:14.005
+it will be helpful to start simple,
+
+00:00:14.005 --> 00:00:16.339
+and then add complexity.
+
+00:00:16.339 --> 00:00:18.384
+So with that in mind,
+
+00:00:18.385 --> 00:00:20.215
+let's start very simple.
+
+00:00:20.214 --> 00:00:23.410
+Instead of thinking how a quadrotor moves,
+
+00:00:23.410 --> 00:00:27.847
+let's first think about how a monorotor hovers.
+
+00:00:27.847 --> 00:00:30.487
+In this lesson, and some of the lessons that follow,
+
+00:00:30.487 --> 00:00:32.670
+you'll notice that we occasionally work with
+
+00:00:32.670 --> 00:00:37.770
+different vehicle models to highlight different aspects of the underlying physics.
+
+00:00:37.770 --> 00:00:42.288
+Sometimes we'll work with a full quadrotor moving in three dimensions,
+
+00:00:42.287 --> 00:00:47.919
+but other times we will work with a simpler vehicle which moves in fewer dimensions.
+
+00:00:47.920 --> 00:00:50.304
+The monorotor, as the name implies,
+
+00:00:50.304 --> 00:00:52.104
+has only one rotor,
+
+00:00:52.104 --> 00:00:55.454
+which means there's only one thrust vector to think about.
+
+00:00:55.454 --> 00:00:58.173
+And when a monorotor is hovering,
+
+00:00:58.173 --> 00:01:01.719
+it's in a state called translational equilibrium.
+
+00:01:01.719 --> 00:01:04.959
+When an object is in translational equilibrium,
+
+00:01:04.959 --> 00:01:09.269
+it means it's not experiencing any translational acceleration.
+
+00:01:09.269 --> 00:01:13.060
+A translation is any non-rotational motion.
+
+00:01:13.060 --> 00:01:15.805
+So, zero translational acceleration,
+
+00:01:15.805 --> 00:01:20.479
+just means an object isn't accelerating towards the left or right,
+
+00:01:20.478 --> 00:01:23.489
+or up or down, or forward or backward.
+
+00:01:23.489 --> 00:01:27.875
+The only way an object can be in translational equilibrium,
+
+00:01:27.875 --> 00:01:31.284
+is if the net force on the object is zero.
+
+00:01:31.284 --> 00:01:37.813
+And this means that any upwards force is balanced by an equal downwards force,
+
+00:01:37.813 --> 00:01:42.519
+and likewise, for right left and forward back forces.
+
+00:01:42.519 --> 00:01:46.219
+If the weight of a hovering monorotor like this one
+
+00:01:46.219 --> 00:01:50.307
+results in a force that is equal to 100 Newtons down,
+
+00:01:50.307 --> 00:01:55.000
+what can we say about the total thrust provided by its one rotor.
+

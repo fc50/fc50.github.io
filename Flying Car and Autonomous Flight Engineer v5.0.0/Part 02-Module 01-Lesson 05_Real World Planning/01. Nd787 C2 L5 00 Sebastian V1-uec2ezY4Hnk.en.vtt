@@ -1,0 +1,88 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.075
+You are now for a dose of realism,
+
+00:00:03.075 --> 00:00:08.414
+full disclosure, we made a whole bunch of assumptions relational no correct in reality.
+
+00:00:08.414 --> 00:00:11.250
+One was the assumption of a perfect map.
+
+00:00:11.250 --> 00:00:14.324
+It turns out worlds change.
+
+00:00:14.324 --> 00:00:17.414
+We're going to look into imperfect maps from now on.
+
+00:00:17.414 --> 00:00:21.089
+Second, was assumption of a static environment,
+
+00:00:21.089 --> 00:00:24.839
+we assume that the only thing moving is yourself but in reality,
+
+00:00:24.839 --> 00:00:26.820
+there's other things moving like other planes,
+
+00:00:26.820 --> 00:00:28.859
+or cars, or birds, what have you.
+
+00:00:28.859 --> 00:00:37.034
+Thirdly, we assumed that we had a robot that can completely control its state.
+
+00:00:37.034 --> 00:00:41.984
+Unfortunately, existing robots have what's called holonomic constraints,
+
+00:00:41.984 --> 00:00:43.725
+they can't move at will.
+
+00:00:43.725 --> 00:00:48.855
+Here's an example, my car or your car can move at will forwards and backwards,
+
+00:00:48.854 --> 00:00:50.804
+but it can't move at will left or right.
+
+00:00:50.804 --> 00:00:51.920
+In fact, to go left or right,
+
+00:00:51.920 --> 00:00:54.050
+we have engaged a maneuver that you bring the car
+
+00:00:54.049 --> 00:00:56.599
+back and forth to get the desired motion.
+
+00:00:56.600 --> 00:00:58.565
+Same is true for my friend,
+
+00:00:58.564 --> 00:01:00.210
+the drone, the drone,
+
+00:01:00.210 --> 00:01:02.250
+you might think of can go any direction it wants.
+
+00:01:02.250 --> 00:01:04.375
+But it turns out there is a holonomic constraint,
+
+00:01:04.375 --> 00:01:06.605
+which is if you want to go left,
+
+00:01:06.605 --> 00:01:08.075
+you can't just stay straight.
+
+00:01:08.075 --> 00:01:10.120
+You have to roll yourself,
+
+00:01:10.120 --> 00:01:13.020
+divert the air stream and then you're able to go left.
+
+00:01:13.019 --> 00:01:17.090
+There is a coupling between your left motion and your roll angle.
+
+00:01:17.090 --> 00:01:19.939
+Let's called a holonomic constraint and now we're going
+
+00:01:19.939 --> 00:01:23.730
+to look into systems that have these holonomic constraints.
+

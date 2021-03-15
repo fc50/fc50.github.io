@@ -1,0 +1,58 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:03.930
+So now on to one of my favorite lessons in this nunnery program.
+
+00:00:03.930 --> 00:00:05.580
+It's on control. For one,
+
+00:00:05.580 --> 00:00:07.365
+I'm actually a control freak.
+
+00:00:07.365 --> 00:00:09.180
+But secondly, controls is
+
+00:00:09.180 --> 00:00:14.310
+a fascinating area that you actually make a vehicle physically move.
+
+00:00:14.310 --> 00:00:16.410
+Let me explain to you what's missing.
+
+00:00:16.410 --> 00:00:20.660
+So far, we've assumed that we can build a vehicles from node
+
+00:00:20.660 --> 00:00:25.070
+to node along the graph and they completely ignored the physics of the vehicle,
+
+00:00:25.070 --> 00:00:27.175
+how it actually gets there, what's going to happen?
+
+00:00:27.175 --> 00:00:29.720
+Controls concerned itself with the question,
+
+00:00:29.720 --> 00:00:31.025
+given all these paths,
+
+00:00:31.025 --> 00:00:33.020
+how can we actually activate
+
+00:00:33.020 --> 00:00:36.860
+these various rotors to get the desired effect in a physical space,
+
+00:00:36.860 --> 00:00:38.420
+in a continuous space.
+
+00:00:38.420 --> 00:00:41.410
+To do this, we have to understand physics.
+
+00:00:41.410 --> 00:00:43.320
+It's called vehicle dynamics.
+
+00:00:43.320 --> 00:00:45.495
+We have to understand how our vehicle works,
+
+00:00:45.495 --> 00:00:50.550
+and how spinning up little engines affects the state of the vehicle.
+

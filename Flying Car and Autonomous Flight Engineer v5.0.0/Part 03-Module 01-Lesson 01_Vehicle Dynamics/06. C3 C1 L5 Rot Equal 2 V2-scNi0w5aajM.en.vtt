@@ -1,0 +1,85 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.550
+The monorotor you just saw use
+
+00:00:02.550 --> 00:00:06.975
+some pretty clever control logic to do some remarkable things,
+
+00:00:06.975 --> 00:00:10.080
+but the thing I want you to focus on is the rotation of
+
+00:00:10.080 --> 00:00:14.235
+the monorotor body and where that rotation comes from.
+
+00:00:14.235 --> 00:00:17.520
+In addition to causing a thrust force,
+
+00:00:17.520 --> 00:00:22.935
+a rotating propeller also introduces what's called a "moment" or "torque."
+
+00:00:22.935 --> 00:00:26.550
+So a rotor that's spinning clockwise will produce
+
+00:00:26.550 --> 00:00:30.765
+a moment that causes the body to spin counterclockwise.
+
+00:00:30.765 --> 00:00:32.700
+When we design flying aircraft,
+
+00:00:32.700 --> 00:00:35.585
+we generally don't want the spinning behavior.
+
+00:00:35.585 --> 00:00:38.620
+If you look at commercially available drones,
+
+00:00:38.620 --> 00:00:43.495
+you'll notice they almost always have an even number of rotors.
+
+00:00:43.495 --> 00:00:46.810
+One main reason for this is because it gives us
+
+00:00:46.810 --> 00:00:51.415
+an easy way to get rid of this unwanted rotation of the vehicle body.
+
+00:00:51.415 --> 00:00:53.114
+So with the quadrotor,
+
+00:00:53.114 --> 00:00:56.125
+you'll actually have two different types of rotor plates.
+
+00:00:56.125 --> 00:00:59.605
+One type is meant to provide upward thrust when spinning
+
+00:00:59.605 --> 00:01:02.470
+clockwise and the other type is meant to
+
+00:01:02.470 --> 00:01:05.785
+provide upward thrust when spinning counterclockwise.
+
+00:01:05.785 --> 00:01:09.790
+We then place these propellers onto the quadrotor in a configuration
+
+00:01:09.790 --> 00:01:14.059
+where adjacent rotors always spin in the opposite directions.
+
+00:01:14.059 --> 00:01:16.850
+Then, if we want zero rotation or yaw,
+
+00:01:16.850 --> 00:01:21.050
+we just make sure all the rotors are spinning at the same rate
+
+00:01:21.050 --> 00:01:25.775
+so that clockwise torques exactly balance counterclockwise torques.
+
+00:01:25.775 --> 00:01:29.216
+If we decide we do want the vehicle to yaw,
+
+00:01:29.216 --> 00:01:31.940
+then we adjust the rotational rates so that
+
+00:01:31.940 --> 00:01:37.470
+the clockwise rotors are spinning faster or slower than the counterclockwise ones.
+
