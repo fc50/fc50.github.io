@@ -1,0 +1,148 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.325
+If we assume that our prior distribution is
+
+00:00:02.325 --> 00:00:05.490
+given according to a distribution we can sample from,
+
+00:00:05.490 --> 00:00:08.294
+then we can use Monte Carlo sampling to actually propagate
+
+00:00:08.294 --> 00:00:12.015
+that prior distribution according to the vehicle dynamics.
+
+00:00:12.015 --> 00:00:15.870
+Remember that the vehicle dynamics are given according to a model,
+
+00:00:15.869 --> 00:00:20.294
+say x sub t plus one is equal to g of x sub t,
+
+00:00:20.295 --> 00:00:25.650
+plus W sub t. Where w sub t is noise sampled according to some normal distribution.
+
+00:00:25.649 --> 00:00:29.274
+Basically the status propagated according to some function g,
+
+00:00:29.274 --> 00:00:31.084
+perturbed by some noise.
+
+00:00:31.085 --> 00:00:33.745
+Let's say that we start with a set of samples;
+
+00:00:33.744 --> 00:00:37.625
+x sub t, and we apply the function g to each of those samples.
+
+00:00:37.625 --> 00:00:40.200
+Then the result will be samples drawn from g of
+
+00:00:40.200 --> 00:00:44.810
+x sub t. We see here that we have samples drawn from this initial distribution,
+
+00:00:44.810 --> 00:00:48.125
+which is a Gaussian, with some mean, and some co-variance,
+
+00:00:48.125 --> 00:00:52.429
+and if we propagate each of the samples according to g of x sub t,
+
+00:00:52.429 --> 00:00:55.064
+then we might get something that looks like that.
+
+00:00:55.064 --> 00:01:00.399
+Now this isn't quite what we should get because we also have to add a noise.
+
+00:01:00.399 --> 00:01:04.260
+If we draw a set of noise samples, w sub t,
+
+00:01:04.260 --> 00:01:07.135
+drawn according to a normal with some noise co-variance,
+
+00:01:07.135 --> 00:01:10.325
+and add a noise sample to each of the propagated state samples,
+
+00:01:10.325 --> 00:01:12.840
+we get a new set of samples,
+
+00:01:12.840 --> 00:01:14.525
+X sub t plus one,
+
+00:01:14.525 --> 00:01:19.040
+which is equal to g of x sub t plus W sub t. Now,
+
+00:01:19.040 --> 00:01:21.855
+this example here is a really simple 2D example,
+
+00:01:21.855 --> 00:01:24.465
+but implicit in this is orientation.
+
+00:01:24.465 --> 00:01:28.564
+Let's assume the state vector is composed of x, y, and Theta.
+
+00:01:28.564 --> 00:01:33.424
+We propagate x, y and Theta according to G, which is X sub t,
+
+00:01:33.424 --> 00:01:35.504
+plus cosine Theta sub t,
+
+00:01:35.504 --> 00:01:38.084
+y sub t plus sine Theta sub t,
+
+00:01:38.084 --> 00:01:40.779
+and Theta sub t plus some noise.
+
+00:01:40.780 --> 00:01:43.155
+This 2D plot doesn't show orientation,
+
+00:01:43.155 --> 00:01:47.019
+but we assume that our prior distribution has x and y centered at the origin,
+
+00:01:47.019 --> 00:01:50.679
+with orientation also centered at a mean of Theta equal to zero,
+
+00:01:50.680 --> 00:01:52.500
+with some variance around there.
+
+00:01:52.500 --> 00:01:54.859
+If we propagate all those samples,
+
+00:01:54.859 --> 00:01:57.459
+according to this constant velocity model,
+
+00:01:57.459 --> 00:02:01.179
+we see that the samples basically get propagated to the right.
+
+00:02:01.180 --> 00:02:03.355
+If we modify the prior,
+
+00:02:03.355 --> 00:02:07.365
+so the orientation is sampled uniformly from minus pi to pi,
+
+00:02:07.364 --> 00:02:09.439
+and we then propagate the samples,
+
+00:02:09.439 --> 00:02:13.344
+we see all the samples generally move away from the origin.
+
+00:02:13.344 --> 00:02:16.840
+Remember, that there are no controls here,
+
+00:02:16.840 --> 00:02:20.090
+this is a very simple constant velocity dynamics model,
+
+00:02:20.090 --> 00:02:22.598
+but what you see is that in both of these cases,
+
+00:02:22.598 --> 00:02:24.939
+these are posterior distributions that will be very,
+
+00:02:24.939 --> 00:02:27.895
+very hard to express in a Kalman filter setting.
+
+00:02:27.895 --> 00:02:30.820
+The sampling approach gives us a way to actually
+
+00:02:30.819 --> 00:02:34.599
+capture these very different kinds of distributions.
+
