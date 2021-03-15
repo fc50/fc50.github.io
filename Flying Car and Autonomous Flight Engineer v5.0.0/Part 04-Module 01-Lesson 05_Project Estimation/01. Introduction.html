@@ -1,0 +1,356 @@
+<!-- udacimak v1.4.4 -->
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="ie=edge" http-equiv="X-UA-Compatible"/>
+  <title>
+   Introduction
+  </title>
+  <link href="../assets/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="../assets/css/plyr.css" rel="stylesheet"/>
+  <link href="../assets/css/katex.min.css" rel="stylesheet"/>
+  <link href="../assets/css/jquery.mCustomScrollbar.min.css" rel="stylesheet"/>
+  <link href="../assets/css/styles.css" rel="stylesheet"/>
+  <link href="../assets/img/udacimak.png" rel="shortcut icon" type="image/png">
+  </link>
+ </head>
+ <body>
+  <div class="wrapper">
+   <nav id="sidebar">
+    <div class="sidebar-header">
+     <h3>
+      Project: Estimation
+     </h3>
+    </div>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled components">
+     <li class="">
+      <a href="01. Introduction.html">
+       01. Introduction
+      </a>
+     </li>
+     <li class="">
+      <a href="Project Description - Building an Estimator.html">
+       Project Description - Building an Estimator
+      </a>
+     </li>
+     <li class="">
+      <a href="Project Rubric - Building an Estimator.html">
+       Project Rubric - Building an Estimator
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+   </nav>
+   <div id="content">
+    <header class="container-fluild header">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <div class="align-items-middle">
+         <button class="btn btn-toggle-sidebar" id="sidebarCollapse" type="button">
+          <div>
+          </div>
+          <div>
+          </div>
+          <div>
+          </div>
+         </button>
+         <h1 style="display: inline-block">
+          01. Introduction
+         </h1>
+        </div>
+       </div>
+      </div>
+     </div>
+    </header>
+    <main class="container">
+     <div class="row">
+      <div class="col-12">
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <p>
+          Welcome to the estimation project.  In this project, you will be developing the estimation portion of the controller used in the CPP simulator.  By the end of the project, your simulated quad will be flying with your estimator and your custom controller (from the previous project)!
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h2 id="setup">
+          Setup
+         </h2>
+         <p>
+          This project will continue to use the C++ development environment you set up in the Controls C++ project.
+         </p>
+         <ol>
+          <li>
+           Clone the repository
+          </li>
+         </ol>
+         <pre><code> git clone https://github.com/udacity/FCND-Estimation-CPP.git</code></pre>
+         <ol start="2">
+          <li>
+           <p>
+            Import the code into your IDE like done in the
+            <a href="https://github.com/udacity/FCND-Controls-CPP#development-environment-setup" rel="noopener noreferrer" target="_blank">
+             Controls C++ project
+            </a>
+           </p>
+          </li>
+          <li>
+           <p>
+            You should now be able to compile and run the estimation simulator just as you did in the controls project
+           </p>
+          </li>
+         </ol>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h2 id="project-structure">
+          Project Structure
+         </h2>
+         <p>
+          For this project, you will be interacting with a few more files than before.
+         </p>
+         <ul>
+          <li>
+           <p>
+            The EKF is already partially implemented for you in
+            <code>
+             QuadEstimatorEKF.cpp
+            </code>
+           </p>
+          </li>
+          <li>
+           <p>
+            Parameters for tuning the EKF are in the parameter file
+            <code>
+             QuadEstimatorEKF.txt
+            </code>
+           </p>
+          </li>
+          <li>
+           <p>
+            When you turn on various sensors (the scenarios configure them, e.g.
+            <code>
+             Quad.Sensors += SimIMU, SimMag, SimGPS
+            </code>
+            ), additional sensor plots will become available to see what the simulated sensors measure.
+           </p>
+          </li>
+          <li>
+           <p>
+            The EKF implementation exposes both the estimated state and a number of additional variables. In particular:
+           </p>
+           <ul>
+            <li>
+             <p>
+              <code>
+               Quad.Est.E.X
+              </code>
+              is the error in estimated X position from true value.  More generally, the variables in
+              <code>
+               &lt;vehicle&gt;.Est.E.*
+              </code>
+              are relative errors, though some are combined errors (e.g. MaxEuler).
+             </p>
+            </li>
+            <li>
+             <p>
+              <code>
+               Quad.Est.S.X
+              </code>
+              is the estimated standard deviation of the X state (that is, the square root of the appropriate diagonal variable in the covariance matrix). More generally, the variables in
+              <code>
+               &lt;vehicle&gt;.Est.S.*
+              </code>
+              are standard deviations calculated from the estimator state covariance matrix.
+             </p>
+            </li>
+            <li>
+             <p>
+              <code>
+               Quad.Est.D
+              </code>
+              contains miscellaneous additional debug variables useful in diagnosing the filter. You may or might not find these useful but they were helpful to us in verifying the filter and may give you some ideas if you hit a block.
+             </p>
+            </li>
+           </ul>
+          </li>
+         </ul>
+         <h3 id="config-directory">
+          <code>
+           config
+          </code>
+          Directory
+         </h3>
+         <p>
+          In the
+          <code>
+           config
+          </code>
+          directory, in addition to finding the configuration files for your controller and your estimator, you will also see configuration files for each of the simulations.  For this project, you will be working with simulations 06 through 11 and you may find it insightful to take a look at the configuration for the simulation.
+         </p>
+         <p>
+          As an example, if we look through the configuration file for scenario 07, we see the following parameters controlling the sensor:
+         </p>
+         <pre><code># Sensors
+Quad.Sensors = SimIMU
+# use a perfect IMU
+SimIMU.AccelStd = 0,0,0
+SimIMU.GyroStd = 0,0,0</code></pre>
+         <p>
+          This configuration tells us that the simulator is only using an IMU and the sensor data will have no noise.  You will notice that for each simulator these parameters will change slightly as additional sensors are being used and the noise behavior of the sensors change.
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <p>
+          Now that you have everything set up, you'll be able to dive right into the project!
+         </p>
+         <p>
+          The math that you'll need to implement is explained in the
+          <a href="https://www.overleaf.com/read/vymfngphcccj" rel="noopener noreferrer" target="_blank">
+           Estimation for Quadrotors
+          </a>
+          document that you worked with in the lessons on Kalman Filters. The
+          <strong>
+           Three Dimensional Quad
+          </strong>
+          section should be most helpful.
+         </p>
+         <h3 id="acknowledgment">
+          Acknowledgment
+         </h3>
+         <p>
+          The C++ simulator and project scenarios were largely designed and built by
+          <a href="https://fotokite.com/" rel="noopener noreferrer" target="_blank">
+           Fotokite
+          </a>
+          . Big thanks to the Fotokite team (and Sergei Lupashin in particular) for their great work!
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+      </div>
+      <div class="col-12">
+       <p class="text-right">
+       </p>
+      </div>
+     </div>
+    </main>
+    <footer class="footer">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <p class="text-center">
+         udacity2.0 If you need the newest courses Plase add me wechat: udacity6
+        </p>
+       </div>
+      </div>
+     </div>
+    </footer>
+   </div>
+  </div>
+  <script src="../assets/js/jquery-3.3.1.min.js">
+  </script>
+  <script src="../assets/js/plyr.polyfilled.min.js">
+  </script>
+  <script src="../assets/js/bootstrap.min.js">
+  </script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js">
+  </script>
+  <script src="../assets/js/katex.min.js">
+  </script>
+  <script>
+   // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('01. Introduction')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+ </body>
+</html>
