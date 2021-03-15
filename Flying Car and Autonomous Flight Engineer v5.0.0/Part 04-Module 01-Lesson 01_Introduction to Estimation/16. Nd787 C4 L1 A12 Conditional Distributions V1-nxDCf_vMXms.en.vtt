@@ -1,0 +1,100 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:01.600
+Another useful property of
+
+00:00:01.600 --> 00:00:06.570
+joint random variables is that it's often of extreme interest to find a density of one of
+
+00:00:06.570 --> 00:00:10.919
+the unknown random variables given specific knowledge of other random variables.
+
+00:00:10.919 --> 00:00:15.929
+For instance, is a vehicle moving given the current state of the propulsion system?
+
+00:00:15.929 --> 00:00:20.774
+Written this way we have the Joint distribution p of x and y.
+
+00:00:20.774 --> 00:00:23.909
+But we often want to know what's p of x given y?
+
+00:00:23.910 --> 00:00:25.969
+And that is a conditional distribution.
+
+00:00:25.969 --> 00:00:29.204
+A very useful rule and probability is that
+
+00:00:29.204 --> 00:00:32.519
+p of x given y is equal to the joint divided by the
+
+00:00:32.520 --> 00:00:35.910
+marginal of the conditioning variable that is p of x
+
+00:00:35.909 --> 00:00:39.764
+given y is p of x and y divided by p of y.
+
+00:00:39.765 --> 00:00:41.880
+This rule is called the chain rule.
+
+00:00:41.880 --> 00:00:44.100
+A really useful application is
+
+00:00:44.100 --> 00:00:46.980
+sometimes we want to reverse our conditional probabilities.
+
+00:00:46.979 --> 00:00:51.609
+Recall our thought experiment of the autonomous UAV receiving GPS measurements.
+
+00:00:51.609 --> 00:00:54.089
+Let's call the GPS measurements y,
+
+00:00:54.090 --> 00:00:56.920
+and these measurements are noisy.
+
+00:00:56.920 --> 00:01:03.375
+We could estimate our position x as a conditional probability using p of x given y.
+
+00:01:03.375 --> 00:01:07.064
+And remember this can be read as the probability of position x,
+
+00:01:07.064 --> 00:01:09.254
+given GPS measurements y.
+
+00:01:09.254 --> 00:01:11.069
+If we've acquired a model of
+
+00:01:11.069 --> 00:01:13.229
+the position probability density function
+
+00:01:13.230 --> 00:01:15.960
+given a measurement then we have everything we need,
+
+00:01:15.959 --> 00:01:18.119
+but it's often much easier to obtain
+
+00:01:18.120 --> 00:01:20.770
+a model of the measurement distribution given a position,
+
+00:01:20.769 --> 00:01:22.454
+p of y given x.
+
+00:01:22.454 --> 00:01:25.439
+We can apply the chain rule twice to derive
+
+00:01:25.439 --> 00:01:29.715
+an expression for p of x given y for p of y given x.
+
+00:01:29.715 --> 00:01:31.780
+This is what is known as Bayes rule.
+
+00:01:31.780 --> 00:01:34.260
+And Bayes rule in Bayesian estimation is
+
+00:01:34.260 --> 00:01:37.755
+a foundational concept in estimations of statistics in general.
+
+00:01:37.754 --> 00:01:42.699
+Bayesian techniques have enabled a huge amount of autonomy in a variety of ways.
+

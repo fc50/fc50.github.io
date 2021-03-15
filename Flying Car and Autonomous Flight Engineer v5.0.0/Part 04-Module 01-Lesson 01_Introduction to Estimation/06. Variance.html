@@ -1,0 +1,358 @@
+<!-- udacimak v1.4.4 -->
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="ie=edge" http-equiv="X-UA-Compatible"/>
+  <title>
+   Variance
+  </title>
+  <link href="../assets/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="../assets/css/plyr.css" rel="stylesheet"/>
+  <link href="../assets/css/katex.min.css" rel="stylesheet"/>
+  <link href="../assets/css/jquery.mCustomScrollbar.min.css" rel="stylesheet"/>
+  <link href="../assets/css/styles.css" rel="stylesheet"/>
+  <link href="../assets/img/udacimak.png" rel="shortcut icon" type="image/png">
+  </link>
+ </head>
+ <body>
+  <div class="wrapper">
+   <nav id="sidebar">
+    <div class="sidebar-header">
+     <h3>
+      Introduction to Estimation
+     </h3>
+    </div>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled components">
+     <li class="">
+      <a href="01. Sebastian Introduction.html">
+       01. Sebastian Introduction
+      </a>
+     </li>
+     <li class="">
+      <a href="02. Welcome Back.html">
+       02. Welcome Back
+      </a>
+     </li>
+     <li class="">
+      <a href="03. Intro to Estimation.html">
+       03. Intro to Estimation
+      </a>
+     </li>
+     <li class="">
+      <a href="04. Review of Discrete Probability.html">
+       04. Review of Discrete Probability
+      </a>
+     </li>
+     <li class="">
+      <a href="05. Expected Value.html">
+       05. Expected Value
+      </a>
+     </li>
+     <li class="">
+      <a href="06. Variance.html">
+       06. Variance
+      </a>
+     </li>
+     <li class="">
+      <a href="07. Playing with Probabilities Notebook.html">
+       07. Playing with Probabilities Notebook
+      </a>
+     </li>
+     <li class="">
+      <a href="08. Probability Density Functions.html">
+       08. Probability Density Functions
+      </a>
+     </li>
+     <li class="">
+      <a href="09. Uniform Distribution Notebook.html">
+       09. Uniform Distribution Notebook
+      </a>
+     </li>
+     <li class="">
+      <a href="10. Uniform and Gaussian Distributions.html">
+       10. Uniform and Gaussian Distributions
+      </a>
+     </li>
+     <li class="">
+      <a href="11. Estimating Parameters from Data.html">
+       11. Estimating Parameters from Data
+      </a>
+     </li>
+     <li class="">
+      <a href="12. Multivariate Distributions.html">
+       12. Multivariate Distributions
+      </a>
+     </li>
+     <li class="">
+      <a href="13. 2D Gaussian Notebook.html">
+       13. 2D Gaussian Notebook
+      </a>
+     </li>
+     <li class="">
+      <a href="14. Joint and Marginal Distributions.html">
+       14. Joint and Marginal Distributions
+      </a>
+     </li>
+     <li class="">
+      <a href="15. Correlation and Independence.html">
+       15. Correlation and Independence
+      </a>
+     </li>
+     <li class="">
+      <a href="16. Conditional Distributions.html">
+       16. Conditional Distributions
+      </a>
+     </li>
+     <li class="">
+      <a href="17. Applying Bayes' Rule.html">
+       17. Applying Bayes' Rule
+      </a>
+     </li>
+     <li class="">
+      <a href="18. Approaches to Estimation.html">
+       18. Approaches to Estimation
+      </a>
+     </li>
+     <li class="">
+      <a href="19. Intro to Least Squares.html">
+       19. Intro to Least Squares
+      </a>
+     </li>
+     <li class="">
+      <a href="20. Deriving the Maximum Likelihood Estimator.html">
+       20. Deriving the Maximum Likelihood Estimator
+      </a>
+     </li>
+     <li class="">
+      <a href="21. Fitting a Line with Linear Least Squares.html">
+       21. Fitting a Line with Linear Least Squares
+      </a>
+     </li>
+     <li class="">
+      <a href="22. Least Squares Notebook.html">
+       22. Least Squares Notebook
+      </a>
+     </li>
+     <li class="">
+      <a href="23. Recursive Estimation.html">
+       23. Recursive Estimation
+      </a>
+     </li>
+     <li class="">
+      <a href="24. Recursive Estimation Notebook.html">
+       24. Recursive Estimation Notebook
+      </a>
+     </li>
+     <li class="">
+      <a href="25. The Problem with non-Linearities.html">
+       25. The Problem with non-Linearities
+      </a>
+     </li>
+     <li class="">
+      <a href="26. Calculating the Jacobian.html">
+       26. Calculating the Jacobian
+      </a>
+     </li>
+     <li class="">
+      <a href="27. Non-Linear Least Squares Notebook.html">
+       27. Non-Linear Least Squares Notebook
+      </a>
+     </li>
+     <li class="">
+      <a href="28. Conclusion.html">
+       28. Conclusion
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+   </nav>
+   <div id="content">
+    <header class="container-fluild header">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <div class="align-items-middle">
+         <button class="btn btn-toggle-sidebar" id="sidebarCollapse" type="button">
+          <div>
+          </div>
+          <div>
+          </div>
+          <div>
+          </div>
+         </button>
+         <h1 style="display: inline-block">
+          06. Variance
+         </h1>
+        </div>
+       </div>
+      </div>
+     </div>
+    </header>
+    <main class="container">
+     <div class="row">
+      <div class="col-12">
+       <div class="ud-atom">
+        <h3>
+         <p>
+          Nd787 C4 L1 A05 Variance V1
+         </p>
+        </h3>
+        <video controls="">
+         <source src="06. Nd787 C4 L1 A05 Variance V1-79A0nWd0goY.mp4" type="video/mp4"/>
+         <track default="true" kind="subtitles" label="en" src="06. Nd787 C4 L1 A05 Variance V1-79A0nWd0goY.en.vtt" srclang="en"/>
+        </video>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h3 id="summary-of-terms">
+          Summary of Terms
+         </h3>
+         <p>
+          <strong>
+           Expected Value
+          </strong>
+          - The expected value gives the long-run average value of a repeated probabilistic experiment. Mathematically, the expected value of a random variable X is defined as:
+         </p>
+         <div class="mathquill">
+          E[X] = \bar{x} = \sum x_i p(x_i)
+         </div>
+         <p>
+          <strong>
+           Variance
+          </strong>
+          - The variance of a random variable measures how spread out a set of numbers are from their mean (expected value).
+         </p>
+         <div class="mathquill">
+          E[(X- E[X])^2] = \sigma^2 = \sum (x-\bar{x})^2 p(x)
+         </div>
+         <p>
+          <strong>
+           Standard Deviation
+          </strong>
+          - The standard deviation is a common measure of spread. It's just the square root of the variance.
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+      </div>
+      <div class="col-12">
+       <p class="text-right">
+        <a class="btn btn-outline-primary mt-4" href="07. Playing with Probabilities Notebook.html" role="button">
+         Next Concept
+        </a>
+       </p>
+      </div>
+     </div>
+    </main>
+    <footer class="footer">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <p class="text-center">
+         udacity2.0 If you need the newest courses Plase add me wechat: udacity6
+        </p>
+       </div>
+      </div>
+     </div>
+    </footer>
+   </div>
+  </div>
+  <script src="../assets/js/jquery-3.3.1.min.js">
+  </script>
+  <script src="../assets/js/plyr.polyfilled.min.js">
+  </script>
+  <script src="../assets/js/bootstrap.min.js">
+  </script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js">
+  </script>
+  <script src="../assets/js/katex.min.js">
+  </script>
+  <script>
+   // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('06. Variance')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+ </body>
+</html>
