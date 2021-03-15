@@ -1,0 +1,37 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:02.805
+So now we're going to torture you a bit more,
+
+00:00:02.805 --> 00:00:05.070
+and putting many things together.
+
+00:00:05.070 --> 00:00:08.550
+You learned about rotational matrices in all angles,
+
+00:00:08.550 --> 00:00:10.545
+you learned about Vehicle Physics,
+
+00:00:10.545 --> 00:00:12.585
+and you learned about PID control.
+
+00:00:12.585 --> 00:00:15.150
+So now we're going to put all this math together.
+
+00:00:15.150 --> 00:00:18.780
+You're going to build a real physical model of a real drone,
+
+00:00:18.780 --> 00:00:22.650
+and then you're going to use PID control to control that drone,
+
+00:00:22.650 --> 00:00:27.464
+and the only footnote I have is by the math gets involved,
+
+00:00:27.464 --> 00:00:29.160
+it is actually nothing really new here.
+
+00:00:29.160 --> 00:00:33.490
+You're just putting these pieces together into a single system.
+

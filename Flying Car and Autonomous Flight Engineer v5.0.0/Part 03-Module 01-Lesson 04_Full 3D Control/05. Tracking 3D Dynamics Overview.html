@@ -1,0 +1,424 @@
+<!-- udacimak v1.4.4 -->
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="ie=edge" http-equiv="X-UA-Compatible"/>
+  <title>
+   Tracking 3D Dynamics Overview
+  </title>
+  <link href="../assets/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="../assets/css/plyr.css" rel="stylesheet"/>
+  <link href="../assets/css/katex.min.css" rel="stylesheet"/>
+  <link href="../assets/css/jquery.mCustomScrollbar.min.css" rel="stylesheet"/>
+  <link href="../assets/css/styles.css" rel="stylesheet"/>
+  <link href="../assets/img/udacimak.png" rel="shortcut icon" type="image/png">
+  </link>
+ </head>
+ <body>
+  <div class="wrapper">
+   <nav id="sidebar">
+    <div class="sidebar-header">
+     <h3>
+      Full 3D Control
+     </h3>
+    </div>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled components">
+     <li class="">
+      <a href="01. Sebastian Introduction.html">
+       01. Sebastian Introduction
+      </a>
+     </li>
+     <li class="">
+      <a href="02. Lesson Overview.html">
+       02. Lesson Overview
+      </a>
+     </li>
+     <li class="">
+      <a href="03. Review of 2D Dynamics.html">
+       03. Review of 2D Dynamics
+      </a>
+     </li>
+     <li class="">
+      <a href="04. World vs Body Frames.html">
+       04. World vs Body Frames
+      </a>
+     </li>
+     <li class="">
+      <a href="05. Tracking 3D Dynamics Overview.html">
+       05. Tracking 3D Dynamics Overview
+      </a>
+     </li>
+     <li class="">
+      <a href="06. Notebook Walkthrough.html">
+       06. Notebook Walkthrough
+      </a>
+     </li>
+     <li class="">
+      <a href="07. 3D Drone Part 1 Exercise.html">
+       07. 3D Drone Part 1 Exercise
+      </a>
+     </li>
+     <li class="">
+      <a href="08. Tracking Rotations in 3D.html">
+       08. Tracking Rotations in 3D
+      </a>
+     </li>
+     <li class="">
+      <a href="09. Euler's Equations in a Rotating Frame.html">
+       09. Euler's Equations in a Rotating Frame
+      </a>
+     </li>
+     <li class="">
+      <a href="10. 3D Drone Part 2 Exercise.html">
+       10. 3D Drone Part 2 Exercise
+      </a>
+     </li>
+     <li class="">
+      <a href="11. Integrating PQR Into the World Frame.html">
+       11. Integrating PQR Into the World Frame
+      </a>
+     </li>
+     <li class="">
+      <a href="12. 3D Drone Part 3 Exercise.html">
+       12. 3D Drone Part 3 Exercise
+      </a>
+     </li>
+     <li class="">
+      <a href="13. Summary of 3D Dynamics.html">
+       13. Summary of 3D Dynamics
+      </a>
+     </li>
+     <li class="">
+      <a href="14. Control Knobs for a 3D Quadrotor.html">
+       14. "Control Knobs" for a 3D Quadrotor
+      </a>
+     </li>
+     <li class="">
+      <a href="15. 3D Control Architecture.html">
+       15. 3D Control Architecture
+      </a>
+     </li>
+     <li class="">
+      <a href="16. First vs Second Order Systems.html">
+       16. First vs Second Order Systems
+      </a>
+     </li>
+     <li class="">
+      <a href="17. Understanding Attitude Control Equations.html">
+       17. Understanding Attitude Control Equations
+      </a>
+     </li>
+     <li class="">
+      <a href="18. 3D Drone Part 4 Exercise.html">
+       18. 3D Drone Part 4 Exercise
+      </a>
+     </li>
+     <li class="">
+      <a href="19. Controller Design.html">
+       19. Controller Design
+      </a>
+     </li>
+     <li class="">
+      <a href="20. Controller Design 2.html">
+       20. Controller Design 2
+      </a>
+     </li>
+     <li class="">
+      <a href="21. 3D Drone Part 5 Exercise.html">
+       21. 3D Drone Part 5 Exercise
+      </a>
+     </li>
+     <li class="">
+      <a href="22. Practical Considerations.html">
+       22. Practical Considerations
+      </a>
+     </li>
+     <li class="">
+      <a href="23. From Path Planning to Control.html">
+       23. From Path Planning to Control
+      </a>
+     </li>
+     <li class="">
+      <a href="24. Trajectory Generation Exercise.html">
+       24. Trajectory Generation Exercise
+      </a>
+     </li>
+     <li class="">
+      <a href="25. Polynomial Segmentation Exercise.html">
+       25. Polynomial Segmentation Exercise
+      </a>
+     </li>
+     <li class="">
+      <a href="26. Conclusion.html">
+       26. Conclusion
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+   </nav>
+   <div id="content">
+    <header class="container-fluild header">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <div class="align-items-middle">
+         <button class="btn btn-toggle-sidebar" id="sidebarCollapse" type="button">
+          <div>
+          </div>
+          <div>
+          </div>
+          <div>
+          </div>
+         </button>
+         <h1 style="display: inline-block">
+          05. Tracking 3D Dynamics Overview
+         </h1>
+        </div>
+       </div>
+      </div>
+     </div>
+    </header>
+    <main class="container">
+     <div class="row">
+      <div class="col-12">
+       <div class="ud-atom">
+        <h3>
+         <p>
+          Nd787 C3 L4 A04 Tracking 3D Dynamics Overview V1
+         </p>
+        </h3>
+        <video controls="">
+         <source src="05. Nd787 C3 L4 A04 Tracking 3D Dynamics Overview V1-QxShTrK2vus.mp4" type="video/mp4"/>
+         <track default="true" kind="subtitles" label="en" src="05. Nd787 C3 L4 A04 Tracking 3D Dynamics Overview V1-QxShTrK2vus.en.vtt" srclang="en"/>
+        </video>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h2 id="more-about-pqr">
+          More about p,q,r
+         </h2>
+         <p>
+          These "body rate" variables
+          <span class="mathquill ud-math">
+           p,q,r
+          </span>
+          can be a little confusing. A few things to note about them:
+         </p>
+         <p>
+          <strong>
+           1. The "p" has nothing to do with pitch!
+          </strong>
+         </p>
+         <p>
+          And r has nothing to do with roll!
+         </p>
+         <p>
+          These three letters were just chosen because they occur sequentially in the alphabet, just like x, y, and z. In fact, p gives the angular rotation rate about the x-axis (in the body frame), q gives the rotation rate about the y-axis (body frame) and r gives the rotation rate about the z-axis (again, in the body frame).
+         </p>
+         <p>
+          <strong>
+           2. They aren't the same as the Euler angle rates of change
+           <span class="mathquill ud-math">
+            \dot{\phi}, \dot{\theta}, \dot{\psi}
+           </span>
+          </strong>
+          .
+         </p>
+         <p>
+          While both of these give some sort of angular rate of change, the body rates are calculated in the body frame of the vehicle while the Euler angles are expressed in the world frame.
+         </p>
+         <p>
+          <strong>
+           3. They really are body RATES
+          </strong>
+          !
+         </p>
+         <p>
+          Even though they don't have dots over them. This means that
+          <span class="mathquill ud-math">
+           \dot{p}, \dot{q}, \dot{r}
+          </span>
+          actually express rotational
+          <em>
+           accelerations
+          </em>
+          .
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <form>
+          <fieldset>
+           <legend>
+            <p>
+             What
+             <strong>
+              units
+             </strong>
+             are best associated with p, q, and r?
+            </p>
+           </legend>
+          </fieldset>
+          <div>
+           <input id="a1520988825704" name="562490" type="radio" value="a1520988825704"/>
+           <label for="a1520988825704">
+            <p>
+             <span class="mathquill ud-math">
+              rads
+             </span>
+            </p>
+           </label>
+          </div>
+          <div>
+           <input id="a1520988851287" name="562490" type="radio" value="a1520988851287"/>
+           <label for="a1520988851287">
+            <p>
+             <span class="mathquill ud-math">
+              rads/s
+             </span>
+            </p>
+           </label>
+          </div>
+          <div>
+           <input id="a1520988869271" name="562490" type="radio" value="a1520988869271"/>
+           <label for="a1520988869271">
+            <p>
+             <span class="mathquill ud-math">
+              rads/s^2
+             </span>
+            </p>
+           </label>
+          </div>
+         </form>
+         <details>
+          <summary>
+           <strong>
+            SOLUTION:
+           </strong>
+          </summary>
+          <span class="mathquill">
+           rads/s
+          </span>
+         </details>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+      </div>
+      <div class="col-12">
+       <p class="text-right">
+        <a class="btn btn-outline-primary mt-4" href="06. Notebook Walkthrough.html" role="button">
+         Next Concept
+        </a>
+       </p>
+      </div>
+     </div>
+    </main>
+    <footer class="footer">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <p class="text-center">
+         udacity2.0 If you need the newest courses Plase add me wechat: udacity6
+        </p>
+       </div>
+      </div>
+     </div>
+    </footer>
+   </div>
+  </div>
+  <script src="../assets/js/jquery-3.3.1.min.js">
+  </script>
+  <script src="../assets/js/plyr.polyfilled.min.js">
+  </script>
+  <script src="../assets/js/bootstrap.min.js">
+  </script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js">
+  </script>
+  <script src="../assets/js/katex.min.js">
+  </script>
+  <script>
+   // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('05. Tracking 3D Dynamics Overview')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+ </body>
+</html>

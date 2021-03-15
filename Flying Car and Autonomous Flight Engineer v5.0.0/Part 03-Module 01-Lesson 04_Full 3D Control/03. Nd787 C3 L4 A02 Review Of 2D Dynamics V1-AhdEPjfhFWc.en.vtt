@@ -1,0 +1,100 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:01.530
+Up until this point,
+
+00:00:01.530 --> 00:00:04.200
+the dynamics we've discussed have all occurred in
+
+00:00:04.200 --> 00:00:07.785
+two-dimensions and they rise at vertical plane.
+
+00:00:07.785 --> 00:00:10.710
+But real quarts live in three-dimensions.
+
+00:00:10.710 --> 00:00:15.120
+The good news is that all of the control concepts related to cascaded
+
+00:00:15.119 --> 00:00:20.280
+PID control are equally applicable in 3D as they were in 2D.
+
+00:00:20.280 --> 00:00:25.240
+The big difference is in the math required to describe the dynamics.
+
+00:00:25.239 --> 00:00:28.339
+Things can get a little tricky when we have to keep
+
+00:00:28.339 --> 00:00:31.384
+track of the vehicles roll, pitch, and yaw.
+
+00:00:31.385 --> 00:00:35.300
+Before we dive into tracking the state of a 3D vehicle,
+
+00:00:35.299 --> 00:00:39.039
+let's do a brief recap of the approach we used in 2D.
+
+00:00:39.039 --> 00:00:42.679
+We started by defining a state for the vehicle.
+
+00:00:42.679 --> 00:00:47.269
+The state describes the minimal amount of information we need to keep around to
+
+00:00:47.270 --> 00:00:52.250
+be able to predict the motion of the vehicle from one time step to the next.
+
+00:00:52.250 --> 00:00:57.619
+For 2D, the state variables where the vehicle is lateral in y-position,
+
+00:00:57.619 --> 00:01:02.079
+vertical set position, and roll angle, which we call phi.
+
+00:01:02.079 --> 00:01:07.668
+We also had to track the velocities associated with each of those variables,
+
+00:01:07.668 --> 00:01:11.709
+which gave us a total of six state variables.
+
+00:01:11.709 --> 00:01:16.625
+Next, we had to figure out the forces and moments acting on the vehicle.
+
+00:01:16.625 --> 00:01:19.760
+Then we had to convert these forces and moments
+
+00:01:19.760 --> 00:01:22.925
+into accelerations and angular accelerations,
+
+00:01:22.924 --> 00:01:26.480
+which we did by applying f is equal to m times a,
+
+00:01:26.480 --> 00:01:28.669
+and its rotational equivalent.
+
+00:01:28.668 --> 00:01:32.420
+Once we knew the accelerations and angular accelerations,
+
+00:01:32.420 --> 00:01:37.295
+we had to integrate once to figure out how these caused the y,
+
+00:01:37.295 --> 00:01:40.450
+z, and y velocities to change.
+
+00:01:40.450 --> 00:01:47.034
+Then we integrated the updated velocities to figure out how the positions changed.
+
+00:01:47.034 --> 00:01:53.435
+You captured your knowledge of these dynamics by implementing an advanced state method,
+
+00:01:53.435 --> 00:01:56.659
+which I'd like you to take a minute to review now.
+
+00:01:56.659 --> 00:01:59.599
+The advanced state function you will write for
+
+00:01:59.599 --> 00:02:04.294
+the 3D dynamics in this lesson will look very similar in many ways.
+
+00:02:04.295 --> 00:02:08.340
+So some of the mathematical details will change.
+

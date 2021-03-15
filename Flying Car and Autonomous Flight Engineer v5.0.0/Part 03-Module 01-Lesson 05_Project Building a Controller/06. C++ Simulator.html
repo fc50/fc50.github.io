@@ -1,0 +1,401 @@
+<!-- udacimak v1.4.4 -->
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="ie=edge" http-equiv="X-UA-Compatible"/>
+  <title>
+   C++ Simulator
+  </title>
+  <link href="../assets/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="../assets/css/plyr.css" rel="stylesheet"/>
+  <link href="../assets/css/katex.min.css" rel="stylesheet"/>
+  <link href="../assets/css/jquery.mCustomScrollbar.min.css" rel="stylesheet"/>
+  <link href="../assets/css/styles.css" rel="stylesheet"/>
+  <link href="../assets/img/udacimak.png" rel="shortcut icon" type="image/png">
+  </link>
+ </head>
+ <body>
+  <div class="wrapper">
+   <nav id="sidebar">
+    <div class="sidebar-header">
+     <h3>
+      Project: Building a Controller
+     </h3>
+    </div>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled components">
+     <li class="">
+      <a href="01. Sebastian Introduction.html">
+       01. Sebastian Introduction
+      </a>
+     </li>
+     <li class="">
+      <a href="02. Changes to this Project.html">
+       02. Changes to this Project
+      </a>
+     </li>
+     <li class="">
+      <a href="03. Project Introduction.html">
+       03. Project Introduction
+      </a>
+     </li>
+     <li class="">
+      <a href="04. [OPTIONAL] Python Setup.html">
+       04. [OPTIONAL] Python Setup
+      </a>
+     </li>
+     <li class="">
+      <a href="05. C++ Setup.html">
+       05. C++ Setup
+      </a>
+     </li>
+     <li class="">
+      <a href="06. C++ Simulator.html">
+       06. C++ Simulator
+      </a>
+     </li>
+     <li class="">
+      <a href="07. Controller Performance Evaluation.html">
+       07. Controller Performance Evaluation
+      </a>
+     </li>
+     <li class="">
+      <a href="08. Tips and Tricks.html">
+       08. Tips and Tricks
+      </a>
+     </li>
+     <li class="">
+      <a href="Project Description - Control of a 3D Quadrotor.html">
+       Project Description - Control of a 3D Quadrotor
+      </a>
+     </li>
+     <li class="">
+      <a href="Project Rubric - Control of a 3D Quadrotor.html">
+       Project Rubric - Control of a 3D Quadrotor
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+   </nav>
+   <div id="content">
+    <header class="container-fluild header">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <div class="align-items-middle">
+         <button class="btn btn-toggle-sidebar" id="sidebarCollapse" type="button">
+          <div>
+          </div>
+          <div>
+          </div>
+          <div>
+          </div>
+         </button>
+         <h1 style="display: inline-block">
+          06. C++ Simulator
+         </h1>
+        </div>
+       </div>
+      </div>
+     </div>
+    </header>
+    <main class="container">
+     <div class="row">
+      <div class="col-12">
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <p>
+          Now that you have all the code on your computer and the simulator running, let's walk through some of the elements of the code and the simulator itself.
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h3 id="the-code">
+          The Code
+         </h3>
+         <p>
+          For the project, the majority of your code will be written in
+          <code>
+           src/QuadControl.cpp
+          </code>
+          .  This file contains all of the code for the controller that you will be developing.
+         </p>
+         <p>
+          All the configuration files for your controller and the vehicle are in the
+          <code>
+           config
+          </code>
+          directory.  For example, for all your control gains and other desired tuning parameters, there is a config file called
+          <code>
+           QuadControlParams.txt
+          </code>
+          set up for you.  An import note is that while the simulator is running, you can edit this file in real time and see the affects your changes have on the quad!
+         </p>
+         <p>
+          The syntax of the config files is as follows:
+         </p>
+         <ul>
+          <li>
+           <code>
+            [Quad]
+           </code>
+           begins a parameter namespace.  Any variable written afterwards becomes
+           <code>
+            Quad.&lt;variablename&gt;
+           </code>
+           in the source code.
+          </li>
+          <li>
+           If not in a namespace, you can also write
+           <code>
+            Quad.&lt;variablename&gt;
+           </code>
+           directly.
+          </li>
+          <li>
+           <code>
+            [Quad1 : Quad]
+           </code>
+           means that the
+           <code>
+            Quad1
+           </code>
+           namespace is created with a copy of all the variables of
+           <code>
+            Quad
+           </code>
+           .  You can then overwrite those variables by specifying new values (e.g.
+           <code>
+            Quad1.Mass
+           </code>
+           to override the copied
+           <code>
+            Quad.Mass
+           </code>
+           ).  This is convenient for having default values.
+          </li>
+         </ul>
+         <p>
+          You will also be using the simulator to fly some different trajectories to test out the performance of your C++ implementation of your controller. These trajectories, along with supporting code, are found in the
+          <code>
+           traj
+          </code>
+          directory of the repo.
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h3 id="the-simulator">
+          The Simulator
+         </h3>
+         <p>
+          In the simulator window itself, you can right click the window to select between a set of different scenarios that are designed to test the different parts of your controller.
+         </p>
+         <p>
+          The simulation (including visualization) is implemented in a single thread.  This is so that you can safely breakpoint code at any point and debug, without affecting any part of the simulation.
+         </p>
+         <p>
+          Due to deterministic timing and careful control over how the pseudo-random number generators are initialized and used, the simulation should be exactly repeatable. This means that any simulation with the same configuration should be exactly identical when run repeatedly or on different machines.
+         </p>
+         <p>
+          Vehicles are created and graphs are reset whenever a scenario is loaded. When a scenario is reset (due to an end condition such as time or user pressing the ‘R’ key), the config files are all re-read and state of the simulation/vehicles/graphs is reset -- however the number/name of vehicles and displayed graphs are left untouched.
+         </p>
+         <p>
+          When the simulation is running, you can use the arrow keys on your keyboard to impact forces on your drone to see how your controller reacts to outside forces being applied.
+         </p>
+         <h4 id="keyboard--mouse-controls">
+          Keyboard / Mouse Controls
+         </h4>
+         <p>
+          There are a handful of keyboard / mouse commands to help with the simulator itself, including applying external forces on your drone to see how your controllers reacts!
+         </p>
+         <ul>
+          <li>
+           Left drag - rotate
+          </li>
+          <li>
+           X + left drag - pan
+          </li>
+          <li>
+           Z + left drag - zoom
+          </li>
+          <li>
+           arrow keys - apply external force
+          </li>
+          <li>
+           C - clear all graphs
+          </li>
+          <li>
+           R - reset simulation
+          </li>
+          <li>
+           Space - pause simulation
+          </li>
+         </ul>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h3 id="testing-it-out">
+          Testing it Out
+         </h3>
+         <p>
+          When you run the simulator, you'll notice your quad is falling straight down.  This is due to the fact that the thrusts are simply being set to:
+         </p>
+         <pre><code>QuadControlParams.Mass * 9.81 / 4</code></pre>
+         <p>
+          Therefore, if the mass doesn't match the actual mass of the quad, it'll fall down.  Take a moment to tune the
+          <code>
+           Mass
+          </code>
+          parameter in
+          <code>
+           QuadControlParams.txt
+          </code>
+          to make the vehicle more or less stay in the same spot.
+         </p>
+         <p>
+          Note: if you want to come back to this later, this scenario is "1_Intro".
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h3 id="almost-there">
+          Almost There
+         </h3>
+         <p>
+          Now that you have the simulator and skeleton code up and running, you're almost ready to start writing your controller!  One last thing to see is some of the tools we have provided you for evaluating the performance of your controller and some general tips and tricks for the project.
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+      </div>
+      <div class="col-12">
+       <p class="text-right">
+        <a class="btn btn-outline-primary mt-4" href="07. Controller Performance Evaluation.html" role="button">
+         Next Concept
+        </a>
+       </p>
+      </div>
+     </div>
+    </main>
+    <footer class="footer">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <p class="text-center">
+         udacity2.0 If you need the newest courses Plase add me wechat: udacity6
+        </p>
+       </div>
+      </div>
+     </div>
+    </footer>
+   </div>
+  </div>
+  <script src="../assets/js/jquery-3.3.1.min.js">
+  </script>
+  <script src="../assets/js/plyr.polyfilled.min.js">
+  </script>
+  <script src="../assets/js/bootstrap.min.js">
+  </script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js">
+  </script>
+  <script src="../assets/js/katex.min.js">
+  </script>
+  <script>
+   // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('06. C++ Simulator')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+ </body>
+</html>

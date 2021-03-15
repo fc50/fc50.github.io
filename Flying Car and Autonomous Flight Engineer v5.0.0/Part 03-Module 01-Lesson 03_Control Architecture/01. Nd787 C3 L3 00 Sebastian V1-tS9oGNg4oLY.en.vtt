@@ -1,0 +1,49 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:04.335
+We're now going to dive into a cascaded controller.
+
+00:00:04.335 --> 00:00:08.540
+It's effectively a nested dual controller where there's
+
+00:00:08.540 --> 00:00:13.990
+an inner loop controller and an outer loop controller. Take this drone.
+
+00:00:13.990 --> 00:00:16.140
+At the very basics,
+
+00:00:16.140 --> 00:00:19.100
+you might want to control roll and pitch.
+
+00:00:19.100 --> 00:00:24.150
+Perhaps, to have an enclosement or perhaps to affect your position.
+
+00:00:24.150 --> 00:00:26.925
+That itself is a controller because it has to
+
+00:00:26.925 --> 00:00:30.355
+make sure that we don't overshoot in our desired angle.
+
+00:00:30.355 --> 00:00:32.525
+But where does it come from?
+
+00:00:32.525 --> 00:00:35.015
+It comes from a higher level controller that
+
+00:00:35.015 --> 00:00:37.960
+uses roll as a way to get to a certain location.
+
+00:00:37.960 --> 00:00:42.785
+So you want to build a drone that goes from A to B in a physical realistic way,
+
+00:00:42.785 --> 00:00:45.020
+you need to cascade two controllers,
+
+00:00:45.020 --> 00:00:47.885
+one that controls the physical location through volume pitch,
+
+00:00:47.885 --> 00:00:52.020
+and one really for actually getting to the right volume pitch.
+

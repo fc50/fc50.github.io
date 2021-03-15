@@ -1,0 +1,322 @@
+<!-- udacimak v1.4.4 -->
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="ie=edge" http-equiv="X-UA-Compatible"/>
+  <title>
+   Trajectories
+  </title>
+  <link href="../assets/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="../assets/css/plyr.css" rel="stylesheet"/>
+  <link href="../assets/css/katex.min.css" rel="stylesheet"/>
+  <link href="../assets/css/jquery.mCustomScrollbar.min.css" rel="stylesheet"/>
+  <link href="../assets/css/styles.css" rel="stylesheet"/>
+  <link href="../assets/img/udacimak.png" rel="shortcut icon" type="image/png">
+  </link>
+ </head>
+ <body>
+  <div class="wrapper">
+   <nav id="sidebar">
+    <div class="sidebar-header">
+     <h3>
+      Drone Integration
+     </h3>
+    </div>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled components">
+     <li class="">
+      <a href="01. Controls on the Crazyflie.html">
+       01. Controls on the Crazyflie
+      </a>
+     </li>
+     <li class="">
+      <a href="02. Configuring the Crazyflie.html">
+       02. Configuring the Crazyflie
+      </a>
+     </li>
+     <li class="">
+      <a href="03. Control Architecture.html">
+       03. Control Architecture
+      </a>
+     </li>
+     <li class="">
+      <a href="04. Outer Loop - Altitude.html">
+       04. Outer Loop - Altitude
+      </a>
+     </li>
+     <li class="">
+      <a href="05. Outer Loop - Lateral Position.html">
+       05. Outer Loop - Lateral Position
+      </a>
+     </li>
+     <li class="">
+      <a href="06. Choosing Initial Gains.html">
+       06. Choosing Initial Gains
+      </a>
+     </li>
+     <li class="">
+      <a href="07. Inner Loop.html">
+       07. Inner Loop
+      </a>
+     </li>
+     <li class="">
+      <a href="08. Trajectories.html">
+       08. Trajectories
+      </a>
+     </li>
+     <li class="">
+      <a href="09. Going Beyond.html">
+       09. Going Beyond
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+   </nav>
+   <div id="content">
+    <header class="container-fluild header">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <div class="align-items-middle">
+         <button class="btn btn-toggle-sidebar" id="sidebarCollapse" type="button">
+          <div>
+          </div>
+          <div>
+          </div>
+          <div>
+          </div>
+         </button>
+         <h1 style="display: inline-block">
+          08. Trajectories
+         </h1>
+        </div>
+       </div>
+      </div>
+     </div>
+    </header>
+    <main class="container">
+     <div class="row">
+      <div class="col-12">
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <p>
+          <strong>
+           <h1>
+            Trajectories
+           </h1>
+          </strong>
+         </p>
+         <p>
+          Now that we have a controller and it is flying simply waypoint missions, the next area of interest is flying trajectories, which is an area we have helped set up but will be leaving for you to explore!
+         </p>
+         <p>
+          We have provided a framework for reading in a trajectory file (see below for the file format) and a sample, very simple, straight line and back trajectory. In addition you will find a
+          <code>
+           trajectory_flyer.py
+          </code>
+          file that contains the necessary class and script to test it out.
+         </p>
+         <p>
+          Go ahead and give it a try! You should see the same performance you saw with the straight line waypoint sets that are found in the
+          <code>
+           velocity_flyer.py
+          </code>
+          and
+          <code>
+           attitude_flyer.py
+          </code>
+          files. This is not unsurprising as if you look at the trajectory file itself, it is just about the same information.
+         </p>
+         <p>
+          <strong>
+           Trajectory File Format
+          </strong>
+         </p>
+         <p>
+          A trajectory file, as currently defined by the handler class, is a text file with each line being a trajectory point. Each line contains the following 4 pieces of information as comma separated values:
+         </p>
+         <ul>
+          <li>
+           relative time (in flight time in [s])
+          </li>
+          <li>
+           north position (in [m])
+          </li>
+          <li>
+           east position (in [m])
+          </li>
+          <li>
+           down position (in [m])
+           <br/>
+           <br/>
+          </li>
+         </ul>
+         <p>
+          <strong>
+           Further Challenges
+          </strong>
+         </p>
+         <p>
+          While the trajectory file we have provided you is a very simple one, it should be enough to get you started in the right direction to further explore the world of trajectories and explore the limits that you can take your Crazyflie!
+         </p>
+         <p>
+          To get you started, here are some small modifications ideas to get a feel for how trajectories can be of use:
+         </p>
+         <ul>
+          <li>
+           <p>
+            <strong>
+             Dynamic flights speeds.
+            </strong>
+            Using the same idea of a simple line, can you modify your trajectory file to do the return trip twice as quickly? How about starting and ending slowly but going quickly in the middle?
+           </p>
+          </li>
+          <li>
+           <p>
+            <strong>
+             Altitude variation.
+            </strong>
+            Can you have your Crazyflie fly a pattern such as a sine wave in height while flying the line? Or how about always climbing quickly but descending slowly?
+           </p>
+          </li>
+         </ul>
+         <p>
+          For those of you who are really ambitious, here are some ideas of how you might be able to extend the code provided:
+         </p>
+         <ul>
+          <li>
+           <p>
+            <strong>
+             Create your own complex trajectory files.
+            </strong>
+            How about flying a figure 8? How quickly can you get your Crazyflie to fly a given trajectory? How tight of turns, or how complex of trajectories can your controller handle?
+           </p>
+          </li>
+          <li>
+           <p>
+            <strong>
+             Add attitude information to trajectory.
+            </strong>
+            Extend the trajectory handler and the file format to include attitude to each trajectory point. Can you successfully achieve specific attitudes at specific times during the flight?
+           </p>
+          </li>
+         </ul>
+         <p>
+          <em>
+           Note: As you make more complicated trajectories, you may find that you will need to retune your controller to get the best performance you can out of the Crazyflie.
+          </em>
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+      </div>
+      <div class="col-12">
+       <p class="text-right">
+        <a class="btn btn-outline-primary mt-4" href="09. Going Beyond.html" role="button">
+         Next Concept
+        </a>
+       </p>
+      </div>
+     </div>
+    </main>
+    <footer class="footer">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <p class="text-center">
+         udacity2.0 If you need the newest courses Plase add me wechat: udacity6
+        </p>
+       </div>
+      </div>
+     </div>
+    </footer>
+   </div>
+  </div>
+  <script src="../assets/js/jquery-3.3.1.min.js">
+  </script>
+  <script src="../assets/js/plyr.polyfilled.min.js">
+  </script>
+  <script src="../assets/js/bootstrap.min.js">
+  </script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js">
+  </script>
+  <script src="../assets/js/katex.min.js">
+  </script>
+  <script>
+   // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('08. Trajectories')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+ </body>
+</html>

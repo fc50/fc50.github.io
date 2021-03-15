@@ -1,0 +1,305 @@
+<!-- udacimak v1.4.4 -->
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="ie=edge" http-equiv="X-UA-Compatible"/>
+  <title>
+   Controller Performance Evaluation
+  </title>
+  <link href="../assets/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="../assets/css/plyr.css" rel="stylesheet"/>
+  <link href="../assets/css/katex.min.css" rel="stylesheet"/>
+  <link href="../assets/css/jquery.mCustomScrollbar.min.css" rel="stylesheet"/>
+  <link href="../assets/css/styles.css" rel="stylesheet"/>
+  <link href="../assets/img/udacimak.png" rel="shortcut icon" type="image/png">
+  </link>
+ </head>
+ <body>
+  <div class="wrapper">
+   <nav id="sidebar">
+    <div class="sidebar-header">
+     <h3>
+      Project: Building a Controller
+     </h3>
+    </div>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled components">
+     <li class="">
+      <a href="01. Sebastian Introduction.html">
+       01. Sebastian Introduction
+      </a>
+     </li>
+     <li class="">
+      <a href="02. Changes to this Project.html">
+       02. Changes to this Project
+      </a>
+     </li>
+     <li class="">
+      <a href="03. Project Introduction.html">
+       03. Project Introduction
+      </a>
+     </li>
+     <li class="">
+      <a href="04. [OPTIONAL] Python Setup.html">
+       04. [OPTIONAL] Python Setup
+      </a>
+     </li>
+     <li class="">
+      <a href="05. C++ Setup.html">
+       05. C++ Setup
+      </a>
+     </li>
+     <li class="">
+      <a href="06. C++ Simulator.html">
+       06. C++ Simulator
+      </a>
+     </li>
+     <li class="">
+      <a href="07. Controller Performance Evaluation.html">
+       07. Controller Performance Evaluation
+      </a>
+     </li>
+     <li class="">
+      <a href="08. Tips and Tricks.html">
+       08. Tips and Tricks
+      </a>
+     </li>
+     <li class="">
+      <a href="Project Description - Control of a 3D Quadrotor.html">
+       Project Description - Control of a 3D Quadrotor
+      </a>
+     </li>
+     <li class="">
+      <a href="Project Rubric - Control of a 3D Quadrotor.html">
+       Project Rubric - Control of a 3D Quadrotor
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+   </nav>
+   <div id="content">
+    <header class="container-fluild header">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <div class="align-items-middle">
+         <button class="btn btn-toggle-sidebar" id="sidebarCollapse" type="button">
+          <div>
+          </div>
+          <div>
+          </div>
+          <div>
+          </div>
+         </button>
+         <h1 style="display: inline-block">
+          07. Controller Performance Evaluation
+         </h1>
+        </div>
+       </div>
+      </div>
+     </div>
+    </header>
+    <main class="container">
+     <div class="row">
+      <div class="col-12">
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h2 id="evaluation-metrics">
+          Evaluation Metrics
+         </h2>
+         <p>
+          This project is broken into a series of "scenarios".
+         </p>
+         <p>
+          To assist with tuning of your controller, the simulator contains real time performance evaluation.  We have defined a set of performance metrics for each of the scenarios that your controllers must meet for a successful submission.
+         </p>
+         <p>
+          There are two ways to view the output of the evaluation:
+         </p>
+         <ul>
+          <li>
+           in the command line, at the end of each simulation loop, a
+           <strong>
+            PASS
+           </strong>
+           or a
+           <strong>
+            FAIL
+           </strong>
+           for each metric being evaluated in that simulation
+          </li>
+          <li>
+           on the plots, once your quad meets the metrics, you will see a green box appear on the plot notifying you of a
+           <strong>
+            PASS
+           </strong>
+          </li>
+         </ul>
+         <h3 id="performance-metrics">
+          Performance Metrics
+         </h3>
+         <p>
+          The specific performance metrics are as follows:
+         </p>
+         <ul>
+          <li>
+           <p>
+            scenario 2
+           </p>
+           <ul>
+            <li>
+             roll should less than 0.025 radian of nominal for 0.75 seconds (3/4 of the duration of the loop)
+            </li>
+            <li>
+             roll rate should less than 2.5 radian/sec for 0.75 seconds
+            </li>
+           </ul>
+          </li>
+          <li>
+           <p>
+            scenario 3
+           </p>
+           <ul>
+            <li>
+             X position of both drones should be within 0.1 meters of the target for at least 1.25 seconds
+            </li>
+            <li>
+             Quad2 yaw should be within 0.1 of the target for at least 1 second
+            </li>
+           </ul>
+          </li>
+          <li>
+           <p>
+            scenario 4
+           </p>
+           <ul>
+            <li>
+             position error for all 3 quads should be less than 0.1 meters for at least 1.5 seconds
+            </li>
+           </ul>
+          </li>
+          <li>
+           <p>
+            scenario 5
+           </p>
+           <ul>
+            <li>
+             position error of the quad should be less than 0.25 meters for at least 3 seconds
+            </li>
+           </ul>
+          </li>
+         </ul>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+      </div>
+      <div class="col-12">
+       <p class="text-right">
+        <a class="btn btn-outline-primary mt-4" href="08. Tips and Tricks.html" role="button">
+         Next Concept
+        </a>
+       </p>
+      </div>
+     </div>
+    </main>
+    <footer class="footer">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <p class="text-center">
+         udacity2.0 If you need the newest courses Plase add me wechat: udacity6
+        </p>
+       </div>
+      </div>
+     </div>
+    </footer>
+   </div>
+  </div>
+  <script src="../assets/js/jquery-3.3.1.min.js">
+  </script>
+  <script src="../assets/js/plyr.polyfilled.min.js">
+  </script>
+  <script src="../assets/js/bootstrap.min.js">
+  </script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js">
+  </script>
+  <script src="../assets/js/katex.min.js">
+  </script>
+  <script>
+   // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('07. Controller Performance Evaluation')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+ </body>
+</html>

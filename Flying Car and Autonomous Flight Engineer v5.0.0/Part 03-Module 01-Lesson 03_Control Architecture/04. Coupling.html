@@ -1,0 +1,445 @@
+<!-- udacimak v1.4.4 -->
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="ie=edge" http-equiv="X-UA-Compatible"/>
+  <title>
+   Coupling
+  </title>
+  <link href="../assets/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="../assets/css/plyr.css" rel="stylesheet"/>
+  <link href="../assets/css/katex.min.css" rel="stylesheet"/>
+  <link href="../assets/css/jquery.mCustomScrollbar.min.css" rel="stylesheet"/>
+  <link href="../assets/css/styles.css" rel="stylesheet"/>
+  <link href="../assets/img/udacimak.png" rel="shortcut icon" type="image/png">
+  </link>
+ </head>
+ <body>
+  <div class="wrapper">
+   <nav id="sidebar">
+    <div class="sidebar-header">
+     <h3>
+      Control Architecture
+     </h3>
+    </div>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled components">
+     <li class="">
+      <a href="01. Sebastian Introduction.html">
+       01. Sebastian Introduction
+      </a>
+     </li>
+     <li class="">
+      <a href="02. Intro to 2D Dynamics.html">
+       02. Intro to 2D Dynamics
+      </a>
+     </li>
+     <li class="">
+      <a href="03. Underactuation.html">
+       03. Underactuation
+      </a>
+     </li>
+     <li class="">
+      <a href="04. Coupling.html">
+       04. Coupling
+      </a>
+     </li>
+     <li class="">
+      <a href="05. Lesson Overview.html">
+       05. Lesson Overview
+      </a>
+     </li>
+     <li class="">
+      <a href="06. Motivation for Linearization.html">
+       06. Motivation for Linearization
+      </a>
+     </li>
+     <li class="">
+      <a href="07. Linearization Math.html">
+       07. Linearization Math
+      </a>
+     </li>
+     <li class="">
+      <a href="08. Linearization Intuition 1.html">
+       08. Linearization Intuition 1
+      </a>
+     </li>
+     <li class="">
+      <a href="09. Linearization Intuition 2.html">
+       09. Linearization Intuition 2
+      </a>
+     </li>
+     <li class="">
+      <a href="10. Linearization Intuition 3.html">
+       10. Linearization Intuition 3
+      </a>
+     </li>
+     <li class="">
+      <a href="11. Linearization Exploration Exercise.html">
+       11. Linearization Exploration Exercise
+      </a>
+     </li>
+     <li class="">
+      <a href="12. Controlling Motion Near Hover.html">
+       12. Controlling Motion Near Hover
+      </a>
+     </li>
+     <li class="">
+      <a href="13. Intro to Cascaded Control.html">
+       13. Intro to Cascaded Control
+      </a>
+     </li>
+     <li class="">
+      <a href="14. Implement Linear Controller Exercise.html">
+       14. Implement Linear Controller Exercise
+      </a>
+     </li>
+     <li class="">
+      <a href="15. Separation of Time Scales.html">
+       15. Separation of Time Scales
+      </a>
+     </li>
+     <li class="">
+      <a href="16. Non-Linear Control.html">
+       16. Non-Linear Control
+      </a>
+     </li>
+     <li class="">
+      <a href="17. Implement Non-Linear Controller Exercise.html">
+       17. Implement Non-Linear Controller Exercise
+      </a>
+     </li>
+     <li class="">
+      <a href="18. Comparing Trajectories Exercise.html">
+       18. Comparing Trajectories Exercise
+      </a>
+     </li>
+     <li class="">
+      <a href="19. Summary.html">
+       19. Summary
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+   </nav>
+   <div id="content">
+    <header class="container-fluild header">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <div class="align-items-middle">
+         <button class="btn btn-toggle-sidebar" id="sidebarCollapse" type="button">
+          <div>
+          </div>
+          <div>
+          </div>
+          <div>
+          </div>
+         </button>
+         <h1 style="display: inline-block">
+          04. Coupling
+         </h1>
+        </div>
+       </div>
+      </div>
+     </div>
+    </header>
+    <main class="container">
+     <div class="row">
+      <div class="col-12">
+       <div class="ud-atom">
+        <h3>
+         <p>
+          C3 L3 02 Coupling V2
+         </p>
+        </h3>
+        <video controls="">
+         <source src="04. C3 L3 02 Coupling V2-jlDD-RVhK9g.mp4" type="video/mp4"/>
+         <track default="true" kind="subtitles" label="en" src="04. C3 L3 02 Coupling V2-jlDD-RVhK9g.en.vtt" srclang="en"/>
+        </video>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <form>
+          <fieldset>
+           <legend>
+            <p>
+             Consider a 2D drone (mass
+             <span class="mathquill ud-math">
+              m
+             </span>
+             ) inlined at some angle
+             <span class="mathquill ud-math">
+              \phi
+             </span>
+             . How much thrust is required to support this drone in the vertical direction?
+            </p>
+           </legend>
+          </fieldset>
+          <div>
+           <input id="a1520970072777" name="562390" type="radio" value="a1520970072777"/>
+           <label for="a1520970072777">
+            <p>
+             <span class="mathquill ud-math">
+              u_1 = mg
+             </span>
+            </p>
+           </label>
+          </div>
+          <div>
+           <input id="a1520970137690" name="562390" type="radio" value="a1520970137690"/>
+           <label for="a1520970137690">
+            <p>
+             <span class="mathquill ud-math">
+              u_1 = mg \sin \phi
+             </span>
+            </p>
+           </label>
+          </div>
+          <div>
+           <input id="a1520970159570" name="562390" type="radio" value="a1520970159570"/>
+           <label for="a1520970159570">
+            <p>
+             <span class="mathquill ud-math">
+              u_1 = mg \cos \phi
+             </span>
+            </p>
+           </label>
+          </div>
+          <div>
+           <input id="a1520970170100" name="562390" type="radio" value="a1520970170100"/>
+           <label for="a1520970170100">
+            <p>
+             <span class="mathquill ud-math">
+              u_1 = \frac{mg}{\sin \phi}
+             </span>
+            </p>
+           </label>
+          </div>
+          <div>
+           <input id="a1520970194283" name="562390" type="radio" value="a1520970194283"/>
+           <label for="a1520970194283">
+            <p>
+             <span class="mathquill ud-math">
+              u_1 = \frac{mg}{\cos \phi}
+             </span>
+            </p>
+           </label>
+          </div>
+         </form>
+         <details>
+          <summary>
+           <strong>
+            SOLUTION:
+           </strong>
+          </summary>
+          <span class="mathquill">
+           u_1 = \frac{mg}{\cos \phi}
+          </span>
+         </details>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <p>
+          In reality, a drone has a maximum total thrust
+          <span class="mathquill ud-math">
+           u_{1,\text{max}}
+          </span>
+          that the 4 rotors can provide.
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <form>
+          <fieldset>
+           <legend>
+            <p>
+             In terms of
+             <span class="mathquill ud-math">
+              u_{1,\text{max}}
+             </span>
+             what is the maximum roll angle,
+             <span class="mathquill ud-math">
+              \phi_{\text{max}}
+             </span>
+             , at which a drone can still support itself vertically (without losing altitude)?
+            </p>
+           </legend>
+          </fieldset>
+          <div>
+           <input id="a1520970551133" name="562392" type="radio" value="a1520970551133"/>
+           <label for="a1520970551133">
+            <p>
+             <span class="mathquill ud-math">
+              \phi_{\text{max}} = \frac{u_{1,\text{max}}}{mg}
+             </span>
+            </p>
+           </label>
+          </div>
+          <div>
+           <input id="a1520970642845" name="562392" type="radio" value="a1520970642845"/>
+           <label for="a1520970642845">
+            <p>
+             <span class="mathquill ud-math">
+              \phi_{\text{max}} = \frac{mg}{u_{1,\text{max}}}
+             </span>
+            </p>
+           </label>
+          </div>
+          <div>
+           <input id="a1520970664936" name="562392" type="radio" value="a1520970664936"/>
+           <label for="a1520970664936">
+            <p>
+             <span class="mathquill ud-math">
+              \phi_{\text{max}} = \cos^{-1} \left( \frac{u_{1,\text{max}}}{mg}\right)
+             </span>
+            </p>
+           </label>
+          </div>
+          <div>
+           <input id="a1520970684351" name="562392" type="radio" value="a1520970684351"/>
+           <label for="a1520970684351">
+            <p>
+             <span class="mathquill ud-math">
+              \phi_{\text{max}} = \cos^{-1} \left( \frac{mg}{u_{1,\text{max}}}\right)
+             </span>
+            </p>
+           </label>
+          </div>
+         </form>
+         <details>
+          <summary>
+           <strong>
+            SOLUTION:
+           </strong>
+          </summary>
+          <span class="mathquill">
+           \phi_{\text{max}} = \cos^{-1} \left( \frac{mg}{u_{1,\text{max}}}\right)
+          </span>
+         </details>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+      </div>
+      <div class="col-12">
+       <p class="text-right">
+        <a class="btn btn-outline-primary mt-4" href="05. Lesson Overview.html" role="button">
+         Next Concept
+        </a>
+       </p>
+      </div>
+     </div>
+    </main>
+    <footer class="footer">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <p class="text-center">
+         udacity2.0 If you need the newest courses Plase add me wechat: udacity6
+        </p>
+       </div>
+      </div>
+     </div>
+    </footer>
+   </div>
+  </div>
+  <script src="../assets/js/jquery-3.3.1.min.js">
+  </script>
+  <script src="../assets/js/plyr.polyfilled.min.js">
+  </script>
+  <script src="../assets/js/bootstrap.min.js">
+  </script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js">
+  </script>
+  <script src="../assets/js/katex.min.js">
+  </script>
+  <script>
+   // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('04. Coupling')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+ </body>
+</html>

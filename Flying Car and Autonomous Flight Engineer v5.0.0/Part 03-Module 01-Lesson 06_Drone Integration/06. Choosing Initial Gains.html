@@ -1,0 +1,312 @@
+<!-- udacimak v1.4.4 -->
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="ie=edge" http-equiv="X-UA-Compatible"/>
+  <title>
+   Choosing Initial Gains
+  </title>
+  <link href="../assets/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="../assets/css/plyr.css" rel="stylesheet"/>
+  <link href="../assets/css/katex.min.css" rel="stylesheet"/>
+  <link href="../assets/css/jquery.mCustomScrollbar.min.css" rel="stylesheet"/>
+  <link href="../assets/css/styles.css" rel="stylesheet"/>
+  <link href="../assets/img/udacimak.png" rel="shortcut icon" type="image/png">
+  </link>
+ </head>
+ <body>
+  <div class="wrapper">
+   <nav id="sidebar">
+    <div class="sidebar-header">
+     <h3>
+      Drone Integration
+     </h3>
+    </div>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled components">
+     <li class="">
+      <a href="01. Controls on the Crazyflie.html">
+       01. Controls on the Crazyflie
+      </a>
+     </li>
+     <li class="">
+      <a href="02. Configuring the Crazyflie.html">
+       02. Configuring the Crazyflie
+      </a>
+     </li>
+     <li class="">
+      <a href="03. Control Architecture.html">
+       03. Control Architecture
+      </a>
+     </li>
+     <li class="">
+      <a href="04. Outer Loop - Altitude.html">
+       04. Outer Loop - Altitude
+      </a>
+     </li>
+     <li class="">
+      <a href="05. Outer Loop - Lateral Position.html">
+       05. Outer Loop - Lateral Position
+      </a>
+     </li>
+     <li class="">
+      <a href="06. Choosing Initial Gains.html">
+       06. Choosing Initial Gains
+      </a>
+     </li>
+     <li class="">
+      <a href="07. Inner Loop.html">
+       07. Inner Loop
+      </a>
+     </li>
+     <li class="">
+      <a href="08. Trajectories.html">
+       08. Trajectories
+      </a>
+     </li>
+     <li class="">
+      <a href="09. Going Beyond.html">
+       09. Going Beyond
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+   </nav>
+   <div id="content">
+    <header class="container-fluild header">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <div class="align-items-middle">
+         <button class="btn btn-toggle-sidebar" id="sidebarCollapse" type="button">
+          <div>
+          </div>
+          <div>
+          </div>
+          <div>
+          </div>
+         </button>
+         <h1 style="display: inline-block">
+          06. Choosing Initial Gains
+         </h1>
+        </div>
+       </div>
+      </div>
+     </div>
+    </header>
+    <main class="container">
+     <div class="row">
+      <div class="col-12">
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <p>
+          <strong>
+           <h1>
+            Choosing Initial Gains
+           </h1>
+          </strong>
+         </p>
+         <p>
+          Now that you've coded up your controller, it's time to pick some initial gains and see how it works. For the course, we knew the exact properties of our drone in the simulator, allowing us to calculate some initial gains mathematically, but here, that's not so much the case. So let's see if we can build some intuition and do some back of the envelope calculation to decide on some gains.
+         </p>
+         <p>
+          First things first, let's make sure we don't ever try and go too fast and add a limit on the allowable velocity command. Let's keep things nice and slow and limit the velocity to 0.3 m/s.
+         </p>
+         <p>
+          As a recap, our controller is calculating the position error (how far we are from where we'd like to be) and multiplying that by our gain (
+          <code>
+           self._kp_pos
+          </code>
+          and
+          <code>
+           self._kp_alt
+          </code>
+          ) to generate a velocity command. In general, when we are far away from our target position (pos_error &gt;&gt; 0), we'd like to approach it at our max velocity, so let's not worry about that case since we've added a mechanism to limit our velocity command to a max velocity. What really starts to come in to play here is at what distance do you want to start slowing down. The easiest way to start making these decisions is looking at examples, so let's make up a few.
+         </p>
+         <p>
+          For example, let's set our max velocity to 1 m/s and set
+          <code>
+           _kp_pos = 0.5
+          </code>
+          , let's take a look at what it means for our Crazyflie's velocity profile as it approaches the waypoint:
+         </p>
+         <ul>
+          <li>
+           at 1 meter away, we will be flying 0.5 m/s
+          </li>
+          <li>
+           at 0.5 meters away, we will be flying at 0.25 m/s
+          </li>
+         </ul>
+         <p>
+          Now let's say we set
+          <code>
+           _kp_pos = 10
+          </code>
+          , let's take a look at what it means:
+         </p>
+         <ul>
+          <li>
+           at 1 meter away, we will be flying at 10 m/s (or max velocity)
+          </li>
+          <li>
+           at 0.5 meters away, we will be flying at 5 m/s (or max velocity)
+          </li>
+         </ul>
+         <p>
+          For those who need a bit more of a visualization, go ahead and plot it out, you will see that as you increase your gain, the slope of the resulting velocity can get impossibly steep!
+         </p>
+         <p>
+          Do you think that the Crazyflie will be able to stop without overshooting if it's still flying at 5 m/s when it's 0.5 meters away from the target position?
+         </p>
+         <p>
+          <em>
+           If the Crazyflie could respond immediately to commands and instantaneously change its velocity vector, then yes, this would be possible, but alas, in the real world, we have delays, it takes some time to change velocity (and attitude), which results in needing to tune our controller. Different drones will be able to react at different rates, allowing for much more aggressive control on some drones versus others.
+          </em>
+         </p>
+         <p>
+          Do you think you could approach the target position faster than 0.25 m/s when 0.5 meters out?
+         </p>
+         <p>
+          These are the questions that you should be asking yourself as you choose an initial set of gains to work with for your controller. You should err on the side of caution and go with the option that gives you room to increase your gain to get better performance rather than have to decrease your gain.
+         </p>
+         <p>
+          As a last part to build some of our intuition, we can see that setting the max speed value allows us to have very aggressive control without the proportional, potentially impossibly high, speed increase when pos_error &gt;&gt; 0.
+         </p>
+         <p>
+          In the next controller (the inner loop controller), this same thought process can also be used to get an idea for what kind of gain might seem like a reasonable starting point. It gets a little trickier as the units get a bit less intuitive (attitude will all be in radians), but the same intuition can give you a helping hand!
+         </p>
+         <p>
+          <strong>
+           It is worth mentioning that in this case there really isn't such a thing as too small of a value. Worse case your Crazyflie will just not go anywhere, but it also won't fall out of the sky. When it comes to lower level control loops, for example an attitude controller that is responsible for keeping your drone level, you will start seeing cases where you can have a gain that is too low and results in your drone falling out of the sky!
+          </strong>
+         </p>
+         <p>
+          <br/>
+          <br/>
+          Additional resources for PID tuning:
+         </p>
+         <p>
+          <a href="https://www.youtube.com/watch?v=JBvnB0279-Q" rel="noopener noreferrer" target="_blank">
+           https://www.youtube.com/watch?v=JBvnB0279-Q
+          </a>
+         </p>
+         <p>
+          <a href="https://myfirstdrone.com/blog/how-to-tune-a-quadcopter" rel="noopener noreferrer" target="_blank">
+           https://myfirstdrone.com/blog/how-to-tune-a-quadcopter
+          </a>
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+      </div>
+      <div class="col-12">
+       <p class="text-right">
+        <a class="btn btn-outline-primary mt-4" href="07. Inner Loop.html" role="button">
+         Next Concept
+        </a>
+       </p>
+      </div>
+     </div>
+    </main>
+    <footer class="footer">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <p class="text-center">
+         udacity2.0 If you need the newest courses Plase add me wechat: udacity6
+        </p>
+       </div>
+      </div>
+     </div>
+    </footer>
+   </div>
+  </div>
+  <script src="../assets/js/jquery-3.3.1.min.js">
+  </script>
+  <script src="../assets/js/plyr.polyfilled.min.js">
+  </script>
+  <script src="../assets/js/bootstrap.min.js">
+  </script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js">
+  </script>
+  <script src="../assets/js/katex.min.js">
+  </script>
+  <script>
+   // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('06. Choosing Initial Gains')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+ </body>
+</html>

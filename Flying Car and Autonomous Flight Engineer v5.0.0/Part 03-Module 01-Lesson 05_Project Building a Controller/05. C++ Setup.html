@@ -1,0 +1,440 @@
+<!-- udacimak v1.4.4 -->
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="ie=edge" http-equiv="X-UA-Compatible"/>
+  <title>
+   C++ Setup
+  </title>
+  <link href="../assets/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="../assets/css/plyr.css" rel="stylesheet"/>
+  <link href="../assets/css/katex.min.css" rel="stylesheet"/>
+  <link href="../assets/css/jquery.mCustomScrollbar.min.css" rel="stylesheet"/>
+  <link href="../assets/css/styles.css" rel="stylesheet"/>
+  <link href="../assets/img/udacimak.png" rel="shortcut icon" type="image/png">
+  </link>
+ </head>
+ <body>
+  <div class="wrapper">
+   <nav id="sidebar">
+    <div class="sidebar-header">
+     <h3>
+      Project: Building a Controller
+     </h3>
+    </div>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled components">
+     <li class="">
+      <a href="01. Sebastian Introduction.html">
+       01. Sebastian Introduction
+      </a>
+     </li>
+     <li class="">
+      <a href="02. Changes to this Project.html">
+       02. Changes to this Project
+      </a>
+     </li>
+     <li class="">
+      <a href="03. Project Introduction.html">
+       03. Project Introduction
+      </a>
+     </li>
+     <li class="">
+      <a href="04. [OPTIONAL] Python Setup.html">
+       04. [OPTIONAL] Python Setup
+      </a>
+     </li>
+     <li class="">
+      <a href="05. C++ Setup.html">
+       05. C++ Setup
+      </a>
+     </li>
+     <li class="">
+      <a href="06. C++ Simulator.html">
+       06. C++ Simulator
+      </a>
+     </li>
+     <li class="">
+      <a href="07. Controller Performance Evaluation.html">
+       07. Controller Performance Evaluation
+      </a>
+     </li>
+     <li class="">
+      <a href="08. Tips and Tricks.html">
+       08. Tips and Tricks
+      </a>
+     </li>
+     <li class="">
+      <a href="Project Description - Control of a 3D Quadrotor.html">
+       Project Description - Control of a 3D Quadrotor
+      </a>
+     </li>
+     <li class="">
+      <a href="Project Rubric - Control of a 3D Quadrotor.html">
+       Project Rubric - Control of a 3D Quadrotor
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+   </nav>
+   <div id="content">
+    <header class="container-fluild header">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <div class="align-items-middle">
+         <button class="btn btn-toggle-sidebar" id="sidebarCollapse" type="button">
+          <div>
+          </div>
+          <div>
+          </div>
+          <div>
+          </div>
+         </button>
+         <h1 style="display: inline-block">
+          05. C++ Setup
+         </h1>
+        </div>
+       </div>
+      </div>
+     </div>
+    </header>
+    <main class="container">
+     <div class="row">
+      <div class="col-12">
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <p>
+          Regardless of your development platform, the first step is to download or clone the
+          <a href="https://github.com/udacity/FCND-Controls-CPP.git" rel="noopener noreferrer" target="_blank">
+           C++ simulator repository
+          </a>
+          .
+         </p>
+         <pre><code class="sh language-sh">git clone https://github.com/udacity/FCND-Controls-CPP.git</code></pre>
+         <p>
+          Once you have the code for the simulator, you will need to install the necessary compiler and IDE necessary for running the simulator.
+         </p>
+         <p>
+          Below you can find the setup and install instructions for each of the recommended IDEs for each different OS options.
+         </p>
+         <p>
+          Once you have successfully installed the recommended IDE for your OS and have the simulator running, we can move on to taking a look around at the simulator and the files provided.
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h3 id="windows">
+          Windows
+         </h3>
+         <p>
+          For Windows, the recommended IDE is Visual Studio.  Here are the steps required for getting the project up and running using Visual Studio.
+         </p>
+         <ol>
+          <li>
+           Download and install
+           <a href="https://www.visualstudio.com/vs/community/" rel="noopener noreferrer" target="_blank">
+            Visual Studio
+           </a>
+          </li>
+          <li>
+           Select
+           <em>
+            Open Project / Solution
+           </em>
+           and open
+           <code>
+            &lt;simulator&gt;/Simulator.sln
+           </code>
+          </li>
+          <li>
+           From the
+           <em>
+            Project
+           </em>
+           menu, select the
+           <em>
+            Retarget solution
+           </em>
+           option and select the Windows SDK that is installed on your computer (this should have been installed when installing Visual Studio or upon opening of the project).
+          </li>
+          <li>
+           To compile and run the project / simulator, simply click on the green play button at the top of the screen.  When you run the simulator, you should see a single quadcopter, falling down.
+          </li>
+         </ol>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h3 id="mac-os-x">
+          Mac OS X
+         </h3>
+         <p>
+          For Mac OS X, the recommended IDE is XCode, which you can get via the App Store.
+         </p>
+         <ol>
+          <li>
+           Download and install XCode from the App Store if you don't already have it installed.
+          </li>
+          <li>
+           Open the project from the
+           <code>
+            &lt;simulator&gt;/project
+           </code>
+           directory.
+          </li>
+          <li>
+           After opening project, you need to set the working directory:
+          </li>
+         </ol>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <p>
+          Go to
+          <em>
+           (Project Name)
+          </em>
+          |
+          <em>
+           Edit Scheme
+          </em>
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <figure class="figure">
+          <img alt="" class="img img-fluid" src="img/image2.png"/>
+          <figcaption class="figure-caption">
+          </figcaption>
+         </figure>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <p>
+          In new window, under
+          <em>
+           Run/Debug
+          </em>
+          on left side, under the
+          <em>
+           Options
+          </em>
+          tab, set Working Directory to
+          <code>
+           $PROJECT_DIR
+          </code>
+          and check ‘use custom working directory’.
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <figure class="figure">
+          <img alt="" class="img img-fluid" src="img/image4.png"/>
+          <figcaption class="figure-caption">
+          </figcaption>
+         </figure>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <p>
+          Finally, compile and run the project. You should see a single quadcopter, falling down.
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h3 id="linux">
+          Linux
+         </h3>
+         <p>
+          For Linux, the recommended IDE is QtCreator.
+         </p>
+         <ol>
+          <li>
+           Download and install QtCreator.
+          </li>
+          <li>
+           Open the
+           <code>
+            .pro
+           </code>
+           file from the
+           <code>
+            &lt;simulator&gt;/project
+           </code>
+           directory.
+          </li>
+          <li>
+           Compile and run the project (using the tab
+           <code>
+            Build
+           </code>
+           select the
+           <code>
+            qmake
+           </code>
+           option.  You should see a single quadcopter, falling down.
+          </li>
+         </ol>
+         <p>
+          <strong>
+           NOTE:
+          </strong>
+          You may need to install the GLUT libs using
+          <code>
+           sudo apt-get install freeglut3-dev
+          </code>
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+      </div>
+      <div class="col-12">
+       <p class="text-right">
+        <a class="btn btn-outline-primary mt-4" href="06. C++ Simulator.html" role="button">
+         Next Concept
+        </a>
+       </p>
+      </div>
+     </div>
+    </main>
+    <footer class="footer">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <p class="text-center">
+         udacity2.0 If you need the newest courses Plase add me wechat: udacity6
+        </p>
+       </div>
+      </div>
+     </div>
+    </footer>
+   </div>
+  </div>
+  <script src="../assets/js/jquery-3.3.1.min.js">
+  </script>
+  <script src="../assets/js/plyr.polyfilled.min.js">
+  </script>
+  <script src="../assets/js/bootstrap.min.js">
+  </script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js">
+  </script>
+  <script src="../assets/js/katex.min.js">
+  </script>
+  <script>
+   // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('05. C++ Setup')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+ </body>
+</html>

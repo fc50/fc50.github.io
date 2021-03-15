@@ -1,0 +1,264 @@
+<!-- udacimak v1.4.4 -->
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="ie=edge" http-equiv="X-UA-Compatible"/>
+  <title>
+   Outer Loop - Altitude
+  </title>
+  <link href="../assets/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="../assets/css/plyr.css" rel="stylesheet"/>
+  <link href="../assets/css/katex.min.css" rel="stylesheet"/>
+  <link href="../assets/css/jquery.mCustomScrollbar.min.css" rel="stylesheet"/>
+  <link href="../assets/css/styles.css" rel="stylesheet"/>
+  <link href="../assets/img/udacimak.png" rel="shortcut icon" type="image/png">
+  </link>
+ </head>
+ <body>
+  <div class="wrapper">
+   <nav id="sidebar">
+    <div class="sidebar-header">
+     <h3>
+      Drone Integration
+     </h3>
+    </div>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled components">
+     <li class="">
+      <a href="01. Controls on the Crazyflie.html">
+       01. Controls on the Crazyflie
+      </a>
+     </li>
+     <li class="">
+      <a href="02. Configuring the Crazyflie.html">
+       02. Configuring the Crazyflie
+      </a>
+     </li>
+     <li class="">
+      <a href="03. Control Architecture.html">
+       03. Control Architecture
+      </a>
+     </li>
+     <li class="">
+      <a href="04. Outer Loop - Altitude.html">
+       04. Outer Loop - Altitude
+      </a>
+     </li>
+     <li class="">
+      <a href="05. Outer Loop - Lateral Position.html">
+       05. Outer Loop - Lateral Position
+      </a>
+     </li>
+     <li class="">
+      <a href="06. Choosing Initial Gains.html">
+       06. Choosing Initial Gains
+      </a>
+     </li>
+     <li class="">
+      <a href="07. Inner Loop.html">
+       07. Inner Loop
+      </a>
+     </li>
+     <li class="">
+      <a href="08. Trajectories.html">
+       08. Trajectories
+      </a>
+     </li>
+     <li class="">
+      <a href="09. Going Beyond.html">
+       09. Going Beyond
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+   </nav>
+   <div id="content">
+    <header class="container-fluild header">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <div class="align-items-middle">
+         <button class="btn btn-toggle-sidebar" id="sidebarCollapse" type="button">
+          <div>
+          </div>
+          <div>
+          </div>
+          <div>
+          </div>
+         </button>
+         <h1 style="display: inline-block">
+          04. Outer Loop - Altitude
+         </h1>
+        </div>
+       </div>
+      </div>
+     </div>
+    </header>
+    <main class="container">
+     <div class="row">
+      <div class="col-12">
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <p>
+          <strong>
+           <h1>
+            Outer Loop Controller
+           </h1>
+          </strong>
+          <br/>
+          The outer loop controller will be built in 2 steps, first we will build the altitude controller and then we will build the lateral position controller. Each of these can be run and tested separately to make the building and tuning processes easier.
+         </p>
+         <p>
+          <strong>
+           Altitude Controller
+          </strong>
+         </p>
+         <p>
+          In this first step, we will be building an altitude controller to the level of commanding velocities. Later on, we will continue to develop the altitude controller to compute thrust itself, but for now we will stop at vertical velocity as the Crazyflie allows us to control this directly.
+         </p>
+         <p>
+          Much like in the project, we will create a PID controller on the altitude to command velocity, so the resulting command should look like the first step of your altitude controller from the controls project:
+         </p>
+         <pre><code>def altitude_controller(self, alt_cmd, alt, hdot_cmd=0.0):
+    hdot_cmd += self._kp_alt * (alt_cmd - alt)  # compute desired vertical velocity from altitude error
+    hdot_cmd = np.clip(hdot_cmd, -self._hdot_max, self._hdot_max)  # saturate as desired
+    return hdot_cmd</code></pre>
+         <p>
+          <em>
+           NOTE: for the Crazyflie a simple P controller is all that will be necessary, however try adding the I and D terms and see how it changes the controller!
+          </em>
+         </p>
+         <p>
+          And that's it! Now choose a gain (see next section "Choosing Initial Gains") and see what happens!
+         </p>
+         <p>
+          Once you have decided on a gain, you can run this outer loop controller using the velocity_flyer.py script as follows:
+         </p>
+         <pre><code>python velocity_flyer.py --uri radio://0/80/2M</code></pre>
+         <p>
+          Where the uri passed in should be the uri you configured for your Crazyflie.
+         </p>
+         <p>
+          <em>
+           NOTE: if you leave the lateral position gain (self._kp_pos) set to 0, then only the altitude controller will run, allowing you to focus tuning the altitude controller alone. The Crazyflie may drift slowly as it is only trying to maintain 0 lateral velocity, not hold a position, but the drift should be fairly slow.
+          </em>
+         </p>
+         <p>
+          <strong>
+           IMPORTANT NOTE: if at any time you need to stop the script and control of the Crazyflie, if ctrl+c does not work, simply unplug the Crazyradio dongle from your computer and the Crazyflie will go into "stop" mode after a couple seconds (this will make it fall out of the sky).
+          </strong>
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+      </div>
+      <div class="col-12">
+       <p class="text-right">
+        <a class="btn btn-outline-primary mt-4" href="05. Outer Loop - Lateral Position.html" role="button">
+         Next Concept
+        </a>
+       </p>
+      </div>
+     </div>
+    </main>
+    <footer class="footer">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <p class="text-center">
+         udacity2.0 If you need the newest courses Plase add me wechat: udacity6
+        </p>
+       </div>
+      </div>
+     </div>
+    </footer>
+   </div>
+  </div>
+  <script src="../assets/js/jquery-3.3.1.min.js">
+  </script>
+  <script src="../assets/js/plyr.polyfilled.min.js">
+  </script>
+  <script src="../assets/js/bootstrap.min.js">
+  </script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js">
+  </script>
+  <script src="../assets/js/katex.min.js">
+  </script>
+  <script>
+   // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('04. Outer Loop - Altitude')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+ </body>
+</html>

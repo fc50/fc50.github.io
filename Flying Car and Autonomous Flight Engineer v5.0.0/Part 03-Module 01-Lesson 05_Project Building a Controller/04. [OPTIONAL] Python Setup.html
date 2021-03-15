@@ -1,0 +1,567 @@
+<!-- udacimak v1.4.4 -->
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="ie=edge" http-equiv="X-UA-Compatible"/>
+  <title>
+   [OPTIONAL] Python Setup
+  </title>
+  <link href="../assets/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="../assets/css/plyr.css" rel="stylesheet"/>
+  <link href="../assets/css/katex.min.css" rel="stylesheet"/>
+  <link href="../assets/css/jquery.mCustomScrollbar.min.css" rel="stylesheet"/>
+  <link href="../assets/css/styles.css" rel="stylesheet"/>
+  <link href="../assets/img/udacimak.png" rel="shortcut icon" type="image/png">
+  </link>
+ </head>
+ <body>
+  <div class="wrapper">
+   <nav id="sidebar">
+    <div class="sidebar-header">
+     <h3>
+      Project: Building a Controller
+     </h3>
+    </div>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled components">
+     <li class="">
+      <a href="01. Sebastian Introduction.html">
+       01. Sebastian Introduction
+      </a>
+     </li>
+     <li class="">
+      <a href="02. Changes to this Project.html">
+       02. Changes to this Project
+      </a>
+     </li>
+     <li class="">
+      <a href="03. Project Introduction.html">
+       03. Project Introduction
+      </a>
+     </li>
+     <li class="">
+      <a href="04. [OPTIONAL] Python Setup.html">
+       04. [OPTIONAL] Python Setup
+      </a>
+     </li>
+     <li class="">
+      <a href="05. C++ Setup.html">
+       05. C++ Setup
+      </a>
+     </li>
+     <li class="">
+      <a href="06. C++ Simulator.html">
+       06. C++ Simulator
+      </a>
+     </li>
+     <li class="">
+      <a href="07. Controller Performance Evaluation.html">
+       07. Controller Performance Evaluation
+      </a>
+     </li>
+     <li class="">
+      <a href="08. Tips and Tricks.html">
+       08. Tips and Tricks
+      </a>
+     </li>
+     <li class="">
+      <a href="Project Description - Control of a 3D Quadrotor.html">
+       Project Description - Control of a 3D Quadrotor
+      </a>
+     </li>
+     <li class="">
+      <a href="Project Rubric - Control of a 3D Quadrotor.html">
+       Project Rubric - Control of a 3D Quadrotor
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+   </nav>
+   <div id="content">
+    <header class="container-fluild header">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <div class="align-items-middle">
+         <button class="btn btn-toggle-sidebar" id="sidebarCollapse" type="button">
+          <div>
+          </div>
+          <div>
+          </div>
+          <div>
+          </div>
+         </button>
+         <h1 style="display: inline-block">
+          04. [OPTIONAL] Python Setup
+         </h1>
+        </div>
+       </div>
+      </div>
+     </div>
+    </header>
+    <main class="container">
+     <div class="row">
+      <div class="col-12">
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h2 id="note-this-portion-of-the-project-is-no-longer-required">
+          Note: this portion of the project is no longer required.
+         </h2>
+         <p>
+          We are leaving the Python setup instructions in place in case you're interested. All the instructions on this page are entirely optional.
+         </p>
+         <h3 id="setup-instructions">
+          Setup Instructions
+         </h3>
+         <p>
+          For the python part of the project, you will be modifying your
+          <em>
+           Backyard Flyer
+          </em>
+          project solution to handle the low level control loops of the drone, in addition to the higher level path and trajectory following control logic.
+         </p>
+         <p>
+          There are some modifications that are required to your
+          <code>
+           backyard_flyer.py
+          </code>
+          solution to prepare it for the project, which we will walk through here.  In addition to these changes, there is also a new simulator with some tools to help visualize your controller as you build it!
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h2 id="setup-your-environment">
+          Setup Your Environment
+         </h2>
+         <h3 id="step-1-download-the-simulator">
+          Step 1: download the simulator
+         </h3>
+         <p>
+          Even if you've already downloaded the simulator, download the
+          <a href="https://github.com/udacity/FCND-Simulator-Releases/releases" rel="noopener noreferrer" target="_blank">
+           most recent version
+          </a>
+          that is appropriate for your OS.
+         </p>
+         <h3 id="step-2-set-up-your-python-environment">
+          Step 2: set up your python environment
+         </h3>
+         <p>
+          If you haven't already, set up your Python environment and get all the relevant packages installed using Anaconda following instructions in
+          <a href="https://github.com/udacity/FCND-Term1-Starter-Kit" rel="noopener noreferrer" target="_blank">
+           this repository
+          </a>
+         </p>
+         <h4 id="make-sure-udacidrone-is-up-to-date">
+          Make sure Udacidrone is up to date
+         </h4>
+         <p>
+          Let's quickly make sure you have the most up to date version of udacidrone, which will allow you to use the full functionality of the controls simulator environment.
+         </p>
+         <p>
+          First make sure you have activated your environment:
+         </p>
+         <pre><code class="sh language-sh">source activate fcnd</code></pre>
+         <p>
+          Then run the update:
+         </p>
+         <pre><code class="sh language-sh">pip install -U git+https://github.com/udacity/udacidrone.git</code></pre>
+         <h3 id="step-3-clone-this-repository">
+          Step 3: clone this repository
+         </h3>
+         <pre><code class="sh language-sh">git clone https://github.com/udacity/FCND-Controls</code></pre>
+         <h3 id="step-4-test-setup">
+          Step 4: test setup
+         </h3>
+         <p>
+          Your starting point here will be the
+          <a href="https://github.com/udacity/FCND-Backyard-Flyer/blob/solution/backyard_flyer.py" rel="noopener noreferrer" target="_blank">
+           solution code
+          </a>
+          for the Backyard Flyer project. Before you start modifying the code, make sure that your Backyard Flyer solution code works as expected and your drone can perform the square flight path in the new simulator. To do this, start the simulator and run the
+          <a href="https://github.com/udacity/FCND-Backyard-Flyer/blob/solution/backyard_flyer.py" rel="noopener noreferrer" target="_blank">
+           <code>
+            backyard_flyer.py
+           </code>
+          </a>
+          script.
+         </p>
+         <pre><code class="py language-py">source activate fcnd # if you haven't already sourced your Python environment, do so now.
+python backyard_flyer.py</code></pre>
+         <p>
+          The quad should take off, fly a square pattern and land, just as in the previous project. If everything works then you are ready to move to the next step and modify
+          <code>
+           backyard_flyer.py
+          </code>
+          to get it ready to use your custom controller.
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h2 id="update-backyard-flyer-solution">
+          Update Backyard Flyer Solution
+         </h2>
+         <p>
+          The following modifications need to be made to the solution
+          <code>
+           backyard_flyer.py
+          </code>
+          . Feel free to use a copy of your own solution to the Backyard Flyer Project or the one in the link provided.
+         </p>
+         <h3 id="step-1">
+          Step 1
+         </h3>
+         <p>
+          Import the
+          <code>
+           UnityDrone
+          </code>
+          and
+          <code>
+           NonlinearController
+          </code>
+          classes and modify the
+          <code>
+           BackyardFlyer
+          </code>
+          class to be a subclass of
+          <code>
+           UnityDrone
+          </code>
+          instead of
+          <code>
+           Drone
+          </code>
+          .
+          <code>
+           UnityDrone
+          </code>
+          is a subclass of
+          <code>
+           Drone
+          </code>
+          , so it provides all the functionality of
+          <code>
+           Drone
+          </code>
+          along with additional Unity specific commands/functionality (see below).
+         </p>
+         <pre><code class="py language-py">from unity_drone import UnityDrone
+from controller import NonlinearController
+...
+class BackyardFlyer(UnityDrone):</code></pre>
+         <h3 id="step-2">
+          Step 2
+         </h3>
+         <p>
+          Add a controller object in the
+          <code>
+           __init__
+          </code>
+          method:
+         </p>
+         <pre><code class="py language-py">def __init__(self, connection):
+    ...
+    self.controller = NonlinearController()</code></pre>
+         <h3 id="step-3">
+          Step 3
+         </h3>
+         <p>
+          Add the following three methods to your class to incorporate the controller into the backyard flyer.
+         </p>
+         <pre><code class="py language-py">def position_controller(self):
+    """Sets the local acceleration target using the local position and local velocity"""
+
+    (self.local_position_target, self.local_velocity_target, yaw_cmd) = self.controller.trajectory_control(self.position_trajectory, self.yaw_trajectory, self.time_trajectory, time.time())
+    self.attitude_target = np.array((0.0, 0.0, yaw_cmd))
+
+    acceleration_cmd = self.controller.lateral_position_control(self.local_position_target[0:2], self.local_velocity_target[0:2], self.local_position[0:2], self.local_velocity[0:2])
+    self.local_acceleration_target = np.array([acceleration_cmd[0], acceleration_cmd[1], 0.0])
+
+def attitude_controller(self):
+    """Sets the body rate target using the acceleration target and attitude"""
+    self.thrust_cmd = self.controller.altitude_control(-self.local_position_target[2], -self.local_velocity_target[2], -self.local_position[2], -self.local_velocity[2], self.attitude, 9.81)
+    roll_pitch_rate_cmd = self.controller.roll_pitch_controller(self.local_acceleration_target[0:2], self.attitude, self.thrust_cmd)
+    yawrate_cmd = self.controller.yaw_control(self.attitude_target[2], self.attitude[2])
+    self.body_rate_target = np.array([roll_pitch_rate_cmd[0], roll_pitch_rate_cmd[1], yawrate_cmd])
+
+def bodyrate_controller(self):  
+    """Commands a moment to the vehicle using the body rate target and body rates"""
+    moment_cmd = self.controller.body_rate_control(self.body_rate_target, self.gyro_raw)
+    self.cmd_moment(moment_cmd[0], moment_cmd[1], moment_cmd[2], self.thrust_cmd)</code></pre>
+         <h3 id="step-4">
+          Step 4
+         </h3>
+         <p>
+          Register and add callbacks for the
+          <code>
+           RAW_GYROSCOPE
+          </code>
+          ,
+          <code>
+           ATTITUDE
+          </code>
+          , and
+          <code>
+           LOCAL_VELOCITY
+          </code>
+          messages.  Note that you may already have the
+          <code>
+           velocity_callback()
+          </code>
+          function implemented; if so, replace
+          <code>
+           velocity_callback()
+          </code>
+          with the callback below.  Call the appropriate level of control in each callback (i.e.
+          <code>
+           bodyrate_controller()
+          </code>
+          is called in
+          <code>
+           gyro_callback()
+          </code>
+          ):
+         </p>
+         <pre><code class="py language-py">def __init___(self,connection):
+    ...
+    self.register_callback(MsgID.ATTITUDE, self.attitude_callback)
+    self.register_callback(MsgID.RAW_GYROSCOPE, self.gyro_callback)
+    self.register_callback(MsgID.LOCAL_VELOCITY, self.velocity_callback)
+
+def attitude_callback(self):
+    ...
+    if self.flight_state == States.WAYPOINT:
+        self.attitude_controller()
+
+def gyro_callback(self):
+    ...
+    if self.flight_state == States.WAYPOINT:
+        self.bodyrate_controller()
+
+def velocity_callback(self):
+    ...
+    if self.flight_state == States.WAYPOINT:
+        self.position_controller()</code></pre>
+         <h3 id="step-5">
+          Step 5
+         </h3>
+         <p>
+          In the waypoint transition method, replace the
+          <code>
+           self.cmd_position
+          </code>
+          method (which is disabled by
+          <code>
+           UnityDrone
+          </code>
+          ) with setting the target local position. Note:
+          <code>
+           local_position_target
+          </code>
+          should be in NED coordinates, the backyard_flyer solution may calculate the box in NE altitude coordinates
+         </p>
+         <pre><code class="py language-py"># replace this
+self.cmd_position(self.target_position[0], self.target_position[1], self.target_position[2], 0.0)
+
+# with this
+self.local_position_target = np.array((self.target_position[0], self.target_position[1], self.target_position[2]))</code></pre>
+         <h3 id="step-6">
+          Step 6
+         </h3>
+         <p>
+          For this project we will no longer be flying the waypoint box, but rather a full flight trajectory, so remove calculate box and load the test trajectory:
+         </p>
+         <pre><code class="py language-py"># replace this
+self.all_waypoints = self.calculate_box()
+
+# with this
+(self.position_trajectory, self.time_trajectory, self.yaw_trajectory) = self.load_test_trajectory(time_mult=0.5)
+self.all_waypoints = self.position_trajectory.copy()
+self.waypoint_number = -1</code></pre>
+         <h3 id="step-7">
+          Step 7
+         </h3>
+         <p>
+          As our trajectory defines a waypoint with both time and location, change the transition criterion from proximity based to time based:
+         </p>
+         <pre><code class="py language-py"># Replace this
+if np.linalg.norm(self.target_position[0:2] - self.local_position[0:2]) &lt; 1.0:
+    ...
+
+# with this
+if time.time() &gt; self.time_trajectory[self.waypoint_number]:
+    ...
+...
+
+def waypoint_transition(self):
+    ...
+    self.waypoint_number = self.waypoint_number+1</code></pre>
+         <h3 id="see-what-happens-with-no-control">
+          See what happens with no control
+         </h3>
+         <p>
+          Now your
+          <code>
+           backyard_flyer.py
+          </code>
+          solution is ready to use your custom controller.  Since you have yet to write any of the control functions, your quad will be incapable of flying, but just to make sure your script is working, start up the simulator and run your script:
+         </p>
+         <pre><code class="sh language-sh">python backyard_flyer.py</code></pre>
+         <p>
+          If you've got everything set up properly, you should see your quad quite unceremoniously fall down to the ground!
+         </p>
+         <p>
+          Now you have everything you need ready to go for the Python portion of the controls project.  Next, let's get everything set up for the C++ portion of the project.
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h3 id="alternative-to-setting-up-your-backyard_flyer">
+          Alternative to setting up your
+          <code>
+           backyard_flyer
+          </code>
+         </h3>
+         <p>
+          We have provided start code that takes the
+          <code>
+           backyard_flyer
+          </code>
+          solution and adds the above modifications in the
+          <a href="https://github.com/udacity/FCND-Controls/blob/master/controls_flyer.py" rel="noopener noreferrer" target="_blank">
+           <code>
+            controls_flyer.py
+           </code>
+          </a>
+          script.  Feel free to use that as the starting point, or your own script.
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+      </div>
+      <div class="col-12">
+       <p class="text-right">
+        <a class="btn btn-outline-primary mt-4" href="05. C++ Setup.html" role="button">
+         Next Concept
+        </a>
+       </p>
+      </div>
+     </div>
+    </main>
+    <footer class="footer">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <p class="text-center">
+         udacity2.0 If you need the newest courses Plase add me wechat: udacity6
+        </p>
+       </div>
+      </div>
+     </div>
+    </footer>
+   </div>
+  </div>
+  <script src="../assets/js/jquery-3.3.1.min.js">
+  </script>
+  <script src="../assets/js/plyr.polyfilled.min.js">
+  </script>
+  <script src="../assets/js/bootstrap.min.js">
+  </script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js">
+  </script>
+  <script src="../assets/js/katex.min.js">
+  </script>
+  <script>
+   // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('04. [OPTIONAL] Python Setup')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+ </body>
+</html>

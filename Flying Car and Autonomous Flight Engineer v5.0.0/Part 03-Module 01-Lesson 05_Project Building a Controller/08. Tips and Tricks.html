@@ -1,0 +1,347 @@
+<!-- udacimak v1.4.4 -->
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="ie=edge" http-equiv="X-UA-Compatible"/>
+  <title>
+   Tips and Tricks
+  </title>
+  <link href="../assets/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="../assets/css/plyr.css" rel="stylesheet"/>
+  <link href="../assets/css/katex.min.css" rel="stylesheet"/>
+  <link href="../assets/css/jquery.mCustomScrollbar.min.css" rel="stylesheet"/>
+  <link href="../assets/css/styles.css" rel="stylesheet"/>
+  <link href="../assets/img/udacimak.png" rel="shortcut icon" type="image/png">
+  </link>
+ </head>
+ <body>
+  <div class="wrapper">
+   <nav id="sidebar">
+    <div class="sidebar-header">
+     <h3>
+      Project: Building a Controller
+     </h3>
+    </div>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled components">
+     <li class="">
+      <a href="01. Sebastian Introduction.html">
+       01. Sebastian Introduction
+      </a>
+     </li>
+     <li class="">
+      <a href="02. Changes to this Project.html">
+       02. Changes to this Project
+      </a>
+     </li>
+     <li class="">
+      <a href="03. Project Introduction.html">
+       03. Project Introduction
+      </a>
+     </li>
+     <li class="">
+      <a href="04. [OPTIONAL] Python Setup.html">
+       04. [OPTIONAL] Python Setup
+      </a>
+     </li>
+     <li class="">
+      <a href="05. C++ Setup.html">
+       05. C++ Setup
+      </a>
+     </li>
+     <li class="">
+      <a href="06. C++ Simulator.html">
+       06. C++ Simulator
+      </a>
+     </li>
+     <li class="">
+      <a href="07. Controller Performance Evaluation.html">
+       07. Controller Performance Evaluation
+      </a>
+     </li>
+     <li class="">
+      <a href="08. Tips and Tricks.html">
+       08. Tips and Tricks
+      </a>
+     </li>
+     <li class="">
+      <a href="Project Description - Control of a 3D Quadrotor.html">
+       Project Description - Control of a 3D Quadrotor
+      </a>
+     </li>
+     <li class="">
+      <a href="Project Rubric - Control of a 3D Quadrotor.html">
+       Project Rubric - Control of a 3D Quadrotor
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+   </nav>
+   <div id="content">
+    <header class="container-fluild header">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <div class="align-items-middle">
+         <button class="btn btn-toggle-sidebar" id="sidebarCollapse" type="button">
+          <div>
+          </div>
+          <div>
+          </div>
+          <div>
+          </div>
+         </button>
+         <h1 style="display: inline-block">
+          08. Tips and Tricks
+         </h1>
+        </div>
+       </div>
+      </div>
+     </div>
+    </header>
+    <main class="container">
+     <div class="row">
+      <div class="col-12">
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h2 id="c-tips-and-tricks">
+          C++ Tips and Tricks
+         </h2>
+         <p>
+          Here are some tips and tricks you may find useful while writing your C++ code.  Keeping in mind that the target platform for this code is a microcontroller, there are some additional factors you should consider:
+         </p>
+         <ul>
+          <li>
+           Use floats, don’t use doubles (in practice, floats will run much faster on many microcontrollers than doubles)
+          </li>
+          <li>
+           Please don’t add additional library dependencies or allocate memory or use fancy STL features (you shouldn’t need to), if you keep your dependencies and code complexity down, the code you implement should easily port to real hardware. A real embedded environment is often stripped down to bare essentials, and even basic C++ STL features like
+           <code>
+            &lt;string&gt;
+           </code>
+           or
+           <code>
+            &lt;map&gt;
+           </code>
+           are often missing.
+          </li>
+         </ul>
+         <p>
+          Functions you may find useful:
+         </p>
+         <ul>
+          <li>
+           Lots of the code uses a data type called V3F, this is a convenience class for working with vectors of 3 floats.  For example, position/velocity/acceleration in 3D, body rates, etc.
+          </li>
+          <li>
+           <code>
+            CONSTRAIN()
+           </code>
+           is a function that allows you to constrain your value within a set of bounds.  This is very helpful to have an upper and lower limit on a command (e.g. limiting a drone's bank angle).
+          </li>
+         </ul>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h1 id="parameter-tuning-tips-and-tricks">
+          Parameter Tuning Tips and Tricks
+         </h1>
+         <p>
+          Tuning the controller can be tricky. The parameters for your controller are defined in a file called
+          <code>
+           QuadControlParams.txt
+          </code>
+          . In that file you'll see the following initial values for the parameters
+         </p>
+         <pre><code class="text language-text"># Position control gains
+kpPosXY = 1
+kpPosZ = 1
+KiPosZ = 20
+
+# Velocity control gains
+kpVelXY = 4
+kpVelZ = 4
+
+# Angle control gains
+kpBank = 5
+kpYaw = 1
+
+# Angle rate gains
+kpPQR = 23, 23, 5</code></pre>
+         <p>
+          <strong>
+           Approximate parameter values
+          </strong>
+         </p>
+         <p>
+          These initial values are all
+          <strong>
+           too low
+          </strong>
+          . To get our "solution" controller properly tuned we needed values that were between 2 and 4 times larger than the values shown here.
+         </p>
+         <p>
+          <strong>
+           Approximate parameter ratios
+          </strong>
+         </p>
+         <p>
+          Sergei Lupashin put together a
+          <a href="https://www.overleaf.com/read/bgrkghpggnyc#/61023787/" rel="noopener noreferrer" target="_blank">
+           one-page document
+          </a>
+          deriving the ratio of velocity gains to position gains for a "critically damped" system (where the damping ratio is 1). In that document he shows that the ratio
+          <span class="mathquill ud-math">
+           K_v / K_p = 4
+          </span>
+          for such a system.
+         </p>
+         <p>
+          <strong>
+           Sequencing
+          </strong>
+         </p>
+         <p>
+          The C++ project is organized as a sequence of scenarios. Each scenario will have you implement one or two controllers and tune the associated parameters. If you can, try to keep the number of parameters that you're tuning at any given time small! For example, once you've tuned
+          <code>
+           kpPQR
+          </code>
+          and then moved on to the next controller, try to avoid further changes to
+          <code>
+           kpPQR
+          </code>
+          .
+         </p>
+         <p>
+          Dronecode provides some good
+          <a href="https://docs.px4.io/en/advanced_config/pid_tuning_guide_multicopter.html#pid-controller-overview" rel="noopener noreferrer" target="_blank">
+           guidelines on PID tuning
+          </a>
+          .
+         </p>
+         <h3 id="acknowledgement">
+          Acknowledgement
+         </h3>
+         <p>
+          The C++ simulator and project scenarios were largely designed and built by
+          <a href="https://fotokite.com/" rel="noopener noreferrer" target="_blank">
+           Fotokite
+          </a>
+          . Big thanks to the Fotokite team (and Sergei Lupashin in particular) for their great work!
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+      </div>
+      <div class="col-12">
+       <p class="text-right">
+       </p>
+      </div>
+     </div>
+    </main>
+    <footer class="footer">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <p class="text-center">
+         udacity2.0 If you need the newest courses Plase add me wechat: udacity6
+        </p>
+       </div>
+      </div>
+     </div>
+    </footer>
+   </div>
+  </div>
+  <script src="../assets/js/jquery-3.3.1.min.js">
+  </script>
+  <script src="../assets/js/plyr.polyfilled.min.js">
+  </script>
+  <script src="../assets/js/bootstrap.min.js">
+  </script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js">
+  </script>
+  <script src="../assets/js/katex.min.js">
+  </script>
+  <script>
+   // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('08. Tips and Tricks')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+ </body>
+</html>

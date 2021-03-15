@@ -1,0 +1,70 @@
+WEBVTT
+Kind: captions
+Language: en
+
+00:00:00.000 --> 00:00:04.565
+You've seen how to go from rotor rotation rates to controls.
+
+00:00:04.565 --> 00:00:08.020
+And you've seen how those controls can be thought of
+
+00:00:08.020 --> 00:00:11.830
+as a single collective thrust and three differential thrusts,
+
+00:00:11.830 --> 00:00:14.945
+which have torques about the three rotation axes.
+
+00:00:14.945 --> 00:00:17.970
+You've seen how to use the collective thrust,
+
+00:00:17.970 --> 00:00:20.015
+a rotation matrix, and
+
+00:00:20.015 --> 00:00:24.470
+two type integrals to advance the translational motion of the vehicle.
+
+00:00:24.470 --> 00:00:30.145
+Now, it's time to use the differential thrusts to advance the rotational motion.
+
+00:00:30.145 --> 00:00:33.465
+Let me walk you through how we're going to do that.
+
+00:00:33.465 --> 00:00:36.710
+First, we are going to use Euler's equation to
+
+00:00:36.710 --> 00:00:41.260
+calculate the rotational acceleration of the vehicle in its own body frame.
+
+00:00:41.260 --> 00:00:46.850
+Next, we're going to integrate that rotational acceleration to find the new p,
+
+00:00:46.850 --> 00:00:51.030
+q, r rotational velocities of the vehicle in its own frame.
+
+00:00:51.030 --> 00:00:55.000
+Then, we're going to use some clever math to convert
+
+00:00:55.000 --> 00:00:58.825
+the rotational velocity in the body frame to a phi-dot,
+
+00:00:58.825 --> 00:01:01.540
+theta-dot, and psi-dot in the build frame.
+
+00:01:01.540 --> 00:01:05.170
+Finally, we will integrate these quantities to get
+
+00:01:05.170 --> 00:01:09.085
+the final Euler angle orientation of the vehicle in the world frame.
+
+00:01:09.085 --> 00:01:13.050
+Depending on what representation of attitude you use,
+
+00:01:13.050 --> 00:01:15.670
+the last set may look slightly different.
+
+00:01:15.670 --> 00:01:18.210
+But in any case, we need to translate
+
+00:01:18.210 --> 00:01:22.920
+body rotation rates into world frame attitude representation.
+
