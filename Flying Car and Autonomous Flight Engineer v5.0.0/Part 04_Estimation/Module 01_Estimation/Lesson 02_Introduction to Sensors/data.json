@@ -1,0 +1,1110 @@
+{
+  "data": {
+    "lesson": {
+      "id": 598866,
+      "key": "4d183789-b12c-462f-a134-9503d9216373",
+      "title": "Introduction to Sensors",
+      "semantic_type": "Lesson",
+      "is_public": true,
+      "version": "1.0.0",
+      "locale": "en-us",
+      "summary": "In this lesson you'll learn about the sensors a drone uses to localize itself in the world. You'll implement sensor models, analyze sources of error, and perform calibration of various sensors. ",
+      "lesson_type": "Classroom",
+      "display_workspace_project_only": null,
+      "resources": {
+        "files": [
+          {
+            "name": "Videos Zip File",
+            "uri": "https://zips.udacity-data.com/4d183789-b12c-462f-a134-9503d9216373/598866/1538762658167/Introduction+to+Sensors+Videos.zip"
+          },
+          {
+            "name": "Transcripts Zip File",
+            "uri": "https://zips.udacity-data.com/4d183789-b12c-462f-a134-9503d9216373/598866/1538762651198/Introduction+to+Sensors+Subtitles.zip"
+          }
+        ],
+        "google_plus_link": null,
+        "career_resource_center_link": null,
+        "coaching_appointments_link": null,
+        "office_hours_link": null,
+        "aws_provisioning_link": null
+      },
+      "project": null,
+      "lab": null,
+      "concepts": [
+        {
+          "id": 616859,
+          "key": "42a4c053-1a28-4662-bb0a-d29a38e8e7c9",
+          "title": "Sebastian Introduction",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "42a4c053-1a28-4662-bb0a-d29a38e8e7c9",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 616860,
+              "key": "0a3c4a8c-aa06-451b-9848-5574001805da",
+              "title": "Nd787 C4 L2 00 Sebastian V1",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "SeqO0Cti1Dw",
+                "china_cdn_id": "SeqO0Cti1Dw.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 614846,
+          "key": "15ba4fca-8ccf-4988-a5de-8366e8af6dbd",
+          "title": "Welcome Back",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "15ba4fca-8ccf-4988-a5de-8366e8af6dbd",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 616977,
+              "key": "3aa57656-5ebc-44de-9653-204675301462",
+              "title": "Nd787 C4 L2 A01 Welcome Back V1",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "bPvfjHJFF44",
+                "china_cdn_id": "bPvfjHJFF44.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 598867,
+          "key": "c2ffc83c-ad4e-4eb0-9b03-7a43bc436558",
+          "title": "Introduction",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "c2ffc83c-ad4e-4eb0-9b03-7a43bc436558",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 616978,
+              "key": "a4794f6f-3766-43ed-88be-e8045f435337",
+              "title": "Nd787 C4 L2 A02 Introduction V1",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "ZeFXv7k2vaI",
+                "china_cdn_id": "ZeFXv7k2vaI.mp4"
+              }
+            },
+            {
+              "id": 614874,
+              "key": "d3ede90a-2e48-45c9-927b-611628d86506",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "We can group a drone's 12 state variables into 4 buckets.\n\n1. 3D position: <span class=\"mathquill\">x,y,z</span>\n2. 3D translational velocity: <span class=\"mathquill\">\\dot{x},\\dot{y},\\dot{z}</span>\n3. 3D orientation: <span class=\"mathquill\">\\phi, \\theta, \\psi</span>\n4. 3D rotational velocity: <span class=\"mathquill\">p,q,r</span>\n\nDifferent sensors tend to be useful for measuring different quantities. Try to answer the following questions about which state variables each sensor is most useful for measuring.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 614879,
+              "key": "c8ed9bbf-cf94-4d16-93ce-2e0503f7abf0",
+              "title": "",
+              "semantic_type": "CheckboxQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "c8ed9bbf-cf94-4d16-93ce-2e0503f7abf0",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "Which **two** groups of state variables are the **gyroscopes** best at estimating?",
+                "answers": [
+                  {
+                    "id": "a1524530550180",
+                    "text": "Position",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1524530592426",
+                    "text": "Translational velocity",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1524530599816",
+                    "text": "Orientation",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1524530610714",
+                    "text": "Rotational velocity",
+                    "is_correct": true
+                  }
+                ]
+              }
+            },
+            {
+              "id": 614882,
+              "key": "21f73d51-b4dc-40a0-86f5-9960077f4f86",
+              "title": "",
+              "semantic_type": "CheckboxQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "21f73d51-b4dc-40a0-86f5-9960077f4f86",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "Which **two** groups of state variables are the **accelerometers** best at estimating?",
+                "answers": [
+                  {
+                    "id": "a1524530755802",
+                    "text": "Position",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1524530770738",
+                    "text": "Translational velocity",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1524530780842",
+                    "text": "Orientation",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1524530784778",
+                    "text": "Rotational velocity",
+                    "is_correct": false
+                  }
+                ]
+              }
+            },
+            {
+              "id": 614886,
+              "key": "c687c0bd-29ac-4724-8556-d88d839b8ad6",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Take a look at the table below. This table will be discussed in the next video, but for now think about why it might be useful to have multiple measurements for certain quantities. \n\nOne reason is redundancy: if one sensor fails than another sensor is there for backup. But that's not the only reason! It's also important to consider *how* a sensor is inaccurate! Some sensors are noisy but unbiased. Some are biased but low-noise. Ideally we want our estimate of the vehicle's state to be both unbiased and low-noise and often that means using multiple sensors to measure the same quantity.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 614875,
+              "key": "121df840-89d7-4f09-bb7d-ed1e857171d3",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/April/5ade7c77_03-complementary-sensors-1-v1/03-complementary-sensors-1-v1.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/121df840-89d7-4f09-bb7d-ed1e857171d3",
+              "caption": "",
+              "alt": "",
+              "width": 1920,
+              "height": 1080,
+              "instructor_notes": null
+            }
+          ]
+        },
+        {
+          "id": 614848,
+          "key": "a8474e51-7e48-4dd4-9826-57ab99d65a0a",
+          "title": "Complementary Sensors",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "a8474e51-7e48-4dd4-9826-57ab99d65a0a",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 616979,
+              "key": "803c2fc8-1112-4c85-b989-65e27583f946",
+              "title": "Nd787 C4 L2 A03 Complementary Sensors V1",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "jhVT127kLGI",
+                "china_cdn_id": "jhVT127kLGI.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 614850,
+          "key": "701626b0-5c58-4022-8aeb-e54e9210c781",
+          "title": "Inertial Sensors",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "701626b0-5c58-4022-8aeb-e54e9210c781",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 616982,
+              "key": "b7da6d41-4244-4f8c-a5e4-bbeefddea821",
+              "title": "Nd787 C4 L2 A04 Inertial Sensors Gyros And Accelerometers V1",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "50CBmWfDhKA",
+                "china_cdn_id": "50CBmWfDhKA.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 614851,
+          "key": "73c788bc-8159-4b2f-8219-d9e77bf47594",
+          "title": "Rate Gyro Physics and Implementation",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "73c788bc-8159-4b2f-8219-d9e77bf47594",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 616983,
+              "key": "8d5daeac-8d9a-41ff-bb36-7d425f4de763",
+              "title": "Nd787 C4 L2 A05 Rate Gyro Physics And Implementation V1",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "MX_RKifV6T4",
+                "china_cdn_id": "MX_RKifV6T4.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 614852,
+          "key": "d7a12be1-1f00-47eb-9833-5ac95b5e30f3",
+          "title": "Gyro Measurement Model",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "d7a12be1-1f00-47eb-9833-5ac95b5e30f3",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 616984,
+              "key": "ba465b6d-8df6-4f02-b1db-972ac5168a4d",
+              "title": "Nd787 C4 L2 A06 Gyro Measurement Model V1",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "UnsHV0SR6So",
+                "china_cdn_id": "UnsHV0SR6So.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 615239,
+          "key": "9f7ce6c9-004f-4dc4-8f37-f3beb5860a53",
+          "title": "Gyroscope Measurements",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "9f7ce6c9-004f-4dc4-8f37-f3beb5860a53",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 615240,
+              "key": "b34dd8ec-7692-4130-8b7b-404cc0e66376",
+              "title": null,
+              "semantic_type": "WorkspaceAtom",
+              "is_public": true,
+              "workspace_id": "view1ab1afda",
+              "pool_id": "jupyter",
+              "view_id": "1ab1afda-cf78-4ebf-a872-3253647a37e3",
+              "gpu_capable": false,
+              "configuration": {
+                "id": "reserved",
+                "blueprint": {
+                  "conf": {
+                    "disk": null,
+                    "ports": [],
+                    "allowSubmit": false,
+                    "defaultPath": "/notebooks/Gyroscope_Measurements-Student.ipynb"
+                  },
+                  "kind": "jupyter"
+                },
+                "workspaceId": "reserved"
+              },
+              "starter_files": null
+            }
+          ]
+        },
+        {
+          "id": 614853,
+          "key": "b5ada6e4-41f7-4980-87de-34640629b44a",
+          "title": "Dead Reckoning Uncertainty",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "b5ada6e4-41f7-4980-87de-34640629b44a",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 616985,
+              "key": "1a1d1d46-c765-422a-959e-e1a7e477641f",
+              "title": "Nd787 C4 L2 A07 Dead Reckoning Uncertainty V1",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "IzoxlPFWIWU",
+                "china_cdn_id": "IzoxlPFWIWU.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 614854,
+          "key": "fffed472-7ffb-4b14-931e-b76dd05e8ce9",
+          "title": "Full 3D Attitude Update",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "fffed472-7ffb-4b14-931e-b76dd05e8ce9",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 616986,
+              "key": "b8cbc9b2-f432-41a3-9726-8d9d6ff7a700",
+              "title": "Nd787 C4 L2 A08 Full 3D Attitude Update V1",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "MxofULgsyGE",
+                "china_cdn_id": "MxofULgsyGE.mp4"
+              }
+            },
+            {
+              "id": 615235,
+              "key": "f244b0ee-67fb-479d-85a0-d39f7156d07b",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Gyroscope Summary\n\nGyroscopes measure rotational rate (in radians per second) by measuring the Coriolis Force. They are highly accurate and operate with a high update rate (a few kHz). \n\n**Measurement Model**\n\nA simple measurement model for a gyroscope looks like this:\n\n<div class=\"mathquill\">\\tilde{\\omega} = \\omega + b +\\eta</div>\n\n| Variable | Significance |\n| :----: | :---: |\n| <span class=\"mathquill\">\\tilde{\\omega}</span> | Measured rotation rate |\n| <span class=\"mathquill\">\\omega</span> | True rotation rate about some axis |\n| <span class=\"mathquill\">b</span> | Bias (constant or slowly changing over time) |\n| <span class=\"mathquill\">\\tilde{\\eta}</span> | Measurement Noise. Generally assumed to </br> be a zero mean Gaussian. <span class=\"mathquill\">\\eta \\sim \\mathcal{N}(0, \\sigma_{\\text{gyro}}^2)</span>\n\n**Gyro Integration (Dead Reckoning)**\n\nEven if the bias is known, a gyroscope is susceptible to *drift* when its used to estimate attitude. That's because attitude measurements are calculated by *integration* of the measured rates and this integration tends to accumulate error.\n\nWe need to use other sensor measurements to correct for this drift.\n\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 627891,
+              "key": "5fa41721-30a3-4f47-8cc7-5ddd4bbb206a",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": " ",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 614855,
+          "key": "331e90c0-ed8b-4b48-95e0-193a9f03d950",
+          "title": "Accelerometers",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "331e90c0-ed8b-4b48-95e0-193a9f03d950",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 616988,
+              "key": "7cf39edb-13fa-4d39-9826-16db79627ab6",
+              "title": "Nd787 C4 L2 A09 Accelerometers V1",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "g851qCxYr6k",
+                "china_cdn_id": "g851qCxYr6k.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 615243,
+          "key": "1a584896-3f75-4a52-88a9-6ae35e99d0c0",
+          "title": "Dead Reckoning 3D",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "1a584896-3f75-4a52-88a9-6ae35e99d0c0",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 615244,
+              "key": "f22553ea-6094-41d8-a57b-7dc6b32bf105",
+              "title": null,
+              "semantic_type": "WorkspaceAtom",
+              "is_public": true,
+              "workspace_id": "view4073f318",
+              "pool_id": "jupyter",
+              "view_id": "4073f318-1c63-4cab-8bf9-fa2d50aed343",
+              "gpu_capable": false,
+              "configuration": {
+                "id": "reserved",
+                "blueprint": {
+                  "conf": {
+                    "disk": null,
+                    "ports": [],
+                    "allowSubmit": false,
+                    "defaultPath": "/notebooks/Dead_Reckoning_3D-Student.ipynb"
+                  },
+                  "kind": "jupyter"
+                },
+                "workspaceId": "reserved"
+              },
+              "starter_files": null
+            }
+          ]
+        },
+        {
+          "id": 614856,
+          "key": "94aab922-5762-4a3b-b9b6-9b63394c2f4b",
+          "title": "Two Things Accelerometers Measure",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "94aab922-5762-4a3b-b9b6-9b63394c2f4b",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 616990,
+              "key": "1d4ad2f7-d3bd-43a9-b3ea-631d3381d39b",
+              "title": "Nd787 C4 L2 A10 Two Things Accelerometers Measure V1",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "h5k8ayFvu58",
+                "china_cdn_id": "h5k8ayFvu58.mp4"
+              }
+            },
+            {
+              "id": 626842,
+              "key": "7eefd814-c8b9-42b7-bd2d-17faef9c66a7",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "**Correction**\n\nThere's a small error in this video. There should be a minus sign before the <span class=\"mathquill\">g</span>:\n\n<div class=\"mathquill\">\n\\begin{bmatrix}\na_x\\\\ \na_y\\\\ \na_z\n\\end{bmatrix}\n\n= R \\begin{bmatrix}\n0\\\\ \n0\\\\ \n-g\n\\end{bmatrix}\n</div>\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 627892,
+              "key": "9ca7475b-930e-4c34-a6d0-9abec2f6b41c",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": " ",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 614858,
+          "key": "5d41d21e-b653-41ec-a079-2e458f89549b",
+          "title": "Inertial Navigation vs Position Fixing",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "5d41d21e-b653-41ec-a079-2e458f89549b",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 616991,
+              "key": "11ed1c85-28a6-419c-9a8d-d7e1baca1140",
+              "title": "Nd787 C4 L2 A11 Inertial Navigation Vs Position Fixing V1",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "irV_mAgx85k",
+                "china_cdn_id": "irV_mAgx85k.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 614860,
+          "key": "0fded45c-d3e7-45cc-9f33-559b7c874a83",
+          "title": "Reading an IMU Spec Sheet",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "0fded45c-d3e7-45cc-9f33-559b7c874a83",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 616992,
+              "key": "45aa43d9-687a-47ba-b9b2-d27a0e6216dc",
+              "title": "Nd787 C4 L2 A12 Reading An IMU Spec Sheet V1",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "dTLjM-wxclo",
+                "china_cdn_id": "dTLjM-wxclo.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 614861,
+          "key": "2b70e7cf-8889-43cb-b4cb-d272108fa7a7",
+          "title": "Three Sources of Error",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "2b70e7cf-8889-43cb-b4cb-d272108fa7a7",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 616993,
+              "key": "4d3755a2-20b7-4f96-8561-de38b45043ca",
+              "title": "Nd787 C4 L2 A13 Three Sources Of Error V1",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "NS_Kp-mPWb4",
+                "china_cdn_id": "NS_Kp-mPWb4.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 614862,
+          "key": "9894b04e-59c0-4e02-8e07-d2b910a57d30",
+          "title": "Calibration",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "9894b04e-59c0-4e02-8e07-d2b910a57d30",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 616994,
+              "key": "f20abde9-189c-461c-ba4f-d915c150e669",
+              "title": "Nd787 C4 L2 A14 Calibration V1",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "mGoybWJ14wc",
+                "china_cdn_id": "mGoybWJ14wc.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 615245,
+          "key": "aa91f958-65d5-4ed9-8891-2066dc2cf2f7",
+          "title": "IMU Calibration",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "aa91f958-65d5-4ed9-8891-2066dc2cf2f7",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 615246,
+              "key": "7dc426d1-f4fe-4757-adcd-15d2a846ac1a",
+              "title": null,
+              "semantic_type": "WorkspaceAtom",
+              "is_public": true,
+              "workspace_id": "view74c17415",
+              "pool_id": "jupyter",
+              "view_id": "74c17415-538b-437d-8fd1-3b89ec6c30ab",
+              "gpu_capable": false,
+              "configuration": {
+                "id": "reserved",
+                "blueprint": {
+                  "conf": {
+                    "disk": null,
+                    "ports": [],
+                    "allowSubmit": false,
+                    "defaultPath": "/notebooks/Calibration_in_3D-Student.ipynb"
+                  },
+                  "kind": "jupyter"
+                },
+                "workspaceId": "reserved"
+              },
+              "starter_files": null
+            }
+          ]
+        },
+        {
+          "id": 614863,
+          "key": "f67834be-0c7d-4842-8bd4-ec091fae0dcf",
+          "title": "Magnetometer Intuition",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "f67834be-0c7d-4842-8bd4-ec091fae0dcf",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 616996,
+              "key": "f1e0f66b-bdc5-47ce-8a8f-85124d8a0dc6",
+              "title": "Nd787 C4 L2 A15 Magnetometer Intuition V1",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "fnnwLDyi9kM",
+                "china_cdn_id": "fnnwLDyi9kM.mp4"
+              }
+            },
+            {
+              "id": 620125,
+              "key": "3a82c1b7-7cda-43f4-ba28-efb561ad4fb9",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Magnetometers and Magnetic Fields\n\n* The [Wikipedia article on Magnetometers](https://en.wikipedia.org/wiki/Magnetometer) and [the article on the magnetic fields](https://en.wikipedia.org/wiki/Magnetic_field) are a good place to begin if you want to learn more about these topics.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 627893,
+              "key": "c9943d5b-1333-4491-8fd4-8301c8b5002c",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": " ",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 614864,
+          "key": "dac9c453-b2d8-4ec3-8da0-d6cfc3abea9e",
+          "title": "Magnetometer Errors and Calibration",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "dac9c453-b2d8-4ec3-8da0-d6cfc3abea9e",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 617079,
+              "key": "9e3dd26f-909e-465e-ad30-feb86eae3293",
+              "title": "Nd787 C4 L2 A16 Magnetometer Errors And Calibratio V1",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "Rp5bUAfnAiM",
+                "china_cdn_id": "Rp5bUAfnAiM.mp4"
+              }
+            },
+            {
+              "id": 615257,
+              "key": "ee2cd88f-134c-477c-85bf-53cb8ac42b56",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Magnetometer Summary\n\nThe magnetometer takes advantage of the fact that the Earth's magnetic field always has a northward component. When we know the roll and pitch of the vehicle we can use this fact to estimate the vehicle's absolute yaw angle relative to magnetic north. \n\nUnlike gravity, the strength of the Earth's magnetic field is very weak and susceptible to distortions. For example, small electrical currents in wires onboard the drone can cause magnetic fields that overpower the Earth's magnetic field. \n\nDistortions aren't the only problem either. The Earth's magnetic field varies in magnitude and declination depending on where on the globe you are.\n\nTaken together, distortions and inconsistencies make the magnetometer measurements very noisy, but often they are the only source of absolute yaw information. We typically use magnetometers as a way to correct for drifting yaw measurements from the gyro.\n\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 627894,
+              "key": "48360da6-3a12-4910-9d5a-b5afc26a66db",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": " ",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 615247,
+          "key": "bf54acc7-8f05-4dd3-8b7a-45aa9e0e5445",
+          "title": "Magnetometer Calibration",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "bf54acc7-8f05-4dd3-8b7a-45aa9e0e5445",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 615248,
+              "key": "89acd159-38ab-46b3-98c4-4da0fab6a1c5",
+              "title": null,
+              "semantic_type": "WorkspaceAtom",
+              "is_public": true,
+              "workspace_id": "view4cec1868",
+              "pool_id": "jupyter",
+              "view_id": "4cec1868-cb56-4c76-9cb9-71fec5cd2eba",
+              "gpu_capable": false,
+              "configuration": {
+                "id": "reserved",
+                "blueprint": {
+                  "conf": {
+                    "disk": null,
+                    "ports": [],
+                    "allowSubmit": false,
+                    "defaultPath": "/notebooks/Magnetometer_calibration-Student.ipynb"
+                  },
+                  "kind": "jupyter"
+                },
+                "workspaceId": "reserved"
+              },
+              "starter_files": null
+            }
+          ]
+        },
+        {
+          "id": 614865,
+          "key": "4d6d1682-38a9-4da8-a5d5-d2cef5f4ff58",
+          "title": "GPS Overview",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "4d6d1682-38a9-4da8-a5d5-d2cef5f4ff58",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 616998,
+              "key": "f0834f8a-a15d-4a96-a3fb-d729f8116fc6",
+              "title": "Nd787 C4 L2 A17 GPS Overview V1",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "mXTNBI1DZAE",
+                "china_cdn_id": "mXTNBI1DZAE.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 614866,
+          "key": "d57e56b5-5f8f-4fa1-8337-a8776c6137bb",
+          "title": "GPS Math",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "d57e56b5-5f8f-4fa1-8337-a8776c6137bb",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 616999,
+              "key": "840893c5-1fb4-44ad-a51c-388a4f831893",
+              "title": "Nd787 C4 L2 A18 GPS Math V1",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "CzKi-xbSUGY",
+                "china_cdn_id": "CzKi-xbSUGY.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 614867,
+          "key": "6b4d7633-c68d-4bed-a083-df8bec96ee15",
+          "title": "GPS Errors, Initialization, and Calibration",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "6b4d7633-c68d-4bed-a083-df8bec96ee15",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 620122,
+              "key": "ab96f4a9-b940-4ef2-9bfb-9eef0968d7c6",
+              "title": "Nd787 C4 L2 A19 GPS Errors Initialization And Calibration V2",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "lOzc32S3k6I",
+                "china_cdn_id": "lOzc32S3k6I.mp4"
+              }
+            },
+            {
+              "id": 615284,
+              "key": "d7093884-9203-43a2-a43b-b311d71a8ae9",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## GPS Summary\n\nGPS (Global Positioning System) is an amazing but complex system which provides unbiased but noisy measurements of absolute position. These measurements are used in conjunction with accelerometers (which are low noise but susceptible to drift) to infer vehicle position.\n\nOne of the truly remarkable properties of GPS is its infinite scalability. Since satellites only transmit information and don't have to receive any external data, one satellite can serve an unlimited number of GPS receivers. \n\n#### How it works\n\nA GPS receiver needs a line-of-sight to four GPS satellites. With this established, it can calculate the time of flight from each satellite to the receiver and then perform **trilateration** to infer its position. We can also use GPS to directly measure velocity by measuring Doppler shift. \n\nEach time of flight measurement defines a \"pseudorange\" from the receiver to the corresponding satellite. In an ideal world, each \"pseudorange\" would be exact \"range\" from receiver to satellite. If this were the case, we would only need three satellites to localize a receiver on (or near) the surface of the Earth.\n\nThe fourth satellite is necessary to account for the \"clock error\" of the receiver.\n\n#### Sources of Errror\n\nError is introduced anytime the signal from satellite to receiver is delayed. Light moves quickly and a delay of only 1 nanosecond corresponds to about 1 foot (30 cm) of error in calculated distance. There are a few ways that these errors tend occur:\n\n1. Atmospheric Effects: electrons in the ionosphere can interfere with and delay the signal.\n2. Multipath Errors: these occur when the satellite signal reflects off of some surface before reaching the receiver.\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 627895,
+              "key": "743a71a7-a257-485c-b63b-73ba10b907e5",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": " ",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 614869,
+          "key": "3cbfad1e-653e-406c-84d8-124c23619490",
+          "title": "The Barometer",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "3cbfad1e-653e-406c-84d8-124c23619490",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 617003,
+              "key": "32c5f5b1-f022-4cc4-a77f-cecc18e35c2e",
+              "title": "Nd787 C4 L2 A20 The Barometer V1",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "zSNNajfuqNg",
+                "china_cdn_id": "zSNNajfuqNg.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 614870,
+          "key": "4dea5761-e7fb-4f79-92af-08c20292b387",
+          "title": "Barometer Errors and Calibration",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "4dea5761-e7fb-4f79-92af-08c20292b387",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 619741,
+              "key": "36f2a641-16aa-4cf6-9336-747c5d4f5b7b",
+              "title": "Nd787 C4 L2 A21 Barometer Errors And Calibration V1",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "XgYEMCUcBug",
+                "china_cdn_id": "XgYEMCUcBug.mp4"
+              }
+            },
+            {
+              "id": 615286,
+              "key": "14e469b0-b75e-48e8-8031-8953dff8bc01",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Barometer Summary\n\nThe barometer is really just an air pressure sensor. \n\nAs you increase your altitude, air pressure decreases in a predictable way. By comparing the current air pressure to the air pressure at some known altitude, the barometer can infer the height of the vehicle. \n\n#### Measurement model\n\nA barometer infers its height <span class=\"mathquill\">h_b</span> from a measurement of pressure, <span class=\"mathquill\">p_b</span> , according to the following equation:\n\n<div class=\"mathquill\">h_b - h_s =  \\frac{T_s}{k_T}\\left[ \\left( \\frac{p_b}{p_s} \\right )^{-\\frac{Rk_T}{g_0}}-1 \\right ] </div>\n\n| Variable | Significance |\n|:---:|:---:|\n|  <span class=\"mathquill\">h_b</span>   | Current height of barometer    |\n|  <span class=\"mathquill\">h_s</span>   |  **Reference** (surface) height   |\n|  <span class=\"mathquill\">p_b</span>   |  Current pressure measurement   |\n|  <span class=\"mathquill\">p_s</span>   |   Reference pressure  |\n|  <span class=\"mathquill\">T_s</span>   |  Reference Temperature   |\n|  <span class=\"mathquill\">R</span>   |   Gas constant (<span class=\"mathquill\">287.1\\text{ J kg}^{-1}\\text{ K}^{-1}</span>) |\n|  <span class=\"mathquill\">k_T</span>   |   Atmospheric temperature gradient (<span class=\"mathquill\">6.5 \\times 10^{-3} \\text{K m}^{-1}</span>) |\n|  <span class=\"mathquill\">g_0</span>   |   Surface acceleration due to gravity (<span class=\"mathquill\">9.81 \\text{m s}^{-2}</span>)||",
+              "instructor_notes": ""
+            },
+            {
+              "id": 627896,
+              "key": "dfbded72-b912-470b-b872-f0a342ad8227",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": " ",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 615249,
+          "key": "fdcc613b-32a9-4063-bac8-d21bf7ffeeae",
+          "title": "Barometer and GPS integration",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "fdcc613b-32a9-4063-bac8-d21bf7ffeeae",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 615250,
+              "key": "64ac95b1-9eb8-4242-b459-d90272a8c55c",
+              "title": null,
+              "semantic_type": "WorkspaceAtom",
+              "is_public": true,
+              "workspace_id": "viewd3a09439",
+              "pool_id": "jupyter",
+              "view_id": "d3a09439-9080-4be4-866f-8cbaf0be2242",
+              "gpu_capable": false,
+              "configuration": {
+                "id": "reserved",
+                "blueprint": {
+                  "conf": {
+                    "disk": null,
+                    "ports": [],
+                    "allowSubmit": false,
+                    "defaultPath": "/notebooks/Barometer%20and%20GPS%20Integration%20-%20Student.ipynb"
+                  },
+                  "kind": "jupyter"
+                },
+                "workspaceId": "reserved"
+              },
+              "starter_files": null
+            }
+          ]
+        },
+        {
+          "id": 614871,
+          "key": "808cfdcf-89fe-4de1-a65f-ee34c20d8d05",
+          "title": "Summary",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "808cfdcf-89fe-4de1-a65f-ee34c20d8d05",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 617005,
+              "key": "70ed1fae-221c-4e46-a70e-b53a37606125",
+              "title": "Nd787 C4 L2 A22 Summary V1",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "lAYpXj-3s9k",
+                "china_cdn_id": "lAYpXj-3s9k.mp4"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "_deprecated": [
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    }
+  ]
+}

@@ -1,0 +1,729 @@
+{
+  "data": {
+    "lesson": {
+      "id": 640500,
+      "key": "0a30baf0-ff83-495e-9a19-2a626751d41c",
+      "title": "Longitudinal Model",
+      "semantic_type": "Lesson",
+      "is_public": true,
+      "version": "1.0.0",
+      "locale": "en-us",
+      "summary": "Analyze both non-linear and linear models of a fixed-wing aircraft's motion in the x-z plane and use linear algebra to identify two oscillatory \"modes\" of motion. ",
+      "lesson_type": "Classroom",
+      "display_workspace_project_only": false,
+      "resources": {
+        "files": [
+          {
+            "name": "Videos Zip File",
+            "uri": "https://zips.udacity-data.com/0a30baf0-ff83-495e-9a19-2a626751d41c/640500/1538762884621/Longitudinal+Model+Videos.zip"
+          },
+          {
+            "name": "Transcripts Zip File",
+            "uri": "https://zips.udacity-data.com/0a30baf0-ff83-495e-9a19-2a626751d41c/640500/1538762880675/Longitudinal+Model+Subtitles.zip"
+          }
+        ],
+        "google_plus_link": null,
+        "career_resource_center_link": null,
+        "coaching_appointments_link": null,
+        "office_hours_link": null,
+        "aws_provisioning_link": null
+      },
+      "project": null,
+      "lab": null,
+      "concepts": [
+        {
+          "id": 667414,
+          "key": "1c413492-c830-4c58-bb4b-0c8c1e8ec530",
+          "title": "Lesson Introduction",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "1c413492-c830-4c58-bb4b-0c8c1e8ec530",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 679822,
+              "key": "1de100b3-5660-4638-ae70-7852914f7063",
+              "title": "Nd787 C5 L3 A01 L Introduction V1",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "1-iv2ZHEGDg",
+                "china_cdn_id": "1-iv2ZHEGDg.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 667416,
+          "key": "748c7d41-cbad-408c-b517-41d043b3a377",
+          "title": "Force-Free Motion",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "748c7d41-cbad-408c-b517-41d043b3a377",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 679897,
+              "key": "7ebfbb0c-6388-42bc-b1b4-41213ecbf2b6",
+              "title": "Nd787 C5 L3 A02 L Force Free Dynamics V3",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "UBWxJ6Cub6U",
+                "china_cdn_id": "UBWxJ6Cub6U.mp4"
+              }
+            },
+            {
+              "id": 667819,
+              "key": "86680a1a-4ed2-4a21-8a7c-009eaad0a267",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Force-Free Motion\n\n\nWhen tracking the longitudinal dynamics, we use the following state vector:\n\n<div class=\"mathquill\">\n\\mathbf{x} = \\begin{bmatrix}\nx_I\\\\ \nz_I\\\\ \n\\theta \\\\ \nu \\\\ \nw \\\\\nq\n\\end{bmatrix}\n</div>\n\n\n\n<span class=\"mathquill\">x_I</span> and <span class=\"mathquill\">z_I</span> are the position in the inertial frame (note that z is positive UPWARDS for this lesson).\n\n<span class=\"mathquill\">\\theta</span> is the pitch angle. \n\n<span class=\"mathquill\">u</span> and <span class=\"mathquill\">w</span> are the body frame velocities. \n\n<span class=\"mathquill\">q</span> is this pitch rate.\n\nWhen there are **no forces** acting on the vehicle, the equations of motion are as follows:\n\n<div class=\"mathquill\">\n\\begin{aligned} \n\\dot{x}_I &= u \\cos \\theta + w \\sin \\theta \\\\\n  \\dot{z}_I &= -u \\sin \\theta + w \\cos \\theta \\\\\n  \\dot{\\theta} &= q \\\\\n  \\dot{u} &=- qw \\\\\n  \\dot{w} &= qu \\\\\n  \\dot{q} &= 0 \\\\\n\\end{aligned}\n</div>\n\n### Reminder: Fixed Wing Cheat Sheet\n\nYou can find all of the equations for this module in the [Fixed Wing Cheat Sheet](https://www.overleaf.com/read/cvqmtzyhqjnj).",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 667417,
+          "key": "cd0b74f4-d7f0-4d0d-9ce5-8064d0865e7a",
+          "title": "Characterizing State Variables",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "cd0b74f4-d7f0-4d0d-9ce5-8064d0865e7a",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 667820,
+              "key": "0c6b625b-fdb3-427a-ab8d-aef2c581411b",
+              "title": "",
+              "semantic_type": "CheckboxQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "0c6b625b-fdb3-427a-ab8d-aef2c581411b",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "You just saw the six equations of motion for **force-free** longitudinal motion. Which **three** of these equations will change when we incorporate forces and moments?\n\nRemember: **forces influence translational and rotational accelerations**.\n\nCheck the correct three equations.",
+                "answers": [
+                  {
+                    "id": "a1530290120102",
+                    "text": "<span class=\"mathquill\">\\dot{x}_I = u \\cos \\theta + w \\sin \\theta</span>",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1530290256935",
+                    "text": "<span class=\"mathquill\">\\dot{z}_I = -u \\sin \\theta + w \\cos \\theta</span>",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1530290260207",
+                    "text": "<span class=\"mathquill\"> \\dot{\\theta} = q</span>",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1530290261631",
+                    "text": "<span class=\"mathquill\">\\dot{u} = - qw</span>",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1530290262927",
+                    "text": "<span class=\"mathquill\">\\dot{w} = qu</span>",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1530290264567",
+                    "text": "<span class=\"mathquill\">\\dot{q} = 0</span>",
+                    "is_correct": true
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 667418,
+          "key": "394397da-2e78-4ebb-8b6d-f6a19a5c3c4d",
+          "title": "Full Longitudinal Dynamics",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "394397da-2e78-4ebb-8b6d-f6a19a5c3c4d",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 679823,
+              "key": "e0aa8a89-bdc0-47ee-a1b1-f468e28cbf08",
+              "title": "Nd787 C5 L3 A03 L Full Longitudinal Dynamics V2",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "FZMja7L7hn4",
+                "china_cdn_id": "FZMja7L7hn4.mp4"
+              }
+            },
+            {
+              "id": 667822,
+              "key": "96539fcb-aa47-4a0e-8673-b5255c1916a5",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Incorporating Forces and Moments\n\nWhen we include forces and moments, the equations of motion look like this:\n\n<div class=\"mathquill\">\n\\begin{aligned} \n\\dot{x}_I &= u \\cos \\theta + w \\sin \\theta \\\\\n  \\dot{z}_I &= -u \\sin \\theta + w \\cos \\theta \\\\\n  \\dot{\\theta} &= q \\\\\n  \\dot{u} &= F_X/m - qw \\\\\n  \\dot{w} &= F_Z/m + qu \\\\\n  \\dot{q} &= M/I_{yy} \\\\\n\\end{aligned}\n</div>\n\nWhere we define <span class=\"mathquill\">F_X</span> and <span class=\"mathquill\">F_Z</span> as follows:\n\n<div class=\"mathquill\">\n\\begin{aligned} \n\\begin{aligned}\nF_X =& \\ L \\sin \\alpha - D \\cos \\alpha + T -mg \\sin \\theta \\\\\nF_Z =& -L \\cos \\alpha - D \\sin \\alpha  + mg \\cos \\theta \\\\\n\\end{aligned}\n\n\\end{aligned}\n</div>\n\nYou might notice that the equations above depend on the angle of attack <span class=\"mathquill\">\\alpha</span>. Does that mean we need to include it in our state vector?\n\nNo! It turns out that <span class=\"mathquill\">\\alpha</span> can be calculated from quantities that we're already tracking.\n\n\n\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 667832,
+              "key": "a1b1b043-ff92-4859-8478-f3e0aa3a3c7f",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/June/5b36653a_reusable-visual-assets-1/reusable-visual-assets-1.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/a1b1b043-ff92-4859-8478-f3e0aa3a3c7f",
+              "caption": "",
+              "alt": "",
+              "width": 960,
+              "height": 540,
+              "instructor_notes": null
+            },
+            {
+              "id": 667831,
+              "key": "081de4eb-dfb4-4ce2-be42-0bd75b9a8f78",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "From the diagram above you can see:\n\n<div class=\"mathquill\">\\alpha = \\theta - \\gamma</div>\n\nThe pitch angle <span class=\"mathquill\">\\theta</span> is already known, and the flight path angle <span class=\"mathquill\">\\gamma</span> can be calculated as:\n\n<div class=\"mathquill\">\\gamma = \\arctan\\left( \\frac{\\dot{z}_I}{\\dot{x}_I} \\right)</div>\n\nThis means we can express the angle of attack in terms of known state variables:\n\n<div class=\"mathquill\">\\alpha = \\theta - \\arctan\\left( \\frac{-u \\sin \\theta + w \\cos \\theta}{u \\cos \\theta + w \\sin \\theta}\\right)</div>\n",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 667420,
+          "key": "13339ec4-32c5-4bc2-b948-274e7518eaa1",
+          "title": "Exploring Longitudinal Dynamics Exercise",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "13339ec4-32c5-4bc2-b948-274e7518eaa1",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 675815,
+              "key": "b5d1a179-2b2a-49ad-a331-e02f23874976",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Exploring Longitudinal Dynamics\n\nIn this exercise (`Longitudinal model-Student.ipynb`), you will have the chance to implement the longitudinal equations of motion and then use those equations to simulate the longitudinal flight of an aircraft.\n\nIf you aren't interested in implementing these equations yourself, you should at least go through the solution (`Longitudinal model-Solution.ipynb`) we've provided so that you can see plots of some unexpected longitudinal trajectories.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 672221,
+              "key": "f3e5ca29-3803-4433-b4d4-04a34ceeca78",
+              "title": null,
+              "semantic_type": "WorkspaceAtom",
+              "is_public": true,
+              "workspace_id": "viewHye61afZQ7",
+              "pool_id": "jupyter",
+              "view_id": "jupyter-SkTy6zWm7",
+              "gpu_capable": false,
+              "configuration": {
+                "id": "reserved",
+                "blueprint": {
+                  "conf": {
+                    "disk": null,
+                    "ports": [],
+                    "allowSubmit": false,
+                    "defaultPath": "/"
+                  },
+                  "kind": "jupyter"
+                },
+                "workspaceId": "reserved"
+              },
+              "starter_files": null
+            }
+          ]
+        },
+        {
+          "id": 667421,
+          "key": "8db4d6cf-e2d5-4864-be52-781562352307",
+          "title": "Understanding Oscillations",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "8db4d6cf-e2d5-4864-be52-781562352307",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 679824,
+              "key": "9e756797-e8e7-4475-966b-ee06a486c439",
+              "title": "Nd787 C5 L3 A05 L Understanding Oscillations V2",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "GYaU98xGq5w",
+                "china_cdn_id": "GYaU98xGq5w.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 667423,
+          "key": "12cb0ce3-720a-402c-9a5a-24eef01bad18",
+          "title": "The Rest of the Lesson",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "12cb0ce3-720a-402c-9a5a-24eef01bad18",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 679825,
+              "key": "2961d5b8-ef00-4eb6-8e46-b317ef09be3e",
+              "title": "Nd787 C5 L3 A06 L The Rest Of This Lesson V2",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "IAlM_7JrOBY",
+                "china_cdn_id": "IAlM_7JrOBY.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 667424,
+          "key": "081d2dbe-13f6-42e4-a6ac-c2893918e612",
+          "title": "Linearized Model",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "081d2dbe-13f6-42e4-a6ac-c2893918e612",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 679898,
+              "key": "7cf675bb-4865-4a48-93b3-a9707f25e9e8",
+              "title": "Nd787 C5 L3 A07 L Linearized Model V3",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "OHJL7tIpKEw",
+                "china_cdn_id": "OHJL7tIpKEw.mp4"
+              }
+            },
+            {
+              "id": 667834,
+              "key": "8962ab61-7a74-4d48-975a-9402ded08c9c",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Linearization\n\nWe've been using the following for our state vector:\n\n<div class=\"mathquill\">\n\\mathbf{x} = \\begin{bmatrix}\nx_I\\\\ \nz_I\\\\ \n\\theta \\\\ \nu \\\\ \nw \\\\\nq\n\\end{bmatrix}\n</div>\n\nAnd the **non-linear** equations of motion are:\n\n<div class=\"mathquill\">\n\\begin{aligned} \n\\dot{x}_I &= u \\cos \\theta + w \\sin \\theta \\\\\n  \\dot{z}_I &= -u \\sin \\theta + w \\cos \\theta \\\\\n  \\dot{\\theta} &= q \\\\\n  \\dot{u} &=- qw \\\\\n  \\dot{w} &= qu \\\\\n  \\dot{q} &= 0 \\\\\n\\end{aligned}\n</div>\n\nWe can write these equations more concisely and generally as some function of the current state and the controls:\n\n<div class=\"mathquill\">\n\\dot{x} = f(x, u)\n</div>\n\nWe define a trim state <span class=\"mathquill\">x^*</span> (and associated trim state controls <span class=\"mathquill\">u^*</span>)  and a deviation from trim <span class=\"mathquill\">\\bar{x}</span> such that\n\n<div class=\"mathquill\">\n\\bar{x} = x  - x^*\n</div>\n\nThis means that \n\n<div class=\"mathquill\">\n\\begin{aligned}\n\n\\dot{\\bar{x}} &= \\dot{x}  - \\dot{x}^* \\\\\n&= f(x,u) - f(x^*, u^*) \\\\\n&= f(x^* + \\bar{x}, u^* + \\bar{u}) - f(x^*, u^*) \n\n\\end{aligned}\n</div>\n\nTaking a Taylor series expansion, we can write this as\n\n<div class=\"mathquill\">\n\n\\dot{\\bar{x}} =f(x^*, u^*) +  \\frac{\\partial f(x^*, u^*)}{\\partial x} \\bar{x} +  \\frac{\\partial f(x^*, u^*)}{\\partial u} \\bar{u} + \\ldots -  f(x^*, u^*) \n\n</div>\n\nWhere I've used <span class=\"mathquill\">\\ldots</span> to represent higher order terms in the Taylor expansion. Dropping these terms and canceling out the trim state, we find\n\n\n<div class=\"mathquill\">\n\n\\dot{\\bar{x}} \\approx  \\frac{\\partial f(x^*, u^*)}{\\partial x} \\bar{x} +  \\frac{\\partial f(x^*, u^*)}{\\partial u} \\bar{u}\n</div>\n\n\n\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 672220,
+              "key": "1925d75b-1095-4a26-a118-b74ba3a4817e",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Linearized Equations\n\nIt winds up being convenient to remove <span class=\"mathquill\">w</span> from the state vector and replace it with the angle of attack <span class=\"mathquill\">\\alpha</span>. These variables are related:\n\n<div class=\"mathquill\">\n\\begin{aligned}\nw &= V \\sin\\alpha \\\\\n\\bar{w} &= V^* \\cos \\alpha^* \\bar{\\alpha}\n\\end{aligned}\n</div>\n\nWhen we work out the Jacobians of the resulting state vector, we get the following linearized equations of motion:\n\n<div class=\"mathquill\">\n\\begin{aligned}\n\\begin{bmatrix}\n\\dot{\\bar{x_I}} \\\\\n\\dot{\\bar{z_I}} \\\\\n\\dot{\\bar{\\theta}} \\\\\n\\dot{\\bar{u}} \\\\\n\\dot{\\bar{\\alpha}} \\\\\n\\dot{\\bar{q}} \n\\end{bmatrix} &= \n\\begin{bmatrix}\n0 & 0 & -u^* \\sin \\theta^* + w^* \\cos \\theta^* & \\cos \\theta^* & V^*\\sin \\theta^* \\cos \\alpha^* & 0 \\\\\n0 & 0 & -u^* \\cos \\theta^* - w^* \\sin \\theta^* & -\\sin \\theta^* & V^* \\cos \\theta^* \\cos \\alpha^*& 0 \\\\\n0 & 0 & 0 & 0 & 0 & 1 \\\\\n0 & 0 & -g\\cos\\theta^* & X_u & X_w V^* \\cos\\alpha & X_q \\\\\n0 & 0 & \\frac{-g\\sin\\theta^*}{V^* \\cos \\alpha^*} & \\frac{Z_u}{V^* \\cos \\alpha^*} & Z_w & \\frac{Z_q}{V^* \\cos \\alpha^*} \\\\\n0 & 0 & 0 & M_u & M_w V^* \\cos \\alpha^* & M_q \n\\end{bmatrix}\n\\cdot\n\\begin{bmatrix}\n\\bar{x_I} \\\\\n\\bar{z_I} \\\\\n\\bar{\\theta} \\\\\n\\bar{u} \\\\\n\\bar{\\alpha} \\\\\n\\bar{q} \n\\end{bmatrix} \\\\\n&+\n\\begin{bmatrix}\n0 & 0 & \\\\\n0 & 0 & \\\\\n0 & 0 & \\\\\nX_{\\delta e} & X_{\\delta t} \\\\\n\\frac{Z_{\\delta e}}{V \\cos \\alpha} & 0 \\\\\nM_{\\delta e} & 0 \n\\end{bmatrix} \\cdot\n\\begin{bmatrix}\n\\bar{\\delta e}\\\\\n\\bar{\\delta T}\n\\end{bmatrix}\n\\end{aligned}\n</div>\n\nThe <span class=\"mathquill\">6 \\times 6</span> matrix on the first line is the **stability matrix**. The <span class=\"mathquill\">6 \\times 2</span> matrix on the second line is the **control-effect** matrix.\n\nNote that we've introduced some new coefficients in order to write these more compactly.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 672222,
+              "key": "5488ceb0-c14b-4775-a998-ba4a062251f8",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/July/5b439d24_screen-shot-2018-07-09-at-10.35.59-am/screen-shot-2018-07-09-at-10.35.59-am.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/5488ceb0-c14b-4775-a998-ba4a062251f8",
+              "caption": "",
+              "alt": "",
+              "width": 861,
+              "height": 546,
+              "instructor_notes": null
+            },
+            {
+              "id": 672223,
+              "key": "2a8c4641-752a-4e52-af28-ba277a5a80eb",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Remember: you can find all of these equations in the [fixed wing cheat sheet](https://www.overleaf.com/read/cvqmtzyhqjnj).",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 667426,
+          "key": "92ca68b7-bc41-4a37-8342-38c78d87152d",
+          "title": "Eigenvalues and Eigenvectors",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "92ca68b7-bc41-4a37-8342-38c78d87152d",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 679826,
+              "key": "b37ad25f-a34c-4110-8c21-502aeb45c17c",
+              "title": "Nd787 C5 L3 A08 L Eigenvalues And Eigenvectors V2",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "ZehfPpMlyUc",
+                "china_cdn_id": "ZehfPpMlyUc.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 667427,
+          "key": "f0421f11-85df-4740-8176-342069418023",
+          "title": "Exploring Complex Exponentials Notebook",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "f0421f11-85df-4740-8176-342069418023",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 667930,
+              "key": "87d1b74b-4d27-450d-bec0-b99851a9d4c6",
+              "title": null,
+              "semantic_type": "WorkspaceAtom",
+              "is_public": true,
+              "workspace_id": "view40bac7dd",
+              "pool_id": "jupyter",
+              "view_id": "40bac7dd-25ca-46b3-92ee-502a93fe3ccd",
+              "gpu_capable": false,
+              "configuration": {
+                "id": "reserved",
+                "blueprint": {
+                  "conf": {
+                    "disk": null,
+                    "ports": [],
+                    "allowSubmit": false,
+                    "defaultPath": "/notebooks/complex_exponentials.ipynb"
+                  },
+                  "kind": "jupyter"
+                },
+                "workspaceId": "reserved"
+              },
+              "starter_files": null
+            }
+          ]
+        },
+        {
+          "id": 667428,
+          "key": "4aa9048a-4e9b-459f-9fe8-125bf4ff3076",
+          "title": "Exponentials and Stability",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "4aa9048a-4e9b-459f-9fe8-125bf4ff3076",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 667944,
+              "key": "7194f404-ba12-48a6-b11b-619fd26b7d48",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Classifying Exponentials",
+              "instructor_notes": ""
+            },
+            {
+              "id": 667943,
+              "key": "ab45410d-f162-4827-9c45-34ac1bd407a6",
+              "title": "",
+              "semantic_type": "MatchingQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "ab45410d-f162-4827-9c45-34ac1bd407a6",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "complex_prompt": {
+                  "text": "Consider motion given by the following equation:\n\n<div class=\"mathquill\">\ny(t) = e^{\\lambda t}\n</div>\n\nMatch the following values of <span class=\"mathquill\">\\lambda</span> to the written description of motion."
+                },
+                "concepts_label": "Value of Lambda",
+                "answers_label": "Description of motion",
+                "concepts": [
+                  {
+                    "text": "<span class=\"mathquill\">\\lambda=1.2</span>",
+                    "correct_answer": {
+                      "id": "a1530299036900",
+                      "text": "Pure exponential growth"
+                    }
+                  },
+                  {
+                    "text": "<span class=\"mathquill\">\\lambda=-0.9</span>",
+                    "correct_answer": {
+                      "id": "a1530299255747",
+                      "text": "Pure exponential decay"
+                    }
+                  },
+                  {
+                    "text": "<span class=\"mathquill\">\\lambda=2i</span>",
+                    "correct_answer": {
+                      "id": "a1530299277196",
+                      "text": "Pure oscillation"
+                    }
+                  },
+                  {
+                    "text": "<span class=\"mathquill\">\\lambda=1.2 + 3i</span>",
+                    "correct_answer": {
+                      "id": "a1530299319044",
+                      "text": "Growing oscillation"
+                    }
+                  },
+                  {
+                    "text": "<span class=\"mathquill\">\\lambda=-1.2 + 3i</span>",
+                    "correct_answer": {
+                      "id": "a1530299337182",
+                      "text": "Decaying oscillation"
+                    }
+                  }
+                ],
+                "answers": [
+                  {
+                    "id": "a1530299036900",
+                    "text": "Pure exponential growth"
+                  },
+                  {
+                    "id": "a1530299255747",
+                    "text": "Pure exponential decay"
+                  },
+                  {
+                    "id": "a1530299337182",
+                    "text": "Decaying oscillation"
+                  },
+                  {
+                    "id": "a1530299277196",
+                    "text": "Pure oscillation"
+                  },
+                  {
+                    "id": "a1530299319044",
+                    "text": "Growing oscillation"
+                  }
+                ]
+              }
+            },
+            {
+              "id": 667946,
+              "key": "76cf97a8-d928-45a1-b63b-e7b3851dbfb4",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Stability vs Instability\n\nWe can also classify a function as **stable**, **unstable**, or **neutrally stable** based on what happens to the function as time progresses.\n\n##### Stable Functions\nIntuitively, a system is **stable** when small perturbations eventually go away. This means small deviations from an equilibrium state eventually go to to zero. More formally, we can define stability for a function as:\n\n<div class=\"mathquill\">\n\\lim_{t \\rightarrow \\infty} f(t) =0\n</div>\n\n##### Unstable Functions\n\nA system is **unstable** when small perturbations are amplified with time.\n\n<div class=\"mathquill\">\n\\lim_{t \\rightarrow \\infty} f(t) =\\infty\n</div>\n\n##### Neutrally Stable Functions\n\nA system is \"neutrally stable\" when small perturbations don't go away, but stay bounded. Pure oscillations are a common example of neutral stability.\n\n### Relationship to Complex Exponentials\n\nThe **real** part of a complex exponential dictates the stability of the system. When the real part is positive, the system is unstable. When the real part is negative, the system is stable.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 667429,
+          "key": "221b1431-fbb5-42fc-bb57-382d8d46c8b7",
+          "title": "Modes of Motion",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "221b1431-fbb5-42fc-bb57-382d8d46c8b7",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 679899,
+              "key": "ab769934-255a-4b21-8224-fa4c988aeeaf",
+              "title": "Nd787 C5 L3 A09 L Modes Of Motion V2",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "wsTmXnLt_Fs",
+                "china_cdn_id": "wsTmXnLt_Fs.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 667431,
+          "key": "cf3c6ae6-ff1b-4f73-b82c-c014c9a2414f",
+          "title": "Identifying Eigenvalues Exercise",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "cf3c6ae6-ff1b-4f73-b82c-c014c9a2414f",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 675818,
+              "key": "d01f8a54-e463-40d0-94b7-15d4edb52255",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Identifying Eigenvalues\n\nIn this exercise you will have the chance to work with a partially-implemented linearized longitudinal model.\n\nYou have the option of completing this exercise yourself (`Linear Model with Phugoidal modes-Student.ipynb`) or reading/working through the solution (`Linear Model with Phugoidal modes-Solution.ipynb`)\n\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 672219,
+              "key": "4cf58db8-6ce3-4900-86f4-73ac30906355",
+              "title": null,
+              "semantic_type": "WorkspaceAtom",
+              "is_public": true,
+              "workspace_id": "viewB1xd93MZXX",
+              "pool_id": "jupyter",
+              "view_id": "jupyter-HJuq2z+mX",
+              "gpu_capable": false,
+              "configuration": {
+                "id": "reserved",
+                "blueprint": {
+                  "conf": {
+                    "disk": null,
+                    "ports": [],
+                    "allowSubmit": false,
+                    "defaultPath": "/"
+                  },
+                  "kind": "jupyter"
+                },
+                "workspaceId": "reserved"
+              },
+              "starter_files": null
+            }
+          ]
+        },
+        {
+          "id": 667432,
+          "key": "67d46b2d-31c3-4ac0-98eb-b82a9aa42a3d",
+          "title": "Short Period Response and Phugoid",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "67d46b2d-31c3-4ac0-98eb-b82a9aa42a3d",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 679900,
+              "key": "18f9a438-9244-4e4b-904f-6b0d8d382dd1",
+              "title": "Nd787 C5 L3 A10 L Short Period Response V2",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "yJ6XJNYhHWw",
+                "china_cdn_id": "yJ6XJNYhHWw.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 667434,
+          "key": "1574afb3-de15-4640-858b-7e3146f2efa6",
+          "title": "Conclusion",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "1574afb3-de15-4640-858b-7e3146f2efa6",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 679827,
+              "key": "c79f941e-1ffa-46c1-bb18-dfb6cd7a8487",
+              "title": "Nd787 C5 L3 A11 L Conclusion V1",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "8kQI5lI_aIo",
+                "china_cdn_id": "8kQI5lI_aIo.mp4"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "_deprecated": [
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    }
+  ]
+}

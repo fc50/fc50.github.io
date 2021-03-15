@@ -1,0 +1,171 @@
+{
+  "data": {
+    "lesson": {
+      "id": 620078,
+      "key": "28253d45-cbeb-4494-bca9-dc77ac8a1ce2",
+      "title": "Congratulations!",
+      "semantic_type": "Lesson",
+      "is_public": true,
+      "version": "1.0.0",
+      "locale": "en-us",
+      "summary": "Congratulations! You've completed all the requirements for this Nanodegree Program. Pat yourself on the back and share your accomplishment with the world!",
+      "lesson_type": "Classroom",
+      "display_workspace_project_only": false,
+      "resources": {
+        "files": [
+          {
+            "name": "Videos Zip File",
+            "uri": "https://zips.udacity-data.com/28253d45-cbeb-4494-bca9-dc77ac8a1ce2/620078/1537289291853/Congratulations%21+Videos.zip"
+          },
+          {
+            "name": "Transcripts Zip File",
+            "uri": "https://zips.udacity-data.com/28253d45-cbeb-4494-bca9-dc77ac8a1ce2/620078/1537289289088/Congratulations%21+Subtitles.zip"
+          }
+        ],
+        "google_plus_link": null,
+        "career_resource_center_link": null,
+        "coaching_appointments_link": null,
+        "office_hours_link": null,
+        "aws_provisioning_link": null
+      },
+      "project": null,
+      "lab": null,
+      "concepts": [
+        {
+          "id": 620079,
+          "key": "3268eb4c-1af5-4895-a24b-f7360463575e",
+          "title": "Congratulations!",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "3268eb4c-1af5-4895-a24b-f7360463575e",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 682837,
+              "key": "8706a019-f521-431b-9b55-d48061ab8870",
+              "title": "Term 1 Conclusion V2",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "1LirHqi09WI",
+                "china_cdn_id": "1LirHqi09WI.mp4"
+              }
+            },
+            {
+              "id": 627658,
+              "key": "e28758d3-0d73-4a63-b629-1faffa4794f7",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Congratulations!\n\nCheck out some of your fellow students project implementations that they shared on Twitter using the hashtag #flyingcarnd.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 627659,
+              "key": "3947fadf-7994-4db1-b72b-72fe83659d58",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "<iframe allowfullscreen=\"\" id=\"wallsio-iframe\" src=\"https://walls.io/u4mzn?nobackground=1&amp;show_header=0\" style=\"border:0;height:800px;width:100%\"></iframe>",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 793530,
+          "key": "1cae111c-eb8d-4734-9a42-0d08e8682aa6",
+          "title": "Autonomous Systems Interview",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "1cae111c-eb8d-4734-9a42-0d08e8682aa6",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 793531,
+              "key": "84f26b76-e0eb-407e-92eb-d63d47478fd8",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## The Autonomous Systems Interview Course\n\nCongratulations on reaching the end of your Nanodegree journey! We've created a short course around interviewing specifically for roles in autonomous systems - titles like Deep Learning Engineer, Perception Engineer, Sensors Engineer, and Motion Planning Engineer are all examples of possible positions in the field. If you are taking the Nanodegree for career-oriented reasons, you should make sure to check it out! You can find it under the *Extracurricular* section on the left when you click out of the lesson. \n\nEven if you are not looking to change roles, there are a lot of additional questions at the end of the course that could help you find some more topics to learn about in your area of interest!",
+              "instructor_notes": ""
+            },
+            {
+              "id": 793532,
+              "key": "75c69552-15fa-408a-a5eb-a2fe62c029b7",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/August/5b89a8b9_autonomous-header/autonomous-header.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/75c69552-15fa-408a-a5eb-a2fe62c029b7",
+              "caption": "",
+              "alt": "",
+              "width": 794,
+              "height": 145,
+              "instructor_notes": null
+            }
+          ]
+        },
+        {
+          "id": 628482,
+          "key": "b3bc0e71-a8b8-447d-8b65-8f9922393ffa",
+          "title": "What's Next?",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "b3bc0e71-a8b8-447d-8b65-8f9922393ffa",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 628483,
+              "key": "1c2c4714-ba2c-4f38-b114-20004080e741",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Congratulations 🎉\n\nCongratulations on graduating from the Flying Car Engineer Nanodegree program! We're proud of you as this was no small feat!\n\nAs you continue on your learning journey, consider another one of the core programs in the School of Autonomous Systems:\n\n* **[Robotics Software Engineer](https://www.udacity.com/course/robotics-software-engineer--nd209)**\n* **[Self-Driving Car Engineer](https://www.udacity.com/course/self-driving-car-engineer-nanodegree--nd013)**\n\n**Click below** to enroll directly into the program!\n\n- [Robotics Software Engineer Nanodegree program - Enroll Now!](https://www.udacity.com/course/robotics-software-engineer--nd209)\n\n- [Self-Driving Car Engineer Nanodegree program - Enroll Now!](https://www.udacity.com/course/self-driving-car-engineer-nanodegree--nd013)",
+              "instructor_notes": ""
+            },
+            {
+              "id": 675797,
+              "key": "bdd2c068-b8fa-45de-8d26-9f925bac9f1e",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2019/April/5cbf9491_sas-infographic-v6/sas-infographic-v6.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/bdd2c068-b8fa-45de-8d26-9f925bac9f1e",
+              "caption": "",
+              "alt": "",
+              "width": 1430,
+              "height": 1560,
+              "instructor_notes": null
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "_deprecated": [
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    }
+  ]
+}

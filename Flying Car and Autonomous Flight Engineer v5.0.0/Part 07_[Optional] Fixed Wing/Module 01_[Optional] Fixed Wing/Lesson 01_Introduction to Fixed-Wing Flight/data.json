@@ -1,0 +1,439 @@
+{
+  "data": {
+    "lesson": {
+      "id": 634792,
+      "key": "c239d4a3-8d92-441b-be30-38cccd52e522",
+      "title": "Introduction to Fixed-Wing Flight",
+      "semantic_type": "Lesson",
+      "is_public": true,
+      "version": "1.0.0",
+      "locale": "en-us",
+      "summary": "This lesson provides a brief introduction to Fixed Wing Vehicles, flying cars, and the components of typical fixed-wing aircraft.",
+      "lesson_type": "Classroom",
+      "display_workspace_project_only": false,
+      "resources": {
+        "files": [
+          {
+            "name": "Videos Zip File",
+            "uri": "https://zips.udacity-data.com/c239d4a3-8d92-441b-be30-38cccd52e522/634792/1538762845369/Introduction+to+Fixed-Wing+Flight+Videos.zip"
+          },
+          {
+            "name": "Transcripts Zip File",
+            "uri": "https://zips.udacity-data.com/c239d4a3-8d92-441b-be30-38cccd52e522/634792/1538762842288/Introduction+to+Fixed-Wing+Flight+Subtitles.zip"
+          }
+        ],
+        "google_plus_link": null,
+        "career_resource_center_link": null,
+        "coaching_appointments_link": null,
+        "office_hours_link": null,
+        "aws_provisioning_link": null
+      },
+      "project": null,
+      "lab": null,
+      "concepts": [
+        {
+          "id": 667387,
+          "key": "c6f0b3ab-360c-4d6d-8147-31dcaa6612f6",
+          "title": "What's a Flying Car?",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "c6f0b3ab-360c-4d6d-8147-31dcaa6612f6",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 676189,
+              "key": "e3d9567c-38cb-4b03-963b-5d5dffdf0968",
+              "title": "Nd787 C5 L1 A01 L Whats A Flying Car V5",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "17g4l84E53c",
+                "china_cdn_id": "17g4l84E53c.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 667388,
+          "key": "c1a3b22c-d949-4d2c-b519-9babdac8772d",
+          "title": "History of Hybrid Vehicles",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "c1a3b22c-d949-4d2c-b519-9babdac8772d",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 676190,
+              "key": "7d13f5be-8589-413d-875e-7b6e5e7991cc",
+              "title": "Nd787 C5 L1 A02 L History Of Hybrid Vehicles V2",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "yayolj-tQkM",
+                "china_cdn_id": "yayolj-tQkM.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 667389,
+          "key": "1d902f47-9d3c-42fd-b598-9dd71cfff434",
+          "title": "Fixed Wing vs. Rotary Wing Aircraft",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "1d902f47-9d3c-42fd-b598-9dd71cfff434",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 676191,
+              "key": "60b1b6c8-55d7-40d4-b830-10f4816eb195",
+              "title": "Nd787 C5 L1 A03 L Fixed Wing Vs Rotary Wing Aircraf V2",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "3YCIT9xUgrQ",
+                "china_cdn_id": "3YCIT9xUgrQ.mp4"
+              }
+            },
+            {
+              "id": 667471,
+              "key": "d0dc6428-f1c3-4386-ad0b-d504d2afc4f7",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Fixed Wing vs. Rotary Wing Aircraft Summary\nRotary wing aircraft (like quadrotors) and Fixed wing aircraft (like airplanes) **both** have wings which generate lift. On a fixed wing aircraft, the wings are attached to the body of the vehicle. On a rotary wing aircraft, the \"wings\" are actually the propellers.\n\nThese vehicle designs each have advantages and disadvantages. \n\n##### Advantages of Rotorcraft\n1. **Easy to control** - the dynamics model is often very simple.\n2. **They can hover** - this means there are many more feasible plans that a rotorcraft can execute.\n3. **Vertical Take Off and Landing (VTOL)** - they don't need a runway! \n\n##### Disadvantages of Rotorcraft\n1. **Energy inefficient** - this limits their range and payload. \n2. **Slow** - compared to fixed wing vehicles, rotorcraft are generally slow.\n3. **Loud** - rotorcraft are often noisy.\n4. **Useless without power** - if the propellers stop turning, a rotorcraft will fall out of the sky.\n\n#### Fixed Wing Aircraft\nA fixed wing aircraft has (surprise surprise) wings attached to it. These wings need to be moving through the air to generate lift. Most of the strengths and weaknesses of fixed wing flight stem from this fact.\n\n##### Tradeoffs\n1. **Efficiency** - A fixed wing vehicle can *glide* through the air without using power! Since lift comes from the motion of the vehicle through the air, a fixed wing vehicle isn't constantly fighting gravity in the same way that a rotorcraft does.\n2. **Safety** - This ability to glide means that when the motors fail it's still possible to control the aircraft. That's good! But there's a caveat, since a fixed wing vehicle can't hover (that's bad). \n3. **Speed and Payload** - A fixed wing vehicle can spend more of its thrust on its forward velocity. This generally means greater speed and larger payloads.\n",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 667390,
+          "key": "50091b1a-1304-4101-8629-daf04e1486fb",
+          "title": "Components of a Fixed Wing Aircraft",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "50091b1a-1304-4101-8629-daf04e1486fb",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 676192,
+              "key": "fda255cf-c644-4772-8a98-d05d65ed18b6",
+              "title": "Nd787 C5 L1 A04 L Components Of Fixed Wing Aircraft RENDER V2",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "JHmaNljt8XI",
+                "china_cdn_id": "JHmaNljt8XI.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 667391,
+          "key": "17afb8bc-3aff-404a-9732-731985d478e0",
+          "title": "Components of a Wing",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "17afb8bc-3aff-404a-9732-731985d478e0",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 676193,
+              "key": "549c31b2-47e9-4f6b-b324-b4679f3b85d2",
+              "title": "Nd787 C5 L1 A05 L Components Of A Wing RENDER2 V2",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "HMlofVBvpGY",
+                "china_cdn_id": "HMlofVBvpGY.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 667392,
+          "key": "3484cc91-454b-40df-a58f-1fa04070d544",
+          "title": "Installing the Fixed Wing Simulator",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "3484cc91-454b-40df-a58f-1fa04070d544",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 667474,
+              "key": "01973a74-80cb-4301-a2e0-67c2af59107f",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Fixed Wing Simulator\n\nThe (optional) final project for this course involves writing a controller for a fixed wing aircraft. You don't need to worry about the details of this project right now, but now would be a good time to install the fixed wing simulator you'll be using.\n\nAt this point you should:\n\n1. Visit the [github repository for the final project](https://github.com/udacity/FCND-FixedWing) and skim through the instructions so you have a sense for what the final project is.\n\n2. Download the appropriate [fixed wing simulator](https://github.com/udacity/FCND-FixedWing/releases) for your machine.\n\n3. Play around in sandbox mode (there are instructions in the final project repo page for how to do this).\n\n4. Answer the questions below about the control surfaces on a fixed wing vehicle.\n\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 667476,
+              "key": "e9f78244-4868-4069-b110-4155703970ce",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/June/5b3524ef_quiz-image/quiz-image.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/e9f78244-4868-4069-b110-4155703970ce",
+              "caption": "",
+              "alt": "",
+              "width": 960,
+              "height": 540,
+              "instructor_notes": null
+            },
+            {
+              "id": 667477,
+              "key": "6bd4c34d-9779-412b-a25b-628befc69449",
+              "title": "",
+              "semantic_type": "MatchingQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "6bd4c34d-9779-412b-a25b-628befc69449",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "complex_prompt": {
+                  "text": "There are three primary types of **control surfaces** on this vehicle. In manual mode, these control surfaces are controlled with pairs of keyboard keys. Match the labeled control surfaces above to the keyboard keys that control them."
+                },
+                "concepts_label": "Control Surfaces",
+                "answers_label": "Keyboard Keys",
+                "concepts": [
+                  {
+                    "text": "Control Surface \"A\"",
+                    "correct_answer": {
+                      "id": "a1530209564474",
+                      "text": "Q / E"
+                    }
+                  },
+                  {
+                    "text": "Control Surface \"B\"",
+                    "correct_answer": {
+                      "id": "a1530209675366",
+                      "text": "A / D"
+                    }
+                  },
+                  {
+                    "text": "Control Surface \"C\"",
+                    "correct_answer": {
+                      "id": "a1530209689159",
+                      "text": "Up arrow / Down arrow"
+                    }
+                  }
+                ],
+                "answers": [
+                  {
+                    "id": "a1530209689159",
+                    "text": "Up arrow / Down arrow"
+                  },
+                  {
+                    "id": "a1530209675366",
+                    "text": "A / D"
+                  },
+                  {
+                    "id": "a1530209564474",
+                    "text": "Q / E"
+                  }
+                ]
+              }
+            },
+            {
+              "id": 667479,
+              "key": "ddfca256-60a3-4e22-b7c4-5777e9d3c6d6",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/June/5b352916_body-frame-axes/body-frame-axes.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/ddfca256-60a3-4e22-b7c4-5777e9d3c6d6",
+              "caption": "",
+              "alt": "",
+              "width": 960,
+              "height": 540,
+              "instructor_notes": null
+            },
+            {
+              "id": 667480,
+              "key": "9033063f-10c1-4d33-8fe4-47bade9baa7f",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "The body frame axes for a fixed wing vehicle are typically defined as shown above. Rotations about each of these axes is given its own name.\n\n* **Roll** is rotation about the **x axis**\n* **Pitch** is rotation about the **y axis**\n* **Yaw** is rotation about the **z axis**\n\nEach of the three control surfaces is primarily responsible for rotations about **one** of these axes.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 667481,
+              "key": "3dc25829-6369-4bdf-8681-30eff5fee4b3",
+              "title": "",
+              "semantic_type": "MatchingQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "3dc25829-6369-4bdf-8681-30eff5fee4b3",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "complex_prompt": {
+                  "text": "Match the rotation to the labeled control surface (top image)."
+                },
+                "concepts_label": "Rotation",
+                "answers_label": "Control Surface",
+                "concepts": [
+                  {
+                    "text": "Roll (x-axis)",
+                    "correct_answer": {
+                      "id": "a1530210765345",
+                      "text": "Control Surface \"B\""
+                    }
+                  },
+                  {
+                    "text": "Pitch (y-axis)",
+                    "correct_answer": {
+                      "id": "a1530210806306",
+                      "text": "Control Surface \"C\""
+                    }
+                  },
+                  {
+                    "text": "Yaw (z-axis)",
+                    "correct_answer": {
+                      "id": "a1530210814832",
+                      "text": "Control Surface \"A\""
+                    }
+                  }
+                ],
+                "answers": [
+                  {
+                    "id": "a1530210765345",
+                    "text": "Control Surface \"B\""
+                  },
+                  {
+                    "id": "a1530210814832",
+                    "text": "Control Surface \"A\""
+                  },
+                  {
+                    "id": "a1530210806306",
+                    "text": "Control Surface \"C\""
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 667393,
+          "key": "08325e13-93e2-48a8-915b-6c6576b9d5ea",
+          "title": "Fixed Wing Control Surfaces",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "08325e13-93e2-48a8-915b-6c6576b9d5ea",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 676194,
+              "key": "0cb9625d-25ba-4f98-a2b6-766e3720e3a8",
+              "title": "Nd787 C5 L1 A07 L Fixed Wing Control Surfaces V2",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "X4q8el9m_Lw",
+                "china_cdn_id": "X4q8el9m_Lw.mp4"
+              }
+            },
+            {
+              "id": 667491,
+              "key": "541d0f38-9c53-42e8-b47e-e2dc21ecdc68",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## More  Control Surfaces\n\nThe ailerons, elevators, and rudder are used to control roll, pitch, and yaw. But these aren't the only control surface you'll find on fixed wing vehicles.\n\n##### Flaps\nFlaps are mounted on the interior section of each wing and are used to reduce the \"stall speed\" of an aircraft by increasing the amount of lift the wing generates. They are typically used by commercial jets during take-off and landing. \n\n##### Spoilers\nSpoilers are used on low-drag aircraft to reduce lift by disrupting airflow. Glider pilots use spoilers when they want to lose altitude without gaining too much speed.\n\n##### Slats\nSlats are mounted on the leading edge of wings. When deployed, they allow the aircraft to operate at lower speeds.\n\n##### Air Brakes\nAir brakes slow the aircraft down by increasing drag. Spoilers can act as air brakes, but they *also* reduce lift. Air brakes are often mounted on the side of the fuselage to minimize their effect on lift.\n\nIf you'd like to learn more, the [Wikipedia article on Flight control surfaces](https://en.wikipedia.org/wiki/Flight_control_surfaces) has additional information.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 667395,
+          "key": "d20548ec-761d-4063-a9e9-da276f2ceedb",
+          "title": "Summary",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "d20548ec-761d-4063-a9e9-da276f2ceedb",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 676195,
+              "key": "8f1a46d5-e603-4bd9-b1c7-95f035c5e10e",
+              "title": "Nd787 C5 L1 A08 L Summary V1",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "kYLOA3KdE_k",
+                "china_cdn_id": "kYLOA3KdE_k.mp4"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "_deprecated": [
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    }
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "data": {
+    "lesson": {
+      "id": 601608,
+      "key": "8c02e235-6019-40a2-b1b8-85d6dfe9a978",
+      "title": "Project: Estimation",
+      "semantic_type": "Lesson",
+      "is_public": true,
+      "version": "1.0.0",
+      "locale": "en-us",
+      "summary": "In this project you'll implement an estimator to track the position and attitude of a quadrotor moving in three dimensions.",
+      "lesson_type": "Classroom",
+      "display_workspace_project_only": null,
+      "resources": null,
+      "project": {
+        "key": "07b5fa98-a872-4a9a-8faf-0431d2ff4ee1",
+        "version": "1.0.0",
+        "locale": "en-us",
+        "duration": 40320,
+        "semantic_type": "Project",
+        "title": "Building an Estimator",
+        "description": "## The Estimation Project ##\n\nThe final instruction for the project.\n\n\n## The Goal of this Project ##\n\nIn this project, you will be developing an estimator to be used by your controller to successfully fly a desired flight path using realistic sensors.  This project is built on the same simulator you should now be familiar with from the Controls C++ project.\n\n## Project Steps ##\n\n1. Make sure you have cloned the repository and gotten familiar with the additional project repository files **Introduction**.\n\n2. Implement all the necessary update and prediction steps required for your estimator to meet all the performance criteria of each step, outlined in detail in the [project README](https://github.com/udacity/FCND-Estimation-CPP)\n\n3. Tune your estimator, and re-tune your controller from your controls C++ project to successfully fly the desired trajectory with realistic sensors.\n\nFor more detailed instructions on the individual steps, make sure to read through the [project readme](https://github.com/udacity/FCND-Estimation-CPP), specifically the [section outlining the tasks for the project](https://github.com/udacity/FCND-Estimation-CPP#the-tasks).\n\n## Evaluation ##\n\nFor the submission, you will be evaluated on your completion of each of the components of your estimator, and final performance of your estimator and previously made controller.  Performance metrics are provided for each of the different scenarios, and your controller will need to meet these minimum performance metrics for each scenario.  These performance metrics are outlined in each of the steps in the [task outline portion of the project readme](https://github.com/udacity/FCND-Estimation-CPP#the-tasks).\n\n## Submission ##\n\nFor this project you will need to submit:\n\n 1. `QuadEstimatorEKF.cpp` and `QuadEstimatorEKF.txt` containing your estimator and associated estimator parameters that successfully meets all the performance criteria.\n 2. `QuadController.cpp` and `QuadControlParams.txt` containing your re-tuned controller needed to work successfully with your estimator.\n 3.  a writeup addressing all the points of the [rubric](https://review.udacity.com/#!/rubrics/1807/view)\n\n## Feedback\n\nPlease fill out the [Building an Estimator Project Feedback Form](https://goo.gl/forms/8Vm4IyEUVHadL2i52) after you have completed the project. \n\n## Share Your Project\nHave something fun to share? Controller flying in the desired box trajectory? Or maybe it wanted to do circles instead? We love to see any and all of your creations!\n\nWhat you’ve accomplished is no small feat. Give yourself a pat on the back and some well-deserved recognition by sharing your amazing project with your network.\n\nCreate a gif or youtube video of your project implementation in the simulator and share with us in the [Flying Car Slack Community](https://udacity-flying-car.slack.com/messages/C77GCKZ8U) and on social media using the links below!\n\nMake sure to use **@Udacity**, **#flyingcarnd**, **#quadestimator**, and **#madewithudacity** in your posts!\n\n<iframe\n  src=\"https://platform.twitter.com/widgets/tweet_button.html?size=l&url=www.udacity.com&text=I%20designed%20an%20Extended%20Kalman%20Filter%20to%20estimate%20attitude%20and%20position%20from%20IMU%20and%20GPS%20data%20of%20a%20flying%20robot%20in%20simulation!%20[Insert%20your%20Gif%20or%20youtube%20url%20here]&hashtags=flyingcarnd, quadestimator, madewithudacity\"\nwidth=\"140\"\nheight=\"28\"\nscrolling=\"no\">\n</iframe>\n\n\n<html>\n\n<head>\n<style>\n.fb {color: white;\n  background-color: #4661b0;\n  border-radius: 4px;\n  font-weight: bold;\n  height: 28px;\n  font-size: 14px;}\n.fb:hover {color: #4661b0;\n  background-color: white;\n  border-color: #4661b0;\n  transition: background-color 0.4s}\n.linkedin {color: white;\n  background-color: #0077B5;\n  border-radius: 4px;\n  font-weight: bold;\n  height: 28px;\n  font-size: 14px;}\n.linkedin:hover {color: #0077B5;\n  background-color: white;\n  border-color: #0077B5;\n  transition: background-color 0.4s}\n</style>\n\n</head>\n\n<body>\n<form action=\"https://www.facebook.com/sharer.php?\">\n  Enter the full URL of your Gif or Youtube video:<br>\n  <input type=\"url\" name=\"u\" placeholder=\"Paste URL here\">\n  <input type=\"hidden\" name=\"hashtag\" value=\"#flyingcarnd\">\n  <button class=\"fb\">Share on Facebook</button>\n</form>\n\n<form action=\"https://www.linkedin.com/shareArticle?mini=true\">\n  <input type=\"url\" name=\"url\" placeholder=\"Paste URL here\">\n  <input type=\"hidden\" name=\"title\" value=\"Finding Lane Lines\">\n  <input type=\"hidden\" name=\"summary\" value=\"I designed an Extended Kalman Filter to estimate attitude and position from IMU and GPS data of a flying robot in simulation! @udacity #flyingcarnd #quadcontrol #madewithudacity\">\n  <button class=\"linkedin\">Share on LinkedIn</button>\n</form>\n\n</body>\n\n</html>\n\n",
+        "is_public": true,
+        "summary": null,
+        "forum_path": "",
+        "rubric_id": "1807",
+        "terminal_project_id": null,
+        "resources": null,
+        "image": {
+          "url": "https://s3.amazonaws.com/video.udacity-data.com/topher/2018/June/5b23fe97_estimation-project/estimation-project.jpg",
+          "width": 1160,
+          "height": 384
+        }
+      },
+      "lab": null,
+      "concepts": [
+        {
+          "id": 601611,
+          "key": "4c69a6e2-2c7e-49ba-be28-5007cc30671d",
+          "title": "Introduction",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "4c69a6e2-2c7e-49ba-be28-5007cc30671d",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 614917,
+              "key": "8a4c0c52-aa2f-4c64-9de1-58a776d6ea8d",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Welcome to the estimation project.  In this project, you will be developing the estimation portion of the controller used in the CPP simulator.  By the end of the project, your simulated quad will be flying with your estimator and your custom controller (from the previous project)!",
+              "instructor_notes": ""
+            },
+            {
+              "id": 614918,
+              "key": "886e4a13-597a-48e7-bd15-a0ee6b5ba1c9",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Setup ##\n\nThis project will continue to use the C++ development environment you set up in the Controls C++ project.\n\n 1. Clone the repository\n ```\n git clone https://github.com/udacity/FCND-Estimation-CPP.git\n ```\n\n 2. Import the code into your IDE like done in the [Controls C++ project](https://github.com/udacity/FCND-Controls-CPP#development-environment-setup)\n \n 3. You should now be able to compile and run the estimation simulator just as you did in the controls project",
+              "instructor_notes": ""
+            },
+            {
+              "id": 614919,
+              "key": "243e8672-32ee-4eb3-a6f0-57a60bf4a974",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Project Structure ##\n\nFor this project, you will be interacting with a few more files than before.\n\n - The EKF is already partially implemented for you in `QuadEstimatorEKF.cpp`\n\n - Parameters for tuning the EKF are in the parameter file `QuadEstimatorEKF.txt`\n\n - When you turn on various sensors (the scenarios configure them, e.g. `Quad.Sensors += SimIMU, SimMag, SimGPS`), additional sensor plots will become available to see what the simulated sensors measure.\n\n - The EKF implementation exposes both the estimated state and a number of additional variables. In particular:\n\n   - `Quad.Est.E.X` is the error in estimated X position from true value.  More generally, the variables in `<vehicle>.Est.E.*` are relative errors, though some are combined errors (e.g. MaxEuler).\n\n   - `Quad.Est.S.X` is the estimated standard deviation of the X state (that is, the square root of the appropriate diagonal variable in the covariance matrix). More generally, the variables in `<vehicle>.Est.S.*` are standard deviations calculated from the estimator state covariance matrix.\n\n   - `Quad.Est.D` contains miscellaneous additional debug variables useful in diagnosing the filter. You may or might not find these useful but they were helpful to us in verifying the filter and may give you some ideas if you hit a block.\n\n\n### `config` Directory ###\n\nIn the `config` directory, in addition to finding the configuration files for your controller and your estimator, you will also see configuration files for each of the simulations.  For this project, you will be working with simulations 06 through 11 and you may find it insightful to take a look at the configuration for the simulation.\n\nAs an example, if we look through the configuration file for scenario 07, we see the following parameters controlling the sensor:\n\n```\n# Sensors\nQuad.Sensors = SimIMU\n# use a perfect IMU\nSimIMU.AccelStd = 0,0,0\nSimIMU.GyroStd = 0,0,0\n```\n\nThis configuration tells us that the simulator is only using an IMU and the sensor data will have no noise.  You will notice that for each simulator these parameters will change slightly as additional sensors are being used and the noise behavior of the sensors change.\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 614921,
+              "key": "2b7dc13c-fb6e-4f91-97b1-e37f84d3362f",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Now that you have everything set up, you'll be able to dive right into the project!\n\nThe math that you'll need to implement is explained in the [Estimation for Quadrotors](https://www.overleaf.com/read/vymfngphcccj) document that you worked with in the lessons on Kalman Filters. The **Three Dimensional Quad** section should be most helpful.\n\n### Acknowledgment\n\nThe C++ simulator and project scenarios were largely designed and built by [Fotokite](https://fotokite.com/). Big thanks to the Fotokite team (and Sergei Lupashin in particular) for their great work!\n\n",
+              "instructor_notes": ""
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

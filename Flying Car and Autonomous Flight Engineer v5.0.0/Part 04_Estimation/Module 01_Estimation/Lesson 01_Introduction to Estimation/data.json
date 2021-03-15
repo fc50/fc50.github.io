@@ -1,0 +1,1189 @@
+{
+  "data": {
+    "lesson": {
+      "id": 598864,
+      "key": "0aad84d9-ec84-42b6-8ed8-10d770055da4",
+      "title": "Introduction to Estimation",
+      "semantic_type": "Lesson",
+      "is_public": true,
+      "version": "1.0.0",
+      "locale": "en-us",
+      "summary": "Review basic probability and learn three approaches to state estimation for a stationary vehicle.",
+      "lesson_type": "Classroom",
+      "display_workspace_project_only": null,
+      "resources": {
+        "files": [
+          {
+            "name": "Videos Zip File",
+            "uri": "https://zips.udacity-data.com/0aad84d9-ec84-42b6-8ed8-10d770055da4/598864/1538763154378/Introduction+to+Estimation+Videos.zip"
+          },
+          {
+            "name": "Transcripts Zip File",
+            "uri": "https://zips.udacity-data.com/0aad84d9-ec84-42b6-8ed8-10d770055da4/598864/1538763149529/Introduction+to+Estimation+Subtitles.zip"
+          }
+        ],
+        "google_plus_link": null,
+        "career_resource_center_link": null,
+        "coaching_appointments_link": null,
+        "office_hours_link": null,
+        "aws_provisioning_link": null
+      },
+      "project": null,
+      "lab": null,
+      "concepts": [
+        {
+          "id": 616855,
+          "key": "41d169b6-f2b8-4b50-8448-9792ec934250",
+          "title": "Sebastian Introduction",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "41d169b6-f2b8-4b50-8448-9792ec934250",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 616857,
+              "key": "af5f8865-6730-4717-b723-bde4c8de79d6",
+              "title": "Nd787 C4 L1 00 Sebastian V1",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "feIE-SVBCjA",
+                "china_cdn_id": "feIE-SVBCjA.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 598865,
+          "key": "4c2241b3-10d8-4b5f-a44a-5e56c2e2c21f",
+          "title": "Welcome Back",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "4c2241b3-10d8-4b5f-a44a-5e56c2e2c21f",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 616893,
+              "key": "230c41b1-22b9-4ed9-8802-970144adbe2f",
+              "title": "Nd787 C4 L1 A01 Welcome Back V1",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "C04K4pvkbas",
+                "china_cdn_id": "C04K4pvkbas.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 598875,
+          "key": "af6662d3-4d74-43b3-ac9b-d17f94a13484",
+          "title": "Intro to Estimation",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "af6662d3-4d74-43b3-ac9b-d17f94a13484",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 616895,
+              "key": "e20e321e-6e62-4575-baf1-53db2dbb4b7d",
+              "title": "Nd787 C4 L1 A02 Intro To Estimation V1",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "qQi-9ly0RXg",
+                "china_cdn_id": "qQi-9ly0RXg.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 598876,
+          "key": "4546b151-e032-4782-b98e-c757d10fcb57",
+          "title": "Review of Discrete Probability",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "4546b151-e032-4782-b98e-c757d10fcb57",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 616898,
+              "key": "64482cac-64cc-463d-84fe-784b68f8ab4e",
+              "title": "Nd787 C4 L1 A03 Review Of Discrete Probability V1",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "qeU6v66-uKk",
+                "china_cdn_id": "qeU6v66-uKk.mp4"
+              }
+            },
+            {
+              "id": 598895,
+              "key": "19987637-ce3f-49eb-92ed-68c981d44e72",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Summary of Terms\n\n**Sample Space** - The set of all possible outcomes for a probabilistic trial. For the case of rolling a single die, the sample space would be <span class=\"mathquill\">\\left \\{ 1,2,3,4,5,6 \\right \\}</span>\n\n**Outcome / Event** - One single possible result in the sample space. For example, rolling a 2.\n\n**Probability Distribution** - A mapping of events to probabilities. For a **discrete** distribution we can use a table like the following for a fair die:\n\n| Event | Probability |\n|:-----:|:-----------:|\n|   1   |     1/6     |\n|   2   |     1/6     |\n|   3   |     1/6     |\n|   4   |     1/6     |\n|   5   |     1/6     |\n|   6   |     1/6     |\n\n**Normalization** - A probability is normalized when the probabilities sum to 1.0. Any mathematically correct distribution must be normalized, but un-normalized distributions can also be useful if we just want to compare relative probabilities.\n\n**Conditional Probability** - The conditional probability <span class=\"mathquill\">p(A|B)</span> gives the probability of event A *given* that event B has already occurred. \n\n**Random Variable** - A random variable is a variable whose possible values are outcomes of some random phenomenon.\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 627881,
+              "key": "8ec802b6-7b2c-45b0-a337-ff7a6e36ff33",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": " ",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 598877,
+          "key": "3e39c4a6-154c-4195-aac6-a445d97063fc",
+          "title": "Expected Value",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "3e39c4a6-154c-4195-aac6-a445d97063fc",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 616926,
+              "key": "7e23cca5-db87-4709-900b-66f49f2a7fea",
+              "title": "Nd787 C4 L1 A04 Expected Value V1",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "YqrPR1GnMoE",
+                "china_cdn_id": "YqrPR1GnMoE.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 598878,
+          "key": "6e673dfc-6bcd-4c34-b77e-b75e03ac33c0",
+          "title": "Variance",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "6e673dfc-6bcd-4c34-b77e-b75e03ac33c0",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 616899,
+              "key": "e27e94f7-da89-4782-93af-67db77258d8f",
+              "title": "Nd787 C4 L1 A05 Variance V1",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "79A0nWd0goY",
+                "china_cdn_id": "79A0nWd0goY.mp4"
+              }
+            },
+            {
+              "id": 598899,
+              "key": "27215318-89ef-4bb6-ad82-c34d199fdff5",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Summary of Terms\n\n**Expected Value** - The expected value gives the long-run average value of a repeated probabilistic experiment. Mathematically, the expected value of a random variable X is defined as:\n\n<div class=\"mathquill\">E[X] = \\bar{x} = \\sum x_i p(x_i)</div>\n\n**Variance** - The variance of a random variable measures how spread out a set of numbers are from their mean (expected value). \n\n<div class=\"mathquill\">E[(X- E[X])^2] = \\sigma^2 = \\sum (x-\\bar{x})^2 p(x)</div>\n\n**Standard Deviation** - The standard deviation is a common measure of spread. It's just the square root of the variance.\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 627882,
+              "key": "96951ddb-8ba9-4990-86f1-11f0f945b42f",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": " ",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 598900,
+          "key": "fa2bab45-0e50-4cc3-b678-8efc9c98771f",
+          "title": "Playing with Probabilities Notebook",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "fa2bab45-0e50-4cc3-b678-8efc9c98771f",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 598901,
+              "key": "8f60f200-17e5-4ccc-941c-e0b195fbc044",
+              "title": null,
+              "semantic_type": "WorkspaceAtom",
+              "is_public": true,
+              "workspace_id": "view11b9dedb",
+              "pool_id": "jupyter",
+              "view_id": "11b9dedb-efe3-4bf8-9408-73392192052e",
+              "gpu_capable": false,
+              "configuration": {
+                "id": "reserved",
+                "blueprint": {
+                  "conf": {
+                    "ports": [],
+                    "allowSubmit": false,
+                    "defaultPath": "/notebooks/Expected%20Value%20vs%20Variance.ipynb"
+                  },
+                  "kind": "jupyter"
+                },
+                "workspaceId": "reserved"
+              },
+              "starter_files": null
+            }
+          ]
+        },
+        {
+          "id": 598879,
+          "key": "0cc2026f-1ca5-4ccc-8782-7da2012af09a",
+          "title": "Probability Density Functions",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "0cc2026f-1ca5-4ccc-8782-7da2012af09a",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 616900,
+              "key": "75bee05b-f7cf-48af-b4f0-b7a9d476c20c",
+              "title": "Nd787 C4 L1 A06 Probability Density Functions V1",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "lmkpfbpe9LQ",
+                "china_cdn_id": "lmkpfbpe9LQ.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 598902,
+          "key": "043db31e-d9dc-4f6b-b14e-b268e7c03d77",
+          "title": "Uniform Distribution Notebook",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "043db31e-d9dc-4f6b-b14e-b268e7c03d77",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 613508,
+              "key": "60ae1a87-5455-4c58-8b41-375f41f58676",
+              "title": null,
+              "semantic_type": "WorkspaceAtom",
+              "is_public": true,
+              "workspace_id": "view11b9dedb",
+              "pool_id": "jupyter",
+              "view_id": "d3d6697a-9f07-4479-99b8-0923964134fc",
+              "gpu_capable": false,
+              "configuration": {
+                "id": "reserved",
+                "blueprint": {
+                  "conf": {
+                    "disk": null,
+                    "ports": [],
+                    "allowSubmit": false,
+                    "defaultPath": "/notebooks/Uniform%20Distribution.ipynb"
+                  },
+                  "kind": "jupyter"
+                },
+                "workspaceId": "reserved"
+              },
+              "starter_files": null
+            }
+          ]
+        },
+        {
+          "id": 598880,
+          "key": "5c926871-8e3e-44ea-acd9-fd8a416aa8cd",
+          "title": "Uniform and Gaussian Distributions",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "5c926871-8e3e-44ea-acd9-fd8a416aa8cd",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 616901,
+              "key": "25a886f1-6aeb-4a23-9d9d-32c8ec928cde",
+              "title": "Nd787 C4 L1 A07 Uniform And Gaussian Distributions V1",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "hK-6jz5ETHI",
+                "china_cdn_id": "hK-6jz5ETHI.mp4"
+              }
+            },
+            {
+              "id": 598903,
+              "key": "e638b5af-80fc-4c6f-92c0-c0ae6fc12cb4",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### What about flying cars?\n\nWhat does all of this have to do with flying cars? A lot! \n\nSensors, for example, are imperfect. If I am 1 meter away from a wall and I point my range finder at that wall, I'm likely to get measurements that are slightly different than 1 meter. I might get 0.992... then 1.001... etc...\n\nThese measurements are generally centered on the true value of the distance (in this case 1 meter) but they have \"Gaussian Noise\" added on as well. As you just saw, a Gaussian random variable is parameterized by the mean, <span class=\"mathquill\">\\mu</span>, and variance <span class=\"mathquill\">\\sigma^2</span>.\n\nA good sensor will have a small variance. A bad sensor will have a large variance. Either way, before we put a sensor on our drone we need to know, actually we need to **estimate**,  what this variance is.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 627883,
+              "key": "7a2ccd0b-447b-4432-9457-a304722cd7a9",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": " ",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 598881,
+          "key": "b4aa2d8e-d72d-495f-b536-23399e2b8ab2",
+          "title": "Estimating Parameters from Data",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "b4aa2d8e-d72d-495f-b536-23399e2b8ab2",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 616903,
+              "key": "e3fed35d-4a22-4365-9aba-329b3034442f",
+              "title": "Nd787 C4 L01 A08 Estimating Parameters From Data V1",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "NTeLymqjPWU",
+                "china_cdn_id": "NTeLymqjPWU.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 598882,
+          "key": "fc373fc5-b445-4152-99b0-4a338839c293",
+          "title": "Multivariate Distributions",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "fc373fc5-b445-4152-99b0-4a338839c293",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 616904,
+              "key": "dd6410e3-7372-49de-ae81-0ad36721d430",
+              "title": "Nd787 C4 L01 A09 Multivariate Distributions V1",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "YmeaZcqfTK0",
+                "china_cdn_id": "YmeaZcqfTK0.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 617039,
+          "key": "9d40b1e0-7f58-4938-a9ab-019e564de950",
+          "title": "2D Gaussian Notebook",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "9d40b1e0-7f58-4938-a9ab-019e564de950",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 617040,
+              "key": "642e8f3c-c1ab-4145-8487-26bbbe7b054a",
+              "title": null,
+              "semantic_type": "WorkspaceAtom",
+              "is_public": true,
+              "workspace_id": "view6b17b223",
+              "pool_id": "jupyter",
+              "view_id": "6b17b223-5119-476d-b7b9-19bb1d24817f",
+              "gpu_capable": false,
+              "configuration": {
+                "id": "reserved",
+                "blueprint": {
+                  "conf": {
+                    "disk": null,
+                    "ports": [],
+                    "allowSubmit": false,
+                    "defaultPath": "/notebooks/2D-Gaussian.ipynb"
+                  },
+                  "kind": "jupyter"
+                },
+                "workspaceId": "reserved"
+              },
+              "starter_files": null
+            }
+          ]
+        },
+        {
+          "id": 598883,
+          "key": "a9425b7e-9b7d-4727-b17e-cdb475f1ad57",
+          "title": "Joint and Marginal Distributions",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "a9425b7e-9b7d-4727-b17e-cdb475f1ad57",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 616907,
+              "key": "e4b9aff1-10a5-4a5d-b2a4-6d7644f4270f",
+              "title": "Nd787 C4 L01 A10 Joint And Marginal Distributions V1",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "Sm0Jv3lilQo",
+                "china_cdn_id": "Sm0Jv3lilQo.mp4"
+              }
+            },
+            {
+              "id": 614759,
+              "key": "7b55278f-f2ce-4dc5-b10f-5cb83196cef8",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Summary of Terms\n\n**Joint Distribution** - The joint distribution <span class=\"mathquill\">p(x,y)</span> gives the probability of event <span class=\"mathquill\">x</span> and event <span class=\"mathquill\">y</span> happening.  This idea can be generalized to situations with more than two random variables as well.\n\n**Marginal Distribution** - The marginal distribution of a subset of random variables gives the probability distribution over just the variables in that subset.\n\nFor example, let's say you know the probability distribution on a vehicle's x,y,z location in space: <span class=\"mathquill\">p(x,y,z)</span>, but you only care about the vehicle's altitude (z). You could compute the **marginal distribution** for z by integrating out the other two variables.\n\n<div class=\"mathquill\">p(z) = \\int_{-\\infty}^{\\infty} \\int_{-\\infty}^{\\infty} p(x,y,z) dx dy</div>\n\n**Independence** - Two events <span class=\"mathquill\">x</span> and <span class=\"mathquill\">y</span> are independent when their joint probability is equal to the product of the individual probabilities. That is, when:\n\n<div class=\"mathquill\">p(x,y) = p(x)p(y)</div>\n\n#### Want to read more?\n\nThe wikipedia articles on these topics are pretty helpful if you want to read more!\n\n* [Joint Probability Distribution](https://en.wikipedia.org/wiki/Joint_probability_distribution)\n* [Marginal Distribution](https://en.wikipedia.org/wiki/Marginal_distribution)\n* [Independence](https://bit.ly/2HUxThg)",
+              "instructor_notes": ""
+            },
+            {
+              "id": 627884,
+              "key": "719f45d0-2552-4f06-adb5-6d5ee3281934",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": " ",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 598885,
+          "key": "081b3de2-fa03-4876-85b9-e4fca692d32e",
+          "title": "Correlation and Independence",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "081b3de2-fa03-4876-85b9-e4fca692d32e",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 616927,
+              "key": "86ba8c3d-b249-473d-b71f-ddc3e6a02331",
+              "title": "Nd787 C4 L1 A11 Correlation And Independence V1",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "gZIjyw62RdA",
+                "china_cdn_id": "gZIjyw62RdA.mp4"
+              }
+            },
+            {
+              "id": 614780,
+              "key": "ac3276ea-a2d6-4a29-9654-a6b374999678",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Summary of New Terms\n\n**Correlation**: When two random variables are correlated, knowledge of one provides some information about the other. For example, the position of a vehicle **now** and the position of a vehicle in **one second** are correlated random variables: knowledge of one should give me some insight into the value of the other. \n\nThe **Pearson correlation coefficient** is one way of quantifying this relationship.\n\n**Covariance**: Covariance is related to correlation. It is a measure of the *joint variability* of two random variables. If one variable tends to be big when the other is big, then the covariance is positive. The correlation coefficient is simply the normalized version of the covariance.\n\n#### Additional Resources\n\nAgain, the wikipedia articles on these topics are generally thorough and well-explained.\n\n* [Correlation](https://en.wikipedia.org/wiki/Correlation_and_dependence)\n* [Pearson Correlation Coefficient](https://en.wikipedia.org/wiki/Pearson_correlation_coefficient)\n* [Covariance](https://en.wikipedia.org/wiki/Covariance)",
+              "instructor_notes": ""
+            },
+            {
+              "id": 627885,
+              "key": "f05e5be8-e331-4570-9108-ba433ac6dc18",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": " ",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 598886,
+          "key": "e0827354-a5ec-4dae-9cd0-da16fc1bca87",
+          "title": "Conditional Distributions",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "e0827354-a5ec-4dae-9cd0-da16fc1bca87",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 616928,
+              "key": "6d46b962-5ee1-42e6-ba43-0f7df529be57",
+              "title": "Nd787 C4 L1 A12 Conditional Distributions V1",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "nxDCf_vMXms",
+                "china_cdn_id": "nxDCf_vMXms.mp4"
+              }
+            },
+            {
+              "id": 614792,
+              "key": "985d961d-7006-4221-9718-370d06d9ad0e",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Summary of Notation\n\n| Notation | Mathematical Meaning |\n|:-----:|:-----------:|\n|   <span class=\"mathquill\">p(x)</span>   |     The probability of x   |\n|   <span class=\"mathquill\">p(x,y)</span> |     The probability of x **and** y     |\n|  <span class=\"mathquill\">p(x|y)</span>   |   The probability of x **given** y   |\n|  <span class=\"mathquill\">p(y|x)</span>   |   The probability of y given x   |\n\nIn the example from the video, we took x to be the vehicle position and y to be the sensor measurements. With this in mind, this notation takes on some real world meaning. \n\n| Notation | \"Real world\" Meaning |\n|:-----:|:-----------:|\n|   <span class=\"mathquill\">p(x)</span>   |     The probability of the vehicle being in position x.   |\n|   <span class=\"mathquill\">p(x,y)</span> |     The probability of the vehicle being in position x **and** making measurements y.    |\n|  <span class=\"mathquill\">p(x|y)</span>   |   The probability of the vehicle being in position x **given** that we've made the measurements y.|\n|  <span class=\"mathquill\">p(y|x)</span>   |   The probability of making measurements y given that the vehicle is in position x.    |\n\nWhen we do estimation for a flying vehicle, we generally have access to the measurements <span class=\"mathquill\">y</span> and we want to know the probability of  <span class=\"mathquill\">x</span> **given** those measurements. So we want to calculate <span class=\"mathquill\">p(x|y)</span>. \n\nBut it turns out that it's often MUCH easier to generate the distribution of measurement likelihoods given the current position. That is, it's easier to come up with <span class=\"mathquill\">p(y|x)</span> than it is to come up with <span class=\"mathquill\">p(x|y)</span>. This is where Bayes' Rule is really helpful! According to Bayes' Rule:\n\n<div class=\"mathquill\">p(x|y) = \\frac{p(y|x)p(x)}{p(y)}</div>",
+              "instructor_notes": ""
+            },
+            {
+              "id": 627886,
+              "key": "eae5dfcc-444e-4c7f-a9a2-fee26efca601",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": " ",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 598887,
+          "key": "2699c77b-78f0-4eeb-9005-1af8f90fe652",
+          "title": "Applying Bayes' Rule",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "2699c77b-78f0-4eeb-9005-1af8f90fe652",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 616929,
+              "key": "20e7f8b6-5634-48f3-b13b-fc2401b1174a",
+              "title": "Nd787 C4 L1 A13 Applying Bayes Rule V1",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "R6S8VnN2CkA",
+                "china_cdn_id": "R6S8VnN2CkA.mp4"
+              }
+            },
+            {
+              "id": 614831,
+              "key": "00ea97b6-453f-4bcc-89d8-888346d8f643",
+              "title": "",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "00ea97b6-453f-4bcc-89d8-888346d8f643",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "Are independent variables necessarily uncorrelated?",
+                "answers": [
+                  {
+                    "id": "a1524528641971",
+                    "text": "Yes",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1524528667003",
+                    "text": "No",
+                    "is_correct": false
+                  }
+                ]
+              }
+            },
+            {
+              "id": 614834,
+              "key": "0cc01b70-f532-405b-8654-56314e8287af",
+              "title": "",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "0cc01b70-f532-405b-8654-56314e8287af",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "Are uncorrelated variables in a multivariate distribution necessarily independent?",
+                "answers": [
+                  {
+                    "id": "a1524528716208",
+                    "text": "Yes",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1524528747966",
+                    "text": "No",
+                    "is_correct": true
+                  }
+                ]
+              }
+            },
+            {
+              "id": 614836,
+              "key": "fdf7a566-a1ec-44be-9c69-cad44b5130d5",
+              "title": "",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "fdf7a566-a1ec-44be-9c69-cad44b5130d5",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "Are uncorrelated variables in a multivariate **Gaussian** distribution necessarily independent?",
+                "answers": [
+                  {
+                    "id": "a1524528825453",
+                    "text": "Yes",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1524528847442",
+                    "text": "No",
+                    "is_correct": false
+                  }
+                ]
+              }
+            },
+            {
+              "id": 614837,
+              "key": "05a4d3f5-fba5-439c-a9bd-dbc9916b47bb",
+              "title": "",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "05a4d3f5-fba5-439c-a9bd-dbc9916b47bb",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "<span class=\"mathquill\">x_1</span> and <span class=\"mathquill\">x_2</span> are marginally Gaussian. If <span class=\"mathquill\">x_1</span> and <span class=\"mathquill\">x_2</span> are uncorrelated are they necessarily independent?",
+                "answers": [
+                  {
+                    "id": "a1524528933185",
+                    "text": "Yes",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1524529007858",
+                    "text": "No",
+                    "is_correct": true
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 598888,
+          "key": "2daa5f95-2ffd-4f38-8b8f-64d8e0c8ca54",
+          "title": "Approaches to Estimation",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "2daa5f95-2ffd-4f38-8b8f-64d8e0c8ca54",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 616930,
+              "key": "e1407778-e74e-4f2e-a5ef-b91cc06b3245",
+              "title": "Nd787 C4 L1 A14 Approaches To Estimation V1",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "_7k7ZaRqII4",
+                "china_cdn_id": "_7k7ZaRqII4.mp4"
+              }
+            },
+            {
+              "id": 614805,
+              "key": "c63a646f-f1cf-4e50-8f2e-77de25d6c1c7",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Variable Reference\n\nThe following table explains the significance of some of the variables we'll be using.\n\n| Variable | Meaning |\n| :----: | :----: |\n| <span class=\"mathquill\">x</span> | The unknown (and constant) state vector. This is what we're estimating!|\n| <span class=\"mathquill\">H</span> | The (linear) measurement model. Perfect measurement of the state would yield <span class=\"mathquill\">Hx</span>. |\n| <span class=\"mathquill\">v</span> | The noise which corrupts our measurements. It's sampled from a zero-mean normal distribution. |\n| <span class=\"mathquill\">R</span> | The covariance of the measurement noise.|\n| <span class=\"mathquill\">m</span> | The number of measurements made.|\n| <span class=\"mathquill\">n</span> | The size of the state vector, <span class=\"mathquill\">x</span>.|\n| <span class=\"mathquill\">\\tilde{y}</span> | The *actual* noisy measurements.|\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 627887,
+              "key": "67a73b51-458b-434d-b253-a84f70b25519",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": " ",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 598889,
+          "key": "c81f418e-dbe9-4dc5-972f-dc06ee93b195",
+          "title": "Intro to Least Squares",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "c81f418e-dbe9-4dc5-972f-dc06ee93b195",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 633103,
+              "key": "7eb3bb07-0d8b-4d0d-bed4-c768d4181b38",
+              "title": "Nd787 C4 L1 A15 Intro To Least Squares V3",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "_V72SUDhIAw",
+                "china_cdn_id": "_V72SUDhIAw.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 598890,
+          "key": "58886fd6-c8db-4ae7-88b9-bfbf92ed0fa0",
+          "title": "Deriving the Maximum Likelihood Estimator",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "58886fd6-c8db-4ae7-88b9-bfbf92ed0fa0",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 616932,
+              "key": "8419eb50-0a1e-443c-87c8-0f5b5b7e512e",
+              "title": "Nd787 C4 L1 A16 Deriving The Maximum Likelihood Estimator V1",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "yQmtE0vWCQg",
+                "china_cdn_id": "yQmtE0vWCQg.mp4"
+              }
+            },
+            {
+              "id": 614809,
+              "key": "bde87add-37fc-4de1-84af-11c91ce45263",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Variable Reference\n\nThe following table explains the significance of some of the variables we'll be using.\n\n| Variable | Meaning |\n| :----: | :----: |\n| <span class=\"mathquill\">x</span> | The unknown (and constant) state vector. This is what we're estimating!|\n| <span class=\"mathquill\">H</span> | The (linear) measurement model. Perfect measurement of the state would yield <span class=\"mathquill\">Hx</span>. |\n| <span class=\"mathquill\">v</span> | The noise which corrupts our measurements. It's sampled from a zero-mean normal distribution. |\n| <span class=\"mathquill\">R</span> | The covariance of the measurement noise.|\n| <span class=\"mathquill\">m</span> | The number of measurements made.|\n| <span class=\"mathquill\">n</span> | The size of the state vector, <span class=\"mathquill\">x</span>.|\n| <span class=\"mathquill\">\\tilde{y}</span> | The *actual* noisy measurements.|\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 627888,
+              "key": "416c1127-dbb2-425f-8686-5a6067d0b5de",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": " ",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 598891,
+          "key": "960275fc-0b55-49c8-a279-7a154460f951",
+          "title": "Fitting a Line with Linear Least Squares",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "960275fc-0b55-49c8-a279-7a154460f951",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 616933,
+              "key": "25e991d3-c448-4663-bef2-7e0f395c3771",
+              "title": "Nd787 C4 L1 A17 Fitting A Line With Linear Least Squares V1",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "UfmjTc33wa8",
+                "china_cdn_id": "UfmjTc33wa8.mp4"
+              }
+            },
+            {
+              "id": 614810,
+              "key": "475b0571-9f76-4372-b7b9-abffaa4a9f4f",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Variable Reference\n\nThe following table explains the significance of some of the variables we'll be using.\n\n| Variable | Meaning |\n| :----: | :----: |\n| <span class=\"mathquill\">x</span> | The unknown (and constant) state vector. This is what we're estimating!|\n| <span class=\"mathquill\">H</span> | The (linear) measurement model. Perfect measurement of the state would yield <span class=\"mathquill\">Hx</span>. |\n| <span class=\"mathquill\">v</span> | The noise which corrupts our measurements. It's sampled from a zero-mean normal distribution. |\n| <span class=\"mathquill\">R</span> | The covariance of the measurement noise.|\n| <span class=\"mathquill\">m</span> | The number of measurements made.|\n| <span class=\"mathquill\">n</span> | The size of the state vector, <span class=\"mathquill\">x</span>.|\n| <span class=\"mathquill\">\\tilde{y}</span> | The *actual* noisy measurements.|\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 627889,
+              "key": "63f11100-1a01-4f53-9188-78608634d22b",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": " ",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 613842,
+          "key": "53b1418e-378e-4656-b88c-a76b4429cd90",
+          "title": "Least Squares Notebook",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "53b1418e-378e-4656-b88c-a76b4429cd90",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 613873,
+              "key": "f3717060-a382-4f57-86d7-4b7890855300",
+              "title": null,
+              "semantic_type": "WorkspaceAtom",
+              "is_public": true,
+              "workspace_id": "viewbb95dd3a",
+              "pool_id": "jupyter",
+              "view_id": "bb95dd3a-d51c-452f-a070-a6c3db87676b",
+              "gpu_capable": false,
+              "configuration": {
+                "id": "reserved",
+                "blueprint": {
+                  "conf": {
+                    "disk": null,
+                    "ports": [],
+                    "allowSubmit": false,
+                    "defaultPath": "/notebooks/Least-Squares.ipynb"
+                  },
+                  "kind": "jupyter"
+                },
+                "workspaceId": "reserved"
+              },
+              "starter_files": null
+            }
+          ]
+        },
+        {
+          "id": 598892,
+          "key": "7f3f9e49-fdec-447d-9817-480c3a47533c",
+          "title": "Recursive Estimation",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "7f3f9e49-fdec-447d-9817-480c3a47533c",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 616934,
+              "key": "599c8794-5ac8-4797-9851-5f9126e27b26",
+              "title": "Nd787 C4 L1 A18 Recursive Estimation V1",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "t1HvD3cqWUY",
+                "china_cdn_id": "t1HvD3cqWUY.mp4"
+              }
+            },
+            {
+              "id": 614811,
+              "key": "bfcc6dc4-071c-4d9b-81d7-cee53a296989",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Variable Reference\n\nThe following table explains the significance of some of the variables we'll be using.\n\n| Variable | Meaning |\n| :----: | :----: |\n| <span class=\"mathquill\">x</span> | The unknown (and constant) state vector. This is what we're estimating!|\n| <span class=\"mathquill\">H</span> | The (linear) measurement model. Perfect measurement of the state would yield <span class=\"mathquill\">Hx</span>. |\n| <span class=\"mathquill\">v</span> | The noise which corrupts our measurements. It's sampled from a zero-mean normal distribution. |\n| <span class=\"mathquill\">R</span> | The covariance of the measurement noise.|\n| <span class=\"mathquill\">m</span> | The number of measurements made.|\n| <span class=\"mathquill\">n</span> | The size of the state vector, <span class=\"mathquill\">x</span>.|\n| <span class=\"mathquill\">\\tilde{y}</span> | The *actual* noisy measurements.|\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 627890,
+              "key": "cda812ec-1157-486d-8d77-8e90758e05ea",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": " ",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 613843,
+          "key": "1f61b5ab-394a-4e31-ab1d-efa56171be9a",
+          "title": "Recursive Estimation Notebook",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "1f61b5ab-394a-4e31-ab1d-efa56171be9a",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 613876,
+              "key": "bd84aac2-f90c-4c45-a642-948d25274dda",
+              "title": null,
+              "semantic_type": "WorkspaceAtom",
+              "is_public": true,
+              "workspace_id": "view71a85f60",
+              "pool_id": "jupyter",
+              "view_id": "71a85f60-05d0-43c4-87a4-d780c9b7e3c4",
+              "gpu_capable": false,
+              "configuration": {
+                "id": "reserved",
+                "blueprint": {
+                  "conf": {
+                    "ports": [],
+                    "allowSubmit": false,
+                    "defaultPath": "/"
+                  },
+                  "kind": "jupyter"
+                },
+                "workspaceId": "reserved"
+              },
+              "starter_files": null
+            }
+          ]
+        },
+        {
+          "id": 598893,
+          "key": "fe2a0c37-c4eb-4602-8a2f-b856b4238684",
+          "title": "The Problem with non-Linearities",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "fe2a0c37-c4eb-4602-8a2f-b856b4238684",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 616935,
+              "key": "7f804f9b-bd17-46ce-9504-12d9587bfd25",
+              "title": "Nd787 C4 L1 A19 The Problem With Non Linearities V1",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "dcmLDW_ZSfw",
+                "china_cdn_id": "dcmLDW_ZSfw.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 598894,
+          "key": "275ce5f6-c2fc-46f3-a4d4-19488527b3e5",
+          "title": "Calculating the Jacobian",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "275ce5f6-c2fc-46f3-a4d4-19488527b3e5",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 616936,
+              "key": "c1fa456f-c53d-483b-97f0-4d9b9ee99009",
+              "title": "Nd787 C4 L1 A20 Calculating The Jacobian V1",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "9q_oQOfjx5k",
+                "china_cdn_id": "9q_oQOfjx5k.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 613844,
+          "key": "75e38444-7d9f-464e-a19d-6b7ac93419c5",
+          "title": "Non-Linear Least Squares Notebook",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "75e38444-7d9f-464e-a19d-6b7ac93419c5",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 613887,
+              "key": "1e99b380-995d-4bd6-8920-7713f23a9e0b",
+              "title": null,
+              "semantic_type": "WorkspaceAtom",
+              "is_public": true,
+              "workspace_id": "viewe1b17065",
+              "pool_id": "jupyter",
+              "view_id": "e1b17065-73d7-4f56-a21d-8836dada65c0",
+              "gpu_capable": false,
+              "configuration": {
+                "id": "reserved",
+                "blueprint": {
+                  "conf": {
+                    "ports": [],
+                    "allowSubmit": false,
+                    "defaultPath": "/"
+                  },
+                  "kind": "jupyter"
+                },
+                "workspaceId": "reserved"
+              },
+              "starter_files": null
+            }
+          ]
+        },
+        {
+          "id": 616698,
+          "key": "111ac0b9-f63d-4f63-b922-aabf5c66ebbd",
+          "title": "Conclusion",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "111ac0b9-f63d-4f63-b922-aabf5c66ebbd",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 616702,
+              "key": "f363b8fb-2fa3-445b-9936-96223ad44ebe",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Conclusion\n\nCongratulations! This lesson was a **quick** review of probability, so don't worry if you're feeling like some of those concepts still aren't 100% clear. If you feel like you could use some additional review, now would be a good time to explore some other resources.\n\n## Other Resources\n\n* [Kalman and Bayesian Filters in Python](https://github.com/rlabbe/Kalman-and-Bayesian-Filters-in-Python) - This is a **fantastic** resource. It's a GitHub repository containing a series of Jupyter notebooks which are meant to teach the intuition underlying Kalman Filters (something we'll discuss in lessons 3 and 4). But there are also some great notebooks covering more introductory topics like Gaussians and Multivariate Gaussians.\n\n* [Udacity's Intro to Statistics Course, taught by Sebastian Thrun](https://classroom.udacity.com/courses/st101) - Browse through these lessons for a slower-paced explanation of topics like probability, conditional probability, Bayes' Rule, probability distributions, correlation, estimation, averages, variance, and normal distributions.\n\n",
+              "instructor_notes": ""
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

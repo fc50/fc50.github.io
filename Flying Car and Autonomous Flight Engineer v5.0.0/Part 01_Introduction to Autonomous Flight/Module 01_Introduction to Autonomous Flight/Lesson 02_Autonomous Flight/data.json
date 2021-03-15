@@ -1,0 +1,895 @@
+{
+  "data": {
+    "lesson": {
+      "id": 402892,
+      "key": "99905423-0638-479b-a9f5-d5f33de6c613",
+      "title": "Autonomous Flight",
+      "semantic_type": "Lesson",
+      "is_public": true,
+      "version": "1.0.0",
+      "locale": "en-us",
+      "summary": "In this lesson you'll get a high level overview of the concepts underlying autonomous flight and the physical components from which flying vehicles are made. ",
+      "lesson_type": "Classroom",
+      "display_workspace_project_only": null,
+      "resources": {
+        "files": [
+          {
+            "name": "Videos Zip File",
+            "uri": "https://zips.udacity-data.com/99905423-0638-479b-a9f5-d5f33de6c613/402892/1538762815817/Autonomous+Flight+Videos.zip"
+          },
+          {
+            "name": "Transcripts Zip File",
+            "uri": "https://zips.udacity-data.com/99905423-0638-479b-a9f5-d5f33de6c613/402892/1538762788556/Autonomous+Flight+Subtitles.zip"
+          }
+        ],
+        "google_plus_link": null,
+        "career_resource_center_link": null,
+        "coaching_appointments_link": null,
+        "office_hours_link": null,
+        "aws_provisioning_link": null
+      },
+      "project": null,
+      "lab": null,
+      "concepts": [
+        {
+          "id": 464885,
+          "key": "cf2b8c43-e040-4afe-a89e-a2e388df48c2",
+          "title": "Overview",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "cf2b8c43-e040-4afe-a89e-a2e388df48c2",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 514252,
+              "key": "91e569e2-546b-4cf4-b90c-6fb746686d04",
+              "title": "Overview",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "5P90uJyUg8c",
+                "china_cdn_id": "5P90uJyUg8c.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 402909,
+          "key": "9185a4b4-af43-4550-9dfb-21a40009efdb",
+          "title": "History of Autonomous Flight",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "9185a4b4-af43-4550-9dfb-21a40009efdb",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 527407,
+              "key": "6941fac3-def5-425d-b4ad-180fce7f0b4e",
+              "title": "02 Brief History Of Flight Re-Edit",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "z1BHCF7nSEQ",
+                "china_cdn_id": "z1BHCF7nSEQ.mp4"
+              }
+            },
+            {
+              "id": 464915,
+              "key": "8334e0fd-ed68-4919-a434-83482788fd44",
+              "title": "Wright Brother First Flight",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "8334e0fd-ed68-4919-a434-83482788fd44",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "What did the Wright brothers do differently from previous aircraft designers that allowed them to achieve a successful flight?",
+                "answers": [
+                  {
+                    "id": "a1511743467262",
+                    "text": "They used propellers and larger motors",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1511743518868",
+                    "text": "They designed an aircraft with adjustable wing shape",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1511743535764",
+                    "text": "They used a biplane design with two wings",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1511743546780",
+                    "text": "They designed their aircraft to be flown like a ship on the ocean",
+                    "is_correct": false
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 506352,
+          "key": "b7fcad4c-bd33-4091-88bd-bd5745e8c2f5",
+          "title": "Vehicle Morphologies",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "b7fcad4c-bd33-4091-88bd-bd5745e8c2f5",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 514254,
+              "key": "a3f787e3-2ec4-4c01-864e-1c4f05e08a6d",
+              "title": "Vehicle Morphologies",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "ojMfOPp_SfY",
+                "china_cdn_id": "ojMfOPp_SfY.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 439859,
+          "key": "4cd94c53-55b3-4061-b3cb-379a576e0c44",
+          "title": "Why Quadrotors?",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "4cd94c53-55b3-4061-b3cb-379a576e0c44",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 514256,
+              "key": "58d83ef2-d956-40eb-aaa6-ddf1e4f7ab36",
+              "title": "Why Quadrotors",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "ao5boE0jJpE",
+                "china_cdn_id": "ao5boE0jJpE.mp4"
+              }
+            },
+            {
+              "id": 464917,
+              "key": "e2d7363c-8459-43d2-b126-0eb82973664b",
+              "title": "Modern Drones",
+              "semantic_type": "CheckboxQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "e2d7363c-8459-43d2-b126-0eb82973664b",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "Check all the reasons that drones are hot now and more accessible than ever.",
+                "answers": [
+                  {
+                    "id": "a1511744087108",
+                    "text": "Cheap microelectronics",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1511744147049",
+                    "text": "GPS",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1511744152289",
+                    "text": "Battery technology",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1511744166306",
+                    "text": "The physics of helicopter flight is now better understood than ever before",
+                    "is_correct": false
+                  }
+                ]
+              }
+            },
+            {
+              "id": 464919,
+              "key": "272f4ddb-c1d5-4c67-8003-e0999218f115",
+              "title": "Quadrotors as a test platform",
+              "semantic_type": "CheckboxQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "272f4ddb-c1d5-4c67-8003-e0999218f115",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "Check all the reasons that quadrotors are the perfect test platform for studying flying cars:",
+                "answers": [
+                  {
+                    "id": "a1511744531441",
+                    "text": "Flying cars will need VTOL capability, so it makes sense to study quadrotors.",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1511744605273",
+                    "text": "Quadrotors have symmetric simplicity, which makes understanding dynamics and control easier.",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1511744675019",
+                    "text": "Flying cars will almost definitely be giant quadrotors.",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1511744698428",
+                    "text": "Quadrotors are the most accessible and affordable commercial vehicles, which makes them a great test platform to run code on real hardware.",
+                    "is_correct": true
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 402911,
+          "key": "3bebd9b3-6eca-474d-ad48-4129689fef1a",
+          "title": "Quadrotor Components",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "3bebd9b3-6eca-474d-ad48-4129689fef1a",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 527268,
+              "key": "e22a6118-3b2f-4d6f-8f68-9210ff3750e3",
+              "title": "05 Quadrotor Components Re-Edit",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "BjVAmh3396g",
+                "china_cdn_id": "BjVAmh3396g.mp4"
+              }
+            },
+            {
+              "id": 464921,
+              "key": "8acef6bf-a084-4584-bf56-b2697f1fa88d",
+              "title": "Quadrotor configuration",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "8acef6bf-a084-4584-bf56-b2697f1fa88d",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "Why do the two pairs of propellers on a quadrotor spin in opposite directions?",
+                "answers": [
+                  {
+                    "id": "a1511745021138",
+                    "text": "One pair is for driving air up and the other is for driving air down.",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1511745092361",
+                    "text": "It makes no difference, they could just as well be all spinning in the same direction",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1511745113946",
+                    "text": "One pair is for moving the vehicle forward and the other for moving it backward.",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1511745223070",
+                    "text": "The net torque from the two pairs of propellers cancels out so the vehicle is stable in flight.",
+                    "is_correct": true
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 402913,
+          "key": "4c14c73b-1d22-42f5-9326-10359b28387e",
+          "title": "Airframe",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "4c14c73b-1d22-42f5-9326-10359b28387e",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 514258,
+              "key": "04b9a7c5-e760-42f8-86b5-5de01c4bafae",
+              "title": "The Frame",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "nRChl_1OrZ0",
+                "china_cdn_id": "nRChl_1OrZ0.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 402915,
+          "key": "983fa26c-24df-4eb0-8142-8afa49bf5ae6",
+          "title": "Motors / Speed Controllers",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "983fa26c-24df-4eb0-8142-8afa49bf5ae6",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 514259,
+              "key": "847fbaad-d6e6-4b31-acb8-fda433fc9629",
+              "title": "Motors SpeedControllers",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "TARVT5XBRCc",
+                "china_cdn_id": "TARVT5XBRCc.mp4"
+              }
+            },
+            {
+              "id": 464924,
+              "key": "17770c4d-7ae6-4137-aa49-13825bdcd17e",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "That was just a brief overview of electric motors and speed controllers, but check out these links to learn more:\n\nhttp://www.quantumdev.com/brushless-motors-vs-brush-motors-whats-the-difference/\n\nhttp://www.electronicdesign.com/electromechanical/what-s-difference-between-brush-dc-and-brushless-dc-motors\n\nhttps://en.wikipedia.org/wiki/Electronic_speed_control\n\nhttps://www.youtube.com/watch?v=OZNxbxL7cdc\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 464953,
+              "key": "58c9b3a1-e678-49e9-a89e-b794945a9c5b",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### More on motors\n\nQuadrotor motors typically come with various specifications describing how the motor performs and it's important to understand what these specs mean when choosing motors for your quad.  \n\nThe most important thing to know about a particular motor is its so called \"Kv\" rating.  Kv is not some standard physical unit, but rather, describes the RPMs that a motor will achieve (under zero load) when a given voltage is applied.  So, in other words,  Kv = RPMs / volts, and a motor that can do 4000 RPMs when 2 volts are applied gets a Kv rating of 2000.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 464957,
+              "key": "936e347a-e6dd-4f5b-bbf3-532409e91d36",
+              "title": "Motors Kv",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "936e347a-e6dd-4f5b-bbf3-532409e91d36",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "Suppose your power supply has an operating range between 3-7 volts and to generate the appropriate amount of thrust for your quad (given its weight, propeller size etc.) you need to achieve 15,000 RPMs when you're comfortably in the middle of the power supply's operating range.  What's a good KV value for your motors?",
+                "answers": [
+                  {
+                    "id": "a1511751075525",
+                    "text": "1000",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1511751665309",
+                    "text": "2000",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1511751669509",
+                    "text": "3000",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1511751675341",
+                    "text": "8000",
+                    "is_correct": false
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 402917,
+          "key": "5e3a8b4c-c1e7-4cb3-95fa-9f2540f5d50c",
+          "title": "Propellers",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "5e3a8b4c-c1e7-4cb3-95fa-9f2540f5d50c",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 514260,
+              "key": "bdceff0d-b360-4563-a1d1-4bd15c9147fe",
+              "title": "Propellers",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "tP67LXN60ZA",
+                "china_cdn_id": "tP67LXN60ZA.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 402919,
+          "key": "bdb44663-ed36-4d88-a505-4ad451e7cc88",
+          "title": "Batteries",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "bdb44663-ed36-4d88-a505-4ad451e7cc88",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 514261,
+              "key": "8e81cecd-b5da-47ea-b469-8b2d5ea904fe",
+              "title": "Batteries",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "P7NQklPq7xI",
+                "china_cdn_id": "P7NQklPq7xI.mp4"
+              }
+            },
+            {
+              "id": 464949,
+              "key": "d3541bd6-bf1f-4701-8496-572484c47c42",
+              "title": "Batteries",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "d3541bd6-bf1f-4701-8496-572484c47c42",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "**Do a bit of research online to answer the following question:**\n\n**What is the relative percentage of battery power consumed by your various quadrotor electrical components, e.g, motors, computation (autopilot / flight computer), sensors (IMU, GPS, Camera)?  Or in other words, what is really driving your choice of battery for a quad?**\n",
+                "answers": [
+                  {
+                    "id": "a1511747904103",
+                    "text": "\\> 50% of battery power is typically consumed by computation (autopilot / flight computer).",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1511747981886",
+                    "text": "Battery power is consumed roughly equally between motors, computation, and sensors.",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1511747996367",
+                    "text": "99+% of battery power is consumed by the motors.",
+                    "is_correct": true
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 464909,
+          "key": "e0c28305-8b24-42c9-bd0a-73db4c72e57c",
+          "title": "Driving a Quad",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "e0c28305-8b24-42c9-bd0a-73db4c72e57c",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 514263,
+              "key": "b757c961-9bf8-47d8-91f1-c171e034d3a5",
+              "title": "Driving A Quadrotor",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "QaLhiaXFdA0",
+                "china_cdn_id": "QaLhiaXFdA0.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 464910,
+          "key": "96a6c7ad-fa39-448b-b28b-4a8f4435f1a0",
+          "title": "Attitude Control",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "96a6c7ad-fa39-448b-b28b-4a8f4435f1a0",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 514264,
+              "key": "8eee05b9-b32b-4049-afb3-acfc0431c210",
+              "title": "Attitude Control",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "qxjGln_eA28",
+                "china_cdn_id": "qxjGln_eA28.mp4"
+              }
+            },
+            {
+              "id": 464939,
+              "key": "ba0d528a-1c13-4646-a71d-83b05f7d2dfb",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/November/5a1b6cda_topdown-view-of-quad/topdown-view-of-quad.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/ba0d528a-1c13-4646-a71d-83b05f7d2dfb",
+              "caption": "",
+              "alt": "",
+              "width": 1620,
+              "height": 1214,
+              "instructor_notes": null
+            },
+            {
+              "id": 464938,
+              "key": "f2fdcd3e-e082-4714-99db-0db5c8fd2db8",
+              "title": "Attitude Control",
+              "semantic_type": "MatchingQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "f2fdcd3e-e082-4714-99db-0db5c8fd2db8",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "complex_prompt": {
+                  "text": "Considering the image above, and assuming the quad is hovering to begin with, match the following behaviors with the corresponding motor input actuations."
+                },
+                "concepts_label": "Motor Actuation",
+                "answers_label": "Quad Behavior",
+                "concepts": [
+                  {
+                    "text": "Increase thrust on motors A and C",
+                    "correct_answer": {
+                      "id": "a1511746481950",
+                      "text": "Quad rolls to the right"
+                    }
+                  },
+                  {
+                    "text": "Decrease thrust on all motors",
+                    "correct_answer": {
+                      "id": "a1511746658904",
+                      "text": "Quad stays level and moves downward"
+                    }
+                  },
+                  {
+                    "text": "Decrease thrust on motors C and D",
+                    "correct_answer": {
+                      "id": "a1511746864414",
+                      "text": "Quad pitches backward"
+                    }
+                  },
+                  {
+                    "text": "Increase thrust on A and D while decreasing thrust by the same amount on B and C",
+                    "correct_answer": {
+                      "id": "a1511746893797",
+                      "text": "Quad yaws counterclockwise as seen from above."
+                    }
+                  }
+                ],
+                "answers": [
+                  {
+                    "id": "a1511747010035",
+                    "text": "Quad rolls to the left"
+                  },
+                  {
+                    "id": "a1511746481950",
+                    "text": "Quad rolls to the right"
+                  },
+                  {
+                    "id": "a1511746864414",
+                    "text": "Quad pitches backward"
+                  },
+                  {
+                    "id": "a1511747001537",
+                    "text": "Quad pitches forward"
+                  },
+                  {
+                    "id": "a1511746893797",
+                    "text": "Quad yaws counterclockwise as seen from above."
+                  },
+                  {
+                    "id": "a1511746987416",
+                    "text": "Quad yaws clockwise as seen from above."
+                  },
+                  {
+                    "id": "a1511746658904",
+                    "text": "Quad stays level and moves downward"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 464940,
+          "key": "61493917-712b-4764-a863-1405ea6afea9",
+          "title": "Autopilot",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "61493917-712b-4764-a863-1405ea6afea9",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 514265,
+              "key": "d3994aa9-4695-4373-9f59-df0b553d19b8",
+              "title": "Autopilot",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "X9_1osn1L7A",
+                "china_cdn_id": "X9_1osn1L7A.mp4"
+              }
+            },
+            {
+              "id": 464946,
+              "key": "bf827ca8-9ef0-47b9-b25b-4e74c471ad36",
+              "title": "Autopilot",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "bf827ca8-9ef0-47b9-b25b-4e74c471ad36",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "Why is it necessary to have an autopilot for flying a quadrotor?",
+                "answers": [
+                  {
+                    "id": "a1511747463944",
+                    "text": "The autopilot allows for precise position control.",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1511747513255",
+                    "text": "Manually controlling all four motors to fly the quad would be essentially impossible.",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1511747543592",
+                    "text": "Use of an autopilot makes flying a quad safer.",
+                    "is_correct": false
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 464911,
+          "key": "aad620c0-ffda-49fc-b59f-1a8e27b00529",
+          "title": "IMU Gyros",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "aad620c0-ffda-49fc-b59f-1a8e27b00529",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 514266,
+              "key": "f935275d-0988-468a-a877-0a4a3b1a1c86",
+              "title": "IMU Gyroscope",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "TDus6cfGvRw",
+                "china_cdn_id": "TDus6cfGvRw.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 464912,
+          "key": "7a762b18-9a4e-4145-a98f-b17d1d195ee2",
+          "title": "IMU Accelerometers",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "7a762b18-9a4e-4145-a98f-b17d1d195ee2",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 514267,
+              "key": "ee1b21cc-3bad-4933-a9bf-a3ae97c6abcc",
+              "title": "IMU Accelerometers",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "1ccatHUDjDA",
+                "china_cdn_id": "1ccatHUDjDA.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 464913,
+          "key": "67c7a7ef-7075-42c5-a63e-d8b74a097b0b",
+          "title": "GPS",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "67c7a7ef-7075-42c5-a63e-d8b74a097b0b",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 514268,
+              "key": "27a57faa-250b-4c61-a3fa-f237bd10fbd5",
+              "title": "GPS",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "1g_MxNlFTnQ",
+                "china_cdn_id": "1g_MxNlFTnQ.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 464914,
+          "key": "9b96154a-a88c-4663-9ebc-af9cf96112d6",
+          "title": "Flight Computer",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "9b96154a-a88c-4663-9ebc-af9cf96112d6",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 514269,
+              "key": "ba60333f-295e-48fd-b51a-addc7b21ac32",
+              "title": "Flight Computer",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "xBQzqUfz24s",
+                "china_cdn_id": "xBQzqUfz24s.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 402921,
+          "key": "3204151c-b9ac-4248-b725-983db7ce6f77",
+          "title": "Summary",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "3204151c-b9ac-4248-b725-983db7ce6f77",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 514270,
+              "key": "b2f84a1e-e572-4300-b8e5-f2432e015a82",
+              "title": "Summary",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "LsF0SRZZvhE",
+                "china_cdn_id": "LsF0SRZZvhE.mp4"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "_deprecated": [
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    }
+  ]
+}

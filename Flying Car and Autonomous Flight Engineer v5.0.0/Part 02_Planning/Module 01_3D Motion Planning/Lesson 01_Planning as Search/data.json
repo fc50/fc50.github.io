@@ -1,0 +1,1317 @@
+{
+  "data": {
+    "lesson": {
+      "id": 503755,
+      "key": "c9b7c43f-6c90-401a-a2ce-ac10613e34f1",
+      "title": "Planning as Search",
+      "semantic_type": "Lesson",
+      "is_public": true,
+      "version": "1.0.0",
+      "locale": "en-us",
+      "summary": "Solving the planning problem really comes down performing search through a state space to find a path from a start state to a goal state and here you'll get a chance to do just that!",
+      "lesson_type": "Classroom",
+      "display_workspace_project_only": null,
+      "resources": {
+        "files": [
+          {
+            "name": "Videos Zip File",
+            "uri": "https://zips.udacity-data.com/c9b7c43f-6c90-401a-a2ce-ac10613e34f1/503755/1538762631918/Planning+as+Search+Videos.zip"
+          },
+          {
+            "name": "Transcripts Zip File",
+            "uri": "https://zips.udacity-data.com/c9b7c43f-6c90-401a-a2ce-ac10613e34f1/503755/1538762628230/Planning+as+Search+Subtitles.zip"
+          }
+        ],
+        "google_plus_link": null,
+        "career_resource_center_link": null,
+        "coaching_appointments_link": null,
+        "office_hours_link": null,
+        "aws_provisioning_link": null
+      },
+      "project": null,
+      "lab": null,
+      "concepts": [
+        {
+          "id": 616875,
+          "key": "29265f7d-09cf-45a2-af59-96ac1ea9a44e",
+          "title": "Sebastian Introduction",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "29265f7d-09cf-45a2-af59-96ac1ea9a44e",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 616876,
+              "key": "bdc6dd71-e712-4efc-8081-427e249eae98",
+              "title": "Nd787 C2 L1 00 Sebastian V1",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "2s3Pxc6AS8Y",
+                "china_cdn_id": "2s3Pxc6AS8Y.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 503921,
+          "key": "129ac903-1864-47c1-80d3-fe079e924e68",
+          "title": "Transition to Planning",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "129ac903-1864-47c1-80d3-fe079e924e68",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 551796,
+              "key": "48e39382-7a01-450d-bac6-39c34efe87fb",
+              "title": "C2 L1 A00 Transition To Planning V4",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "0nyCrWuO1QM",
+                "china_cdn_id": "0nyCrWuO1QM.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 503756,
+          "key": "17ea974c-9eb3-4601-a84f-bf17a2b3ae0e",
+          "title": "The Planning Problem",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "17ea974c-9eb3-4601-a84f-bf17a2b3ae0e",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 551797,
+              "key": "263ac044-087e-4264-b5ab-ff7b865b745f",
+              "title": "C2 L1 A01 The Planning Problem V6",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "oyPT3qirXPk",
+                "china_cdn_id": "oyPT3qirXPk.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 503757,
+          "key": "4f4ea6b4-1fcd-4355-8e1f-4e9afc09380b",
+          "title": "Search Space",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "4f4ea6b4-1fcd-4355-8e1f-4e9afc09380b",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 551926,
+              "key": "c93fffd7-68d4-4414-8924-ac77478ffe44",
+              "title": "C2 L1 A02 Search Space V6",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "** There's a quiz below this video, scroll down to test your knowledge! **",
+              "video": {
+                "youtube_id": "vsMQtkOjT3c",
+                "china_cdn_id": "vsMQtkOjT3c.mp4"
+              }
+            },
+            {
+              "id": 543276,
+              "key": "80a3cb5e-4fad-41a7-929f-e338c35d893f",
+              "title": "Continuous Search Space",
+              "semantic_type": "CheckboxQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "80a3cb5e-4fad-41a7-929f-e338c35d893f",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "What are the problems with using continuous curves to represent paths through free space (choose all that apply)? ",
+                "answers": [
+                  {
+                    "id": "a1518473664639",
+                    "text": "The number of possible curves is large and approaches infinity for a complex search space.",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1518473752096",
+                    "text": "Constraints on processing time and computational resources will limit the number of paths you can consider.",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1518474046736",
+                    "text": "Real flying cars can't follow continuous curve trajectories.",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1518474078742",
+                    "text": "In general, continuous curves are unnecessarily complex representations of the problem.",
+                    "is_correct": true
+                  }
+                ]
+              }
+            },
+            {
+              "id": 543277,
+              "key": "e45bcfdf-26a7-4d27-a32c-6abe6c0c1fe5",
+              "title": "Solution to continuous curves",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "e45bcfdf-26a7-4d27-a32c-6abe6c0c1fe5",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "What's the solution / alternative to using continuous curves in your representation of the planning problem?",
+                "answers": [
+                  {
+                    "id": "a1518474213095",
+                    "text": "Discretize your search space",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1518474255440",
+                    "text": "Add extra dimensions to your search space",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1518474256473",
+                    "text": "Use a faster computer",
+                    "is_correct": false
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 503763,
+          "key": "2160f2da-9227-4983-950e-3634c9887953",
+          "title": "Grid Representation",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "2160f2da-9227-4983-950e-3634c9887953",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 551801,
+              "key": "95b2305d-1be2-4bf8-860e-a0838ede748c",
+              "title": "C2 L1 A03 Grid Representation V5",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "** There's a quiz below this video, scroll down to test your knowledge! **",
+              "video": {
+                "youtube_id": "WcC-CfvQuJI",
+                "china_cdn_id": "WcC-CfvQuJI.mp4"
+              }
+            },
+            {
+              "id": 543278,
+              "key": "b66745c6-6919-46b6-8317-69e5d8d2b330",
+              "title": "Requirements for Planning",
+              "semantic_type": "CheckboxQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "b66745c6-6919-46b6-8317-69e5d8d2b330",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "Which of these things do you need in order to completely represent your planning problem (choose all that apply)?",
+                "answers": [
+                  {
+                    "id": "a1518474660840",
+                    "text": "A state space",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1518474729340",
+                    "text": "Actions that define how the vehicle can move from state to state",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1518474750535",
+                    "text": "A start state and a goal state",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1518474838219",
+                    "text": "Costs associated with each possible action",
+                    "is_correct": true
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 503765,
+          "key": "82c1cb9a-9afc-49a4-a594-f2782e6f4d31",
+          "title": "Search",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "82c1cb9a-9afc-49a4-a594-f2782e6f4d31",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 551802,
+              "key": "a9381e60-0f20-47d6-bc35-f860705dbc09",
+              "title": "C2 L1 A04 Search V5",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "** There's a quiz below this video, scroll down to test your knowledge! **",
+              "video": {
+                "youtube_id": "_iJ_pPZcLJc",
+                "china_cdn_id": "_iJ_pPZcLJc.mp4"
+              }
+            },
+            {
+              "id": 543279,
+              "key": "827f5878-399d-46a4-9df9-51463645da99",
+              "title": "Partial Plans",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "827f5878-399d-46a4-9df9-51463645da99",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "Complete the following sentence: \"A partial plan is...\"",
+                "answers": [
+                  {
+                    "id": "a1518475108798",
+                    "text": "A rough idea of how to get from the start state to the goal state",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1518475144660",
+                    "text": "A plan that does not yet reach the goal, but that contains a list of states and actions moving away from the start state",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1518475193688",
+                    "text": "A plan that, even if it's not complete, at least makes progress toward the goal",
+                    "is_correct": false
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 503767,
+          "key": "d09207e7-f8d6-40a4-9147-9634d672e7cb",
+          "title": "Partial Plans",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "d09207e7-f8d6-40a4-9147-9634d672e7cb",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 551803,
+              "key": "a4ae2f0a-4177-4140-afeb-cc7ee675e8be",
+              "title": "C2 L1 A05 Partial Plans V5",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "** There's a quiz below this video, scroll down to test your knowledge! **",
+              "video": {
+                "youtube_id": "zcuT9e4TgKo",
+                "china_cdn_id": "zcuT9e4TgKo.mp4"
+              }
+            },
+            {
+              "id": 543280,
+              "key": "8de81276-9da2-44f0-b617-de0feefd34a0",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/February/5a821bc1_screen-shot-2018-02-12-at-2.56.33-pm/screen-shot-2018-02-12-at-2.56.33-pm.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/8de81276-9da2-44f0-b617-de0feefd34a0",
+              "caption": "**Your task is to navigate through the grid world shown above by exploring partial plans from start to goal. **",
+              "alt": "",
+              "width": 1110,
+              "height": 678,
+              "instructor_notes": null
+            },
+            {
+              "id": 543288,
+              "key": "fb3b18b5-83ad-40b2-8945-fd382e2f49d3",
+              "title": "Partial Plans 2",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "fb3b18b5-83ad-40b2-8945-fd382e2f49d3",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "**Here are the rules:**\n- you can't move off the grid and you can't move diagonally\n- you can't move through the obstacle cell in the middle\n- A single plan can branch into two or more plans, where more than one option exists for expansion, but separate plans may not merge together to occupy the same grid cell.\n\nHow many partial plans do you end up with after exploring all possible paths?",
+                "answers": [
+                  {
+                    "id": "a1518476240370",
+                    "text": "15",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1518476640233",
+                    "text": "5",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1518476642865",
+                    "text": "4",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1518476672105",
+                    "text": "it depends",
+                    "is_correct": true
+                  }
+                ]
+              }
+            },
+            {
+              "id": 560393,
+              "key": "353a97a8-7dfc-4ce5-b06b-7e6b4243e6f1",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Partial Plans Explained\n\nFiguring out how many partial plans are possible given a particular search space can be confusing. Here we'll step through the logic of how you can arrive at an answer for the example above.\n\nGiven that you can't move off the grid, and you can't move diagonally, from the start location you have three options, up, down or right like this:",
+              "instructor_notes": ""
+            },
+            {
+              "id": 560394,
+              "key": "f9617424-7439-4717-a507-e644415e619b",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/March/5aa42480_screen-shot-2018-03-10-at-10.30.01-am/screen-shot-2018-03-10-at-10.30.01-am.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/f9617424-7439-4717-a507-e644415e619b",
+              "caption": "",
+              "alt": "",
+              "width": 554,
+              "height": 341,
+              "instructor_notes": null
+            },
+            {
+              "id": 560395,
+              "key": "4dbdbe59-128f-4916-b859-6866b8bc2003",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Each of these moves represents a unique partial plan. You could think of keeping track of the moves in each partial plan in lists like this:\n\n```python\nplan1 = ['Start', 'up']\nplan2 = ['Start', 'right']\nplan3 = ['Start', 'down']\n```\n\nYou can visualize each of these partial plans as now including specific cells in the grid like this:\n\n\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 560397,
+              "key": "1eeabe6f-4841-4230-b0e7-060c5c971541",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/March/5aa42875_screen-shot-2018-03-10-at-10.44.24-am/screen-shot-2018-03-10-at-10.44.24-am.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/1eeabe6f-4841-4230-b0e7-060c5c971541",
+              "caption": "",
+              "alt": "",
+              "width": 563,
+              "height": 347,
+              "instructor_notes": null
+            },
+            {
+              "id": 560396,
+              "key": "5ed98aca-85e0-4677-8b35-9d18bb040796",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "All plans include the starting cell and each includes one other cell as well at this point, the one above Start for `plan1` (in green), to the right of Start for `plan2` (in red) and down from Start for `plan3` (in blue). \n\nNow comes the choice of how to _expand_ each of these plans. Given the rules of the game, you can see that you have one option with `plan1`, which is to move right. You have two options with `plan2`, which are to move up or down (can't move into the obstacle cell) and one option to move right from `plan3` as well. \n\nAt this point, it doesn't matter which plan you expand first, so let's just go ahead and start by expanding `plan1` in the only way possible, which is to move right like this:",
+              "instructor_notes": ""
+            },
+            {
+              "id": 560398,
+              "key": "926fe5c0-d437-4dbd-ad93-cfdd9d08910f",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/March/5aa42aa6_screen-shot-2018-03-10-at-10.57.23-am/screen-shot-2018-03-10-at-10.57.23-am.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/926fe5c0-d437-4dbd-ad93-cfdd9d08910f",
+              "caption": "",
+              "alt": "",
+              "width": 559,
+              "height": 344,
+              "instructor_notes": null
+            },
+            {
+              "id": 560399,
+              "key": "16cbf44a-c868-4159-9128-9113bc7cd61f",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Now `plan1` has been expanded to include a move to the right. What happens now if you try to expand `plan2`? Given that the cell above `plan2` is already occupied by `plan1`, and separate plans can't merge together, there is only one remaining option for expanding `plan2`, which is to move down like this:",
+              "instructor_notes": ""
+            },
+            {
+              "id": 560400,
+              "key": "4bd51cbd-99d0-4350-a359-2be052b4d437",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/March/5aa42c39_screen-shot-2018-03-10-at-11.04.04-am/screen-shot-2018-03-10-at-11.04.04-am.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/4bd51cbd-99d0-4350-a359-2be052b4d437",
+              "caption": "",
+              "alt": "",
+              "width": 558,
+              "height": 346,
+              "instructor_notes": null
+            },
+            {
+              "id": 560401,
+              "key": "28413a80-b76f-4992-8afe-f6a61bb5297d",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Now your collection of partial plans looks like this:\n\n```python\nplan1 = ['Start', 'up', 'right']\nplan2 = ['Start', 'right', 'down']\nplan3 = ['Start', 'down']\n```",
+              "instructor_notes": ""
+            },
+            {
+              "id": 560402,
+              "key": "20bd82a9-f51d-4956-9e5f-0550c5be4cc8",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "What then becomes of `plan3`? At this point, the only direction (right) that `plan3` had as an option to expand in is already occupied by `plan2`! This is not a problem for your search algorithm, it just means that there is nowhere else for `plan3` to go. It's still a valid partial plan, but it's basically a dead plan because it can no longer be expanded.\n\n`plan1` and `plan2` can continue marching happily toward the right for a couple moves like this:",
+              "instructor_notes": ""
+            },
+            {
+              "id": 560403,
+              "key": "7967712b-986d-4068-9980-ae4423fa9131",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/March/5aa42e63_screen-shot-2018-03-10-at-11.13.18-am/screen-shot-2018-03-10-at-11.13.18-am.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/7967712b-986d-4068-9980-ae4423fa9131",
+              "caption": "",
+              "alt": "",
+              "width": 556,
+              "height": 339,
+              "instructor_notes": null
+            },
+            {
+              "id": 560404,
+              "key": "e855f796-0629-4416-b7d4-924b1acb612a",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "But now the landscape has changed! Both `plan1` and `plan2` have two options for directions to expand in. This means there is an opportunity for branching and forming a new partial plan.  Suppose you first expand `plan1` to the right. You could then add a new partial plan branching off of `plan1` going down. Let's call that `plan4`. While we're at it let's also expand `plan2` one more step to the right:",
+              "instructor_notes": ""
+            },
+            {
+              "id": 560405,
+              "key": "408e9ffe-956f-4b98-972c-10f12f1eec0a",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/March/5aa43462_screen-shot-2018-03-10-at-11.38.48-am/screen-shot-2018-03-10-at-11.38.48-am.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/408e9ffe-956f-4b98-972c-10f12f1eec0a",
+              "caption": "",
+              "alt": "",
+              "width": 558,
+              "height": 348,
+              "instructor_notes": null
+            },
+            {
+              "id": 560406,
+              "key": "cb2e513b-08fc-4d46-b9b0-5ae6b9c63335",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Now, you have four plans in total and you've explored all cells in the grid. Any of these plans could be expanded to reach the goal and all of them represent valid paths that your vehicle could travel from start to goal. \n\nYou may have noticed, however, that there wasn't much rhyme or reason here in deciding which plan to expand next and in which direction. You can imagine a scenario where either `plan1` or `plan2` was left for dead instead of `plan3`. \n\nIn the case that you expand `plan2` up and down before expanding `plan1` or `plan3`, you'll end up with 5 total plans that look like this (`plan5` could just as well take path above the obstacle):",
+              "instructor_notes": ""
+            },
+            {
+              "id": 560548,
+              "key": "3330740e-afd6-44aa-8c90-da00e16ab229",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/March/5aa5a8f2_screen-shot-2018-03-11-at-2.57.00-pm/screen-shot-2018-03-11-at-2.57.00-pm.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/3330740e-afd6-44aa-8c90-da00e16ab229",
+              "caption": "",
+              "alt": "",
+              "width": 560,
+              "height": 349,
+              "instructor_notes": null
+            },
+            {
+              "id": 560547,
+              "key": "d1f3805f-c4a0-45e6-924e-be9d1d97d140",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "The truth is that there are many different strategies to consider when deciding how to expand your partial plans, and that's what we'll look at next!",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 503769,
+          "key": "153da141-e1d5-4d38-a896-9d61500f777a",
+          "title": "Breadth vs Depth ",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "153da141-e1d5-4d38-a896-9d61500f777a",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 552525,
+              "key": "9352f210-d2b1-420f-bc76-a35e337baed9",
+              "title": "06 Breadth Vs Depth V6",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "mtBKgqxjCyQ",
+                "china_cdn_id": "mtBKgqxjCyQ.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 552656,
+          "key": "f3b50398-54fa-40ef-bd60-4b6392f06a74",
+          "title": "Jupyter Notebooks",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "f3b50398-54fa-40ef-bd60-4b6392f06a74",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 552657,
+              "key": "597822be-5862-4e60-939d-a34705822674",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Jupyter Notebooks\n===",
+              "instructor_notes": ""
+            },
+            {
+              "id": 552658,
+              "key": "66a2be11-79b7-4956-8283-96a380da1a44",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/February/5a9058ed_download/download.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/66a2be11-79b7-4956-8283-96a380da1a44",
+              "caption": "",
+              "alt": "",
+              "width": 225,
+              "height": 225,
+              "instructor_notes": null
+            },
+            {
+              "id": 552659,
+              "key": "cfe7063b-0539-4d61-a5cb-270525f73b05",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "For the next exercise, and many more to come, we'll be using [Jupyter](http://jupyter.org/) notebooks embedded right in your browser. These notebooks are a great way to test code, plot up results and add notes, links and other supporting documentation right alongside your code in markdown cells.  \n\nIf you haven't used Jupyter notebooks before, check out this [free Udacity lesson](https://classroom.udacity.com/courses/ud1111/lessons/b15ba0a2-015d-4c5a-87ae-9efba2cabb43/concepts/75e1eee0-5f81-4d5b-a1ca-eaebe3c91759) as a way to get started. If you're interested, you can also check out the [detailed docs](https://jupyter-notebook.readthedocs.io/en/stable/notebook.html) on notebooks and all their functionality.\n\nNotebooks in the classroom will look like this:",
+              "instructor_notes": ""
+            },
+            {
+              "id": 552660,
+              "key": "4ae07639-36f4-4143-b5d5-45badf2988a8",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/February/5a905b04_screen-shot-2018-02-23-at-10.17.13-am/screen-shot-2018-02-23-at-10.17.13-am.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/4ae07639-36f4-4143-b5d5-45badf2988a8",
+              "caption": "",
+              "alt": "",
+              "width": 673,
+              "height": 665,
+              "instructor_notes": null
+            },
+            {
+              "id": 552661,
+              "key": "92831004-650d-46c5-aae5-f263990aefd8",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "You can select a cell by clicking on it, or by using the arrow keys to move up and down between cells. To run a cell either use `shift-enter` or click the \"run\" button in the toolbar. To add a new cell use the \"+\" icon and choose to make it code or markdown using the pulldown menu in the toolbar. To edit the contents of a markdown (text) cell, double click on it. You can download the entire notebook by selecting \"File --> download as\". \n\nTo see what else is in the directory containing the notebook (like a solution notebook or other supporting files), you can click on the Jupyter icon to show the contents of the home directory:",
+              "instructor_notes": ""
+            },
+            {
+              "id": 552662,
+              "key": "96804c28-04e2-4d5a-9282-540545b856d7",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/February/5a905c52_screen-shot-2018-02-23-at-10.17.13-am/screen-shot-2018-02-23-at-10.17.13-am.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/96804c28-04e2-4d5a-9282-540545b856d7",
+              "caption": "Click here to see the contents of the home directory.",
+              "alt": "",
+              "width": 358,
+              "height": 102,
+              "instructor_notes": null
+            },
+            {
+              "id": 552663,
+              "key": "0be7bf09-e27a-4b6a-8741-4f120adb4282",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/February/5a905c97_screen-shot-2018-02-23-at-10.24.41-am/screen-shot-2018-02-23-at-10.24.41-am.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/0be7bf09-e27a-4b6a-8741-4f120adb4282",
+              "caption": "Contents of the home directory",
+              "alt": "",
+              "width": 663,
+              "height": 207,
+              "instructor_notes": null
+            },
+            {
+              "id": 552753,
+              "key": "10f8ddb4-35d3-49d5-a33f-6d2e36be0db5",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "If at any point you get a 404 error in your notebook that looks like this:",
+              "instructor_notes": ""
+            },
+            {
+              "id": 552755,
+              "key": "d6895e7c-1ea8-4912-80ee-8134a0c536c1",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/February/5a90aea5_screen-shot-2018-02-23-at-3.29.13-pm/screen-shot-2018-02-23-at-3.29.13-pm.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/d6895e7c-1ea8-4912-80ee-8134a0c536c1",
+              "caption": "",
+              "alt": "",
+              "width": 498,
+              "height": 188,
+              "instructor_notes": null
+            },
+            {
+              "id": 552756,
+              "key": "aa699042-d32e-4f55-b420-0826423402c8",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "This most likely means that the notebook has been replaced with an updated version and you need to \"Reset data\" using the menu in the lower lefthand corner: ",
+              "instructor_notes": ""
+            },
+            {
+              "id": 552758,
+              "key": "c24980f8-0447-49b2-a0f7-5bbfa11ea3be",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/February/5a90aef7_screen-shot-2018-02-23-at-3.29.29-pm/screen-shot-2018-02-23-at-3.29.29-pm.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/c24980f8-0447-49b2-a0f7-5bbfa11ea3be",
+              "caption": "",
+              "alt": "",
+              "width": 339,
+              "height": 293,
+              "instructor_notes": null
+            },
+            {
+              "id": 552664,
+              "key": "5f5fe4e1-4fba-4583-862a-2a65e646b3ff",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "And with that you're ready to start using Jupyter notebooks to perform breadth-first search in the next exercise!",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 527588,
+          "key": "be3741ea-17f0-47c2-a405-3c6cd7e50019",
+          "title": "Breadth-First Exercise",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "be3741ea-17f0-47c2-a405-3c6cd7e50019",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 549640,
+              "key": "e37d7403-72b0-4a20-a049-334bfe2bcace",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Breadth-First Search\n===",
+              "instructor_notes": ""
+            },
+            {
+              "id": 549656,
+              "key": "115d8056-885d-4313-9a6e-a4aa99f7e5e9",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/February/5a871616_screen-shot-2018-02-16-at-9.33.53-am/screen-shot-2018-02-16-at-9.33.53-am.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/115d8056-885d-4313-9a6e-a4aa99f7e5e9",
+              "caption": "",
+              "alt": "",
+              "width": 784,
+              "height": 658,
+              "instructor_notes": null
+            },
+            {
+              "id": 549657,
+              "key": "73882eca-caf9-4e9d-910d-416c07e67578",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "In this exercise, you'll implement breadth-first search to find a path from start to goal in a grid world like the one shown above. In this case, the grid represents your state space and the individual states that your vehicle can be in are simply positions within the grid. Using `numpy` in Python, you can represent this grid in the following manner:\n\n```python\nimport numpy as np\ngrid = np.array([\n    [0, 1, 0, 0, 0, 0],\n    [0, 1, 0, 0, 0, 0],\n    [0, 1, 0, 1, 0, 0],\n    [0, 0, 0, 1, 1, 0],\n    [0, 0, 0, 1, 0, 0],\n])\n```\n\nWithin this `numpy` array, zeros represent the free space and ones represent obstacles. Positions within the grid are denoted just like you would in any matrix (or image) representation where `(i, j)` indicates row `i` column `j`, and the position `(0, 0)` is in the upper lefthand corner. ",
+              "instructor_notes": ""
+            },
+            {
+              "id": 550240,
+              "key": "b9c3b7a3-9220-4074-948d-94be7df4d91d",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Python data structures for search\n\nThe search process involves keeping track of things like all your partial plans and positions visited so far. [Python features a number of data structures](https://docs.python.org/3/tutorial/datastructures.html) that you could use for keeping track of actions, partial plans and visited locations, but not all data structures are created equal! Depending on your use case, different structures will perform more or less efficiently. \n\nIn this exercise, you'll keep track of which cells you can expand into, your visited list and all your partial plans using a combination of a Python [queue](https://docs.python.org/3/library/queue.html), a [set](https://docs.python.org/3/tutorial/datastructures.html#sets) and a [dictionary](https://docs.python.org/3/tutorial/datastructures.html#dictionaries).  The way this will work is that you'll keep track of all the cells that are possible to expand into within the queue, all the cells you've already visited in the set, and how you moved through the grid (your partial plans) in the dictionary.\n\nFor example, using the grid world from the previous exercise, you have three possible actions from the start location:\n\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 560418,
+              "key": "1e0fc0eb-079c-43d2-aba8-2d4bba721e7a",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/March/5aa450b7_screen-shot-2018-03-10-at-10.30.01-am/screen-shot-2018-03-10-at-10.30.01-am.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/1e0fc0eb-079c-43d2-aba8-2d4bba721e7a",
+              "caption": "",
+              "alt": "",
+              "width": 554,
+              "height": 341,
+              "instructor_notes": null
+            },
+            {
+              "id": 560421,
+              "key": "c6074eba-364f-44ac-a1a5-f8b43866c4ea",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "The first step in the process is then to initialize a `Queue()` object and add the start location to it:\n\n```python\nfrom queue import Queue\nstart = (1, 0) # Location in (i, j) of the start location in the image above\nq = Queue()\nq.put(start)\n```\nNext, initialize a `set()` object for your visited list and add the start location to it.\n\n```python\nvisited = set()\nvisited.add(start)\nprint(visited)\n>>> {(1, 0)}\n```\n\nThen define an empty dictionary, where you'll record how you moved through the grid and a goal location, which in this example is `(1, 4)`.\n```python\nbranch = {}\ngoal = (1, 4)\n```\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 560417,
+              "key": "c08fada3-2996-4e86-bc38-adc8968d2952",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Next, you'll explore which actions are valid given your current position in the grid. In the first project, you used the [`Enum`](https://docs.python.org/3/library/enum.html) class to keep track of the state of your vehicle and here we'll use it to keep track of the action set like this:\n\n```python\nfrom enum import Enum\n\nclass Action(Enum): \n    LEFT = (0, -1)\n    RIGHT = (0, 1)\n    UP = (-1, 0)\n    DOWN = (1, 0)\n    \n    def __str__(self):\n        if self == self.LEFT:\n            return '<'\n        elif self == self.RIGHT:\n            return '>'\n        elif self == self.UP:\n            return '^'\n        elif self == self.DOWN:\n            return 'v'\n```\n\nHere we've defined each action as a tuple containing the indices `(i, j)` corresponding to how that action moves you within the grid.  We've also included a string representation for each action to be used later in visualizing the path. You could do something similar with a dictionary but using an `Enum` object is a nice clean way of keeping track of your actions and other associated properties like, in this case, a string representation of each action.\n\nSo in the example case, valid actions are `UP`, `DOWN` and `RIGHT`, corresponding to movements of `(-1, 0)`, `(1, 0)` and `(0, 1)`, respectively. Or in code:\n```python\nvalid = [Action.UP, Action.RIGHT, Action.DOWN]\n```\nThe next thing to do is expand using each of these actions:",
+              "instructor_notes": ""
+            },
+            {
+              "id": 560423,
+              "key": "9a88f885-2cb3-4884-8181-0e6345394f15",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/March/5aa456db_screen-shot-2018-03-10-at-2.05.55-pm/screen-shot-2018-03-10-at-2.05.55-pm.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/9a88f885-2cb3-4884-8181-0e6345394f15",
+              "caption": "",
+              "alt": "",
+              "width": 560,
+              "height": 341,
+              "instructor_notes": null
+            },
+            {
+              "id": 560428,
+              "key": "46a5042c-d25f-4642-a29b-b9bc918509c5",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "You'll find the grid locations of these new cells one at a time based on the original cell (start in this case) and the actions that took you to get there. You'll then step through and determine whether each new cell is already on your visited list. If so, ignore it, if not, add it to the queue and visited list, and record in your `branch` dictionary the cell you came from and action that took you there.\n\n```python\ncurrent_node = start\nfor action in valid:\n    # delta of performing the action\n    da = action.value\n    next_node = (current_node[0] + da[0], current_node[1] + da[1])\n                \n    # Check if the new node has been visited before.\n    # If the node has not been visited you will need to\n    # 1. Mark it as visited\n    # 2. Add it to the queue\n    # 3. Add how you got there to branch\n    if next_node not in visited:                \n        visited.add(next_node)               \n        q.put(next_node)          \n        branch[next_node] = (current_node, action) \n\nprint(q.queue)\nprint(visited)\nprint(branch)\n\n# And this output looks like:\n>>> deque([(1, 0), (0, 0), (1, 1), (2, 0)])\n>>> {(2, 0), (1, 0), (0, 0), (1, 1)}\n>>> {(0, 0): ((1, 0), <Action.UP: (-1, 0)>), (1, 1): ((1, 0), <Action.RIGHT: (0, 1)>), (2, 0): ((1, 0), <Action.DOWN: (1, 0)>)}\n```\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 560433,
+              "key": "823bc421-821a-4a1b-b326-0aaab5e4395d",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "You can employ the methods above to implement breadth-first search and when you finally arrive at the goal, it's time to retrace your steps through the `branch` dictionary to figure out how you got there!  That looks something like this:\n\n```python\n# Retrace your steps\npath = []\nn = goal\nwhile branch[n][0] != start:\n    # Append each new node to the path as you work your way back\n    path.append(branch[n][1])\n    n = branch[n][0]\n# One last time to append the start location\npath.append(branch[n][1])\n\n# And reverse the order to make it a path from start to goal\npath = path[::-1]\n```",
+              "instructor_notes": ""
+            },
+            {
+              "id": 552655,
+              "key": "7cc64fa5-959f-4209-85db-b8aa8777fab6",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Breadth-first search exercise\n\n\n\nNow it's your turn! Remember the name of the game for breadth-first search is to keep track of visited cells and all your partial plans and always expand the shortest partial plan first. Check out the notebook below and complete the `TODOs` in the `breadth_first()` function. Is your search method successful?  What about if you modify the grid? Can you always find the shortest path? As an extra challenge, figure out how to convert your implementation from breadth-first search to depth-first search! \n\nGood luck! And for a peek at our breadth-first solution, scroll to the link at the bottom of the notebook.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 527589,
+              "key": "dc31c49c-aace-4943-a529-40d2f21abc6a",
+              "title": null,
+              "semantic_type": "WorkspaceAtom",
+              "is_public": true,
+              "workspace_id": "view9dc943e6",
+              "pool_id": "jupyter",
+              "view_id": "9dc943e6-bbb8-4a8c-b19b-318c11ef927d",
+              "gpu_capable": false,
+              "configuration": {
+                "id": "reserved",
+                "blueprint": {
+                  "conf": {
+                    "ports": [],
+                    "allowSubmit": false,
+                    "defaultPath": "/notebooks/BFS.ipynb"
+                  },
+                  "kind": "jupyter"
+                },
+                "workspaceId": "reserved"
+              },
+              "starter_files": null
+            }
+          ]
+        },
+        {
+          "id": 503780,
+          "key": "9e3c34d4-c48c-4d3e-af45-311c17b29c14",
+          "title": "Cost",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "9e3c34d4-c48c-4d3e-af45-311c17b29c14",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 551805,
+              "key": "9bc1fe51-1ff2-4621-bd82-c08fa4c3a821",
+              "title": "C2 L1 A07 Cost V5",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "qEYbn-jq7Qg",
+                "china_cdn_id": "qEYbn-jq7Qg.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 527594,
+          "key": "44fbeb21-92d8-4bee-97a8-5fc160e159ee",
+          "title": "Cost Exercise",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "44fbeb21-92d8-4bee-97a8-5fc160e159ee",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 550339,
+              "key": "f02d0eb6-4693-413b-9940-f4c46f696248",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "The Cost of Action\n===",
+              "instructor_notes": ""
+            },
+            {
+              "id": 550340,
+              "key": "9ca4ef34-826c-43d4-aaab-0939a06601ca",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/February/5a87510a_screen-shot-2018-02-16-at-1.45.18-pm/screen-shot-2018-02-16-at-1.45.18-pm.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/9ca4ef34-826c-43d4-aaab-0939a06601ca",
+              "caption": "",
+              "alt": "",
+              "width": 821,
+              "height": 538,
+              "instructor_notes": null
+            },
+            {
+              "id": 550352,
+              "key": "878b0cb6-4f8f-467a-a74d-a28f22777c99",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Before we get into incorporating a map into our planning solution, we'll delve a little deeper into the notion of cost. It's relatively intuitive to think of diagonal actions as having a higher cost than lateral or vertical motions between grid cells because the distance travelled is slightly longer.  However, actions might have associated costs for other reasons as well.  \n\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 550914,
+              "key": "7d422f63-0778-4029-98ad-f227ae31ab26",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Here, we'll expand the functionality of our `Action()` class to include the cost of each action using the following modifications:\n\n```python\nfrom enum import Enum\nclass Action(Enum):\n    # Assign the cost of each action as the third element in the tuple\n    LEFT = (0, -1, 1)\n    RIGHT = (0, 1, 1)\n    UP = (-1, 0, 1)\n    DOWN = (1, 0, 1)\n    \n    def __str__(self):\n        if self == self.LEFT:\n            return '<'\n        elif self == self.RIGHT:\n            return '>'\n        elif self == self.UP:\n            return '^'\n        elif self == self.DOWN:\n            return 'v'\n    # Assign a new property that returns the cost of an action\n    @property\n    def cost(self):\n        return self.value[2]\n    # Assign a property that returns the action itself\n    @property\n    def delta(self):\n        return (self.value[0], self.value[1])\n```",
+              "instructor_notes": ""
+            },
+            {
+              "id": 550915,
+              "key": "cd7d5792-cfad-4bfe-b2cd-afbc7f8d60ff",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Here we've added a third element each tuple defining actions, which is the cost of each action, and in this case is set to a value of one for all actions.  We've also defined some new properties of the `Action()` class that return the cost and delta (the action itself).  With this you have everything you need to perform uniform cost search!",
+              "instructor_notes": ""
+            },
+            {
+              "id": 550913,
+              "key": "2271f120-6314-40d2-8d5a-36412e182eb5",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Cost Exercise\n\nIn this exercise you'll assign a cost to each action and you can even expand your action set to include diagonal motions if you like!  \n\nGood luck! And for a peek at our solution scroll down to the link at the bottom of the notebook.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 527595,
+              "key": "48f630f1-73f3-49ea-8b20-ded5ab4d567b",
+              "title": null,
+              "semantic_type": "WorkspaceAtom",
+              "is_public": true,
+              "workspace_id": "view245a027f",
+              "pool_id": "jupyter",
+              "view_id": "245a027f-cc54-449f-8476-ba99c71af823",
+              "gpu_capable": false,
+              "configuration": {
+                "id": "reserved",
+                "blueprint": {
+                  "conf": {
+                    "ports": [],
+                    "allowSubmit": false,
+                    "defaultPath": "/notebooks/Cost.ipynb"
+                  },
+                  "kind": "jupyter"
+                },
+                "workspaceId": "reserved"
+              },
+              "starter_files": null
+            }
+          ]
+        },
+        {
+          "id": 503784,
+          "key": "c9e7880b-a80c-431c-ae7a-b273b7711ffe",
+          "title": "Heuristics",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "c9e7880b-a80c-431c-ae7a-b273b7711ffe",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 551806,
+              "key": "446f15c7-9736-41a4-a55c-1d12b419bf3d",
+              "title": "C2 L1 A08 Heuristics V6",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "qBAwN2r573Q",
+                "china_cdn_id": "qBAwN2r573Q.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 503786,
+          "key": "51c74ca5-dc9b-4293-a63c-2d030ef68264",
+          "title": "A*",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "51c74ca5-dc9b-4293-a63c-2d030ef68264",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 565749,
+              "key": "df88bcb5-f71a-426c-a89e-1edd07edebd8",
+              "title": "09 Astar V8",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "yT-8YRxSkqk",
+                "china_cdn_id": "yT-8YRxSkqk.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 527604,
+          "key": "32aa8e06-004a-4138-801d-ef8228a8658c",
+          "title": "A* Exercise",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "32aa8e06-004a-4138-801d-ef8228a8658c",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 550298,
+              "key": "006a5257-e091-425a-8172-e61b6ecf7787",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "A*\n===",
+              "instructor_notes": ""
+            },
+            {
+              "id": 550299,
+              "key": "12da5308-be6c-432a-8131-64786237021f",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/February/5a874622_09-astar-1115-v1/09-astar-1115-v1.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/12da5308-be6c-432a-8131-64786237021f",
+              "caption": "",
+              "alt": "",
+              "width": 8000,
+              "height": 4500,
+              "instructor_notes": null
+            },
+            {
+              "id": 550320,
+              "key": "70725888-4418-45b5-841d-1f09101fdbe4",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "The A* algorithm is a simple yet elegant way of efficiently finding the lowest cost path from start to goal.  In this exercise, you'll find the lowest cost plan by considering the cost of each partial plan and the value of the heuristic for all possible destinations at each step along the way.\n\nIn this exercise, you'll use a [Python priority queue](https://docs.python.org/3/library/queue.html#queue.PriorityQueue), which is a convenient way of maintaining a sorted queue. The `PriorityQueue` data structure allows you to quickly and efficiently select the lowest cost partial plan from your queue of all partial plans.\n \n### A* Exercise\n\nYour first TODO in the exercise below is to define a heuristic.  You can use the Euclidean or Manhattan distance described in the previous video or think of another alternative but keep in mind your heuristic must be [*admissible* and *consistent*](https://en.wikipedia.org/wiki/Consistent_heuristic). You'll also define a cost for each action and modify to include diagonal actions if you like.  Finally, you'll update the cost of each partial plan to reflect the sum of the cost of all actions in the plan plus the heuristic value.  \n\nGood luck! And for a peek at our solution scroll down to the link at the bottom of the notebook.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 527605,
+              "key": "14a92491-b565-4a09-9b71-06167e3fdb5a",
+              "title": null,
+              "semantic_type": "WorkspaceAtom",
+              "is_public": true,
+              "workspace_id": "viewd3457d91",
+              "pool_id": "jupyter",
+              "view_id": "d3457d91-00f8-4beb-87b0-3c58c20ea82e",
+              "gpu_capable": false,
+              "configuration": {
+                "id": "reserved",
+                "blueprint": {
+                  "conf": {
+                    "ports": [],
+                    "allowSubmit": false,
+                    "defaultPath": "/notebooks/A-Star.ipynb"
+                  },
+                  "kind": "jupyter"
+                },
+                "workspaceId": "reserved"
+              },
+              "starter_files": null
+            }
+          ]
+        },
+        {
+          "id": 503970,
+          "key": "d39a4af2-2996-462b-b77c-2937562df489",
+          "title": "Summary",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "d39a4af2-2996-462b-b77c-2937562df489",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 551808,
+              "key": "097a3a4e-f73c-4a15-bd0e-97c734348e4a",
+              "title": "C2 L1 A10 Summary V4",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "MlvfEd8REJI",
+                "china_cdn_id": "MlvfEd8REJI.mp4"
+              }
+            },
+            {
+              "id": 620094,
+              "key": "42b80832-348c-4fee-8c4e-df6ba78ea13d",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Additional Resources\n\n* Udacity's free [Artificial Intelligence for Robotics Course](https://classroom.udacity.com/courses/cs373) (taught by Sebastian Thrun) includes a lesson called \"Search\" which gives a slower-paced introduction to breadth first search and A star search. \n\n* [This web app](https://qiao.github.io/PathFinding.js/visual/) provides nice interactive visualizations of various path planning algorithms in two dimensions.",
+              "instructor_notes": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "_deprecated": [
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    }
+  ]
+}

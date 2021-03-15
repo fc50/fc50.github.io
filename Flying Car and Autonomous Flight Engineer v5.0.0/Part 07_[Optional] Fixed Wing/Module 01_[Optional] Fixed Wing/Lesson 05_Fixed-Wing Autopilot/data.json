@@ -1,0 +1,670 @@
+{
+  "data": {
+    "lesson": {
+      "id": 667455,
+      "key": "78e5fe68-902d-4cfb-bd71-5f8d19fd8ead",
+      "title": "Fixed-Wing Autopilot",
+      "semantic_type": "Lesson",
+      "is_public": true,
+      "version": "1.0.0",
+      "locale": "en-us",
+      "summary": "Apply the concepts of PID control by implementing an autopilot for fixed wing flight.",
+      "lesson_type": "Classroom",
+      "display_workspace_project_only": false,
+      "resources": {
+        "files": [
+          {
+            "name": "Videos Zip File",
+            "uri": "https://zips.udacity-data.com/78e5fe68-902d-4cfb-bd71-5f8d19fd8ead/667455/1538762696735/Fixed-Wing+Autopilot+Videos.zip"
+          },
+          {
+            "name": "Transcripts Zip File",
+            "uri": "https://zips.udacity-data.com/78e5fe68-902d-4cfb-bd71-5f8d19fd8ead/667455/1538762693452/Fixed-Wing+Autopilot+Subtitles.zip"
+          }
+        ],
+        "google_plus_link": null,
+        "career_resource_center_link": null,
+        "coaching_appointments_link": null,
+        "office_hours_link": null,
+        "aws_provisioning_link": null
+      },
+      "project": null,
+      "lab": null,
+      "concepts": [
+        {
+          "id": 667456,
+          "key": "5d97fa2c-973a-4f82-bd9f-52d3a5f6ad8c",
+          "title": "Lesson Introduction",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "5d97fa2c-973a-4f82-bd9f-52d3a5f6ad8c",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 679904,
+              "key": "426bc0a5-0e61-4038-a3a0-3dd16098f3ae",
+              "title": "Nd787 C5 L5 A01 L Intro V1",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "XI9c-HfW1WQ",
+                "china_cdn_id": "XI9c-HfW1WQ.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 667457,
+          "key": "723f3a78-0ee9-4d6a-9d74-30102c6c7a30",
+          "title": "Fixed Wing Trajectories",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "723f3a78-0ee9-4d6a-9d74-30102c6c7a30",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 679905,
+              "key": "7fae623b-b9b6-4e2a-be58-f95661c46bb3",
+              "title": "Nd787 C5 L5 A02 L Fixed Wing Trajectory V1",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "tQkk_SCNzDQ",
+                "china_cdn_id": "tQkk_SCNzDQ.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 667458,
+          "key": "b0f1e6ba-d9ad-4b91-a33f-abffc9f1aecc",
+          "title": "System Architecture",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "b0f1e6ba-d9ad-4b91-a33f-abffc9f1aecc",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 672254,
+              "key": "5259924d-50a6-4500-9aaf-904b8b559cca",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Fixed Wing Control Architecture\n\nFixed wing control is not quite the same thing as quadrotor control. When you imagine quadrotor control you can think of some continuous trajectory through space, where the controller's job is to keep the vehicle as close to that trajectory as possible.\n\nIn fixed wing flight we generally try to keep the vehicle in a trim state (or close to one). This means the job of the controller is slightly different. Instead of following a continuous trajectory through space, we want to navigate through a sequence of trim states.\n\nThe trim states we care about will generally have a commanded airspeed <span class=\"mathquill\">V_c</span>, altitude <span class=\"mathquill\">z_c</span>, heading <span class=\"mathquill\">\\chi_c</span>, and sideslip angle <span class=\"mathquill\">\\beta_c</span> (though this will almost always be equal to zero).\n\nThe job of the controller (which we can also call the autopilot) is to generate the appropriate thrust and control surface deflections for the associated trim state.\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 672256,
+              "key": "76245833-0fe3-4594-9848-082b3bf19644",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/July/5b43a590_control-diagrams/control-diagrams.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/76245833-0fe3-4594-9848-082b3bf19644",
+              "caption": "Highest level control diagram for fixed wing autopilot.",
+              "alt": "",
+              "width": 960,
+              "height": 540,
+              "instructor_notes": null
+            },
+            {
+              "id": 672260,
+              "key": "be1444c1-101b-426a-818c-2151daec57e5",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Longitudinal and Lateral-directional Autopilots\n\nAs you've seen in the last few lessons, we can break the dynamics of fixed wing flight into two smaller problems: longitudinal motion and lateral-directional motion. This allows us to break our control problem into two smaller problems as well.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 672261,
+              "key": "59da3793-58b9-4635-ba4d-44eb4afd03c8",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/July/5b43a622_control-diagrams-1/control-diagrams-1.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/59da3793-58b9-4635-ba4d-44eb4afd03c8",
+              "caption": "",
+              "alt": "",
+              "width": 960,
+              "height": 540,
+              "instructor_notes": null
+            },
+            {
+              "id": 672262,
+              "key": "082c03bb-9132-4266-a9d2-2a4b00b97075",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "We'll be discussing this diagram more in the rest of this lesson. Ultimately, the control diagram that we use will look something like this:",
+              "instructor_notes": ""
+            },
+            {
+              "id": 672265,
+              "key": "9ee07235-933a-4459-9135-c55e3b6aaad1",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/July/5b43a684_control-diagrams-2/control-diagrams-2.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/9ee07235-933a-4459-9135-c55e3b6aaad1",
+              "caption": "",
+              "alt": "",
+              "width": 960,
+              "height": 540,
+              "instructor_notes": null
+            },
+            {
+              "id": 672307,
+              "key": "d393fb78-df29-4ca3-94ca-f8365e745d52",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Reminder: Cascaded Control\n\nSometimes we use a controllable quantity to directly influence a commanded quantity. For example, the bottom control loop in the diagram above uses the rudder deflection <span class=\"mathquill\">\\delta R</span> to directly control the sideslip <span class=\"mathquill\">\\beta_c</span>.\n\nBut sometimes we need to use some intermediate quantity. This is called \"cascaded control\". For example, we use the roll angle <span class=\"mathquill\">\\phi</span> as an intermediate variable to relate the aileron deflection <span class=\"mathquill\">\\delta A</span> to the commanded heading <span class=\"mathquill\">\\chi_c</span>. This means we need to use **two** nested control loops!\n\nIf you want an additional refresher on cascaded control, go back to the video called [Intro to Cascaded Control](https://classroom.udacity.com/nanodegrees/nd787-beta/parts/68999b8f-3344-41c6-8229-7ab110643991/modules/8db4f643-8d79-473f-a645-b7dd00452972/lessons/adf9cc77-d52c-4958-810d-89ddc5997437/concepts/0261dae7-6409-4aac-84dc-0357ae2259a6?contentVersion=1.0.0) from the module on quadrotor control.\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 671544,
+              "key": "591eac43-833b-4cba-90b4-0e46eecb77db",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Reminder: Fixed Wing Cheat Sheet\n\nYou can find all of the equations for this module in the [Fixed Wing Cheat Sheet](https://www.overleaf.com/read/cvqmtzyhqjnj).",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 667460,
+          "key": "204b6203-1f97-4d63-ad7d-8db2f57ab10a",
+          "title": "Controller Design Principles",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "204b6203-1f97-4d63-ad7d-8db2f57ab10a",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 679906,
+              "key": "a2452249-10e4-45a0-b97c-135e3c3c4d91",
+              "title": "Nd787 C5 L5 A04 L Controller Design Principles V2",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "vWJxmSVaT1c",
+                "china_cdn_id": "vWJxmSVaT1c.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 667461,
+          "key": "806a6b3d-00d7-483b-bf95-034d2a7fcbdd",
+          "title": "Lateral Autopilot",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "806a6b3d-00d7-483b-bf95-034d2a7fcbdd",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 679907,
+              "key": "712aaddc-9260-44fd-bac6-929cad7ceae0",
+              "title": "Nd787 C5 L5 A05 L Lateral Directional Autopilot V2",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "xHw6zdfc2u0",
+                "china_cdn_id": "xHw6zdfc2u0.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 667462,
+          "key": "c44bbf58-a38c-48a6-9e51-a6fb7d0cc722",
+          "title": "Course Hold",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "c44bbf58-a38c-48a6-9e51-a6fb7d0cc722",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 672313,
+              "key": "ad2cc41a-6efc-4923-a2a4-6a95c7633e70",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Course Attitude Hold\n\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 672314,
+              "key": "0e4ed3ca-49cd-45d6-85fe-3846fa088eb7",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/July/5b43ad10_control-diagrams-4/control-diagrams-4.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/0e4ed3ca-49cd-45d6-85fe-3846fa088eb7",
+              "caption": "The course-attitude hold controller is shown in the upper left.",
+              "alt": "",
+              "width": 960,
+              "height": 540,
+              "instructor_notes": null
+            },
+            {
+              "id": 672317,
+              "key": "166bdba1-fa18-4957-bed1-da8fb3d7b19a",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "The **course attitude hold** controller is a PI controller which uses the commanded heading angle <span class=\"mathquill\">\\chi_c</span> to command a roll angle <span class=\"mathquill\">\\phi_c</span>. \n\n<div class=\"mathquill\">\n\\begin{aligned}\n  E_{\\chi_t} &= \\chi^c_t - \\chi_t\\\\\n  I_{\\chi_t} &= I_{\\chi_{t-1}} + E_{\\chi_t}\\Delta t\\\\\n  \\phi^c &= k_{p_\\chi}E_{\\chi_t} + k_{i_\\chi}I_{\\chi_t}\n\\end{aligned} \n</div>\n\n#### The Need for an Integrator\nThe integrator term is important here. Its job is to correct for modeling errors, which are much more likely to show up here than in the inner loop. The flight path angle is a much more complex nonlinear function of the state of the vehicle, which we are linearizing around. \n\nThere's a potential problem lurking here. We need the course hold controller to know about the limits on the roll attitude: we don't want to bank so far over that we can't compensate for gravity with our lift vector. \n\nIf the changes in commanded flight path angles are too aggressive, then either the course hold controller will ask for too large of a roll change or it will need to saturate at some maximum roll <span class=\"mathquill\">\\phi_{\\text{max}}^c</span>. In either case, there may be significant error in the flight path angle and this error will build up in the integrator.\n\nThis buildup is known as integrator \"windup\" and we'll discuss it more later in this lesson.\n\n#### What about a D term?\nWe don't need a derivative term. Remember, the role of the derivative term is to damp the response of the system, but in a cascaded system we want to run the outer loop much more slowly than the inner loop. \n\nThe reason for this is that each control loop has finite response time, and the outer loop has to give the inner loop time to respond to the last command before sending the next one. If we run the outer loop too slowly, the system will not be responsive enough. If we run the outer loop too quickly the system is likely to be unstable, as the inner loop will constantly be chasing what the outer loop tells it to do. \n\nSince the outer loop is running much more slowly than the inner loop, it shouldn't need any damping.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 667463,
+          "key": "a330dc6a-87c5-4cc3-a96b-771f049facff",
+          "title": "Inner Loops: Roll and Sideslip Hold",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "a330dc6a-87c5-4cc3-a96b-771f049facff",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 673110,
+              "key": "f4ff4e1b-b93d-4ede-bb45-70fc03aebd71",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Roll Attitude Hold\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 673111,
+              "key": "7dffa7f4-ce4b-4669-9e95-43cc89639191",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/July/5b451cde_control-diagrams-4/control-diagrams-4.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/7dffa7f4-ce4b-4669-9e95-43cc89639191",
+              "caption": "The roll-attitude hold loop is in the upper right. Sideslip hold is shown on the bottom.",
+              "alt": "",
+              "width": 960,
+              "height": 540,
+              "instructor_notes": null
+            },
+            {
+              "id": 673112,
+              "key": "b103403f-16e4-4c6d-a942-6bbdb43eb081",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "The **roll attitude hold** controller is a PD controller which uses the commanded roll angle <span class=\"mathquill\">\\phi_c</span> to command an aileron deflection <span class=\"mathquill\">\\delta A</span>. \n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 673114,
+              "key": "255157fa-8e1b-4fc8-b3a2-3558745f25a4",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "<div class=\"mathquill\">\n\\begin{aligned}\n  E_{\\phi_t} &= \\phi^c_t - \\phi_t\\\\ \\\\\n  D_t &= \\frac{E_{\\phi_t} - E_{\\phi_{t-1}}}{\\Delta t} \\\\ \\\\\n  \\delta A_t &= k_{p_\\phi}E_t  - k_{d_\\phi}D_t\n\\end{aligned} \n</div>",
+              "instructor_notes": ""
+            },
+            {
+              "id": 673132,
+              "key": "3abf2eed-8857-4888-bd61-3af96a71a01a",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Sideslip Hold\n\nThe **sideslip hold** controller is a PI controller which uses the commanded sideslip angle <span class=\"mathquill\">\\beta_c</span> to command a rudder deflection <span class=\"mathquill\">\\delta R</span>. Generally, the commanded sideslip angle will be zero.\n\n<div class=\"mathquill\">\n\\begin{aligned} \n  E_{\\beta_t} &= \\beta^c_t - \\beta_t\\\\\n  I_{\\beta_t} &= I_{\\beta_{t-1}} + E_{\\beta_t}\\Delta t\\\\\n  \\delta R &= -k_{p_\\beta}E_{\\beta_t} - k_{i_\\beta} I_{\\beta_t}\n\\end{aligned}\n</div>",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 667465,
+          "key": "43124fb9-56ed-4202-8d24-6c15b76a6387",
+          "title": "Longitudinal Autopilot",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "43124fb9-56ed-4202-8d24-6c15b76a6387",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 679908,
+              "key": "da5ccf68-855a-4ef2-a30d-64334a00b0a7",
+              "title": "Nd787 C5 L5 A09 L Longitudinal Autopilot V2",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "KRooEa015ms",
+                "china_cdn_id": "KRooEa015ms.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 667466,
+          "key": "fd51fb8f-a2ed-4421-8299-208823ab09c5",
+          "title": "Longitudinal Control Loops",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "fd51fb8f-a2ed-4421-8299-208823ab09c5",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 676592,
+              "key": "08d8bdf0-a9ca-475f-9e33-1fcaf5249524",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Longitudinal Autopilot\n\nThe job of the longitudinal autopilot is to use the throttle, <span class=\"mathquill\">T</span>, and elevator deflection, <span class=\"mathquill\">\\delta E</span>, to control the airspeed, <span class=\"mathquill\">V</span>, and altitude, <span class=\"mathquill\">z</span> (or sometimes <span class=\"mathquill\">h</span>).",
+              "instructor_notes": ""
+            },
+            {
+              "id": 676591,
+              "key": "2ae802c2-7e01-4d1e-8f48-a1d008a9f464",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/July/5b4f7e6e_control-diagrams-6/control-diagrams-6.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/2ae802c2-7e01-4d1e-8f48-a1d008a9f464",
+              "caption": "",
+              "alt": "",
+              "width": 960,
+              "height": 540,
+              "instructor_notes": null
+            },
+            {
+              "id": 676593,
+              "key": "7a024c10-0002-4526-a8f7-2a451d42f1e6",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "But there's some redundancy here, since the throttle and the elevator deflection can influence both the airspeed and altitude. We resolve this redundancy by dividing flight into four \"zones\":",
+              "instructor_notes": ""
+            },
+            {
+              "id": 673135,
+              "key": "305bb736-d428-4ff0-8aa6-da228fddd813",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/July/5b452250_screen-shot-2018-07-10-at-2.16.32-pm/screen-shot-2018-07-10-at-2.16.32-pm.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/305bb736-d428-4ff0-8aa6-da228fddd813",
+              "caption": "",
+              "alt": "",
+              "width": 757,
+              "height": 411,
+              "instructor_notes": null
+            },
+            {
+              "id": 676595,
+              "key": "759c6b2c-73d8-4aa8-8df8-ac77763b7af6",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "We can model this as a state machine, where transitions between states happen when the vehicle crosses between zone boundaries.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 676596,
+              "key": "ca052c6a-f852-4942-95b8-86203066e14d",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/July/5b4f8154_l05-autopilot.pptx/l05-autopilot.pptx.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/ca052c6a-f852-4942-95b8-86203066e14d",
+              "caption": "",
+              "alt": "",
+              "width": 960,
+              "height": 720,
+              "instructor_notes": null
+            },
+            {
+              "id": 676594,
+              "key": "a1c763fe-733b-4b82-904f-7a3f76f5e85c",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Note that this diagram uses <span class=\"mathquill\">\\delta t</span> instead of <span class=\"mathquill\">T</span> for thrust. The <span class=\"mathquill\">\\delta t ^ *</span> that you see in the second box is a feed-forward value for the thrust based on trim calculations (which you learned how to do in a previous lesson).\n\nThese four zones require four separate control loops (though there isn't an exact 1 to 1 mapping between zones and control loops). You can see these loops in the diagram below.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 676590,
+              "key": "d767e92e-6ee5-4b51-b09d-dae49cf0ec1d",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/July/5b4f7e4d_control-diagrams-5/control-diagrams-5.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/d767e92e-6ee5-4b51-b09d-dae49cf0ec1d",
+              "caption": "",
+              "alt": "",
+              "width": 960,
+              "height": 540,
+              "instructor_notes": null
+            }
+          ]
+        },
+        {
+          "id": 667468,
+          "key": "0066420d-b1c2-47e6-b980-ee8fa0d150ae",
+          "title": "Autopilot Tuning",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "0066420d-b1c2-47e6-b980-ee8fa0d150ae",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 676639,
+              "key": "1bfa06e2-0c91-4dec-8268-bdc603f6b27e",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Autopilot Tuning\n\nController tuning can be tricky. In this section we'll provide some general guidelines to help.\n\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 676640,
+              "key": "5d712faa-6c03-4eb1-a3af-b90c3080b007",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/July/5b4f99b9_control-diagrams-7/control-diagrams-7.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/5d712faa-6c03-4eb1-a3af-b90c3080b007",
+              "caption": "",
+              "alt": "",
+              "width": 960,
+              "height": 540,
+              "instructor_notes": null
+            },
+            {
+              "id": 676643,
+              "key": "7f4ec22c-48a8-4d98-aa7b-6659b024ec19",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Longitudinal Autopilot Tuning\n\nWe recommend tuning the gains one at a time in the following order. All gains are assumed to start at 0.\n\n##### Inner Loop: Pitch Attitude Hold\n\n1. Increase <span class=\"mathquill\">k_{d_\\theta}</span> until the vehicle becomes unstable and then back of 20%.\n2. Increase <span class=\"mathquill\">k_{p_\\theta}</span> to get acceptable responsiveness.\n\n##### Outer Loop: Altitude Hold\n\n1. Increase <span class=\"mathquill\">k_{p_z}</span> to get acceptable responsiveness. \n2. Increase <span class=\"mathquill\">k_{i_z}</span> to eliminate steady state errors.\n\n##### Outer Loop: Pitch Control of Airspeed\n\n1. Increase <span class=\"mathquill\">k_{p_{V_2}}</span> to get acceptable responsiveness.\n2. Increase <span class=\"mathquill\">k_{i_{V_2}}</span> to eliminate steady state errors.\n\n##### Inner Loop: Throttle Control of Airspeed\n\n1. Increase <span class=\"mathquill\">k_{p_V}</span> to get acceptable responsiveness. \n2. Increase <span class=\"mathquill\">k_{i_V}</span> to eliminate steady state errors.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 676650,
+              "key": "b31e7c21-2f88-4808-b23a-daaabf7f4bc3",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Lateral Autopilot Tuning\n\n##### Inner Loop: Roll Attitude Hold\n\n1. Increase <span class=\"mathquill\">k_{d_\\phi}</span> until the vehicle becomes unstable and then back of 20%.\n2. Increase <span class=\"mathquill\">k_{p_\\phi}</span> to get acceptable responsiveness.\n\n##### Outer Loop: Course Hold\n\n1. Increase <span class=\"mathquill\">k_{p_\\chi}</span> to get acceptable responsiveness. \n2. Increase <span class=\"mathquill\">k_{i_\\chi}</span> to eliminate steady state errors.\n\n##### Inner Loop: Sideslip Hold\n\n1. Increase <span class=\"mathquill\">k_{p_\\beta}</span> to get acceptable responsiveness. \n2. Increase <span class=\"mathquill\">k_{i_\\beta}</span> to eliminate steady state errors.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 667469,
+          "key": "5068563a-9a51-4b26-81a7-445aca6edfa5",
+          "title": "Integrator Windup",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "5068563a-9a51-4b26-81a7-445aca6edfa5",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 671591,
+              "key": "8cce5fec-28c7-4f31-9759-6d2f4f9eef7a",
+              "title": null,
+              "semantic_type": "WorkspaceAtom",
+              "is_public": true,
+              "workspace_id": "viewHJgNv1bnzX",
+              "pool_id": "jupyter",
+              "view_id": "jupyter-S14D1ZnMm",
+              "gpu_capable": false,
+              "configuration": {
+                "id": "reserved",
+                "blueprint": {
+                  "conf": {
+                    "disk": null,
+                    "ports": [],
+                    "allowSubmit": false,
+                    "defaultPath": "/notebooks/Integrator%20Windup.ipynb"
+                  },
+                  "kind": "jupyter"
+                },
+                "workspaceId": "reserved"
+              },
+              "starter_files": null
+            }
+          ]
+        },
+        {
+          "id": 667470,
+          "key": "210e4552-aa81-4b40-9f01-dd5b1c452c73",
+          "title": "Conclusion",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "210e4552-aa81-4b40-9f01-dd5b1c452c73",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 679909,
+              "key": "4d93b278-23c1-4cda-9559-926e3ee53917",
+              "title": "Nd787 C5 L5 A15 L Conclusion V1",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "NoAimkRksso",
+                "china_cdn_id": "NoAimkRksso.mp4"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "_deprecated": [
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    }
+  ]
+}

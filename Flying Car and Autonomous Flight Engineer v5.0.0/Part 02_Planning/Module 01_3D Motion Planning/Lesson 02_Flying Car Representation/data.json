@@ -1,0 +1,907 @@
+{
+  "data": {
+    "lesson": {
+      "id": 503759,
+      "key": "91ccafae-d090-4144-a8f3-06cb8ac10757",
+      "title": "Flying Car Representation",
+      "semantic_type": "Lesson",
+      "is_public": true,
+      "version": "1.0.0",
+      "locale": "en-us",
+      "summary": "Your vehicle has a physical size and orientation in the world and here you'll learn how to think about position and orientation as part of your planning solution.",
+      "lesson_type": "Classroom",
+      "display_workspace_project_only": null,
+      "resources": {
+        "files": [
+          {
+            "name": "Videos Zip File",
+            "uri": "https://zips.udacity-data.com/91ccafae-d090-4144-a8f3-06cb8ac10757/503759/1538763131668/Flying+Car+Representation+Videos.zip"
+          },
+          {
+            "name": "Transcripts Zip File",
+            "uri": "https://zips.udacity-data.com/91ccafae-d090-4144-a8f3-06cb8ac10757/503759/1538763125162/Flying+Car+Representation+Subtitles.zip"
+          }
+        ],
+        "google_plus_link": null,
+        "career_resource_center_link": null,
+        "coaching_appointments_link": null,
+        "office_hours_link": null,
+        "aws_provisioning_link": null
+      },
+      "project": null,
+      "lab": null,
+      "concepts": [
+        {
+          "id": 553500,
+          "key": "48b68581-c0fa-419a-b559-e836da78dc42",
+          "title": "Sebastian Introduction",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "48b68581-c0fa-419a-b559-e836da78dc42",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 616879,
+              "key": "e8bcda2b-e1d4-4e9d-a08f-b6e94697df04",
+              "title": "Nd787 C2 L2 00 Sebastian V1",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "54bXmWz_U7k",
+                "china_cdn_id": "54bXmWz_U7k.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 503959,
+          "key": "6e131e87-68c1-4c0c-8d67-1600737626c3",
+          "title": "Introduction",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "6e131e87-68c1-4c0c-8d67-1600737626c3",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 551783,
+              "key": "d2a2a058-5517-4bdb-a9c5-d3fc677970a0",
+              "title": "C2 L2 A01 Intro To Vehicle Representation V2",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "PsHOHInwDIk",
+                "china_cdn_id": "PsHOHInwDIk.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 503960,
+          "key": "bb5c6d71-c31b-4b99-944d-0d315769f9ed",
+          "title": "Geodetic Frame",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "bb5c6d71-c31b-4b99-944d-0d315769f9ed",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 551784,
+              "key": "9861a99e-a24a-4357-987f-aa9acf964a5b",
+              "title": "C2 L2 A02 Geodetic Frame V2",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "CwA1L8uJ71I",
+                "china_cdn_id": "CwA1L8uJ71I.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 503961,
+          "key": "524c9923-2633-4a88-bd20-dfba815701af",
+          "title": "ECEF Frame",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "524c9923-2633-4a88-bd20-dfba815701af",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 551785,
+              "key": "80472ba5-2e99-4dca-8a6b-463c6c46a69d",
+              "title": "C2 L2 A03 ECEF Frame V2",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "9e3Gl-b_rvw",
+                "china_cdn_id": "9e3Gl-b_rvw.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 527610,
+          "key": "fda86cf9-7b62-4a01-a352-eef54045f57e",
+          "title": "Geodetic to NED Exercise",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "fda86cf9-7b62-4a01-a352-eef54045f57e",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 550410,
+              "key": "b806b20f-9583-43db-a739-592993192158",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Geodetic to NED\n===",
+              "instructor_notes": ""
+            },
+            {
+              "id": 550411,
+              "key": "26adccc7-f383-4a01-a44c-580a0aef9391",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/February/5a87780d_03-ecef-frame-1718-v1/03-ecef-frame-1718-v1.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/26adccc7-f383-4a01-a44c-580a0aef9391",
+              "caption": "",
+              "alt": "",
+              "width": 8000,
+              "height": 4500,
+              "instructor_notes": null
+            },
+            {
+              "id": 550412,
+              "key": "4abca2e1-32a6-4e07-9c25-bdc8e1ddb0a8",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "In general, converting between spherical and Cartesian coordinates is a little tricky, but in this exercise we're going to make things easy by using a Python library called [utm](https://pypi.python.org/pypi/utm). UTM stands for [Universal Transverse Mercator](https://en.wikipedia.org/wiki/Universal_Transverse_Mercator_coordinate_system) and it's a common coordinate system used in all kinds of mapping applications for describing positions on the earth in Cartesian coordinates.  \n\nFor the projects in this program, you won't be particularly concerned with the actual UTM coordinates of your vehicle, but rather, the difference in your position, or the position of some obstacle relative to a \"global home\" position or origin.  In principle, you could define your global home position to be anywhere, but it usually makes the most sense to define home as either where your vehicle starts off from or some other local home base position.  \n\nThe UTM system divides the surface of the Earth into a number of zones that look like this:",
+              "instructor_notes": ""
+            },
+            {
+              "id": 550413,
+              "key": "4e3065c3-76a2-45ca-b947-e1182e42f6b5",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/February/5a877ae8_utm-zones/utm-zones.jpg",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/4e3065c3-76a2-45ca-b947-e1182e42f6b5",
+              "caption": "",
+              "alt": "",
+              "width": 2048,
+              "height": 1024,
+              "instructor_notes": null
+            },
+            {
+              "id": 550414,
+              "key": "0ba56e89-3957-4bad-8e72-2a8ac08b3172",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "There are 60 numbered UTM zones covering the entire globe in the east-west direction and 24 zones labeled with letters of the alphabet from south to north. UTM coordinates are in units of metres, and your position within any zone is given as [\"eastings\" and \"northings\"](https://en.wikipedia.org/wiki/Easting_and_northing), which you can think of as your position in metres along the east-west and north-south axes, respectively.  \n\nWith the Python `utm` library, you can quickly find the zone number and letter as well as easting and northing for a particular latitude and longitude (given in decimal degrees) like this:\n\n```python\nimport utm\n(easting, northing, zone_number, zone_letter) = utm.from_latlon(latitude, longitude)\n```\nSimilarly, you can convert from a UTM position back to latitude and longitude:\n```python\n(latitude, longitude) = utm.to_latlon(easting, northing, zone_number, zone_letter)\n```",
+              "instructor_notes": ""
+            },
+            {
+              "id": 550526,
+              "key": "b31f1e1e-8568-4a81-b40d-0f8ea68e1677",
+              "title": "Decimal Degrees Precision",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "b31f1e1e-8568-4a81-b40d-0f8ea68e1677",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "At the equator, the distance on the surface of the Earth corresponding to one degree of latitude and one degree of longitude is the same, and runs a little more than 100 km / degree. If you need to retain an accuracy of less than 1 meter in your geodetic coordinates, how many significant figures should you carry beyond the decimal point?",
+                "answers": [
+                  {
+                    "id": "a1519001524330",
+                    "text": "3 (0.001)",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1519264224682",
+                    "text": "4 (0.0001)",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1519264225761",
+                    "text": "5 (0.00001)",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1519264245617",
+                    "text": "6 (0.000001)",
+                    "is_correct": true
+                  }
+                ]
+              }
+            },
+            {
+              "id": 550415,
+              "key": "28494c91-3cf9-4192-83fa-baca40fea393",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "\n### Geodetic to NED Exercise\nNow that you've seen the fundamentals of coordinate systems, it's your turn to implement a `global_to_local()` function that converts from global geodetic (longitude, latitude, altitude) to UTM (easting, northing, zone_number, zone_letter) and then to local NED (north, east, down). You will also implement the `local_to_global()` function that does the opposite.\n\nFor the purposes of this exercise, we will assume that all positions are in the same UTM zone. So when we convert from geodetic to NED, you can simply ignore the zone number and letter. But keep in mind that in order to go back to geodetic coordinates from NED you need to first convert to UTM and specify the zone number and letter as well as actual eastings and northings in the zone!\n\nTo convert from UTM to local NED, you will take the north and east differences between the current UTM and the \"home\" position. You can assume that the zero position of the \"altitude\" and \"down\" axes correspond to the same place along the z-axis, so the transformation of that coordinate just requires multiplying by -1.\n\nGood luck! You can check out [how this is implemented in the Udacidrone API](https://github.com/udacity/udacidrone/blob/master/udacidrone/frame_utils.py), and to have a peek at our solution scroll to the link at the bottom of the notebook.   ",
+              "instructor_notes": ""
+            },
+            {
+              "id": 527611,
+              "key": "3d09ce7a-9269-4828-a94a-af42505704f6",
+              "title": null,
+              "semantic_type": "WorkspaceAtom",
+              "is_public": true,
+              "workspace_id": "view8ea55b2f",
+              "pool_id": "jupyter",
+              "view_id": "8ea55b2f-454f-46f1-a4de-e3d17a4fe764",
+              "gpu_capable": false,
+              "configuration": {
+                "id": "reserved",
+                "blueprint": {
+                  "conf": {
+                    "ports": [],
+                    "allowSubmit": false,
+                    "defaultPath": "/notebooks/Geodetic%20to%20NED.ipynb"
+                  },
+                  "kind": "jupyter"
+                },
+                "workspaceId": "reserved"
+              },
+              "starter_files": null
+            }
+          ]
+        },
+        {
+          "id": 503962,
+          "key": "c8739456-e992-4afa-96d7-a0b290230170",
+          "title": "Body Frame",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "c8739456-e992-4afa-96d7-a0b290230170",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 551786,
+              "key": "776a21c9-a59d-4743-86be-59e5c8671aa8",
+              "title": "C2 L2 A04 Body Frame V2",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "JEDZyWtco5k",
+                "china_cdn_id": "JEDZyWtco5k.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 503963,
+          "key": "919f7e8f-2ea6-4d67-bf8d-0901396d0933",
+          "title": "Euler Angles",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "919f7e8f-2ea6-4d67-bf8d-0901396d0933",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 551787,
+              "key": "5fcc545c-5f0f-4136-8e24-631f335a66a0",
+              "title": "C2 L2 A05 Euler Angles V3",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "C5bRTJ9UGgA",
+                "china_cdn_id": "C5bRTJ9UGgA.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 503964,
+          "key": "4f46ba05-3e7e-4086-9ea7-78c6fbfe12be",
+          "title": "Gimbal Lock",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "4f46ba05-3e7e-4086-9ea7-78c6fbfe12be",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 551788,
+              "key": "6800f6bc-cc24-46fd-8373-34eb2743e7c4",
+              "title": "C2 L2 A06 Gimbal Lock V2",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "gWL0oXWADSU",
+                "china_cdn_id": "gWL0oXWADSU.mp4"
+              }
+            },
+            {
+              "id": 565632,
+              "key": "7ea3a520-5560-4b6e-87d6-335c90cb93e4",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## 3-Axis Gimbal Simulator\n\nTo give you a better handle on gimbal lock and the ordering of Euler rotations, we build a handy little 3-axis gimbal simulator for you! If you're interested in playing with it, download the simulator appropriate for your operating system [here](https://github.com/udacity/FCND-Gimbal-Demo/releases/tag/v1.0).",
+              "instructor_notes": ""
+            },
+            {
+              "id": 565633,
+              "key": "9b90d655-79ae-433d-b110-70077077401c",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/March/5aaadb64_gimbal-sim-demo/gimbal-sim-demo.gif",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/9b90d655-79ae-433d-b110-70077077401c",
+              "caption": "",
+              "alt": "",
+              "width": 960,
+              "height": 540,
+              "instructor_notes": null
+            }
+          ]
+        },
+        {
+          "id": 503965,
+          "key": "18ef79d6-7646-4548-8cd2-21cbc8a1bc1e",
+          "title": "Rotation Matrices",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "18ef79d6-7646-4548-8cd2-21cbc8a1bc1e",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 551789,
+              "key": "1993c557-268b-49e1-8417-fac9d3029272",
+              "title": "C2 L2 A07 Rotation Matrices V2",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "sUoaCP9S9V8",
+                "china_cdn_id": "sUoaCP9S9V8.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 527614,
+          "key": "ce1a384e-5cba-454b-9c05-6dce808008cb",
+          "title": "Euler Rotations Exercise",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "ce1a384e-5cba-454b-9c05-6dce808008cb",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 551846,
+              "key": "760816e2-4ebb-4f4e-88fc-604379a0c947",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Euler Rotations\n===",
+              "instructor_notes": ""
+            },
+            {
+              "id": 551847,
+              "key": "09cbd12f-6216-41fe-a28b-8d76b95aa77d",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/February/5a8e2d45_screen-shot-2018-02-21-at-6.38.45-pm/screen-shot-2018-02-21-at-6.38.45-pm.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/09cbd12f-6216-41fe-a28b-8d76b95aa77d",
+              "caption": "",
+              "alt": "",
+              "width": 600,
+              "height": 515,
+              "instructor_notes": null
+            },
+            {
+              "id": 552106,
+              "key": "822ea2ef-adea-41fb-8bbd-0a490093c4dd",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "The image above shows a vehicle mounted on three gimbals corresponding to roll (green), pitch (red) and yaw (blue). To get a better handle on gimbal lock and the ordering of Euler rotations, we built a handy little 3-axis gimbal simulator for you! If you're interested in playing with it, download the simulator appropriate for your operating system [here](https://github.com/udacity/FCND-Gimbal-Demo/releases/tag/v1.0).\n\nThe configuration shown above corresponds to Euler rotations in the following order where <span class=\"mathquill\">\\phi</span> denotes the roll angle about the x-axis, <span class=\"mathquill\">\\theta</span> denotes the pitch angle about the y-axis, and <span class=\"mathquill\">\\psi</span> the yaw angle about the z-axis: \n\n ",
+              "instructor_notes": ""
+            },
+            {
+              "id": 552107,
+              "key": "e02f20ce-3181-49df-99a6-baf9f076f63b",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "<div class=\"mathquill\">R_z(\\psi)R_y(\\theta)R_x(\\phi)=\n\\begin{bmatrix}\n    \\rm{cos}\\psi       & -\\rm{sin}\\psi & 0 \\\\\n    \\rm{sin}\\psi      & \\rm{cos}\\psi & 0 \\\\\n     0       &  0 & 1\n\\end{bmatrix}\n\\begin{bmatrix}\n    \\rm{cos}\\theta       &0 & \\rm{sin}\\theta \\\\\n    0       & 1 & 0 \\\\\n     -\\rm{sin}\\theta       &  0 &  \\rm{cos}\\theta\n\\end{bmatrix}\n\\begin{bmatrix}\n    1       &0 & 0 \\\\\n    0       &\\rm{cos}\\phi & -\\rm{sin}\\phi \\\\\n    0       & \\rm{sin}\\phi & \\rm{cos}\\phi \n\\end{bmatrix} </div>",
+              "instructor_notes": ""
+            },
+            {
+              "id": 552132,
+              "key": "b87cce22-3f8e-467f-86a0-87b18f48a4ad",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "In this arrangement, the yaw rotation appears first, then pitch, then roll, which is the same way the gimbal apparatus shown above would function, with yaw as the outermost gimbal and roll on the inside. Rearranging the order of these matrix multiplications would be equivalent to rearranging the order of the gimbals above! Now we're going to dive right into coding it up, but for a delightfully thorough explanation of Euler rotations in all the gory details, check out [this reference](http://danceswithcode.net/engineeringnotes/rotations_in_3d/rotations_in_3d_part1.html).\n\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 552247,
+              "key": "22e1d9e9-20f5-4f1d-93fd-3dfbf3534420",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Euler Rotations Exercise\n\nIn this exercise, your task is to fill out the TODO's in the methods of the `Rotation()` class defined in the notebook below.  Each of the `roll()`, `pitch()` and `yaw()` methods should return a rotation matrix corresponding to the appropriate Euler rotation, and the final method called `rotate()` should multiply them together and return the result.\n\nOnce you've got a working `Rotation()` class, you can test it out on different series of rotations to see how order of rotations makes a difference.  Finally, you can demonstrate gimbal lock by first pitching the vehicle to +/- 90 degrees to find that yaw no longer has any effect!\n\nGood luck! And for a look at our solution scroll down to the link at the bottom of the notebook.\n\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 527615,
+              "key": "ffc42ad1-0e4f-44aa-a1ec-fded0d436a69",
+              "title": null,
+              "semantic_type": "WorkspaceAtom",
+              "is_public": true,
+              "workspace_id": "view7457fe45",
+              "pool_id": "jupyter",
+              "view_id": "7457fe45-ab36-4f5d-bd83-8884dd740ea5",
+              "gpu_capable": false,
+              "configuration": {
+                "id": "reserved",
+                "blueprint": {
+                  "conf": {
+                    "ports": [],
+                    "allowSubmit": false,
+                    "defaultPath": "/notebooks/Rotations.ipynb"
+                  },
+                  "kind": "jupyter"
+                },
+                "workspaceId": "reserved"
+              },
+              "starter_files": null
+            }
+          ]
+        },
+        {
+          "id": 503966,
+          "key": "63db880a-3f97-440b-8222-d9afd06f255f",
+          "title": "Quaternions",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "63db880a-3f97-440b-8222-d9afd06f255f",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 551790,
+              "key": "02530565-8069-4523-ba04-216fc4f28d9f",
+              "title": "C2 L2 A08 Quaternions V2",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "Jwelviv1ZNY",
+                "china_cdn_id": "Jwelviv1ZNY.mp4"
+              }
+            },
+            {
+              "id": 620138,
+              "key": "ca0867ab-165b-4714-b9b2-2ff4f9f632dc",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Quaternion Summary\nThe Quaternion is another way of representing 3 dimension orientation. Instead of using three Euler Angles which describe roll, pitch, and yaw, the quaternion uses four numbers (which we label <span class=\"mathquill\">a, b, c, d</span>).\n\nThese numbers don't have the same intuitive significance as the Euler Angles, but they can also be used to unambiguously represent orientations and rotations in three dimensions. \n\nYou can convert from one representation to the other using the following math:\n\n#### Quaternion to Euler\n<div class=\"mathquill\">\n\\begin{bmatrix}\n\\phi \\\\ \n\\theta \\\\ \n\\psi\n\\end{bmatrix}\n=\n\\begin{bmatrix}\n\\tan^{-1}  \\frac{2(ab+cd)}{1 - 2(b^2+c^2)}  \\\\ \n\\sin^{-1} 2(ac-db)\\\\ \n\\tan^{-1}  \\frac{2(ad+bc)}{1 - 2(c^2+d^2)} \n\\end{bmatrix}\n</div>\n\n#### Euler to Quaternion\n<div class=\"mathquill\">\n{\\begin{aligned}\n\\begin{bmatrix}\na\\\\ \nb\\\\ \nc\\\\ \nd\n\\end{bmatrix}\n\n &={\\begin{bmatrix}\\cos(\\psi /2)\\\\0\\\\0\\\\\\sin(\\psi /2)\\end{bmatrix}}{\\begin{bmatrix}\\cos(\\theta /2)\\\\0\\\\\\sin(\\theta /2)\\\\0\\end{bmatrix}}{\\begin{bmatrix}\\cos(\\phi /2)\\\\\\sin(\\phi /2)\\\\0\\\\0\\end{bmatrix}}\\\\&={\\begin{bmatrix}\\cos(\\phi /2)\\cos(\\theta /2)\\cos(\\psi /2)+\\sin(\\phi /2)\\sin(\\theta /2)\\sin(\\psi /2)\\\\\\sin(\\phi /2)\\cos(\\theta /2)\\cos(\\psi /2)-\\cos(\\phi /2)\\sin(\\theta /2)\\sin(\\psi /2)\\\\\\cos(\\phi /2)\\sin(\\theta /2)\\cos(\\psi /2)+\\sin(\\phi /2)\\cos(\\theta /2)\\sin(\\psi /2)\\\\\\cos(\\phi /2)\\cos(\\theta /2)\\sin(\\psi /2)-\\sin(\\phi /2)\\sin(\\theta /2)\\cos(\\psi /2)\\end{bmatrix}}\\\\\\end{aligned}}\n</div>\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 620325,
+              "key": "fd3e8f7b-ed6e-478a-be5b-b9566e57da58",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": " ",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 527618,
+          "key": "6311c734-3dfd-4032-bb8a-86053a4bdd64",
+          "title": "Quaternion Exercise",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "6311c734-3dfd-4032-bb8a-86053a4bdd64",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 551855,
+              "key": "3859ea53-73a6-4cd5-91d8-f9027368aaae",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Quaternions\n===",
+              "instructor_notes": ""
+            },
+            {
+              "id": 551865,
+              "key": "ca2ad070-0136-4f50-ad90-a26e0f764fed",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/February/5a8e409d_william-rowan-hamilton-plaque-geograph.org.uk-347941/william-rowan-hamilton-plaque-geograph.org.uk-347941.jpg",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/ca2ad070-0136-4f50-ad90-a26e0f764fed",
+              "caption": "Inscription on the Broom Bridge in Dublin Ireland",
+              "alt": "",
+              "width": 640,
+              "height": 480,
+              "instructor_notes": null
+            },
+            {
+              "id": 552425,
+              "key": "c84f1e6b-741f-4b26-845a-19f1b1cb66ba",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Quaternions can be hard to get your head around, but you'll see they're worth it when you see how much simpler they are to work with than rotation matrices! To get your energy up for this next exercise, check out this awesome [music video about William Rowan Hamilton](https://www.youtube.com/watch?v=SZXHoWwBcDc), the inventor of the quaternion.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 552426,
+              "key": "ed8a1015-7a38-4974-89ea-521f29af2249",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Quaternion Exercise\n\nIn this exercise, you'll write functions to convert from Euler angles to quaternions and back again. The math to do this is given below:\n\n#### Quaternion to Euler\n<div class=\"mathquill\">\n\\begin{bmatrix}\n\\phi \\\\ \n\\theta \\\\ \n\\psi\n\\end{bmatrix}\n=\n\\begin{bmatrix}\n\\tan^{-1}  \\frac{2(ab+cd)}{1 - 2(b^2+c^2)}  \\\\ \n\\sin^{-1} 2(ac-db)\\\\ \n\\tan^{-1}  \\frac{2(ad+bc)}{1 - 2(c^2+d^2)} \n\\end{bmatrix}\n</div>\n\n#### Euler to Quaternion\n<div class=\"mathquill\">\n{\\begin{aligned}\n\\begin{bmatrix}\na\\\\ \nb\\\\ \nc\\\\ \nd\n\\end{bmatrix}\n\n &={\\begin{bmatrix}\\cos(\\psi /2)\\\\0\\\\0\\\\\\sin(\\psi /2)\\end{bmatrix}}{\\begin{bmatrix}\\cos(\\theta /2)\\\\0\\\\\\sin(\\theta /2)\\\\0\\end{bmatrix}}{\\begin{bmatrix}\\cos(\\phi /2)\\\\\\sin(\\phi /2)\\\\0\\\\0\\end{bmatrix}}\\\\&={\\begin{bmatrix}\\cos(\\phi /2)\\cos(\\theta /2)\\cos(\\psi /2)+\\sin(\\phi /2)\\sin(\\theta /2)\\sin(\\psi /2)\\\\\\sin(\\phi /2)\\cos(\\theta /2)\\cos(\\psi /2)-\\cos(\\phi /2)\\sin(\\theta /2)\\sin(\\psi /2)\\\\\\cos(\\phi /2)\\sin(\\theta /2)\\cos(\\psi /2)+\\sin(\\phi /2)\\cos(\\theta /2)\\sin(\\psi /2)\\\\\\cos(\\phi /2)\\cos(\\theta /2)\\sin(\\psi /2)-\\sin(\\phi /2)\\sin(\\theta /2)\\cos(\\psi /2)\\end{bmatrix}}\\\\\\end{aligned}}\n</div>\n\nFor additional tips on how you might implement this for your quadcopter in simulation (or in the real world) check out how it's implemented in the [Udacidrone API](https://github.com/udacity/udacidrone/blob/master/udacidrone/connection/message_types.py#L189-L284) you're using for the projects in this program!",
+              "instructor_notes": ""
+            },
+            {
+              "id": 527619,
+              "key": "c06307af-4901-4b42-86a6-c318f47fbb1b",
+              "title": null,
+              "semantic_type": "WorkspaceAtom",
+              "is_public": true,
+              "workspace_id": "view3679c992",
+              "pool_id": "jupyter",
+              "view_id": "3679c992-1eb2-4821-af98-b8cd5f2d9b62",
+              "gpu_capable": false,
+              "configuration": {
+                "id": "reserved",
+                "blueprint": {
+                  "conf": {
+                    "ports": [],
+                    "allowSubmit": false,
+                    "defaultPath": "/notebooks/Quaternions.ipynb"
+                  },
+                  "kind": "jupyter"
+                },
+                "workspaceId": "reserved"
+              },
+              "starter_files": null
+            }
+          ]
+        },
+        {
+          "id": 503967,
+          "key": "ce9bcf88-f75e-4cf3-8a7d-d20ab2bf104c",
+          "title": "Motions as Transformations",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "ce9bcf88-f75e-4cf3-8a7d-d20ab2bf104c",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 551791,
+              "key": "2d6994bc-de2c-4555-a53b-1d70e31ca0df",
+              "title": "C2 L2 A09 Motions As Transformations V2",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "1Lp4eNjhwxs",
+                "china_cdn_id": "1Lp4eNjhwxs.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 503968,
+          "key": "eae45033-86fd-455f-b936-b24f795d32e4",
+          "title": "Configuration Space",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "eae45033-86fd-455f-b936-b24f795d32e4",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 551792,
+              "key": "c029080a-bccf-4f85-8df5-16d0c422184d",
+              "title": "C2 L2 A10 Configuration Space V2",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "a08D9WnuRHU",
+                "china_cdn_id": "a08D9WnuRHU.mp4"
+              }
+            },
+            {
+              "id": 620330,
+              "key": "c0cb4ad2-a5bc-4238-816c-ef26d1cd3ef9",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Additional Resources \n\nThe video linked below, from the Freie Universität Berlin, is a wonderful visualization of a 3D configuration space. The video starts off with a rather complicated configuration space (to show the end result), but then steps through how it is built. First, it will display different types of motion around one obstacle, and then describe how these motions map into the 3D configuration space, and finally introduce additional obstacles to create the final configuration space. \n\n[Configuration Space Visualization](https://www.youtube.com/watch?v=SBFwgR4K1Gk)",
+              "instructor_notes": ""
+            },
+            {
+              "id": 620329,
+              "key": "dc286146-8b5e-4ab1-bb3a-0ea125e47af4",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": " ",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 527635,
+          "key": "aad71e3c-05b1-439e-91ce-3c03fa5aa3f7",
+          "title": "Configuration Space Exercise",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "aad71e3c-05b1-439e-91ce-3c03fa5aa3f7",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 551937,
+              "key": "4d306003-6173-49ae-94d0-732c3ce06e60",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Configuration Space\n===",
+              "instructor_notes": ""
+            },
+            {
+              "id": 551938,
+              "key": "38ba6225-e5cb-4bc4-a42b-640b8856de25",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/February/5a8ee762_screen-shot-2018-02-22-at-7.52.49-am/screen-shot-2018-02-22-at-7.52.49-am.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/38ba6225-e5cb-4bc4-a42b-640b8856de25",
+              "caption": "",
+              "alt": "",
+              "width": 608,
+              "height": 522,
+              "instructor_notes": null
+            },
+            {
+              "id": 551940,
+              "key": "6e144594-90c8-4942-921b-090eb920cdfe",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "In the previous video, you saw how a two dimensional robot, with two translational and one rotational degree of freedom, maps out a three dimensional configuration space.  In general, flying robots have six degrees of freedom, three translational and three rotational.  So the configuration space for a flying vehicle is six dimensional.\n\nHowever, for this exercise, and in the upcoming project, rather than compute the full six dimensional configuration space of your quadrotor, you're going to simplify things by instead adding a margin of infeasible space around all obstacles, such that no matter the orientation of the vehicle you won't collide with obstacles.  That might sound like cheating, but realistically, whether it's a quadrotor or a flying car, you generally don't want to fly very close to obstacles so this simplification makes sense.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 552408,
+              "key": "880948a9-2649-42f7-ba86-97fc80fb8f2e",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Configuration Space Exercise\n===\nIn this exercise you'll read in a csv file that contains a map of the environment with information about the position and extent of obstacles within the environment. The first line of the file contains the latitude and longitude of the center of the map.  Where is this??\n\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 552410,
+              "key": "1013d514-df99-4b3a-a984-69ae6b78894d",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/February/5a8f2ce6_screen-shot-2018-02-22-at-12.49.02-pm/screen-shot-2018-02-22-at-12.49.02-pm.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/1013d514-df99-4b3a-a984-69ae6b78894d",
+              "caption": "",
+              "alt": "",
+              "width": 856,
+              "height": 692,
+              "instructor_notes": null
+            },
+            {
+              "id": 552409,
+              "key": "a15f5865-ffb7-416f-b34c-6e04ba0725f6",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Good luck! Follow along with the TODO's in the notebook and if you get stuck, you can check out our solution by scrolling down to the link at the bottom of the notebook.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 527636,
+              "key": "853ca79e-fc2f-4496-be94-6a89259249e7",
+              "title": null,
+              "semantic_type": "WorkspaceAtom",
+              "is_public": true,
+              "workspace_id": "view9487d55c",
+              "pool_id": "jupyter",
+              "view_id": "9487d55c-2ae4-4e47-8932-8609355bba8a",
+              "gpu_capable": false,
+              "configuration": {
+                "id": "reserved",
+                "blueprint": {
+                  "conf": {
+                    "ports": [],
+                    "allowSubmit": false,
+                    "defaultPath": "/notebooks/Configuration-Space.ipynb"
+                  },
+                  "kind": "jupyter"
+                },
+                "workspaceId": "reserved"
+              },
+              "starter_files": null
+            }
+          ]
+        },
+        {
+          "id": 503969,
+          "key": "9d4dbe67-9fe3-4831-8e9e-464305702418",
+          "title": "Summary",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "9d4dbe67-9fe3-4831-8e9e-464305702418",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 551793,
+              "key": "2e1b2224-df82-4b45-b6fb-8faf8db3dddc",
+              "title": "C2 L2 A11 Summary V2",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "iXzj0F2zhKk",
+                "china_cdn_id": "iXzj0F2zhKk.mp4"
+              }
+            },
+            {
+              "id": 620095,
+              "key": "3f0fb1ef-afec-44fb-a5b1-2a81750c02bd",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Additional Resources\n\nIt takes time and practice to become comfortable with three-dimensional representations of orientation.\n\nIf you'd like to do more reading on the subject I recommend you take a look at [Representing Attitude: Euler Angles, Unit Quaternions, and Rotation\nVectors](https://www.swarthmore.edu/NatSci/mzucker1/papers/diebel2006attitude.pdf) by James Diebel.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 620328,
+              "key": "86ca34bc-abc5-4f49-84b5-db77f31584e9",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": " ",
+              "instructor_notes": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "_deprecated": [
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    }
+  ]
+}

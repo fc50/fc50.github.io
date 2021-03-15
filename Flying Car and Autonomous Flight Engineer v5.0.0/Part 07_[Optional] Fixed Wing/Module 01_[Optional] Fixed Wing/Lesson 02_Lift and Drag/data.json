@@ -1,0 +1,895 @@
+{
+  "data": {
+    "lesson": {
+      "id": 634793,
+      "key": "2354fbd4-eecb-4750-9590-29c2725c0db3",
+      "title": "Lift and Drag",
+      "semantic_type": "Lesson",
+      "is_public": true,
+      "version": "1.0.0",
+      "locale": "en-us",
+      "summary": "Build mathematical models for lift and drag, the aerodynamic forces that make fixed wing flight possible (and difficult).",
+      "lesson_type": "Classroom",
+      "display_workspace_project_only": false,
+      "resources": {
+        "files": [
+          {
+            "name": "Videos Zip File",
+            "uri": "https://zips.udacity-data.com/2354fbd4-eecb-4750-9590-29c2725c0db3/634793/1538763185363/Lift+and+Drag+Videos.zip"
+          },
+          {
+            "name": "Transcripts Zip File",
+            "uri": "https://zips.udacity-data.com/2354fbd4-eecb-4750-9590-29c2725c0db3/634793/1538763182336/Lift+and+Drag+Subtitles.zip"
+          }
+        ],
+        "google_plus_link": null,
+        "career_resource_center_link": null,
+        "coaching_appointments_link": null,
+        "office_hours_link": null,
+        "aws_provisioning_link": null
+      },
+      "project": null,
+      "lab": null,
+      "concepts": [
+        {
+          "id": 667398,
+          "key": "61296f27-6dd4-42a1-a053-55ea7f034c7b",
+          "title": "Introduction to Lift and Drag",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "61296f27-6dd4-42a1-a053-55ea7f034c7b",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 676196,
+              "key": "7ce29160-ba02-4e59-a3d4-0b9335f95124",
+              "title": "Nd787 C5 L2 A01 L Introduction To Lift And Drag V2",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "KYbi95VDT1s",
+                "china_cdn_id": "KYbi95VDT1s.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 667493,
+          "key": "86dd2891-b72e-4cfc-8429-35fcfb1aaf64",
+          "title": "Physics Review",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "86dd2891-b72e-4cfc-8429-35fcfb1aaf64",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 667494,
+              "key": "dd7b2919-9747-4a5f-bd10-d9fc77df1b66",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Physics Review\n\nIn flight, a fixed wing aircraft experiences four forces:\n\n1. **Weight (W)** \n2. **Thrust (T)** \n3. **Lift (L)** \n4. **Drag (D)**",
+              "instructor_notes": ""
+            },
+            {
+              "id": 667495,
+              "key": "7f4a180f-040e-4d21-bdec-b189f4e02cc4",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/June/5b3530c1_forces1/forces1.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/7f4a180f-040e-4d21-bdec-b189f4e02cc4",
+              "caption": "",
+              "alt": "",
+              "width": 960,
+              "height": 540,
+              "instructor_notes": null
+            },
+            {
+              "id": 667496,
+              "key": "4843ef95-ff7a-4319-9e7e-044b43eb7bd6",
+              "title": "",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "4843ef95-ff7a-4319-9e7e-044b43eb7bd6",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "The plane shown above is in equilibrium. It's flying straight and level at **constant speed**. The weight and thrust are known:\n\n<div class=\"mathquill\">\n\\begin{aligned}\n\nW = & \\ 7500 N \\\\\nT = & \\ 1000 N \n\n\\end{aligned}\n</div>\n\nBased on this information what can you say about the size of the **lift** force?",
+                "answers": [
+                  {
+                    "id": "a1530212569355",
+                    "text": "<span class=\"mathquill\">L < \\ 7500 N</span>",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1530212754912",
+                    "text": "<span class=\"mathquill\">L = \\ 7500 N</span>",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1530212762653",
+                    "text": "<span class=\"mathquill\">L > \\ 7500 N</span>",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1530212771484",
+                    "text": "Not enough information to say anything about lift.",
+                    "is_correct": false
+                  }
+                ]
+              }
+            },
+            {
+              "id": 667497,
+              "key": "722cadb7-d57d-4fb7-939e-ec6bba4a3106",
+              "title": "",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "722cadb7-d57d-4fb7-939e-ec6bba4a3106",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "Now the plane shown above increases the propeller thrust to <span class=\"mathquill\">T = 2500 N</span>. What is the approximate acceleration of the vehicle in the x direction? (assume <span class=\"mathquill\">g = 10 m/s^2</span> )",
+                "answers": [
+                  {
+                    "id": "a1530213099551",
+                    "text": "<span class=\"mathquill\">a\\_x \\approx 0 m/s^2</span>",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1530213222006",
+                    "text": "<span class=\"mathquill\">a\\_x \\approx 0.1 m/s^2</span>",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1530213248286",
+                    "text": "<span class=\"mathquill\">a\\_x \\approx 0.2 m/s^2</span>",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1530213315022",
+                    "text": "<span class=\"mathquill\">a\\_x \\approx 0.3 m/s^2</span>",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1530213322481",
+                    "text": "<span class=\"mathquill\">a\\_x \\approx 1 m/s^2</span>",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1530213353767",
+                    "text": "<span class=\"mathquill\">a\\_x \\approx 2 m/s^2</span>",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1530213359167",
+                    "text": "<span class=\"mathquill\">a\\_x \\approx 3 m/s^2</span>",
+                    "is_correct": false
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 667399,
+          "key": "1990551f-d6d0-4ad1-adcf-2746c6c85c75",
+          "title": "Fixed Wing Dynamics: Longitudinal vs Lateral/Directional",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "1990551f-d6d0-4ad1-adcf-2746c6c85c75",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 676197,
+              "key": "d2f5743f-fa5e-4cf1-91d1-10cf96227668",
+              "title": "Nd787 C5 L2 A02 L Fixed Wing Dynamics Longitudinal Vs Latera V3",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "k_sNlUyeNS0",
+                "china_cdn_id": "k_sNlUyeNS0.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 667400,
+          "key": "8882aed1-2cb9-4a38-abbf-7f7f4a7dc9ca",
+          "title": "Longitudinal Analysis 1",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "8882aed1-2cb9-4a38-abbf-7f7f4a7dc9ca",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 676198,
+              "key": "ae8fb1d5-bad2-4005-87fc-e58182f345c3",
+              "title": "Nd787 C5 L2 A03.1 L Longitudinal Analysis V4",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "Y2qxWFaWwt0",
+                "china_cdn_id": "Y2qxWFaWwt0.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 667401,
+          "key": "d40c7d93-f4d5-4e44-a4f5-19e44f54d175",
+          "title": "Longitudinal Analysis 2",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "d40c7d93-f4d5-4e44-a4f5-19e44f54d175",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 676199,
+              "key": "1c5d3aa7-0d64-494b-a1e1-cd50ec7927f1",
+              "title": "Nd787 C5 L2 A03.2 L Longitudinal Analysis Part 2 V2",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "JU5iSi-RoAE",
+                "china_cdn_id": "JU5iSi-RoAE.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 667402,
+          "key": "e170b459-6af7-44b1-817d-13ebb7ad9191",
+          "title": "Frames of Reference Summary",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "e170b459-6af7-44b1-817d-13ebb7ad9191",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 667506,
+              "key": "e3273739-2626-4b02-ab20-321f4cab658a",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Longitudinal Frames of Reference\n\nThere are three frames of reference we care about when discussing longitudinal flight.\n\n##### 1. Inertial Frame\nThe inertial frame is just the N,E,D frame you've seen before. The origin is fixed relative to the earth and the x, y, and z axes point north, east, and down respectively.\n\n##### 2. Body Frame\nThe body frame is rigidly attached to the aircraft. The origin is the center of mass of the vehicle. The x axis points through the nose, the y axis points out over the right wing, and the z axis points down through the belly of the plane.\n\n##### 3. Stability Frame\n\nThe stability frame (or wind frame), is similar to the body frame: the origin is the center of mass and the y axis points out over the right wing. The x, and z axes differ.\n\nThe x axis points into the incoming airstream. The z-axis still points \"downwards\" but it's perpendicular to both the x and y axes, so it won't generally go directly through the belly of the plane.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 667507,
+              "key": "3d661f4d-b387-4119-8e09-456a9434eeda",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/June/5b35372b_03-longitudinal-analysis/03-longitudinal-analysis.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/3d661f4d-b387-4119-8e09-456a9434eeda",
+              "caption": "This plane is moving rightwards and slightly downwards through still air. The relative airstream is shown as a red arrow. The gray dotted line gives \"horizontal\" in the inertial frame and the blue line is aligned to the x-axis of the vehicle's body frame.",
+              "alt": "",
+              "width": 960,
+              "height": 540,
+              "instructor_notes": null
+            },
+            {
+              "id": 667513,
+              "key": "efb5d802-b143-4b42-9e92-1a94f86441f7",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "As shown in the picture above, we can define three angles which relate these three frames of reference.\n\n1. Pitch angle <span class=\"mathquill\">\\theta</span>\n2. Flight path angle <span class=\"mathquill\">\\gamma</span>\n3. Angle of Attack <span class=\"mathquill\">\\alpha</span>\n\nThe reason we define all these frames of reference (and the associated angles) is to make it easy to keep track of the various forces that we care about.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 667515,
+              "key": "fca219a4-3212-442b-b9a0-780a2d7d6ba7",
+              "title": "",
+              "semantic_type": "CheckboxQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "fca219a4-3212-442b-b9a0-780a2d7d6ba7",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "Identify which of the following forces align to axes in the **inertial frame** (check all that apply)",
+                "answers": [
+                  {
+                    "id": "a1530214961434",
+                    "text": "Weight",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1530215017344",
+                    "text": "Thrust",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1530215022339",
+                    "text": "Lift",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1530215025387",
+                    "text": "Drag",
+                    "is_correct": false
+                  }
+                ]
+              }
+            },
+            {
+              "id": 667516,
+              "key": "d8b74e53-4588-4602-9d4c-d6f819200cb3",
+              "title": "",
+              "semantic_type": "CheckboxQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "d8b74e53-4588-4602-9d4c-d6f819200cb3",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "Identify which of the following forces align to axes in the **body frame** (check all that apply)",
+                "answers": [
+                  {
+                    "id": "a1530215080381",
+                    "text": "Weight",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1530215094114",
+                    "text": "Thrust",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1530215094779",
+                    "text": "Lift",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1530215095374",
+                    "text": "Drag",
+                    "is_correct": false
+                  }
+                ]
+              }
+            },
+            {
+              "id": 667518,
+              "key": "531e01b5-12da-4f05-a1b0-3e222f9dcbf4",
+              "title": "",
+              "semantic_type": "CheckboxQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "531e01b5-12da-4f05-a1b0-3e222f9dcbf4",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "Identify which of the following forces align to axes in the **stability frame** (check all that apply)",
+                "answers": [
+                  {
+                    "id": "a1530215336118",
+                    "text": "Weight",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1530215354217",
+                    "text": "Thrust",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1530215356457",
+                    "text": "Lift",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1530215358807",
+                    "text": "Drag",
+                    "is_correct": true
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 667404,
+          "key": "b517a1a3-46ed-423c-84e5-a13d1f4bed90",
+          "title": "Rotation Matrices Exercise",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "b517a1a3-46ed-423c-84e5-a13d1f4bed90",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 672212,
+              "key": "ca5fb3bc-28a8-4f4c-a4b5-eaa39e2ef0de",
+              "title": null,
+              "semantic_type": "WorkspaceAtom",
+              "is_public": true,
+              "workspace_id": "viewBJlfKFfW7Q",
+              "pool_id": "jupyter",
+              "view_id": "jupyter-H1zFYfZQ7",
+              "gpu_capable": false,
+              "configuration": {
+                "id": "reserved",
+                "blueprint": {
+                  "conf": {
+                    "disk": null,
+                    "ports": [],
+                    "allowSubmit": false,
+                    "defaultPath": "/notebooks/Rotation%20matrixes-Student.ipynb"
+                  },
+                  "kind": "jupyter"
+                },
+                "workspaceId": "reserved"
+              },
+              "starter_files": null
+            }
+          ]
+        },
+        {
+          "id": 667406,
+          "key": "9d4939f9-da08-44c7-be74-7b4b62e72343",
+          "title": "Lift and Stall",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "9d4939f9-da08-44c7-be74-7b4b62e72343",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 676200,
+              "key": "f0419997-2b01-4688-b1d6-6dec4df1f0ed",
+              "title": "Nd787 C5 L2 A05 L Lift And Stall V2",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "8iVgnZ0hrW4",
+                "china_cdn_id": "8iVgnZ0hrW4.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 667407,
+          "key": "f5c2b4e1-4829-4a59-937c-cc93a54e4f8e",
+          "title": "Calculating Lift",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "f5c2b4e1-4829-4a59-937c-cc93a54e4f8e",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 676201,
+              "key": "f5dc539b-05a6-4ebb-8355-8440c1690efc",
+              "title": "Nd787 C5 L2 A06 L Calculating Lift V2",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "I94_czCrWn0",
+                "china_cdn_id": "I94_czCrWn0.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 667408,
+          "key": "45110887-d8cc-43d5-906f-4e86b53bf70c",
+          "title": "Drag",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "45110887-d8cc-43d5-906f-4e86b53bf70c",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 676202,
+              "key": "1c892fd1-a1bf-4687-bb5a-e31c154e30c7",
+              "title": "Nd787 C5 L2 A07 L Drag V2",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "WJp3-vrVVcM",
+                "china_cdn_id": "WJp3-vrVVcM.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 667409,
+          "key": "0ea40a24-3394-47a9-b589-573f645dd6f7",
+          "title": "Pitching",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "0ea40a24-3394-47a9-b589-573f645dd6f7",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 667535,
+              "key": "2b7e6654-d683-43dc-96b1-c36a2e02eea5",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Pitching\n\nSo far we've been talking a lot about the **forces** that act on a fixed wing aircraft. That's because the **translational acceleration** of an object is given by the following equation:\n\n<div class=\"mathquill\">\n F = ma\n</div>\n\nBut there are also **moments** which cause **rotational accelerations**. We will use the letters L, M, and N to denote the rotational moment about the vehicle's x, y, and z axes.\n\nFor longitudinal motion, we only care about the pitching moment M. The pitching moment is given by the following equation:\n\n<div class=\"mathquill\">\nM = C_M \\bar{q} S \\bar{c}\n</div>\n\nMost of the interesting physics is wrapped up in the dimensionless coefficient <span class=\"mathquill\">C_M</span>. Generally, this coefficient will be a function of the **angle of attack**, **elevator deflection**, and **pitching rate**, so we can say:\n\n<div class=\"mathquill\">\nC_M = f(\\alpha, \\delta E, q)\n</div>\n\nWe generally assume the pitching rate is close enough to zero that it can be ignored. We model this coefficient with the following equation:\n\n<div class=\"mathquill\">\nC_M = C_{M_0} + C_{M_\\alpha}\\alpha + C_{M_{\\delta E}} \\delta E\n</div>\n\nThis coefficient <span class=\"mathquill\">C_{M_\\alpha}</span> is important. When it's **negative**, the vehicle will be \"statically stable in pitch\". So if the vehicle has some small positive angle of attack, this term will lead to a negative pitching moment which will bring the angle of attack back towards zero.\n\n### Why does <span class=\"mathquill\">M</span> depend on <span class=\"mathquill\">\\alpha</span>?\n\nIt should be clear that elevator deflection will cause the vehicle to pitch. But why does the pitching moment depend on the angle of attack? Consider an airplane viewed from the side:\n\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 667550,
+              "key": "f8e1b5c5-b74b-4ae7-a5a8-028aac8e5bbc",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/June/5b3543e0_pitching1/pitching1.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/f8e1b5c5-b74b-4ae7-a5a8-028aac8e5bbc",
+              "caption": "",
+              "alt": "",
+              "width": 960,
+              "height": 540,
+              "instructor_notes": null
+            },
+            {
+              "id": 667554,
+              "key": "00da805a-00f8-4a5d-839f-60fb20579eb1",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "The center of gravity for this plane is located somewhere in the plane around where the wing meets the fuselage.\n\nThe red arrows show the effect of lift acting everywhere on the wing.\n\nWe can define something called the **center of pressure** and treat this distributed lift force as if it were acting at one point on the wing.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 667555,
+              "key": "46901265-fa5f-478d-81b1-d2220439f9fa",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/June/5b354455_pitching2/pitching2.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/46901265-fa5f-478d-81b1-d2220439f9fa",
+              "caption": "",
+              "alt": "",
+              "width": 960,
+              "height": 540,
+              "instructor_notes": null
+            },
+            {
+              "id": 667557,
+              "key": "2015e176-58ac-4f5d-a720-004798addec5",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "In this case (above), the center of pressure is directly below the center of gravity, so this will not produce any pitching moment clockwise or counter-clockwise.\n\nBut imagine if the center of pressure were shifted slightly forward on the wing:",
+              "instructor_notes": ""
+            },
+            {
+              "id": 667558,
+              "key": "c5e1b0a9-002d-4a7c-b348-516679f4dbcf",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/June/5b3544c2_pitching3/pitching3.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/c5e1b0a9-002d-4a7c-b348-516679f4dbcf",
+              "caption": "",
+              "alt": "",
+              "width": 960,
+              "height": 540,
+              "instructor_notes": null
+            },
+            {
+              "id": 667561,
+              "key": "825ef75e-4de4-4728-8e86-bc7d4f6ce72e",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Now the upwards pressure will cause a rotation about the center of gravity. \n\nAnd in fact, this is exactly what happens in real aircraft. As the aircraft's angle of attack (<span class=\"mathquill\">\\alpha</span>) changes, the center of pressure will tend to move forwards and backwards along the wing. \n\nIt’s this motion of the center of pressure that explains why the pitching moment depends on the vehicle’s angle of attack.\n",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 667410,
+          "key": "befc3965-9f4d-43c3-b1c9-d399a93466c8",
+          "title": "Trim States and Simplified Models",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "befc3965-9f4d-43c3-b1c9-d399a93466c8",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 676203,
+              "key": "0c435a7c-c472-4872-90e8-7e975c0d5eb3",
+              "title": "Nd787 C5 L2 A09 L Trim States And Simplified Models V3",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "ANXsAZ6ZuoI",
+                "china_cdn_id": "ANXsAZ6ZuoI.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 667411,
+          "key": "0dcd0b66-e473-4130-ac59-5719e2ae2de2",
+          "title": "Straight and Level Flight",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "0dcd0b66-e473-4130-ac59-5719e2ae2de2",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 667569,
+              "key": "ede88f18-5e5b-4e75-870d-8a353ddea605",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Straight and Level Flight\n\nOne important **trim state** is \"straight and level flight\". Straight means the vehicle isn't turning. Level means it's altitude isn't changing. Since it's a trim state, the speed is constant as well.\n\nWhen a plane is cruising, we often want to fly straight-and-level *at a particular speed*. The questions we'll answer here are:\n\nFor a particular speed...\n\n1. ... how much thrust does the propulsion system need to provide?\n2. ... what angle of attack do we need to fly at?\n3. ... what elevator deflection is required?\n\nWe can use the equations we've developed in this lesson to answer these questions.\n\n### 1. How much thrust is required?\n\nWe're going to make the simplifying assumption that thrust and drag point directly opposite each other, so we can say that thrust and drag are equal.\n\n<div class=\"mathquill\">\nT = D\n</div>\n\nIf we plug in our equation for <span class=\"mathquill\">D</span>, this becomes\n\n<div class=\"mathquill\">\nT = C_D \\bar{q} S\n</div>\n\nAnd since <span class=\"mathquill\">\\bar{q} = \\rho V^2 / 2</span>, we can write\n\n<div class=\"mathquill\">\nT = \\frac{1}{2} C_D \\rho V^2 S\n</div>\n\nThis gives us the thrust in terms of the drag coefficient <span class=\"mathquill\">C_D</span>, the air density <span class=\"mathquill\">\\rho</span>, the airspeed <span class=\"mathquill\">V</span>, and the surface area of the wings <span class=\"mathquill\">S</span>.\n\n### 2. What angle of attack?\n\nAt trim, we know that the weight of the vehicle (<span class=\"mathquill\">W</span>) must be supported by the lift (<span class=\"mathquill\">L</span>). We can use this to solve for the angle of attack at trim (<span class=\"mathquill\">\\alpha_{\\text{trim}}</span>).\n\n<div class=\"mathquill\">\n\\begin{aligned}\nL &= W \\\\\nC_L \\bar{q} S &= W \\\\\n\\left[ C_{L_0} + C_{L_\\alpha}\\alpha_{\\text{trim}} + C_{L_{\\delta E}} \\delta E\\right] \\bar{q} S &= W \\\\\nC_{L_0} + C_{L_\\alpha} \\alpha_{\\text{trim}} + C_{L_{\\delta E}} \\delta E  &=  \\frac{W}{\\bar{q} S} \n\\end{aligned}\n</div>\n\nThe last term on the left hand side of this equation will be **very small** compared to the other two terms, so we can safely ignore it and then solve for <span class=\"mathquill\">\\alpha_{\\text{trim}}</span>.\n\n<div class=\"mathquill\">\n\\begin{aligned}\nC_{L_0} + C_{L_\\alpha} \\alpha_{\\text{trim}} &=  \\frac{W}{\\bar{q} S} \\\\ \\\\\n\n\\alpha_{\\text{trim}} &= \\frac{ \\frac{W}{\\bar{q} S} - C_{L_0}}{C_{L_\\alpha}}\n\n\\end{aligned}\n</div>\n\n### What elevator deflection?\n\nThis positive angle of attack will cause a pitching moment. We need to use the elevator to balance that out. We can find <span class=\"mathquill\">\\delta E_{\\text{trim}}</span> by setting the pitching moment to zero.\n\n<div class=\"mathquill\">\n\\begin{aligned}\n\nM &= 0 \\\\\nC_M \\bar{q} S \\bar{c} &= 0 \\\\\nC_M &= 0 \\\\\nC_{M_0} + C_{M_\\alpha} \\alpha_{\\text{trim}} + C_{M_{\\delta E}} \\delta E_{\\text{trim}} &= 0 \\\\\n\\delta E_{\\text{trim}} & = \\frac{-C_{M_0} - C_{M_\\alpha} \\alpha_{\\text{trim}}}{C_{M_{\\delta E}}}\n\\end{aligned}\n</div>\n\n## Implications for Control\n\nWe just calculated <span class=\"mathquill\">T</span>, <span class=\"mathquill\">\\delta E</span>, and <span class=\"mathquill\">\\alpha</span> at trim. We made some simplifying assumptions, so these values won't be exact, but they should be very close.\n\nEventually, you will write a controller that commands the thrust and elevator deflection of a fixed wing vehicle. You will be able to greatly improve the performance of this controller by passing in these trim state values for thrust and elevator deflection as \"feed forward\" parameters when you want the vehicle to be in straight and level flight.\n\n",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 667412,
+          "key": "7d6cf754-b68a-4ed6-ae4d-2802280130f6",
+          "title": "Climbing Flight",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "7d6cf754-b68a-4ed6-ae4d-2802280130f6",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 671748,
+              "key": "9fb87694-0d56-4aa9-a530-d76eccf73064",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Climbing Flight\n\nNow let's consider climbing flight where the flight path angle is positive (<span class=\"mathquill\">\\gamma > 0</span>).\n\nWe'll assume we're climbing at constant velocity, so the forces and moments balance to zero. We'll also assume zero angle of attack for now.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 671749,
+              "key": "d19ecca0-7daf-4fd6-9e8b-4326dde17330",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/July/5b3fa432_reusable-visual-assets-4/reusable-visual-assets-4.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/d19ecca0-7daf-4fd6-9e8b-4326dde17330",
+              "caption": "",
+              "alt": "",
+              "width": 960,
+              "height": 540,
+              "instructor_notes": null
+            },
+            {
+              "id": 671751,
+              "key": "650ba973-acb5-4ed7-b546-398754c5eb4d",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Working in the body frame, we can see that the thrust is balanced by the drag plus a component of the weight:\n\n<div class=\"mathquill\">\n\\begin{aligned}\nT &= D + W \\sin \\gamma \\\\ \\\\\n\\sin \\gamma &= \\frac{T-D}{W}\n\\end{aligned}\n</div>\n\nWe can calculate the vertical velocity <span class=\"mathquill\">\\dot{z}</span> as\n\n<div class=\"mathquill\">\n\\begin{aligned}\n\\dot{z} &= V \\sin \\gamma \\\\ \\\\\n\\dot{z} &= \\frac{V(T-D)}{W}\n\\end{aligned}\n</div>\n\n\nAnd the lift is balanced by a portion of the weight:\n\n<div class=\"mathquill\">\n\\begin{aligned}\nL &= W \\cos \\gamma \\\\ \\\\\nC_L \\bar{q} S &= W \\cos \\gamma\n\\end{aligned}\n</div>\n\nWe could solve this for coefficient of lift and then for angle of attack. ",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 671541,
+          "key": "9fd5c72e-bbd1-4036-9bf1-9c13dd450ed2",
+          "title": "Fixed Wing Cheat Sheet",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "9fd5c72e-bbd1-4036-9bf1-9c13dd450ed2",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 671543,
+              "key": "57124da0-3371-4da3-b386-ca46874f2c89",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Fixed Wing Cheat Sheet\n\nYou can find all of the equations that we'll discuss in this lesson and the 3 lessons that follow in the [Fixed Wing Cheat Sheet](https://www.overleaf.com/read/cvqmtzyhqjnj) that we have created.\n\nWe recommend you bookmark this resource (or print it out if you can) and keep it handy as you work on these lessons and the project that follows.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 672215,
+          "key": "e44350d3-64b4-498b-8b95-893cd7cafa6a",
+          "title": "Lift and Drag Exercise",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "e44350d3-64b4-498b-8b95-893cd7cafa6a",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 675814,
+              "key": "4890f304-f116-4cf8-ab92-d06615bf0558",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Lift and Drag Exercise\n\nThis exercise [optional] gives you the chance to implement the equations you've seen in this lesson.\n\nIf you want to try implementing these equations yourself, open the file called `Aerodynamics-Student.ipynb` below. You might also find it helpful to open the `.py` files in new tabs as well.\n\nOr you might just want to read through our implementation in `Aerodynamics-Solution.ipynb`",
+              "instructor_notes": ""
+            },
+            {
+              "id": 672216,
+              "key": "89a585b9-c1f6-472d-ad04-329a8b75b76c",
+              "title": null,
+              "semantic_type": "WorkspaceAtom",
+              "is_public": true,
+              "workspace_id": "viewSyl5ZsfZXm",
+              "pool_id": "jupyter",
+              "view_id": "jupyter-BkcZiGWmm",
+              "gpu_capable": false,
+              "configuration": {
+                "id": "reserved",
+                "blueprint": {
+                  "conf": {
+                    "disk": null,
+                    "ports": [],
+                    "allowSubmit": false,
+                    "defaultPath": "/"
+                  },
+                  "kind": "jupyter"
+                },
+                "workspaceId": "reserved"
+              },
+              "starter_files": null
+            }
+          ]
+        },
+        {
+          "id": 667413,
+          "key": "6593d0eb-f616-43c1-9b4c-fc6587b90b2c",
+          "title": "Conclusion",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "6593d0eb-f616-43c1-9b4c-fc6587b90b2c",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 676204,
+              "key": "b8daa2d5-6b8f-4759-9762-663528106ed5",
+              "title": "Nd787 C5 L2 A12 L Conclusion V1",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "DR7ObN2rBRs",
+                "china_cdn_id": "DR7ObN2rBRs.mp4"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "_deprecated": [
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    }
+  ]
+}

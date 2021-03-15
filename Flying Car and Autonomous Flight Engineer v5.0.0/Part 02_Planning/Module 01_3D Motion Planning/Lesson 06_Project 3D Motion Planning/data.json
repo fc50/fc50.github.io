@@ -1,0 +1,455 @@
+{
+  "data": {
+    "lesson": {
+      "id": 503797,
+      "key": "5f628104-5857-4a3f-93f0-d8a53fe6a8fd",
+      "title": "Project: 3D Motion Planning",
+      "semantic_type": "Lesson",
+      "is_public": true,
+      "version": "1.0.0",
+      "locale": "en-us",
+      "summary": "In this project, you'll get a chance to apply what you've learned about 3D motion planning from the last several lessons to plan and execute a mission in a complex urban environment!",
+      "lesson_type": "Classroom",
+      "display_workspace_project_only": null,
+      "resources": {
+        "files": [
+          {
+            "name": "Videos Zip File",
+            "uri": "https://zips.udacity-data.com/5f628104-5857-4a3f-93f0-d8a53fe6a8fd/503797/1538762690225/Project%3A+3D+Motion+Planning+Videos.zip"
+          },
+          {
+            "name": "Transcripts Zip File",
+            "uri": "https://zips.udacity-data.com/5f628104-5857-4a3f-93f0-d8a53fe6a8fd/503797/1538762687160/Project%3A+3D+Motion+Planning+Subtitles.zip"
+          }
+        ],
+        "google_plus_link": null,
+        "career_resource_center_link": null,
+        "coaching_appointments_link": null,
+        "office_hours_link": null,
+        "aws_provisioning_link": null
+      },
+      "project": {
+        "key": "f3f68764-0afe-44c7-a4db-f1a549c2d9b3",
+        "version": "1.0.0",
+        "locale": "en-us",
+        "duration": 40320,
+        "semantic_type": "Project",
+        "title": "3D Motion Planning",
+        "description": "## Project completion steps:\n\n1. You can do this project in a classroom workspace virtual machine (VM)! The starter files linked below are already on the VM in the folder called `/home/workspace/3D_motion_planning`. **NOTE: if you have already checked out the VM be sure to \"Reset data\" to get the latest files!**  If you choose to complete the project in the VM, follow the instructions [here](https://classroom.udacity.com/nanodegrees/nd787/parts/5aa0a956-4418-4a41-846f-cb7ea63349b3/modules/0c12632a-b59a-41c1-9694-2b3508f47ce7/lessons/5f628104-5857-4a3f-93f0-d8a53fe6a8fd/concepts/ab09b378-f85f-49f4-8845-d59025dd8a8e?contentVersion=1.0.0&contentLocale=en-us) to get setup. \n\n2. If you're not going to work in the classroom VM, Download the Motion-Planning simulator for this project that's appropriate for your operating system from the [simulator releases respository](https://github.com/udacity/FCND-Simulator-Releases/releases)\n\n3.  Clone the [project repository](https://github.com/udacity/FCND-Motion-Planning)\n```sh\ngit clone https://github.com/udacity/FCND-Motion-Planning\n```\n\n4. Run the `backyard_flyer_solution.py` script to fly a square flight pattern in this new environment as a test to see if everything is working as expected. \n\n5. Follow along with the [README](https://github.com/udacity/FCND-Motion-Planning/blob/master/README.md) and the [Project Rubric](https://review.udacity.com/#!/rubrics/1534/view) to complete the steps to a passing submission of this project.\n\nThis project is a continuation of the Backyard Flyer project where you executed a simple square shaped flight path. In this project you will integrate the techniques that you have learned throughout the last several lessons to plan a path through an urban environment.\n\n## Evaluation\n\nOnce you have completed your project, use the [**Project Rubric**](https://review.udacity.com/#!/rubrics/1534/view) to review the project. If you have covered all of the points in the rubric, then you are ready to submit! If you see room for improvement in **any** category in which you do not meet specifications, keep working! \n\n## Submission\n\nYou may submit your project as a zip file or with a link to a GitHub repo. The submission must include\n1. A detailed writeup of your results including how you addressed each rubric point and where it appears in your code. \n2. The entire FCND-Motion-Planning folder with all of your code as scripts and / or notebooks. \n\nWhen you are ready to submit the project. Click on the \"Submit Project\" button and follow the instructions to submit!\n\n## Feedback\n\nPlease fill out the [3D Motion Planning Project Feedback Form](https://goo.gl/forms/Biyb3q2AXVIxXqf62) after you have completed the project. \n\n## Share Your Project\nHave something fun to share? Did your drone fly safely from A to B or fly in upward circles around the same building? Perhaps your drone thought it was a frog and jumped from building top to building top? Either way, we love to see any and all of your creations!\n\nWhat you’ve accomplished is no small feat. Give yourself a pat on the back and some well-deserved recognition by sharing your amazing project with your network.\n\nCreate a gif or youtube video of your project implementation in the simulator and share with us in the [Flying Car Slack Community](https://udacity-flying-car.slack.com/messages/C77GCKZ8U) and on social media using the links below!\n\nMake sure to use **@Udacity**, **#flyingcarnd**, **#3dplanning**, and **#madewithudacity** in your posts!\n\n<iframe\n  src=\"https://platform.twitter.com/widgets/tweet_button.html?size=l&url=www.udacity.com&text=I%20engineered%20an%20autonomous%20drone%20to%20navigate%20in%20a%20city%20environment%20using%20path%20planning%20algorithms.%20Check%20it%20out!%20[Insert%20your%20Gif%20or%20youtube%20url%20here]&hashtags=flyingcarnd, 3dplanning, madewithudacity\"\nwidth=\"140\"\nheight=\"28\"\nscrolling=\"no\">\n</iframe>\n\n\n<html>\n\n<head>\n<style>\n.fb {color: white;\n  background-color: #4661b0;\n  border-radius: 4px;\n  font-weight: bold;\n  height: 28px;\n  font-size: 14px;}\n.fb:hover {color: #4661b0;\n  background-color: white;\n  border-color: #4661b0;\n  transition: background-color 0.4s}\n.linkedin {color: white;\n  background-color: #0077B5;\n  border-radius: 4px;\n  font-weight: bold;\n  height: 28px;\n  font-size: 14px;}\n.linkedin:hover {color: #0077B5;\n  background-color: white;\n  border-color: #0077B5;\n  transition: background-color 0.4s}\n</style>\n\n</head>\n\n<body>\n<form action=\"https://www.facebook.com/sharer.php?\">\n  Enter the full URL of your Gif or Youtube video:<br>\n  <input type=\"url\" name=\"u\" placeholder=\"Paste URL here\">\n  <input type=\"hidden\" name=\"hashtag\" value=\"#flyingcarnd\">\n  <button class=\"fb\">Share on Facebook</button>\n</form>\n\n<form action=\"https://www.linkedin.com/shareArticle?mini=true\">\n  <input type=\"url\" name=\"url\" placeholder=\"Paste URL here\">\n  <input type=\"hidden\" name=\"title\" value=\"Finding Lane Lines\">\n  <input type=\"hidden\" name=\"summary\" value=\"I engineered an autonomous drone to navigate in a city environment using path planning algorithms. Check it out! @udacity #flyingcarnd #3dplanning #madewithudacity\">\n  <button class=\"linkedin\">Share on LinkedIn</button>\n</form>\n\n</body>\n\n</html>\n\n\n## Project Submission Checklist\n\n**Before submitting your project, please review and confirm the following items.** \n<input type=\"checkbox\"> I am confident all rubric items have been met and my project will pass as submitted. \n<input type=\"checkbox\"> Project builds correctly without errors and runs.\n<input type=\"checkbox\"> All required functionality exists and my project behaves as expected per the project's specifications.\n\n**Once you have checked all these items, you are ready to submit!**\n",
+        "is_public": true,
+        "summary": null,
+        "forum_path": "",
+        "rubric_id": "1534",
+        "terminal_project_id": null,
+        "resources": null,
+        "image": {
+          "url": "https://s3.amazonaws.com/video.udacity-data.com/topher/2018/June/5b23fe79_planning-project/planning-project.jpg",
+          "width": 1160,
+          "height": 384
+        }
+      },
+      "lab": null,
+      "concepts": [
+        {
+          "id": 559076,
+          "key": "d1686165-428e-46a1-8f33-6a32ea4f5f09",
+          "title": "Sebastian Introduction",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "d1686165-428e-46a1-8f33-6a32ea4f5f09",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 616887,
+              "key": "3e003a00-d3c5-46ee-aae7-c2532a1506b2",
+              "title": "Nd787 C2 L6 00 Sebastian V1",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "0ChnDlwpeBw",
+                "china_cdn_id": "0ChnDlwpeBw.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 556116,
+          "key": "450c6f40-68b3-40a2-851e-bc7e3467bf45",
+          "title": "Project Intro",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "450c6f40-68b3-40a2-851e-bc7e3467bf45",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 556479,
+              "key": "ee870991-8975-4519-86cf-3a65cc1d464a",
+              "title": "Planning Handoff 02 V1",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "hR__HI_Ocew",
+                "china_cdn_id": "hR__HI_Ocew.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 556034,
+          "key": "ab09b378-f85f-49f4-8845-d59025dd8a8e",
+          "title": "Workspace Intro",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "ab09b378-f85f-49f4-8845-d59025dd8a8e",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 556035,
+              "key": "2bc98a2f-7aa7-4cd5-a80b-5723e8fc55c9",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Your Cloud Workspace\n===",
+              "instructor_notes": ""
+            },
+            {
+              "id": 556036,
+              "key": "ee144533-b6fe-4574-bd76-f611766a276b",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/March/5a987441_screen-shot-2018-03-01-at-1.43.29-pm/screen-shot-2018-03-01-at-1.43.29-pm.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/ee144533-b6fe-4574-bd76-f611766a276b",
+              "caption": "",
+              "alt": "",
+              "width": 1306,
+              "height": 935,
+              "instructor_notes": null
+            },
+            {
+              "id": 556037,
+              "key": "a5ccc40b-2ab0-4809-87d2-c8aeab22f49c",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Udacity Cloud VM\nFor this project, you will have the option to complete all of your work in a cloud-based GPU supported virtual machine (VM) right in the Udacity classroom! Graphics rendering in the VM seems to work best for internet connections faster than 10Mbps, so if you're on a good connection we highly recommend checking it out! You can test the speed of your connection by going to [fast.com](https://fast.com/). Then simply follow along with these instructions for getting started and you'll be up and running in no time with your new VM.\n\n### Work on your local machine\n\nIf you would prefer to complete the project on your local machine, then you can skip ahead to the [instructions for local setup](https://classroom.udacity.com/nanodegrees/nd787/parts/5aa0a956-4418-4a41-846f-cb7ea63349b3/modules/0c12632a-b59a-41c1-9694-2b3508f47ce7/lessons/5f628104-5857-4a3f-93f0-d8a53fe6a8fd/project).\n\n\n### VM Setup Instructions\n\nThe workspace VM is already setup with Python and the simulator for the 3D motion planning project. If you run into any problems with using the VM please file bugs, suggestions and grievances in the [waffle board](https://waffle.io/udacity/fcnd-issue-reports). \n\nWhen you click \"Next\" at the bottom of this page to advance to the 3D Motion Planning project in the classroom you'll first see a popup asking if you want to enable GPU mode. Choose \"yes\".",
+              "instructor_notes": ""
+            },
+            {
+              "id": 556040,
+              "key": "397a4446-172a-4ec8-8dc2-f76e730a8d09",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/March/5a98769e_screen-shot-2018-03-01-at-1.52.56-pm/screen-shot-2018-03-01-at-1.52.56-pm.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/397a4446-172a-4ec8-8dc2-f76e730a8d09",
+              "caption": "",
+              "alt": "",
+              "width": 425,
+              "height": 258,
+              "instructor_notes": null
+            },
+            {
+              "id": 556041,
+              "key": "936134b3-7209-47fa-8ee8-0a45ac8cd395",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Next, your workspace will be configured and you'll land in a development environment that looks like this: ",
+              "instructor_notes": ""
+            },
+            {
+              "id": 556038,
+              "key": "dca60101-8a54-43a4-90ac-abd62f9bb6a9",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/March/5a9875d2_screen-shot-2018-03-01-at-1.50.48-pm/screen-shot-2018-03-01-at-1.50.48-pm.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/dca60101-8a54-43a4-90ac-abd62f9bb6a9",
+              "caption": "",
+              "alt": "",
+              "width": 969,
+              "height": 538,
+              "instructor_notes": null
+            },
+            {
+              "id": 556042,
+              "key": "76ef2e85-6b2a-40a3-a2b0-eefe6f190288",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Click the button in the lower right that says \"GO TO DESKTOP\" and you'll launch another browser window, where you'll land at the desktop of your Linux VM that looks like this:\n\n(**Note: the VM currently does not work with Safari, please use Chrome or other browser**) ",
+              "instructor_notes": ""
+            },
+            {
+              "id": 556043,
+              "key": "04182eff-276e-42c9-a2de-17866ef10d84",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/March/5a9877f6_screen-shot-2018-03-01-at-1.59.49-pm/screen-shot-2018-03-01-at-1.59.49-pm.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/04182eff-276e-42c9-a2de-17866ef10d84",
+              "caption": "",
+              "alt": "",
+              "width": 1424,
+              "height": 755,
+              "instructor_notes": null
+            },
+            {
+              "id": 556044,
+              "key": "84d94ddd-c928-4888-a00f-b5ad50fe5824",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Don't worry about the error message, it's harmless, just click \"OK\".  Next, double click on the \"Terminator\" icon on the desktop to open terminal. In the terminal you need to issue 3 commands:\n\n```shell\ncd /home/workspace/linux-64bit/\n./FCND-Sim_Linux_64-bit\n```\n\n** How to copy/paste: **At this point you may be wondering how to copy and paste between your local machine and the VM! It's a bit cumbersome unfortunately, but here's how it works: \n* copy text on local machine\n* open the side-bar menu at the left side of the VM desktop\n* click the clipboard icon and paste text in there\n* use `ctrl-shift-v` to paste into terminal (or `ctrl-v` to paste into Firefox browser)\n\nReverse these steps to copy/paste from the VM to your local machine.\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 556586,
+              "key": "0188205d-6226-41cc-8b4a-cb53cd6bc2b7",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/March/5a9d64e8_screen-shot-2018-03-05-at-7.06.49-am/screen-shot-2018-03-05-at-7.06.49-am.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/0188205d-6226-41cc-8b4a-cb53cd6bc2b7",
+              "caption": "",
+              "alt": "",
+              "width": 326,
+              "height": 273,
+              "instructor_notes": null
+            },
+            {
+              "id": 556585,
+              "key": "1141da0e-21ab-428b-8198-349c2b0f64a6",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "If the above method proves too cumbersome, as long as whatever you want to copy/paste is online, you can also just open up a browser (Firefox) in the VM and navigate to the material you want to copy / paste.\n\nAfter issuing those commands, your simulator should launch! Now your desktop will look something like this:",
+              "instructor_notes": ""
+            },
+            {
+              "id": 556045,
+              "key": "e77b4e8f-a3c6-4d91-8730-c55554d4e603",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/March/5a9879b9_screen-shot-2018-03-01-at-2.07.20-pm/screen-shot-2018-03-01-at-2.07.20-pm.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/e77b4e8f-a3c6-4d91-8730-c55554d4e603",
+              "caption": "",
+              "alt": "",
+              "width": 1422,
+              "height": 753,
+              "instructor_notes": null
+            },
+            {
+              "id": 556046,
+              "key": "438c6bb4-bd5e-4e34-9e7c-264bef87596f",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Click the button in the simulator that says \"Click to Arm\" and try some manual flying to explore this new environment. Click the \"Controls\" button in the upper righthand corner of the sim to get a reminder of keyboard and mouse functionality in manual mode.  \n\nIf all of this works, you're ready to move on to testing autonomous flying and planning in this new environment.  In a new terminal, run the following commands to clone the [project repository](https://github.com/udacity/FCND-Motion-Planning) into your `/home/workspace` directory:\n\n```shell\ncd /home/workspace\ngit clone https://github.com/udacity/FCND-Motion-Planning\n```\n\nNext, activate the `fcnd` conda environment by typing `source activate fcnd` and then `python` at the prompt.  You should now be running Python 3.6 in the `fcnd` conda environment.  \n\n```sh\nsource activate fcnd\npython\n```",
+              "instructor_notes": ""
+            },
+            {
+              "id": 556052,
+              "key": "4544585b-1620-4310-8ee0-caa143144738",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/March/5a9881b7_screen-shot-2018-03-01-at-2.41.30-pm/screen-shot-2018-03-01-at-2.41.30-pm.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/4544585b-1620-4310-8ee0-caa143144738",
+              "caption": "",
+              "alt": "",
+              "width": 722,
+              "height": 110,
+              "instructor_notes": null
+            },
+            {
+              "id": 556051,
+              "key": "9705d3c2-d487-4dd4-942c-f7db4943382b",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Explore the contents of the `FCND-Motion-Planning` folder you cloned. In there you'll find `backyard_flyer_solution.py`. To test if everything is working, change directories into the `/home/workspace/FCND-Motion-Planning/` directory and try running the solution script.  First, either launch your simulator as described above, or verify that your simulator is \"DISARMED\" and in \"MANUAL\" mode.  Then launch the script like this:\n\n```shell\ncd /home/workspace/FCND-Motion-Planning/\npython backyard_flyer_solution.py\n```\n\nAnd with that you should be flying! ",
+              "instructor_notes": ""
+            },
+            {
+              "id": 556053,
+              "key": "5a63f0c6-c2f5-4fa9-b129-26ba0d77a58a",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/March/5a9882e7_byflyer-in-the-cloud/byflyer-in-the-cloud.gif",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/5a63f0c6-c2f5-4fa9-b129-26ba0d77a58a",
+              "caption": "",
+              "alt": "",
+              "width": 1348,
+              "height": 1058,
+              "instructor_notes": null
+            },
+            {
+              "id": 556054,
+              "key": "2261a161-a446-4248-aff0-f02c56f61e52",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## 3D Motion Planning in Downtown San Francisco\nIf that all works, well done! All that's left is to build your 3D Motion Planning solution.  Check out the [README](https://github.com/udacity/FCND-Motion-Planning/blob/master/README.md) in the project repository for instructions on how to complete the project, and the [project rubric](https://review.udacity.com/#!/rubrics/1534/view) for details on what you need for a passing submission.\n\nWe have provided some starter code in `motion_planning.py` and `planning_utils.py` for you to get comfortable with how things will work for this project. First off, you can just run this code and see what happens.  Hit `shift-r` (sometimes twice) to reset the simulator. Then run:\n\n```shell\npython motion_planning.py\n```\nYou should see the quad takeoff and follow a zigzag series of waypoints for about 10 m then land.\n\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 556583,
+              "key": "f355198f-b3ad-4507-bac3-c65cd1aad7cb",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/March/5a9d6249_screen-shot-2018-03-05-at-7.28.21-am/screen-shot-2018-03-05-at-7.28.21-am.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/f355198f-b3ad-4507-bac3-c65cd1aad7cb",
+              "caption": "",
+              "alt": "",
+              "width": 903,
+              "height": 570,
+              "instructor_notes": null
+            },
+            {
+              "id": 556584,
+              "key": "1f9ea8ab-6f3b-4ebe-adb7-1dbd254f56bd",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Next, take a look at the code in `motion_planning.py` as well as `planning_utils.py` to see what's going on in there. Use the `gedit` editor to view and edit files.\n\n```shell\ngedit motion_planning.py\n```\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 557037,
+              "key": "72c6b070-14d6-4b71-845c-c6280fa98c60",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/March/5a9ed4fe_screen-shot-2018-03-06-at-9.50.31-am/screen-shot-2018-03-06-at-9.50.31-am.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/72c6b070-14d6-4b71-845c-c6280fa98c60",
+              "caption": "",
+              "alt": "",
+              "width": 896,
+              "height": 695,
+              "instructor_notes": null
+            },
+            {
+              "id": 557036,
+              "key": "73feca88-40ba-4ccb-b877-ecc85b0a7952",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "When you're ready to start building, have a look at the project [rubric](https://review.udacity.com/#!/rubrics/1534/view) to see what constitutes a passing submission!\n\n### Submitting your project through the workspace VM\n\nWhen you're satisfied with your solution, you can submit your project directly through the VM workspace. The way this works is that when you click \"Submit Project\" in the workspace IDE, everything in your `/home/workspace` folder will be zipped up and submitted. So the first step is to move everything you do not want to submit out of the `/home/workspace` directory.\n\nThe one thing you absolutely must remove from `/home/workspace` is the simulator (with the simulator the submission would be too big and fail to go through). You can temporarily move this to /opt while you submit your project.\n\n```sh\ncd /home/workspace\nmv FCND-Sim-Linux /opt\n```\n\nNext, move any other files or folders you do not intend to submit out of `/home/workspace` and then click the \"Submit Project\" button at the lower right in your workspace IDE (note: not in the VM desktop environment, but next to the \"Go To Desktop\" button on the IDE page). \n\nWhen you have finished submitting, move any files you want to keep, including the simulator back into `/home/workspace` so they will be saved for your next visit to the VM.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 543055,
+          "key": "ef2954ac-5cae-4689-b8e9-af20dedeba21",
+          "title": "3D Motion Planning",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "ef2954ac-5cae-4689-b8e9-af20dedeba21",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 555727,
+              "key": "8e6ba4e3-490a-484a-89af-eeab9b92092d",
+              "title": null,
+              "semantic_type": "WorkspaceAtom",
+              "is_public": true,
+              "workspace_id": "viewa90532fe",
+              "pool_id": "autonomousgpu",
+              "view_id": "a90532fe-095c-4a06-96b4-fc30258ab61b",
+              "gpu_capable": true,
+              "configuration": {
+                "id": "reserved",
+                "blueprint": {
+                  "conf": {
+                    "disk": null,
+                    "port": 3000,
+                    "ports": [],
+                    "userCode": "# put any extra commands you want in here",
+                    "openFiles": [],
+                    "showFiles": true,
+                    "allowClose": true,
+                    "allowSubmit": true,
+                    "actionButtonText": "Go to Desktop"
+                  },
+                  "kind": "react"
+                },
+                "workspaceId": "reserved"
+              },
+              "starter_files": null
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "_deprecated": [
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    }
+  ]
+}

@@ -1,0 +1,1201 @@
+{
+  "data": {
+    "lesson": {
+      "id": 559557,
+      "key": "2263120a-a3c4-4b5a-9a96-ac3e1dbae179",
+      "title": "Full 3D Control",
+      "semantic_type": "Lesson",
+      "is_public": true,
+      "version": "1.0.0",
+      "locale": "en-us",
+      "summary": "In this lesson you'll take everything you've learned so far about vehicle dynamics and control and put it together to control a quadrotor that moves in three dimensions.",
+      "lesson_type": "Classroom",
+      "display_workspace_project_only": null,
+      "resources": {
+        "files": [
+          {
+            "name": "Videos Zip File",
+            "uri": "https://zips.udacity-data.com/2263120a-a3c4-4b5a-9a96-ac3e1dbae179/559557/1538763254137/Full+3D+Control+Videos.zip"
+          },
+          {
+            "name": "Transcripts Zip File",
+            "uri": "https://zips.udacity-data.com/2263120a-a3c4-4b5a-9a96-ac3e1dbae179/559557/1538763249919/Full+3D+Control+Subtitles.zip"
+          }
+        ],
+        "google_plus_link": null,
+        "career_resource_center_link": null,
+        "coaching_appointments_link": null,
+        "office_hours_link": null,
+        "aws_provisioning_link": null
+      },
+      "project": null,
+      "lab": null,
+      "concepts": [
+        {
+          "id": 559558,
+          "key": "3073a92d-2364-43e6-af58-048622948f2e",
+          "title": "Sebastian Introduction",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "3073a92d-2364-43e6-af58-048622948f2e",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 616872,
+              "key": "5b0949cb-51ed-4156-b204-adee58b44d6f",
+              "title": "Nd787 C3 L4 00 Sebastian V1",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "DH70DtWEOW0",
+                "china_cdn_id": "DH70DtWEOW0.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 559559,
+          "key": "0cb7274f-7718-4be8-9739-86d0054ad77e",
+          "title": "Lesson Overview",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "0cb7274f-7718-4be8-9739-86d0054ad77e",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 571369,
+              "key": "9d2b2baa-2bdb-4d3a-be47-a0554f189f78",
+              "title": "01 Lesson Overview V1",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "TkbKNvu67bo",
+                "china_cdn_id": "TkbKNvu67bo.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 559560,
+          "key": "9ec0a348-f839-4ca3-aab3-04f9b13709e3",
+          "title": "Review of 2D Dynamics",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "9ec0a348-f839-4ca3-aab3-04f9b13709e3",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 626819,
+              "key": "1b5a2688-b4d3-43f0-9892-b4833f5b31ef",
+              "title": "Nd787 C3 L4 A02 Review Of 2D Dynamics V1",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "AhdEPjfhFWc",
+                "china_cdn_id": "AhdEPjfhFWc.mp4"
+              }
+            },
+            {
+              "id": 562480,
+              "key": "c365ecca-1116-49fd-9f35-b5f143610749",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "```python\n\nimport numpy as np\nimport math\n\nclass Drone2D:\n    \n\n    def __init__(self,\n                 I_x = 0.1, # moment of inertia around the x-axis\n                 m = 0.2,   # mass of the vehicle \n                ):\n        \n        self.I_x = I_x\n        self.m = m\n        \n        self.u1 = 0.0\n        self.u2 = 0.0\n        self.g = 9.81\n        \n        self.X = np.array([0.0,0.0,0.0,0.0,0.0,0.0])\n    \n    # the following 3 functions are used by advance_state\n    # to get the accelerations of the vehicle.\n    @property\n    def y_dot_dot(self):\n        phi = self.X[2]\n        return self.u1 / self.m * np.sin(phi)\n    \n    @property\n    def z_dot_dot(self):\n        phi = self.X[2]\n        return self.g - self.u1*math.cos(phi)/self.m\n    \n    @property\n    def phi_dot_dot(self):\n        return self.u2 / self.I_x\n    \n    def advance_state(self, dt):\n        \n        X_dot = np.array([self.X[3], \n                        self.X[4],\n                        self.X[5], \n                        self.z_dot_dot,\n                        self.y_dot_dot, \n                        self.phi_dot_dot])\n        \n        \n        # Change in state will be \n        self.X = self.X + X_dot * dt\n        return self.X \n    \n    def set_controls(self, u1, u2):\n        self.u1 = u1\n        self.u2 = u2\n```",
+              "instructor_notes": ""
+            },
+            {
+              "id": 626824,
+              "key": "44b41c44-030a-46b7-9d7f-534119601139",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": " ",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 559561,
+          "key": "87783576-e018-4d22-88eb-c2d6bc1988ef",
+          "title": "World vs Body Frames",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "87783576-e018-4d22-88eb-c2d6bc1988ef",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 571292,
+              "key": "e4108a82-a0d1-459d-9b1b-5e93069a634d",
+              "title": "Nd787 C3 L4 A03 World Vs Body Frames V1",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "zFhip1JLgAY",
+                "china_cdn_id": "zFhip1JLgAY.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 559562,
+          "key": "e9f5ed3f-d0b1-4d6a-b5a6-fd751f3c9149",
+          "title": "Tracking 3D Dynamics Overview",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "e9f5ed3f-d0b1-4d6a-b5a6-fd751f3c9149",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 571351,
+              "key": "2ee4d9d3-2e39-4ce1-8dc6-a16fade1026d",
+              "title": "Nd787 C3 L4 A04 Tracking 3D Dynamics Overview V1",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "QxShTrK2vus",
+                "china_cdn_id": "QxShTrK2vus.mp4"
+              }
+            },
+            {
+              "id": 562489,
+              "key": "4346bb1e-67bc-4e70-96cc-7257f6a42f1c",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## More about p,q,r\n\nThese \"body rate\" variables <span class=\"mathquill\">p,q,r</span> can be a little confusing. A few things to note about them:\n\n**1. The \"p\" has nothing to do with pitch!**\n\nAnd r has nothing to do with roll! \n\nThese three letters were just chosen because they occur sequentially in the alphabet, just like x, y, and z. In fact, p gives the angular rotation rate about the x-axis (in the body frame), q gives the rotation rate about the y-axis (body frame) and r gives the rotation rate about the z-axis (again, in the body frame).\n\n**2. They aren't the same as the Euler angle rates of change <span class=\"mathquill\">\\dot{\\phi},\n \\dot{\\theta}, \\dot{\\psi}</span>**.\n\nWhile both of these give some sort of angular rate of change, the body rates are calculated in the body frame of the vehicle while the Euler angles are expressed in the world frame.\n\n**3. They really are body RATES**!\n\nEven though they don't have dots over them. This means that <span class=\"mathquill\">\\dot{p},\n \\dot{q}, \\dot{r}</span> actually express rotational *accelerations*.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 562490,
+              "key": "d0f03ea0-275d-40a1-8531-cc47d4c19afd",
+              "title": "",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "d0f03ea0-275d-40a1-8531-cc47d4c19afd",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "What **units** are best associated with p, q, and r?",
+                "answers": [
+                  {
+                    "id": "a1520988825704",
+                    "text": "<span class=\"mathquill\">rads</span>",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1520988851287",
+                    "text": "<span class=\"mathquill\">rads/s</span>",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1520988869271",
+                    "text": "<span class=\"mathquill\">rads/s^2</span>",
+                    "is_correct": false
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 565145,
+          "key": "38ac72ca-1eb0-4293-9d29-758eb2725323",
+          "title": "Notebook Walkthrough",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "38ac72ca-1eb0-4293-9d29-758eb2725323",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 565146,
+              "key": "4a54730d-2752-44f4-a6de-f2cfa3d8f7e2",
+              "title": "AB L4 01 Notebook Walkthrough",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "xnggxr3Pz38",
+                "china_cdn_id": "xnggxr3Pz38.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 565154,
+          "key": "bc02deb2-aae2-41a5-b517-b2fe846ac1cf",
+          "title": "3D Drone Part 1 Exercise",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "bc02deb2-aae2-41a5-b517-b2fe846ac1cf",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 571398,
+              "key": "c1cfaaec-8e59-43d9-8164-2ec192482aac",
+              "title": null,
+              "semantic_type": "WorkspaceAtom",
+              "is_public": true,
+              "workspace_id": "viewcd7e2f19",
+              "pool_id": "jupyter",
+              "view_id": "830b4341-1158-494d-b03a-73ae0f486c52",
+              "gpu_capable": false,
+              "configuration": {
+                "id": "reserved",
+                "blueprint": {
+                  "conf": {
+                    "disk": null,
+                    "ports": [],
+                    "allowGrade": false,
+                    "allowSubmit": false,
+                    "defaultPath": "/notebooks/Lesson%204%20-%203D%20Drone-Full-Notebook.ipynb"
+                  },
+                  "kind": "jupyter"
+                },
+                "workspaceId": "reserved"
+              },
+              "starter_files": null
+            }
+          ]
+        },
+        {
+          "id": 559563,
+          "key": "def1894d-ac59-42c9-a359-081274569487",
+          "title": "Tracking Rotations in 3D",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "def1894d-ac59-42c9-a359-081274569487",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 571352,
+              "key": "80544bca-a9b5-4215-bfed-20029d933813",
+              "title": "Nd787 C3 L4 A05 Tracking Rotations In 3D V1",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "2u6-2Ts7UUk",
+                "china_cdn_id": "2u6-2Ts7UUk.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 559564,
+          "key": "95131517-0fc7-40de-95e7-3db137cea9d5",
+          "title": "Euler's Equations in a Rotating Frame",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "95131517-0fc7-40de-95e7-3db137cea9d5",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 571353,
+              "key": "19959d66-2449-4337-a847-c93f4459e8b3",
+              "title": "Nd787 C3 L4 A06 Eulers Equations In A Rotating Frame V1",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "7VyzQGlax_0",
+                "china_cdn_id": "7VyzQGlax_0.mp4"
+              }
+            },
+            {
+              "id": 562494,
+              "key": "f234ca04-ab30-4ad1-9fa8-a4f0db6c95d0",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Euler's Rotation Equations\n\nThe general form of Euler's equations is:\n\n<div class=\"mathquill\">\n\\mathbf{M = I \\dot{\\omega} + \\omega \\times (I\\omega)} \n</div> \n\nand note that the <span class=\"mathquill\">\\mathbf{\\omega}</span> that shows up in this equation is actually a length 3 vector. In fact it's the vector of body rates you saw earlier:\n\n<div class=\"mathquill\">\n\\mathbf{\\omega} = \\begin{bmatrix}\np \\\\\nq \\\\\nr\n\\end{bmatrix}\n</div> \n\nand this means that\n\n<div class=\"mathquill\">\n\\dot{\\mathbf{\\omega}} = \\begin{bmatrix}\n\\dot{p} \\\\\n\\dot{q} \\\\\n\\dot{r}\n\\end{bmatrix}\n</div> \n\n\nIf you want to know where this equation comes from you might want to start with [this wikipedia article](https://en.wikipedia.org/wiki/Euler%27s_equations_(rigid_body_dynamics%29) but be warned you'll probably have to dig yourself into a pretty deep wikipedia before you'll get to a satisfactory answer.\n\n\n## The \"cross product\"\n\nThe cross product shows up in Euler's equations. It's a way of multiplying two vectors. \n\nIf you have two vectors <span class=\"mathquill\">\\mathbf{a}</span> and <span class=\"mathquill\">\\mathbf{b}</span> with an angle of <span class=\"mathquill\">\\theta</span> between them, then the cross product is given by <span class=\"mathquill\">\\mathbf{a \\times b = c}</span>, where <span class=\"mathquill\">\\mathbf{c}</span> is a vector that's perpendicular to *both* <span class=\"mathquill\">\\mathbf{a}</span> and <span class=\"mathquill\">\\mathbf{b}</span>.\n\nThe direction of this <span class=\"mathquill\">\\mathbf{c}</span> vector is given by the right hand rule and the magnitude (size) is given by the following equation:\n\n<div class=\"mathquill\">\n|\\mathbf{c}| = |\\mathbf{a}|\\ |\\mathbf{b}| \\sin(\\theta) \n</div>\n\nIf you want to learn more, you can check out the [wikipedia article on the cross product](https://en.wikipedia.org/wiki/Cross_product). It's very good!",
+              "instructor_notes": ""
+            },
+            {
+              "id": 627575,
+              "key": "73f19793-6032-418d-bc91-a8f269fd16de",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": " ",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 565156,
+          "key": "6160603f-1be3-44e9-acac-c79bfcf00851",
+          "title": "3D Drone Part 2 Exercise",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "6160603f-1be3-44e9-acac-c79bfcf00851",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 565157,
+              "key": "11cdc1b2-ed19-4400-bdcf-e64df6b1484a",
+              "title": null,
+              "semantic_type": "WorkspaceAtom",
+              "is_public": true,
+              "workspace_id": "viewcd7e2f19",
+              "pool_id": "jupyter",
+              "view_id": "8dceccd2-0cbf-415a-99d4-2815bbc5bdef",
+              "gpu_capable": false,
+              "configuration": {
+                "id": "reserved",
+                "blueprint": {
+                  "conf": {
+                    "disk": null,
+                    "ports": [],
+                    "allowGrade": false,
+                    "allowSubmit": false,
+                    "defaultPath": "/notebooks/Lesson%204%20-%203D%20Drone-Full-Notebook.ipynb"
+                  },
+                  "kind": "jupyter"
+                },
+                "workspaceId": "reserved"
+              },
+              "starter_files": null
+            }
+          ]
+        },
+        {
+          "id": 559565,
+          "key": "3e891c40-e3e7-4147-8f6a-d503c55611bc",
+          "title": "Integrating PQR Into the World Frame",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "3e891c40-e3e7-4147-8f6a-d503c55611bc",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 571354,
+              "key": "b45d15d4-c151-4cf2-85c2-b879ac663bed",
+              "title": "Nd787 C3 L4 A07 Integrating PQR Into The World Frame V2",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "taxXqgdHk0w",
+                "china_cdn_id": "taxXqgdHk0w.mp4"
+              }
+            },
+            {
+              "id": 730123,
+              "key": "809abfa8-9f0a-410f-9add-edd6f7129773",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "It's important to recall the formula that relates the instantaneous turn rate in the body frame to the instantaneous rate in Euler angles:",
+              "instructor_notes": ""
+            },
+            {
+              "id": 730124,
+              "key": "fbcd6559-9546-4165-8b24-750921d6b248",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/October/5bb613a3_screen-shot-2018-10-04-at-9.18.59-am/screen-shot-2018-10-04-at-9.18.59-am.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/fbcd6559-9546-4165-8b24-750921d6b248",
+              "caption": "",
+              "alt": "",
+              "width": 1062,
+              "height": 250,
+              "instructor_notes": null
+            },
+            {
+              "id": 619939,
+              "key": "88525842-dc7f-4999-831d-489115e62963",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Additional Resources\n\n* [Representing Attitude: Euler Angles, Unit Quaternions, and Rotation\nVectors](https://www.astro.rug.nl/software/kapteyn/_downloads/attitude.pdf) is a very thorough exploration of attitude representations. Equation 79 in that paper corresponds to the equation shown in the video above.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 627577,
+              "key": "0dfa1204-d2ae-4788-8c20-ba93cf2e8427",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": " ",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 565158,
+          "key": "8b388bf7-96dd-41b6-a11f-b134224a6ac1",
+          "title": "3D Drone Part 3 Exercise",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "8b388bf7-96dd-41b6-a11f-b134224a6ac1",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 571373,
+              "key": "8384ba0e-5347-4969-a46e-0d83b442639e",
+              "title": null,
+              "semantic_type": "WorkspaceAtom",
+              "is_public": true,
+              "workspace_id": "viewcd7e2f19",
+              "pool_id": "jupyter",
+              "view_id": "9a841409-8882-4a41-8c55-96a6cab970dd",
+              "gpu_capable": false,
+              "configuration": {
+                "id": "reserved",
+                "blueprint": {
+                  "conf": {
+                    "ports": [],
+                    "allowSubmit": false,
+                    "defaultPath": "/notebooks/Lesson%204%20-%203D%20Drone-Full-Notebook.ipynb"
+                  },
+                  "kind": "jupyter"
+                },
+                "workspaceId": "reserved"
+              },
+              "starter_files": null
+            }
+          ]
+        },
+        {
+          "id": 559566,
+          "key": "d24169c6-1f5e-4915-8d2e-371b1b6ea4b4",
+          "title": "Summary of 3D Dynamics",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "d24169c6-1f5e-4915-8d2e-371b1b6ea4b4",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 571370,
+              "key": "d7bf9a67-e5b9-41a5-9ee8-6b0c9f7973c0",
+              "title": "08 Summary Of 3D Dynamics V1",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "84UzlNJKWkw",
+                "china_cdn_id": "84UzlNJKWkw.mp4"
+              }
+            },
+            {
+              "id": 565160,
+              "key": "601cd90c-68c1-41d4-9145-3065442470fd",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Before you continue...\n\nFirst skim through sections I and II and then carefully read section III of [Feasibility of Motion Primitives for Choreography](http://flyingmachinearena.org/wp-content/publications/2011/schoellig_feasibility_of_motion_primitives.pdf). This third section is called \"Quadrocopter Dynamics and Constraints\", and it provides a good summary of some of the concepts we've been discussing. You may find some of the later sections interesting as well.\n\nNote that  this paper uses slightly different notation than what we've been using in some parts. Most notably, where we've represented the Euler Angles with <span class=\"mathquill\">\\phi, \\theta, \\psi</span> this paper uses <span class=\"mathquill\">\\alpha, \\beta, \\gamma</span>.\n\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 627576,
+              "key": "8117621a-509d-43e0-be6d-8c48f37146d9",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": " ",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 559567,
+          "key": "9ee6e206-481c-4711-9d5f-18889dd3ec15",
+          "title": "\"Control Knobs\" for a 3D Quadrotor",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "9ee6e206-481c-4711-9d5f-18889dd3ec15",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 627642,
+              "key": "954172d3-c950-43fb-ad2f-0dce0e2ef45f",
+              "title": "Nd787 C3 L4 A09 Control Knobs For A 3D Quadrotor V3",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "WJ5lRmX7_To",
+                "china_cdn_id": "WJ5lRmX7_To.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 559568,
+          "key": "04cab5cc-e297-4a98-8c16-6c8107bec2ad",
+          "title": "3D Control Architecture",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "04cab5cc-e297-4a98-8c16-6c8107bec2ad",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 571356,
+              "key": "28178f06-bf8d-41a8-b44d-c74d720f4023",
+              "title": "Nd787 C3 L4 A10 3D Control Architecture V2",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "CsN5-lHcxyM",
+                "china_cdn_id": "CsN5-lHcxyM.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 565193,
+          "key": "98515101-c3bb-4fdf-8bce-1a9f5ab48e74",
+          "title": "First vs Second Order Systems",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "98515101-c3bb-4fdf-8bce-1a9f5ab48e74",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 571357,
+              "key": "c1921355-6023-4c65-860b-06ad6a0e4962",
+              "title": "Nd787 C3 L4 A11 First Vs Second Order Systems V2",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "1Ilt2w17LMU",
+                "china_cdn_id": "1Ilt2w17LMU.mp4"
+              }
+            },
+            {
+              "id": 730128,
+              "key": "351ec9eb-89d5-4871-9786-047ce4992410",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# To summarize\n\n__Altitude controller__: 2nd order system => PD Controller at least (I-term can be useful, but can be safely ignored)\n\n__Lateral controller__: 2nd order system => PD Controller at least (I-term can be useful, but can be safely ignored)\n\n__Yaw controller__: 1st order system => P Controller\n\n__Body rate controller__: 1st order system => P Controller\n\n__Roll/Pitch controller__: 1st order system => P Controller",
+              "instructor_notes": ""
+            },
+            {
+              "id": 565194,
+              "key": "40ad08b6-e8e1-4274-ac33-46c851a77beb",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Before you continue...\n\nPlease read sections 3 and 4 of this paper: [Feed-Forward Parameter Identification](http://www.dynsyslab.org/wp-content/papercite-data/pdf/schoellig-acc12.pdf). As you read through, pay attention to equations (2), (4), (5), and (6).",
+              "instructor_notes": ""
+            },
+            {
+              "id": 627648,
+              "key": "f3bf6ba0-c99e-4f97-a590-9af9055d5b0d",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": " ",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 559569,
+          "key": "18bb7626-f531-496f-8c60-9ecf01f0e583",
+          "title": "Understanding Attitude Control Equations",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "18bb7626-f531-496f-8c60-9ecf01f0e583",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 571358,
+              "key": "a03a02d9-df8f-4241-9f87-9a3aad88a83a",
+              "title": "Nd787 C3 L4 A12 Understanding Altitude V2",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "1g_uyhDgoiQ",
+                "china_cdn_id": "1g_uyhDgoiQ.mp4"
+              }
+            },
+            {
+              "id": 778365,
+              "key": "b4001248-2e40-4879-b645-c5635a304c5d",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Still reference to this paper: [Feed-Forward Parameter Identification](http://www.dynsyslab.org/wp-content/papercite-data/pdf/schoellig-acc12.pdf).",
+              "instructor_notes": ""
+            },
+            {
+              "id": 778370,
+              "key": "c405f22b-4419-4a74-930f-52b40aadf7e5",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Equations to keep in mind:\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 778374,
+              "key": "e491d9b5-b640-40d1-808b-51333097f217",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/November/5bdc6b3c_screen-shot-2018-11-02-at-11.19.56-am/screen-shot-2018-11-02-at-11.19.56-am.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/e491d9b5-b640-40d1-808b-51333097f217",
+              "caption": "",
+              "alt": "",
+              "width": 838,
+              "height": 640,
+              "instructor_notes": null
+            },
+            {
+              "id": 778375,
+              "key": "163d3b42-eeca-4a9f-9ecb-ef44debb1f18",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Where:",
+              "instructor_notes": ""
+            },
+            {
+              "id": 778376,
+              "key": "dc18e8f4-2eef-44b3-94eb-400e3c32c86b",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/November/5bdc6bb4_screen-shot-2018-11-02-at-11.21.38-am/screen-shot-2018-11-02-at-11.21.38-am.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/dc18e8f4-2eef-44b3-94eb-400e3c32c86b",
+              "caption": "",
+              "alt": "",
+              "width": 838,
+              "height": 268,
+              "instructor_notes": null
+            },
+            {
+              "id": 778378,
+              "key": "edc55a5a-8334-4f24-bfeb-e21c5a448d55",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/November/5bdc6c15_screen-shot-2018-11-02-at-11.23.49-am/screen-shot-2018-11-02-at-11.23.49-am.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/edc55a5a-8334-4f24-bfeb-e21c5a448d55",
+              "caption": "",
+              "alt": "",
+              "width": 1000,
+              "height": 276,
+              "instructor_notes": null
+            }
+          ]
+        },
+        {
+          "id": 565196,
+          "key": "06f71789-746f-4653-9d1c-9cadeafc5a4f",
+          "title": "3D Drone Part 4 Exercise",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "06f71789-746f-4653-9d1c-9cadeafc5a4f",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 565199,
+              "key": "a443c5aa-8d20-4dea-b53d-45f9bfe37a54",
+              "title": null,
+              "semantic_type": "WorkspaceAtom",
+              "is_public": true,
+              "workspace_id": "viewcd7e2f19",
+              "pool_id": "jupyter",
+              "view_id": "9b3002b5-8db0-4327-8f3f-4e4e5d444860",
+              "gpu_capable": false,
+              "configuration": {
+                "id": "reserved",
+                "blueprint": {
+                  "conf": {
+                    "disk": null,
+                    "ports": [],
+                    "allowGrade": false,
+                    "allowSubmit": false,
+                    "defaultPath": "/notebooks/Lesson%204%20-%203D%20Drone-Full-Notebook.ipynb"
+                  },
+                  "kind": "jupyter"
+                },
+                "workspaceId": "reserved"
+              },
+              "starter_files": null
+            }
+          ]
+        },
+        {
+          "id": 559570,
+          "key": "43d9e2fe-7ce6-441d-a1fd-2a4a343186f2",
+          "title": "Controller Design",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "43d9e2fe-7ce6-441d-a1fd-2a4a343186f2",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 571371,
+              "key": "2181d561-4d63-4fc3-ab63-b4419c62830b",
+              "title": "13 Controller Design V1",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "9WtAmL_aa3c",
+                "china_cdn_id": "9WtAmL_aa3c.mp4"
+              }
+            },
+            {
+              "id": 565200,
+              "key": "a79d8622-a25c-4db7-8e72-8d115ec8ab8f",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/March/5aa99f6c_11-first-vs-second-order-systems-1-v1/11-first-vs-second-order-systems-1-v1.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/a79d8622-a25c-4db7-8e72-8d115ec8ab8f",
+              "caption": "",
+              "alt": "",
+              "width": 1920,
+              "height": 1080,
+              "instructor_notes": null
+            },
+            {
+              "id": 565202,
+              "key": "7e39d8d0-914d-4f0b-b198-e514dff23420",
+              "title": "",
+              "semantic_type": "MatchingQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "7e39d8d0-914d-4f0b-b198-e514dff23420",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "complex_prompt": {
+                  "text": "If you were implementing these from scratch, in what order would you want to implement and tune the following controllers?"
+                },
+                "concepts_label": "Order",
+                "answers_label": "Controller",
+                "concepts": [
+                  {
+                    "text": "First",
+                    "correct_answer": {
+                      "id": "a1521065861439",
+                      "text": "Body Rate Controller"
+                    }
+                  },
+                  {
+                    "text": "Second",
+                    "correct_answer": {
+                      "id": "a1521065918035",
+                      "text": "Roll Pitch Controller"
+                    }
+                  },
+                  {
+                    "text": "Third",
+                    "correct_answer": {
+                      "id": "a1521065979830",
+                      "text": "Altitude Controller"
+                    }
+                  }
+                ],
+                "answers": [
+                  {
+                    "id": "a1521065861439",
+                    "text": "Body Rate Controller"
+                  },
+                  {
+                    "id": "a1521065918035",
+                    "text": "Roll Pitch Controller"
+                  },
+                  {
+                    "id": "a1521065979830",
+                    "text": "Altitude Controller"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 559571,
+          "key": "2521e8ff-f71f-4797-b9d3-769c42afa8bc",
+          "title": "Controller Design 2",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "2521e8ff-f71f-4797-b9d3-769c42afa8bc",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 571359,
+              "key": "3ebca900-e185-44da-8a2d-f32fabd10d34",
+              "title": "Nd787 C3 L4 A14 Controller Design 2 V1",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "nKw5PD19cZo",
+                "china_cdn_id": "nKw5PD19cZo.mp4"
+              }
+            },
+            {
+              "id": 737359,
+              "key": "c6f4940e-6c05-4030-907c-166e25bf405d",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "**Note**:\nAt 1min 35s Angela mentions the \"nanodegree Slack channel\". Please note that Slack has been deprecated and you should use Student Hub instead, where you can access your community of peers and mentors.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 752047,
+              "key": "7c182d6e-2664-497e-a998-875bae43f8f1",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Sequence of implementation for the controllers:\nA good approach is to follow this sequence:\n- Body-rate controller\n- Roll-pitch controller\n- Altitude controller\n- Lateral controller\n- Yaw controller (this one is more independent so we can keep it at last)",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 565203,
+          "key": "47b0380b-3d5a-426b-8409-45f947c8f343",
+          "title": "3D Drone Part 5 Exercise",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "47b0380b-3d5a-426b-8409-45f947c8f343",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 565204,
+              "key": "73a0b3e5-e42f-44af-91ca-c7cb42b01a04",
+              "title": null,
+              "semantic_type": "WorkspaceAtom",
+              "is_public": true,
+              "workspace_id": "viewcd7e2f19",
+              "pool_id": "jupyter",
+              "view_id": "c4cb250d-ac8f-48ac-91c4-2a8f86a872f1",
+              "gpu_capable": false,
+              "configuration": {
+                "id": "reserved",
+                "blueprint": {
+                  "conf": {
+                    "ports": [],
+                    "allowSubmit": false,
+                    "defaultPath": "/notebooks/Lesson%204%20-%203D%20Drone-Full-Notebook.ipynb"
+                  },
+                  "kind": "jupyter"
+                },
+                "workspaceId": "reserved"
+              },
+              "starter_files": null
+            }
+          ]
+        },
+        {
+          "id": 559572,
+          "key": "f225f6b3-d64b-4507-86e7-d4b3090a10f5",
+          "title": "Practical Considerations",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "f225f6b3-d64b-4507-86e7-d4b3090a10f5",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 571360,
+              "key": "f5677ca6-cc9a-4e71-9ef1-7ce0e40e8c6d",
+              "title": "Nd787 C3 L4 A15 Practical Considerations V1",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "jPKfF11h4mE",
+                "china_cdn_id": "jPKfF11h4mE.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 559573,
+          "key": "65365a7b-8b92-42b0-b4ec-cc28b1163e3f",
+          "title": "From Path Planning to Control",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "65365a7b-8b92-42b0-b4ec-cc28b1163e3f",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 571361,
+              "key": "a0a837b0-aaa4-4825-a45f-c322d6101575",
+              "title": "Nd787 C3 L4 A16 From Path Planning To Control V1",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "otFd1oWj_Qs",
+                "china_cdn_id": "otFd1oWj_Qs.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 562257,
+          "key": "b4f15afb-58ec-40f1-9d18-c4b865d7e75b",
+          "title": "Trajectory Generation Exercise",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "b4f15afb-58ec-40f1-9d18-c4b865d7e75b",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 562258,
+              "key": "c5884a9e-ad8e-4553-8d0b-73c3b9e3bf83",
+              "title": null,
+              "semantic_type": "WorkspaceAtom",
+              "is_public": true,
+              "workspace_id": "view2d279359",
+              "pool_id": "jupyter",
+              "view_id": "2d279359-65f0-4fc3-93cb-3b0e3d728203",
+              "gpu_capable": false,
+              "configuration": {
+                "id": "reserved",
+                "blueprint": {
+                  "conf": {
+                    "ports": [],
+                    "allowSubmit": false,
+                    "defaultPath": "/notebooks/Trajectory%20generation%20linear%20segments%201%20and%203%20D%20.ipynb"
+                  },
+                  "kind": "jupyter"
+                },
+                "workspaceId": "reserved"
+              },
+              "starter_files": null
+            }
+          ]
+        },
+        {
+          "id": 565026,
+          "key": "bf52c72d-6093-428d-aef8-33a5c7ec83b7",
+          "title": "Polynomial Segmentation Exercise",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "bf52c72d-6093-428d-aef8-33a5c7ec83b7",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 565027,
+              "key": "905cf249-fb76-4601-a482-8a4836c29de3",
+              "title": null,
+              "semantic_type": "WorkspaceAtom",
+              "is_public": true,
+              "workspace_id": "view198c3700",
+              "pool_id": "jupyter",
+              "view_id": "198c3700-e422-4c3b-bb29-7d18d268d5ff",
+              "gpu_capable": false,
+              "configuration": {
+                "id": "reserved",
+                "blueprint": {
+                  "conf": {
+                    "ports": [],
+                    "allowSubmit": false,
+                    "defaultPath": "/notebooks/Trajectory%20generation%20polynomial.ipynb"
+                  },
+                  "kind": "jupyter"
+                },
+                "workspaceId": "reserved"
+              },
+              "starter_files": null
+            }
+          ]
+        },
+        {
+          "id": 559574,
+          "key": "e388bac9-6e55-45d8-8fa4-ef7ab2e236b4",
+          "title": "Conclusion",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "e388bac9-6e55-45d8-8fa4-ef7ab2e236b4",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 571372,
+              "key": "8db46435-faba-424c-904e-9c0ec12b4fb3",
+              "title": "17 Conclusion V1",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "BSTb2Uxm3go",
+                "china_cdn_id": "BSTb2Uxm3go.mp4"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "_deprecated": [
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    }
+  ]
+}

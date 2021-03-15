@@ -1,0 +1,979 @@
+{
+  "data": {
+    "lesson": {
+      "id": 598872,
+      "key": "66cf1a91-9b17-4ae8-a5eb-4e8085b8a12c",
+      "title": "GPS Denied Navigation",
+      "semantic_type": "Lesson",
+      "is_public": true,
+      "version": "1.0.0",
+      "locale": "en-us",
+      "summary": "How do you estimate vehicle state when you don't have GPS? In this lesson you'll learn about optical flow and particle filters as two approaches to solving this problem.",
+      "lesson_type": "Classroom",
+      "display_workspace_project_only": null,
+      "resources": {
+        "files": [
+          {
+            "name": "Videos Zip File",
+            "uri": "https://zips.udacity-data.com/66cf1a91-9b17-4ae8-a5eb-4e8085b8a12c/598872/1538763105654/GPS+Denied+Navigation+Videos.zip"
+          },
+          {
+            "name": "Transcripts Zip File",
+            "uri": "https://zips.udacity-data.com/66cf1a91-9b17-4ae8-a5eb-4e8085b8a12c/598872/1538763101115/GPS+Denied+Navigation+Subtitles.zip"
+          }
+        ],
+        "google_plus_link": null,
+        "career_resource_center_link": null,
+        "coaching_appointments_link": null,
+        "office_hours_link": null,
+        "aws_provisioning_link": null
+      },
+      "project": null,
+      "lab": null,
+      "concepts": [
+        {
+          "id": 616865,
+          "key": "e9b8578d-8a17-41c5-a4f8-5daabaf0e6b9",
+          "title": "Sebastian Introduction",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "e9b8578d-8a17-41c5-a4f8-5daabaf0e6b9",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 616866,
+              "key": "fa933de9-9b8b-4aaf-b86d-bb7ad59ac089",
+              "title": "Nd787 C4 L5 00 Sebastian V1",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "tpsrAr13aUo",
+                "china_cdn_id": "tpsrAr13aUo.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 598874,
+          "key": "21a6c280-976b-4dfd-871a-0303382ace93",
+          "title": "Introduction",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "21a6c280-976b-4dfd-871a-0303382ace93",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 629009,
+              "key": "acab3d88-89f9-4eaa-b09c-272d4f81f8f2",
+              "title": "Nd787 C4 L06 01 Introduction V1",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "he2b-oN5ehs",
+                "china_cdn_id": "he2b-oN5ehs.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 615483,
+          "key": "0641445d-3dc0-4368-803f-48bcbbba3ad5",
+          "title": "Optical Flow Estimation Overview",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "0641445d-3dc0-4368-803f-48bcbbba3ad5",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 629010,
+              "key": "872ce52e-4368-4c96-95d5-6db9f0a86787",
+              "title": "Nd787 C4 L06 02 Optical Flow Estimation Overview V1",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "Ar4wSP28NtM",
+                "china_cdn_id": "Ar4wSP28NtM.mp4"
+              }
+            },
+            {
+              "id": 619903,
+              "key": "fd64043a-990a-406e-b3e3-99b5b5efc68a",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Identifying u and v\n\nGiven the following two images from subsequent frames, identify the image frame velocity vector <span class=\"mathquill\">(u,v)</span>.\n\nThe origin is at the top left of the image. The <span class=\"mathquill\">x</span> axis points right and the the <span class=\"mathquill\">y</span> axis points down.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 619902,
+              "key": "efbd987c-b2da-429f-8aac-e3f222d8b7c0",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/April/5ae7a114_gps-denied-1/gps-denied-1.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/efbd987c-b2da-429f-8aac-e3f222d8b7c0",
+              "caption": "",
+              "alt": "",
+              "width": 1469,
+              "height": 827,
+              "instructor_notes": null
+            },
+            {
+              "id": 619905,
+              "key": "1d096571-2215-4f28-b01f-b405c8abe0c2",
+              "title": "",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "1d096571-2215-4f28-b01f-b405c8abe0c2",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "What is <span class=\"mathquill\">u</span> for the above images?",
+                "answers": [
+                  {
+                    "id": "a1525129627906",
+                    "text": "<span class=\"mathquill\">-3</span>",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1525129671394",
+                    "text": "<span class=\"mathquill\">-1</span>",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1525129678346",
+                    "text": "<span class=\"mathquill\">1</span>",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1525129679451",
+                    "text": "<span class=\"mathquill\">3</span>",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1525129756605",
+                    "text": "Impossible to determine",
+                    "is_correct": false
+                  }
+                ]
+              }
+            },
+            {
+              "id": 619906,
+              "key": "ea1382e0-d3b0-4439-a082-32e4f0b3934c",
+              "title": "",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "ea1382e0-d3b0-4439-a082-32e4f0b3934c",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "What is <span class=\"mathquill\">v</span> for the above images?",
+                "answers": [
+                  {
+                    "id": "a1525129888430",
+                    "text": "<span class=\"mathquill\">-3</span>",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1525129928330",
+                    "text": "<span class=\"mathquill\">-1</span>",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1525129929403",
+                    "text": "<span class=\"mathquill\">1</span>",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1525129930379",
+                    "text": "<span class=\"mathquill\">3</span>",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1525129940476",
+                    "text": "Impossible to determine",
+                    "is_correct": false
+                  }
+                ]
+              }
+            },
+            {
+              "id": 619908,
+              "key": "30cd0dce-6828-497d-8f39-cbea0f65d947",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Now, consider the following two images of a long vertical line taken at subsequent frames. ",
+              "instructor_notes": ""
+            },
+            {
+              "id": 619907,
+              "key": "a42c2669-fc53-40f8-a94e-5627a26b6cf2",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/April/5ae7a30c_gps-denied-2/gps-denied-2.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/a42c2669-fc53-40f8-a94e-5627a26b6cf2",
+              "caption": "",
+              "alt": "",
+              "width": 1383,
+              "height": 816,
+              "instructor_notes": null
+            },
+            {
+              "id": 619909,
+              "key": "4cedfe55-95be-44f0-8d33-06ac00f0433c",
+              "title": "",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "4cedfe55-95be-44f0-8d33-06ac00f0433c",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "What is <span class=\"mathquill\">u</span> for the above images?",
+                "answers": [
+                  {
+                    "id": "a1525130106320",
+                    "text": "<span class=\"mathquill\">-3</span>",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1525130122829",
+                    "text": "<span class=\"mathquill\">-1</span>",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1525130123395",
+                    "text": "<span class=\"mathquill\">1</span>",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1525130123811",
+                    "text": "<span class=\"mathquill\">3</span>",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1525130189374",
+                    "text": "Impossible to determine",
+                    "is_correct": false
+                  }
+                ]
+              }
+            },
+            {
+              "id": 619910,
+              "key": "35c4e5ce-bcc3-458d-bf34-0afee3113b78",
+              "title": "",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "35c4e5ce-bcc3-458d-bf34-0afee3113b78",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "What is <span class=\"mathquill\">v</span> for the above images?",
+                "answers": [
+                  {
+                    "id": "a1525130211426",
+                    "text": "<span class=\"mathquill\">-3</span>",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1525130218847",
+                    "text": "<span class=\"mathquill\">-1</span>",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1525130219399",
+                    "text": "<span class=\"mathquill\">1</span>",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1525130219911",
+                    "text": "<span class=\"mathquill\">3</span>",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1525130220496",
+                    "text": "<span class=\"mathquill\">0</span>",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1525130254625",
+                    "text": "Impossible to determime",
+                    "is_correct": true
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 615484,
+          "key": "7bf04f59-4664-4416-ab7e-b0eb0bafeb56",
+          "title": "Good Features to Track",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "7bf04f59-4664-4416-ab7e-b0eb0bafeb56",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 629011,
+              "key": "9de4d9c0-9e97-4dda-8245-3d6bdc393c8e",
+              "title": "Nd787 C4 L06 03 Good Features To Track V1",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "Tl51Hmt-MMs",
+                "china_cdn_id": "Tl51Hmt-MMs.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 613971,
+          "key": "01063c18-6894-4ce6-a9d8-350f3e5679ea",
+          "title": "Feature Tracker Exercise",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "01063c18-6894-4ce6-a9d8-350f3e5679ea",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 613981,
+              "key": "a2a78885-96a9-4b09-a570-4a5b5927d4c6",
+              "title": null,
+              "semantic_type": "WorkspaceAtom",
+              "is_public": true,
+              "workspace_id": "view21636b04",
+              "pool_id": "jupyter",
+              "view_id": "21636b04-ddc5-4356-ad08-ef6ab67ab302",
+              "gpu_capable": false,
+              "configuration": {
+                "id": "reserved",
+                "blueprint": {
+                  "conf": {
+                    "disk": null,
+                    "ports": [],
+                    "allowSubmit": false,
+                    "defaultPath": "/notebooks/Feature-Tracker.ipynb"
+                  },
+                  "kind": "jupyter"
+                },
+                "workspaceId": "reserved"
+              },
+              "starter_files": null
+            }
+          ]
+        },
+        {
+          "id": 615485,
+          "key": "4bd4150b-9fad-44d5-8332-072cf8603bea",
+          "title": "Tracking a Single Pixel",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "4bd4150b-9fad-44d5-8332-072cf8603bea",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 629012,
+              "key": "bd2ec191-3fec-40b5-bfb5-cced5640f3e5",
+              "title": "Nd787 C4 L06 04 Tracking A Single Pixel V1",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "7b-DUiAxuJo",
+                "china_cdn_id": "7b-DUiAxuJo.mp4"
+              }
+            },
+            {
+              "id": 619921,
+              "key": "fdcd8d08-29be-473c-9fed-e51e7fbcf459",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Math Walkthrough\n\nThe diagram below shows a pixel that has moved from <span class=\"mathquill\">(x,y)</span> at time <span class=\"mathquill\">t</span> to <span class=\"mathquill\">(x+u, y+v)</span> at time <span class=\"mathquill\">t+1</span>.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 619919,
+              "key": "6c837764-8226-40da-b66d-84890722c229",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/April/5ae7a5fd_screen-shot-2018-04-30-at-4.25.00-pm/screen-shot-2018-04-30-at-4.25.00-pm.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/6c837764-8226-40da-b66d-84890722c229",
+              "caption": "",
+              "alt": "",
+              "width": 335,
+              "height": 332,
+              "instructor_notes": null
+            },
+            {
+              "id": 619923,
+              "key": "7f2cd28a-3de2-4eb9-b539-64113e7f83c2",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "From this picture, it's easy to figure out the velocity vector <span class=\"mathquill\">(u,v)</span>. But when we look at two real images, we'd first need to solve what's called the **pixel correspondence problem**. That is, we need to know which pixels in image 2 correspond to which pixels in image 1. \n\nTo solve this problem we make two assumption.\n\n**Assumption 1: the motion is small**: this means we can look in the vicinity of where the pixel *was* to try to determine where it now *is*.\n\n**Assumption 2: the appearance doesn't change from <span class=\"mathquill\">t</span> to <span class=\"mathquill\">t+1</span>**: this assumption is best expressed mathematically.\n\n<div class=\"mathquill\">I(x,y,t) = I(x+u, y+v, t+1)</div>\n\nThis relationship is known as the **brightness constancy constraint**.\n\nIf we drop the time index and do a Taylor series expansion of the right hand side of this equation, we find the following:\n\n<div class=\"mathquill\">I(x+u,y+v) \\approx I(x, y) + \\frac{\\partial I}{\\partial x} u + \\frac{\\partial I}{\\partial y} v</div>\n\nWe can plug this back into the brightness constancy constraint and reorganize some terms to find the following:\n\n<div class=\"mathquill\">\\frac{\\partial I}{\\partial t} + \\frac{\\partial I}{\\partial x} u + \\frac{\\partial I}{\\partial y} v = 0</div>\n\nOr using the notation from the video (which is common in this field):\n\n<div class=\"mathquill\">I_t + I_x u + I_y v = 0</div>\n\nThis equation says that any change in the appearance of a pixel over time has to be explained by spatial motion induced by the camera movement. \n\n> Note: <span class=\"mathquill\">I(x,y,t)</span> gives the intensity of the pixel at location <span class=\"mathquill\">(x,y)</span> at time <span class=\"mathquill\">t</span>. If this is a gray-scale image, this intensity would be a single number corresponding to the darkness of the pixel. If this were a color image it might be a 3-vector with values giving the amount of red, green, and blue in the image.\n\n",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 615486,
+          "key": "8efb2520-9d12-4abe-845a-9b9da73a1ab8",
+          "title": "Lucas Kanade Optical Flow",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "8efb2520-9d12-4abe-845a-9b9da73a1ab8",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 629013,
+              "key": "da930ec0-574c-41f5-b627-4fcb5efa29a6",
+              "title": "Nd787 C4 L06 05 Lucas Kanade Optical Flow V1",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "oCtNseXe-SE",
+                "china_cdn_id": "oCtNseXe-SE.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 613972,
+          "key": "56be7eed-9b15-41f5-b7eb-f3342bc608d1",
+          "title": "Optical Flow Exercise",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "56be7eed-9b15-41f5-b7eb-f3342bc608d1",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 613986,
+              "key": "ef0b9748-0662-43b8-bcb9-0a903dd547d8",
+              "title": null,
+              "semantic_type": "WorkspaceAtom",
+              "is_public": true,
+              "workspace_id": "view6a856277",
+              "pool_id": "jupyter",
+              "view_id": "6a856277-b766-46ec-896f-30ee1879c41d",
+              "gpu_capable": false,
+              "configuration": {
+                "id": "reserved",
+                "blueprint": {
+                  "conf": {
+                    "ports": [],
+                    "allowSubmit": false,
+                    "defaultPath": "/notebooks/Optical-Flow.ipynb"
+                  },
+                  "kind": "jupyter"
+                },
+                "workspaceId": "reserved"
+              },
+              "starter_files": null
+            }
+          ]
+        },
+        {
+          "id": 615487,
+          "key": "40c47de2-d7ba-446f-bee9-a3cd1ab5e036",
+          "title": "Translating Optical Flow to Vehicle Velocity",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "40c47de2-d7ba-446f-bee9-a3cd1ab5e036",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 629014,
+              "key": "0a3ad605-22a4-4355-bc7a-987975a63a6e",
+              "title": "Nd787 C4 L06 06 Translating Optical Flow To Vehicle Velocity V1",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "AYJw2iHnqws",
+                "china_cdn_id": "AYJw2iHnqws.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 615488,
+          "key": "3aa6d875-9436-4444-bb3e-40f6fbb07a44",
+          "title": "Intro to Particle Filters",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "3aa6d875-9436-4444-bb3e-40f6fbb07a44",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 629015,
+              "key": "9346d7ae-8d8f-4309-88de-2ed48cf4908d",
+              "title": "Nd787 C4 L06 07 Introduction To Particle Filters V1",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "ELDLiyGN-7I",
+                "china_cdn_id": "ELDLiyGN-7I.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 615489,
+          "key": "17603d31-fe07-45f3-a092-d7eea6b56c6d",
+          "title": "Sampled Distributions",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "17603d31-fe07-45f3-a092-d7eea6b56c6d",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 629016,
+              "key": "1c3b111b-ad29-465c-a72e-3f7901dcd109",
+              "title": "Nd787 C4 L06 08 Sampled Distributions V1",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "946LtGH0DCs",
+                "china_cdn_id": "946LtGH0DCs.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 615490,
+          "key": "df98f75e-c2cf-41c6-bc2e-f5b57e8d4da1",
+          "title": "Propagating Samples",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "df98f75e-c2cf-41c6-bc2e-f5b57e8d4da1",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 629041,
+              "key": "ee9cc387-9c2e-4843-a83e-73d78f1316f0",
+              "title": "Nd787 C4 L06 09 Propagating Samples V2",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "i50D7RJqcIk",
+                "china_cdn_id": "i50D7RJqcIk.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 613968,
+          "key": "7e597350-d94b-40d9-81e7-b8446084b0ec",
+          "title": "Numerical Estimation Exercise",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "7e597350-d94b-40d9-81e7-b8446084b0ec",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 613974,
+              "key": "6bf2cf31-41db-4fc1-9bba-eec76b587205",
+              "title": null,
+              "semantic_type": "WorkspaceAtom",
+              "is_public": true,
+              "workspace_id": "viewd8eaef9c",
+              "pool_id": "jupyter",
+              "view_id": "d8eaef9c-b836-46ad-8d88-a475432ac5a8",
+              "gpu_capable": false,
+              "configuration": {
+                "id": "reserved",
+                "blueprint": {
+                  "conf": {
+                    "disk": null,
+                    "ports": [],
+                    "allowSubmit": false,
+                    "defaultPath": "/notebooks/Numerical-Estimation.ipynb"
+                  },
+                  "kind": "jupyter"
+                },
+                "workspaceId": "reserved"
+              },
+              "starter_files": null
+            }
+          ]
+        },
+        {
+          "id": 615491,
+          "key": "ae4471b9-1705-44db-98f8-28623adc7517",
+          "title": "Sampling from Arbitrary Distributions",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "ae4471b9-1705-44db-98f8-28623adc7517",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 629044,
+              "key": "3dfe9e52-d493-4025-8a82-92c8c2a0a0b6",
+              "title": "Nd787 C4 L06 10 Sampling From Arbitrary Distributions V3",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "Qwzd-9SmSxc",
+                "china_cdn_id": "Qwzd-9SmSxc.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 615492,
+          "key": "59253b57-2855-4e91-a140-ad6683874bba",
+          "title": "Sensor Modeling",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "59253b57-2855-4e91-a140-ad6683874bba",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 629046,
+              "key": "dacd387c-7f5c-46dd-ba04-45f97ae3d1f8",
+              "title": "Nd787 C4 L06 11 Sensor Modelling V2",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "5MPNYyKvHbc",
+                "china_cdn_id": "5MPNYyKvHbc.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 615493,
+          "key": "4d81af4c-98ed-4f98-bb05-bcf89dd21814",
+          "title": "Monte Carlo Sampling for Sensor Fusion",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "4d81af4c-98ed-4f98-bb05-bcf89dd21814",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 629048,
+              "key": "3ac51a6a-1ce5-43dc-9183-f7a3695998ec",
+              "title": "Nd787 C4 L06 12 Monte Carlo Sampling For Sensor Fusion V2",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "K2bd8zcoicU",
+                "china_cdn_id": "K2bd8zcoicU.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 613969,
+          "key": "0c7255cb-1740-414e-b79e-7bfb5d460b02",
+          "title": "Sensor Fusion Exercise",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "0c7255cb-1740-414e-b79e-7bfb5d460b02",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 613978,
+              "key": "50ec3cb3-7b8e-4c7d-aabd-512aa0774741",
+              "title": null,
+              "semantic_type": "WorkspaceAtom",
+              "is_public": true,
+              "workspace_id": "view60d5d90c",
+              "pool_id": "jupyter",
+              "view_id": "60d5d90c-dcdf-4c54-bcd3-6afa21f5372d",
+              "gpu_capable": false,
+              "configuration": {
+                "id": "reserved",
+                "blueprint": {
+                  "conf": {
+                    "ports": [],
+                    "allowSubmit": false,
+                    "defaultPath": "/notebooks/Sensor-Fusion.ipynb"
+                  },
+                  "kind": "jupyter"
+                },
+                "workspaceId": "reserved"
+              },
+              "starter_files": null
+            }
+          ]
+        },
+        {
+          "id": 615494,
+          "key": "44ff3952-8df5-4f1b-8a4c-3ab349a31230",
+          "title": "Putting it All Together",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "44ff3952-8df5-4f1b-8a4c-3ab349a31230",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 629049,
+              "key": "50c37202-8814-42fe-8562-6f52d94abbe3",
+              "title": "Nd787 C4 L06 13 Putting It All Together V3",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "sKL8dIoJvW0",
+                "china_cdn_id": "sKL8dIoJvW0.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 613970,
+          "key": "ffd70c18-2429-447a-8b54-919e0fa3692a",
+          "title": "Particle Filter Exercise",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "ffd70c18-2429-447a-8b54-919e0fa3692a",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 613980,
+              "key": "6419efda-20a3-4544-8e01-00a1b3073cce",
+              "title": null,
+              "semantic_type": "WorkspaceAtom",
+              "is_public": true,
+              "workspace_id": "view76d5583d",
+              "pool_id": "jupyter",
+              "view_id": "76d5583d-48ac-4762-84dc-d397b558cb2e",
+              "gpu_capable": false,
+              "configuration": {
+                "id": "reserved",
+                "blueprint": {
+                  "conf": {
+                    "disk": null,
+                    "ports": [],
+                    "allowSubmit": false,
+                    "defaultPath": "/notebooks/Particle-Filter.ipynb"
+                  },
+                  "kind": "jupyter"
+                },
+                "workspaceId": "reserved"
+              },
+              "starter_files": null
+            }
+          ]
+        },
+        {
+          "id": 615495,
+          "key": "6131dc1a-cd32-4b94-99b4-480e695f2dad",
+          "title": "Particle Filter Pros and Cons",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "6131dc1a-cd32-4b94-99b4-480e695f2dad",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 629050,
+              "key": "bcf3b739-a4d8-4469-b5e0-73ba6526a850",
+              "title": "Nd787 C4 L06 14 Particle Filter Pros And Cons V3",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "ghaL55MOZHI",
+                "china_cdn_id": "ghaL55MOZHI.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 615496,
+          "key": "5f1e93f5-fab1-402d-ba84-f27d5ee94cc6",
+          "title": "Conclusion",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "5f1e93f5-fab1-402d-ba84-f27d5ee94cc6",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 629026,
+              "key": "55a20762-eec7-42c8-bf01-6d9e14f66d71",
+              "title": "Nd787 C4 L06 15 Conclusion V1",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "zcAOzXxidug",
+                "china_cdn_id": "zcAOzXxidug.mp4"
+              }
+            },
+            {
+              "id": 619926,
+              "key": "87c61444-3bff-4b7e-ae59-735d9b1e3aaa",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Additional Resources\n\n* This [Github repository](https://github.com/rlabbe/Kalman-and-Bayesian-Filters-in-Python) is a sequence of interactive Jupyter notebooks on Kalman Filters, Particle Filters, etc... we highly recommend you take a look if you're looking to learn more about Particle Filters.\n\n* Udacity has a free course called [Artificial Intelligence for Robotics](https://classroom.udacity.com/courses/cs373). The lesson on particle filters takes a more simplified approach to the topic.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 619927,
+              "key": "4e6a636e-de53-43f0-8a56-844e29bf96c8",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": " ",
+              "instructor_notes": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "_deprecated": [
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    }
+  ]
+}

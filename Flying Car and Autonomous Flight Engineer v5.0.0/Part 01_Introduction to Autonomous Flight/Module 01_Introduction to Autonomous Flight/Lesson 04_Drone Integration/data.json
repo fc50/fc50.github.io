@@ -1,0 +1,700 @@
+{
+  "data": {
+    "lesson": {
+      "id": 486486,
+      "key": "e531d99b-a8db-4139-863a-45a925ddcac5",
+      "title": "Drone Integration",
+      "semantic_type": "Lesson",
+      "is_public": true,
+      "version": "1.0.0",
+      "locale": "en-us",
+      "summary": "Walkthrough the steps you need to take to get your code running on an actual drone! We'll show you the steps for the \"Intel Aero\", but a lot of what you'll learn applies to other drones as well.",
+      "lesson_type": "Classroom",
+      "display_workspace_project_only": null,
+      "resources": {
+        "files": [
+          {
+            "name": "Videos Zip File",
+            "uri": "https://zips.udacity-data.com/e531d99b-a8db-4139-863a-45a925ddcac5/486486/1538762712331/Drone+Integration+Videos.zip"
+          },
+          {
+            "name": "Transcripts Zip File",
+            "uri": "https://zips.udacity-data.com/e531d99b-a8db-4139-863a-45a925ddcac5/486486/1538762708281/Drone+Integration+Subtitles.zip"
+          }
+        ],
+        "google_plus_link": null,
+        "career_resource_center_link": null,
+        "coaching_appointments_link": null,
+        "office_hours_link": null,
+        "aws_provisioning_link": null
+      },
+      "project": null,
+      "lab": null,
+      "concepts": [
+        {
+          "id": 569374,
+          "key": "5470ff2c-10fa-493f-8d1c-33b76a5675c6",
+          "title": "Drone Integration Introduction",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "5470ff2c-10fa-493f-8d1c-33b76a5675c6",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 569376,
+              "key": "d611e3cd-88d6-498c-a15d-ad948b9d93a5",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Now that we've had a chance to control a drone in simulation, we will take a look at bringing those concepts to a real drone!\n\nIn this lesson, we will familiarize ourselves with some examples of commercially available drones.  We will explore some of the features, functionality, and limitations of these aerial robots.  We will focus on some example drones that are compatible with the Udacidrone interface, meaning they will be compatible with the code we've written for the simulator!\n\nWhether or not you are following along with your very own drone, this lesson provides an introduction to some common parts of the drone ecosystem.  For this lesson, we will be using an Intel Aero Ready to Fly drone as an example platform, but it is important to note that many of the features and functionality we discuss is quite typical of many drones.\n\n**Note:** The Intel Aero drone unfortunately ceased production in early 2019, with only limited availability on the re-sale market. As noted above, a lot of this lesson will still apply to other drones as well.\n\nWe will go through some high-level topics (e.g. manual command and control), some of the core elements making up a drone system (not just the drone itself, but also pieces such as the remote control, ground stations, autonomous control, etc), and what it starts to look like as we move beyond having a drone as a toy to just fly around and start to run our own code on the drone, getting it to really do what we want and how we want it.\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 569375,
+              "key": "8c485882-91cc-4f0c-88b7-115e2e2bc2bf",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Compatible Platforms ##\n\nAll the python code written in the project is designed to communicate with the simulator and a real drone through the Udacidrone API.  At the moment Udacidrone fully supports all PX4 drones and development for Crazyflie support is in progress.  To ensure the best experience with integrating code onto a real drone, we recommend one of the following drones:\n\n - Intel's [Aero Ready to Fly](https://www.intel.com/content/www/us/en/products/drones/aero-ready-to-fly.html) drone\n - Bitcraze's [Crazyflie 2.1](https://store.bitcraze.io/collections/bundles/products/stem-drone-bundle)\n\nThe Crazyflie is the recommended platform for students who are new to flying drones. Udacity has partnered with Bitcraze to offer Flying Car Nanodegree students an exclusive discount for the Crazyflie drone bundle. In order to receive the Bitcraze discount offer via email, you will need to be subscribed to the Udacity email. You may check your email subscription settings in your Udacity account settings. If you did not receive an email but would like to purchase the drone bundle, please contact your mentor and they will be able to assist you.\n\nThe following lessons are developed around the Intel Aero, however, Crazyflie lessons are on their way!",
+              "instructor_notes": ""
+            },
+            {
+              "id": 629723,
+              "key": "16a4650f-5202-4cf9-8495-57926c0839dd",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Purchasing ##\n\n### Intel Aero ###\n\nWhen buying the Intel Aero, there are a couple additional items to make sure you have in order to take full advantage of your Intel Aero and its onboard computer.\n\n 1. The battery needed for flight does not come with the Aero and needs to be purchased separately.  Intel recommends either a 3S or a 4S LiPo battery with at least 4500mAh of capacity and an XT60 connector.  Consult their [detailed instruction manual](https://github.com/intel-aero/meta-intel-aero/wiki/01-About-Intel-Aero#powering-the-intel-aero-ready-to-fly-drone-for-developers) for more details such as the maximum possible battery dimensions.\n\n 2. To connect the computer to a monitor, you will need a cable that has a micro-HDMI end for the Intel Aero.  For example you may want a micro-HDMI to HDMI cable (e.g. a regular TV) or micro-HDMI to DVI or micro-HDMI to display port (e.g. a computer monitor).\n\n 3. To use the computer with a keyboard and mouse, you will need an OTG micro-usb cable and a USB hub with the number of ports you may need.\n\n 4. A wall power adapter to be able to use the computer without needing to run it off a battery.  See Intel's [guide for powering the intel aero](https://github.com/intel-aero/meta-intel-aero/wiki/01-About-Intel-Aero#powering-the-intel-aero-ready-to-fly-drone-for-developers) to get an idea of the power requirements for the wall adatper.  **Note that you will not be able to power the motors with these wall adapters, this is for bench work only!**",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 486487,
+          "key": "404ad773-9067-491c-aab9-83a4ba3f6ea5",
+          "title": "Intel Aero Unboxing",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "404ad773-9067-491c-aab9-83a4ba3f6ea5",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 569373,
+              "key": "0b268adc-0abb-49ee-b7b8-88c041e9d9cb",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Let's start taking a look at what getting a drone like an Intel Aero looks like.  In this series of lessons we will go through from unboxing our new drone through to running our backyard flyer script on it!  Along the way, we will take a closer at:\n\n - all the elements needed to fly a drone\n - the specific control mechanics of the drone\n - a commonly used open source ground station software\n - a little bit on safety and regulations\n\nNote that these lessons are built around the Intel Aero, however, many of the topics covered are valid for any PX4 based drone.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 565491,
+              "key": "61f0a4da-e560-4f53-8fb2-1c4ab374b26a",
+              "title": "Nd787 C1 L4 A01 Intel Aero Unboxing V3",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "_4r9ghv6Mm8",
+                "china_cdn_id": "_4r9ghv6Mm8.mp4"
+              }
+            },
+            {
+              "id": 486499,
+              "key": "b8cfdfa6-56e0-4413-8e79-ac93337f36b0",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# What's Inside? #\n\nTo summarize what we have found in the box:\n\n - some instruction and getting started guides (which you should familiarize yourself with)\n - the Intel Aero drone itself\n - a remote control for manually piloting the drone\n - a box of propellers\n\n\nNote that the box does **not** include any batteries needed for flying the drone, so we will need to buy those separately.  Intel recommends one of the following choices for a battery:\n\n - 3 cell (3S, 11.1V) battery with at least 4000mAh of capacity\n - 4 cell (4S, 14.8V) battery with at least 4000mAh of capacity",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 550744,
+          "key": "77f1b5f3-b7e0-436a-8540-4e87ec0391fd",
+          "title": "Intel Aero First Boot",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "77f1b5f3-b7e0-436a-8540-4e87ec0391fd",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 569135,
+              "key": "7efaa56e-be18-4d3b-88ef-fb63a978e43e",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Now that we have our drone out of the box, let's start getting it set up!  We'll be walking through many of the pieces of [Intel Aero's quick start guide](https://www.intel.com/content/dam/support/us/en/documents/boardsandkits/aero/intel-aero-rtf-drone-getting-started.pdf) to get familiar with all the components in the box, the elements of the Intel Aero, and how it connects to our backyard flyer.  For those following along with your own Aero, make sure you also take some time to flip through that guide.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 565492,
+              "key": "d6fab033-fa4b-44a9-85da-adeb61b5f00d",
+              "title": "Nd787 C1 L4 A02 Intel Aero First Boot V3",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "jXKZwWdhLpA",
+                "china_cdn_id": "jXKZwWdhLpA.mp4"
+              }
+            },
+            {
+              "id": 565548,
+              "key": "b79a7e8d-4bc6-4115-b05b-f179b427159e",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Flight Modes ##",
+              "instructor_notes": ""
+            },
+            {
+              "id": 569025,
+              "key": "c81e8a16-e015-48c8-ab49-2622caf9b348",
+              "title": "Nd787 C1 L4 A02 L Intel Aero Flight Modes 2 V1",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "CemgWroChSE",
+                "china_cdn_id": "CemgWroChSE.mp4"
+              }
+            },
+            {
+              "id": 565547,
+              "key": "5aa38f62-f87e-4042-b876-43c1fbb9ab52",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## The Remote Control ##",
+              "instructor_notes": ""
+            },
+            {
+              "id": 565493,
+              "key": "2ab0c9b6-fad9-4be2-8f08-a050416ca6c7",
+              "title": "Nd787 C1 L4 A02 L Intel Aero Remote Control 3 V2",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "_Ei05vGbttg",
+                "china_cdn_id": "_Ei05vGbttg.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 550740,
+          "key": "f97e23d8-ba9b-4c32-83c7-64b18496c44d",
+          "title": "A Note on Safety",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "f97e23d8-ba9b-4c32-83c7-64b18496c44d",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 569023,
+              "key": "662d372e-be3b-465f-ad82-f41e807c1092",
+              "title": "Nd787 C1 L4 A07 L A Note On Safety 1 V1",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "4-9CidAXkNI",
+                "china_cdn_id": "4-9CidAXkNI.mp4"
+              }
+            },
+            {
+              "id": 569132,
+              "key": "14d67968-0b8c-420b-9a9f-f53addcc8b55",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Drone Regulations ##\n\nRegardless of what drone you may be flying, make sure before you go out flying you have familiarized yourself with the drone regulations for your country.\n\n### US Regulation Resources ###\n\nFor those of you flying in the US, here are some links to important resources you should be aware of before flying a drone:\n\n - [Know Before You Fly](http://knowbeforeyoufly.org/) - a great starting point for better understanding the different rules and regulations surrounding drones in the US.\n - [Registering your drone](https://www.faa.gov/uas/getting_started/) - in the US, all drones above a certain weight need to be registered with the FAA and appropriately marked.\n - [Part 107](https://www.faa.gov/uas/getting_started/part_107/) - for those of you looking to fly beyond the capacity of a hobbyist.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 565550,
+              "key": "965e6a61-7adf-4868-9428-4d170febcaea",
+              "title": "Nd787 C1 L4 A02 L Intel Aero Safety Subclip 4 V2",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "gKulshbx8J0",
+                "china_cdn_id": "gKulshbx8J0.mp4"
+              }
+            },
+            {
+              "id": 569133,
+              "key": "a062f3ab-6b05-4ce6-b44d-e29da3db43ab",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Safety Tips ##\n\nWhen flying, here are some general safety tips that you should keep in mind.  In general, it's always good to err on the side of caution.  Most importantly, fly where and when you are comfortable!\n\n - be aware of your surroundings, including people, obstacles, and other drones and aircraft\n - yield to, and leave plenty of space with, manned aircraft\n - don't fly over people\n - make sure you are flying in a large enough space for your level of comfort and control\n - if this is your first time flying a drone, practice flying the drone manually to get a feel for how it flies before going right to autonomous flights\n\nThere are a helpful set of [community guidelines created by the Academy of Model Aeronautics](https://www.modelaircraft.org/files/105.pdf) that are a great set of guidelines to follow for safety when flying.\n\nIt is also important to remember that most of these drones, including the Intel Aero, do **NOT** come with obstacle avoidance!  The only obstacle avoidance is the pilot. Therefore it is very important that the pilot always keep an eye on the drone at all times, even during autonomous flight.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 565544,
+              "key": "30eca020-3ed5-4619-9682-b87f1e7efbad",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Disclaimer ##\n\nPLEASE REMEMBER THAT YOUR RIGHT TO USE ANY CODE PROVIDED BY UDACITY IS SUBJECT TO OUR TERMS OF USE, THE FLYING CAR SPECIAL TERMS, HONOR CODE, AND COMMUNITY CODE OF CONDUCT. TO THE EXTENT UDACITY PROVIDES YOU CODE TO USE IN CONNECTION WITH DEMONSTRATING FLYING DRONES AND/OR OTHER AUTONOMOUS FLYING VEHICLES, SUCH CODE IS PROVIDED “AS IS” WITH NO REPRESENTATIONS OR WARRANTIES OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NONINFRINGEMENT. YOU ASSUME TOTAL RESPONSIBILITY AND THE ENTIRE RISK FOR YOUR USE OF ANY CODE AND/OR OPERATION OF ANY AUTONOMOUS FLYING/UNMANNED VEHICLES. TO THE FULLEST EXTENT ALLOWED UNDER THE LAW, UDACITY DISCLAIMS ANY AND ALL LIABILITY RELATING TO YOUR USE OF ANY CODE OR YOUR OPERATION OF ANY UNMANNED AIRCRAFT OR FLYING VEHICLE AS SET FORTH IN THE TERMS OF USE, INCLUDING, BUT NOT LIMITED TO PROPERTY DAMAGE, PERSONAL INJURY, OR DEATH. TO THE EXTENT THAT YOU USE UDACITY’S CODE AND/OR YOUR OWN CODE FOR THE PURPOSES OF THIS COURSE, INCLUDING, BUT NOT LIMITED TO, USE CONNECTED WITH A FLYING DRONE, OR AS OTHERWISE ALLOWED BY UDACITY, SUCH USE BY YOU SHALL COMPLY WITH ALL FEDERAL, STATE, PROVINCIAL, AND/OR LOCAL LAWS REGARDING THE LICENSURE, REGISTRATION, AND OPERATION OF UNMANNED AIRCRAFT OR OTHER VEHICLES. FOR EXAMPLE, BUT NOT IN ANY WAY AS A LIMITATION, THE U.S. FEDERAL AVIATION ADMINISTRATION HAS SPECIFIC RULES RELATING TO THE OPERATION OF UNMANNED AIRCRAFT. THERE ARE ALSO PRIVACY REGULATIONS THAT MAY BE APPLICABLE TO YOUR USE OF THE CODE AND/OR OPERATION OF UNMANNED AIRCRAFT AND/OR VEHICLES AND ARE REQUIRED TO COMPLY WITH THOSE LAWS.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 550422,
+          "key": "375293b2-2e41-4c07-80fa-b4b83d3d0481",
+          "title": "Intel Aero Setup",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "375293b2-2e41-4c07-80fa-b4b83d3d0481",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 550432,
+              "key": "385fb537-c50d-4bd8-8e9b-94937771df71",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "In this section, we will make sure that our Intel Aero is running the most up to date software to ensure Backyard Flyer will work as best as possible.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 550434,
+              "key": "71a4d197-7db2-43ba-b832-e707e5838f5e",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Checking Intel Aero Version ##\n\n\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 565494,
+              "key": "a27425a7-9b13-467e-abae-28365a1b5c03",
+              "title": "Nd787 C1 L4 A03 L Backyard Flyer Aero Software Check 2 V4",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "TNoqm87Yd6c",
+                "china_cdn_id": "TNoqm87Yd6c.mp4"
+              }
+            },
+            {
+              "id": 550435,
+              "key": "5fb9052a-272d-4b7e-a589-a0c3c41bdd80",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Logging in to Aero ##\n\nThe Intel Aero broadcasts a wifi hotspot that allows us to connect to the onboard computer and both get telemetry information from the drone and access the operating system of the onboard computer.\n\n### Connect to Wifi ###\nThe Intel Aero is broadcasting a wifi hotspot we can log into that should start with the prefix **Aero-**.\n\nTo connect, the password is 1234567890.\n\n### SSH Into Aero Computer ###\n\nOnce connected, we can then ssh into the Intel Aero with the following information:\n\n - **ip address:** 192.168.8.1\n - **username:** root\n - **password:** none\n\n\nFor additional details on the network configurations of the Intel Aero, check out [this guide on Intel Aero's Network Configuration](https://github.com/intel-aero/meta-intel-aero/wiki/08-Aero-Network-and-System-Administration).",
+              "instructor_notes": ""
+            },
+            {
+              "id": 550436,
+              "key": "7e6a0cca-e2ac-4efa-a752-6da4eec0811b",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Updating Intel Aero ##\n\nIf the Intel Aero needs to be updated to the newest version of the operating system, we can follow along with these [initial setup instructions](https://github.com/intel-aero/meta-intel-aero/wiki/02-Initial-Setup).  For easiest setup, you will need the following items:\n\n - keyboard and mouse\n - monitor\n - micro HDMI cable to connect to a monitor\n - USB OTG cable\n\nNote that each version of the Intel Aero operating system comes bundled with a new version of the PX4 autopilot that is designed to work best with that version of the OS.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 650319,
+              "key": "80f4dfd0-4f4c-4fe1-ad1f-ba48f0d38b9c",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Companion Computer OS ##\n\nDuring the setup, it was seen that the Intel Aero is running Yocto linux on board.  For integrating the backyard flyer script, there will be no need to change the operating system on the drone.  It is worth noting that the Intel Aero is also [capable of running a full version of Ubuntu](https://github.com/intel-aero/meta-intel-aero/wiki), so for any of you interested in exploring more applications on your own, keep in mind that that is possible.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 550424,
+          "key": "78c77e52-47c3-418f-ac6b-e5838edd0c0b",
+          "title": "Getting Familiar with QGroundControl",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "78c77e52-47c3-418f-ac6b-e5838edd0c0b",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 565496,
+              "key": "1f50b0c2-8551-40d1-baaa-39c158a09b57",
+              "title": "Nd787 C1 L4 A04 L Getting Familiar With QGroundControl 1 V3",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "z4_m_IIek-Q",
+                "china_cdn_id": "z4_m_IIek-Q.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 550423,
+          "key": "fcc10555-ccb2-4658-849c-904c2110c39d",
+          "title": "Configure PX4",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "fcc10555-ccb2-4658-849c-904c2110c39d",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 550437,
+              "key": "553bfced-5b82-4d68-975d-10103b7a1644",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Now that we are familiar with QGroundControl and know how to connect to our drone, let's go ahead and check sensor calibrations and make some configuration changes to the PX4 autopilot.\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 565497,
+              "key": "97ac20f7-a0af-4d47-beb5-fc40ec34d7ac",
+              "title": "Nd787 C1 L4 A05 L Configure PX4 1 V2",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "q2S4JOSX9wA",
+                "china_cdn_id": "q2S4JOSX9wA.mp4"
+              }
+            },
+            {
+              "id": 550440,
+              "key": "7b4ec0e4-d628-4cc0-baa3-193271193c80",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Configuring PX4 #\n\nTo recap configuring the PX4 autopilot, we:\n\n - checked to make sure all our sensors were calibrated and ran any calibrations required\n - checked to make sure our radio was properly calibrated and determined which switches control which channels\n - updated the battery settings to match the battery we are using\n - updated the flight control mode options to ensure we have the following options available:\n     + `Manual` - most basic level of control, the drone will not maintain altitude or position automatically, will just stay level when no input is provided\n     + `Altitude` - maintains current altitude\n     + `Position Control` - uses GPS information to hold the drone in position when the pilot gives no inputs\n     + `Offboard` - this is the mode in which we give control of the drone to our backyard flyer script\n - slowed down the flight speed when in `Offboard` mode by changing the following parameters:\n     + `MPC_XY_CRUISE` - changed to 4 m/s\n     + `MPC_XY_VEL_MAX` - changed to 5 m/s\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 550438,
+              "key": "ff10642e-6191-4d77-84ba-5f64eb401444",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Reminders for Fresh Install of PX4 ##\n\nIf we've just updated your Intel Aero, or have reflashed a new version of PX4 onto our autopilot, we will need to make sure to complete the initial setup of your autopilot:\n\n - ensure sensors have all been calibrated\n - ensure remote control has been calibrated\n - ensure the values in the battery configuration match the battery you will be using\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 550439,
+              "key": "ce3a89e4-f83a-4829-b1e5-8af19a025033",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## For Generic PX4 Autopilot ##\n\nIf we are working with a generic PX4 autopilot, PX4 is not by default set up to allow offboard control, so we will need to make sure to enable that.  We can find the [detailed instructions here](https://dev.px4.io/en/ros/offboard_control.html), but in short, we will need to set the `SYS_COMPANION` parameter to the value `357600`.  This value tells the PX4 that offboard control will be coming over the normal telemetry link at a baud rate of `57600`.  For details on the options available for the parameter, we can [look at PX4's documentation on the parameters](https://dev.px4.io/en/advanced/parameter_reference.html#SYS_COMPANION).",
+              "instructor_notes": ""
+            },
+            {
+              "id": 569197,
+              "key": "0d5842d4-c48f-43c4-b658-f9d6880e7189",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Disclaimer ##\n\nPLEASE REMEMBER THAT YOUR RIGHT TO USE ANY CODE PROVIDED BY UDACITY IS SUBJECT TO OUR TERMS OF USE, THE FLYING CAR SPECIAL TERMS, HONOR CODE, AND COMMUNITY CODE OF CONDUCT. TO THE EXTENT UDACITY PROVIDES YOU CODE TO USE IN CONNECTION WITH DEMONSTRATING FLYING DRONES AND/OR OTHER AUTONOMOUS FLYING VEHICLES, SUCH CODE IS PROVIDED “AS IS” WITH NO REPRESENTATIONS OR WARRANTIES OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NONINFRINGEMENT. YOU ASSUME TOTAL RESPONSIBILITY AND THE ENTIRE RISK FOR YOUR USE OF ANY CODE AND/OR OPERATION OF ANY AUTONOMOUS FLYING/UNMANNED VEHICLES. TO THE FULLEST EXTENT ALLOWED UNDER THE LAW, UDACITY DISCLAIMS ANY AND ALL LIABILITY RELATING TO YOUR USE OF ANY CODE OR YOUR OPERATION OF ANY UNMANNED AIRCRAFT OR FLYING VEHICLE AS SET FORTH IN THE TERMS OF USE, INCLUDING, BUT NOT LIMITED TO PROPERTY DAMAGE, PERSONAL INJURY, OR DEATH. TO THE EXTENT THAT YOU USE UDACITY’S CODE AND/OR YOUR OWN CODE FOR THE PURPOSES OF THIS COURSE, INCLUDING, BUT NOT LIMITED TO, USE CONNECTED WITH A FLYING DRONE, OR AS OTHERWISE ALLOWED BY UDACITY, SUCH USE BY YOU SHALL COMPLY WITH ALL FEDERAL, STATE, PROVINCIAL, AND/OR LOCAL LAWS REGARDING THE LICENSURE, REGISTRATION, AND OPERATION OF UNMANNED AIRCRAFT OR OTHER VEHICLES. FOR EXAMPLE, BUT NOT IN ANY WAY AS A LIMITATION, THE U.S. FEDERAL AVIATION ADMINISTRATION HAS SPECIFIC RULES RELATING TO THE OPERATION OF UNMANNED AIRCRAFT. THERE ARE ALSO PRIVACY REGULATIONS THAT MAY BE APPLICABLE TO YOUR USE OF THE CODE AND/OR OPERATION OF UNMANNED AIRCRAFT AND/OR VEHICLES AND ARE REQUIRED TO COMPLY WITH THOSE LAWS.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 486493,
+          "key": "ea57c5d4-9bd1-4645-86b9-6cafdfe34ce7",
+          "title": "Modifying Backyard Flyer",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "ea57c5d4-9bd1-4645-86b9-6cafdfe34ce7",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 550442,
+              "key": "0ece904f-f9ba-46b5-b825-63d05b1b9c28",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Updating Your Project Code #\n\nIn this section we will update the project code to be able to control a real drone.\n\nWhile there is really only one line in the code that needs to change for this to work (the connection to PX4), we will be making several modifications to the project code for safety.\n\nWe will be making 3 different changes to our backyard flyer script in order to run properly and safely on our drone:\n\n - **updating the connection type** - here we will change the connection being used to connect to a real drone instead of the simulator.\n - **modifying the state machine** - for safety, we will slightly modify the state machine to give the pilot more control over the starting and stopping of the script.\n - **shifting the coordinates of the box** - with a real drone we can't reset the location of (0,0,0) of our world, so we will shift our box coordinates to be centered on the local coordinates of the takeoff position.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 486646,
+              "key": "0b8683e9-a1de-4fa4-b9d4-027c78edd5c0",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Updating Connection ##\n\nIn our backyard flyer script, the connection being passed to `Drone` is `MavlinkConnection('tcp:{0}:{1}'.format(args.host, args.port), threaded=False, PX4=False)`, which is a TCP connection to the simulator passing data as Mavlink messages.\n\nWhen connecting to the Intel Aero, we will need to change the parameters passed into the connection class to set up a connection to the drone.  For the Intel Aero, we will need a UDP connection (`'udp:ip_address:port`) and tell the `MavlinkConnection` class we are connecting to a PX4 autopilot, by setting `PX4=True`.  The modified connection class will be:\n\n```python\nconn = MavlinkConnection('udp:192.168.1.2:14550', PX4=True, threaded=False)\n```\n\nFor the Intel Aero, the IP address specified is the IP address of our computer when connected to the network created by the Intel Aero.  To determine our IP address, we can:\n\n - **Windows:** open the command prompt and type `ipconfig`.  Look for the IP address for the wireless adapter.\n - **OSX and Linux:** open the terminal and type `ifconfig`.  Look for the IP address for the wireless adapter.\n\n### For Generic PX4 ###\n\nIf we are setting up a generic drone running the PX4 autopilot, our connection to the drone is most likely over a dedicated telemetry link connected as a serial device on our computer.  If that is the case, instead of `'udp:ip_address:port'`, we can pass in `'serial_port,baud_rate'`.\n\n\n### Documentation for More Details ###\n\nFor more details into the workings of the connection class and different parameters, check out the [Udacidrone documentation on the connection class](https://udacity.github.io/udacidrone/docs/connection-api.html).\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 486650,
+              "key": "fcf6a3e1-1e32-4daa-bbb3-3e3f03fbe5a9",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Modifying the State Machine ##\n\nCurrently our project code handles all the commands from taking control of the drone, to arming, through the flight and disarming.  To give us, the pilot, more control over the environment and the running of the script, we will modify our project code to no longer handle the arming or disarming transition.  Instead, that will be up to the pilot to do manually.  This is done so the pilot can ensure everything is properly set up and that the flight environment is safe before letting our script control the drone.\n\nAlso note that at all times during the flight we have the ability to take back control of the autopilot by flipping the switch on the remote control back to manual control from offboard!  This is very important and the pilot should be ready to do this at all points during the flight just in case something unexpected happens!\n\n\nFirst, we will remove the handling of the arming transition, by modifying the checks being made when in the `MANUAL` state.  We will change the code to passively wait for the drone's state to be updated by the pilot in order to advance our current flight state.\n\nThe current solution `state_callback` is:\n\n```python\ndef state_callback(self):\n    if self.in_mission:\n        if self.flight_state == States.MANUAL:\n            self.arming_transition()\n        elif self.flight_state == States.ARMING:\n            if self.armed:\n                self.takeoff_transition()\n        elif self.flight_state == States.DISARMING:\n            if not self.armed and not self.guided:\n                self.manual_transition()\n```\n\nAnd once we make the necessarily changes, it becomes:\n\n```python\n\ndef state_callback(self):\n    if self.in_mission:\n        if self.flight_state == States.MANUAL:\n            # now just passively waiting for the pilot to change these attributes\n            # once the pilot changes, need to update our internal state\n            if self.guided:\n                self.flight_state = States.ARMING\n        elif self.flight_state == States.ARMING:\n            if self.armed:\n                self.takeoff_transition()\n\n        elif self.flight_state == States.DISARMING:\n            if not self.armed and not self.guided:\n                self.manual_transition()\n```\n\n\nNext we will need to remove the disarming transition and manual transitions made by the script.  Once again, this is so that the pilot is the one who knowingly takes back control of the drone and disarms the motors.\n\nFor this change, we will modify both the `velocity_callback` and the `state_callback`.  We will be completely removing all the code from the `velocity_callback` as we are no longer interested in triggering the disarming transition.  In your backyard flyer solution, we handled stopping the mission during the disarming transition, here, we will add some checks to stop the mission once the pilot has taken back control.  In order to achieve this, we will add checks on the drone's state when in the `LANDING` flight state.\n\nOur modified set of callbacks will now look like:\n\n```python\n\ndef velocity_callback(self):\n        pass\n\ndef state_callback(self):\n    if self.in_mission:\n        if self.flight_state == States.MANUAL:\n            # now just passively waiting for the pilot to change these attributes\n            # once the pilot changes, need to update our internal state\n            if self.guided:\n                self.flight_state = States.ARMING\n        elif self.flight_state == States.ARMING:\n            if self.armed:\n                self.takeoff_transition()\n        elif self.flight_state == States.LANDING:\n            # check if the pilot has changed the armed and control modes\n            # if so (and the script no longer in control) stop the mission\n            if not self.armed and not self.guided:\n                self.stop()\n                self.in_mission = False\n        elif self.flight_state == States.DISARMING:\n            # no longer want the vehicle to handle the disarming and releasing control\n            # that will be done by the pilot\n            pass\n\n```",
+              "instructor_notes": ""
+            },
+            {
+              "id": 550586,
+              "key": "4a8ffeec-1519-4ecf-8177-26d0e540c785",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Shifting the Coordinates ##\n\nThe last change we will need to make to your Backyard Flyer script is handling the fact that we cannot set the local position (0,0,0) coordinate to wherever we would like.  Therefore, when we create our set of coordinates to fly our box, we will shift the box to have the first corner be at the drone's current local position.  We achieve this by modifying our `calculate_box` function from:\n\n```python\n\ndef calculate_box(self):\n    print(\"Setting Home\")\n    local_waypoints = [[10.0, 0.0, 3.0], [10.0, 10.0, 3.0], [0.0, 10.0, 3.0], [0.0, 0.0, 3.0]]\n    return local_waypoints\n\n```\n\nto:\n\n```python\n\ndef calculate_box(self):\n    print(\"Setting Home\")\n    cp = np.array([self.local_position[0], self.local_position[1], -self.local_position[2]])  # get the current local position -> note we need to change the sign of the down coordinate to be altitude\n    local_waypoints = [cp + [10.0, 0.0, 3.0], cp + [10.0, 10.0, 3.0], cp + [0.0, 10.0, 3.0], cp + [0.0, 0.0, 3.0]]\n    return local_waypoints\n\n```\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 550497,
+              "key": "5fdcb9af-0c73-44e0-9e7b-330e067ed2db",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Almost There! ##\n\nNow that we have our backyard flyer solution properly modified for running on the Aero, let's move on to test running the script and flying it for real!\n\nOnce again keep in mind that most of these drones, including the Intel Aero, do **NOT** come with obstacle avoidance!  The only obstacle avoidance is the pilot, therefore it is very important that the pilot always keep an eye on the drone at all times, even during autonomous flight.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 569198,
+              "key": "14f5e1da-a5ef-4380-a204-4da216f9a7e4",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Disclaimer ##\n\nPLEASE REMEMBER THAT YOUR RIGHT TO USE ANY CODE PROVIDED BY UDACITY IS SUBJECT TO OUR TERMS OF USE, THE FLYING CAR SPECIAL TERMS, HONOR CODE, AND COMMUNITY CODE OF CONDUCT. TO THE EXTENT UDACITY PROVIDES YOU CODE TO USE IN CONNECTION WITH DEMONSTRATING FLYING DRONES AND/OR OTHER AUTONOMOUS FLYING VEHICLES, SUCH CODE IS PROVIDED “AS IS” WITH NO REPRESENTATIONS OR WARRANTIES OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NONINFRINGEMENT. YOU ASSUME TOTAL RESPONSIBILITY AND THE ENTIRE RISK FOR YOUR USE OF ANY CODE AND/OR OPERATION OF ANY AUTONOMOUS FLYING/UNMANNED VEHICLES. TO THE FULLEST EXTENT ALLOWED UNDER THE LAW, UDACITY DISCLAIMS ANY AND ALL LIABILITY RELATING TO YOUR USE OF ANY CODE OR YOUR OPERATION OF ANY UNMANNED AIRCRAFT OR FLYING VEHICLE AS SET FORTH IN THE TERMS OF USE, INCLUDING, BUT NOT LIMITED TO PROPERTY DAMAGE, PERSONAL INJURY, OR DEATH. TO THE EXTENT THAT YOU USE UDACITY’S CODE AND/OR YOUR OWN CODE FOR THE PURPOSES OF THIS COURSE, INCLUDING, BUT NOT LIMITED TO, USE CONNECTED WITH A FLYING DRONE, OR AS OTHERWISE ALLOWED BY UDACITY, SUCH USE BY YOU SHALL COMPLY WITH ALL FEDERAL, STATE, PROVINCIAL, AND/OR LOCAL LAWS REGARDING THE LICENSURE, REGISTRATION, AND OPERATION OF UNMANNED AIRCRAFT OR OTHER VEHICLES. FOR EXAMPLE, BUT NOT IN ANY WAY AS A LIMITATION, THE U.S. FEDERAL AVIATION ADMINISTRATION HAS SPECIFIC RULES RELATING TO THE OPERATION OF UNMANNED AIRCRAFT. THERE ARE ALSO PRIVACY REGULATIONS THAT MAY BE APPLICABLE TO YOUR USE OF THE CODE AND/OR OPERATION OF UNMANNED AIRCRAFT AND/OR VEHICLES AND ARE REQUIRED TO COMPLY WITH THOSE LAWS.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 550429,
+          "key": "6aed1e37-30d1-48d3-b398-5ba7b3741d12",
+          "title": "Let's go Fly!",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "6aed1e37-30d1-48d3-b398-5ba7b3741d12",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 565495,
+              "key": "ea00024b-d518-40aa-92d5-3b6ac0b135aa",
+              "title": "Nd787 C1 L4 A08 L Lets Go Fly 1 V4",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "XPH-WR0i-Xs",
+                "china_cdn_id": "XPH-WR0i-Xs.mp4"
+              }
+            },
+            {
+              "id": 569199,
+              "key": "239af919-66f2-4ec4-ad63-7cc7250268a6",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Disclaimer ##\n\nPLEASE REMEMBER THAT YOUR RIGHT TO USE ANY CODE PROVIDED BY UDACITY IS SUBJECT TO OUR TERMS OF USE, THE FLYING CAR SPECIAL TERMS, HONOR CODE, AND COMMUNITY CODE OF CONDUCT. TO THE EXTENT UDACITY PROVIDES YOU CODE TO USE IN CONNECTION WITH DEMONSTRATING FLYING DRONES AND/OR OTHER AUTONOMOUS FLYING VEHICLES, SUCH CODE IS PROVIDED “AS IS” WITH NO REPRESENTATIONS OR WARRANTIES OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NONINFRINGEMENT. YOU ASSUME TOTAL RESPONSIBILITY AND THE ENTIRE RISK FOR YOUR USE OF ANY CODE AND/OR OPERATION OF ANY AUTONOMOUS FLYING/UNMANNED VEHICLES. TO THE FULLEST EXTENT ALLOWED UNDER THE LAW, UDACITY DISCLAIMS ANY AND ALL LIABILITY RELATING TO YOUR USE OF ANY CODE OR YOUR OPERATION OF ANY UNMANNED AIRCRAFT OR FLYING VEHICLE AS SET FORTH IN THE TERMS OF USE, INCLUDING, BUT NOT LIMITED TO PROPERTY DAMAGE, PERSONAL INJURY, OR DEATH. TO THE EXTENT THAT YOU USE UDACITY’S CODE AND/OR YOUR OWN CODE FOR THE PURPOSES OF THIS COURSE, INCLUDING, BUT NOT LIMITED TO, USE CONNECTED WITH A FLYING DRONE, OR AS OTHERWISE ALLOWED BY UDACITY, SUCH USE BY YOU SHALL COMPLY WITH ALL FEDERAL, STATE, PROVINCIAL, AND/OR LOCAL LAWS REGARDING THE LICENSURE, REGISTRATION, AND OPERATION OF UNMANNED AIRCRAFT OR OTHER VEHICLES. FOR EXAMPLE, BUT NOT IN ANY WAY AS A LIMITATION, THE U.S. FEDERAL AVIATION ADMINISTRATION HAS SPECIFIC RULES RELATING TO THE OPERATION OF UNMANNED AIRCRAFT. THERE ARE ALSO PRIVACY REGULATIONS THAT MAY BE APPLICABLE TO YOUR USE OF THE CODE AND/OR OPERATION OF UNMANNED AIRCRAFT AND/OR VEHICLES AND ARE REQUIRED TO COMPLY WITH THOSE LAWS.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 594573,
+          "key": "a35c80ca-3779-4413-be8b-e5f0ceee7c2c",
+          "title": "Crazyflie Introduction",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "a35c80ca-3779-4413-be8b-e5f0ceee7c2c",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 594574,
+              "key": "e31aa88a-c3ef-43d3-9f46-281729d9d3d0",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Getting Started With the Crazyflie ##\n\nFirst things first, we will follow along with Bitcraze's [detailed walkthrough](https://www.bitcraze.io/getting-started-with-the-crazyflie-2-0/) to get our crazyflie all set up and ready to fly.  Out of the box the crazyflie may not have the most up to date firmware, so we will make sure to follow Bitcraze's guide to making sure our crazyflie is completely up to date.\n\nWhen following the guide, it's important to make sure we've installed the computer client and the necessary drivers for the antenna, as we will need to use both of these as we further configure the crazyflie and run our backyard flyer script on it.\n\n\n### Additional Setup ###\n\nIn addition to the setup steps outlined in the walkthrough, we want to configure our crazyflie radio connection to have a bit of a higher bandwidth.  This will help to reduce some of the latency on getting information from the crazyflie when we are running the backyard flyer script.\n\nTo do so, we will open the client, navigate to `Connect`, select the `Configure 2.0` option and change the bandwidth from `250k` to `2M`.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 594575,
+              "key": "54d8e2ba-34c1-4e31-9a1a-ef18ae22b5b9",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## A Note on Perception ##\n\nThe crazyflie is not equipped with GPS and therefore needs alternative means to be able to know its position information.  The FlowDeck enables the crazyflie to determine position, however it does pose a few limitations that will need to be considered when controlling the crazyflie with the backyard flyer script.\n\nWith the FlowDeck, the Crazyflie uses optical flow to measure velocity to be used for a position estimate.  This will drift over time, so the crazyflie may not be capable of doing very long straight flight segments when flying autonomously.  This also means it doesn't really have an absolute frame of reference, which means it flies in a local XYZ frame, not an NED frame.  In short, this means that when flying the backyard flyer, a 1m change North, will really just be a 1m change forward from the initial position and heading.  This is the same for all subsequent commands (e.g. a 1m change E won't necessarily go E, but will go to the right 1m).\n\nWhat was altitude is now height above the ground as the crazyflie uses a small laser range finder to determine its height above the ground.  This results in 2 behaviors of importance.  First, the sensor doesn't have unlimited range, therefore it is possible to fly \"too high\", being above the sensor's range and no longer being able to get good information.  Second, it means that the crazyflie will follow the contours of the environment, meaning if we command a height of 1m but have the path go over a table, the crazyflie will increase it's height above the ground such that it is 1m above the table (its local perception of the ground).",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 594576,
+          "key": "669b7b83-3652-4d02-a4b2-fadc694e2639",
+          "title": "Crazyflie Backyard Flyer",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "669b7b83-3652-4d02-a4b2-fadc694e2639",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 594577,
+              "key": "0e16f24a-47b4-47b6-b38c-84c240ee136f",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Backyard Flyer Modifications #\n\nJust like with the Intel Aero and the simulator, the crazyflie is also able to be controlled (to an extent) through the Udacidrone API.\n\nWe will need to make the following modifications to our backyard flyer script to be able to control our crazyflie:\n\n 1. update the connection\n 2. modify arming and disarming flow\n 3. update waypoints\n 4. update takeoff target altitude\n 5. update waypoint acceptance thresholds",
+              "instructor_notes": ""
+            },
+            {
+              "id": 594578,
+              "key": "c5869b5b-4922-483f-ba72-6478dc7eba0c",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## 0. Upgrade `udacidrone`\nYou'll want to make sure you have the latest version of `udacidrone`. You can install the latest version by activating your virtual environment and then doing a `pip install -U git+https://github.com/udacity/udacidrone.git`\n\n## 1. Update Connection ##\n\nThe crazyflie's default firmware uses it's own communication protocol, Crazy RealTime Protocol (CRTP), instead of Mavlink, therefore we will need to change to using the `CrazyflieConnection` that can be found in Udacidrone starting with version 0.3.0 (**NOTE: you may have to update your version of Udacidrone**).\n\n1. add an import for `CrazyflieConnection`\n\n```python\nfrom udacidrone.connection import CrazyflieConnection\n```\n\n2. At the bottom of the `backyard_flyer.py` script, we will replace our connection object\n\n```python\n# replace \nconn = MavlinkConnection('tcp:{0}:{1}'.format(args.host, args.port))\n\n# with\nconn = CrazyflieConnection('radio://0/80/2M')\n```\n\nThis will create a connection to the crazyflie.  The input string is the URI of the crazyflie, which is defined as a string formated as `'radio://interface id/interface channel/interface speed`.  For our setup, we have kept the default interface id and interface channel, but have increased the speed from the default value of `250K` to `2M`.  Each of these values can be adjusted through the crazyflie desktop client.  In an area with multiple crazyflie's flying around, it is best to change the interface id and channel to make sure each crazyflie is unique.\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 594579,
+              "key": "d1c3118b-020a-4eee-b4d2-860a3aa1c45a",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## 2. Modify Arming and Disarming ##\n\nThe idea of being `armed` or in `guided` mode does not exist with the crazyflie, therefore we will need to modify those parts of the flow of the script.  Even more generally, the concept of state for the crazyflie is very different than what is used with the simulator or with PX4.  As a result, the `state_callback()` callback will never be called!  Since the state callback was responsible for takeoff transition, we will need to modify another one of the callbacks to handle that purpose.\n\n### Arming / Takeoff ###\n\nWe will choose to augment the local position callback with code needed to be able to issue the takeoff command as needed, by adding the following code to the top of the callback:\n\n```python\ndef local_position_callback(self)\n\n    if self.flight_state == States.MANUAL:\n        self.takeoff_transition()\n\n    ...\n```\n\nOnce the first local position message is received the takeoff command will be issued, since the drone starts in the `MANUAL` state.  Note that we've made the takeoff altitude much smaller than what was used in the simulator since we will be flying in an indoor environment.\n\n### Disarming / Ending Mission ###\n\nThe same problem exists at the other end of the flight; with no `armed` and `guided` information, we don't know when to consider the flight complete and the mission over.  Instead we will use the landing condition as the end of the flight.  To do this, we will **REPLACE** `velocity_callback()` with the following:\n\n```python\ndef velocity_callback(self):\n    if self.flight_state == States.LANDING:\n        if abs(self.local_position[2] < 0.01):\n            self.manual_transition()\n```\n\nWe will still use the manual transition function as it contains all the code to consider the flight as completed and stop the connection and the script.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 594580,
+              "key": "d5f6717b-8e9e-4176-8515-d40488b0ecc5",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## 3. Update Waypoints ##\n\nIn the simulator, we had the ability to reset our \"zero\" position for the world to our current position, allowing us to command a 10 meter box with fairly straightforward commands.  This is not possible with the crazyflie, so we will modify the coordinates of the box to take into account the position of the drone at takeoff (when the box coordinates are created).  To do this, we will modify `calculate_box()` to be:\n\n```python\ndef calculate_box(self):\n    cp = self.local_position\n    cp[2] = 0\n    local_waypoints = [cp + [1.0, 0.0, 0.5], cp + [1.0, 1.0, 0.5], cp + [0.0, 1.0, 0.5], cp + [0.0, 0.0, 0.5]]\n    return local_waypoints\n```\n\nNotice we've set each of the coordinates to simply be shifted by the current position of the crazyflie when the calculate box function is run. Also notice, since we are flying out crazyflie inside, we have changed the coordinates to be a much smaller box, here a 1m box at an altitude of 0.5m.\n\n## 4. Update Takeoff Target Altitude ##\n\nFor that same safety reason, we've also changed the `target_altitude` in the takeoff transition to match the 0.5m flight altitude for the box.  **If you have your own crazyflie and are planning to fly it indoors, we highly recommend changing the size of your box to make sure it can fly comfortably in the space you are using!**\n\n\n## 5. Update Waypoint Acceptance Thresholds ##\n\nWhen flying the backyard flyer in the simulator, the box was 10 meters on each side, so an acceptance threshold for a waypoint of 1 meter was reasonable.  Now that we've reduced the box size to something more appropriate for inside (e.g. 1 meter on a side), we need to update the acceptance thresholds for waypoints to ensure the drone doesn't preemptively transition from one waypoint to another.\n\nIn the `local_position()` callback, you can change the waypoint acceptance threshold by changing the following line:\n\n```python\ndef local_position_callback(self):\n    ...\n    # change this line:\n    if np.linalg.norm(self.target_position[0:2] - self.local_position[0:2]) < 1.0:\n        ...\n\n    # to this line:\n    if np.linalg.norm(self.target_position[0:2] - self.local_position[0:2]) < 0.2:\n        ...\n```\n\nYou may find you also need to change it for the acceptance on velocity to trigger than landing transition:\n\n```python\ndef local_position_callback(self):\n    ...\n    # change this line:\n    if np.linalg.norm(self.local_velocity[0:2]) < 1.0:\n        ...\n\n    # to this line:\n    if np.linalg.norm(self.local_velocity[0:2]) < 0.5:\n        ...\n```\n\nNote here we've adjusted the threshold to 0.2 meters for waypoints and 0.5 m/s for landing.  You may find you need to play around with that threshold based on the size of the box you are flying.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 594581,
+              "key": "b2f6c198-c1ab-4b44-866f-ecd772bd717a",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Flying! ##\n\nAnd now we are ready to fly our crazyflie!  To run the script we will:\n\n 1. Plug in the crazyflie and set it on the ground, with the front pointed in the desired direction.  This starting position is the bottom left hand corner of our box, so we will make sure to point it towards our open space designated for flying.\n \n 2. Plug in the Crazyradio into the computer\n\n 3. Make sure you're in the `fcnd` workspace, and then run the script, `python backyard_flyer.py`\n\n 4. We will see the connection complete, a short pause (this is for the sensors to calibrate) and then the crazyflie should takeoff and complete the mission!",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 594582,
+          "key": "e2c78567-a79a-4b07-9684-bf3f78892310",
+          "title": "Crazyflie Keyboard Control",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "e2c78567-a79a-4b07-9684-bf3f78892310",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 594583,
+              "key": "74a54854-06a1-4b48-a16c-11a6f4d36da8",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Having played around with the crazyflie and flying it with the phone control, we know it is definitely not the easiest of drones to fly.  Using the crazyflie desktop client, the radio and a game controller is one way to get a better level of control on the crazyflie.  For another way, we have written a script to allow for keyboard control of the crazyflie, using the same controls from the simulator.\n\nBitcraze has a [python API for the crazyflie ](https://github.com/bitcraze/crazyflie-lib-python) that we've leveraged to be able to provide a method of much better control over the crazyflie than the mobile app does.\n\nBelow is the code for the script:",
+              "instructor_notes": ""
+            },
+            {
+              "id": 594586,
+              "key": "63840a06-602c-4788-8037-ad2da5a54039",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "```python\n\"\"\"\nThis script contains a keyboard controller using the MotionCommander.\n\nInfo on API element used:\nhttps://github.com/bitcraze/crazyflie-lib-python/blob/master/cflib/positioning/motion_commander.py\n\"\"\"\nimport logging\nfrom pynput import keyboard\n\nimport cflib.crtp\nfrom cflib.crazyflie.syncCrazyflie import SyncCrazyflie\nfrom cflib.positioning.motion_commander import MotionCommander\n\nURI = 'radio://0/80/2M'  # ENSURE THIS MATCHES YOUR CRAZYFLIE CONFIGURATION\n\n# Only output errors from the logging framework\nlogging.basicConfig(level=logging.ERROR)\n\n\nclass KeyboardDrone:\n\n    def __init__(self, mc):\n        self.mc = mc\n\n        self.velocity = 0.75\n        self.ang_velocity = 120\n\n        self.sleeptime = 0.5\n        # self.max_hight = 0.8\n        # self.hight = 0.0\n        print('Press u for taking off!')\n\n    def on_press(self, key):\n\n        if key.char == 'w':\n            self.mc.start_forward(self.velocity)\n\n        if key.char == 'u':\n            self.mc.take_off(0.3)\n\n        if key.char == 's':\n            self.mc.start_back(self.velocity)\n\n        if key.char == 'a':\n            self.mc.start_left(self.velocity)\n\n        if key.char == 'd':\n            self.mc.start_right(self.velocity)\n\n        if key.char == 'c':\n            self.mc.start_down(self.velocity)\n\n        if key == keyboard.Key.space:\n            self.mc.start_up(self.velocity)\n\n        if key.char == 'l':\n            print('Kill engines')\n            return False\n\n        if key.char == 'q':\n            self.mc.start_turn_left(self.ang_velocity)\n\n        if key.char == 'e':\n            self.mc.start_turn_right(self.ang_velocity)\n\n    def on_release(self, key):\n        self.mc.stop()\n\n\nif __name__ == '__main__':\n\n    cflib.crtp.init_drivers(enable_debug_driver=False)\n\n    with SyncCrazyflie(URI) as scf:\n        # We take off when the commander is created\n        mc = MotionCommander(scf)\n\n        drone = KeyboardDrone(mc)\n\n        with keyboard.Listener(on_press=drone.on_press, on_release=drone.on_release) as listener:\n            listener.join()\n```",
+              "instructor_notes": ""
+            },
+            {
+              "id": 594584,
+              "key": "ad474bda-642e-4180-b5d3-9db9b8ff195f",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "We've saved the script as `keyboard_control.py`.  In addition to requiring that the proper drivers have been installed, it requires the following python dependencies:\n\n - `cflib` - the crazyflie python API",
+              "instructor_notes": ""
+            },
+            {
+              "id": 594585,
+              "key": "cafb3d9d-499d-48ab-90a7-8ef1246ad15b",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Flying ##\n\nTo use the script to control the drone over the keyboard:\n\n 1. power on the crazyflie and set it on a level surface\n\n 2. plug in the crazyradio PA to the computer\n\n 3. ensure the `URI` string in the script appropriately matches the interface id, channel and speed parameters for the crazyflie\n\n 4. run the script, `python keyboard_control.py`\n\n 5. enjoy flying with ease!",
+              "instructor_notes": ""
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

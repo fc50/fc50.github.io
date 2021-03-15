@@ -1,0 +1,761 @@
+{
+  "data": {
+    "lesson": {
+      "id": 598870,
+      "key": "5c648940-2e88-4d57-b907-57727da7a9b5",
+      "title": "The 3D EKF and UKF",
+      "semantic_type": "Lesson",
+      "is_public": true,
+      "version": "1.0.0",
+      "locale": "en-us",
+      "summary": "Take what you learned in the previous lesson and generalize to three dimensions. After learning about the 3D EKF you'll also learn another estimation algorithm called the Unscented Kalman Filter.",
+      "lesson_type": "Classroom",
+      "display_workspace_project_only": null,
+      "resources": {
+        "files": [
+          {
+            "name": "Videos Zip File",
+            "uri": "https://zips.udacity-data.com/5c648940-2e88-4d57-b907-57727da7a9b5/598870/1538762773389/The+3D+EKF+and+UKF+Videos.zip"
+          },
+          {
+            "name": "Transcripts Zip File",
+            "uri": "https://zips.udacity-data.com/5c648940-2e88-4d57-b907-57727da7a9b5/598870/1538762768237/The+3D+EKF+and+UKF+Subtitles.zip"
+          }
+        ],
+        "google_plus_link": null,
+        "career_resource_center_link": null,
+        "coaching_appointments_link": null,
+        "office_hours_link": null,
+        "aws_provisioning_link": null
+      },
+      "project": null,
+      "lab": null,
+      "concepts": [
+        {
+          "id": 616863,
+          "key": "b3274c03-bd21-4a24-a601-11ddbdadcee8",
+          "title": "Sebastian Introduction",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "b3274c03-bd21-4a24-a601-11ddbdadcee8",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 616864,
+              "key": "fce1f154-acf8-4c72-b7a7-646b79522b08",
+              "title": "Nd787 C4 L4 00 Sebastian V1",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "SRe2iP8GNxA",
+                "china_cdn_id": "SRe2iP8GNxA.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 615468,
+          "key": "5a7db5f6-a384-420a-8850-3a85eae78369",
+          "title": "Welcome Back",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "5a7db5f6-a384-420a-8850-3a85eae78369",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 626690,
+              "key": "59eccf05-f234-4d37-98b8-9e2e60e234e0",
+              "title": "Nd787 C4 L04 01 Welcome Back V3",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "UUYupCvLrnk",
+                "china_cdn_id": "UUYupCvLrnk.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 598871,
+          "key": "e7853064-69b2-4894-8a64-1289e22d1fda",
+          "title": "3D Estimation Overview",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "e7853064-69b2-4894-8a64-1289e22d1fda",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 626691,
+              "key": "d9da469a-3909-41f7-a034-c27bccb7ea68",
+              "title": "Nd787 C4 L04 02 3D Estimation Overview V3",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "kdu0tLy7ut0",
+                "china_cdn_id": "kdu0tLy7ut0.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 615469,
+          "key": "45242938-94ad-4f32-9802-eadd87f016fc",
+          "title": "EKF Tradeoffs 1 - State",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "45242938-94ad-4f32-9802-eadd87f016fc",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 626692,
+              "key": "92bad125-b141-46fa-944e-cd452bc82499",
+              "title": "Nd787 C4 L04 03 EKF Tradeoffs 1 - State V3",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "U1z5AgzmTZM",
+                "china_cdn_id": "U1z5AgzmTZM.mp4"
+              }
+            },
+            {
+              "id": 619660,
+              "key": "81f0a8c1-879a-4267-838a-d03cd0584311",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## The \"Full\" State Vector\n\nOften, the **full** state vector actually has more than 12 variables in it. That's because in addition to estimating the typical 12 variables, we often also want to keep track of the IMU biases. Remember from the lesson on sensors that bias is typically modeled as a random walk, that is:\n\n<div class=\"mathquill\">\nb_t = b_{t-1} + \\mathcal{N}({0, \\sigma^2})\n</div>\n\nEstimating the bias in real-time like this is what's known as \"online system identification\".",
+              "instructor_notes": ""
+            },
+            {
+              "id": 631337,
+              "key": "62f11eab-f695-4387-b0ad-0e511f1b0d95",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": " ",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 615470,
+          "key": "183f93cc-3317-4449-91b4-9797002ec485",
+          "title": "EKF Tradeoffs 2 - Control",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "183f93cc-3317-4449-91b4-9797002ec485",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 626693,
+              "key": "c48d009c-0300-439c-9ec6-45da7b512b32",
+              "title": "Nd787 C4 L04 04 EKF Tradeoffs 2 - Control V3",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "CocSTlcO4w0",
+                "china_cdn_id": "CocSTlcO4w0.mp4"
+              }
+            },
+            {
+              "id": 737360,
+              "key": "c0867747-75a2-437c-a678-fd6044b62021",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "**Note**:\nAt 2min 28s Stefanie mentions the \"nanodegree Slack channel\". Please note that Slack has been deprecated and you should use Student Hub instead, where you can access your community of peers and mentors.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 619652,
+              "key": "ae44a4b1-4699-49da-9614-daf86f2b2d52",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Additional Reading\n\nIf you're interested in learning more about the tradeoffs associated with using the accelerometer as the control input, this paper goes over a thorough analysis of different approaches: [Fusing Inertial Sensor Data in an Extended\nKalman Filter for 3D Camera Tracking](https://eresearch.ozyegin.edu.tr/bitstream/handle/10679/947/Fusing%20inertial%20sensor%20data%20in%20an%20extended%20kalman%20filter%20for%203D%20camera%20tracking.pdf?sequence=2&isAllowed=y)",
+              "instructor_notes": ""
+            },
+            {
+              "id": 619653,
+              "key": "af6052b9-417a-44b9-b3f5-358740eb4938",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": " ",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 615471,
+          "key": "af7043a3-08b2-49cb-8cf2-8101b538d975",
+          "title": "Attitude Estimation",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "af7043a3-08b2-49cb-8cf2-8101b538d975",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 626706,
+              "key": "3722cb4e-16ea-4734-9924-020ee81aadff",
+              "title": "Nd787 C4 L04 05 Attitude Estimation V3",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "kthK1fr4N78",
+                "china_cdn_id": "kthK1fr4N78.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 615472,
+          "key": "8ab71eaa-dbb1-4c6b-8003-9f6a200d4f4e",
+          "title": "Complementary Filter Math",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "8ab71eaa-dbb1-4c6b-8003-9f6a200d4f4e",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 626694,
+              "key": "a6f1b041-e43d-414f-8b9a-343531d4b612",
+              "title": "Nd787 C4 L04 06 Complementary Filter Math V3",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "SlZoIyvqdPM",
+                "china_cdn_id": "SlZoIyvqdPM.mp4"
+              }
+            },
+            {
+              "id": 619655,
+              "key": "a9ef7153-08b2-4ed4-af54-5f90217f7557",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Complementary Filter Math\n\nIn the video, you saw the following equation for the estimate <span class=\"mathquill\">\\hat{\\theta}_t</span>:\n\n<div class=\"mathquill\">\n\\hat{\\theta}_t = \\frac{\\tau}{\\tau + T_s} \\left( \\hat{\\theta}_{t-1} + T_s z_{t,\\dot{\\theta}} \\right) + \\frac{T_s}{\\tau + T_s} z_{t,\\theta}\n</div>\n\nThe exact same math applies to <span class=\"mathquill\">\\hat{\\phi}_t</span>:\n\n<div class=\"mathquill\">\n\\hat{\\phi}_t = \\frac{\\tau}{\\tau + T_s} \\left( \\hat{\\phi}_{t-1} + T_s z_{t,\\dot{\\phi}} \\right) + \\frac{T_s}{\\tau + T_s} z_{t,\\phi}\n</div>\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 673557,
+              "key": "dede1b62-89e5-423e-ba5c-59780e65573d",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": " ",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 620350,
+          "key": "37e0b1bc-6566-44dd-ad68-5330f14cf651",
+          "title": "Attitude Estimation Exercise",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "37e0b1bc-6566-44dd-ad68-5330f14cf651",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 620352,
+              "key": "80b30087-e192-49d1-97f0-15944104f235",
+              "title": null,
+              "semantic_type": "WorkspaceAtom",
+              "is_public": true,
+              "workspace_id": "view30846143",
+              "pool_id": "jupyter",
+              "view_id": "30846143-a8bb-44b4-8821-a8c4b534f894",
+              "gpu_capable": false,
+              "configuration": {
+                "id": "reserved",
+                "blueprint": {
+                  "conf": {
+                    "disk": null,
+                    "ports": [],
+                    "allowSubmit": false,
+                    "defaultPath": "/notebooks/Attitude%20estimation-Student-Revised.ipynb"
+                  },
+                  "kind": "jupyter"
+                },
+                "workspaceId": "reserved"
+              },
+              "starter_files": null
+            }
+          ]
+        },
+        {
+          "id": 615473,
+          "key": "348a2786-3d04-4730-bcca-9a8b4edc9ac2",
+          "title": "EKF Implementation 1 - Overview",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "348a2786-3d04-4730-bcca-9a8b4edc9ac2",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 626695,
+              "key": "4d1f748e-37ed-4a08-99df-dc152a8911a6",
+              "title": "Nd787 C4 L4 07 L EKF Implementation 1 - Overview V2",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "on3hcvv5O7g",
+                "china_cdn_id": "on3hcvv5O7g.mp4"
+              }
+            },
+            {
+              "id": 619661,
+              "key": "7ababc6a-c222-4a17-ae3a-c8145e86a2c9",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Estimation for Quadrotors\n\nFollow along in [Estimation for Quadrotors](https://www.overleaf.com/read/vymfngphcccj). You will find this document helpful as you complete the final project. ",
+              "instructor_notes": ""
+            },
+            {
+              "id": 619662,
+              "key": "cdea2e64-bf00-4355-9a00-616f6a12bcbd",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": " ",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 615474,
+          "key": "f95ee32d-236f-418c-bbaa-85c3c3ad7e40",
+          "title": "EKF Implementation 2 - Predict",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "f95ee32d-236f-418c-bbaa-85c3c3ad7e40",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 626696,
+              "key": "7e770ff2-1f0f-4210-b2de-c2a875e00fb3",
+              "title": "Nd787 C4 L4 08 EKF Implementation - Predict V1",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "bPPuLzBJ_OE",
+                "china_cdn_id": "bPPuLzBJ_OE.mp4"
+              }
+            },
+            {
+              "id": 619663,
+              "key": "f3d74bd8-1ae5-4fb2-95f0-72f8bf35a749",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Estimation for Quadrotors\n\nFollow along in [Estimation for Quadrotors](https://www.overleaf.com/read/vymfngphcccj). You will find this document helpful as you complete the final project. ",
+              "instructor_notes": ""
+            },
+            {
+              "id": 619664,
+              "key": "59197631-f5a6-4522-89dd-e4924807d724",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": " ",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 615475,
+          "key": "1b2e1b09-69ac-486e-a06d-f34901d8bab1",
+          "title": "EKF Implementation 3 - Update",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "1b2e1b09-69ac-486e-a06d-f34901d8bab1",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 626838,
+              "key": "f26228da-ba2a-409e-9ec9-72ec7cc7381c",
+              "title": "Nd787 C4 L4 09 EKF Implementation 3 - Update V1",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "YKbIcSsvWSs",
+                "china_cdn_id": "YKbIcSsvWSs.mp4"
+              }
+            },
+            {
+              "id": 619665,
+              "key": "383bd0c3-48fa-4c72-9942-6fdf028e62b4",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Estimation for Quadrotors\n\nFollow along in [Estimation for Quadrotors](https://www.overleaf.com/read/vymfngphcccj). You will find this document helpful as you complete the final project. \n\n### Error in Video\n\nThis video contains an error. The equation labeled <span class=\"mathquill\">(49)</span> in the video is actually incorrect. The correct equation is given in the document linked above. It's:\n\n<div class=\"mathquill\">\n\\begin{aligned}\nR'_{bg} = \\left[\n  \\begin{array}{ccc}\n    -\\cos \\theta \\sin \\psi&\n    -\\sin\\phi \\sin \\theta \\sin \\psi - \\cos \\phi \\cos \\psi&\n    -cos \\phi \\sin \\theta \\sin \\psi + \\sin \\phi \\cos \\psi\\\\\n    \\cos \\theta \\cos \\psi&\n    \\sin \\phi \\sin \\theta \\cos \\psi - \\cos \\phi \\sin \\psi&\n    \\cos \\phi \\sin \\theta \\cos \\psi + \\sin \\phi \\sin \\psi\\\\\n    0&0&0\n  \\end{array}\n  \\right]\n\\end{aligned}\n</div>",
+              "instructor_notes": ""
+            },
+            {
+              "id": 619666,
+              "key": "9475965b-a080-411b-8135-fe68f15ad97c",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": " ",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 615476,
+          "key": "82ffffed-e277-4fda-b692-c34ad2a2a7b0",
+          "title": "Kalman Recap",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "82ffffed-e277-4fda-b692-c34ad2a2a7b0",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 626697,
+              "key": "aba714c1-6455-4afe-9ec7-ca2a75aef3d4",
+              "title": "Nd787 C4 L04 10 Kalman Recap V3",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "IBZkNrfBS1A",
+                "china_cdn_id": "IBZkNrfBS1A.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 620353,
+          "key": "90699e56-9109-4643-b055-96cf88c0ed77",
+          "title": "Drone in 3D Exercise",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "90699e56-9109-4643-b055-96cf88c0ed77",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 620354,
+              "key": "e0de808b-3656-4678-a0a4-9c3f1ba56af1",
+              "title": null,
+              "semantic_type": "WorkspaceAtom",
+              "is_public": true,
+              "workspace_id": "view047f2d90",
+              "pool_id": "jupyter",
+              "view_id": "047f2d90-81af-4596-b279-6fd3e50b013b",
+              "gpu_capable": false,
+              "configuration": {
+                "id": "reserved",
+                "blueprint": {
+                  "conf": {
+                    "disk": null,
+                    "ports": [],
+                    "allowSubmit": false,
+                    "defaultPath": "/notebooks/Drone_in_3D-Solution.ipynb"
+                  },
+                  "kind": "jupyter"
+                },
+                "workspaceId": "reserved"
+              },
+              "starter_files": null
+            }
+          ]
+        },
+        {
+          "id": 615477,
+          "key": "7818d66a-2276-494f-90ef-6defee929235",
+          "title": "The Unscented Kalman Filter",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "7818d66a-2276-494f-90ef-6defee929235",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 626699,
+              "key": "0329fc74-c98a-4a23-badb-7b9a4cb6a88d",
+              "title": "Nd787 C4 L04 11 The Unscented Kalman Filter V3",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "uv6rr8QRsMM",
+                "china_cdn_id": "uv6rr8QRsMM.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 615478,
+          "key": "cbeda64e-ef3b-4393-b8cf-be03add4bab1",
+          "title": "UKF Sigma Points",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "cbeda64e-ef3b-4393-b8cf-be03add4bab1",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 626700,
+              "key": "b1935965-d130-45ea-b1cf-6fa05c364a17",
+              "title": "Nd787 C4 L04 12 UKF Sigma Points V3",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "jTTFpHklF6Y",
+                "china_cdn_id": "jTTFpHklF6Y.mp4"
+              }
+            },
+            {
+              "id": 619674,
+              "key": "44e3ed7a-358a-4e60-997b-c2b9ba2b5a0d",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Additional Resources\n\n* [The Unscented Kalman Filter for Nonlinear Estimation](https://www.seas.harvard.edu/courses/cs281/papers/unscented.pdf) is a short paper (only 6 pages) and does a great job explaining the UKF.\n\n* [A New Extension of the Kalman Filter to Nonlinear Systems](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.5.2891&rep=rep1&type=pdf) is a bit longer (12 pages) and includes some helpful example applications.\n\n* [The Scaled Unscented Transformation](https://www.cs.unc.edu/~welch/kalman/media/pdf/ACC02-IEEE1357.PDF) gives a mathematical derivation of the unscented transform.\n\n\n\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 619675,
+              "key": "563b5542-3d28-42ad-a2ee-058587d5878b",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": " ",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 615479,
+          "key": "756e6efa-e801-45b2-995f-1431515b5d23",
+          "title": "UKF Predict",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "756e6efa-e801-45b2-995f-1431515b5d23",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 626701,
+              "key": "d91c01b8-5426-480c-b0af-bdcc5ff3d48f",
+              "title": "Nd787 C4 L04 13 UKF Predict V3",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "Gp_Suwa6yt0",
+                "china_cdn_id": "Gp_Suwa6yt0.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 615480,
+          "key": "dbd90d06-58f0-46df-9054-dcf36b504464",
+          "title": "UKF Update",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "dbd90d06-58f0-46df-9054-dcf36b504464",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 626702,
+              "key": "8d72b25d-01e5-4619-97bd-84803c084666",
+              "title": "Nd787 C4 L04 14 UKF Update V3",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "I-lLigA1cfc",
+                "china_cdn_id": "I-lLigA1cfc.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 620355,
+          "key": "061010aa-e2ed-42d2-a587-0c31defd6ebd",
+          "title": "UKF Exercise",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "061010aa-e2ed-42d2-a587-0c31defd6ebd",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 620357,
+              "key": "b4673901-b15a-4469-a13d-b6cfb1029bac",
+              "title": null,
+              "semantic_type": "WorkspaceAtom",
+              "is_public": true,
+              "workspace_id": "view0c532c09",
+              "pool_id": "jupyter",
+              "view_id": "0c532c09-2048-477d-bee8-fd959fa9c8b7",
+              "gpu_capable": false,
+              "configuration": {
+                "id": "reserved",
+                "blueprint": {
+                  "conf": {
+                    "disk": null,
+                    "ports": [],
+                    "allowSubmit": false,
+                    "defaultPath": "/notebooks/UKF-Student.ipynb"
+                  },
+                  "kind": "jupyter"
+                },
+                "workspaceId": "reserved"
+              },
+              "starter_files": null
+            }
+          ]
+        },
+        {
+          "id": 615481,
+          "key": "258779a9-2383-48f2-ad34-e3ddf254c963",
+          "title": "Conclusion",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "258779a9-2383-48f2-ad34-e3ddf254c963",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 626703,
+              "key": "56694bb1-032e-4eb1-a9c0-504140d222be",
+              "title": "Nd787 C4 L04 15 Conclusion V3",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "SlMwUVc5JzY",
+                "china_cdn_id": "SlMwUVc5JzY.mp4"
+              }
+            },
+            {
+              "id": 619646,
+              "key": "c9d6ab7d-abf8-428a-b408-55bb238468d3",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Additional Resources\n\nWe **highly** recommend [this Github repository](https://github.com/rlabbe/Kalman-and-Bayesian-Filters-in-Python) as a resource to learn more about Kalman Filters. It contains interactive Jupyter notebooks which cover these algorithms in detail. Chapter 10 covers UKFs and 11 is on EKFs. \n\n#### Extended Kalman Filters\n\nDid you know that the Crazyflie uses an EKF for state estimation? The code is open source and you can [check out the repository here](https://github.com/bitcraze/crazyflie-firmware/blob/master/src/modules/src/estimator_kalman.c). \n\nThis implementation is based on two papers:\n\n1. [A covariance correction step for Kalman filtering\nwith an attitude](http://muellerlab.berkeley.edu/wp-content/uploads/2016/11/P_2016_CovarianceCorrectionStepForKalmanFilteringWithAnAttitude.pdf) \n\n2. [Fusing ultra-wideband range measurements with accelerometers and\nrate gyroscopes for quadrocopter state estimation](http://www.mwm.im/ResearchFiles/Papers/FusingUltra-widebandRangeMeasurementsWithAccelerometersAndRateGyroscopesForQuadrocopterStateEstimation.pdf)\n\n#### Unscented Kalman Filters\n\n* [The Unscented Kalman Filter for Nonlinear Estimation](https://www.seas.harvard.edu/courses/cs281/papers/unscented.pdf) is a short paper (only 6 pages) and does a great job explaining the UKF.\n\n* [A New Extension of the Kalman Filter to Nonlinear Systems](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.5.2891&rep=rep1&type=pdf) is a bit longer (12 pages) and includes some helpful example applications.\n\n* [The Scaled Unscented Transformation](https://www.cs.unc.edu/~welch/kalman/media/pdf/ACC02-IEEE1357.PDF) gives a mathematical derivation of the unscented transform.\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 619651,
+              "key": "fb4c076a-ebdb-46e6-bb52-f639f85ded59",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": " ",
+              "instructor_notes": ""
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

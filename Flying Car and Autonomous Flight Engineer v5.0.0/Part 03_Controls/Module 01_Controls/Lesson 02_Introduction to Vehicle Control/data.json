@@ -1,0 +1,1458 @@
+{
+  "data": {
+    "lesson": {
+      "id": 515429,
+      "key": "dd98d695-14f1-40e0-adc5-e9fafe556f73",
+      "title": "Introduction to Vehicle Control",
+      "semantic_type": "Lesson",
+      "is_public": true,
+      "version": "1.0.0",
+      "locale": "en-us",
+      "summary": "Learn how to control a drone moving in one dimension using Proportional Integral Derivative (PID) Control. ",
+      "lesson_type": "Classroom",
+      "display_workspace_project_only": null,
+      "resources": {
+        "files": [
+          {
+            "name": "Videos Zip File",
+            "uri": "https://zips.udacity-data.com/dd98d695-14f1-40e0-adc5-e9fafe556f73/515429/1538763235865/Introduction+to+Vehicle+Control+Videos.zip"
+          },
+          {
+            "name": "Transcripts Zip File",
+            "uri": "https://zips.udacity-data.com/dd98d695-14f1-40e0-adc5-e9fafe556f73/515429/1538763230085/Introduction+to+Vehicle+Control+Subtitles.zip"
+          }
+        ],
+        "google_plus_link": null,
+        "career_resource_center_link": null,
+        "coaching_appointments_link": null,
+        "office_hours_link": null,
+        "aws_provisioning_link": null
+      },
+      "project": null,
+      "lab": null,
+      "concepts": [
+        {
+          "id": 559589,
+          "key": "acf481cc-f376-473a-a4e2-927a9ceabfa0",
+          "title": "Sebastian Introduction",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "acf481cc-f376-473a-a4e2-927a9ceabfa0",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 616870,
+              "key": "98a0fb22-5ec3-4aa4-8dae-5e5b7be7fb5a",
+              "title": "Nd787 C3 L2 00 Sebastian V1",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "bTJTGOz-0Dg",
+                "china_cdn_id": "bTJTGOz-0Dg.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 559590,
+          "key": "9763a631-a3d0-4443-8a94-5d60d2c93a17",
+          "title": "Lesson Introduction",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "9763a631-a3d0-4443-8a94-5d60d2c93a17",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 569418,
+              "key": "4c1c28d7-7b89-4aff-b467-3a2d5c3766b9",
+              "title": "L02 01 Lesson Intro V1",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "Gn78zDvSD8Q",
+                "china_cdn_id": "Gn78zDvSD8Q.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 559591,
+          "key": "82bf45f7-b0b7-49a7-898f-b445641480ea",
+          "title": "Perfect Control",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "82bf45f7-b0b7-49a7-898f-b445641480ea",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 569419,
+              "key": "a4b6ab40-7f5e-4a48-98d7-a7059bfec60c",
+              "title": "L02 02 Perfect Control V1",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "iBoH3NdSK-8",
+                "china_cdn_id": "iBoH3NdSK-8.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 518404,
+          "key": "5555596e-c509-422f-91c3-7c953eb0db6b",
+          "title": "The problem with open loop control Exercise",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "5555596e-c509-422f-91c3-7c953eb0db6b",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 559680,
+              "key": "ff58dc30-e438-482e-ab37-3583d2de4aec",
+              "title": null,
+              "semantic_type": "WorkspaceAtom",
+              "is_public": true,
+              "workspace_id": "viewb9633d84",
+              "pool_id": "jupyter",
+              "view_id": "b9633d84-d95b-4d2e-a53a-a34e0355143a",
+              "gpu_capable": false,
+              "configuration": {
+                "id": "reserved",
+                "blueprint": {
+                  "conf": {
+                    "ports": [],
+                    "allowSubmit": false,
+                    "defaultPath": "/notebooks/Open%20Loop.ipynb"
+                  },
+                  "kind": "jupyter"
+                },
+                "workspaceId": "reserved"
+              },
+              "starter_files": null
+            }
+          ]
+        },
+        {
+          "id": 559592,
+          "key": "100acf3c-8bdf-401b-a3f6-22e6fe680bfb",
+          "title": "Perfect is Impossible",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "100acf3c-8bdf-401b-a3f6-22e6fe680bfb",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 569420,
+              "key": "c8ce1a25-0434-4c52-be3b-52cb6fdd7c7f",
+              "title": "C3 L2 L3 Perfect Js Impassible 1 V1",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "uo-BqviC6QY",
+                "china_cdn_id": "uo-BqviC6QY.mp4"
+              }
+            },
+            {
+              "id": 569422,
+              "key": "f7358622-e9a3-4571-babe-cf87cc8cb3e1",
+              "title": "",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "f7358622-e9a3-4571-babe-cf87cc8cb3e1",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "If we overestimate our mass by some small amount and we have some non-zero acceleration epsilon ( <span class=\"mathquill\">\\epsilon</span> ), would the vehicle accelerate upwards or downwards?",
+                "answers": [
+                  {
+                    "id": "a1521657541600",
+                    "text": "Upwards",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1521657604416",
+                    "text": "Downwards",
+                    "is_correct": false
+                  }
+                ]
+              }
+            },
+            {
+              "id": 569421,
+              "key": "929f5dc2-ecf9-4f8f-9fe0-6d43d66f6709",
+              "title": "L02 03B Perfect Js Impassible 2 V3",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "uezdQ5itsBM",
+                "china_cdn_id": "uezdQ5itsBM.mp4"
+              }
+            },
+            {
+              "id": 562259,
+              "key": "754c42fb-97e2-4d44-89c9-ad91b8d09ffb",
+              "title": "",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "754c42fb-97e2-4d44-89c9-ad91b8d09ffb",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "We fail to account for the maximum rotational rate of the propellers in our controller.",
+                "answers": [
+                  {
+                    "id": "a1520961818250",
+                    "text": "Model Error",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1520961876781",
+                    "text": "Disturbance",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1520961881048",
+                    "text": "Noise",
+                    "is_correct": false
+                  }
+                ]
+              }
+            },
+            {
+              "id": 562261,
+              "key": "cbbd9967-e18e-439b-8922-c041621b0616",
+              "title": "",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "cbbd9967-e18e-439b-8922-c041621b0616",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "The \"true position\" of the vehicle that we feed back into the controller actually isn't exactly right.",
+                "answers": [
+                  {
+                    "id": "a1520961952698",
+                    "text": "Model Error",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1520962011914",
+                    "text": "Disturbance",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1520962017418",
+                    "text": "Noise",
+                    "is_correct": true
+                  }
+                ]
+              }
+            },
+            {
+              "id": 562264,
+              "key": "33d9d057-fe19-4962-a943-da3b27695ba7",
+              "title": "",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "33d9d057-fe19-4962-a943-da3b27695ba7",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "A sudden gust of wind blows the vehicle off of its intended trajectory.",
+                "answers": [
+                  {
+                    "id": "a1520962213550",
+                    "text": "Model Error",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1520962236987",
+                    "text": "Disturbance",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1520962242642",
+                    "text": "Noise",
+                    "is_correct": false
+                  }
+                ]
+              }
+            },
+            {
+              "id": 562265,
+              "key": "571add06-a86c-4d0e-bac1-e3ad4f847668",
+              "title": "",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "571add06-a86c-4d0e-bac1-e3ad4f847668",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "We fail to account for slight deviations from the propellers'   idealized <span class=\"mathquill\">F = k_f \\omega ^2</span> force profile.",
+                "answers": [
+                  {
+                    "id": "a1520962289958",
+                    "text": "Model Error",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1520962503877",
+                    "text": "Disturbance",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1520962508012",
+                    "text": "Noise",
+                    "is_correct": false
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 559593,
+          "key": "bc9a6bce-b6e1-4c33-8c91-1d6318f80381",
+          "title": "Simple Control Diagrams",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "bc9a6bce-b6e1-4c33-8c91-1d6318f80381",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 565616,
+              "key": "e6935037-2939-412d-8c6a-a74a7769f8ee",
+              "title": "C3 L2 L4 Control Diagrams V1",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "ZE_U_036EBA",
+                "china_cdn_id": "ZE_U_036EBA.mp4"
+              }
+            },
+            {
+              "id": 562267,
+              "key": "4e883ab8-6e9e-484e-82fc-acaefb5c1392",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/March/5aa8116f_04-simple-control-diagrams-5-v2/04-simple-control-diagrams-5-v2.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/4e883ab8-6e9e-484e-82fc-acaefb5c1392",
+              "caption": "",
+              "alt": "",
+              "width": 1892,
+              "height": 736,
+              "instructor_notes": null
+            },
+            {
+              "id": 562268,
+              "key": "d9e4560e-24fc-4b65-8e39-3f4dfad20131",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "The control diagram is pretty general. The table below should help you understand what it means in the context of a 1D drone. Note  that in this lesson we are assuming we have perfect sensors, so the measured output is the same as the true output.\n\n| Control Diagram | Monorotor |\n| :----: | :----: |\n| Reference | <span class=\"mathquill\">z_{\\text{target}}</span> (target position) |\n| Output | <span class=\"mathquill\">z</span> (true position)|\n| Input |  <span class=\"mathquill\">u_1</span> (commanded thrust) |\n\n\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 562269,
+              "key": "0587e4ac-28e9-4cb2-8d17-0190e1e8ce3c",
+              "title": "",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "0587e4ac-28e9-4cb2-8d17-0190e1e8ce3c",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "We define error as <span class=\"mathquill\">e = z_{\\text{target}} - z</span>. When <span class=\"mathquill\">e > 0</span>, what do we want the drone to do in order to compensate for that error? Don't forget that the <span class=\"mathquill\">z</span> axis points downwards!",
+                "answers": [
+                  {
+                    "id": "a1520964394832",
+                    "text": "Go up (decrease z)",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1520964534290",
+                    "text": "Go down (increase z)",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1520964542915",
+                    "text": "Stay at the same altitude",
+                    "is_correct": false
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 559594,
+          "key": "1b73f2a8-8aff-4209-b79c-eb847b1c891c",
+          "title": "P Controllers",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "1b73f2a8-8aff-4209-b79c-eb847b1c891c",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 565615,
+              "key": "7dafb00e-afbc-4f83-a208-6fd29fcea962",
+              "title": "C3 C2 L5 Controllers V1",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "z9raMimMmsk",
+                "china_cdn_id": "z9raMimMmsk.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 518427,
+          "key": "3b983b06-5363-4b2d-8632-ec8009dec5a9",
+          "title": "Implement P Controller Exercise",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "3b983b06-5363-4b2d-8632-ec8009dec5a9",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 559694,
+              "key": "fd9e8005-93ca-4186-9db2-d09111135e83",
+              "title": null,
+              "semantic_type": "WorkspaceAtom",
+              "is_public": true,
+              "workspace_id": "viewb9633d84",
+              "pool_id": "jupyter",
+              "view_id": "7d3702aa-ea4c-4b76-8baa-47047e3825b8",
+              "gpu_capable": false,
+              "configuration": {
+                "id": "reserved",
+                "blueprint": {
+                  "conf": {
+                    "ports": [],
+                    "allowSubmit": false,
+                    "defaultPath": "/notebooks/P%20Controller.ipynb"
+                  },
+                  "kind": "jupyter"
+                },
+                "workspaceId": "reserved"
+              },
+              "starter_files": null
+            }
+          ]
+        },
+        {
+          "id": 559595,
+          "key": "a2dddcd0-cda6-4ae6-ade1-2af8ef07b6c5",
+          "title": "Two Problems with P Control",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "a2dddcd0-cda6-4ae6-ade1-2af8ef07b6c5",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 565614,
+              "key": "02c8d5d3-da1f-4740-9b39-a49c3395555a",
+              "title": "C3 L2 L6 2 Problems V2",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "QWYJDLeVPrY",
+                "china_cdn_id": "QWYJDLeVPrY.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 559701,
+          "key": "2332aed6-bb90-41be-8874-644a09821462",
+          "title": "P Controller Tuning Exercise",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "2332aed6-bb90-41be-8874-644a09821462",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 559702,
+              "key": "00368e36-a619-4cdf-bd9a-90b35e1e01b2",
+              "title": null,
+              "semantic_type": "WorkspaceAtom",
+              "is_public": true,
+              "workspace_id": "viewb9633d84",
+              "pool_id": "jupyter",
+              "view_id": "3ff1108c-74b4-44a7-9780-24959324a76a",
+              "gpu_capable": false,
+              "configuration": {
+                "id": "reserved",
+                "blueprint": {
+                  "conf": {
+                    "ports": [],
+                    "allowSubmit": false,
+                    "defaultPath": "/notebooks/P%20Controller%20Tuning.ipynb"
+                  },
+                  "kind": "jupyter"
+                },
+                "workspaceId": "reserved"
+              },
+              "starter_files": null
+            }
+          ]
+        },
+        {
+          "id": 559596,
+          "key": "ac24ffdb-dad7-4f90-bcf0-631aad5c4c1e",
+          "title": "Limitations of P Control",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "ac24ffdb-dad7-4f90-bcf0-631aad5c4c1e",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 565613,
+              "key": "fdb4e9ed-60be-4a79-a8cb-01fb86628902",
+              "title": "C3 L2 L7 Limitations Of P Control V3",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "3_RLoHqxEAY",
+                "china_cdn_id": "3_RLoHqxEAY.mp4"
+              }
+            },
+            {
+              "id": 690096,
+              "key": "e55676c4-5915-4e46-b208-7d2a88ac210b",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "As you might have experimented in the previous exercise, different values of Kp won't help get rid of the oscillations. Instead what actually changes is the frequency of the oscillations.\nIn fact, let's compare the results with two values (Kp=1 and Kp=10):\n\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 690101,
+              "key": "d0201673-6b0a-42d3-9f75-ca69deb69808",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/August/5b69d4ca_screen-shot-2018-08-07-at-1.17.16-pm/screen-shot-2018-08-07-at-1.17.16-pm.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/d0201673-6b0a-42d3-9f75-ca69deb69808",
+              "caption": "",
+              "alt": "",
+              "width": 1694,
+              "height": 966,
+              "instructor_notes": null
+            }
+          ]
+        },
+        {
+          "id": 559597,
+          "key": "8db99438-a16a-4f2b-9ca2-794de97ffa43",
+          "title": "PD Control",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "8db99438-a16a-4f2b-9ca2-794de97ffa43",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 565612,
+              "key": "d56a9cb7-724c-4f7a-b294-2de21c3ed0a0",
+              "title": "C3 L2 L8 PD Control V3",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "hqQc1D2xXVk",
+                "china_cdn_id": "hqQc1D2xXVk.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 559703,
+          "key": "70f11f12-8188-4c73-afe9-c22b354583ca",
+          "title": "Implement PD Controller Exercise",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "70f11f12-8188-4c73-afe9-c22b354583ca",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 559704,
+              "key": "2b721cf4-3049-41dd-a914-c404bc7fb193",
+              "title": null,
+              "semantic_type": "WorkspaceAtom",
+              "is_public": true,
+              "workspace_id": "viewb9633d84",
+              "pool_id": "jupyter",
+              "view_id": "a443aa4e-25ab-4ff8-9b07-334255abe9c3",
+              "gpu_capable": false,
+              "configuration": {
+                "id": "reserved",
+                "blueprint": {
+                  "conf": {
+                    "disk": null,
+                    "ports": [],
+                    "allowSubmit": false,
+                    "defaultPath": "/notebooks/PD%20Controller.ipynb"
+                  },
+                  "kind": "jupyter"
+                },
+                "workspaceId": "reserved"
+              },
+              "starter_files": null
+            }
+          ]
+        },
+        {
+          "id": 559598,
+          "key": "eb1ff4a3-b0f0-400f-8553-b92295447c25",
+          "title": "PD Incorporating Feedforward Control",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "eb1ff4a3-b0f0-400f-8553-b92295447c25",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 565611,
+              "key": "e803e699-de67-48fe-98fd-a62caa567b42",
+              "title": "C3 L2 L9 Incorp Feed Forward V2",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "wejr034_AGw",
+                "china_cdn_id": "wejr034_AGw.mp4"
+              }
+            },
+            {
+              "id": 690468,
+              "key": "5865fc77-6335-430a-bae4-906a3592f560",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "**PD Controller**:\n\nWhile the **p-term** adjusts the thrust so that the vehicle's **position** matches the target position, \nthe **d-term** is responsible for adjusting the thrust so that the vehicle's **velocity** matches the target velocity.\n\nFrom the graphs below we can see how different values of Kd affect the trajectory (note: the value of Kp is maintained the same for both situations).\nWith low values of Kd, it takes longer to \"settle\" the oscillations. Higher Kd values will allow the drone to settle quicker.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 690469,
+              "key": "1b24d1e2-e767-4c91-a19c-aee1250a7b8a",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/August/5b6b1f0d_screen-shot-2018-08-08-at-10.45.39-am/screen-shot-2018-08-08-at-10.45.39-am.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/1b24d1e2-e767-4c91-a19c-aee1250a7b8a",
+              "caption": "",
+              "alt": "",
+              "width": 1704,
+              "height": 930,
+              "instructor_notes": null
+            },
+            {
+              "id": 690470,
+              "key": "34a84be0-2677-4da7-a399-3270ab71e726",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Note:  If Kd is too high, then the control gives an excessive response, more abrupt corrections that risk to\novershoot the reference trajectory. (see below with Kd=3.0)\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 690471,
+              "key": "0705108e-0eea-41e0-8b20-b8a69b68015c",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/August/5b6b1fd8_screen-shot-2018-08-08-at-12.52.21-pm/screen-shot-2018-08-08-at-12.52.21-pm.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/0705108e-0eea-41e0-8b20-b8a69b68015c",
+              "caption": "",
+              "alt": "",
+              "width": 874,
+              "height": 920,
+              "instructor_notes": null
+            }
+          ]
+        },
+        {
+          "id": 518433,
+          "key": "ca1383f5-01b2-4781-bb82-d727710823ff",
+          "title": "Implement PD with Feedforward Exercise",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "ca1383f5-01b2-4781-bb82-d727710823ff",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 559697,
+              "key": "3cbfd2e3-b053-4c50-a609-ad61ed880542",
+              "title": null,
+              "semantic_type": "WorkspaceAtom",
+              "is_public": true,
+              "workspace_id": "viewb9633d84",
+              "pool_id": "jupyter",
+              "view_id": "c5ffcd68-7fc4-4246-b4ea-9f312af94807",
+              "gpu_capable": false,
+              "configuration": {
+                "id": "reserved",
+                "blueprint": {
+                  "conf": {
+                    "disk": null,
+                    "ports": [],
+                    "allowSubmit": false,
+                    "defaultPath": "/notebooks/PD%20with%20FF.ipynb"
+                  },
+                  "kind": "jupyter"
+                },
+                "workspaceId": "reserved"
+              },
+              "starter_files": null
+            }
+          ]
+        },
+        {
+          "id": 559599,
+          "key": "f09eed19-6743-4c5e-8fd6-4ca68a199970",
+          "title": "PD Math and Reparametrization",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "f09eed19-6743-4c5e-8fd6-4ca68a199970",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 569424,
+              "key": "e04755cd-c95c-4438-8257-37eec3137484",
+              "title": "C3 L2 L10 L PD Math And Reparameterization V2",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "QpeIwF-Zq8Y",
+                "china_cdn_id": "QpeIwF-Zq8Y.mp4"
+              }
+            },
+            {
+              "id": 691885,
+              "key": "9803f2ef-1ce8-47b8-9848-2fe6fd92d167",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "To simplify, we can summarize the behavior of delta (damping ratio) and omega (natural frequency) as below.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 691886,
+              "key": "79225ce1-d9c3-4f9f-b6d0-a550b2ad14ad",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/August/5b71b751_screen-shot-2018-08-13-at-12.51.37-pm/screen-shot-2018-08-13-at-12.51.37-pm.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/79225ce1-d9c3-4f9f-b6d0-a550b2ad14ad",
+              "caption": "",
+              "alt": "",
+              "width": 1530,
+              "height": 1252,
+              "instructor_notes": null
+            },
+            {
+              "id": 691890,
+              "key": "17fd5d17-e8a8-4c2b-af4a-436d1b44a454",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "A **big** value (close to 1) of damping ratio (**delta**) yields to a **faster** decay. A smaller value (close to 0) constitutes, instead, a slower decay.\n\n\nA **big** value of natural frequency (**omega**) causes high frequency oscillations. Smaller values of omega, instead, reduce the oscillations' amplitude.\n\n\nThe behavior of the PD controller's equation is a **sinusoidal oscillation, whose amplitude is modified by a decaying exponential**.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 559600,
+          "key": "541ec6ae-f171-4195-9c05-97a5c82a85df",
+          "title": "Overshoot, Rise Time, Settling Time",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "541ec6ae-f171-4195-9c05-97a5c82a85df",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 565610,
+              "key": "7ee8728a-71d6-405c-9af8-7934eb463044",
+              "title": "C3 L2 L11 Overshoot V1",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "AIlzDd4mhOs",
+                "china_cdn_id": "AIlzDd4mhOs.mp4"
+              }
+            },
+            {
+              "id": 692522,
+              "key": "893b00bd-ab97-456f-8979-7c4f90462cad",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Tuning a system depends on the situation and the characteristics of the system. The video provides you with some guidelines on how to approach the tuning process.\n\nA good practice is to start with the requirements that you need for your system, such as speed, accuracy, stability, etc.\n\nPrecisely how you want the system to behave over time (therefore focusing on T-rise and overshoot) and the frequencies (bandwidth and damping ratio).\n\nFor example, if you want to reduce T-rise, you can increase the value of the P-gain (Kp). \nOn the other hand, increasing the D-gain (Kd) decreases overshoot and improves the stability.\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 692536,
+              "key": "7aa52321-1733-4ee3-a947-12fb66bf25c5",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Here below a reference of how different Kp, Kd values can affect the time domain of the system.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 692537,
+              "key": "0086d576-aedb-45c3-948c-d5d8007a5e97",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/August/5b7313dd_screen-shot-2018-08-14-at-1.39.16-pm/screen-shot-2018-08-14-at-1.39.16-pm.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/0086d576-aedb-45c3-948c-d5d8007a5e97",
+              "caption": "",
+              "alt": "",
+              "width": 1660,
+              "height": 1094,
+              "instructor_notes": null
+            }
+          ]
+        },
+        {
+          "id": 559601,
+          "key": "62fa83b8-3435-4c78-a0b7-992ff8b714b2",
+          "title": "More Model Errors",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "62fa83b8-3435-4c78-a0b7-992ff8b714b2",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 565144,
+              "key": "671008c5-8d42-40db-8283-4b8069754b13",
+              "title": "AB L2 01 More Model Error",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "zEdIdTGa3t0",
+                "china_cdn_id": "zEdIdTGa3t0.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 559602,
+          "key": "507c4448-87c7-4e1b-80a0-36ec38330888",
+          "title": "PID Control",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "507c4448-87c7-4e1b-80a0-36ec38330888",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 565609,
+              "key": "028ab847-845a-43c9-99e9-ec79bbacf094",
+              "title": "C3 L2 L13 PID Control V1",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "R0NQWGNWzJQ",
+                "china_cdn_id": "R0NQWGNWzJQ.mp4"
+              }
+            },
+            {
+              "id": 693079,
+              "key": "8944f9b1-2d3b-42e9-9f60-20e86aff82d2",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "If you don't want to think about *delta* and *time constant*, you can refer to the table below, which shows what to expect when tuning a system directly tweaking the values of Kp, Kd, Ki.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 693080,
+              "key": "becf488a-d60d-4a90-b92a-824abe5ff092",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/August/5b744156_screen-shot-2018-08-15-at-11.05.31-am/screen-shot-2018-08-15-at-11.05.31-am.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/becf488a-d60d-4a90-b92a-824abe5ff092",
+              "caption": "",
+              "alt": "",
+              "width": 1638,
+              "height": 1078,
+              "instructor_notes": null
+            }
+          ]
+        },
+        {
+          "id": 518494,
+          "key": "376cb237-8c63-4be5-b5e2-ee628dab64cd",
+          "title": "PID Control Exercise",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "376cb237-8c63-4be5-b5e2-ee628dab64cd",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 559698,
+              "key": "1d0af63a-397d-4c6b-8131-ff84374ba9b7",
+              "title": null,
+              "semantic_type": "WorkspaceAtom",
+              "is_public": true,
+              "workspace_id": "viewb9633d84",
+              "pool_id": "jupyter",
+              "view_id": "423919be-8607-4b59-8a45-3da89007a3f4",
+              "gpu_capable": false,
+              "configuration": {
+                "id": "reserved",
+                "blueprint": {
+                  "conf": {
+                    "disk": null,
+                    "ports": [],
+                    "allowSubmit": false,
+                    "defaultPath": "/notebooks/PID%20Controller.ipynb"
+                  },
+                  "kind": "jupyter"
+                },
+                "workspaceId": "reserved"
+              },
+              "starter_files": null
+            }
+          ]
+        },
+        {
+          "id": 696367,
+          "key": "c96ee25a-5c27-4e9d-97fc-ccc269f31cfe",
+          "title": "PID Control Example",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "c96ee25a-5c27-4e9d-97fc-ccc269f31cfe",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 696368,
+              "key": "c1403a06-5578-4391-a769-7597aafdb218",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "After all this math, it might be a good idea to recap what we have seen so far through an example to intuitively see how the PID controller works for a quadrotor. \nLet’s approach every single parameter independently, so you can see how they affect the behavior of the drone.\n\nIn this example, we want to build a controller that allows us to control the altitude of the drone (this is again a one-dimensional world).\nAs you recall, the diagram for our system is simplified below:\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 696372,
+              "key": "4e55600e-e02f-4535-aee1-e9a4b9bbaeb6",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/August/5b7f0e12_1/1.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/4e55600e-e02f-4535-aee1-e9a4b9bbaeb6",
+              "caption": "",
+              "alt": "",
+              "width": 900,
+              "height": 250,
+              "instructor_notes": null
+            },
+            {
+              "id": 696373,
+              "key": "f92d6e63-892f-4c1d-a3b6-f50cb2a17065",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "As we have seen earlier in the lessons and the exercises, the input to our system is the thrust we can command to the propellers (generated by the propellers’ speed), and the output is the altitude from the ground.\nConversely, the input of the controller is the measured error, and the output is the thrust that the controller signals to the drone.\n\nThe error in our example is the difference between the actual (present) altitude and the target altitude.\n<br></br>\n\n**Proportional component**:\n\nOur starting state sees the drone on the ground, and our goal is to lift the drone up to reach the desired (target) altitude.\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 696376,
+              "key": "d6ea307c-29b7-4373-b980-1cf93c498ef0",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/August/5b7f0ef6_2/2.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/d6ea307c-29b7-4373-b980-1cf93c498ef0",
+              "caption": "",
+              "alt": "",
+              "width": 900,
+              "height": 549,
+              "instructor_notes": null
+            },
+            {
+              "id": 696377,
+              "key": "9a8ec053-58a6-46be-a409-bf3d4190bf8f",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "To compensate for the error, we will input a thrust (derived from the propellers’ speed), which will allow the drone to lift off and therefore reduce the error.\n\nOn the other hand, let’s see what happens when the drone reaches the target altitude: \n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 696378,
+              "key": "b751a466-c75f-4c25-998e-f8a75e8a1703",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/August/5b7f0f11_3/3.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/b751a466-c75f-4c25-998e-f8a75e8a1703",
+              "caption": "",
+              "alt": "",
+              "width": 768,
+              "height": 485,
+              "instructor_notes": null
+            },
+            {
+              "id": 696380,
+              "key": "00c9b733-5c46-4435-ae65-9b04f28274f2",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "In this case, since the error is zero, the command to the drone will demand zero thrust, and therefore will stop the propellers’ speed and cause the drone to fall.\nAs soon as it starts falling, the error increases and the controller will send a signal to increase the thrust, to compensate for that error between the current and the target altitude.\n\n\nLet’s take a step further and add the goal of hovering the drone to the target location.\n\nHovering implies a lift thrust equal to the weight of the drone.\n\nLet’s see how the proportional controller influences the behavior of the drone. Let’s assume that the equilibrium (hovering state) is reached when the thrust is equal to 100N.\n\nIf we pick a proportional gain (Kp) equal to 1, then the commanded thrust would be equivalent to 100 (error = 100; Kp=1 => thrust = 100*1 = 100N) and the drone would continue to hover at ground level.\nIf we increase Kp to 5, then the drone will hover at an altitude of 80m, since the drone will reach the commanded thrust when the error is equal to 20m.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 696381,
+              "key": "3d3997f0-113d-46c2-a8c6-47772dc884a1",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/August/5b7f0f35_4/4.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/3d3997f0-113d-46c2-a8c6-47772dc884a1",
+              "caption": "",
+              "alt": "",
+              "width": 900,
+              "height": 482,
+              "instructor_notes": null
+            },
+            {
+              "id": 696386,
+              "key": "04322627-1dd2-4879-b240-d1a22a8e0dad",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "We can see that the more we increase Kp, the smaller the error will be.\nUnfortunately, this error won’t ever go away. No matter how big Kp is, we won’t be able to get the error to zero. Not cool, right?\n\nSo far, the proportional gain hasn’t helped our drone reach the target altitude. It certainly got us closer to it, but it still carries a constant error (called “steady state error”).\n\nThe proportional controller uses only present information. We were comparing actual altitude with target altitude. But to help us get rid of this constant error introduced by the proportional gain, we can use an integrator path into our controller.\n<br></br>\n\n**Integral component**\n\nThe integrator path (identified by the integral-gain Ki) looks, instead, at information coming from the past. Thus, the integral part keeps in memory what has happened before.\n\nThis is how our system diagram looks like with these two controllers running in parallel:\n\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 696388,
+              "key": "3dde74e7-0f73-4199-8577-0456a6a19dab",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/August/5b7f0f7f_5/5.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/3dde74e7-0f73-4199-8577-0456a6a19dab",
+              "caption": "",
+              "alt": "",
+              "width": 900,
+              "height": 361,
+              "instructor_notes": null
+            },
+            {
+              "id": 696389,
+              "key": "eb71fdb4-54a5-4fdc-b980-65fd9dab22a4",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "The integrator controller sums up the input signal (the error in our case) over time, and it adjusts the system to counter the accumulation of the error.\n\nA situation of “steady-state” error causes a residual error between current and actual position. This bias keeps the drone from flying at exactly the target altitude, but always a bit off from it.\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 696390,
+              "key": "bf60bb2a-0db0-4aa5-bb10-d54d560bc4e3",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/August/5b7f0fa1_6/6.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/bf60bb2a-0db0-4aa5-bb10-d54d560bc4e3",
+              "caption": "",
+              "alt": "",
+              "width": 768,
+              "height": 575,
+              "instructor_notes": null
+            },
+            {
+              "id": 696392,
+              "key": "5104c440-949c-4dba-a5e8-3b0dc18ad9df",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "The integral component looks at the past error, and tries to reduce the accumulated error by signaling an increase of thrust. The more time we spend below our goal, the more thrust will be applied. \n\nWhile the proportional term adjusts the output based on the present error, the integral term adjusts the output based on past errors.\n\n\nTherefore, if the drone is flying below the target altitude, then the integral component will provide a thrust higher than 100N (the equilibrium thrust).\nTo remove the excess of thrust, we will need to have a negative error so that the accumulated sum of error lowers, and the integral component sends a signal to slow down the thrust.\nBut, to get a negative error, the drone has to overshoot the target, then undershoot a bit until it finally reaches the target altitude.\n\nAlthough a controller with proportional and integral components can help us eventually reach the target altitude, this overshooting is not ideal, and should be minimized it as much as possible.\n\nIt would be great if we had something that could predict the **future** and tell us how fast we will be approaching the goal in order to regulate it! That’s what the **derivative** term of our controller does!\n<br></br>\n\n**Derivative component**\n\nThe derivative term measures the error’s rate of change. Therefore, it sees how fast the error is increasing/decreasing.\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 696393,
+              "key": "9e3d5198-b7c4-4e14-a209-790eb1a1e0db",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/August/5b7f0ffd_7/7.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/9e3d5198-b7c4-4e14-a209-790eb1a1e0db",
+              "caption": "",
+              "alt": "",
+              "width": 358,
+              "height": 298,
+              "instructor_notes": null
+            },
+            {
+              "id": 696395,
+              "key": "24fe293b-5f1c-428a-80b1-a6f0da3f4afe",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "If the error is decreasing quickly, then the rate of change is negative (think about the derivative as the slope of the curve), and the output from our derivative term of the controller is a negative output. This means that it lowers the thrust (essentially the propellers’ speed).\n\nIn this case, looking at the rate of change of the error helps the controller determine how the drone is approaching the goal. The controller then slows it down the drone appropriately to prevent overshooting.\n\nThese three components (proportional, integral, derivative) contribute to the output of the controller, and we can decide how to weigh each contribution by adjusting the gain terms (Kp, Ki, Kd).\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 696396,
+              "key": "30950842-8ce5-4ffe-8ba2-0d9b700be8ea",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/August/5b7f101d_8/8.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/30950842-8ce5-4ffe-8ba2-0d9b700be8ea",
+              "caption": "",
+              "alt": "",
+              "width": 675,
+              "height": 361,
+              "instructor_notes": null
+            }
+          ]
+        },
+        {
+          "id": 696400,
+          "key": "3dbfe1fd-fc0e-43b8-9dd6-4db3e4e23c4a",
+          "title": "PID controller in practice",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "3dbfe1fd-fc0e-43b8-9dd6-4db3e4e23c4a",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 696401,
+              "key": "a0675ea3-af57-46aa-985a-33802b47074b",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "While we have seen how the PID controller works so far, we had restricted our view to an ideal scenario: linear systems.\nLinear systems have virtually no limitations, and respond “linearly” (of course!) to any command.\nTo understand what we mean by that, let’s recall what the output of the controller is. In the previous lecture’s example, we were dealing with thrust, which was applied to the behavior of our drone.\nIn a real-world scenario, instead, this thrust gets transmitted to the drone through actuators. These actuators are not linear systems; instead, they have physical limitations, and can’t entirely follow the commands given to them.\n\n**Saturation** is one of these limitations. It limits the ability of the actuator to follow a given command. This limit affects the integral part of the PID controller.\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 696402,
+              "key": "89630467-b010-4e3b-92a3-df14062ef748",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/August/5b7f150d_1/1.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/89630467-b010-4e3b-92a3-df14062ef748",
+              "caption": "",
+              "alt": "",
+              "width": 900,
+              "height": 437,
+              "instructor_notes": null
+            },
+            {
+              "id": 696403,
+              "key": "caffe8ab-b3be-45a3-b65f-201331a79948",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Let’s use the same example introduced in the previous lecture. Our initial state will be the same: the drone is staying on the ground waiting to lift off and reach the target altitude. This time, though, the motor spinning the propellers will have a limitation to the thrust it can provide. Let’s say that the max thrust is 200N.\n\nIf our drone is strapped to the ground, then the integral component of the PID controller will evaluate the past error (which is 100 meters), and will signal an increase of thrust. As long as the drone stays on the ground (and we are forcing it to), this accumulated error keeps growing, and the integral part will signal the motor to keep increasing the thrust.\nAt a certain point, we will reach an interesting situation, where the motor cannot provide the thrust requested by the controller, but the controller keeps sending a signal to increase thrust.\nAs long as the drone stays on the ground, the accumulated error increases and the requested thrust does as well. \n\nLet’s say, for example, that the requested thrust has reached the value of 1,000N, but the motor can only deliver 200N.\n\nAs soon as we release the drone, it will quickly rise as the motor is requesting the maximum thrust. It’s easy to see that the drone will rapidly overshoot the target.\n\nAt this point, the error will become negative, and the commanded output will decrease. Interestingly, though, the commanded output will start decreasing from where it was before leaving the ground, which was around 1,000N.\nThe motor, on the other hand, will continue to produce 200N until the commanded output decreases below that value. Until that point, the drone has been rising with a 200N thrust!\n\nThe area between the commanded thrust and the engine limitation thrust is called “integral windup”.\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 696404,
+              "key": "5f75e998-ccf6-485d-96dd-435488a34915",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/August/5b7f1544_2/2.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/5f75e998-ccf6-485d-96dd-435488a34915",
+              "caption": "",
+              "alt": "",
+              "width": 900,
+              "height": 520,
+              "instructor_notes": null
+            },
+            {
+              "id": 696405,
+              "key": "5d4367a1-81d8-45f4-845f-053576aba113",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "We want to minimize this windup area, which means that we want to reduce the time it takes to reverse command when the error changes sign, to stop the integrator from increasing its output value.\nA way to do that is to use “clamping,” which essentially turns the integrator off when we don’t want it to integrate any longer.\n\nWe won’t go in details on this topic, but we can provide some additional resources for you to read:\n\nhttps://en.wikipedia.org/wiki/Integral_windup\nhttp://www.20sim.com/webhelp/library_signal_control_pid_control_antiwindup.php\n",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 559603,
+          "key": "a47ffb63-4810-48eb-b046-acafe668105b",
+          "title": "Summary",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "a47ffb63-4810-48eb-b046-acafe668105b",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 565608,
+              "key": "ce976975-0552-4dbe-b6e1-bb823556a861",
+              "title": "C3 L2 L14 Summary V1",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "qbED_HpGMEA",
+                "china_cdn_id": "qbED_HpGMEA.mp4"
+              }
+            },
+            {
+              "id": 703343,
+              "key": "b3c5ebab-db0d-4590-8813-a2805a5e9c19",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Tuning a PID controller mainly depends on the situation you are dealing with. There are no set rules on how to approach it. There is no “one-size” fits all tuning method, but mainly tuning guidelines that you should follow.\nFor example, if you want to reduce the rise time, you can increase the P-gain (Kp).\nOn the other hand, if you want to improve the stability and decrease overshoot, then a good idea is to increase the D-gain (Kd).\n\nYou can refer back to this table you have seen in a previous lesson:\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 703344,
+              "key": "5aa00d2d-8e6d-4a21-a21a-1338ea477b78",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/August/5b85b4da_screen-shot-2018-08-28-at-4.47.05-pm/screen-shot-2018-08-28-at-4.47.05-pm.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/5aa00d2d-8e6d-4a21-a21a-1338ea477b78",
+              "caption": "",
+              "alt": "",
+              "width": 666,
+              "height": 168,
+              "instructor_notes": null
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "_deprecated": [
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    }
+  ]
+}

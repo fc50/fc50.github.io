@@ -1,0 +1,1798 @@
+{
+  "data": {
+    "lesson": {
+      "id": 505968,
+      "key": "4cd7a5c4-12ad-4853-86cb-759d3833e856",
+      "title": "Vehicle Dynamics",
+      "semantic_type": "Lesson",
+      "is_public": true,
+      "version": "1.0.0",
+      "locale": "en-us",
+      "summary": "Learn how flying vehicles move in one and two dimensions by understanding how propellers create forces and moments which cause accelerations and rotations.",
+      "lesson_type": "Classroom",
+      "display_workspace_project_only": null,
+      "resources": {
+        "files": [
+          {
+            "name": "Videos Zip File",
+            "uri": "https://zips.udacity-data.com/4cd7a5c4-12ad-4853-86cb-759d3833e856/505968/1537289598708/Vehicle+Dynamics+Videos.zip"
+          },
+          {
+            "name": "Transcripts Zip File",
+            "uri": "https://zips.udacity-data.com/4cd7a5c4-12ad-4853-86cb-759d3833e856/505968/1537289591562/Vehicle+Dynamics+Subtitles.zip"
+          }
+        ],
+        "google_plus_link": null,
+        "career_resource_center_link": null,
+        "coaching_appointments_link": null,
+        "office_hours_link": null,
+        "aws_provisioning_link": null
+      },
+      "project": null,
+      "lab": null,
+      "concepts": [
+        {
+          "id": 616867,
+          "key": "6065be8d-9dda-4ed0-b061-753b71422655",
+          "title": "Sebastian Introduction",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "6065be8d-9dda-4ed0-b061-753b71422655",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 616869,
+              "key": "8fed4ecc-e4f4-4d8d-a144-af98d4006d7c",
+              "title": "Nd787 C3 L1 00 Sebastian V1",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "dzGdwiADfjs",
+                "china_cdn_id": "dzGdwiADfjs.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 514889,
+          "key": "a7acb6ba-6fb5-4596-81eb-39e6466787bc",
+          "title": "Introduction to Vehicle Dynamics",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "a7acb6ba-6fb5-4596-81eb-39e6466787bc",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 562517,
+              "key": "d8a4e376-01ff-4e41-a775-aad20c2243f8",
+              "title": "L01 01 Intro V2",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "EME6cpJF_aw",
+                "china_cdn_id": "EME6cpJF_aw.mp4"
+              }
+            },
+            {
+              "id": 556365,
+              "key": "2f2e2b90-b090-43de-8f08-53be59e1c674",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Lesson Outline\nIn this lesson you will learn about the physics which underlies motion in one and two dimensions. We will cover 3D dynamics in the fourth lesson of this course.\n\n#### Part 1 - Basic (1D) Quadrotor Physics \nWe're going to go *quickly* through this section. We assume you've taken basic physics before and this is mostly a review.\n* Definition of Force\n* Forces on a Quadrotor: **gravity / weight**, **thrusts**, **drag** (which we won't be modeling)\n* Translational Equilibrium / Hover\n* Rotational Equilibrium\n* Definition of Moment / Torque\n* Rotor Physics: <span class=\"mathquill\">F = k_f \\omega^2</span> and <span class=\"mathquill\">M = k_m \\omega^2</span>\n* <span class=\"mathquill\">F = m a</span> and <span class=\"mathquill\">F_z = m \\ddot{z}</span>\n* <span class=\"mathquill\">\\tau = I \\alpha</span> and <span class=\"mathquill\">M_z = I_z \\ddot{\\psi}</span>\n* `Programming Exercise: Coaxial Copter Dynamics`\n\n#### Part 2 - Quadrotor Math: Second Order Systems\nThis will be a brief introduction to some of the math and programming we use to keep track of the **state** of flying vehicles.\n\n* `Programming Exercise: Tracking Changes to State`\n* Second order systems / double integrated systems\n* Using vectors to store state\n\n#### Part 3 - Dynamics of Controlled Quadrotors (2D)\nNow we will allow the vehicle to move in two dimensions. This part is meant to be a quick review of the trigonometry and physics required for 2D motion.\n\n* Decomposing thrust vectors (review of trig: <span class=\"mathquill\">\\sin</span> and <span class=\"mathquill\">\\cos</span> )\n* Calculating moments: <span class=\"mathquill\">\\tau = d_\\text{perp} \\times F</span> \n* Converting propeller rotations to Forces and Moments\n* `Programming Exercise: 2D Controlled Quad` \n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 637755,
+              "key": "00256a1d-df00-40bc-bc53-9496451509fb",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": " ",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 556371,
+          "key": "418592e7-84ed-4d34-a150-3af4feb819ae",
+          "title": "The Forces on A Quadrotor",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "418592e7-84ed-4d34-a150-3af4feb819ae",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 562514,
+              "key": "6e3ac831-609b-4bed-ac46-cbf421c61975",
+              "title": "C3 C1 L2 Forces On Quad V3",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "F8BvMsR2VyU",
+                "china_cdn_id": "F8BvMsR2VyU.mp4"
+              }
+            },
+            {
+              "id": 556373,
+              "key": "39dda907-352e-42da-83e9-6ff0ccd3a22c",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Quadrotor Intuition\n\nImagine looking at a quadrotor from the side. What happens when the thrust from the left rotors is bigger than the thrust from the right? What happens when they're equal?\n\nYou probably already have a good intuitive sense for how some of this control works.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 556374,
+              "key": "c3faf649-af38-40ec-b7b6-3909982c426b",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/March/5a99fc2b_screen-shot-2018-03-02-at-5.36.22-pm/screen-shot-2018-03-02-at-5.36.22-pm.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/c3faf649-af38-40ec-b7b6-3909982c426b",
+              "caption": "",
+              "alt": "",
+              "width": 1318,
+              "height": 314,
+              "instructor_notes": null
+            },
+            {
+              "id": 556375,
+              "key": "75f64d3b-5d1f-494a-93df-0d5ce6cc4046",
+              "title": "",
+              "semantic_type": "MatchingQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "75f64d3b-5d1f-494a-93df-0d5ce6cc4046",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "complex_prompt": {
+                  "text": "The images above show three quadrotors with different-sized forces coming from the left and right propellers.\n\nMatch the quadrotor (A, B, or C) to the written description of how it will **rotate**."
+                },
+                "concepts_label": "Quadrotor",
+                "answers_label": "Rotation",
+                "concepts": [
+                  {
+                    "text": "No Rotational Acceleration",
+                    "correct_answer": {
+                      "id": "a1520041022104",
+                      "text": "B"
+                    }
+                  },
+                  {
+                    "text": "Clockwise Rotational Acceleration",
+                    "correct_answer": {
+                      "id": "a1520041111417",
+                      "text": "C"
+                    }
+                  },
+                  {
+                    "text": "Counterclockwise Rotational Acceleration",
+                    "correct_answer": {
+                      "id": "a1520041121530",
+                      "text": "A"
+                    }
+                  }
+                ],
+                "answers": [
+                  {
+                    "id": "a1520041121530",
+                    "text": "A"
+                  },
+                  {
+                    "id": "a1520041111417",
+                    "text": "C"
+                  },
+                  {
+                    "id": "a1520041022104",
+                    "text": "B"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 514892,
+          "key": "9781dd9e-cd64-44bc-81a7-af578d8d7ac1",
+          "title": "Force and Translational Equilibrium",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "9781dd9e-cd64-44bc-81a7-af578d8d7ac1",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 562515,
+              "key": "9371e91d-0813-4be0-a6be-e57f423a7cee",
+              "title": "C3 C1 L3 Trans Equal V1",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "0bEHYCkPGTI",
+                "china_cdn_id": "0bEHYCkPGTI.mp4"
+              }
+            },
+            {
+              "id": 556377,
+              "key": "dd6413e4-4347-4816-b21e-02a7e374d5cd",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/March/5a99fde0_screen-shot-2018-03-02-at-5.43.10-pm/screen-shot-2018-03-02-at-5.43.10-pm.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/dd6413e4-4347-4816-b21e-02a7e374d5cd",
+              "caption": "This *monorotor* is currently hovering in place.",
+              "alt": "",
+              "width": 325,
+              "height": 310,
+              "instructor_notes": null
+            },
+            {
+              "id": 556379,
+              "key": "e00aeae7-ca51-4965-b983-1c1c1c93433a",
+              "title": "",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "e00aeae7-ca51-4965-b983-1c1c1c93433a",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "The *monorotor* shown above is currently hovering in place. What can you say about the value of <span class=\"mathquill\">F_\\text{thrust}</span>?",
+                "answers": [
+                  {
+                    "id": "a1520041487738",
+                    "text": "<span class=\"mathquill\">F_\\text{thrust}</span> must be **less than** 100 Newtons.",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1520041541777",
+                    "text": "<span class=\"mathquill\">F_\\text{thrust}</span> must be **equal to** 100 Newtons.",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1520041555603",
+                    "text": "<span class=\"mathquill\">F_\\text{thrust}</span> must be **more than** 100 Newtons.",
+                    "is_correct": false
+                  }
+                ]
+              }
+            },
+            {
+              "id": 556380,
+              "key": "9c580d2f-6175-4f85-a695-8048ab2b0eb5",
+              "title": "",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "9c580d2f-6175-4f85-a695-8048ab2b0eb5",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "Which of the following is the **correct** expression for the **mass** of this vehicle?",
+                "answers": [
+                  {
+                    "id": "a1520041712827",
+                    "text": "<span class=\"mathquill\">m = 9.81 / 100</span>",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1520041761059",
+                    "text": "<span class=\"mathquill\">m = 100 / 9.81 </span>",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1520041773963",
+                    "text": "<span class=\"mathquill\">m = 9.81 \\times 100</span>",
+                    "is_correct": false
+                  }
+                ]
+              }
+            },
+            {
+              "id": 514895,
+              "key": "87d91b1e-c907-4e58-9698-78f22806c383",
+              "title": "",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "87d91b1e-c907-4e58-9698-78f22806c383",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "If a monorotor's propellor were providing the thrust upwards that you just identified, what kind of equilibrium would the monorotor be in?",
+                "answers": [
+                  {
+                    "id": "a1516742020544",
+                    "text": "No Equilibrium",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1516742056976",
+                    "text": "Translational Equilibrium only",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1516742064904",
+                    "text": "Rotational Equilibrium only",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1516742069801",
+                    "text": "Translational *and* Rotational Equilibrium",
+                    "is_correct": false
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 514896,
+          "key": "ebba83b6-ec48-45ea-82a7-c844e90f6e96",
+          "title": "Rotational Equilibrium 1",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "ebba83b6-ec48-45ea-82a7-c844e90f6e96",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 562516,
+              "key": "367b31c9-835f-444f-8a32-34236a6d8f98",
+              "title": "C3 C1 L4 Rot Equal V1",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "S9X9sJIeDIk",
+                "china_cdn_id": "S9X9sJIeDIk.mp4"
+              }
+            },
+            {
+              "id": 556381,
+              "key": "c8633c64-cb33-4f94-86e0-d9422f819455",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "The monorotor from [this video](https://www.youtube.com/watch?v=P3fM6VwXXFM) is pretty amazing! Notice how the body of the vehicle rotates in the opposite direction of the rotor.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 626177,
+              "key": "4659c327-651d-4b7b-9e94-5b61715c46cb",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": " ",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 514898,
+          "key": "cf2aecb8-bf85-401e-a98b-ca61bfb49381",
+          "title": "Rotational Equilibrium 2",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "cf2aecb8-bf85-401e-a98b-ca61bfb49381",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 562524,
+              "key": "1467afcc-5e6c-4e7b-a4f3-b1c18367d748",
+              "title": "C3 C1 L5 Rot Equal 2 V2",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "scNi0w5aajM",
+                "china_cdn_id": "scNi0w5aajM.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 514902,
+          "key": "35ebb5e5-1dca-4301-99ac-fb26639705e6",
+          "title": "Rotor Physics",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "35ebb5e5-1dca-4301-99ac-fb26639705e6",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 562518,
+              "key": "67b09a9e-7395-4191-a583-6d3aeda01014",
+              "title": "C3 C1 L6 Rotor Physics V2",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "DMXPYxnocdE",
+                "china_cdn_id": "DMXPYxnocdE.mp4"
+              }
+            },
+            {
+              "id": 514903,
+              "key": "45d96660-c4fa-461b-afbe-7c37d45598f4",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "<div class=\"mathquill\">F = k_F\\omega^2</div>\n<div class=\"mathquill\">M = k_M\\omega^2</div>",
+              "instructor_notes": ""
+            },
+            {
+              "id": 556385,
+              "key": "8b6170ef-49f7-4146-8516-ab5162dd6838",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Measuring <span class=\"mathquill\">k_F</span> and <span class=\"mathquill\">k_M</span>\nThe values for <span class=\"mathquill\">k_F</span> and <span class=\"mathquill\">k_M</span> are generally found empirically. We mount the motor and propeller on a load cell and measure the force and moment for different motor speeds.\n\nThe graph below shows a simulation of the data you might get from such an experiment.\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 664422,
+              "key": "038d1232-3e55-4bef-b175-11a1df44d00b",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/June/5b2e521e_f-vs-omega/f-vs-omega.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/038d1232-3e55-4bef-b175-11a1df44d00b",
+              "caption": "",
+              "alt": "",
+              "width": 386,
+              "height": 283,
+              "instructor_notes": null
+            },
+            {
+              "id": 556387,
+              "key": "4fd43529-acb6-4e9b-9c56-df9839449233",
+              "title": "",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "4fd43529-acb6-4e9b-9c56-df9839449233",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "Based on the Force vs omega graph shown above, what is <span class=\"mathquill\">k_F</span> for this propeller?",
+                "answers": [
+                  {
+                    "id": "a1520043827559",
+                    "text": "70",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1520043874415",
+                    "text": "100",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1520043877616",
+                    "text": "0.7",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1520043885176",
+                    "text": "0.007",
+                    "is_correct": true
+                  }
+                ]
+              }
+            },
+            {
+              "id": 514904,
+              "key": "c9d392d1-cefe-438f-be72-9457b67a06b5",
+              "title": "",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "c9d392d1-cefe-438f-be72-9457b67a06b5",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "If you double the rotation speed of a rotor, how does the thrust change?",
+                "answers": [
+                  {
+                    "id": "a1516742428592",
+                    "text": "Decreases by factor of 1/4",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1516742457580",
+                    "text": "Decreases by factor of  1/2",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1516742466463",
+                    "text": "Stays the same",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1516742470326",
+                    "text": "Increases by factor of  2",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1516742476197",
+                    "text": "Increases by factor of 4",
+                    "is_correct": true
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 514906,
+          "key": "e3d3a81b-e94f-425b-b8e8-4dd973de033f",
+          "title": "Unbalanced Forces Cause Linear Acceleration",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "e3d3a81b-e94f-425b-b8e8-4dd973de033f",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 562519,
+              "key": "5caff96d-9eae-417f-81fd-b47a194bf449",
+              "title": "L01 07 Unbalanced Forces V1",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "7TiBKJsKwR0",
+                "china_cdn_id": "7TiBKJsKwR0.mp4"
+              }
+            },
+            {
+              "id": 556394,
+              "key": "00201c8f-3f25-4ece-8aca-c0f4ce73ed67",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/March/5a9a086c_screen-shot-2018-03-02-at-6.28.35-pm/screen-shot-2018-03-02-at-6.28.35-pm.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/00201c8f-3f25-4ece-8aca-c0f4ce73ed67",
+              "caption": "",
+              "alt": "",
+              "width": 196,
+              "height": 416,
+              "instructor_notes": null
+            },
+            {
+              "id": 514908,
+              "key": "b8947b32-8519-46cf-89e9-06f37ab03876",
+              "title": "",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "b8947b32-8519-46cf-89e9-06f37ab03876",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "What happens when <span class=\"mathquill\">F_\\text{thrust}> mg</span>?",
+                "answers": [
+                  {
+                    "id": "a1516742681337",
+                    "text": "Hover",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1516742712335",
+                    "text": "Move up with constant speed",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1516742712711",
+                    "text": "Move up with constant acceleration",
+                    "is_correct": true
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 559604,
+          "key": "35af4878-8cc8-4d5e-b6d9-46d2f6fb5c2a",
+          "title": "F Equals MA",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "35af4878-8cc8-4d5e-b6d9-46d2f6fb5c2a",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 562521,
+              "key": "3974c180-c1cf-439a-b880-c88a59973023",
+              "title": "C3 C1 L8 Fma V1",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "dA82iMkJMC4",
+                "china_cdn_id": "dA82iMkJMC4.mp4"
+              }
+            },
+            {
+              "id": 561738,
+              "key": "714389a4-78d6-4d98-8aad-e132b2cbf541",
+              "title": "",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "714389a4-78d6-4d98-8aad-e132b2cbf541",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "What thrust would a **2.2 kg monorotor** need in order to accelerate upwards at <span class=\"mathquill\">-4.0 m / s^2</span> (remember, z is positive downwards)?",
+                "answers": [
+                  {
+                    "id": "a1520877555383",
+                    "text": "30.4 N",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1520877860960",
+                    "text": "12.8 N",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1520877872209",
+                    "text": "8.8 N",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1520877890106",
+                    "text": "21.6 N",
+                    "is_correct": false
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 514912,
+          "key": "ef090e98-ebd6-41a5-a320-4b28cb26f679",
+          "title": "Unbalanced Moments cause Rotational Acceleration",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "ef090e98-ebd6-41a5-a320-4b28cb26f679",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 562523,
+              "key": "6653a322-69c8-41ff-b1b5-fa14585095a9",
+              "title": "C3 C1 L9 Unbalanced Movements V3",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "qOXE8_cZRzU",
+                "china_cdn_id": "qOXE8_cZRzU.mp4"
+              }
+            },
+            {
+              "id": 562095,
+              "key": "35ef8828-f209-403c-ae49-3aa3c12f6e55",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/March/5aa71a39_drone1/drone1.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/35ef8828-f209-403c-ae49-3aa3c12f6e55",
+              "caption": "When viewed from above, rotor 1 (on top) spins CW with <span class=\"mathquill\">\\omega_1</span>. Rotor 2 (bottom) spins CCW with <span class=\"mathquill\">\\omega_2</span>.",
+              "alt": "",
+              "width": 415,
+              "height": 327,
+              "instructor_notes": null
+            },
+            {
+              "id": 562096,
+              "key": "5ba0e309-1074-43bd-ab14-27dc6eeccce1",
+              "title": "",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "5ba0e309-1074-43bd-ab14-27dc6eeccce1",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "Look at the \"flying car\" shown above. It's supported by two rotors spinning in opposite directions. If rotor 1 (top) spins faster than rotor 2, in which direction will the body of the vehicle experience angular acceleration?",
+                "answers": [
+                  {
+                    "id": "a1520900957727",
+                    "text": "Clockwise (CW)",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1520901454165",
+                    "text": "Counter-clockwise (CCW)",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1520901463421",
+                    "text": "No rotational acceleration",
+                    "is_correct": false
+                  }
+                ]
+              }
+            },
+            {
+              "id": 562099,
+              "key": "a0d201a9-15a3-42e3-8659-ba9e60fe8dea",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "| Quantity | Value |\n|:--------:|:-----:|\n|     <span class=\"mathquill\">m</span>     |   1.0  |\n|     <span class=\"mathquill\">I_z</span>     |   2.0  |\n|  <span class=\"mathquill\">k_F</span> | 0.1 |\n|  <span class=\"mathquill\">k_M</span> | 0.2 |\n|  <span class=\"mathquill\">\\omega_1</span> | 10.0 |\n|  <span class=\"mathquill\">\\omega_2</span> | 8.0 |\n\nConsider a coaxial copter with the above quantities (all values are given in standard units). What will be the resulting linear acceleration <span class=\"mathquill\">\\ddot{z}</span>? What about rotational acceleration <span class=\"mathquill\">\\ddot{\\psi}</span>?\n\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 562101,
+              "key": "1ef39583-4d45-4dc3-b5fb-232541473edb",
+              "title": "",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "1ef39583-4d45-4dc3-b5fb-232541473edb",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "What will the resulting <span class=\"mathquill\">\\ddot{z}</span> be for the system described above? Z is positive down.",
+                "answers": [
+                  {
+                    "id": "a1520902446972",
+                    "text": "<span class=\"mathquill\">6.6 m/s^2</span>",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1520902491819",
+                    "text": "<span class=\"mathquill\">-6.6 m/s^2</span>",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1520902523717",
+                    "text": "<span class=\"mathquill\">26.2 m/s^2</span>",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1520902574942",
+                    "text": "<span class=\"mathquill\">-26.2 m/s^2</span>",
+                    "is_correct": false
+                  }
+                ]
+              }
+            },
+            {
+              "id": 562103,
+              "key": "b32075bf-1e00-4ca2-a070-4e7e01e83313",
+              "title": "",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "b32075bf-1e00-4ca2-a070-4e7e01e83313",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "What will the resulting <span class=\"mathquill\">\\ddot{\\psi}</span> be for the system described above? CW rotations are positive.",
+                "answers": [
+                  {
+                    "id": "a1520903049757",
+                    "text": "16.4 <span class=\"mathquill\">rad/s^2</span>",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1520903297211",
+                    "text": "-16.4 <span class=\"mathquill\">rad/s^2</span>",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1520903302348",
+                    "text": "3.6 <span class=\"mathquill\">rad/s^2</span>",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1520903306675",
+                    "text": "-3.6 <span class=\"mathquill\">rad/s^2</span>",
+                    "is_correct": true
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 506147,
+          "key": "b29f7b3e-2a0f-4880-b51b-ec46c89b799c",
+          "title": "Coaxial Drone Dynamics Exercise",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "b29f7b3e-2a0f-4880-b51b-ec46c89b799c",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 556607,
+              "key": "35714093-9f64-45e3-a1c3-c3f8c8dd75a5",
+              "title": null,
+              "semantic_type": "WorkspaceAtom",
+              "is_public": true,
+              "workspace_id": "viewb313237d",
+              "pool_id": "jupyter",
+              "view_id": "3dd1f5cf-3545-41b9-9707-e5d27f67a1e7",
+              "gpu_capable": false,
+              "configuration": {
+                "id": "reserved",
+                "blueprint": {
+                  "conf": {
+                    "disk": null,
+                    "ports": [],
+                    "allowSubmit": false,
+                    "defaultPath": "/notebooks/1.%20Coaxial%20Drone%20Dynamics.ipynb"
+                  },
+                  "kind": "jupyter"
+                },
+                "workspaceId": "reserved"
+              },
+              "starter_files": null
+            }
+          ]
+        },
+        {
+          "id": 559605,
+          "key": "fb22f9f0-606c-4910-8e33-c192c5b790a0",
+          "title": "Coaxial Dynamics Explained",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "fb22f9f0-606c-4910-8e33-c192c5b790a0",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 565136,
+              "key": "d5c0c326-33cd-453a-959a-158fb4b59c09",
+              "title": "AB L1 01 Coaxial Copter Dynamics Explained",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "0XkkWGxmZDM",
+                "china_cdn_id": "0XkkWGxmZDM.mp4"
+              }
+            },
+            {
+              "id": 682947,
+              "key": "8545fe27-6a84-409f-b029-e55f6b09b28e",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "In the video (from minute 1:41 to 1:48) you will notice that the equations of omega_1, omega_2 are different from the Solutions. Please refer to the correct ones reported on the Solutions, which we post here below:\n\nomega_1 = math.sqrt(term_1 - term_2)\n\nomega_2 = math.sqrt(term_1 + term_2)",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 559606,
+          "key": "0b98640e-db8c-40a0-bc83-8d629e62acd6",
+          "title": "Tracking Changes to State",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "0b98640e-db8c-40a0-bc83-8d629e62acd6",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 565137,
+              "key": "c9270738-1e00-403a-979f-ca5162f0d8b6",
+              "title": "AB L1 02 Tracking Changes To State",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "O25yHC541qo",
+                "china_cdn_id": "O25yHC541qo.mp4"
+              }
+            },
+            {
+              "id": 682948,
+              "key": "2562e80c-227f-425e-b50d-2c800dcb2721",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "The state of our system in the 1D space is currently defined by:\n\nX = (z, psi, z_dot, psi_dot)",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 514919,
+          "key": "6d9f289f-ef02-4ef8-92cc-88f9aac39675",
+          "title": "Second Order Systems",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "6d9f289f-ef02-4ef8-92cc-88f9aac39675",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 562525,
+              "key": "f965f00a-1a5c-441c-873c-b4807515b7cb",
+              "title": "C3 C1 L13 2nd Order Of Systems V2",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "ShSbIP7MDEY",
+                "china_cdn_id": "ShSbIP7MDEY.mp4"
+              }
+            },
+            {
+              "id": 514921,
+              "key": "526c9c72-59ff-4446-a192-7ec97c5f9348",
+              "title": "",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "526c9c72-59ff-4446-a192-7ec97c5f9348",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "For the 1D case, we needed to keep track of four variables (`self.z`, `self.psi`, `self.z_dot`, `self.psi_dot`) to track the state of the vehicle AND we needed to update these variables with 4 equations. How many variables / equations do we need to keep track of state in 3D?\n",
+                "answers": [
+                  {
+                    "id": "a1516743228930",
+                    "text": "4",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1516743254066",
+                    "text": "6",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1516743255994",
+                    "text": "7",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1516743257747",
+                    "text": "8",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1516743260194",
+                    "text": "9",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1520904511763",
+                    "text": "12",
+                    "is_correct": true
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 514915,
+          "key": "042e537c-8928-4954-8504-99fdb5264fe3",
+          "title": "Tracking Changes to State Exercise",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "042e537c-8928-4954-8504-99fdb5264fe3",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 556633,
+              "key": "4484c9f5-2521-4904-acd1-fd3045a50b6b",
+              "title": null,
+              "semantic_type": "WorkspaceAtom",
+              "is_public": true,
+              "workspace_id": "viewb313237d",
+              "pool_id": "jupyter",
+              "view_id": "a313f72e-9e8c-46b9-90c4-34828fcc5116",
+              "gpu_capable": false,
+              "configuration": {
+                "id": "reserved",
+                "blueprint": {
+                  "conf": {
+                    "disk": null,
+                    "ports": [],
+                    "allowSubmit": false,
+                    "defaultPath": "/notebooks/2.%20Advance%20State%20for%20Controlled%20Drone.ipynb"
+                  },
+                  "kind": "jupyter"
+                },
+                "workspaceId": "reserved"
+              },
+              "starter_files": null
+            }
+          ]
+        },
+        {
+          "id": 514923,
+          "key": "c8554151-f55b-47ae-80cb-3db1a2097c28",
+          "title": "Compact Representations of State",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "c8554151-f55b-47ae-80cb-3db1a2097c28",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 565138,
+              "key": "d022e975-6133-4c2b-9fa5-cdccdc69efa5",
+              "title": "AB L1 03 Compact Representations Of State",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "y8EFM3RRZ6c",
+                "china_cdn_id": "y8EFM3RRZ6c.mp4"
+              }
+            },
+            {
+              "id": 565143,
+              "key": "791e1371-cfa2-4811-8146-c5d664214ddf",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "The math shown towards the end of the video has a slight mistake in the ordering of the state variables. It should look like this:\n<div class=\"mathquill\">\n\\begin{bmatrix}\nz\\\\ \n\\psi\\\\ \n\\dot{z}\\\\ \n\\dot{\\psi}\n\\end{bmatrix}'\n\n= \n\n\\begin{bmatrix}\nz\\\\ \n\\psi\\\\ \n\\dot{z}\\\\ \n\\dot{\\psi}\n\\end{bmatrix}\n\n+\n\ndt \n\n\\begin{bmatrix}\n\\dot{z}\\\\ \n\\dot{\\psi}\\\\ \n\\ddot{z}\\\\ \n\\ddot{\\psi}\n\\end{bmatrix}\n</div>",
+              "instructor_notes": ""
+            },
+            {
+              "id": 626289,
+              "key": "46d971b9-70a8-4061-a513-8e14c4ff9e8e",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": " ",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 506156,
+          "key": "55be0949-78cc-42c1-9812-a724f01c9c06",
+          "title": "Uncontrolled Drone Exercise",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "55be0949-78cc-42c1-9812-a724f01c9c06",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 556799,
+              "key": "f11776bd-8c70-4ba0-958e-c7409164b691",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Uncontrolled Drone",
+              "instructor_notes": ""
+            },
+            {
+              "id": 556685,
+              "key": "4db9f999-d5f8-47b5-a54f-e6f3a04583ff",
+              "title": null,
+              "semantic_type": "WorkspaceAtom",
+              "is_public": true,
+              "workspace_id": "viewb313237d",
+              "pool_id": "jupyter",
+              "view_id": "28959982-a0d9-4625-8ea4-614ab307c5a8",
+              "gpu_capable": false,
+              "configuration": {
+                "id": "reserved",
+                "blueprint": {
+                  "conf": {
+                    "ports": [],
+                    "allowSubmit": false,
+                    "defaultPath": "/notebooks/3.%20Uncontrolled%202D%20Drone.ipynb"
+                  },
+                  "kind": "jupyter"
+                },
+                "workspaceId": "reserved"
+              },
+              "starter_files": null
+            }
+          ]
+        },
+        {
+          "id": 514925,
+          "key": "5c63e26c-db28-4fca-bad7-1b345ce45e8c",
+          "title": "Motion in Two Dimensions",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "5c63e26c-db28-4fca-bad7-1b345ce45e8c",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 562526,
+              "key": "f368c127-e907-4bec-8b6d-3d98bd95ba19",
+              "title": "C3 C1 L15 Motion In 2D Dimensions V1",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "KFcsGXHBLkc",
+                "china_cdn_id": "KFcsGXHBLkc.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 514926,
+          "key": "3acb499f-6297-4c97-89ef-65be6d7c4d53",
+          "title": "Decomposing Thrust Vectors",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "3acb499f-6297-4c97-89ef-65be6d7c4d53",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 562527,
+              "key": "f7898a0e-91bd-4e49-9221-4b8fe8220098",
+              "title": "C3 C1 L16 Decomposing Thrust V2",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "TbHVgjtZ8qI",
+                "china_cdn_id": "TbHVgjtZ8qI.mp4"
+              }
+            },
+            {
+              "id": 562104,
+              "key": "91f1688d-ce6f-4e14-a476-99427e8f0541",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/March/5aa72b92_16-decomposing-thrust-vectors-16-v2/16-decomposing-thrust-vectors-16-v2.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/91f1688d-ce6f-4e14-a476-99427e8f0541",
+              "caption": "",
+              "alt": "",
+              "width": 960,
+              "height": 540,
+              "instructor_notes": null
+            },
+            {
+              "id": 562105,
+              "key": "cce2be11-2822-4366-bc1e-62b376fae99b",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "In the image above, the thrusts from the two propellers have been combined into a single <span class=\"mathquill\">F_{\\text{thrust}}</span>. For the following questions assume the quantities shown above have the following values (in standard units):\n\n|  Quantity | Value |\n| :-----:          | :-----: |\n| <span class=\"mathquill\">m</span> | 10 |\n| <span class=\"mathquill\">F_{\\text{thrust}}</span> | 120 |\n| <span class=\"mathquill\">\\phi</span> | 30<span class=\"mathquill\">^{\\circ}</span> |",
+              "instructor_notes": ""
+            },
+            {
+              "id": 562106,
+              "key": "4faaf6a8-3e23-461e-a6c4-dd148710f882",
+              "title": "",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "4faaf6a8-3e23-461e-a6c4-dd148710f882",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "Which of the following expressions gives the total force in the horizontal y direction <span class=\"mathquill\">F_y</span> for this vehicle?",
+                "answers": [
+                  {
+                    "id": "a1520905413974",
+                    "text": "<span class=\"mathquill\">F_y = F_{\\text{thrust}} \\cos \\phi</span>",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1520905507919",
+                    "text": "<span class=\"mathquill\">F_y = F_{\\text{thrust}} \\sin \\phi</span>",
+                    "is_correct": true
+                  }
+                ]
+              }
+            },
+            {
+              "id": 562108,
+              "key": "b44e1949-eeb7-426f-8eff-15dc5e5dfebd",
+              "title": "",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "b44e1949-eeb7-426f-8eff-15dc5e5dfebd",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "What will be the resulting acceleration in the y direction <span class=\"mathquill\">\\ddot{y}</span>?",
+                "answers": [
+                  {
+                    "id": "a1520905677171",
+                    "text": "60 <span class=\"mathquill\">m/s^2</span>",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1520905814907",
+                    "text": "6 <span class=\"mathquill\">m/s^2</span>",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1520905840748",
+                    "text": "0 <span class=\"mathquill\">m/s^2</span>",
+                    "is_correct": false
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 514930,
+          "key": "1f2984f9-5f34-4966-91ed-c5f163e1d769",
+          "title": "Calculating Moments",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "1f2984f9-5f34-4966-91ed-c5f163e1d769",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 562528,
+              "key": "822bc646-6023-44b4-a606-0bcd6cb9f562",
+              "title": "C3 C1 L17 Calculating Moments V2",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "v2vVHXVv2rU",
+                "china_cdn_id": "v2vVHXVv2rU.mp4"
+              }
+            },
+            {
+              "id": 562109,
+              "key": "4a86e4fe-d746-4bca-91d5-795989e52d56",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/March/5aa7356b_screen-shot-2018-03-12-at-7.17.59-pm/screen-shot-2018-03-12-at-7.17.59-pm.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/4a86e4fe-d746-4bca-91d5-795989e52d56",
+              "caption": "",
+              "alt": "",
+              "width": 587,
+              "height": 570,
+              "instructor_notes": null
+            },
+            {
+              "id": 562115,
+              "key": "0ec4a4f5-3430-4f42-a74d-6bcad9d094e6",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Consider the quadrotor shown above. The length of each arm is <span class=\"mathquill\">L</span>.\n\nHow would we calculate torques **If** we decided to align the drone's \"body\" frame with the arms? If that were the case, we'd have something like the following:",
+              "instructor_notes": ""
+            },
+            {
+              "id": 562110,
+              "key": "637efa39-9240-482b-b656-e532330f9381",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/March/5aa73579_screen-shot-2018-03-12-at-7.18.10-pm/screen-shot-2018-03-12-at-7.18.10-pm.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/637efa39-9240-482b-b656-e532330f9381",
+              "caption": "",
+              "alt": "",
+              "width": 646,
+              "height": 592,
+              "instructor_notes": null
+            },
+            {
+              "id": 562116,
+              "key": "497074ee-57e1-4d6b-bd32-65408f8c24f8",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "If we wanted to figure out the size of the moment about the x axis, <span class=\"mathquill\">M_x</span>, caused by the **right-most propeller**, we'd do the following:\n\n<div class=\"mathquill\">\n\\begin{aligned}\nM_x &= F \\times d_{\\text{perp,x}}\n\\\\\nM_x &= F \\times L\n\\end{aligned}\n</div>\n\nHere, the perpendicular distance to the x axis, <span class=\"mathquill\">d_{\\text{perp,x}}</span>, is exactly equal to the length of the propeller arm. \n\nBut that's not always the case! What if the body-frame coordinate system is rotated with respect to the arms? Consider the picture below.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 562111,
+              "key": "8876c418-327f-4779-9522-0e308bc5d320",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/March/5aa735cc_screen-shot-2018-03-12-at-7.21.42-pm/screen-shot-2018-03-12-at-7.21.42-pm.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/8876c418-327f-4779-9522-0e308bc5d320",
+              "caption": "",
+              "alt": "",
+              "width": 427,
+              "height": 385,
+              "instructor_notes": null
+            },
+            {
+              "id": 562117,
+              "key": "fac83283-59e0-4819-a3fc-ec2a0403091c",
+              "title": "",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "fac83283-59e0-4819-a3fc-ec2a0403091c",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "For the picture above, which of the following statements about <span class=\"mathquill\">d_{\\text{perp,x}}</span> are true?",
+                "answers": [
+                  {
+                    "id": "a1520908525530",
+                    "text": "<span class=\"mathquill\">d_{\\text{perp,x}} < L</span>",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1520908579672",
+                    "text": "<span class=\"mathquill\">d_{\\text{perp,x}} = L</span>",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1520908585322",
+                    "text": "<span class=\"mathquill\">d_{\\text{perp,x}} > L</span>",
+                    "is_correct": false
+                  }
+                ]
+              }
+            },
+            {
+              "id": 562112,
+              "key": "69e63f01-8530-4120-bb6e-08f61e526897",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/March/5aa735e7_screen-shot-2018-03-12-at-7.18.24-pm/screen-shot-2018-03-12-at-7.18.24-pm.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/69e63f01-8530-4120-bb6e-08f61e526897",
+              "caption": "",
+              "alt": "",
+              "width": 631,
+              "height": 576,
+              "instructor_notes": null
+            },
+            {
+              "id": 562118,
+              "key": "865b476f-a432-4abc-89f0-832c74b68cb0",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "As the picture above shows, the perpendicular distance from the propeller to the x-axis is *less than* the length of the propeller arm.\n\nIn fact, if you look at the y-axis, the propeller arm, and the vertical line I've added to the diagram, you can start to see a right triangle emerge...\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 562114,
+              "key": "11e4d3fd-24fb-4403-bae5-3d19581bef4e",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/March/5aa7366e_screen-shot-2018-03-12-at-7.24.27-pm/screen-shot-2018-03-12-at-7.24.27-pm.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/11e4d3fd-24fb-4403-bae5-3d19581bef4e",
+              "caption": "",
+              "alt": "",
+              "width": 307,
+              "height": 290,
+              "instructor_notes": null
+            },
+            {
+              "id": 620086,
+              "key": "56c6d4f8-ef2e-4f58-9841-2745c0cfa36a",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Note that the angle <span class=\"mathquill\">\\theta</span> shown in the diagram is **not** meant to represent the yaw of the vehicle (which we represent with <span class=\"mathquill\">\\psi</span>). It represents the angle between the rotor arm and the y-axis.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 562119,
+              "key": "3daa6716-ef85-4b41-9d86-7b9ef27e2ded",
+              "title": "",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "3daa6716-ef85-4b41-9d86-7b9ef27e2ded",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "Which of the following expressions gives the correct value of <span class=\"mathquill\">d_{\\text{perp,x}}</span> in terms of the arm length <span class=\"mathquill\">L</span> and the angle <span class=\"mathquill\">\\theta</span>?",
+                "answers": [
+                  {
+                    "id": "a1520908802393",
+                    "text": "<span class=\"mathquill\">d_{\\text{perp,x}} = L \\sin \\theta</span>",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1520908875490",
+                    "text": "<span class=\"mathquill\">d_{\\text{perp,x}} = L \\cos \\theta</span>",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1520908883370",
+                    "text": "<span class=\"mathquill\">d_{\\text{perp,x}} = L / \\sin \\theta</span>",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1520908890140",
+                    "text": "<span class=\"mathquill\">d_{\\text{perp,x}} = L / \\cos \\theta</span>",
+                    "is_correct": false
+                  }
+                ]
+              }
+            },
+            {
+              "id": 562120,
+              "key": "bebab9d1-bded-46dc-8410-084fc7d76468",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "This means that when this propeller generates a thrust <span class=\"mathquill\">F</span>, it also generates a moment about the x axis:\n\n<div class=\"mathquill\">M_x = F \\times L \\cos \\theta</div>\n\nThe coordinate system that we actually use for a quadrotor body frame has the x and y axes pointing half-way between the rotor arms. That means each arm is always at 45 degrees relative to each axis. Since <span class=\"mathquill\">\\cos 45^{\\circ} = \\frac{1}{\\sqrt{2}}</span>, this means:\n\n<div class=\"mathquill\">M_x = \\frac{F \\times L}{\\sqrt{2}}</div>\n\nSo when you see <span class=\"mathquill\">\\sqrt{2}</span> floating around in quadrotor math, this often explains why. Sometimes we will also use lower <span class=\"mathquill\">l = L / \\sqrt{2}</span> to represent perpendicular distance.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 559607,
+          "key": "686c2fa2-4c44-47d4-b6fb-181909de5e4c",
+          "title": "Rotation Rates to Moments and Thrusts",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "686c2fa2-4c44-47d4-b6fb-181909de5e4c",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 569417,
+              "key": "6894e783-4b8b-4218-a56a-7cf46809a9d2",
+              "title": "L01 18 Rotation Rates V3",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "OzZpPpgL_Hs",
+                "china_cdn_id": "OzZpPpgL_Hs.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 513051,
+          "key": "17b1a034-38c7-4499-91eb-ea180e51060b",
+          "title": "Calculating Accelerations in 2D Exercise",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "17b1a034-38c7-4499-91eb-ea180e51060b",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 556810,
+              "key": "f636e4ae-c36c-4ed0-941f-5ff7c5ed9ddd",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Rotation Rates to Moments and Thrusts\n\n\n```\n    def get_thrust_and_moment(self):\n        \"\"\"Helper function which calculates and returns the \n        collective thrust and the moment about the X axis\"\"\"\n\n        f1 = self.k_f * self.omega_1 ** 2\n        f2 = self.k_f * self.omega_2 ** 2\n        \n        # c is often used to indicate \"collective\" thrust\n        c = f1 + f2\n        \n        M_x = (f1 - f2) * self.l\n        return c, M_x\n```\n\nIn the exercise below you'll probably want to use this function as you implement three new methods in the `Drone2D` class.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 556808,
+              "key": "a6f36765-6f3b-4354-a219-442e3946a1c7",
+              "title": null,
+              "semantic_type": "WorkspaceAtom",
+              "is_public": true,
+              "workspace_id": "viewb313237d",
+              "pool_id": "jupyter",
+              "view_id": "fb901058-e2d6-4a52-a9b3-b6a84a0fa92f",
+              "gpu_capable": false,
+              "configuration": {
+                "id": "reserved",
+                "blueprint": {
+                  "conf": {
+                    "disk": null,
+                    "ports": [],
+                    "allowSubmit": false,
+                    "defaultPath": "/notebooks/4.%20Calculating%20Accelerations%20in%202D.ipynb"
+                  },
+                  "kind": "jupyter"
+                },
+                "workspaceId": "reserved"
+              },
+              "starter_files": null
+            }
+          ]
+        },
+        {
+          "id": 559608,
+          "key": "6cc55c76-a755-45f5-83f2-9da9068d0db2",
+          "title": "Controlling a 2D Quad",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "6cc55c76-a755-45f5-83f2-9da9068d0db2",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 562529,
+              "key": "463913a9-aae7-4c4b-a6e1-e5a7da7b68f9",
+              "title": "L01 19 Controlling 2D Quad V1",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "2lBmddVJtOE",
+                "china_cdn_id": "2lBmddVJtOE.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 506217,
+          "key": "30c8885b-8edd-45c1-91b9-96d82cfe6433",
+          "title": "Controlling a 2D Drone Exercise",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "30c8885b-8edd-45c1-91b9-96d82cfe6433",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 556811,
+              "key": "0971cf3c-73fa-4a2d-b963-2969d0df5ba4",
+              "title": null,
+              "semantic_type": "WorkspaceAtom",
+              "is_public": true,
+              "workspace_id": "viewb313237d",
+              "pool_id": "jupyter",
+              "view_id": "b36abc06-0b65-4608-9287-6aaf9cb8db97",
+              "gpu_capable": false,
+              "configuration": {
+                "id": "reserved",
+                "blueprint": {
+                  "conf": {
+                    "ports": [],
+                    "allowSubmit": false,
+                    "defaultPath": "/notebooks/5.%20Controlling%20a%202D%20Quad.ipynb"
+                  },
+                  "kind": "jupyter"
+                },
+                "workspaceId": "reserved"
+              },
+              "starter_files": null
+            }
+          ]
+        },
+        {
+          "id": 559609,
+          "key": "56a1fbd6-b4ef-4841-845a-341d2b6d6c22",
+          "title": "Summary",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "56a1fbd6-b4ef-4841-845a-341d2b6d6c22",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 562531,
+              "key": "96db968f-ebaf-4da0-bc5b-01c7ad56713b",
+              "title": "C3 C1 L20 Summary V2",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "1FD7OuJ6_bg",
+                "china_cdn_id": "1FD7OuJ6_bg.mp4"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "_deprecated": [
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    }
+  ]
+}

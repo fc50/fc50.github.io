@@ -1,0 +1,423 @@
+{
+  "data": {
+    "lesson": {
+      "id": 556019,
+      "key": "81acb1ca-af00-4553-b8bb-b1467fbcfc51",
+      "title": "Project: Building a Controller",
+      "semantic_type": "Lesson",
+      "is_public": true,
+      "version": "1.0.0",
+      "locale": "en-us",
+      "summary": "In this project you'll implement a controller for a quadrotor in C++.",
+      "lesson_type": "Classroom",
+      "display_workspace_project_only": null,
+      "resources": {
+        "files": [
+          {
+            "name": "Videos Zip File",
+            "uri": "https://zips.udacity-data.com/81acb1ca-af00-4553-b8bb-b1467fbcfc51/556019/1538762705213/Project%3A+Building+a+Controller+Videos.zip"
+          },
+          {
+            "name": "Transcripts Zip File",
+            "uri": "https://zips.udacity-data.com/81acb1ca-af00-4553-b8bb-b1467fbcfc51/556019/1538762702234/Project%3A+Building+a+Controller+Subtitles.zip"
+          }
+        ],
+        "google_plus_link": null,
+        "career_resource_center_link": null,
+        "coaching_appointments_link": null,
+        "office_hours_link": null,
+        "aws_provisioning_link": null
+      },
+      "project": {
+        "key": "7f46a3e3-34b5-41b9-a52a-01ce9d8ab2b6",
+        "version": "1.0.0",
+        "locale": "en-us",
+        "duration": 40320,
+        "semantic_type": "Project",
+        "title": "Control of a 3D Quadrotor",
+        "description": "## The Goal of this Project ##\n\nIn the real world the flight controller is usually implemented in C or C++. So in this project you will implement your controller in C++. The code you write here can eventually be transferred to a real drone!\n\n## Project Steps ##\n\nThis project originally had two parts. In the first part we asked students to implement a controller in Python. We've since removed that portion of the project, but you may find the [solution implementation](https://github.com/udacity/FCND-Controls/blob/solution/controller.py) helpful to consult as a reference. \n\n1. Make sure you have cloned the repository and gotten familiar with the C++ environment as outlined in **C++ Setup**.\n\n2. Complete each of the scenarios outlined in the [C++ project readme](https://github.com/udacity/FCND-Controls-CPP). This will involve implementing and tuning controllers incrementally:\n\n - Body rate and roll/pitch control (scenario 2) \n - Position/velocity and yaw angle control (scenario 3) \n - Non-idealities and robustness (scenario 4) \n\n3. Tune your controller and make sure it works to successfully meet each of the evaluations in each scenario.\n\nFor more detailed instructions on the individual steps, make sure to read through the [C++ project readme](https://github.com/udacity/FCND-Controls-CPP), specifically the [section outlining the tasks for the project](https://github.com/udacity/FCND-Controls-CPP#the-tasks).\n\n## Evaluation ##\n\nFor the submission, you will be evaluated on your completion of the five control functions, the motor command functions, and on your controller's performance in each scenario.  Performance metrics are provided for each of the different scenarios, and your controller will need to meet these minimum performance metrics for each scenario.  For the specific metrics for each scenario look at the [evaluation portion of the C++ readme](https://github.com/udacity/FCND-Controls-CPP#evaluation).\n\n## Submission ##\n\nFor this project you will need to submit:\n\n 1. `QuadController.cpp` and `QuadControlParams.txt`, containing your completed C++ controller and associated gains.\n 2.  A writeup addressing all the points of the [project rubric](https://review.udacity.com/#!/rubrics/1643/view)\n\n## Feedback\n\nPlease fill out the [Control of a 3D Quadrotor Feedback Form](https://goo.gl/forms/Zy6HjhlTvIOVgkjJ3) after you have completed the project. \n\n## Share Your Project\nHave something fun to share? Controller not listening and teetering away? Or maybe its going above and beyond with synchronized dancing? We love to see any and all of your creations!\n\nWhat you’ve accomplished is no small feat. Give yourself a pat on the back and some well-deserved recognition by sharing your amazing project with your network.\n\nCreate a gif or youtube video of your project implementation in the simulator and share with us in the [Flying Car Slack Community](https://udacity-flying-car.slack.com/messages/C77GCKZ8U) and on social media using the links below!\n\nMake sure to use **@Udacity**, **#flyingcarnd**, **#quadcontrol**, and **#madewithudacity** in your posts!\n\n<iframe\n  src=\"https://platform.twitter.com/widgets/tweet_button.html?size=l&url=www.udacity.com&text=I%20built%20a%20nonlinear%20cascaded%20controller%20in%20C++%20to%20perform%20various%20drone%20maneuvers%20in%20simulation!%20[Insert%20your%20Gif%20or%20youtube%20url%20here]&hashtags=flyingcarnd, quadcontrol, madewithudacity\"\nwidth=\"140\"\nheight=\"28\"\nscrolling=\"no\">\n</iframe>\n\n\n<html>\n\n<head>\n<style>\n.fb {color: white;\n  background-color: #4661b0;\n  border-radius: 4px;\n  font-weight: bold;\n  height: 28px;\n  font-size: 14px;}\n.fb:hover {color: #4661b0;\n  background-color: white;\n  border-color: #4661b0;\n  transition: background-color 0.4s}\n.linkedin {color: white;\n  background-color: #0077B5;\n  border-radius: 4px;\n  font-weight: bold;\n  height: 28px;\n  font-size: 14px;}\n.linkedin:hover {color: #0077B5;\n  background-color: white;\n  border-color: #0077B5;\n  transition: background-color 0.4s}\n</style>\n\n</head>\n\n<body>\n<form action=\"https://www.facebook.com/sharer.php?\">\n  Enter the full URL of your Gif or Youtube video:<br>\n  <input type=\"url\" name=\"u\" placeholder=\"Paste URL here\">\n  <input type=\"hidden\" name=\"hashtag\" value=\"#flyingcarnd\">\n  <button class=\"fb\">Share on Facebook</button>\n</form>\n\n<form action=\"https://www.linkedin.com/shareArticle?mini=true\">\n  <input type=\"url\" name=\"url\" placeholder=\"Paste URL here\">\n  <input type=\"hidden\" name=\"title\" value=\"Finding Lane Lines\">\n  <input type=\"hidden\" name=\"summary\" value=\"I built a nonlinear cascaded controller in C++ to perform various drone maneuvers in simulation! @udacity #flyingcarnd #quadcontrol #madewithudacity\">\n  <button class=\"linkedin\">Share on LinkedIn</button>\n</form>\n\n</body>\n\n</html>\n\n\n## Project Submission Checklist\n\n**Before submitting your project, please review and confirm the following items.** \n<input type=\"checkbox\"> I am confident all rubric items have been met and my project will pass as submitted.\n<input type=\"checkbox\"> Project builds correctly without errors and runs.\n<input type=\"checkbox\"> All required functionality exists and my project behaves as expected per the project's specifications.\n\n**Once you have checked all these items, you are ready to submit!**\n",
+        "is_public": true,
+        "summary": null,
+        "forum_path": "",
+        "rubric_id": "1643",
+        "terminal_project_id": null,
+        "resources": null,
+        "image": {
+          "url": "https://s3.amazonaws.com/video.udacity-data.com/topher/2018/June/5b23fe88_controls-project/controls-project.jpg",
+          "width": 1160,
+          "height": 384
+        }
+      },
+      "lab": null,
+      "concepts": [
+        {
+          "id": 616873,
+          "key": "89f2e38d-ae2d-4ebf-a8a5-39d53674ef56",
+          "title": "Sebastian Introduction",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "89f2e38d-ae2d-4ebf-a8a5-39d53674ef56",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 616874,
+              "key": "dcfbf908-8de2-464f-a3c9-75a3ac01721b",
+              "title": "Nd787 C3 L5 00 Sebastian V1",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "d1kpZ_LPMsM",
+                "china_cdn_id": "d1kpZ_LPMsM.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 620842,
+          "key": "5a57f117-d265-4f3a-9bea-d5221e587306",
+          "title": "Changes to this Project",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "5a57f117-d265-4f3a-9bea-d5221e587306",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 620846,
+              "key": "76d8f0d1-b22d-4349-ade0-134a82b0c33c",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Changes to this Project\n**As of May 4 2018, the Python portion of this project is no longer required. You will only be submitting the C++ portion for evaluation.** \n\nIf you began the project prior to this date, you are welcome to work on and submit the Python portion as well, but that section will not be evaluated by the project reviewer. \n\n\n\n#### Why are we no longer requiring this portion?\nWe constantly listen to student feedback and do our best to improve the learning experience based on that feedback. \n\nAfter analyzing the feedback from the first round of students who went through this project we learned that it was taking much longer to complete than we had anticipated.\n\nThere were a few reasons why this project was taking so long, but a lot of it had to do with debugging and tuning. Simply put: we didn't include enough support for incremental development and tuning of the individual controllers in the Python portion of the project. This meant that some students were spending hours and hours trying to tune their controllers (all without knowing whether their controller implementations were even correct). This is not a productive use of your valuable learning time! \n\nThe C++ portion of the project is broken into several smaller steps. Each of these steps provides some feedback on the correctness of your controller. You'll still have to deal with some of the pain of tuning, but it wouldn't be a controls project if that weren't the case.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 620847,
+          "key": "20fede4d-0c7b-4f35-8d59-de12e40d55c8",
+          "title": "Project Introduction",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "20fede4d-0c7b-4f35-8d59-de12e40d55c8",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 620848,
+              "key": "3db97481-8c4c-4269-b70c-e95717db95d8",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Project Introduction\nWelcome to the Controls Project!\n\nAt this point, you've implemented individual control loops in Python. In this project, you will be porting some of that logic over to a controller that's written in  **C++**.  This code will control a drone in an entirely new simulator. The simulator you'll be using in this project is more bare-bones than the Python / Unity simulator you've been working with so far, but it's more realistic in the physics that it models. \n\nOnce your controller meets the required specs with the C++ simulator, you'll have completed the project!  And for you more hardware minded students, you'll also be ready for running your controller on a real drone!\n\nBefore you can dive into writing your controller, we'll first set up the environment you'll be needing for your development in a couple steps:\n\n 1. Set up the C++ simulator and the development environment you'll need for it.\n 3. Get familiar with some of the tools you'll be able to use to evaluate your controller's performance.\n",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 556021,
+          "key": "3c3d9484-cb07-42ca-b465-50f984e9bffe",
+          "title": "[OPTIONAL] Python Setup",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "3c3d9484-cb07-42ca-b465-50f984e9bffe",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 556025,
+              "key": "d72a85d9-5327-468c-9e69-f30415abbac4",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Note: this portion of the project is no longer required. \n\nWe are leaving the Python setup instructions in place in case you're interested. All the instructions on this page are entirely optional.\n\n### Setup Instructions\n\nFor the python part of the project, you will be modifying your *Backyard Flyer* project solution to handle the low level control loops of the drone, in addition to the higher level path and trajectory following control logic.\n\nThere are some modifications that are required to your `backyard_flyer.py` solution to prepare it for the project, which we will walk through here.  In addition to these changes, there is also a new simulator with some tools to help visualize your controller as you build it!",
+              "instructor_notes": ""
+            },
+            {
+              "id": 556026,
+              "key": "6afe1e77-66bd-4700-90e7-d4358619e7a5",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Setup Your Environment ##\n\n### Step 1: download the simulator\n\nEven if you've already downloaded the simulator, download the  [most recent version](https://github.com/udacity/FCND-Simulator-Releases/releases) that is appropriate for your OS.\n\n### Step 2: set up your python environment\n\nIf you haven't already, set up your Python environment and get all the relevant packages installed using Anaconda following instructions in [this repository](https://github.com/udacity/FCND-Term1-Starter-Kit)\n\n#### Make sure Udacidrone is up to date\n\nLet's quickly make sure you have the most up to date version of udacidrone, which will allow you to use the full functionality of the controls simulator environment.\n\nFirst make sure you have activated your environment:\n\n```sh\nsource activate fcnd\n```\n\nThen run the update:\n\n```sh\npip install -U git+https://github.com/udacity/udacidrone.git\n```\n\n### Step 3: clone this repository\n\n```sh\ngit clone https://github.com/udacity/FCND-Controls\n```\n\n### Step 4: test setup\n\nYour starting point here will be the [solution code](https://github.com/udacity/FCND-Backyard-Flyer/blob/solution/backyard_flyer.py) for the Backyard Flyer project. Before you start modifying the code, make sure that your Backyard Flyer solution code works as expected and your drone can perform the square flight path in the new simulator. To do this, start the simulator and run the [`backyard_flyer.py`](https://github.com/udacity/FCND-Backyard-Flyer/blob/solution/backyard_flyer.py) script.\n\n```py\nsource activate fcnd # if you haven't already sourced your Python environment, do so now.\npython backyard_flyer.py\n```\n\nThe quad should take off, fly a square pattern and land, just as in the previous project. If everything works then you are ready to move to the next step and modify `backyard_flyer.py` to get it ready to use your custom controller.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 556027,
+              "key": "820a19bc-5e27-4287-9f61-48f2b6dd15fe",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Update Backyard Flyer Solution ##\n\nThe following modifications need to be made to the solution `backyard_flyer.py`. Feel free to use a copy of your own solution to the Backyard Flyer Project or the one in the link provided.\n\n### Step 1\n\nImport the `UnityDrone` and `NonlinearController` classes and modify the `BackyardFlyer` class to be a subclass of `UnityDrone` instead of `Drone`. `UnityDrone` is a subclass of `Drone`, so it provides all the functionality of `Drone` along with additional Unity specific commands/functionality (see below).\n\n```py\nfrom unity_drone import UnityDrone\nfrom controller import NonlinearController\n...\nclass BackyardFlyer(UnityDrone):\n```\n\n### Step 2\n\nAdd a controller object in the `__init__` method:\n\n```py\ndef __init__(self, connection):\n    ...\n    self.controller = NonlinearController()\n```\n\n### Step 3\n\nAdd the following three methods to your class to incorporate the controller into the backyard flyer.\n\n```py\n\ndef position_controller(self):\n    \"\"\"Sets the local acceleration target using the local position and local velocity\"\"\"\n    \n    (self.local_position_target, self.local_velocity_target, yaw_cmd) = self.controller.trajectory_control(self.position_trajectory, self.yaw_trajectory, self.time_trajectory, time.time())\n    self.attitude_target = np.array((0.0, 0.0, yaw_cmd))\n\n    acceleration_cmd = self.controller.lateral_position_control(self.local_position_target[0:2], self.local_velocity_target[0:2], self.local_position[0:2], self.local_velocity[0:2])\n    self.local_acceleration_target = np.array([acceleration_cmd[0], acceleration_cmd[1], 0.0])\n    \ndef attitude_controller(self):\n    \"\"\"Sets the body rate target using the acceleration target and attitude\"\"\"\n    self.thrust_cmd = self.controller.altitude_control(-self.local_position_target[2], -self.local_velocity_target[2], -self.local_position[2], -self.local_velocity[2], self.attitude, 9.81)\n    roll_pitch_rate_cmd = self.controller.roll_pitch_controller(self.local_acceleration_target[0:2], self.attitude, self.thrust_cmd)\n    yawrate_cmd = self.controller.yaw_control(self.attitude_target[2], self.attitude[2])\n    self.body_rate_target = np.array([roll_pitch_rate_cmd[0], roll_pitch_rate_cmd[1], yawrate_cmd])\n    \ndef bodyrate_controller(self):  \n    \"\"\"Commands a moment to the vehicle using the body rate target and body rates\"\"\"\n    moment_cmd = self.controller.body_rate_control(self.body_rate_target, self.gyro_raw)\n    self.cmd_moment(moment_cmd[0], moment_cmd[1], moment_cmd[2], self.thrust_cmd)\n```\n\n### Step 4\n\nRegister and add callbacks for the `RAW_GYROSCOPE`, `ATTITUDE`, and `LOCAL_VELOCITY` messages.  Note that you may already have the `velocity_callback()` function implemented; if so, replace `velocity_callback()` with the callback below.  Call the appropriate level of control in each callback (i.e. `bodyrate_controller()` is called in `gyro_callback()`):\n\n```py\ndef __init___(self,connection):\n    ...\n    self.register_callback(MsgID.ATTITUDE, self.attitude_callback)\n    self.register_callback(MsgID.RAW_GYROSCOPE, self.gyro_callback)\n    self.register_callback(MsgID.LOCAL_VELOCITY, self.velocity_callback)\n    \ndef attitude_callback(self):\n    ...\n    if self.flight_state == States.WAYPOINT:\n        self.attitude_controller()\n    \ndef gyro_callback(self):\n    ...\n    if self.flight_state == States.WAYPOINT:\n        self.bodyrate_controller()\n            \ndef velocity_callback(self):\n    ...\n    if self.flight_state == States.WAYPOINT:\n        self.position_controller()\n```\n\n### Step 5\n\nIn the waypoint transition method, replace the `self.cmd_position` method (which is disabled by `UnityDrone`) with setting the target local position. Note: `local_position_target` should be in NED coordinates, the backyard_flyer solution may calculate the box in NE altitude coordinates\n\n```py\n# replace this\nself.cmd_position(self.target_position[0], self.target_position[1], self.target_position[2], 0.0)\n\n# with this\nself.local_position_target = np.array((self.target_position[0], self.target_position[1], self.target_position[2]))\n```\n\n### Step 6\n\nFor this project we will no longer be flying the waypoint box, but rather a full flight trajectory, so remove calculate box and load the test trajectory:\n\n```py\n# replace this\nself.all_waypoints = self.calculate_box()\n\n# with this\n(self.position_trajectory, self.time_trajectory, self.yaw_trajectory) = self.load_test_trajectory(time_mult=0.5)\nself.all_waypoints = self.position_trajectory.copy()\nself.waypoint_number = -1\n```\n\n### Step 7\n\nAs our trajectory defines a waypoint with both time and location, change the transition criterion from proximity based to time based:\n\n```py\n# Replace this\nif np.linalg.norm(self.target_position[0:2] - self.local_position[0:2]) < 1.0:\n    ...\n\n# with this\nif time.time() > self.time_trajectory[self.waypoint_number]:\n    ...\n...\n\ndef waypoint_transition(self):\n    ...\n    self.waypoint_number = self.waypoint_number+1\n```\n\n### See what happens with no control\n\nNow your `backyard_flyer.py` solution is ready to use your custom controller.  Since you have yet to write any of the control functions, your quad will be incapable of flying, but just to make sure your script is working, start up the simulator and run your script:\n\n```sh\npython backyard_flyer.py\n```\n\nIf you've got everything set up properly, you should see your quad quite unceremoniously fall down to the ground!\n\nNow you have everything you need ready to go for the Python portion of the controls project.  Next, let's get everything set up for the C++ portion of the project.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 562546,
+              "key": "a370691a-1c36-4460-878b-ab04afa04d56",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Alternative to setting up your `backyard_flyer`\n\nWe have provided start code that takes the `backyard_flyer` solution and adds the above modifications in the [`controls_flyer.py`](https://github.com/udacity/FCND-Controls/blob/master/controls_flyer.py) script.  Feel free to use that as the starting point, or your own script.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 556022,
+          "key": "6671a450-8301-4c86-8a06-9a801cd22d45",
+          "title": "C++ Setup",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "6671a450-8301-4c86-8a06-9a801cd22d45",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 556635,
+              "key": "febc52ef-4762-4586-ab6a-2e159178cbc4",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Regardless of your development platform, the first step is to download or clone the [C++ simulator repository](https://github.com/udacity/FCND-Controls-CPP.git).\n\n```sh\ngit clone https://github.com/udacity/FCND-Controls-CPP.git\n```\n\nOnce you have the code for the simulator, you will need to install the necessary compiler and IDE necessary for running the simulator.\n\nBelow you can find the setup and install instructions for each of the recommended IDEs for each different OS options.\n\nOnce you have successfully installed the recommended IDE for your OS and have the simulator running, we can move on to taking a look around at the simulator and the files provided.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 556636,
+              "key": "3cdc7ac3-f5c4-4f39-942c-a49491b266f8",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Windows ###\n\nFor Windows, the recommended IDE is Visual Studio.  Here are the steps required for getting the project up and running using Visual Studio.\n\n1. Download and install [Visual Studio](https://www.visualstudio.com/vs/community/)\n2. Select *Open Project / Solution* and open `<simulator>/Simulator.sln`\n3. From the *Project* menu, select the *Retarget solution* option and select the Windows SDK that is installed on your computer (this should have been installed when installing Visual Studio or upon opening of the project).\n4. To compile and run the project / simulator, simply click on the green play button at the top of the screen.  When you run the simulator, you should see a single quadcopter, falling down.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 556637,
+              "key": "3d970577-331a-4e5b-b86d-5a376ebca851",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Mac OS X ###\n\nFor Mac OS X, the recommended IDE is XCode, which you can get via the App Store.\n\n1. Download and install XCode from the App Store if you don't already have it installed.\n2. Open the project from the `<simulator>/project` directory.\n3. After opening project, you need to set the working directory:",
+              "instructor_notes": ""
+            },
+            {
+              "id": 559229,
+              "key": "b78a32cf-1c8e-44e4-9959-2324526e0b97",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Go to *(Project Name)* | *Edit Scheme*",
+              "instructor_notes": ""
+            },
+            {
+              "id": 559227,
+              "key": "0b2069e4-d474-4630-a182-e07e49f73cba",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/March/5aa02733_image2/image2.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/0b2069e4-d474-4630-a182-e07e49f73cba",
+              "caption": "",
+              "alt": "",
+              "width": 1036,
+              "height": 664,
+              "instructor_notes": null
+            },
+            {
+              "id": 559230,
+              "key": "824682c1-e382-462f-975c-e533bf74d2da",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "In new window, under *Run/Debug* on left side, under the *Options* tab, set Working Directory to `$PROJECT_DIR` and check ‘use custom working directory’.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 559228,
+              "key": "44049228-3079-4eda-bfc4-67da63f101e6",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/March/5aa02742_image4/image4.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/44049228-3079-4eda-bfc4-67da63f101e6",
+              "caption": "",
+              "alt": "",
+              "width": 873,
+              "height": 488,
+              "instructor_notes": null
+            },
+            {
+              "id": 559231,
+              "key": "6e6554b9-c51c-4972-9ee9-1f3c83382f23",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "\nFinally, compile and run the project. You should see a single quadcopter, falling down.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 556638,
+              "key": "5f00c472-6ed9-4e39-a88a-c11761e1cabb",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Linux ###\n\nFor Linux, the recommended IDE is QtCreator.\n\n1. Download and install QtCreator.\n2. Open the `.pro` file from the `<simulator>/project` directory.\n3. Compile and run the project (using the tab `Build` select the `qmake` option.  You should see a single quadcopter, falling down.\n\n**NOTE:** You may need to install the GLUT libs using `sudo apt-get install freeglut3-dev`",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 556639,
+          "key": "9579db79-f805-4f81-8ff6-8789709976cd",
+          "title": "C++ Simulator",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "9579db79-f805-4f81-8ff6-8789709976cd",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 556640,
+              "key": "b897fc0e-2ba2-4ae6-9d84-a5dd564bf638",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Now that you have all the code on your computer and the simulator running, let's walk through some of the elements of the code and the simulator itself.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 556641,
+              "key": "ae32e049-22b3-46b8-90a5-b9e9a3a50656",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### The Code ###\n\nFor the project, the majority of your code will be written in `src/QuadControl.cpp`.  This file contains all of the code for the controller that you will be developing.\n\nAll the configuration files for your controller and the vehicle are in the `config` directory.  For example, for all your control gains and other desired tuning parameters, there is a config file called `QuadControlParams.txt` set up for you.  An import note is that while the simulator is running, you can edit this file in real time and see the affects your changes have on the quad!\n\nThe syntax of the config files is as follows:\n\n - `[Quad]` begins a parameter namespace.  Any variable written afterwards becomes `Quad.<variablename>` in the source code.\n - If not in a namespace, you can also write `Quad.<variablename>` directly.\n - `[Quad1 : Quad]` means that the `Quad1` namespace is created with a copy of all the variables of `Quad`.  You can then overwrite those variables by specifying new values (e.g. `Quad1.Mass` to override the copied `Quad.Mass`).  This is convenient for having default values.\n\nYou will also be using the simulator to fly some different trajectories to test out the performance of your C++ implementation of your controller. These trajectories, along with supporting code, are found in the `traj` directory of the repo.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 556642,
+              "key": "7ed35cdb-aa24-488f-b001-471e612c1ce7",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### The Simulator ###\n\nIn the simulator window itself, you can right click the window to select between a set of different scenarios that are designed to test the different parts of your controller.\n\nThe simulation (including visualization) is implemented in a single thread.  This is so that you can safely breakpoint code at any point and debug, without affecting any part of the simulation.\n\nDue to deterministic timing and careful control over how the pseudo-random number generators are initialized and used, the simulation should be exactly repeatable. This means that any simulation with the same configuration should be exactly identical when run repeatedly or on different machines.\n\nVehicles are created and graphs are reset whenever a scenario is loaded. When a scenario is reset (due to an end condition such as time or user pressing the ‘R’ key), the config files are all re-read and state of the simulation/vehicles/graphs is reset -- however the number/name of vehicles and displayed graphs are left untouched.\n\nWhen the simulation is running, you can use the arrow keys on your keyboard to impact forces on your drone to see how your controller reacts to outside forces being applied.\n\n#### Keyboard / Mouse Controls ####\n\nThere are a handful of keyboard / mouse commands to help with the simulator itself, including applying external forces on your drone to see how your controllers reacts!\n\n - Left drag - rotate\n - X + left drag - pan\n - Z + left drag - zoom\n - arrow keys - apply external force\n - C - clear all graphs\n - R - reset simulation\n - Space - pause simulation",
+              "instructor_notes": ""
+            },
+            {
+              "id": 556643,
+              "key": "0540f205-b0a1-4d69-9853-d2f921240cf0",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Testing it Out ###\n\nWhen you run the simulator, you'll notice your quad is falling straight down.  This is due to the fact that the thrusts are simply being set to: \n\n```\nQuadControlParams.Mass * 9.81 / 4\n```\n\nTherefore, if the mass doesn't match the actual mass of the quad, it'll fall down.  Take a moment to tune the `Mass` parameter in `QuadControlParams.txt` to make the vehicle more or less stay in the same spot.\n\nNote: if you want to come back to this later, this scenario is \"1_Intro\".",
+              "instructor_notes": ""
+            },
+            {
+              "id": 559126,
+              "key": "f488191d-4292-4929-a83f-00111951487a",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Almost There ###\n\nNow that you have the simulator and skeleton code up and running, you're almost ready to start writing your controller!  One last thing to see is some of the tools we have provided you for evaluating the performance of your controller and some general tips and tricks for the project.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 620851,
+          "key": "b325e8a0-c153-42c6-9384-01088cdd34ff",
+          "title": "Controller Performance Evaluation",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "b325e8a0-c153-42c6-9384-01088cdd34ff",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 620852,
+              "key": "96eb243b-01af-434d-bc43-7f6adc4113b9",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Evaluation Metrics ##\n\nThis project is broken into a series of \"scenarios\".\n\nTo assist with tuning of your controller, the simulator contains real time performance evaluation.  We have defined a set of performance metrics for each of the scenarios that your controllers must meet for a successful submission.\n\nThere are two ways to view the output of the evaluation:\n\n - in the command line, at the end of each simulation loop, a **PASS** or a **FAIL** for each metric being evaluated in that simulation\n - on the plots, once your quad meets the metrics, you will see a green box appear on the plot notifying you of a **PASS**\n\n\n### Performance Metrics ###\n\nThe specific performance metrics are as follows:\n\n - scenario 2\n   - roll should less than 0.025 radian of nominal for 0.75 seconds (3/4 of the duration of the loop)\n   - roll rate should less than 2.5 radian/sec for 0.75 seconds\n\n - scenario 3\n   - X position of both drones should be within 0.1 meters of the target for at least 1.25 seconds\n   - Quad2 yaw should be within 0.1 of the target for at least 1 second\n\n\n - scenario 4\n   - position error for all 3 quads should be less than 0.1 meters for at least 1.5 seconds\n\n - scenario 5\n   - position error of the quad should be less than 0.25 meters for at least 3 seconds\n\n",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 556023,
+          "key": "74671657-bda5-4aff-a635-1fde48b15b33",
+          "title": "Tips and Tricks",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "74671657-bda5-4aff-a635-1fde48b15b33",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 556651,
+              "key": "3ec3e8af-b677-413c-8294-9c47bd7723f5",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## C++ Tips and Tricks ##\n\nHere are some tips and tricks you may find useful while writing your C++ code.  Keeping in mind that the target platform for this code is a microcontroller, there are some additional factors you should consider:\n\n - Use floats, don’t use doubles (in practice, floats will run much faster on many microcontrollers than doubles)\n - Please don’t add additional library dependencies or allocate memory or use fancy STL features (you shouldn’t need to), if you keep your dependencies and code complexity down, the code you implement should easily port to real hardware. A real embedded environment is often stripped down to bare essentials, and even basic C++ STL features like `<string>` or `<map>` are often missing.\n\n\nFunctions you may find useful:\n\n - Lots of the code uses a data type called V3F, this is a convenience class for working with vectors of 3 floats.  For example, position/velocity/acceleration in 3D, body rates, etc.\n - `CONSTRAIN()` is a function that allows you to constrain your value within a set of bounds.  This is very helpful to have an upper and lower limit on a command (e.g. limiting a drone's bank angle).",
+              "instructor_notes": ""
+            },
+            {
+              "id": 617390,
+              "key": "59ddf740-4435-4d90-ba85-24b5715ed9e0",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Parameter Tuning Tips and Tricks\n\nTuning the controller can be tricky. The parameters for your controller are defined in a file called `QuadControlParams.txt`. In that file you'll see the following initial values for the parameters\n\n```text\n# Position control gains\nkpPosXY = 1\nkpPosZ = 1\nKiPosZ = 20\n\n# Velocity control gains\nkpVelXY = 4\nkpVelZ = 4\n\n# Angle control gains\nkpBank = 5\nkpYaw = 1\n\n# Angle rate gains\nkpPQR = 23, 23, 5\n```\n\n**Approximate parameter values**\n\nThese initial values are all **too low**. To get our \"solution\" controller properly tuned we needed values that were between 2 and 4 times larger than the values shown here.\n\n**Approximate parameter ratios**\n\nSergei Lupashin put together a [one-page document](https://www.overleaf.com/read/bgrkghpggnyc#/61023787/) deriving the ratio of velocity gains to position gains for a \"critically damped\" system (where the damping ratio is 1). In that document he shows that the ratio <span class=\"mathquill\">K_v / K_p = 4</span> for such a system. \n\n\n\n**Sequencing**\n\nThe C++ project is organized as a sequence of scenarios. Each scenario will have you implement one or two controllers and tune the associated parameters. If you can, try to keep the number of parameters that you're tuning at any given time small! For example, once you've tuned `kpPQR` and then moved on to the next controller, try to avoid further changes to `kpPQR`.\n\nDronecode provides some good [guidelines on PID tuning](https://docs.px4.io/en/advanced_config/pid_tuning_guide_multicopter.html#pid-controller-overview).\n\n### Acknowledgement\n\nThe C++ simulator and project scenarios were largely designed and built by [Fotokite](https://fotokite.com/). Big thanks to the Fotokite team (and Sergei Lupashin in particular) for their great work!\n\n",
+              "instructor_notes": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "_deprecated": [
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    }
+  ]
+}

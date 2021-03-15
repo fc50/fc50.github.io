@@ -1,0 +1,302 @@
+{
+  "data": {
+    "lesson": {
+      "id": 704301,
+      "key": "460e7dc6-8f48-44fc-b856-0320ddc6cd65",
+      "title": "Drone Integration",
+      "semantic_type": "Lesson",
+      "is_public": true,
+      "version": "1.0.0",
+      "locale": "en-us",
+      "summary": "Walkthrough the steps you need to take to get a version of your controls project on a crazyflie!",
+      "lesson_type": "Classroom",
+      "display_workspace_project_only": false,
+      "resources": null,
+      "project": null,
+      "lab": null,
+      "concepts": [
+        {
+          "id": 704338,
+          "key": "2b70d376-3391-4bf8-838a-a764926d674f",
+          "title": "Controls on the Crazyflie",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "2b70d376-3391-4bf8-838a-a764926d674f",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 704339,
+              "key": "9ca41eb8-9dad-454e-8646-27b9bd66857e",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Throughout the course, we've handled a variety of different levels of control of a drone, from commanding positions in the first project (Backyard Flyer) to commanding motor thrusts themselves in the third project (Controls).  When it comes to real drones, you will come across interfaces that allow a varying level of control, meaning, you will come across drones that only open position control to the user, some that allow velocity control, and even some that allow acceleration control from \"offboard\" the drone, meaning not as part of the core control system.  As an aside, the level of control used in the third project (motor thrusts) is typically only ever seen within the core controller of the drone itself, so odds are if you are writing code for that, you're working on the main control system itself!\n\nWhen it comes to the Crazyflie, it opens up a couple levels of control for us to work with: **velocity** and **attitude**.  In this optional lesson, we will go through and see how to apply the concepts you've learned in the controls section to build a lateral position, altitude, velocity and yaw controller for your Crazyflie, first using the velocity command API and then using the attitude command API.\n\nUnfortunately, because the level of commands available to us are different than the simulator from the controls project, for the most part, we can't directly use that script to control the Crazyflie. However, we will be using the same concepts and a similar control structure.\n\n<h1>Download the [github repo](https://github.com/udacity/FCND-Controls-Crazyflie) and let's get started!</h1>\n\n**NOTE:\nThis lesson only works with Udacidrone version 0.3.5 or greater**\n\nRef. [Udacidrone](https://udacity.github.io/udacidrone/)",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 704302,
+          "key": "536e3b97-57b1-4431-8186-c74252bad9e6",
+          "title": "Configuring the Crazyflie",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "536e3b97-57b1-4431-8186-c74252bad9e6",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 704311,
+              "key": "71fd63d1-7999-4ec8-aa77-76382895f089",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Crazyflie Setup ##\n\n\nThese instructions are for the Crazyflie using the Flow Deck.  Note that UdaciDrone will only be able to control a Crazyflie that either has the Flow Deck of the LocoPositioning system (these instructions assume a Flow Deck is being used).\n\nAlso will need the CrazyRadio as that will be how we will be communicating between the computer and the crazyflie.\n\nSetup instructions for getting the [CrazyRadio installed on their device](https://wiki.bitcraze.io/doc:crazyradio:index).\n\nThe CrazyRadio's default bandwidth is enough to send simple commands, but will not be enough to handle the data used by UdaciDrone without introducing a latency that makes things more difficult.  Therefore the first step, once you have your CrazyRadio installed properly, will be to increase the bandwidth of the data link from the default 250K (meaning 250 kpbs) to 2M (meaning 2 Mbps).  For detailed instructions on how to make this change [check out BitCraze's documentation](https://wiki.bitcraze.io/doc:crazyflie:client:pycfclient:index).  Here is an abridged version:\n\n1. Open the Crazyflie PC client with your CrazyRadio plugged into your computer and the Crazyflie powered on.\n\n2. In the `Connect` menu, select the `Configure 2.0` option.  This should display a window that contains a set of trim setting and radio configuration settings.\n\n3. From the dropdown, select the `2Mbit/s` option.  Note if you are flying multiple Crazyflies or are having problems with interference, this is also where you change the radio channel the Crazyflie is communicating on.\n\n4. Save the setting to the crazyflie by hitting `Write`.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 704303,
+          "key": "229ecc8e-9da2-4864-8660-084914728177",
+          "title": "Control Architecture",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "229ecc8e-9da2-4864-8660-084914728177",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 704313,
+              "key": "dfb75ca8-9a51-4062-8574-2efe9fdd5501",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "**<h1>Control Architecture</h1>**\n\nThe Crazyflie exposes two levels of control: velocity commands and attitude commands. As there are two possible options, the development of an offboard controller will be done in two major steps for ease of testing and demonstration:\n\n- Outer loop controller\n - altitude controller\n - lateral position controller\n\n- Inner loop controller\n - attitude\n - thrust\n\nThe first controller that will be built is the outer loop controller which will compute velocity commands that can be sent to the crazyflie and consists of an altitude controller and a lateral position controller. See the figure below for a schematic of this controller.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 704584,
+              "key": "f2666e69-e3ea-4a92-9bed-e723c63a23fa",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/August/5b8951ad_crazyflie-outer/crazyflie-outer.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/f2666e69-e3ea-4a92-9bed-e723c63a23fa",
+              "caption": "",
+              "alt": "",
+              "width": 2450,
+              "height": 1506,
+              "instructor_notes": null
+            },
+            {
+              "id": 704585,
+              "key": "d61d752a-2cb6-4074-b334-361e98f3ea3f",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "The second controller that will be built is the inner loop controller which computes attitude/thrust commands from the velocity commands computed by the outer loop controller. This then feeds those attitude/thrust commands to the Crazyflie. See the figure below for a schematic of this controller.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 704587,
+              "key": "dd0825a7-fa71-496d-a3e6-888dcdf3026f",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/August/5b895228_crazyflie-outer-inner/crazyflie-outer-inner.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/dd0825a7-fa71-496d-a3e6-888dcdf3026f",
+              "caption": "",
+              "alt": "",
+              "width": 3088,
+              "height": 1513,
+              "instructor_notes": null
+            },
+            {
+              "id": 704588,
+              "key": "02537bc8-2663-48a5-9811-ddc4c441ac18",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "For the most part these controllers are very similar to the ones from the controls project, with a few exceptions. The altitude controller and lateral position controller will just stop at velocity commands; we won't be calculating all the way to accelerations. The yaw controller will be exactly the same as what was seen in the controls project as we are, once again, controlling yaw rate with the Crazyflie. The velocity controller is new and this is where we will control velocity by commanding attitudes.\n\nAs we build the controller step by step, we will actually be leveraging the fact that the Crazyflie already has a controller written for it. This will allow us to only introduce one part of the controller at the time and let the existing controller handling the other elements for us. For example, as we build the altitude controller, we will be leaving lateral velocity control to the Crazyflie so it will maintain 0 velocity in the lateral directions enabling us to focus entirely on the altitude controller.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 704304,
+          "key": "f7682cc8-3ced-4512-965b-47417024a782",
+          "title": "Outer Loop - Altitude",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "f7682cc8-3ced-4512-965b-47417024a782",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 704314,
+              "key": "678baebe-897a-4c54-a43d-fb09c5fb4ef7",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "**<h1>Outer Loop Controller</h1>**\nThe outer loop controller will be built in 2 steps, first we will build the altitude controller and then we will build the lateral position controller. Each of these can be run and tested separately to make the building and tuning processes easier.\n\n**Altitude Controller**\n\nIn this first step, we will be building an altitude controller to the level of commanding velocities. Later on, we will continue to develop the altitude controller to compute thrust itself, but for now we will stop at vertical velocity as the Crazyflie allows us to control this directly.\n\nMuch like in the project, we will create a PID controller on the altitude to command velocity, so the resulting command should look like the first step of your altitude controller from the controls project:\n\n```\ndef altitude_controller(self, alt_cmd, alt, hdot_cmd=0.0):\n    hdot_cmd += self._kp_alt * (alt_cmd - alt)  # compute desired vertical velocity from altitude error\n    hdot_cmd = np.clip(hdot_cmd, -self._hdot_max, self._hdot_max)  # saturate as desired\n    return hdot_cmd\n```\n\n*NOTE: for the Crazyflie a simple P controller is all that will be necessary, however try adding the I and D terms and see how it changes the controller!*\n\nAnd that's it! Now choose a gain (see next section \"Choosing Initial Gains\") and see what happens!\n\n\nOnce you have decided on a gain, you can run this outer loop controller using the velocity_flyer.py script as follows:\n\n```\npython velocity_flyer.py --uri radio://0/80/2M\n```\nWhere the uri passed in should be the uri you configured for your Crazyflie.\n\n*NOTE: if you leave the lateral position gain (self._kp_pos) set to 0, then only the altitude controller will run, allowing you to focus tuning the altitude controller alone. The Crazyflie may drift slowly as it is only trying to maintain 0 lateral velocity, not hold a position, but the drift should be fairly slow.*\n\n**IMPORTANT NOTE: if at any time you need to stop the script and control of the Crazyflie, if ctrl+c does not work, simply unplug the Crazyradio dongle from your computer and the Crazyflie will go into \"stop\" mode after a couple seconds (this will make it fall out of the sky).**",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 704305,
+          "key": "ee49be0d-4867-4d3e-ba79-5fce3b336cbf",
+          "title": "Outer Loop - Lateral Position",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "ee49be0d-4867-4d3e-ba79-5fce3b336cbf",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 704315,
+              "key": "306b09a2-ce79-4ce1-a035-f307bc18ab75",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "**Lateral Position Controller**\n\nNow that we have our altitude controller, let's handle the lateral position. Once again we will be using a PID controller on the position, so it will be the same first lines of the controller you made for the controls project:\n\n```py\ndef lateral_position_control(self, pos_cmd, pos, vel_cmd):\n\n    lateral_vel_cmd = self._kp_pos * (pos_cmd[0:2] - pos[0:2]) + vel_cmd[0:2]  # compute lateral velocity command from position error\n    lateral_vel_cmd = np.clip(lateral_vel_cmd, -self._v_max, self._v_max)  # saturate as desired\n    return lateral_vel_cmd\n```\n*NOTE: for the Crazyflie a simple P controller is all that will be necessary, however try adding the I and D terms and see how it changes the controller!*\n\nAnd that's it! Now we just need to choose a starting gain and see how it works.\n\nOnce you have decided on a gain, you can run this outer loop controller using the ```velocity_flyer.py``` script as follows:\n\n```sh\npython velocity_flyer.py --uri radio://0/80/2M\n```\nWhere the uri passed in should be the uri you configured for your Crazyflie.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 704320,
+          "key": "88dd31b9-39b3-4a37-b78e-e854b92457b4",
+          "title": "Choosing Initial Gains",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "88dd31b9-39b3-4a37-b78e-e854b92457b4",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 704321,
+              "key": "b9f5ac06-d36e-4c06-bf73-b448a088f2cc",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "**<h1>Choosing Initial Gains</h1>**\n\nNow that you've coded up your controller, it's time to pick some initial gains and see how it works. For the course, we knew the exact properties of our drone in the simulator, allowing us to calculate some initial gains mathematically, but here, that's not so much the case. So let's see if we can build some intuition and do some back of the envelope calculation to decide on some gains.\n\nFirst things first, let's make sure we don't ever try and go too fast and add a limit on the allowable velocity command. Let's keep things nice and slow and limit the velocity to 0.3 m/s.\n\nAs a recap, our controller is calculating the position error (how far we are from where we'd like to be) and multiplying that by our gain (```self._kp_pos``` and ```self._kp_alt```) to generate a velocity command. In general, when we are far away from our target position (pos_error >> 0), we'd like to approach it at our max velocity, so let's not worry about that case since we've added a mechanism to limit our velocity command to a max velocity. What really starts to come in to play here is at what distance do you want to start slowing down. The easiest way to start making these decisions is looking at examples, so let's make up a few.\n\nFor example, let's set our max velocity to 1 m/s and set ```_kp_pos = 0.5```, let's take a look at what it means for our Crazyflie's velocity profile as it approaches the waypoint:\n\n- at 1 meter away, we will be flying 0.5 m/s\n- at 0.5 meters away, we will be flying at 0.25 m/s\n\nNow let's say we set ```_kp_pos = 10```, let's take a look at what it means:\n\n- at 1 meter away, we will be flying at 10 m/s (or max velocity)\n- at 0.5 meters away, we will be flying at 5 m/s (or max velocity)\n\nFor those who need a bit more of a visualization, go ahead and plot it out, you will see that as you increase your gain, the slope of the resulting velocity can get impossibly steep!\n\nDo you think that the Crazyflie will be able to stop without overshooting if it's still flying at 5 m/s when it's 0.5 meters away from the target position?\n\n*If the Crazyflie could respond immediately to commands and instantaneously change its velocity vector, then yes, this would be possible, but alas, in the real world, we have delays, it takes some time to change velocity (and attitude), which results in needing to tune our controller. Different drones will be able to react at different rates, allowing for much more aggressive control on some drones versus others.*\n\nDo you think you could approach the target position faster than 0.25 m/s when 0.5 meters out?\n\nThese are the questions that you should be asking yourself as you choose an initial set of gains to work with for your controller. You should err on the side of caution and go with the option that gives you room to increase your gain to get better performance rather than have to decrease your gain.\n\nAs a last part to build some of our intuition, we can see that setting the max speed value allows us to have very aggressive control without the proportional, potentially impossibly high, speed increase when pos_error >> 0.\n\nIn the next controller (the inner loop controller), this same thought process can also be used to get an idea for what kind of gain might seem like a reasonable starting point. It gets a little trickier as the units get a bit less intuitive (attitude will all be in radians), but the same intuition can give you a helping hand!\n\n**It is worth mentioning that in this case there really isn't such a thing as too small of a value. Worse case your Crazyflie will just not go anywhere, but it also won't fall out of the sky. When it comes to lower level control loops, for example an attitude controller that is responsible for keeping your drone level, you will start seeing cases where you can have a gain that is too low and results in your drone falling out of the sky!**\n\n<br></br>\nAdditional resources for PID tuning:\n\nhttps://www.youtube.com/watch?v=JBvnB0279-Q\n\nhttps://myfirstdrone.com/blog/how-to-tune-a-quadcopter",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 704306,
+          "key": "4c495746-279a-4811-991e-176a002cbcf4",
+          "title": "Inner Loop",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "4c495746-279a-4811-991e-176a002cbcf4",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 704316,
+              "key": "f3232352-359f-4508-8c72-f7540d3f5d94",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "**<h1>Inner Loop Controller</h1>**\n\nNow that we have made a working outer loop controller that is successfully able to fly the crazyflie using velocity commands, let's build an inner loop controller that will take those velocity commands and generate attitude/thrust commands to control the Crazyflie.\n\nYou may be thinking *\"why would I want to command attitude, when commanding a velocity gives me a good enough position controller!\"* And you would be right in thinking that! If your goal is solely to command a position in space and you have a drone that can do accurate velocity commands, then you may find you don't need to go this far. But, what if you want to be able to not just go from point A to point B, but do so with specific orientations in space? For example, what if you wanted to go through a window and you knew you needed to be perfectly leveled going through the window, or more interestingly, at a specific angle? This starts to go into the realm of flying specific trajectories, which we will get to a little later, but provides a little insight as to why you might end up commanding at this level if you do have velocity commands at your disposal. (Remember there is always the case where your drone only supports attitude commands!)\n\nWhile the entire inner loop will be tested at once, we will build it in two steps:\n\n1- Compute attitude commands from the horizontal velocity command\n\n2- Compute the thrust command (total thrust) from the vertical velocity command\n\n**Attitude**\n\nWe have already generated a velocity command for our position error, so let's build on that and use the cascaded structure we saw in the controls projects to generate an attitude command from our velocity command:\n\n```\ndef velocity_controller(self, vel_cmd, vel):\n\n    pitch = -self._kp_vel * (vel_cmd[0] - vel[0])  # note the sign change!  Remember + pitch is up, meaning it will send out drone backwards!\n    roll = self._kp_vel * (vel_cmd[1] - vel[0])\n\n    # add some limits\n    pitch_cmd = np.clip(pitch, -self._bank_max, self._bank_max)\n    roll_cmd = np.clip(roll, -self._bank_max, self._bank_max)\n\n    ...\n```\n\n**Thrust**\n\nThe second half of the velocity controller is to convert the vertical velocity to a thrust command. Instead of true thrust, we will need to send a normalized thrust command, that is, a value between 0 and 1 to represent the thrust level, with 0 being no thrust and 1 being the max amount of thrust possible. This does mean we need to know how much thrust, in [N], is the max possible thrust of the crazyflie. We've done that calculation for you and you can find it as a constant at the top of the ```inner_controller.py``` file.\n\nSo let's again use the same process as the controls project to compute the thrust:\n\n```\ndef velocity_controller(self, vel_cmd, vel)\n    ...\n\n    accel_cmd = self._kp_hdot * (hdot_cmd - hdot)  # compute acceleration from vertical velocity error\n    accel_cmd = np.clip(accel_cmd, -self._haccel_max, self._haccel_max)  # saturate as desired\n    thrust_cmd_N = DRONE_M * (accel_cmd + GRAVITY_MAG) / (np.cos(pitch_cmd) * np.cos(roll_cmd))  # compute thrust in N positive up\n\n    # need to normalize the thrust\n    thrust_cmd = thrust_cmd_N / MAX_THRUST_N\n\n    return pitch_cmd, roll_cmd, thrust_cmd\n```\n\n**Flying it!**\n\nOnce you have decided on a gain, you can run this inner loop controller using the ```attitude_flyer.py``` script as follows:\n\n```\npython attitude_flyer.py --uri radio://0/80/2M\n```\nWhere the uri passed in should be the uri you configured for your Crazyflie.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 704307,
+          "key": "7396d750-469f-4066-96a8-2af498cc3300",
+          "title": "Trajectories",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "7396d750-469f-4066-96a8-2af498cc3300",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 704317,
+              "key": "a651f24e-bd3a-449a-ad62-2e5ce6089038",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "**<h1>Trajectories</h1>**\n\nNow that we have a controller and it is flying simply waypoint missions, the next area of interest is flying trajectories, which is an area we have helped set up but will be leaving for you to explore!\n\nWe have provided a framework for reading in a trajectory file (see below for the file format) and a sample, very simple, straight line and back trajectory. In addition you will find a ```trajectory_flyer.py``` file that contains the necessary class and script to test it out.\n\nGo ahead and give it a try! You should see the same performance you saw with the straight line waypoint sets that are found in the ```velocity_flyer.py``` and ```attitude_flyer.py``` files. This is not unsurprising as if you look at the trajectory file itself, it is just about the same information.\n\n**Trajectory File Format**\n\nA trajectory file, as currently defined by the handler class, is a text file with each line being a trajectory point. Each line contains the following 4 pieces of information as comma separated values:\n\n- relative time (in flight time in [s])\n- north position (in [m])\n- east position (in [m])\n- down position (in [m])\n<br></br>\n\n**Further Challenges**\n\nWhile the trajectory file we have provided you is a very simple one, it should be enough to get you started in the right direction to further explore the world of trajectories and explore the limits that you can take your Crazyflie!\n\nTo get you started, here are some small modifications ideas to get a feel for how trajectories can be of use:\n\n- **Dynamic flights speeds.** Using the same idea of a simple line, can you modify your trajectory file to do the return trip twice as quickly? How about starting and ending slowly but going quickly in the middle?\n\n- **Altitude variation.** Can you have your Crazyflie fly a pattern such as a sine wave in height while flying the line? Or how about always climbing quickly but descending slowly?\n\nFor those of you who are really ambitious, here are some ideas of how you might be able to extend the code provided:\n\n- **Create your own complex trajectory files.** How about flying a figure 8? How quickly can you get your Crazyflie to fly a given trajectory? How tight of turns, or how complex of trajectories can your controller handle?\n\n- **Add attitude information to trajectory.** Extend the trajectory handler and the file format to include attitude to each trajectory point. Can you successfully achieve specific attitudes at specific times during the flight?\n\n*Note: As you make more complicated trajectories, you may find that you will need to retune your controller to get the best performance you can out of the Crazyflie.*",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 704309,
+          "key": "0047a963-69c6-402c-b647-54a6c62ce248",
+          "title": "Going Beyond",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "0047a963-69c6-402c-b647-54a6c62ce248",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 704319,
+              "key": "ef95f7f3-2089-47db-a8ee-d30e53a3f917",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "**Single Controller Option**\n\nIn the previous two parts, we built our controller as an outer loop computing velocity commands from position information and an inner loop computing attitude/thrust commands from velocity information. This was the same approach that was used in the controls project.\n\nHere we will just introduce the idea of a different structure to the controller. We have not provided example code for this structure, this is food for thought for those of you who want to explore other control structures and see how they might behave differently on a real platform.\n\nInstead of building it as two parts, it is possible to build the entire controller as one piece:\n```\nattitude_cmd = KpPos * (pos_cmd - pos) + KpVel * (vel_cmd - vel)\n```\nIf we are not flying a trajectory, we set ```vel_cmd = 0```, which means that we are constantly damping our control based on how fast we are currently traveling. This structure ends up being a little more like a PD controller on position, but we are still directly measuring velocity instead of differentiating position. Note that with this structure, we can't directly limit the velocity command that is created, we can only limit the attitude command.\n\nFor this one, we won't be walking through what the solution looks like directly, but rather leaving it up to you to play around with the controller and see what happens!\n\nFor those who are very ambitious, can you think of different control structures you could use? The Crazyflie can be quite forgiving, so give it a try and see how it works out!",
+              "instructor_notes": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "_deprecated": [
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    }
+  ]
+}

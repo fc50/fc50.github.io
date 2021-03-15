@@ -1,0 +1,1056 @@
+{
+  "data": {
+    "lesson": {
+      "id": 518687,
+      "key": "adf9cc77-d52c-4958-810d-89ddc5997437",
+      "title": "Control Architecture",
+      "semantic_type": "Lesson",
+      "is_public": true,
+      "version": "1.0.0",
+      "locale": "en-us",
+      "summary": "The controls problem becomes more difficult in two dimensions. Learn how to use a cascaded PID control architecture to control a flying vehicle that moves in two dimensions.",
+      "lesson_type": "Classroom",
+      "display_workspace_project_only": null,
+      "resources": {
+        "files": [
+          {
+            "name": "Videos Zip File",
+            "uri": "https://zips.udacity-data.com/adf9cc77-d52c-4958-810d-89ddc5997437/518687/1538762755806/Control+Architecture+Videos.zip"
+          },
+          {
+            "name": "Transcripts Zip File",
+            "uri": "https://zips.udacity-data.com/adf9cc77-d52c-4958-810d-89ddc5997437/518687/1538762751934/Control+Architecture+Subtitles.zip"
+          }
+        ],
+        "google_plus_link": null,
+        "career_resource_center_link": null,
+        "coaching_appointments_link": null,
+        "office_hours_link": null,
+        "aws_provisioning_link": null
+      },
+      "project": null,
+      "lab": null,
+      "concepts": [
+        {
+          "id": 518688,
+          "key": "074c4810-0052-4955-a184-5045aa7c6387",
+          "title": "Sebastian Introduction",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "074c4810-0052-4955-a184-5045aa7c6387",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 616871,
+              "key": "8c9f8ffa-8f3f-4d43-862b-ea2d30354aed",
+              "title": "Nd787 C3 L3 00 Sebastian V1",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "tS9oGNg4oLY",
+                "china_cdn_id": "tS9oGNg4oLY.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 559575,
+          "key": "2717b209-bc1a-4661-b348-e2fb9d623ac7",
+          "title": "Intro to 2D Dynamics",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "2717b209-bc1a-4661-b348-e2fb9d623ac7",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 570158,
+              "key": "52846a98-1fef-4469-ba71-eac7a0bff2cd",
+              "title": "C3 L3 01 Intro To 2D Dynamics V1",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "DsSlWKIJ4sk",
+                "china_cdn_id": "DsSlWKIJ4sk.mp4"
+              }
+            },
+            {
+              "id": 562337,
+              "key": "4ce3018c-746b-4968-962d-2c4f3095631f",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Review of Vehicle Dynamics\n\n### 1D Dynamics\n\nWe can express the vertical acceleration <span class=\"mathquill\">\\ddot{z}</span> in terms of the vehicle's thrust <span class=\"mathquill\">u_1</span>  (which we control), as follows:\n\n<div class=\"mathquill\">\n\\ddot{z} = g - \\frac{u_1}{m}\n</div>\n\nTo emphasize how directly we control acceleration we can rewrite this as:\n\n<div class=\"mathquill\">\n\\ddot{z} = \\bar{u}_1\n</div>\n\nwhere\n\n<div class=\"mathquill\">\n\\bar{u}_1 = g - \\frac{u_1}{m}\n</div>\n\n### 2D Dynamics",
+              "instructor_notes": ""
+            },
+            {
+              "id": 562339,
+              "key": "922a8498-57ac-4ea5-bd15-faec4837deab",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/March/5aa81ffe_15-motion-in-two-dimensions-710-v3/15-motion-in-two-dimensions-710-v3.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/922a8498-57ac-4ea5-bd15-faec4837deab",
+              "caption": "",
+              "alt": "",
+              "width": 1920,
+              "height": 1080,
+              "instructor_notes": null
+            },
+            {
+              "id": 562300,
+              "key": "ac0f4c69-bf68-498a-a7ac-357683a4b771",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "We can express the equations of motion of a drone in two dimensions in terms of the collective thrust <span class=\"mathquill\">u_1</span> and the commanded moment about the x axis <span class=\"mathquill\">u_2</span> as follows:\n\n<div class=\"mathquill\">\n\\begin{aligned}\n\\\\\n\\ddot{y} &= \\frac{u_1}{m}\\sin\\phi \n\\\\\n\\ddot{z} &= g - \\frac{u_1}{m}\\cos\\phi\n\\\\\n\\ddot{\\phi} &= \\frac{u_2}{I_{xx}}\n\\end{aligned}\n</div>\n\n### Rotor Physics\n\nBut where do these <span class=\"mathquill\">u_1</span> and <span class=\"mathquill\">u_2</span> come from? \n\nRecall that the force produced by a propeller is related to the rotational velocity <span class=\"mathquill\">\\omega</span> of that propeller through the following equation:\n\n<div class=\"mathquill\">\nF = k_f \\omega^2\n</div>\n\nThis means that the total collective thrust <span class=\"mathquill\">u_1</span> can be expressed as follows:\n\n<div class=\"mathquill\">\nu_1 = k_f ( \\omega_1^2 + \\omega_2^2)\n</div>\n\nTo get <span class=\"mathquill\">u_2</span>, recall that a rotor at a perpendicular distance <span class=\"mathquill\">l</span> from the x-axis will produce a moment <span class=\"mathquill\">M_x</span> about the x-axis given by:\n\n<div class=\"mathquill\">\n\\begin{aligned}\nM_x &= l \\times F\n\\\\\nM_x &= l k_f \\omega^2\n\\end{aligned}\n</div>\n\nand remember that this quantity is *positive* if it causes clockwise accelerations and *negative* if it causes counter-clockwise accelerations. \n\nThis means the total moment about the x-axis, <span class=\"mathquill\">u_2</span>, is given by the following:\n\n<div class=\"mathquill\">\nu_2 = lk_f (\\omega_1^2 - \\omega_2^2)\n</div>\n\nFor the rest of this lesson we're going to ignore the rotational velocities of the individual rotors and assume that we can control <span class=\"mathquill\">u_1</span> and <span class=\"mathquill\">u_2</span> directly.\n",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 559576,
+          "key": "d9528297-f4c6-464d-8e68-9b77e8634d5b",
+          "title": "Underactuation",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "d9528297-f4c6-464d-8e68-9b77e8634d5b",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 570160,
+              "key": "8be3a73b-f5f4-4835-ae49-a181967c7819",
+              "title": "C3 L3 02a Underactuation V2",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "Q6dJA8HhAWU",
+                "china_cdn_id": "Q6dJA8HhAWU.mp4"
+              }
+            },
+            {
+              "id": 562379,
+              "key": "db8e79bc-3305-41a9-ab79-4f559b5da9aa",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "<div class=\"mathquill\">\n\\begin{aligned}\n\\\\\n\\ddot{y} &= \\frac{u_1}{m}\\sin\\phi \n\\\\\n\\ddot{z} &= g - \\frac{u_1}{m}\\cos\\phi\n\\\\\n\\ddot{\\phi} &= \\frac{u_2}{I_{xx}}\n\\end{aligned}\n</div>",
+              "instructor_notes": ""
+            },
+            {
+              "id": 562389,
+              "key": "171686c1-17ba-433c-84cc-01a1c9442f1a",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Since a 2D drone only has two control inputs, we can only simultaneously control two of its three degrees of freedom.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 562378,
+              "key": "d9e89f4d-8381-46f3-9824-54d0bd4aa9e8",
+              "title": "",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "d9e89f4d-8381-46f3-9824-54d0bd4aa9e8",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "A real quadrotor has four controllable quantities (the four propeller rotational speeds) and 6 degrees of freedom (<span class='mathquill'>x,y,z,\\phi,\\theta,\\psi</span>).\n\nHow many of these degrees of freedom do you expect to be **simultaneously controllable** for a quadrotor?",
+                "answers": [
+                  {
+                    "id": "a1520969309437",
+                    "text": "2",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1520969429109",
+                    "text": "3",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1520969430158",
+                    "text": "4",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1520969432237",
+                    "text": "5",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1520969434261",
+                    "text": "6",
+                    "is_correct": false
+                  }
+                ]
+              }
+            },
+            {
+              "id": 562388,
+              "key": "698255c8-3190-4089-b526-02660b782b5b",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "When we're controlling a real 3D quad, we typically choose to control the three positional degrees of freedom, (<span class='mathquill'>x,y,z</span> ) and yaw (<span class='mathquill'>\\psi</span>).\n\nBut sometimes we choose to sacrifice one or more of these degrees of freedom in favor of roll and/or pitch control. \n\nTake a look at [this video](https://www.youtube.com/watch?v=MvRTALJp8DM&feature=youtu.be) for some interesting examples of maneuvers that require roll and/or pitch control.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 559577,
+          "key": "6bfcfd26-66a0-4b1e-b715-16fb8c992b9c",
+          "title": "Coupling",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "6bfcfd26-66a0-4b1e-b715-16fb8c992b9c",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 570164,
+              "key": "7a5c849c-6f4c-4d7d-af3d-59fb5b70fe24",
+              "title": "C3 L3 02 Coupling V2",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "jlDD-RVhK9g",
+                "china_cdn_id": "jlDD-RVhK9g.mp4"
+              }
+            },
+            {
+              "id": 562390,
+              "key": "b1dbdc97-ccb5-4ca4-832a-65ed3a9bbca9",
+              "title": "",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "b1dbdc97-ccb5-4ca4-832a-65ed3a9bbca9",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "Consider a 2D drone (mass <span class=\"mathquill\">m</span>) inlined at some angle <span class=\"mathquill\">\\phi</span>. How much thrust is required to support this drone in the vertical direction?",
+                "answers": [
+                  {
+                    "id": "a1520970072777",
+                    "text": "<span class=\"mathquill\">u_1 = mg</span>",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1520970137690",
+                    "text": "<span class=\"mathquill\">u_1 = mg \\sin \\phi</span>",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1520970159570",
+                    "text": "<span class=\"mathquill\">u_1 = mg \\cos \\phi</span>",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1520970170100",
+                    "text": "<span class=\"mathquill\">u_1 = \\frac{mg}{\\sin \\phi}</span>",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1520970194283",
+                    "text": "<span class=\"mathquill\">u_1 = \\frac{mg}{\\cos \\phi}</span>",
+                    "is_correct": true
+                  }
+                ]
+              }
+            },
+            {
+              "id": 562391,
+              "key": "f089eadf-3aed-4f2e-8939-9058c0a43806",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "In reality, a drone has a maximum total thrust <span class=\"mathquill\">u_{1,\\text{max}}</span> that the 4 rotors can provide. \n\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 562392,
+              "key": "c6818190-d54d-4211-b1e8-9b06263e986a",
+              "title": "",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "c6818190-d54d-4211-b1e8-9b06263e986a",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "In terms of <span class=\"mathquill\">u_{1,\\text{max}}</span> what is the maximum roll angle, <span class=\"mathquill\">\\phi_{\\text{max}}</span>, at which a drone can still support itself vertically (without losing altitude)?",
+                "answers": [
+                  {
+                    "id": "a1520970551133",
+                    "text": "<span class=\"mathquill\">\\phi_{\\text{max}} = \\frac{u_{1,\\text{max}}}{mg}</span>",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1520970642845",
+                    "text": "<span class=\"mathquill\">\\phi_{\\text{max}} = \\frac{mg}{u_{1,\\text{max}}}</span>",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1520970664936",
+                    "text": "<span class=\"mathquill\">\\phi_{\\text{max}} = \\cos^{-1} \\left( \\frac{u_{1,\\text{max}}}{mg}\\right)</span>",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1520970684351",
+                    "text": "<span class=\"mathquill\">\\phi_{\\text{max}} = \\cos^{-1} \\left( \\frac{mg}{u_{1,\\text{max}}}\\right)</span>",
+                    "is_correct": true
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 559578,
+          "key": "09435913-7a2a-40ef-a192-5e11db194e66",
+          "title": "Lesson Overview",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "09435913-7a2a-40ef-a192-5e11db194e66",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 570240,
+              "key": "7b95321b-8889-498e-89d8-80cf8b8b031f",
+              "title": "L3 03 Lesson Overview V2",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "3M7K5qC1zq0",
+                "china_cdn_id": "3M7K5qC1zq0.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 559579,
+          "key": "8dc3b06e-8cf8-42b9-928e-b2d407c4d66a",
+          "title": "Motivation for Linearization",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "8dc3b06e-8cf8-42b9-928e-b2d407c4d66a",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 570168,
+              "key": "53a11177-1620-480c-aa86-3df6b1a45d96",
+              "title": "C3 L3 04 Motivation For Linearization V1",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "UmV-KSARONs",
+                "china_cdn_id": "UmV-KSARONs.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 559580,
+          "key": "ffff7feb-2b7d-42f7-8feb-3ff3e2d95f0a",
+          "title": "Linearization Math",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "ffff7feb-2b7d-42f7-8feb-3ff3e2d95f0a",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 570170,
+              "key": "d39fec89-0764-4ad1-82c4-9cf93edc4035",
+              "title": "C3 L3 05 Linearization Math V1",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "SgDcWJ8lS4c",
+                "china_cdn_id": "SgDcWJ8lS4c.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 559581,
+          "key": "9515a2f2-0275-4bf0-9e33-61f53a68e30a",
+          "title": "Linearization Intuition 1",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "9515a2f2-0275-4bf0-9e33-61f53a68e30a",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 570242,
+              "key": "27be1857-9c44-433d-b0a0-0a2973159cda",
+              "title": "L3 06 Linearization Intuition 1 V1",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "XBTgM0ibU2s",
+                "china_cdn_id": "XBTgM0ibU2s.mp4"
+              }
+            },
+            {
+              "id": 562403,
+              "key": "557989bb-0417-4967-a1e1-50aba800a61f",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "**2D Drone Equations of Motion**\n\n<div class=\"mathquill\">\n\\begin{aligned}\n\\\\\n\\ddot{y} &= \\frac{u_1}{m}\\sin\\phi \n\\\\\n\\ddot{z} &= g - \\frac{u_1}{m}\\cos\\phi\n\\\\\n\\ddot{\\phi} &= \\frac{u_2}{I_{xx}}\n\\end{aligned}\n</div>\n\nAt the equilibrium **hover** configuration, all of the above accelerations (<span class=\"mathquill\">\\ddot{y}, \\ddot{z}, \\ddot{\\phi}</span>) must be zero. This imposes some constraints on what values the other variables can take.\n\nUse the equations of motions above (and your intuition), to identify some of these constraints.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 703567,
+              "key": "35583f58-4589-46be-8ade-c1741a2be2eb",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Recall that **equilibrium** is where we can find certain fixed and non-changing control inputs, where the velocities and accelerations in the y, z and psi dimensions are zero.\nIntuitively, this is the state where the vehicle stays for an extended period of time. For a quadrotor, the only state that is in equilibrium is called **hover**.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 562404,
+              "key": "2433cd29-7eb8-4148-8273-cc2cf9d57277",
+              "title": "",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "2433cd29-7eb8-4148-8273-cc2cf9d57277",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "What must <span class=\"mathquill\">u_2</span> be when hovering?",
+                "answers": [
+                  {
+                    "id": "a1520972006693",
+                    "text": "<span class=\"mathquill\">0</span>",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1520972048981",
+                    "text": "<span class=\"mathquill\">I_{\\text{xx}}</span>",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1520972072917",
+                    "text": "Many possible values",
+                    "is_correct": false
+                  }
+                ]
+              }
+            },
+            {
+              "id": 562409,
+              "key": "e29103cc-f84b-4e8d-9040-5302c833384b",
+              "title": "",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "e29103cc-f84b-4e8d-9040-5302c833384b",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "What must <span class=\"mathquill\">\\phi</span> be when hovering?",
+                "answers": [
+                  {
+                    "id": "a1520972163357",
+                    "text": "0",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1520972203851",
+                    "text": "Less than 90 degrees",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1520972229396",
+                    "text": "Any value",
+                    "is_correct": false
+                  }
+                ]
+              }
+            },
+            {
+              "id": 562410,
+              "key": "299e56bf-e586-49be-a4a0-d5f1ee475904",
+              "title": "",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "299e56bf-e586-49be-a4a0-d5f1ee475904",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "What must <span class=\"mathquill\">u_1</span> be when hovering?",
+                "answers": [
+                  {
+                    "id": "a1520972284902",
+                    "text": "<span class=\"mathquill\">0</span>",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1520972306551",
+                    "text": "<span class=\"mathquill\">mg</span>",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1520972353856",
+                    "text": "Many possible values",
+                    "is_correct": false
+                  }
+                ]
+              }
+            },
+            {
+              "id": 562411,
+              "key": "af42ff7b-6e35-4e82-bb46-f7b809165c6b",
+              "title": "",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "af42ff7b-6e35-4e82-bb46-f7b809165c6b",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "What must <span class=\"mathquill\">z</span> be when hovering?",
+                "answers": [
+                  {
+                    "id": "a1520972432439",
+                    "text": "0",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1520972448069",
+                    "text": "1",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1520972450637",
+                    "text": "Many possible values",
+                    "is_correct": true
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 559582,
+          "key": "94bda10a-702f-409b-81c9-d34771c98360",
+          "title": "Linearization Intuition 2",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "94bda10a-702f-409b-81c9-d34771c98360",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 570173,
+              "key": "1b5c5d12-16c1-4682-a783-488c761b39b0",
+              "title": "C3 L3 07 Linearization Intuition 2 V2",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "y5dUxtA_wC8",
+                "china_cdn_id": "y5dUxtA_wC8.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 559583,
+          "key": "c1a422b4-f3cc-41f4-b7e1-6ee3d7677cf2",
+          "title": "Linearization Intuition 3",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "c1a422b4-f3cc-41f4-b7e1-6ee3d7677cf2",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 570175,
+              "key": "f326ed65-db54-4fd4-a3fa-9187a5298c9d",
+              "title": "C3 L3 08 Linearization Intuition 3 V3",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "dZTiI1n3F5E",
+                "china_cdn_id": "dZTiI1n3F5E.mp4"
+              }
+            },
+            {
+              "id": 562421,
+              "key": "fca73d4c-1cd5-4125-8d3f-ce6614a73431",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "| Quantity | Value at Hover |\n| :----: | :----: |\n| <span class=\"mathquill\">u_2</span> | 0 |\n| <span class=\"mathquill\">u_1</span> | <span class=\"mathquill\">mg</span> |\n| <span class=\"mathquill\">\\phi</span> | 0|\n\nIf you're interested in a more mathematically rigorous explanation of why the above values are true, we'll present that here. If you're not interested, feel free to continue with the lesson!\n\nLet's start with the equations of motion:\n\n<div class=\"mathquill\">\n\\begin{aligned}\n\\\\\n\\ddot{y} &= \\frac{u_1}{m}\\sin\\phi \n\\\\\n\\ddot{z} &= g - \\frac{u_1}{m}\\cos\\phi\n\\\\\n\\ddot{\\phi} &= \\frac{u_2}{I_{xx}}\n\\end{aligned}\n</div>\n\nWe chose to analyze the hover state because it's an equilibrium where the second derivatives are all 0.\n\n<div class=\"mathquill\">\n\\begin{aligned}\n\\\\\n\\\\\n\\frac{u_1}{m}\\sin\\phi &= 0\n\\\\\n\\\\\n\\frac{u_1}{m}\\cos\\phi &= g\n\\\\\n\\\\\n\\frac{u_2}{I_{xx}}&= 0\n\\end{aligned}\n</div>\n\nFrom the third equation we can see that <span class=\"mathquill\">u_2 =0</span>.\n\nWe can square the remaining two equations and then add them together, which leaves us with the following:\n\n<div class=\"mathquill\">\n\\begin{aligned}\n\n\\frac{u_1^2}{m^2} \\sin^2 \\phi &= 0\n\\\\\n\n+ \\ \\ \\frac{u_1^2}{m^2} \\cos^2 \\phi &= g^2\n\\\\\n\\\\\n\\frac{u_1^2}{m^2}(\\sin^2 \\phi + \\cos^2 \\phi)  &= g^2\n\\end{aligned}\n</div>\nRemembering that <span class=\"mathquill\">\\sin^2x + cos^2x =\n 1</span>...\n<div class=\"mathquill\">\n\\begin{aligned}\n\n\\frac{u_1^2}{m^2}  &= g^2\n\\\\u_1 &= mg\n\\end{aligned}\n</div>\n\nAnd we can plug this into our equation for <span class=\"mathquill\">\n\\ddot{y}=0</span> to prove that <span class=\"mathquill\">\n\\phi=0</span>.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 562477,
+          "key": "459729d9-107b-4269-bee2-26c4fe2a0a12",
+          "title": "Linearization Exploration Exercise",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "459729d9-107b-4269-bee2-26c4fe2a0a12",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 562478,
+              "key": "c3e74ca5-a144-4cc7-adab-d194d612bb27",
+              "title": null,
+              "semantic_type": "WorkspaceAtom",
+              "is_public": true,
+              "workspace_id": "viewc966e973",
+              "pool_id": "jupyter",
+              "view_id": "d3b5fbbf-120c-4a18-8c4b-6ca412a47c1c",
+              "gpu_capable": false,
+              "configuration": {
+                "id": "reserved",
+                "blueprint": {
+                  "conf": {
+                    "ports": [],
+                    "allowSubmit": false,
+                    "defaultPath": "/notebooks/Linearization.ipynb"
+                  },
+                  "kind": "jupyter"
+                },
+                "workspaceId": "reserved"
+              },
+              "starter_files": null
+            }
+          ]
+        },
+        {
+          "id": 559584,
+          "key": "e7a3bf01-bafd-4df5-8651-b325e61d4e27",
+          "title": "Controlling Motion Near Hover",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "e7a3bf01-bafd-4df5-8651-b325e61d4e27",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 570180,
+              "key": "1cf44d89-2b91-46c6-92d4-67322d002f57",
+              "title": "C3 L3 09 Controlling Motion Near Hover V1",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "jgUZzCSXPm8",
+                "china_cdn_id": "jgUZzCSXPm8.mp4"
+              }
+            },
+            {
+              "id": 562458,
+              "key": "e9192ae7-4515-42ab-ab62-fe2def2eedb8",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "In case you don't like seeing four dots above your variables, another way of writing the equations you saw in the video is as follows:\n\n<div class=\"mathquill\">\n\\begin{aligned}\n\\bar{u}_1 &= \\frac{d^2z}{dt^2} \n\\\\\n\\\\\n\\bar{u}_2 &= \\frac{d^4y}{dt^4}\n\\end{aligned}\n\n</div>\n\nRemember in the previous lesson when we tried to control a 1 dimensional vertical copter with \"open loop control\"? The error grew in proportion to the second power of time: <span class=\"mathquill\">e_z(t) \\propto t^2</span>. \n\n\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 562459,
+              "key": "3e2f337b-6a74-45a0-be9f-aa4f4520d673",
+              "title": "",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "3e2f337b-6a74-45a0-be9f-aa4f4520d673",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "If we tried to use an open loop controller to control the horizontal y-motion of a 2D drone, how would you expect the error in horizontal position to grow with time?",
+                "answers": [
+                  {
+                    "id": "a1520983739813",
+                    "text": "<span class=\"mathquill\">e_y(t) \\propto t</span>",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1520983806038",
+                    "text": "<span class=\"mathquill\">e_y(t) \\propto t^2</span>",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1520983809333",
+                    "text": "<span class=\"mathquill\">e_y(t) \\propto t^3</span>",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1520983810493",
+                    "text": "<span class=\"mathquill\">e_y(t) \\propto t^4</span>",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1520983823125",
+                    "text": "<span class=\"mathquill\">e_y(t) \\propto t^8</span>",
+                    "is_correct": false
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 559585,
+          "key": "0261dae7-6409-4aac-84dc-0357ae2259a6",
+          "title": "Intro to Cascaded Control",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "0261dae7-6409-4aac-84dc-0357ae2259a6",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 570182,
+              "key": "fb0876f3-52a9-47af-a262-43ecf7a3a233",
+              "title": "C3 L3 10 Intro To Cascaded Control V1",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "FzObnvshV7Q",
+                "china_cdn_id": "FzObnvshV7Q.mp4"
+              }
+            },
+            {
+              "id": 707908,
+              "key": "eec7eb47-adea-4e8b-9502-1d474a8e29a0",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "To summarize, the correct approach is to:\n\n1-  implement the INNER loop (the Attitude control) \n\n2- implement the OUTER loop (the Lateral control), which has the y variables as input and it produces the commanded phi.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 518697,
+          "key": "d353a32b-71f2-4524-8ac7-d4150a1572fa",
+          "title": "Implement Linear Controller Exercise",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "d353a32b-71f2-4524-8ac7-d4150a1572fa",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 562460,
+              "key": "d3c8b1f7-e536-4de7-b13b-31260b2ec7f0",
+              "title": null,
+              "semantic_type": "WorkspaceAtom",
+              "is_public": true,
+              "workspace_id": "viewc966e973",
+              "pool_id": "jupyter",
+              "view_id": "78dd66ad-78ae-4729-be3c-8d0bc084caaa",
+              "gpu_capable": false,
+              "configuration": {
+                "id": "reserved",
+                "blueprint": {
+                  "conf": {
+                    "disk": null,
+                    "ports": [],
+                    "allowGrade": false,
+                    "allowSubmit": false,
+                    "defaultPath": "/notebooks/Linear%20Controller.ipynb"
+                  },
+                  "kind": "jupyter"
+                },
+                "workspaceId": "reserved"
+              },
+              "starter_files": null
+            }
+          ]
+        },
+        {
+          "id": 559586,
+          "key": "6e47f669-6120-49f0-bc04-86254143f879",
+          "title": "Separation of Time Scales",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "6e47f669-6120-49f0-bc04-86254143f879",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 570243,
+              "key": "bc6707e2-9552-4c81-bd32-c4ff4e9e999c",
+              "title": "L3 11 Separation Of Time Scales V1",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "2jAAsCvufl0",
+                "china_cdn_id": "2jAAsCvufl0.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 559587,
+          "key": "449a2563-db72-44ab-be5b-74bcb7d4993e",
+          "title": "Non-Linear Control",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "449a2563-db72-44ab-be5b-74bcb7d4993e",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 570185,
+              "key": "9a708aba-2641-4a51-8824-d045f9fb98df",
+              "title": "C3 L3 12 NonLinear Control V2",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "Tvu76GD8SyA",
+                "china_cdn_id": "Tvu76GD8SyA.mp4"
+              }
+            },
+            {
+              "id": 682836,
+              "key": "75ac0a4f-a2d5-45fb-b4e2-14db19f31bdf",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Non-Linear Control\n<br></br>\nThe non-linear equations of motions are:\n\n<span class=\"mathquill\">\\ddot{z} = g - \\frac{u_1}{m}\\cos\\phi</span>\n\n<span class=\"mathquill\">\\ddot{y} = \\frac{u_1}{m}\\sin\\phi</span>\n\n<span class=\"mathquill\">\\ddot{\\phi} = \\frac{u_2}{I_x}</span>\n\n<br></br>\nSolving them for <span class=\"mathquill\">u_1, \\phi_{\\text{command}}, u_2   </span> (where <span class=\"mathquill\">\\bar{u_1} ==\\ddot{z} ; \\bar{u_2}  == \\ddot{\\phi} ;  \\phi_{\\text{command}} == \\phi </span>)   gives us:\n\n<span class=\"mathquill\">u_1 = \\frac{m(g - \\bar{u_1})}{\\cos\\phi} </span>\n\n<span class=\"mathquill\">\\phi_{\\text{command}} = \\sin^{-1}\\left(\\frac{m\\ddot{y}_{\\text{target}}}{u_1}\\right)  </span>\n\n<span class=\"mathquill\">u_2 = I_x \\bar{u}_2</span>",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 562465,
+          "key": "d28d2bc0-96d7-41df-9474-aa378dba787e",
+          "title": "Implement Non-Linear Controller Exercise",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "d28d2bc0-96d7-41df-9474-aa378dba787e",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 562466,
+              "key": "5f1b34ec-ea5e-43af-806f-02717ed0554d",
+              "title": null,
+              "semantic_type": "WorkspaceAtom",
+              "is_public": true,
+              "workspace_id": "viewc966e973",
+              "pool_id": "jupyter",
+              "view_id": "482c462a-b1c9-4bff-9b6e-6f9ce057cba6",
+              "gpu_capable": false,
+              "configuration": {
+                "id": "reserved",
+                "blueprint": {
+                  "conf": {
+                    "disk": null,
+                    "ports": [],
+                    "allowGrade": false,
+                    "allowSubmit": false,
+                    "defaultPath": "/notebooks/Non-Linear%20Controller.ipynb"
+                  },
+                  "kind": "jupyter"
+                },
+                "workspaceId": "reserved"
+              },
+              "starter_files": null
+            }
+          ]
+        },
+        {
+          "id": 562475,
+          "key": "161d9886-4d1d-4033-87eb-5a4faa1958c5",
+          "title": "Comparing Trajectories Exercise",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "161d9886-4d1d-4033-87eb-5a4faa1958c5",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 562476,
+              "key": "f9e22616-e59b-4f88-8400-1d693dc8cf04",
+              "title": null,
+              "semantic_type": "WorkspaceAtom",
+              "is_public": true,
+              "workspace_id": "viewc966e973",
+              "pool_id": "jupyter",
+              "view_id": "20fb3d00-4bd3-42a3-9999-0161f4a54e85",
+              "gpu_capable": false,
+              "configuration": {
+                "id": "reserved",
+                "blueprint": {
+                  "conf": {
+                    "ports": [],
+                    "allowSubmit": false,
+                    "defaultPath": "/notebooks/Comparing%20Trajectories.ipynb"
+                  },
+                  "kind": "jupyter"
+                },
+                "workspaceId": "reserved"
+              },
+              "starter_files": null
+            }
+          ]
+        },
+        {
+          "id": 559588,
+          "key": "ef6cc108-3adf-48fc-89ab-113b66d0fc63",
+          "title": "Summary",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "ef6cc108-3adf-48fc-89ab-113b66d0fc63",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 570187,
+              "key": "e3346e66-5e98-4ed8-8e2a-a74ce9b9f479",
+              "title": "C3 L3 13 Summary V1",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "nRnULToP-jU",
+                "china_cdn_id": "nRnULToP-jU.mp4"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "_deprecated": [
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    }
+  ]
+}

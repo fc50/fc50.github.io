@@ -1,0 +1,541 @@
+<!-- udacimak v1.4.4 -->
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="ie=edge" http-equiv="X-UA-Compatible"/>
+  <title>
+   Environment Setup
+  </title>
+  <link href="../assets/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="../assets/css/plyr.css" rel="stylesheet"/>
+  <link href="../assets/css/katex.min.css" rel="stylesheet"/>
+  <link href="../assets/css/jquery.mCustomScrollbar.min.css" rel="stylesheet"/>
+  <link href="../assets/css/styles.css" rel="stylesheet"/>
+  <link href="../assets/img/udacimak.png" rel="shortcut icon" type="image/png">
+  </link>
+ </head>
+ <body>
+  <div class="wrapper">
+   <nav id="sidebar">
+    <div class="sidebar-header">
+     <h3>
+      Backyard Flyer
+     </h3>
+    </div>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled components">
+     <li class="">
+      <a href="01. Lesson Introduction.html">
+       01. Lesson Introduction
+      </a>
+     </li>
+     <li class="">
+      <a href="02. Lesson Overview.html">
+       02. Lesson Overview
+      </a>
+     </li>
+     <li class="">
+      <a href="03. Simulator Demonstration.html">
+       03. Simulator Demonstration
+      </a>
+     </li>
+     <li class="">
+      <a href="04. Simulator Exploration - Manual Flight.html">
+       04. Simulator Exploration - Manual Flight
+      </a>
+     </li>
+     <li class="">
+      <a href="05. Flight Computer Programming.html">
+       05. Flight Computer Programming
+      </a>
+     </li>
+     <li class="">
+      <a href="06. Environment Setup.html">
+       06. Environment Setup
+      </a>
+     </li>
+     <li class="">
+      <a href="07. Simulator Exploration - Programmatic Flight.html">
+       07. Simulator Exploration - Programmatic Flight
+      </a>
+     </li>
+     <li class="">
+      <a href="08. The Problems with Sequential Execution.html">
+       08. The Problems with Sequential Execution
+      </a>
+     </li>
+     <li class="">
+      <a href="09. Event Driven Programming.html">
+       09. Event Driven Programming
+      </a>
+     </li>
+     <li class="">
+      <a href="10. Event Driven Programming Explained.html">
+       10. Event Driven Programming Explained
+      </a>
+     </li>
+     <li class="">
+      <a href="11. A Simple Flight Plan.html">
+       11. A Simple Flight Plan
+      </a>
+     </li>
+     <li class="">
+      <a href="12. Phases of Flight.html">
+       12. Phases of Flight
+      </a>
+     </li>
+     <li class="">
+      <a href="13. Project Development Workflow Options.html">
+       13. Project Development Workflow Options
+      </a>
+     </li>
+     <li class="">
+      <a href="14. Backyard Flyer (local development).html">
+       14. Backyard Flyer (local development)
+      </a>
+     </li>
+     <li class="">
+      <a href="15. Virtual Machine Intro.html">
+       15. Virtual Machine Intro
+      </a>
+     </li>
+     <li class="">
+      <a href="16. Backyard Flyer (X-Windows).html">
+       16. Backyard Flyer (X-Windows)
+      </a>
+     </li>
+     <li class="">
+      <a href="17. Project Cheat Sheet.html">
+       17. Project Cheat Sheet
+      </a>
+     </li>
+     <li class="">
+      <a href="Project Description - Backyard Flyer.html">
+       Project Description - Backyard Flyer
+      </a>
+     </li>
+     <li class="">
+      <a href="Project Rubric - Backyard Flyer.html">
+       Project Rubric - Backyard Flyer
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+   </nav>
+   <div id="content">
+    <header class="container-fluild header">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <div class="align-items-middle">
+         <button class="btn btn-toggle-sidebar" id="sidebarCollapse" type="button">
+          <div>
+          </div>
+          <div>
+          </div>
+          <div>
+          </div>
+         </button>
+         <h1 style="display: inline-block">
+          06. Environment Setup
+         </h1>
+        </div>
+       </div>
+      </div>
+     </div>
+    </header>
+    <main class="container">
+     <div class="row">
+      <div class="col-12">
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h1 id="environment-setup-30-minutes">
+          Environment Setup (~30 minutes)
+         </h1>
+         <p>
+          Before you can program flight plans for the simulator, there's a bit of setup that's required first.
+         </p>
+         <p>
+          You are welcome to skip this section if you are taking the free preview and do not want to command the drone with Python code or complete the Backyard Flyer project.
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h2 id="setup-instructions-abbreviated">
+          Setup Instructions (abbreviated)
+         </h2>
+         <p>
+          Read through the instructions below. If these commands look familiar to you, then you should use these VERY abbreviated instructions to get yourself set up.
+         </p>
+         <ol>
+          <li>
+           <p>
+            <a href="https://conda.io/miniconda.html" rel="noopener noreferrer" target="_blank">
+             download miniconda
+            </a>
+            and then install by opening the file/app that you download.
+           </p>
+          </li>
+          <li>
+           <p>
+            <code>
+             git clone https://github.com/udacity/FCND-Term1-Starter-Kit.git
+            </code>
+            to clone the starter kit and then
+            <code>
+             cd FCND-Term1-Starter-Kit
+            </code>
+            into that directory. If you have a windows machine, you must rename
+            <code>
+             meta_windows_patch.yml
+            </code>
+            to
+            <code>
+             meta.yml
+            </code>
+            as well.
+           </p>
+          </li>
+          <li>
+           <p>
+            <code>
+             conda env create -f environment.yml
+            </code>
+            to create the miniconda environment:
+            <em>
+             this took me 20 minutes to run due to the large number of installs required.
+            </em>
+           </p>
+          </li>
+          <li>
+           <p>
+            <code>
+             source activate fcnd
+            </code>
+            to activate the environment (you'll need to do this whenever you want to work in this environment).
+           </p>
+          </li>
+         </ol>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h2 id="setup-instructions-detailed">
+          Setup Instructions (detailed)
+         </h2>
+         <h4 id="0-install-git-if-you-dont-already-have-it">
+          0. Install
+          <code>
+           git
+          </code>
+          (if you don't already have it)
+         </h4>
+         <p>
+          You likely already have
+          <code>
+           git
+          </code>
+          available as a command line application, but if you don't you should follow the
+          <a href="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git" rel="noopener noreferrer" target="_blank">
+           git setup instructions
+          </a>
+          that are appropriate for your machine.
+         </p>
+         <h4 id="1-download-and-install-miniconda">
+          1. Download and Install Miniconda
+         </h4>
+         <p>
+          We will be using Miniconda to install Python. This will help ensure that the version of Python (and all the required libraries) that you work with are exactly what they're supposed to be. This should help avoid dependency problems.
+         </p>
+         <blockquote>
+          <ol>
+           <li>
+            Go to the
+            <a href="https://conda.io/miniconda.html" rel="noopener noreferrer" target="_blank">
+             miniconda distribution page
+            </a>
+            and download the version of Miniconda that is right for your computer.
+           </li>
+           <li>
+            Once the download is complete, double-click the app/file to install. If this doesn't work, you can use the terminal to execute the miniconda shell script.
+            <code>
+             cd
+            </code>
+            into the directory with the downloaded script and then run the following:
+           </li>
+          </ol>
+         </blockquote>
+         <pre><code class="bash language-bash">bash &lt;FILENAME&gt;</code></pre>
+         <p>
+          for me (on a mac), that was:
+         </p>
+         <pre><code class="bash language-bash">bash Miniconda3-latest-MacOSX-x86_64.sh</code></pre>
+         <p>
+          If you are prompted with a question like "Do you wish the installer to prepend the Miniconda3 install location to PATH…" you should say
+          <code>
+           yes
+          </code>
+          .
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <figure class="figure">
+          <img alt="Make sure you download Miniconda for **Python 3.6** " class="img img-fluid" src="img/screen-shot-2018-01-19-at-10.49.34-am.png"/>
+          <figcaption class="figure-caption">
+           <p>
+            Make sure you download Miniconda for
+            <strong>
+             Python 3.6
+            </strong>
+           </p>
+          </figcaption>
+         </figure>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h4 id="2-get-the-flying-car-starter-kit">
+          2. Get the Flying Car "Starter Kit"
+         </h4>
+         <p>
+          We're providing you with a "starter kit" that contains the required dependencies you'll need to get up and running.
+         </p>
+         <p>
+          Open a terminal window and run the following commands:
+         </p>
+         <pre><code class="bash language-bash">git clone https://github.com/udacity/FCND-Term1-Starter-Kit.git
+cd FCND-Term1-Starter-Kit</code></pre>
+         <p>
+          <strong>
+           If you have a windows machine
+          </strong>
+          you must rename
+          <code>
+           meta_windows_patch.yml
+          </code>
+          to
+          <code>
+           meta.yml
+          </code>
+          as well.
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <figure class="figure">
+          <img alt="" class="img img-fluid" src="img/screen-shot-2018-01-19-at-11.05.10-am.png"/>
+          <figcaption class="figure-caption">
+          </figcaption>
+         </figure>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h4 id="3-create-the-environment-20-30-mins-of-download-required">
+          3. Create the Environment (~20-30 mins of download required)
+         </h4>
+         <p>
+          From the
+          <code>
+           FCND-Term1-Starter-Kit
+          </code>
+          , run the following command:
+         </p>
+         <pre><code class="bash language-bash">conda env create -f environment.yml</code></pre>
+         <p>
+          Running this command will create a new conda environment that is provisioned with all libraries you need to be successful in this program.
+         </p>
+         <p>
+          <strong>
+           This step downloads and installs all the required libraries. It may take a while!
+          </strong>
+          It took 20 mins on my machine (with a fast internet connection).
+         </p>
+         <p>
+          NOTE: If the above command fails due to internet issues or timed out HTTP request then remove the partially built environment using the following command (then run the above create command again):
+         </p>
+         <pre><code class="pyth language-pyth">conda env remove -n fcnd</code></pre>
+         <p>
+          Verify that the FCND (listed fcnd) environment was created in your environments:
+         </p>
+         <pre><code class="pyth language-pyth">conda info --envs</code></pre>
+         <p>
+          Cleanup downloaded libraries (remove tarballs, zip files, etc):
+         </p>
+         <pre><code class="pyth language-pyth">conda clean -tp</code></pre>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h4 id="4-activate-the-conda-environment">
+          4. Activate the Conda Environment
+         </h4>
+         <p>
+          Now that you have created an environment, in order to use it, you will need to activate it.
+         </p>
+         <p>
+          <strong>
+           This must be done each time you begin a new working session i.e. open a new terminal window.
+          </strong>
+         </p>
+         <p>
+          For OS X and Linux:
+         </p>
+         <pre><code class="pyth language-pyth">$ source activate fcnd</code></pre>
+         <p>
+          For Windows depending on shell either:
+         </p>
+         <pre><code class="pyth language-pyth">$ source activate fcnd</code></pre>
+         <p>
+          or
+         </p>
+         <pre><code class="pyth language-pyth">$ activate fcnd</code></pre>
+         <p>
+          That's it. Now all of the fcnd libraries are available to you.
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+      </div>
+      <div class="col-12">
+       <p class="text-right">
+        <a class="btn btn-outline-primary mt-4" href="07. Simulator Exploration - Programmatic Flight.html" role="button">
+         Next Concept
+        </a>
+       </p>
+      </div>
+     </div>
+    </main>
+    <footer class="footer">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <p class="text-center">
+         udacity2.0 If you need the newest courses Plase add me wechat: udacity6
+        </p>
+       </div>
+      </div>
+     </div>
+    </footer>
+   </div>
+  </div>
+  <script src="../assets/js/jquery-3.3.1.min.js">
+  </script>
+  <script src="../assets/js/plyr.polyfilled.min.js">
+  </script>
+  <script src="../assets/js/bootstrap.min.js">
+  </script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js">
+  </script>
+  <script src="../assets/js/katex.min.js">
+  </script>
+  <script>
+   // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('06. Environment Setup')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+ </body>
+</html>

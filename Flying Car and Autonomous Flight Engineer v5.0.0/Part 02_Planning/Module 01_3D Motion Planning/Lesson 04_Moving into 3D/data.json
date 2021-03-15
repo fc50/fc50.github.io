@@ -1,0 +1,783 @@
+{
+  "data": {
+    "lesson": {
+      "id": 503794,
+      "key": "6e2a0873-e549-4045-a877-394ef572f93e",
+      "title": "Moving into 3D",
+      "semantic_type": "Lesson",
+      "is_public": true,
+      "version": "1.0.0",
+      "locale": "en-us",
+      "summary": "Here you'll make the leap from two dimensions to three dimensions and discover how you can use different representations of your search space to optimize your planning solution.",
+      "lesson_type": "Classroom",
+      "display_workspace_project_only": null,
+      "resources": {
+        "files": [
+          {
+            "name": "Videos Zip File",
+            "uri": "https://zips.udacity-data.com/6e2a0873-e549-4045-a877-394ef572f93e/503794/1538763087479/Moving+into+3D+Videos.zip"
+          },
+          {
+            "name": "Transcripts Zip File",
+            "uri": "https://zips.udacity-data.com/6e2a0873-e549-4045-a877-394ef572f93e/503794/1538763068293/Moving+into+3D+Subtitles.zip"
+          }
+        ],
+        "google_plus_link": null,
+        "career_resource_center_link": null,
+        "coaching_appointments_link": null,
+        "office_hours_link": null,
+        "aws_provisioning_link": null
+      },
+      "project": null,
+      "lab": null,
+      "concepts": [
+        {
+          "id": 559069,
+          "key": "ea636442-4f14-46ba-b333-c6f687314d57",
+          "title": "Sebastian Introduction",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "ea636442-4f14-46ba-b333-c6f687314d57",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 616883,
+              "key": "02675c2b-8a51-43fa-ac55-3904f739bc12",
+              "title": "Nd787 C2 L3 00 Sebastian V1",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "41DhFrk6m7s",
+                "china_cdn_id": "41DhFrk6m7s.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 504260,
+          "key": "0086fd66-05c3-42b3-a318-b445e4e39dd2",
+          "title": "Introduction",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "0086fd66-05c3-42b3-a318-b445e4e39dd2",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 552506,
+              "key": "81c3421b-2bdf-4ffe-8ad4-c00c8d4da9dd",
+              "title": "C2 L4 A01 Intro To 3D V2",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "x7aDcy9xxrQ",
+                "china_cdn_id": "x7aDcy9xxrQ.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 503795,
+          "key": "24e287fd-9de5-492d-b127-6cae2d3aa6bd",
+          "title": "3D Grids",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "24e287fd-9de5-492d-b127-6cae2d3aa6bd",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 552507,
+              "key": "9025a1a8-9d15-4e3a-8ea1-a818d61f19f5",
+              "title": "C2 L4 A02 3D Grids V3",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "SzNLVvlvOvs",
+                "china_cdn_id": "SzNLVvlvOvs.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 531093,
+          "key": "05fb791c-c342-4f8a-8432-063e6eef021b",
+          "title": "Voxel Map Exercise",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "05fb791c-c342-4f8a-8432-063e6eef021b",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 552983,
+              "key": "5a5b8c02-3abc-4987-9993-6cfe3fa11874",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Voxel Map\n===",
+              "instructor_notes": ""
+            },
+            {
+              "id": 552984,
+              "key": "2a5c340f-3187-4482-bbf4-209f1fdf0330",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/February/5a938a0d_screen-shot-2018-02-25-at-8.15.54-pm/screen-shot-2018-02-25-at-8.15.54-pm.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/2a5c340f-3187-4482-bbf4-209f1fdf0330",
+              "caption": "",
+              "alt": "",
+              "width": 747,
+              "height": 460,
+              "instructor_notes": null
+            },
+            {
+              "id": 552985,
+              "key": "9aaeb1f9-0df9-4208-bc9d-54c75880acef",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "A voxel map is a 3D grid representation of the environment.  For flying cars or drones in most cases you wouldn't want to represent your entire search space as a 3D grid, but it can be useful when you want to do higher resolution planning for a local region, which is what we're going to talk about later in this lesson.\n\nIn this exercise, you'll convert the map of the city that you've been working with into a 3D voxel map for visualization.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 531095,
+              "key": "9e61c10b-e366-4510-86b2-4038f468f7ba",
+              "title": null,
+              "semantic_type": "WorkspaceAtom",
+              "is_public": true,
+              "workspace_id": "view5be37991",
+              "pool_id": "jupyter",
+              "view_id": "5be37991-b2eb-4e96-a456-7e01d109d66b",
+              "gpu_capable": false,
+              "configuration": {
+                "id": "reserved",
+                "blueprint": {
+                  "conf": {
+                    "ports": [],
+                    "allowSubmit": false,
+                    "defaultPath": "/notebooks/Voxel-Map.ipynb"
+                  },
+                  "kind": "jupyter"
+                },
+                "workspaceId": "reserved"
+              },
+              "starter_files": null
+            }
+          ]
+        },
+        {
+          "id": 504261,
+          "key": "b09f0cff-b69d-456f-88e7-bcaf8da96653",
+          "title": "2.5D Maps",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "b09f0cff-b69d-456f-88e7-bcaf8da96653",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 552508,
+              "key": "aa7d3b94-f316-4a8c-9cda-3c39c1ff4f30",
+              "title": "C2 L4 A03 25D Maps V3",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "oWvl2yaoblY",
+                "china_cdn_id": "oWvl2yaoblY.mp4"
+              }
+            },
+            {
+              "id": 559001,
+              "key": "bb53a16d-22d5-4a15-95e7-df9a2399e1af",
+              "title": "2.5D maps",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "bb53a16d-22d5-4a15-95e7-df9a2399e1af",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "The `colliders.csv` file you've been using in the coding exercises so far is effectively a 2.5D map of one square kilometer of downtown San Francisco at roughly one meter resolution. If the highest building is 300 m tall, how many <span class=\"mathquill\">1~ \\rm{m}^3</span> voxels would you need to represent the same volume?",
+                "answers": [
+                  {
+                    "id": "a1520372543259",
+                    "text": "300,000",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1520372582576",
+                    "text": "3,000,000",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1520372583769",
+                    "text": "30,000,000",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1520372587057",
+                    "text": "300,000,000",
+                    "is_correct": true
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 504263,
+          "key": "e214a4a7-e44d-41ca-a557-78eb6abe4909",
+          "title": "Random Sampling",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "e214a4a7-e44d-41ca-a557-78eb6abe4909",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 593990,
+              "key": "2519fc91-3e4f-4fbb-b736-5c2b251eb177",
+              "title": "Random Sampling Updated",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "DtmF5xOx2P0",
+                "china_cdn_id": "DtmF5xOx2P0.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 531128,
+          "key": "fc88ad3f-9ac2-4e13-a36e-dc76a509a17b",
+          "title": "Random Sampling Exercise",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "fc88ad3f-9ac2-4e13-a36e-dc76a509a17b",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 552986,
+              "key": "782e355f-330c-4c1f-a48a-a34e0ee16269",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Random Sampling\n===",
+              "instructor_notes": ""
+            },
+            {
+              "id": 552987,
+              "key": "a6c50cb5-c532-41ac-b1b5-d45b2976fd9f",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/February/5a938d54_screen-shot-2018-02-25-at-8.29.44-pm/screen-shot-2018-02-25-at-8.29.44-pm.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/a6c50cb5-c532-41ac-b1b5-d45b2976fd9f",
+              "caption": "",
+              "alt": "",
+              "width": 581,
+              "height": 531,
+              "instructor_notes": null
+            },
+            {
+              "id": 552988,
+              "key": "bd7c630a-fd41-4d80-a981-6afa47759d71",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Sampling your environment at random might seem like a strange idea, but it's actually a relatively efficient way to build up a set of feasible states through your free space.  In this exercise you'll implement random sampling of your 3D environment to generate candidate nodes for a graph representation of your state space.\n\nThe process you'll go through to generate a set of feasible states will be to first scatter points at random throughout your environment over some range in x, y, and z. Then for each of those points, you'll test whether it lies inside the ground plane polygon of any obstacles, and if so, whether or not it is above or below the height of the obstacle.  \n\nYou'll then discard points that are in collision with obstacles, or in other words, those that lie within the ground plane polygon of an obstacle and below the height of that obstacle.  And what you're left with are a collection of states that lie in the free space!",
+              "instructor_notes": ""
+            },
+            {
+              "id": 556302,
+              "key": "781d01bc-34f3-43e2-9ccc-14a2169f36b5",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Python Shapely package\nIn this exercise, you'll leverage a powerful Python package called [Shapely](http://shapely.readthedocs.io/en/stable/manual.html).  With this package you can define a polygon object using a set of coordinates like this:\n\n```python\nfrom shapely.geometry import Polygon\ncoords = [(0, 0), (1, 0), (1, 1), (0, 1)]\npoly = Polygon(coords)\n```\nYou now have a polygon object with various attributes\n\n```python\nprint(poly.area)\nprint(poly.length)\nprint(poly.bounds)\n> 1.0\n> 4.0\n> (0.0, 0.0, 1.0, 1.0)\n```",
+              "instructor_notes": ""
+            },
+            {
+              "id": 556303,
+              "key": "7da7f384-e348-4756-a9a0-a34e454e8325",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "But more importantly, for our purposes here you can define a point using Shapely as well and then test whether that point lies within the polygon:\n\n```python\nfrom shapely.geometry import Point\np1 = Point(0.5, 0.5)\np2 = Point(1.5, 1.5)\nprint(poly.contains(p1))\nprint(poly.contains(p2))\n> True\n> False\n```\nAnd simple as that you have a method for testing whether a point lies within the ground plane polygon of an obstacle! All you need to do is add in a check for height and you've got your random sampling test in order.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 556305,
+              "key": "864434b9-ef7a-4377-9966-f3baa50488c6",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Random Sampling Exercise\n\nIn this exercise you'll read in the same `colliders.csv` file you've been using in previous exercises and cast each obstacle into a Shapely `Polygon()` object.  You'll then generate a random bunch of points and test each one for collision with obstacle polygons.  Think about what the best approach might be when it comes to testing points for collision.  Do you need to test all points against all polygons?\n\nGood luck! And for a peek at our solution you can scroll down to the link at the bottom of the notebook.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 531130,
+              "key": "d9feab55-dadc-4ed5-b9a5-e584e5274001",
+              "title": null,
+              "semantic_type": "WorkspaceAtom",
+              "is_public": true,
+              "workspace_id": "view10713e24",
+              "pool_id": "jupyter",
+              "view_id": "10713e24-665a-4f98-aa80-d3609467ad10",
+              "gpu_capable": false,
+              "configuration": {
+                "id": "reserved",
+                "blueprint": {
+                  "conf": {
+                    "ports": [],
+                    "allowSubmit": false,
+                    "defaultPath": "/notebooks/Random-Sampling.ipynb"
+                  },
+                  "kind": "jupyter"
+                },
+                "workspaceId": "reserved"
+              },
+              "starter_files": null
+            }
+          ]
+        },
+        {
+          "id": 504264,
+          "key": "2e813a85-b897-400f-926b-260901fa7db1",
+          "title": "Probabilistic Roadmap",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "2e813a85-b897-400f-926b-260901fa7db1",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 552510,
+              "key": "c6bb09f9-cf82-4a02-b94d-9dde8049353e",
+              "title": "C2 L4 A06 Probabilistic Roadmap V4",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "DCSe-uBfBNY",
+                "china_cdn_id": "DCSe-uBfBNY.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 553314,
+          "key": "7f2d7afe-4775-4377-9fa4-167ce6431315",
+          "title": "Probabilistic Roadmap Exercise",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "7f2d7afe-4775-4377-9fa4-167ce6431315",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 555976,
+              "key": "f9598493-433a-4137-a09e-097636e4d598",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Probabilistic Roadmap\n===",
+              "instructor_notes": ""
+            },
+            {
+              "id": 555977,
+              "key": "4bbdced0-4be8-4cf4-9c2c-c8be3ded66f6",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/March/5a9829c7_screen-shot-2018-03-01-at-8.25.37-am/screen-shot-2018-03-01-at-8.25.37-am.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/4bbdced0-4be8-4cf4-9c2c-c8be3ded66f6",
+              "caption": "",
+              "alt": "",
+              "width": 2356,
+              "height": 1296,
+              "instructor_notes": null
+            },
+            {
+              "id": 556398,
+              "key": "ade17249-12c8-4403-a62c-c316539c274b",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "In the previous random sampling exercise, you saw that with the Python [shapely library](http://shapely.readthedocs.io/en/stable/manual.html) it's relatively easy to cast your obstacles as polygon objects and test for collision with points in a 2D plane.  Then, by comparing the height of the obstacle with the z-dimension of the point in question, you could discard states in collision and retain all candidate states in free space.\n\nIn this exercise, you'll connect the states that you've randomly sampled to create a graph representation of the free space in the environment. After that, you'll run search to find a path through this graph from start to goal!",
+              "instructor_notes": ""
+            },
+            {
+              "id": 556399,
+              "key": "9efaae86-fea4-4895-bbba-8e39cc9b5c34",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### KD Trees\n\nIn the last exercise, you saw that naively checking for collision between all points and all object polygons can be slow. We hinted there that the [KD Tree](https://en.wikipedia.org/wiki/K-d_tree) data structure can help to alleviate this inefficiency by allowing you to quickly identify nearest neighbors to a point or polygon. \n\nYou'll be faced with the same problem here when you attempt to connect nodes together into a graph, namely, trying to connect all nodes with all other nodes is costly and not really what you want to do anyway.  So now is a good time to consider KD Trees more closely!\n\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 556403,
+              "key": "1bbef75a-7700-4d5c-a1d1-32806a6a652d",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/March/5a9a323c_250px-3dtree/250px-3dtree.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/1bbef75a-7700-4d5c-a1d1-32806a6a652d",
+              "caption": "Visual of the KD Tree in action ",
+              "alt": "",
+              "width": 250,
+              "height": 238,
+              "instructor_notes": null
+            },
+            {
+              "id": 556400,
+              "key": "e4107ca0-accc-4183-b66e-5ce210d96852",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "The KD Tree is a space-partitioning data structure, which allows for fast search queries. The KD Tree achieves this by cutting the search space in half on each step of a query. If you're familiar with [\"big O notation\"](https://rob-bell.net/2009/06/a-beginners-guide-to-big-o-notation/), this brings the total search time down to <span class=\"mathquill\">O(m * log(n))</span> from <span class=\"mathquill\">O(m*n)</span>, where <span class=\"mathquill\">m</span> is the number of elements to compare to and <span class=\"mathquill\">n</span> is the number of elements in the KD Tree. So for example, if you want to find the closest neighbor to a single point, <span class=\"mathquill\">m=1</span> and <span class=\"mathquill\">n</span> is equal to the total number of potential neighbors.\n\nThe Python Scikit-Learn ([sklearn](http://scikit-learn.org/stable/)) library has an easy to use [implementation of KD Trees](http://scikit-learn.org/stable/modules/generated/sklearn.neighbors.KDTree.html) that we'll be introducing in this exercise.  To find neighbors using this implementation, you'll use it like this: \n\n```python\n# Import KDTree and numpy\nfrom sklearn.neighbors import KDTree\nimport numpy as np\n\n# Generate some random 3-dimensional points\nnp.random.seed(0)\npoints = np.random.random((10, 3))  # 10 points in 3 dimensions\n# Cast points into a KDTree data structure\ntree = KDTree(points)              \n# Extract indices of 3 closest points\n# Note: need to cast search point as a list \n# and return 0th element only to get back list of indices\nidxs = tree.query([points[0]], k=3, return_distance=False)[0]              \n# indices of 3 closest neighbors (will vary due to random sample)\nprint(idxs) \n> [0 3 1]\n\n```",
+              "instructor_notes": ""
+            },
+            {
+              "id": 556423,
+              "key": "6247c0cb-b76f-445e-ae61-1b32a8595892",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Probabilistic Roadmap Exercise\n\nIn this exercise, you'll perform random sampling as before, but this time using a KDTree for finding the nearest polygon. Next, you'll use `networkx` to generate a graph of nodes from points that lie in free space. Then you'll test pairs of nodes for connectivity through free space and determine edges for the graph.  Once you have a graph of nodes and edges, you'll perform search to find a path from start to goal!\n\nThis exercise is pretty involved, but using KDTrees along with everything else you've learned in previous lessons you have all the tools for success!  If you want a peek at our solution check out the link at the bottom of the notebook.  \n\nThis is a modern technique and the relevant detail goes far beyond what's presented in this exercise. We wanted to give you a taste of it, but if you want to dig deeper, [this article](https://arxiv.org/abs/1105.1186) is a great starting point!",
+              "instructor_notes": ""
+            },
+            {
+              "id": 553315,
+              "key": "2503c998-ce1e-43e1-b4f0-b0a65f3ed7d1",
+              "title": null,
+              "semantic_type": "WorkspaceAtom",
+              "is_public": true,
+              "workspace_id": "viewf0a46bdd",
+              "pool_id": "jupyter",
+              "view_id": "f0a46bdd-2001-4d68-9f38-f505a82511c7",
+              "gpu_capable": false,
+              "configuration": {
+                "id": "reserved",
+                "blueprint": {
+                  "conf": {
+                    "disk": null,
+                    "ports": [],
+                    "allowSubmit": false,
+                    "defaultPath": "/notebooks/Probabilistic-Roadmap.ipynb"
+                  },
+                  "kind": "jupyter"
+                },
+                "workspaceId": "reserved"
+              },
+              "starter_files": null
+            }
+          ]
+        },
+        {
+          "id": 528105,
+          "key": "9ebc0c34-bf32-4b56-bf76-21b14e752dd2",
+          "title": "Local Planning",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "9ebc0c34-bf32-4b56-bf76-21b14e752dd2",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 552511,
+              "key": "cec4b5e9-4aaa-495f-af89-4df7087dc635",
+              "title": "C2 L4 A07 Local Planning V4",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "DsUE1rYvRyw",
+                "china_cdn_id": "DsUE1rYvRyw.mp4"
+              }
+            },
+            {
+              "id": 559012,
+              "key": "48e2d1f6-c69a-4cd8-91a3-85b32729716c",
+              "title": "Local Planning",
+              "semantic_type": "CheckboxQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "48e2d1f6-c69a-4cd8-91a3-85b32729716c",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "What are the reasons you might choose to repeatedly search a local volume around your vehicle for a high-resolution, possibly  3D plan but only run your global planner once at low-resolution and potentially in 2D?",
+                "answers": [
+                  {
+                    "id": "a1520373164535",
+                    "text": "You can usually assume that your map of the environment is roughly correct and so can serve as a way to make a coarse plan from start to goal. ",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1520373308174",
+                    "text": "Environments change and even if your map was correct yesterday, it might not be today, so replanning over a local volume to check for unmapped obstacles may be necessary.",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1520373309101",
+                    "text": "Dynamic obstacles, like other flying vehicles, may appear at any time so constant replanning over a local volume may be necessary.",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1520373311748",
+                    "text": "Sensor errors or other factors like getting blown off course by wind may mean that the plan you made just a moment ago is no longer valid over the local volume, so you need to replan.",
+                    "is_correct": true
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 504265,
+          "key": "c8d724e0-59cf-404c-bc65-b34deb7c36c0",
+          "title": "Receding Horizon",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "c8d724e0-59cf-404c-bc65-b34deb7c36c0",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 552512,
+              "key": "f3a1ee60-5bf4-4fa3-86b3-2bec9166fb56",
+              "title": "C2 L4 A08 Receding Horizon V4",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "-wTe_AFFT-I",
+                "china_cdn_id": "-wTe_AFFT-I.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 556595,
+          "key": "29ae6cac-904e-443c-a67f-9cc82da52f52",
+          "title": "Receding Horizon Exercise",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "29ae6cac-904e-443c-a67f-9cc82da52f52",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 556596,
+              "key": "cb57bc53-9d00-4339-ab99-12459aa4a426",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Receding Horizon Planning\n===",
+              "instructor_notes": ""
+            },
+            {
+              "id": 556670,
+              "key": "119791c2-e254-4a46-b2bb-0b3bd450661d",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/March/5a9d9dd6_screen-shot-2018-03-05-at-11.42.08-am/screen-shot-2018-03-05-at-11.42.08-am.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/119791c2-e254-4a46-b2bb-0b3bd450661d",
+              "caption": "",
+              "alt": "",
+              "width": 944,
+              "height": 497,
+              "instructor_notes": null
+            },
+            {
+              "id": 556688,
+              "key": "a14f1391-99ae-45dc-925d-f82cd0ef511c",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Receding horizon planning is a two-tiered approach to solving the planning problem. First, you find a coarse global plan all the way from the start to the goal. Then, as you execute that plan, you continuously replan in a local volume around the vehicle at a higher resolution. This approach allows for fine tuning your plan on the fly, reacting to obstacles that weren't on the map or other uncertainties, like sensor errors or wind. The edge or horizon of your local planner continuously moves out in front of you and hence the name, receding horizon planning.  ",
+              "instructor_notes": ""
+            },
+            {
+              "id": 556807,
+              "key": "5cbc51f9-ee2b-4ce7-9185-24f2f63f6296",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Receding Horizon Exercise\n\nGiven the dynamic nature of receding horizon planning, it's much more interesting to implement this technique in a simulator, where you can actually execute a plan, than in an exercise. And in the project at the end of these lessons, you'll get a chance to do just that!\n\nIn the notebook below, there is no simulator, but you can get a feel for receding horizon planning by combining the methods you've worked with up to this point to create a two-tiered solution to your planning problem.  \n\nFirst, you'll use the method of your choice to find a coarse global plan from start to goal.  Next, you'll generate a plan through your local volume, at a higher resolution, that's not planning toward the goal, but rather, to the next waypoint in the global plan.\n\nThis exercise is relatively open-ended and, while it won't be required to implement receding horizon planning in the project, we encourage you to investigate the techniques you might use here and consider adding these to your project solution!",
+              "instructor_notes": ""
+            },
+            {
+              "id": 556809,
+              "key": "60fac814-8574-4b27-afd1-1584c8adbb71",
+              "title": null,
+              "semantic_type": "WorkspaceAtom",
+              "is_public": true,
+              "workspace_id": "viewb0522b0d",
+              "pool_id": "jupyter",
+              "view_id": "b0522b0d-6e62-4e42-823c-dcc588b4e52f",
+              "gpu_capable": false,
+              "configuration": {
+                "id": "reserved",
+                "blueprint": {
+                  "conf": {
+                    "ports": [],
+                    "allowSubmit": false,
+                    "defaultPath": "/notebooks/Receding-Horizon.ipynb"
+                  },
+                  "kind": "jupyter"
+                },
+                "workspaceId": "reserved"
+              },
+              "starter_files": null
+            }
+          ]
+        },
+        {
+          "id": 528106,
+          "key": "83d7f684-2c5b-4a42-9452-37faf3323b84",
+          "title": "Replanning",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "83d7f684-2c5b-4a42-9452-37faf3323b84",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 552513,
+              "key": "0b161a6b-d2e1-4f50-8b1c-1335c27842c6",
+              "title": "C2 L4 A09 Replanning V3",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "zcZbKZJ3D6s",
+                "china_cdn_id": "zcZbKZJ3D6s.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 504266,
+          "key": "50a6c40b-ccfa-41f6-9da3-aca3bdd3e039",
+          "title": "Summary",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "50a6c40b-ccfa-41f6-9da3-aca3bdd3e039",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 552514,
+              "key": "11a79c67-ea5d-474c-b98d-68323112aa7e",
+              "title": "C2 L4 A10 Summary V2 (1)",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "ydWkeSB30zs",
+                "china_cdn_id": "ydWkeSB30zs.mp4"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "_deprecated": [
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    }
+  ]
+}

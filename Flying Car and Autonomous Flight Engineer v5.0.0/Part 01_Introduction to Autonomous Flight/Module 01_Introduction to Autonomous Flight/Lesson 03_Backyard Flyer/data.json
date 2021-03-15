@@ -1,0 +1,1490 @@
+{
+  "data": {
+    "lesson": {
+      "id": 496049,
+      "key": "13c0ca8d-b11e-405a-a831-6ca38cb60246",
+      "title": "Backyard Flyer",
+      "semantic_type": "Lesson",
+      "is_public": true,
+      "version": "1.0.0",
+      "locale": "en-us",
+      "summary": "In this lesson you'll write the \"Hello, world!\" of drone programming as you write event-driven code that causes a quadrotor to take off, fly in a square, and land. ",
+      "lesson_type": "Classroom",
+      "display_workspace_project_only": null,
+      "resources": {
+        "files": [
+          {
+            "name": "Videos Zip File",
+            "uri": "https://zips.udacity-data.com/13c0ca8d-b11e-405a-a831-6ca38cb60246/496049/1538763052628/Backyard+Flyer+Videos.zip"
+          },
+          {
+            "name": "Transcripts Zip File",
+            "uri": "https://zips.udacity-data.com/13c0ca8d-b11e-405a-a831-6ca38cb60246/496049/1538763048659/Backyard+Flyer+Subtitles.zip"
+          }
+        ],
+        "google_plus_link": null,
+        "career_resource_center_link": null,
+        "coaching_appointments_link": null,
+        "office_hours_link": null,
+        "aws_provisioning_link": null
+      },
+      "project": {
+        "key": "7fd40849-1a2b-4db0-be1e-ed7507f46edb",
+        "version": "1.0.0",
+        "locale": "en-us",
+        "duration": 10080,
+        "semantic_type": "Project",
+        "title": "Backyard Flyer",
+        "description": "# Backyard Flyer Project Instructions\nMake a simulated drone fly in a square shape!\n\n## Project Steps\n\n1. Open the **Backyard Flyer (local development)** section of this lesson and follow instructions there. \n\n2. Make sure you check out the [drone API documentation](https://udacity.github.io/udacidrone/docs/drone-api.html)!\n\n3. You will be submitting your completed version of the `backyard_flyer.py` file here (by clicking the Submit button at the bottom of the page).\n\n## Evaluation\n\nOnce you have completed your project, use the [Project Rubric](https://review.udacity.com/#!/rubrics/1216/view) to review the project. If you have covered all of the points in the rubric, then you are ready to submit! If you see room for improvement in any category in which you do not meet specifications, keep working!\n\n\n### Mission Code\n\nYou should complete all sections of the `BackyardFlyer` class that are marked with `# TODO`s.\n\n1. Complete the state transition methods for Drone class: `arming_transition`, `takeoff_transition`, `waypoint_transition`, `landing_transition`, and `disarming_transition`.\n2. Complete the following callbacks: `state_callback`, `local_position_callback`, `velocity_callback`.\n\nThe callbacks check appropriate criteria dependent on the current state and transition to the appropriate next state when those criteria are met. **Criteria cannot be based on time!**\n\n### Mission Analysis \n\nRunning `backyard_flyer.py` correctly commands the vehicle to fly the box mission. \n\nYour project will be evaluated by a Udacity reviewer according to the same Project Rubric. Your project must \"meet specifications\" in each category in order for your submission to pass.\n\n## Submission\n\nWhen you're ready to submit, click the submit button below and upload a zip file which contains your `backyard_flyer.py` file.\n\n## Feedback\n\nPlease fill out the [Backyard Flyer Project Feedback Form](https://goo.gl/forms/VQJzFUe3x1LQV6H82) after you have completed the project. \n\n## Share Your Project\nHave something fun to share? Did your drone fly in a square, meet the fence, or say hello to a tree? We love to see any and all of your creations!\n\nWhat you’ve accomplished is no small feat. Give yourself a pat on the back and some well-deserved recognition by sharing your amazing project with your network.\n\nCreate a gif or youtube video of your project implementation in the simulator and share with us in the [Flying Car Slack Community](https://udacity-flying-car.slack.com/messages/C77GCKZ8U) and on social media using the links below!\n\nMake sure to use **@Udacity**, **#flyingcarnd**, **#backyardflyer**, and **#madewithudacity** in your posts!\n\n<iframe\n  src=\"https://platform.twitter.com/widgets/tweet_button.html?size=l&url=www.udacity.com&text=I've%20just%20begun%20my%20journey%20with%20the%20Flying%20Car%20Nanodegree%20by%20flying%20a%20drone%20autonomously%20in%20simulation!%20@udacity%20\n[Insert%20your%20Gif%20or%20youtube%20url%20here]&hashtags=flyingcarnd, backyardflyer, madewithudacity\"\nwidth=\"140\"\nheight=\"28\"\nscrolling=\"no\">\n</iframe>\n\n\n<html>\n\n<head>\n<style>\n.fb {color: white;\n  background-color: #4661b0;\n  border-radius: 4px;\n  font-weight: bold;\n  height: 28px;\n  font-size: 14px;}\n.fb:hover {color: #4661b0;\n  background-color: white;\n  border-color: #4661b0;\n  transition: background-color 0.4s}\n.linkedin {color: white;\n  background-color: #0077B5;\n  border-radius: 4px;\n  font-weight: bold;\n  height: 28px;\n  font-size: 14px;}\n.linkedin:hover {color: #0077B5;\n  background-color: white;\n  border-color: #0077B5;\n  transition: background-color 0.4s}\n</style>\n\n</head>\n\n<body>\n<form action=\"https://www.facebook.com/sharer.php?\">\n  Enter the full URL of your Gif or Youtube video:<br>\n  <input type=\"url\" name=\"u\" placeholder=\"Paste URL here\">\n  <input type=\"hidden\" name=\"hashtag\" value=\"#flyingcarnd #backyardflyer #madewithudacity\">\n  <button class=\"fb\">Share on Facebook</button>\n</form>\n\n<form action=\"https://www.linkedin.com/shareArticle?mini=true\">\n  <input type=\"url\" name=\"url\" placeholder=\"Paste URL here\">\n  <input type=\"hidden\" name=\"title\" value=\"Finding Lane Lines\">\n  <input type=\"hidden\" name=\"summary\" value=\"I've just begun my journey with the Flying Car Nanodegree by flying a drone autonomously in simulation! @udacity #flyingcarnd #backyardflyer #madewithudacity\">\n  <button class=\"linkedin\">Share on LinkedIn</button>\n</form>\n\n</body>\n\n</html>\n",
+        "is_public": true,
+        "summary": null,
+        "forum_path": "",
+        "rubric_id": "1216",
+        "terminal_project_id": null,
+        "resources": null,
+        "image": {
+          "url": "https://s3.amazonaws.com/video.udacity-data.com/topher/2018/June/5b23fe62_backyard-flyer-project/backyard-flyer-project.jpg",
+          "width": 1160,
+          "height": 384
+        }
+      },
+      "lab": null,
+      "concepts": [
+        {
+          "id": 550300,
+          "key": "23237e64-e419-4cc1-9173-18a8a13d1437",
+          "title": "Lesson Introduction",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "23237e64-e419-4cc1-9173-18a8a13d1437",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 550309,
+              "key": "ebacfee8-09db-415c-bd56-ac100d71c631",
+              "title": "BYF Lesson Intro",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "z48qy6lGU5M",
+                "china_cdn_id": "z48qy6lGU5M.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 496050,
+          "key": "caf87706-9fac-44de-bf29-c76c6f4554fe",
+          "title": "Lesson Overview",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "caf87706-9fac-44de-bf29-c76c6f4554fe",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 527363,
+              "key": "5d193309-eb7f-4d72-bc1e-94e6daeb7e23",
+              "title": "01 Intro UHD V1",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "wIRJPPH2gkc",
+                "china_cdn_id": "wIRJPPH2gkc.mp4"
+              }
+            },
+            {
+              "id": 506398,
+              "key": "66522e08-a1c0-4555-8e26-b9fa49445bb2",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Lesson Overview\n\nIn this lesson you'll learn how to control a drone with code. More specifically, you'll learn how to write *event-driven* code that controls a drone.\n\nThis event-driven programming paradigm will allow you to write drone programs that respond dynamically to a drone's changing and unpredictable world. \n\n### Outline\n\n1. **Simulator Exploration** - first, you will become familiar with the drone simulator you'll be using throughout this program.\n\n2. **Flight Computer Programming** - you'll review the roles of a drone's flight computer and autopilot so you understand how the flight computer code you'll be writing actually communicates with the drone's low-level autopilot.\n\n3. **Event Driven Programming** - you'll explore the concepts underlying event driven programming by reading and then modifying Python code for an `EventDrivenChatBot` class.\n\n4. **A Simple Flight Plan** - you'll see what event-driven programming looks like in the context of a real (but simple) flight plan.\n\n5. **Phases of Flight** - you'll learn how we represent the \"lifecycle\" of a flight plan with a finite state machine.\n\n6. **Backyard Flyer** - At the end of this lesson you'll actually implement your own flight plan within the event-driven programming paradigm you've been learning about.\n\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 617542,
+              "key": "29e6467e-257a-4f68-a5c4-e97b0ebe98be",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": " ",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 498316,
+          "key": "ef2d175c-f56c-4e01-8a2b-a31213a314c6",
+          "title": "Simulator Demonstration",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "ef2d175c-f56c-4e01-8a2b-a31213a314c6",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 506363,
+              "key": "b628fcfd-78d4-4648-bc76-6bd3cf11ef49",
+              "title": "01 V2 V1",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "8zpkGojsw6g",
+                "china_cdn_id": "8zpkGojsw6g.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 498357,
+          "key": "b5a62b08-513b-4e1c-8041-b1d37c105f3a",
+          "title": "Simulator Exploration - Manual Flight",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "b5a62b08-513b-4e1c-8041-b1d37c105f3a",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 506364,
+              "key": "89ae700b-e0bd-4d04-9737-e7d6ae88a6c0",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Simulator Exploration - Manual\n\nBefore you learn about new programming paradigms, you might want to get setup with the Udacity drone simulator.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 506401,
+              "key": "5641b42d-2836-478c-9bae-16873fe05a31",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Download and Installation\n\nYou can [download the simulator here](https://github.com/udacity/FCND-Simulator-Releases/releases).\n\nOnce you've downloaded the latest release, unzip the file and open the simulator by double-clicking on the app/executable.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 512976,
+              "key": "b5589efd-d79f-4b98-9a76-e78ce9179ddb",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/January/5a627448_screen-shot-2018-01-19-at-2.41.57-pm/screen-shot-2018-01-19-at-2.41.57-pm.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/b5589efd-d79f-4b98-9a76-e78ce9179ddb",
+              "caption": "The Udacity drone simulator",
+              "alt": "",
+              "width": 837,
+              "height": 547,
+              "instructor_notes": null
+            },
+            {
+              "id": 506402,
+              "key": "12785af5-91c1-4c71-a2e0-ed6a8249d8f5",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Arming\n\nArming implies that the power is now being supplied to the motors and the drone is ready to fly. Think of it like using your keys to start your car before you hit the gas! You always need to arm your drone first before you begin to fly. Once you click on arming, you'll notice that the propellers start to spin. And once you click `Disarm`, the motors stop. **Remember to always `Arm` your drone before you can fly and `Disarm` the drone when not flying it.**",
+              "instructor_notes": ""
+            },
+            {
+              "id": 506403,
+              "key": "9343870d-79ac-46d6-a9b3-2cf8838ee6c5",
+              "title": "",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "9343870d-79ac-46d6-a9b3-2cf8838ee6c5",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "Were you able to arm your Drone?",
+                "answers": [
+                  {
+                    "id": "a1516305235201",
+                    "text": "Yes! The propellers are spinning and it's ready to take off.",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1516305268080",
+                    "text": "No, I can't get it working.",
+                    "is_correct": false
+                  }
+                ]
+              }
+            },
+            {
+              "id": 506404,
+              "key": "a2b1c649-6af3-4fc1-b12b-8a1876d8518f",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Manual vs Guided\n\nAs the name suggests, when you are flying the drone in Manual mode, you are the pilot. If it's a real drone, then you'll be using an RC controller. In the simulator, you can use your keyboard to fly the drone. Note that even in Manual mode, the drone is doing a lot of the work \"autonomously\" as it converts your high-level commands into rotor rotation rates.\n\nGuided mode is used when you want the drone to perform tasks autonomously without any human control. You can do this either by sending commands to the drone via console or by writing a script to execute those commands depending on the mission requirements. \n\nFor this project, you'll be writing a program that will lead the drone to execute a mission. In order for the drone to run the mission on its own, it needs to be in Guided mode. ",
+              "instructor_notes": ""
+            },
+            {
+              "id": 506407,
+              "key": "bfb70e23-ecb1-46ec-aabd-cbb658103777",
+              "title": "",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "bfb70e23-ecb1-46ec-aabd-cbb658103777",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "In the simulator, you can apply upward and downward thrust using the `Space` and `C` keys on your keyboard. \n\nWhat happens when you try to use these keys when the drone is in `Guided` mode?",
+                "answers": [
+                  {
+                    "id": "a1516305409679",
+                    "text": "The drone goes up and down.",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1516305473134",
+                    "text": "The commands have no effect.",
+                    "is_correct": true
+                  }
+                ]
+              }
+            },
+            {
+              "id": 506411,
+              "key": "48064a98-8240-4844-839f-829a66e5ffa8",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "You can manually control the drone using the following key commands:\n\n| **Key(s)** | **Control** |\n| :----:  | :----: |\n| `W`/`S` | move forward / back |\n| `A`/`D` | move left / right |\n| `Q`/`E` | turn left/ right |\n\nTry using these controls to take off, fly in a square shape, and then land.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 506412,
+              "key": "20baa5b6-7f88-4f37-843e-94de79dc3a12",
+              "title": "",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "20baa5b6-7f88-4f37-843e-94de79dc3a12",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "Were you able to take off, fly in a square, and then land?",
+                "answers": [
+                  {
+                    "id": "a1516305708609",
+                    "text": "Yes",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1516305726902",
+                    "text": "No",
+                    "is_correct": false
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 498358,
+          "key": "a9425889-ef58-400d-906f-1ce3c6937be5",
+          "title": "Flight Computer Programming",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "a9425889-ef58-400d-906f-1ce3c6937be5",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 513083,
+              "key": "e4add5d6-2648-4638-99f9-a64466cdca5b",
+              "title": "04 V3",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "8TFLgWGyfrg",
+                "china_cdn_id": "8TFLgWGyfrg.mp4"
+              }
+            },
+            {
+              "id": 514068,
+              "key": "349b43e6-c5f5-4c52-a596-bfc14a7056e5",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Connection to Code\n\nWhen writing your solution to this project, you will write flight computer code by filling out methods in a class called `BackyardFlyer` (which inherits from a Udacity-provided `Drone` class). The code you write will have several responsibilities, but two of the most important will involve:\n\n1. **Setting the drone's target position (for the autopilot to follow)** - You'll do this by using the `cmd_position` method from the Udacity-provided `Drone` class.\n2. **Responding to messages from the autopilot** - Your `BackyardFlyer` class will be sent messages from the autopilot to let it know when something about the drone has changed. For example, the autopilot will send a `LOCAL_POSITION` message whenever the drone's local position changes. You'll be responsible for *registering* certain functions (called \"callback functions\") to respond to these messages. For example, if you want to call some function named `local_position_callback` whenever you receive a `LOCAL_POSITION` update, you would write code that says\n```python\nself.register_callback(MsgID.LOCAL_POSITION, self.local_position_callback)\n```\nThis code will make more sense by the end of this lesson.\n\n### A Note on Prerequisites\n\n**Python and Object Oriented Programming**\n\nIn this Nanodegree, we assume that you know Python. In particular, we assume you are comfortable with object oriented programming (OOP) in Python.  \n\nIf you need a refresher on Python or OOP, consider reviewing Udacity's [Programming Foundations with Python](https://www.udacity.com/course/programming-foundations-with-python--ud036)\n\n**Git and Github**\n\nWe will be using git and Github throughout this Nanodegree and we assume you are familiar with the basics of of these technologies. If you find yourself confused by git or Github, take a look at Udacity's [Version Control with Git](https://www.udacity.com/course/version-control-with-git--ud123).",
+              "instructor_notes": ""
+            },
+            {
+              "id": 617543,
+              "key": "67d47491-a213-4b3d-92a7-72a4ae881c7d",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": " ",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 498317,
+          "key": "6d8be91e-0df2-4558-8723-727cf9b64243",
+          "title": "Environment Setup",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "6d8be91e-0df2-4558-8723-727cf9b64243",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 506365,
+              "key": "e8144c52-ff7d-4674-b4de-122b95e9a31b",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Environment Setup (~30 minutes)\n\nBefore you can program flight plans for the simulator, there's a bit of setup that's required first. \n\nYou are welcome to skip this section if you are taking the free preview and do not want to command the drone with Python code or complete the Backyard Flyer project.\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 508564,
+              "key": "a9ddfc37-0931-4870-86ac-06e97df4253c",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Setup Instructions (abbreviated)\n\nRead through the instructions below. If these commands look familiar to you, then you should use these VERY abbreviated instructions to get yourself set up.\n\n1. [download miniconda](https://conda.io/miniconda.html) and then install by opening the file/app that you download.\n\n2. `git clone https://github.com/udacity/FCND-Term1-Starter-Kit.git` to clone the starter kit and then `cd FCND-Term1-Starter-Kit` into that directory. If you have a windows machine, you must rename `meta_windows_patch.yml` to `meta.yml` as well.\n\n4. `conda env create -f environment.yml` to create the miniconda environment: *this took me 20 minutes to run due to the large number of installs required.*\n\n5. `source activate fcnd` to activate the environment (you'll need to do this whenever you want to work in this environment).",
+              "instructor_notes": ""
+            },
+            {
+              "id": 508746,
+              "key": "7639baa6-6c31-499d-b346-6ee91a3bcc5e",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Setup Instructions (detailed)\n\n#### 0. Install `git` (if you don't already have it)\nYou likely already have `git` available as a command line application, but if you don't you should follow the [git setup instructions](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) that are appropriate for your machine.\n\n#### 1. Download and Install Miniconda\n\nWe will be using Miniconda to install Python. This will help ensure that the version of Python (and all the required libraries) that you work with are exactly what they're supposed to be. This should help avoid dependency problems. \n\n> 1. Go to the [miniconda distribution page](https://conda.io/miniconda.html) and download the version of Miniconda that is right for your computer.\n> 2. Once the download is complete, double-click the app/file to install. If this doesn't work, you can use the terminal to execute the miniconda shell script. `cd` into the directory with the downloaded script and then run the following:\n```bash\nbash <FILENAME>\n```\nfor me (on a mac), that was:\n```bash\nbash Miniconda3-latest-MacOSX-x86_64.sh\n```\n\nIf you are prompted with a question like \"Do you wish the installer to prepend the Miniconda3 install location to PATH...\" you should say `yes`.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 508759,
+              "key": "113f282a-6678-485a-beb7-0a62f151cdc7",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/January/5a623e19_screen-shot-2018-01-19-at-10.49.34-am/screen-shot-2018-01-19-at-10.49.34-am.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/113f282a-6678-485a-beb7-0a62f151cdc7",
+              "caption": "Make sure you download Miniconda for **Python 3.6** ",
+              "alt": "",
+              "width": 373,
+              "height": 278,
+              "instructor_notes": null
+            },
+            {
+              "id": 508748,
+              "key": "cf5b33ba-64d3-4fc6-b805-46f089bcd0e1",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "#### 2. Get the Flying Car \"Starter Kit\"\n\nWe're providing you with a \"starter kit\" that contains the required dependencies you'll need to get up and running.\n\nOpen a terminal window and run the following commands:\n\n```bash\ngit clone https://github.com/udacity/FCND-Term1-Starter-Kit.git\ncd FCND-Term1-Starter-Kit\n```\n\n**If you have a windows machine** you must rename `meta_windows_patch.yml` to `meta.yml` as well.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 508765,
+              "key": "cd0e5e7e-05cf-4b9f-8f16-3eb6a06d2511",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/January/5a624181_screen-shot-2018-01-19-at-11.05.10-am/screen-shot-2018-01-19-at-11.05.10-am.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/cd0e5e7e-05cf-4b9f-8f16-3eb6a06d2511",
+              "caption": "",
+              "alt": "",
+              "width": 500,
+              "height": 212,
+              "instructor_notes": null
+            },
+            {
+              "id": 508749,
+              "key": "ecd37881-1383-4d48-88a0-29cf74f2b061",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "#### 3. Create the Environment (~20-30 mins of download required)\n\nFrom the `FCND-Term1-Starter-Kit`, run the following command:\n\n```bash\nconda env create -f environment.yml\n```\n\nRunning this command will create a new conda environment that is provisioned with all libraries you need to be successful in this program.\n\n**This step downloads and installs all the required libraries. It may take a while!** It took 20 mins on my machine (with a fast internet connection). \n\nNOTE: If the above command fails due to internet issues or timed out HTTP request then remove the partially built environment using the following command (then run the above create command again):\n```pyth\nconda env remove -n fcnd\n```\nVerify that the FCND (listed fcnd) environment was created in your environments:\n```pyth\nconda info --envs\n```\nCleanup downloaded libraries (remove tarballs, zip files, etc):\n```pyth\nconda clean -tp\n```",
+              "instructor_notes": ""
+            },
+            {
+              "id": 508750,
+              "key": "bd6b215e-03db-48d8-91a7-72decc8f341d",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "#### 4. Activate the Conda Environment\n\nNow that you have created an environment, in order to use it, you will need to activate it. \n\n**This must be done each time you begin a new working session i.e. open a new terminal window.**\n\nFor OS X and Linux:\n```pyth\n$ source activate fcnd\n```\nFor Windows depending on shell either:\n```pyth\n$ source activate fcnd\n```\nor\n```pyth\n$ activate fcnd\n```\nThat's it. Now all of the fcnd libraries are available to you.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 508752,
+          "key": "0878b080-615e-419a-bfff-05e77f9e8fea",
+          "title": "Simulator Exploration - Programmatic Flight",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "0878b080-615e-419a-bfff-05e77f9e8fea",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 508753,
+              "key": "83813586-854c-4719-a279-8193ab3e5136",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Simulator Exploration - Programmatic Flight\n\nNow it's time to actually control the drone with your own Python code.\n\n> NOTE - This section assumes you've completed the steps to setup your environment on the previous page. ",
+              "instructor_notes": ""
+            },
+            {
+              "id": 508755,
+              "key": "9c27cd1c-db00-4bf6-b75d-3caef8e5de7b",
+              "title": "",
+              "semantic_type": "TaskListAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "9c27cd1c-db00-4bf6-b75d-3caef8e5de7b",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "tasks": [
+                "I've downloaded the drone simulator and commanded the drone with my keyboard.",
+                "I've downloaded and installed Miniconda.",
+                "I've cloned the FCND Starter Kit repository.",
+                "I've created the `fcnd` conda environment in the starter kit directory."
+              ],
+              "positive_feedback": "You are ready to begin controlling the drone with Python code!",
+              "video_feedback": null,
+              "description": "Are you ready to start controlling the drone with code? Make sure you've completed the tasks below before you begin."
+            },
+            {
+              "id": 508756,
+              "key": "6c5cb520-8e26-483f-96f6-0e9e8c2e5334",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Communicating with the Drone using the API\n\nIn order to use the Drone API to communicate with the simulator. You first need to open the simulator.\n\nNext, you will need to activate the environment via your terminal using the following command\n```pyth\nsource activate fcnd\n ```\n\nNow the drone can be manually started from a python / ipython shell! From the terminal start ipython:\n\n```\nipython\n```\n\nNow you can initialize the drone with the following commands:\n\n```\nfrom udacidrone import Drone\nfrom udacidrone.connection import MavlinkConnection\nconn = MavlinkConnection('tcp:127.0.0.1:5760', threaded=True)\ndrone = Drone(conn)\ndrone.start()\n```\n\nNow take control of the drone and arm the rotors. Briefly pause in between executing code snippets as running them in immediate succession can cause strange drone behavior within the simulator.\n```\ndrone.take_control()\ndrone.arm()\n```\n\nNow set the drone's \"home position\"\n\n```\ndrone.set_home_position(drone.global_position[0], \n                        drone.global_position[1], \n                        drone.global_position[2])\n```\n\nAnd now you can take off (to a height of 3 meters)!\n```\ndrone.takeoff(3)\n```\n\nOnce you're in the air, you can fly around by commanding the drone to waypoints.\n\n```\ndrone.cmd_position(5,0,3,0)\n```",
+              "instructor_notes": ""
+            },
+            {
+              "id": 508757,
+              "key": "8e14925c-709f-4275-be26-5ced60b82aa0",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Drone Commands\n\nThere are many commands you can issue to the drone through this API. Some of them include...\n\n```start()```: Start receiving messages from the drone. If the connection is not threaded, this will block the code\n\n```stop()```: Terminate the connection with the drone and close the telemetry log\n\n```take_control()```: Set the command mode of the quad to guided.\n\n```release_control()```: Set the command mode of the quad to manual.\n\n```arm()```: Arms the motors of the quad, the rotors begin spinning. The drone cannot takeoff until armed.\n\n```disarm()```: Disarms the motors of the quad. The quadcopter cannot be disarmed in the air.\n\n```cmd_position(north, east, down, heading)```: Command the vehicle to travel to the local position (north, east, down). Also commands the quad to maintain a specified heading.\n\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 511386,
+              "key": "d806c15b-13b1-4b27-85a6-079a5c5b2089",
+              "title": "",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "d806c15b-13b1-4b27-85a6-079a5c5b2089",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "Were you able to connect to the simulator and control it with Python code?",
+                "answers": [
+                  {
+                    "id": "a1516389934572",
+                    "text": "Yes",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1516389955899",
+                    "text": "No",
+                    "is_correct": false
+                  }
+                ]
+              }
+            },
+            {
+              "id": 510154,
+              "key": "768c56b0-2730-4d62-aa8f-296c68a16e10",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "#### Full API Documentation\n\nTo learn more about this `Drone` class and the provided API, check out the [README in the Github repo](https://github.com/udacity/udacidrone)",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 498359,
+          "key": "bf9e589e-4626-4029-b145-9e78a59e1dca",
+          "title": "The Problems with Sequential Execution",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "bf9e589e-4626-4029-b145-9e78a59e1dca",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 513082,
+              "key": "b44c977c-9d50-4a2d-a54b-62e0b638759c",
+              "title": "06 L The Problem With Sequential Execution V1",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "TCz0PkLoxgU",
+                "china_cdn_id": "TCz0PkLoxgU.mp4"
+              }
+            },
+            {
+              "id": 514069,
+              "key": "05a7c93a-b5bd-4903-aa17-dd538bcd612f",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## So what is Event Driven Programming?\n\nWe'll be talking about this more in the sections that follow, but I'd like to give a quick summary here:\n\n> *Event-driven programming is a programming paradigm in which the flow of execution is determined by external **events** rather than a pre-defined sequence of steps.*\n\nWhen would you use EDP? \n\nA drone is one example. But EDP is also the dominant paradigm used in: graphical user interfaces, where programmers specify how the application should respond to user actions (events).\n\nYou might also use event-driven programming when writing a chatbot. And the example you'll see in the next section uses an `EventDrivenChatBot` class to demonstrate some of the key concepts in EDP.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 617563,
+              "key": "a728520a-562f-41c6-aae9-cae65f7b1e4f",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": " ",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 506373,
+          "key": "329dab52-39cd-46ad-9d81-6b94aeaf8c0f",
+          "title": "Event Driven Programming",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "329dab52-39cd-46ad-9d81-6b94aeaf8c0f",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 506374,
+              "key": "6a4b7d05-a580-498b-aa4b-122f28fde2c0",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Event Driven Programming - Chatbot\n\nA chatbot is a perfect way to demonstrate event driven programming since we can't dictate in advance the \"correct\" sequence of statements a chatbot should make.\n\nInstead, a chatbot should respond to \"events\" which come in the form of messages from the chatbot's conversation partner.\n\n### Goals for this activity\n\n1. (re)familiarize yourself with how Python handles classes and object oriented programming.\n\n2. gain familiarity with what types of problems event driven programming is good for.\n\n3. write simple code that works within this event driven framework\n\n\n#### TODO 1 - Read through and understand the `EventDrivenChatBot` class\nRead through the code below until you have a prediction for what will happen when you **execute** this code by pressing the `Test Run` button.\n\n> NOTE - the last few lines of the code below is where the `EventDrivenChatBot` class is instantiated and its methods are called.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 506376,
+              "key": "79122380-d1a9-4b0c-a2a0-a71f91230d85",
+              "title": "",
+              "semantic_type": "QuizAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "user_state": {
+                "node_key": "79122380-d1a9-4b0c-a2a0-a71f91230d85",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "instruction": null,
+              "question": {
+                "title": "",
+                "semantic_type": "ProgrammingQuestion",
+                "evaluation_id": "4675693020053504",
+                "initial_code_files": [
+                  {
+                    "text": "from datetime import datetime\nimport time\n\nclass EventDrivenChatBot:\n    \n    def __init__(self):\n        # accepted_messages maps incoming messages to \n        # list of callback functions\n        self.accepted_messages = {}\n        \n        # time of instantiation\n        self.birth_time = datetime.now()\n        \n        # \"registering\" all callbacks\n        self.register_callback(\"hi\", \n                               self.respond_to_greeting)\n        self.register_callback(\"bye\", \n                               self.respond_to_departure)\n        self.register_callback(\"age?\",\n                               self.respond_to_age_request)\n        self.register_callback(\"age?\",\n                               self.respond_to_age_request_detailed)\n    \n    def register_callback(self, message, callback):\n        \"\"\"\n        Registers a callback to a message.\n        \"\"\"\n        if message not in self.accepted_messages:\n            self.accepted_messages[message] = []\n        self.accepted_messages[message].append(callback)\n        \n    def respond_to_greeting(self):\n        print(\"Hello!\")\n        \n    def respond_to_departure(self):\n        print(\"Nice chatting with you!\")\n            \n    def respond_to_age_request(self):\n        age = datetime.now() - self.birth_time\n        print(\"I am\", age.seconds, \"seconds old.\")\n        \n    def respond_to_age_request_detailed(self):\n        age = datetime.now() - self.birth_time\n        micros = age.microseconds\n        print(\"Technically, I'm\", age.seconds, \"seconds and\", \n              micros, \"microseconds old\")\n        \n    def handle_message(self, message):\n        if message not in self.accepted_messages:\n            print(\"sorry, I don't understand\", message)\n        else:\n            callbacks = self.accepted_messages[message]\n            for callback in callbacks:\n                callback() \n                \nbot = EventDrivenChatBot()\nbot.handle_message(\"hi\")\ntime.sleep(2.2)\nbot.handle_message(\"age?\")\nbot.handle_message(\"bye\")",
+                    "name": "chatbot.py"
+                  }
+                ]
+              },
+              "answer": null
+            },
+            {
+              "id": 506378,
+              "key": "c9050fea-062b-4d14-bce9-ba94050c0ba9",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### TODO 2 - Run the Code\n\nPress the `Test Run` button above and look at the output. How does it compare to what you expected to see? What happens between calling the `handle_message` method and actually printing the chatbot's response?\n\n### TODO 3 - Modify the Code\n\nOnce you feel like you understand how this code works, modify `EventDrivenChatBot` so that the FIRST time it receives the message `\"age?\"` it calls `respond_to_age_request` but all subsequent `\"age?\"` messages should trigger a call to `respond_to_age_request_detailed`. \n\nYou can find my solution in the next section of this lesson.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 506379,
+          "key": "6dc4aa35-5085-42b0-bc89-ef165df7085a",
+          "title": "Event Driven Programming Explained",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "6dc4aa35-5085-42b0-bc89-ef165df7085a",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 506383,
+              "key": "72db3804-3f17-4a95-a27c-5a4d6c960e37",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Event Driven Programming Explained\n\nThe code below is my solution to the last `TODO` in the previous section. Below that you'll find a video walkthrough of the `EventDrivenChatBot` code.\n\n### Solution Overview\nThere are many ways to solve this problem, but most solutions probably involve modeling the \"state\" of the chatbot as either\n\n1. has NOT yet seen the message \"age?\" OR\n2. HAS seen the message \"age?\"\n\nI implemented this by making three modifications...\n\n1. In ``__init__`` I added a state variable `has_been_asked_age` which is initially set to `False`\n\n2. I define a function called `handle_age_request` which in turn calls either `respond_to_age_request` or `respond_to_age_request_detailed` depending on the STATE of the bot. \n\n3. Register a callback that associated `handle_age_request` to the `\"ask?\"` message. Note that I also removed two calls to `register_callback` that were there previously.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 506382,
+              "key": "6f12946e-e9a6-479a-abda-6082604fda17",
+              "title": "",
+              "semantic_type": "QuizAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "user_state": {
+                "node_key": "6f12946e-e9a6-479a-abda-6082604fda17",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "instruction": null,
+              "question": {
+                "title": "",
+                "semantic_type": "ProgrammingQuestion",
+                "evaluation_id": "5212874243440640",
+                "initial_code_files": [
+                  {
+                    "text": "from datetime import datetime\nimport time\n\nclass EventDrivenChatBot:\n    \n    def __init__(self):\n        self.accepted_messages = {}\n        \n        # 1. ADDED THIS \"STATE\" VARIABLE\n        self.has_been_asked_age = False\n        \n        self.birth_time = datetime.now()\n        \n        # \"registering\" all callbacks\n        self.register_callback(\"hi\", \n                               self.respond_to_greeting)\n        self.register_callback(\"bye\", \n                               self.respond_to_departure)\n        \n        # 3. USING handle_age_request TO DISPATCH\n        #    RESPONSES TO \"age?\"\n        self.register_callback(\"age?\",\n                               self.handle_age_request)\n    \n    def register_callback(self, message, callback):\n        \"\"\"\n        Registers a callback to a message.\n        \"\"\"\n        if message not in self.accepted_messages:\n            self.accepted_messages[message] = []\n        self.accepted_messages[message].append(callback)\n        \n    def respond_to_greeting(self):\n        print(\"Hello!\")\n        \n    def respond_to_departure(self):\n        print(\"Nice chatting with you!\")\n    \n    # 2. ADD DISPATCH POINT FOR PROCESSING \"age?\" MESSAGE\n    def handle_age_request(self):\n        if not self.has_been_asked_age:\n            self.has_been_asked_age = True\n            self.respond_to_age_request()\n        else:\n            self.respond_to_age_request_detailed()\n            \n    def respond_to_age_request(self):\n        age = datetime.now() - self.birth_time\n        print(\"I am\", age.seconds, \"seconds old.\")\n        \n    def respond_to_age_request_detailed(self):\n        age = datetime.now() - self.birth_time\n        micros = age.microseconds\n        print(\"Technically, I'm\", age.seconds, \"seconds and\", \n              micros, \"microseconds old\")\n        \n    def handle_message(self, message):\n        if message not in self.accepted_messages:\n            print(\"sorry, I don't understand\", message)\n        else:\n            callbacks = self.accepted_messages[message]\n            for callback in callbacks:\n                callback()\n                \nbot = EventDrivenChatBot()\nbot.handle_message(\"hi\")\ntime.sleep(1.3)\nbot.handle_message(\"age?\")\nprint(\"---No chatbot, let me ask you that again...\")\nbot.handle_message(\"age?\")",
+                    "name": "chatbot.py"
+                  }
+                ]
+              },
+              "answer": null
+            },
+            {
+              "id": 508579,
+              "key": "920a289b-f2ed-41a3-af83-7121aece6ba7",
+              "title": "08 V3",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "f_GPA9ULqJU",
+                "china_cdn_id": "f_GPA9ULqJU.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 498362,
+          "key": "7623cdc2-7c5f-401e-b4dd-1717e1d32ea1",
+          "title": "A Simple Flight Plan",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "7623cdc2-7c5f-401e-b4dd-1717e1d32ea1",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 506384,
+              "key": "2fac6013-22de-4ddc-ac26-593b2ef09a43",
+              "title": "09 V2 V1",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "Lq4DmvlsJAI",
+                "china_cdn_id": "Lq4DmvlsJAI.mp4"
+              }
+            },
+            {
+              "id": 506385,
+              "key": "a0dc2c5a-0056-488d-89cb-36d258d0347e",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# `up_and_down.py`\n\nI've included all the code from `up_and_down.py` below for your reference.\n\n```python\n\nimport time\nfrom enum import Enum\nimport numpy as np\nfrom udacidrone import Drone\nfrom udacidrone.connection import MavlinkConnection\nfrom udacidrone.messaging import MsgID\n\nclass Phases(Enum):\n    MANUAL = 0\n    ARMING = 1\n    TAKEOFF = 2\n    LANDING = 3\n    DISARMING = 4\n\nclass UpAndDownFlyer(Drone):\n\n    def __init__(self, connection):\n        super().__init__(connection)\n        self.target_position = np.array([0.0, 0.0, 0.0])\n        self.in_mission = True\n\n        # initial state\n        self.flight_phase = Phases.MANUAL\n\n        # register all your callbacks here\n        self.register_callback(MsgID.LOCAL_POSITION,\n                               self.local_position_callback)\n        self.register_callback(MsgID.LOCAL_VELOCITY,\n                               self.velocity_callback)\n        self.register_callback(MsgID.STATE,\n                               self.state_callback)\n\n    def local_position_callback(self):\n        if self.flight_phase == Phases.TAKEOFF:\n\n            # coordinate conversion \n            altitude = -1.0 * self.local_position[2]\n\n            # check if altitude is within 95% of target\n            if altitude > 0.95 * self.target_position[2]:\n                self.landing_transition()\n\n    def velocity_callback(self):\n        if self.flight_phase == Phases.LANDING:\n            if ((self.global_position[2] - self.global_home[2] < 0.1) and\n            abs(self.local_position[2]) < 0.01):\n                self.disarming_transition()\n\n    def state_callback(self):\n        if not self.in_mission:\n            return\n        if self.flight_phase == Phases.MANUAL:\n            self.arming_transition()\n        elif self.flight_phase == Phases.ARMING:\n            if self.armed:\n                self.takeoff_transition()\n        elif self.flight_phase == Phases.DISARMING:\n            if not self.armed:\n                self.manual_transition()\n\n    def arming_transition(self):\n        print(\"arming transition\")\n        self.take_control()\n        self.arm()\n\n        # set the current location to be the home position\n        self.set_home_position(self.global_position[0],\n                               self.global_position[1],\n                               self.global_position[2])\n\n        self.flight_phase = Phases.ARMING\n\n    def takeoff_transition(self):\n        print(\"takeoff transition\")\n        target_altitude = 3.0\n        self.target_position[2] = target_altitude\n        self.takeoff(target_altitude)\n        self.flight_phase = Phases.TAKEOFF\n\n    def landing_transition(self):\n        print(\"landing transition\")\n        self.land()\n        self.flight_phase = Phases.LANDING\n\n    def disarming_transition(self):\n        print(\"disarm transition\")\n        self.disarm()\n        self.flight_phase = Phases.DISARMING\n\n    def manual_transition(self):\n        print(\"manual transition\")\n        self.release_control()\n        self.stop()\n        self.in_mission = False\n        self.flight_phase = Phases.MANUAL\n\n    def start(self):\n        self.start_log(\"Logs\", \"NavLog.txt\")\n        print(\"starting connection\")\n        super().start()\n        self.stop_log()\n\nif __name__ == \"__main__\":\n    conn = MavlinkConnection('tcp:127.0.0.1:5760', \n                             threaded=False, \n                             PX4=False)\n    drone = UpAndDownFlyer(conn)\n    time.sleep(2)\n    drone.start()\n\n```",
+              "instructor_notes": ""
+            },
+            {
+              "id": 617564,
+              "key": "0a4ff00b-af35-4b4b-9787-7b3f657fa6d4",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": " ",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 498363,
+          "key": "c153ceec-d8cb-44d5-a232-3b8d280f83e7",
+          "title": "Phases of Flight",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "c153ceec-d8cb-44d5-a232-3b8d280f83e7",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 506386,
+              "key": "ef6551dc-eb84-4431-81f1-016c324700cc",
+              "title": "10 V2 V1",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "IZjLJxSYdRM",
+                "china_cdn_id": "IZjLJxSYdRM.mp4"
+              }
+            },
+            {
+              "id": 506387,
+              "key": "333ae77e-9a39-4875-9988-d09a60082444",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# `up_and_down.py`\n\nI've included all the code from `up_and_down.py` below for your reference. Use this code as you answer the questions at the bottom of this page. Note that the backyard_flyer project code uses the term 'state' instead of 'phase' but they refer to the same concept.\n\n```python\n\nimport time\nfrom enum import Enum\nimport numpy as np\nfrom udacidrone import Drone\nfrom udacidrone.connection import MavlinkConnection\nfrom udacidrone.messaging import MsgID\n\nclass Phases(Enum):\n    MANUAL = 0\n    ARMING = 1\n    TAKEOFF = 2\n    LANDING = 3\n    DISARMING = 4\n\nclass UpAndDownFlyer(Drone):\n\n    def __init__(self, connection):\n        super().__init__(connection)\n        self.target_position = np.array([0.0, 0.0, 0.0])\n        self.in_mission = True\n\n        # initial state\n        self.flight_phase = Phases.MANUAL\n\n        # register all your callbacks here\n        self.register_callback(MsgID.LOCAL_POSITION,\n                               self.local_position_callback)\n        self.register_callback(MsgID.LOCAL_VELOCITY,\n                               self.velocity_callback)\n        self.register_callback(MsgID.STATE,\n                               self.state_callback)\n\n    def local_position_callback(self):\n        if self.flight_phase == Phases.TAKEOFF:\n\n            # coordinate conversion \n            altitude = -1.0 * self.local_position[2]\n\n            # check if altitude is within 95% of target\n            if altitude > 0.95 * self.target_position[2]:\n                self.landing_transition()\n\n    def velocity_callback(self):\n        if self.flight_phase == Phases.LANDING:\n            if ((self.global_position[2] - self.global_home[2] < 0.1) and\n            abs(self.local_position[2]) < 0.01):\n                self.disarming_transition()\n\n    def state_callback(self):\n        if not self.in_mission:\n            return\n        if self.flight_phase == Phases.MANUAL:\n            self.arming_transition()\n        elif self.flight_phase == Phases.ARMING:\n            self.takeoff_transition()\n        elif self.flight_phase == Phases.DISARMING:\n            self.manual_transition()\n\n    def arming_transition(self):\n        print(\"arming transition\")\n        self.take_control()\n        self.arm()\n\n        # set the current location to be the home position\n        self.set_home_position(self.global_position[0],\n                               self.global_position[1],\n                               self.global_position[2])\n\n        self.flight_phase = Phases.ARMING\n\n    def takeoff_transition(self):\n        print(\"takeoff transition\")\n        target_altitude = 3.0\n        self.target_position[2] = target_altitude\n        self.takeoff(target_altitude)\n        self.flight_phase = Phases.TAKEOFF\n\n    def landing_transition(self):\n        print(\"landing transition\")\n        self.land()\n        self.flight_phase = Phases.LANDING\n\n    def disarming_transition(self):\n        print(\"disarm transition\")\n        self.disarm()\n        self.flight_phase = Phases.DISARMING\n\n    def manual_transition(self):\n        print(\"manual transition\")\n        self.release_control()\n        self.stop()\n        self.in_mission = False\n        self.flight_phase = Phases.MANUAL\n\n    def start(self):\n        self.start_log(\"Logs\", \"NavLog.txt\")\n        print(\"starting connection\")\n        super().start()\n        self.stop_log()\n\nif __name__ == \"__main__\":\n    conn = MavlinkConnection('tcp:127.0.0.1:5760', \n                             threaded=False, \n                             PX4=False)\n    drone = UpAndDownFlyer(conn)\n    time.sleep(2)\n    drone.start()\n\n```",
+              "instructor_notes": ""
+            },
+            {
+              "id": 506390,
+              "key": "0485588e-5c1b-44d4-a068-d1b0814dfeb9",
+              "title": "",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "0485588e-5c1b-44d4-a068-d1b0814dfeb9",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "What flight phase does the drone transition to *after* `Phases.DISARMING`?",
+                "answers": [
+                  {
+                    "id": "a1516302516437",
+                    "text": "`Phases.MANUAL`",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1516302565771",
+                    "text": "`Phases.ARMING`",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1516302577315",
+                    "text": "`Phases.TAKEOFF`",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1516302585251",
+                    "text": "`Phases.LANDING`",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1516302592348",
+                    "text": "None, `Phases.DISARMING` is the last phase.",
+                    "is_correct": false
+                  }
+                ]
+              }
+            },
+            {
+              "id": 506392,
+              "key": "2ceef942-2c5a-41ed-85d3-c38c583bb8b0",
+              "title": "",
+              "semantic_type": "CheckboxQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "2ceef942-2c5a-41ed-85d3-c38c583bb8b0",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "Which of the following criteria must be met in order to begin a `disarming_transition`? \n\nCheck all that apply.",
+                "answers": [
+                  {
+                    "id": "a1516302834944",
+                    "text": "The drone must be in the `LANDING` flight phase.",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1516302908422",
+                    "text": "The drone must be less than 0.01 meters above ground level.",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1516302996280",
+                    "text": "The drone's <span class=\"mathquill\">(x,y)</span> position must be within 0.1 meters of it's original \"home\" position.",
+                    "is_correct": false
+                  }
+                ]
+              }
+            },
+            {
+              "id": 506394,
+              "key": "a5ff120b-5323-4b3e-92ef-a2ac80534723",
+              "title": "",
+              "semantic_type": "MatchingQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "a5ff120b-5323-4b3e-92ef-a2ac80534723",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "complex_prompt": {
+                  "text": "Sort the following methods into the chronological order in which they are called."
+                },
+                "concepts_label": "Order method is called",
+                "answers_label": "Method name",
+                "concepts": [
+                  {
+                    "text": "First",
+                    "correct_answer": {
+                      "id": "a1516303240492",
+                      "text": "`self.arming_transition()`"
+                    }
+                  },
+                  {
+                    "text": "Second",
+                    "correct_answer": {
+                      "id": "a1516303376863",
+                      "text": "`self.takeoff_transition()`"
+                    }
+                  },
+                  {
+                    "text": "Third",
+                    "correct_answer": {
+                      "id": "a1516303395798",
+                      "text": "`self.landing_transition()`"
+                    }
+                  },
+                  {
+                    "text": "Fourth",
+                    "correct_answer": {
+                      "id": "a1516303410591",
+                      "text": "`self.disarming_transition()`"
+                    }
+                  },
+                  {
+                    "text": "Fifth",
+                    "correct_answer": {
+                      "id": "a1516303441217",
+                      "text": "`self.manual_transition()`"
+                    }
+                  }
+                ],
+                "answers": [
+                  {
+                    "id": "a1516303395798",
+                    "text": "`self.landing_transition()`"
+                  },
+                  {
+                    "id": "a1516303410591",
+                    "text": "`self.disarming_transition()`"
+                  },
+                  {
+                    "id": "a1516303376863",
+                    "text": "`self.takeoff_transition()`"
+                  },
+                  {
+                    "id": "a1516303240492",
+                    "text": "`self.arming_transition()`"
+                  },
+                  {
+                    "id": "a1516303441217",
+                    "text": "`self.manual_transition()`"
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 561726,
+          "key": "5e6a85b1-721a-4564-9a76-b051d23b710e",
+          "title": "Project Development Workflow Options",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "5e6a85b1-721a-4564-9a76-b051d23b710e",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 561732,
+              "key": "a02f5ebb-a3d8-410c-9b6c-3031d0a2cf01",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Project Development Workflow Options\n\nThere are **two** approaches you can take to develop and submit this project. *You will only take one of these approaches*.\n\n### Option 1: local development (recommended)\n\nThe first workflow option involves downloading the flying car simulator to your own computer and working locally to develop your solution to the project. You will see instructions for how to get started with this approach when you press the \"Next\" button in the lower right corner of the classroom.\n\n### Option 2: Virtual Machine development\n\nSome students have been having difficulties getting everything setup locally. If you are unable to get local setup working then you can develop and submit your project using a virtual machine that you access through the classroom. Instructions for developing with this workflow are provided in the section **after** the local development instructions.\n\n> **Important** - If you are able to complete the local setup instructions successfully then you should ignore the VM instructions!",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 512873,
+          "key": "99603a59-7bb7-4d94-9dc2-f658c29e1019",
+          "title": "Backyard Flyer (local development)",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "99603a59-7bb7-4d94-9dc2-f658c29e1019",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 512998,
+              "key": "add2b55d-1aed-4d50-b910-dc4c72fe20fd",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Backyard Flyer\n\n### 1 - Get the Code\n1. Navigate to your `FCND-Term1-Starter-Kit` directory.\n2. Make sure your virtual environment is activated\n```python\nsource activate fcnd\n```\n3. Clone the backyard flyer repository.\n```python\ngit clone https://github.com/udacity/FCND-Backyard-Flyer.git\n```\n\n4. Navigate to that repo.\n```python\ncd FCND-Backyard-Flyer\n```\n\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 514071,
+              "key": "99b3d521-7d4d-42f3-ab18-635d6378c317",
+              "title": "",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "99b3d521-7d4d-42f3-ab18-635d6378c317",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "Were you able to clone the backyard flyer repository?",
+                "answers": [
+                  {
+                    "id": "a1516643891739",
+                    "text": "Yes",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1516643915425",
+                    "text": "No",
+                    "is_correct": false
+                  }
+                ]
+              }
+            },
+            {
+              "id": 514070,
+              "key": "6efcfadc-d8a9-44cf-8ecd-d776fab9d596",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### 2 - Run the Solution\nIn this project you will be flying the drone in a square shape. We are providing one working solution, but for your implementation you should feel free to determine your own box size and altitude. We recommend **not** looking at the code for this solution unless you really need to.\n\nIn order to run the solution you should:\n\n1. Switch to the `solution` branch of the backyard flyer:\n```python\ngit checkout solution\n```\n\n2. Start the simulator that you downloaded earlier. If you don't have the simulator you can [download the simulator here](https://github.com/udacity/FCND-Simulator-Releases/releases).\n\n3. Run `backyard_flyer.py`\n```python\npython backyard_flyer.py\n```\n\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 514074,
+              "key": "e1074d14-3d98-41ca-a771-7c78e52a0459",
+              "title": "",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "e1074d14-3d98-41ca-a771-7c78e52a0459",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "Were you able to run the backyard flyer solution and see the drone fly in a square?",
+                "answers": [
+                  {
+                    "id": "a1516644154196",
+                    "text": "Yes",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1516644176442",
+                    "text": "No",
+                    "is_correct": false
+                  }
+                ]
+              }
+            },
+            {
+              "id": 514073,
+              "key": "f09de342-416f-4207-ae88-815b3ff086e6",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### 3 - Read the documentation!\n\nThe drone API you'll be working with has [thorough documentation](https://udacity.github.io/udacidrone/docs/drone-api.html). Use it to understand the properties and methods you have access to!\n\n\n### 4 - Solve it Yourself!\n\n1. Return to the master branch:\n```python\ngit checkout master\n```\n\n2. Open `backyard_flyer.py` in your favorite text editor. I recommend [Sublime Text](https://www.sublimetext.com/3).\n\n3. Whenever you want to test your solution, run `backyard_flyer.py`\n```python\npython backyard_flyer.py\n```",
+              "instructor_notes": ""
+            },
+            {
+              "id": 513004,
+              "key": "618aeb8e-6579-479d-8135-277c2c1c93d1",
+              "title": "",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "618aeb8e-6579-479d-8135-277c2c1c93d1",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "Were you able to get your drone to takeoff, fly in a square, and then land?",
+                "answers": [
+                  {
+                    "id": "a1516404955210",
+                    "text": "Yes",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1516404990847",
+                    "text": "No",
+                    "is_correct": false
+                  }
+                ]
+              }
+            },
+            {
+              "id": 531584,
+              "key": "edf0de43-b031-4351-9c28-2fd9c96f6bc6",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### 5 - Submit!\n\nYou'll submit your `backyard_flyer.py` file on the project page.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 560552,
+          "key": "93b5488e-4641-4ec4-aecf-45763670b2b9",
+          "title": "Virtual Machine Intro",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "93b5488e-4641-4ec4-aecf-45763670b2b9",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 560553,
+              "key": "dbe7487b-8b49-44b4-8918-44f066004474",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Your Cloud Workspace\n===\n\nYou should only complete this section (and the following) if you were unable to get setup locally on the previous page.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 560554,
+              "key": "90c5fe00-4aa0-46b6-950c-7cce7fcf7420",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/March/5aa5c18e_screen-shot-2018-03-11-at-4.53.36-pm/screen-shot-2018-03-11-at-4.53.36-pm.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/90c5fe00-4aa0-46b6-950c-7cce7fcf7420",
+              "caption": "",
+              "alt": "",
+              "width": 1323,
+              "height": 858,
+              "instructor_notes": null
+            },
+            {
+              "id": 560555,
+              "key": "3d2e0b1e-1212-475c-bc62-d438884e8ad3",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Udacity Cloud VM\nFor this project, you will have the option to complete all of your work in a cloud-based GPU supported virtual machine (VM) right in the Udacity classroom! Graphics rendering in the VM seems to work best for internet connections faster than 10Mbps, so if you're on a good connection we highly recommend checking it out! You can test the speed of your connection by going to [fast.com](https://fast.com/). Then simply follow along with these instructions for getting started and you'll be up and running in no time with your new VM.\n\n### Work on your local machine\n\nIf you would prefer to complete the project on your local machine, then you can skip back to the [instructions for local setup](https://classroom.udacity.com/nanodegrees/nd787/parts/5aa0a956-4418-4a41-846f-cb7ea63349b3/modules/2c43620c-78cc-427f-afc1-e6e0d42f82f0/lessons/13c0ca8d-b11e-405a-a831-6ca38cb60246/concepts/6d8be91e-0df2-4558-8723-727cf9b64243).\n\n\n### VM Setup Instructions\n\nThe workspace VM is already setup with Python and the simulator for the Backyard Flyer project. If you run into any problems with using the VM please file bugs, suggestions and grievances in the [waffle board](https://waffle.io/udacity/fcnd-issue-reports). \n\nWhen you click \"Next\" at the bottom of this page to advance to the Backyard Flyer project in the classroom you'll first see a popup asking if you want to enable GPU mode. Choose \"yes\".",
+              "instructor_notes": ""
+            },
+            {
+              "id": 560556,
+              "key": "85378c83-a9a6-4b84-8cf9-3bfcd47fabd9",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/March/5aa5c2b1_screen-shot-2018-03-01-at-1.52.56-pm/screen-shot-2018-03-01-at-1.52.56-pm.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/85378c83-a9a6-4b84-8cf9-3bfcd47fabd9",
+              "caption": "",
+              "alt": "",
+              "width": 425,
+              "height": 258,
+              "instructor_notes": null
+            },
+            {
+              "id": 560557,
+              "key": "815abd2b-cb6c-4d90-ac8b-29ecadec69fb",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Next, your workspace will be configured and you'll land in a development environment that looks like this:",
+              "instructor_notes": ""
+            },
+            {
+              "id": 560558,
+              "key": "d7d8dac4-a52e-466f-958c-7d586771f46c",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/March/5aa5c2d3_screen-shot-2018-03-01-at-1.50.48-pm/screen-shot-2018-03-01-at-1.50.48-pm.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/d7d8dac4-a52e-466f-958c-7d586771f46c",
+              "caption": "",
+              "alt": "",
+              "width": 969,
+              "height": 538,
+              "instructor_notes": null
+            },
+            {
+              "id": 560559,
+              "key": "6cf4c243-fca8-4df9-817f-9831297e755c",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Click the button in the lower right that says \"GO TO DESKTOP\" and you'll launch another browser window, where you'll land at the desktop of your Linux VM that looks like this:\n\n(**Note: the VM currently does not work with Safari, please use Chrome or other browser**) ",
+              "instructor_notes": ""
+            },
+            {
+              "id": 560560,
+              "key": "42e115aa-bd47-4f13-98ee-2b719e5b64fa",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/March/5aa5c2fe_screen-shot-2018-03-01-at-1.59.49-pm/screen-shot-2018-03-01-at-1.59.49-pm.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/42e115aa-bd47-4f13-98ee-2b719e5b64fa",
+              "caption": "",
+              "alt": "",
+              "width": 1424,
+              "height": 755,
+              "instructor_notes": null
+            },
+            {
+              "id": 560561,
+              "key": "8d8d7382-5252-4de5-8ef8-46d51821a983",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Don't worry about the error message, it's harmless, just click \"OK\".  Next, double click on the \"Terminator\" icon on the desktop to open terminal. In the terminal you need to issue 3 commands:\n\n```sh\ncd /home/workspace/linux-64bit/\n./FCND-Sim_Linux_64-bit\n```\n\n** How to copy/paste: **At this point you may be wondering how to copy and paste between your local machine and the VM! It's a bit cumbersome unfortunately, but here's how it works: \n* copy text on local machine\n* open the side-bar menu at the left side of the VM desktop\n* click the clipboard icon and paste text in there\n* use `ctrl-shift-v` to paste into terminal (or `ctrl-v` to paste into Firefox browser)\n\nReverse these steps to copy/paste from the VM to your local machine.\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 560562,
+              "key": "03504b7e-2e7c-44e2-93c5-d4dc473ec3e8",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/March/5aa5c380_screen-shot-2018-03-05-at-7.06.49-am/screen-shot-2018-03-05-at-7.06.49-am.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/03504b7e-2e7c-44e2-93c5-d4dc473ec3e8",
+              "caption": "",
+              "alt": "",
+              "width": 326,
+              "height": 273,
+              "instructor_notes": null
+            },
+            {
+              "id": 560563,
+              "key": "29413557-c69d-4e17-8bd0-48506c4c5873",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "If the above method proves too cumbersome, as long as whatever you want to copy/paste is online, you can also just open up a browser (Firefox) in the VM and navigate to the material you want to copy / paste.\n\nAfter issuing those commands, your simulator should launch! Now your desktop will look something like this:",
+              "instructor_notes": ""
+            },
+            {
+              "id": 560564,
+              "key": "9079765b-e307-4d6b-9d11-deb667879cdf",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/March/5aa5c3c2_screen-shot-2018-03-11-at-4.53.36-pm/screen-shot-2018-03-11-at-4.53.36-pm.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/9079765b-e307-4d6b-9d11-deb667879cdf",
+              "caption": "",
+              "alt": "",
+              "width": 500,
+              "height": 324,
+              "instructor_notes": null
+            },
+            {
+              "id": 560565,
+              "key": "c1737abc-f9fe-44ba-a930-11df149d9aec",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Click the button in the simulator that says \"Click to Arm\" and try some manual flying to explore this new environment. Click the \"Controls\" button in the upper righthand corner of the sim to get a reminder of keyboard and mouse functionality in manual mode.  \n\nIf all of this works, you're ready to move on to testing autonomous flying and planning in this new environment.  In a new terminal, run the following commands to clone the [project repository](https://github.com/udacity/FCND-Backyard-Flyer) into your `/home/workspace` directory:\n\n```sh\ncd /home/workspace\ngit clone https://github.com/udacity/FCND-Backyard-Flyer\n```\n\nNext, activate the `fcnd` conda environment by typing `source activate fcnd` and then `python` at the prompt.  You should now be running Python 3.6 in the `fcnd` conda environment.  \n\n```sh\nsource activate fcnd\npython\n```",
+              "instructor_notes": ""
+            },
+            {
+              "id": 560566,
+              "key": "4a8a93e7-07e3-4b39-a4a9-548da7152852",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/March/5aa5c42e_screen-shot-2018-03-01-at-2.41.30-pm/screen-shot-2018-03-01-at-2.41.30-pm.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/4a8a93e7-07e3-4b39-a4a9-548da7152852",
+              "caption": "",
+              "alt": "",
+              "width": 722,
+              "height": 110,
+              "instructor_notes": null
+            },
+            {
+              "id": 560567,
+              "key": "4f76c39e-e3fb-4ae2-88b8-6f17a8c1d49a",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "With that you have everything you need to complete this lesson and the Backyard Flyer project right in your browser. Keep your workspace desktop environment open in one tab and in another tab, head back to [Simulator Exploration Tutorial](https://classroom.udacity.com/nanodegrees/nd787/parts/5aa0a956-4418-4a41-846f-cb7ea63349b3/modules/2c43620c-78cc-427f-afc1-e6e0d42f82f0/lessons/13c0ca8d-b11e-405a-a831-6ca38cb60246/concepts/0878b080-615e-419a-bfff-05e77f9e8fea) to get familiarized with the simulator and supporting code. Or if you're ready to complete the project, you can move on to the [instructions for completing the project](https://classroom.udacity.com/nanodegrees/nd787/parts/5aa0a956-4418-4a41-846f-cb7ea63349b3/modules/2c43620c-78cc-427f-afc1-e6e0d42f82f0/lessons/13c0ca8d-b11e-405a-a831-6ca38cb60246/concepts/99603a59-7bb7-4d94-9dc2-f658c29e1019).",
+              "instructor_notes": ""
+            },
+            {
+              "id": 560568,
+              "key": "1a4ef4c7-83e4-45b3-b871-f95c9a11cad1",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Submitting your project through the workspace VM\n\nWhen you're satisfied with your solution, you can submit your project directly through the VM workspace. The way this works is that when you click \"Submit Project\" in the workspace IDE, everything in your `/home/workspace` folder will be zipped up and submitted. So the first step is to move everything you do not want to submit out of the `/home/workspace` directory.\n\nThe one thing you absolutely must remove from `/home/workspace` is the simulator (with the simulator the submission would be too big and fail to go through). You can temporarily move this to /opt while you submit your project.\n\n```sh\ncd /home/workspace\nmv FCND-Sim-Linux /opt\n```\n\nNext, move any other files or folders you do not intend to submit out of `/home/workspace` and then click the \"Submit Project\" button at the lower right in your workspace IDE (note: not in the VM desktop environment, but next to the \"Go To Desktop\" button on the IDE page). \n\nWhen you have finished submitting, move any files you want to keep, including the simulator back into `/home/workspace` so they will be saved for your next visit to the VM.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 556587,
+          "key": "aaa31825-33c4-43eb-9c31-2b745985d56a",
+          "title": "Backyard Flyer (X-Windows)",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "aaa31825-33c4-43eb-9c31-2b745985d56a",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 556589,
+              "key": "2dc0f0e5-bb0e-4e53-8dc4-712fa778c9a0",
+              "title": null,
+              "semantic_type": "WorkspaceAtom",
+              "is_public": true,
+              "workspace_id": "viewa33a9b71",
+              "pool_id": "autonomousgpu",
+              "view_id": "a33a9b71-e92f-4db7-a4cf-fdd2147d6136",
+              "gpu_capable": true,
+              "configuration": {
+                "id": "reserved",
+                "blueprint": {
+                  "conf": {
+                    "port": 3000,
+                    "ports": [],
+                    "userCode": "",
+                    "openFiles": [],
+                    "showFiles": true,
+                    "allowClose": true,
+                    "allowSubmit": false,
+                    "actionButtonText": "Go To Desktop"
+                  },
+                  "kind": "react"
+                },
+                "workspaceId": "reserved"
+              },
+              "starter_files": null
+            }
+          ]
+        },
+        {
+          "id": 951549,
+          "key": "63da036e-9f83-47eb-b36f-7fa3b13e7cf2",
+          "title": "Project Cheat Sheet",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "63da036e-9f83-47eb-b36f-7fa3b13e7cf2",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": {
+            "files": [
+              {
+                "name": "Flying Cars P1 Cheat Sheet",
+                "uri": "https://video.udacity-data.com/topher/2019/October/5da11de9_flying-car-p1-lessons-cheat-sheet/flying-car-p1-lessons-cheat-sheet.pdf"
+              }
+            ],
+            "google_plus_link": null,
+            "career_resource_center_link": null,
+            "coaching_appointments_link": null,
+            "office_hours_link": null,
+            "aws_provisioning_link": null
+          },
+          "atoms": [
+            {
+              "id": 951551,
+              "key": "c9a60351-4cb2-4c50-9fb8-45efb5ce34fc",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2019/October/5da11db1_0001-1/0001-1.jpg",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/c9a60351-4cb2-4c50-9fb8-45efb5ce34fc",
+              "caption": "",
+              "alt": "",
+              "width": 550,
+              "height": 440,
+              "instructor_notes": null
+            },
+            {
+              "id": 951552,
+              "key": "00a74867-00e9-441f-afa7-528d6d37aedc",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2019/October/5da11dc6_0002/0002.jpg",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/00a74867-00e9-441f-afa7-528d6d37aedc",
+              "caption": "",
+              "alt": "",
+              "width": 550,
+              "height": 440,
+              "instructor_notes": null
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "_deprecated": [
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    }
+  ]
+}

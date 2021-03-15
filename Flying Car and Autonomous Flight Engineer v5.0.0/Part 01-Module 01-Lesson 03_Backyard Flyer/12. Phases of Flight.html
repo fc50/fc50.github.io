@@ -1,0 +1,771 @@
+<!-- udacimak v1.4.4 -->
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="ie=edge" http-equiv="X-UA-Compatible"/>
+  <title>
+   Phases of Flight
+  </title>
+  <link href="../assets/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="../assets/css/plyr.css" rel="stylesheet"/>
+  <link href="../assets/css/katex.min.css" rel="stylesheet"/>
+  <link href="../assets/css/jquery.mCustomScrollbar.min.css" rel="stylesheet"/>
+  <link href="../assets/css/styles.css" rel="stylesheet"/>
+  <link href="../assets/img/udacimak.png" rel="shortcut icon" type="image/png">
+  </link>
+ </head>
+ <body>
+  <div class="wrapper">
+   <nav id="sidebar">
+    <div class="sidebar-header">
+     <h3>
+      Backyard Flyer
+     </h3>
+    </div>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled components">
+     <li class="">
+      <a href="01. Lesson Introduction.html">
+       01. Lesson Introduction
+      </a>
+     </li>
+     <li class="">
+      <a href="02. Lesson Overview.html">
+       02. Lesson Overview
+      </a>
+     </li>
+     <li class="">
+      <a href="03. Simulator Demonstration.html">
+       03. Simulator Demonstration
+      </a>
+     </li>
+     <li class="">
+      <a href="04. Simulator Exploration - Manual Flight.html">
+       04. Simulator Exploration - Manual Flight
+      </a>
+     </li>
+     <li class="">
+      <a href="05. Flight Computer Programming.html">
+       05. Flight Computer Programming
+      </a>
+     </li>
+     <li class="">
+      <a href="06. Environment Setup.html">
+       06. Environment Setup
+      </a>
+     </li>
+     <li class="">
+      <a href="07. Simulator Exploration - Programmatic Flight.html">
+       07. Simulator Exploration - Programmatic Flight
+      </a>
+     </li>
+     <li class="">
+      <a href="08. The Problems with Sequential Execution.html">
+       08. The Problems with Sequential Execution
+      </a>
+     </li>
+     <li class="">
+      <a href="09. Event Driven Programming.html">
+       09. Event Driven Programming
+      </a>
+     </li>
+     <li class="">
+      <a href="10. Event Driven Programming Explained.html">
+       10. Event Driven Programming Explained
+      </a>
+     </li>
+     <li class="">
+      <a href="11. A Simple Flight Plan.html">
+       11. A Simple Flight Plan
+      </a>
+     </li>
+     <li class="">
+      <a href="12. Phases of Flight.html">
+       12. Phases of Flight
+      </a>
+     </li>
+     <li class="">
+      <a href="13. Project Development Workflow Options.html">
+       13. Project Development Workflow Options
+      </a>
+     </li>
+     <li class="">
+      <a href="14. Backyard Flyer (local development).html">
+       14. Backyard Flyer (local development)
+      </a>
+     </li>
+     <li class="">
+      <a href="15. Virtual Machine Intro.html">
+       15. Virtual Machine Intro
+      </a>
+     </li>
+     <li class="">
+      <a href="16. Backyard Flyer (X-Windows).html">
+       16. Backyard Flyer (X-Windows)
+      </a>
+     </li>
+     <li class="">
+      <a href="17. Project Cheat Sheet.html">
+       17. Project Cheat Sheet
+      </a>
+     </li>
+     <li class="">
+      <a href="Project Description - Backyard Flyer.html">
+       Project Description - Backyard Flyer
+      </a>
+     </li>
+     <li class="">
+      <a href="Project Rubric - Backyard Flyer.html">
+       Project Rubric - Backyard Flyer
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+   </nav>
+   <div id="content">
+    <header class="container-fluild header">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <div class="align-items-middle">
+         <button class="btn btn-toggle-sidebar" id="sidebarCollapse" type="button">
+          <div>
+          </div>
+          <div>
+          </div>
+          <div>
+          </div>
+         </button>
+         <h1 style="display: inline-block">
+          12. Phases of Flight
+         </h1>
+        </div>
+       </div>
+      </div>
+     </div>
+    </header>
+    <main class="container">
+     <div class="row">
+      <div class="col-12">
+       <div class="ud-atom">
+        <h3>
+         <p>
+          10 V2 V1
+         </p>
+        </h3>
+        <video controls="">
+         <source src="12. 10 V2 V1-IZjLJxSYdRM.mp4" type="video/mp4"/>
+         <track default="true" kind="subtitles" label="en" src="12. 10 V2 V1-IZjLJxSYdRM.en.vtt" srclang="en"/>
+        </video>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h1 id="up_and_downpy">
+          <code>
+           up_and_down.py
+          </code>
+         </h1>
+         <p>
+          I've included all the code from
+          <code>
+           up_and_down.py
+          </code>
+          below for your reference. Use this code as you answer the questions at the bottom of this page. Note that the backyard_flyer project code uses the term 'state' instead of 'phase' but they refer to the same concept.
+         </p>
+         <pre><code class="python language-python">import time
+from enum import Enum
+import numpy as np
+from udacidrone import Drone
+from udacidrone.connection import MavlinkConnection
+from udacidrone.messaging import MsgID
+
+class Phases(Enum):
+    MANUAL = 0
+    ARMING = 1
+    TAKEOFF = 2
+    LANDING = 3
+    DISARMING = 4
+
+class UpAndDownFlyer(Drone):
+
+    def __init__(self, connection):
+        super().__init__(connection)
+        self.target_position = np.array([0.0, 0.0, 0.0])
+        self.in_mission = True
+
+        # initial state
+        self.flight_phase = Phases.MANUAL
+
+        # register all your callbacks here
+        self.register_callback(MsgID.LOCAL_POSITION,
+                               self.local_position_callback)
+        self.register_callback(MsgID.LOCAL_VELOCITY,
+                               self.velocity_callback)
+        self.register_callback(MsgID.STATE,
+                               self.state_callback)
+
+    def local_position_callback(self):
+        if self.flight_phase == Phases.TAKEOFF:
+
+            # coordinate conversion 
+            altitude = -1.0 * self.local_position[2]
+
+            # check if altitude is within 95% of target
+            if altitude &gt; 0.95 * self.target_position[2]:
+                self.landing_transition()
+
+    def velocity_callback(self):
+        if self.flight_phase == Phases.LANDING:
+            if ((self.global_position[2] - self.global_home[2] &lt; 0.1) and
+            abs(self.local_position[2]) &lt; 0.01):
+                self.disarming_transition()
+
+    def state_callback(self):
+        if not self.in_mission:
+            return
+        if self.flight_phase == Phases.MANUAL:
+            self.arming_transition()
+        elif self.flight_phase == Phases.ARMING:
+            self.takeoff_transition()
+        elif self.flight_phase == Phases.DISARMING:
+            self.manual_transition()
+
+    def arming_transition(self):
+        print("arming transition")
+        self.take_control()
+        self.arm()
+
+        # set the current location to be the home position
+        self.set_home_position(self.global_position[0],
+                               self.global_position[1],
+                               self.global_position[2])
+
+        self.flight_phase = Phases.ARMING
+
+    def takeoff_transition(self):
+        print("takeoff transition")
+        target_altitude = 3.0
+        self.target_position[2] = target_altitude
+        self.takeoff(target_altitude)
+        self.flight_phase = Phases.TAKEOFF
+
+    def landing_transition(self):
+        print("landing transition")
+        self.land()
+        self.flight_phase = Phases.LANDING
+
+    def disarming_transition(self):
+        print("disarm transition")
+        self.disarm()
+        self.flight_phase = Phases.DISARMING
+
+    def manual_transition(self):
+        print("manual transition")
+        self.release_control()
+        self.stop()
+        self.in_mission = False
+        self.flight_phase = Phases.MANUAL
+
+    def start(self):
+        self.start_log("Logs", "NavLog.txt")
+        print("starting connection")
+        super().start()
+        self.stop_log()
+
+if __name__ == "__main__":
+    conn = MavlinkConnection('tcp:127.0.0.1:5760', 
+                             threaded=False, 
+                             PX4=False)
+    drone = UpAndDownFlyer(conn)
+    time.sleep(2)
+    drone.start()</code></pre>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <form>
+          <fieldset>
+           <legend>
+            <p>
+             What flight phase does the drone transition to
+             <em>
+              after
+             </em>
+             <code>
+              Phases.DISARMING
+             </code>
+             ?
+            </p>
+           </legend>
+          </fieldset>
+          <div>
+           <input id="a1516302516437" name="506390" type="radio" value="a1516302516437"/>
+           <label for="a1516302516437">
+            <p>
+             <code>
+              Phases.MANUAL
+             </code>
+            </p>
+           </label>
+          </div>
+          <div>
+           <input id="a1516302565771" name="506390" type="radio" value="a1516302565771"/>
+           <label for="a1516302565771">
+            <p>
+             <code>
+              Phases.ARMING
+             </code>
+            </p>
+           </label>
+          </div>
+          <div>
+           <input id="a1516302577315" name="506390" type="radio" value="a1516302577315"/>
+           <label for="a1516302577315">
+            <p>
+             <code>
+              Phases.TAKEOFF
+             </code>
+            </p>
+           </label>
+          </div>
+          <div>
+           <input id="a1516302585251" name="506390" type="radio" value="a1516302585251"/>
+           <label for="a1516302585251">
+            <p>
+             <code>
+              Phases.LANDING
+             </code>
+            </p>
+           </label>
+          </div>
+          <div>
+           <input id="a1516302592348" name="506390" type="radio" value="a1516302592348"/>
+           <label for="a1516302592348">
+            <p>
+             None,
+             <code>
+              Phases.DISARMING
+             </code>
+             is the last phase.
+            </p>
+           </label>
+          </div>
+         </form>
+         <details>
+          <summary>
+           <strong>
+            SOLUTION:
+           </strong>
+          </summary>
+          `Phases.MANUAL`
+         </details>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <form>
+          <fieldset>
+           <legend>
+            <p>
+             Which of the following criteria must be met in order to begin a
+             <code>
+              disarming_transition
+             </code>
+             ?
+            </p>
+            <p>
+             Check all that apply.
+            </p>
+           </legend>
+          </fieldset>
+          <div>
+           <input id="a1516302834944" name="506392" type="checkbox" value="a1516302834944"/>
+           <label for="a1516302834944">
+            <p>
+             The drone must be in the
+             <code>
+              LANDING
+             </code>
+             flight phase.
+            </p>
+           </label>
+          </div>
+          <div>
+           <input id="a1516302908422" name="506392" type="checkbox" value="a1516302908422"/>
+           <label for="a1516302908422">
+            <p>
+             The drone must be less than 0.01 meters above ground level.
+            </p>
+           </label>
+          </div>
+          <div>
+           <input id="a1516302996280" name="506392" type="checkbox" value="a1516302996280"/>
+           <label for="a1516302996280">
+            <p>
+             The drone's
+             <span class="mathquill ud-math">
+              (x,y)
+             </span>
+             position must be within 0.1 meters of it's original "home" position.
+            </p>
+           </label>
+          </div>
+         </form>
+         <details>
+          <summary>
+           <strong>
+            SOLUTION:
+           </strong>
+          </summary>
+          <ul>
+           <li>
+            The drone must be in the `LANDING` flight phase.
+           </li>
+           <li>
+            The drone must be less than 0.01 meters above ground level.
+           </li>
+          </ul>
+         </details>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <p>
+          <strong>
+           QUIZ QUESTION:
+          </strong>
+          :
+          <p>
+           Sort the following methods into the chronological order in which they are called.
+          </p>
+         </p>
+         <p>
+          <strong>
+           ANSWER CHOICES:
+          </strong>
+         </p>
+         <button class="btn btn-primary">
+          <p>
+           First
+          </p>
+         </button>
+         <button class="btn btn-primary">
+          <p>
+           Second
+          </p>
+         </button>
+         <button class="btn btn-primary">
+          <p>
+           Third
+          </p>
+         </button>
+         <button class="btn btn-primary">
+          <p>
+           Fourth
+          </p>
+         </button>
+         <button class="btn btn-primary">
+          <p>
+           Fifth
+          </p>
+         </button>
+         <br/>
+         <br/>
+         <table class="table">
+          <tr class="thead-dark table-hover">
+           <th>
+            <p>
+             Order method is called
+            </p>
+           </th>
+           <th>
+            <p>
+             Method name
+            </p>
+           </th>
+          </tr>
+          <tr>
+           <td>
+            <p>
+             <code>
+              self.landing_transition()
+             </code>
+            </p>
+           </td>
+           <td>
+           </td>
+          </tr>
+          <tr>
+           <td>
+            <p>
+             <code>
+              self.disarming_transition()
+             </code>
+            </p>
+           </td>
+           <td>
+           </td>
+          </tr>
+          <tr>
+           <td>
+            <p>
+             <code>
+              self.takeoff_transition()
+             </code>
+            </p>
+           </td>
+           <td>
+           </td>
+          </tr>
+          <tr>
+           <td>
+            <p>
+             <code>
+              self.arming_transition()
+             </code>
+            </p>
+           </td>
+           <td>
+           </td>
+          </tr>
+          <tr>
+           <td>
+            <p>
+             <code>
+              self.manual_transition()
+             </code>
+            </p>
+           </td>
+           <td>
+           </td>
+          </tr>
+         </table>
+         <details>
+          <summary>
+           <strong>
+            SOLUTION:
+           </strong>
+          </summary>
+          <table class="table">
+           <tr class="thead-dark table-hover">
+            <th>
+             <p>
+              Order method is called
+             </p>
+            </th>
+            <th>
+             <p>
+              Method name
+             </p>
+            </th>
+           </tr>
+           <tr>
+            <td>
+             <p>
+              <code>
+               self.landing_transition()
+              </code>
+             </p>
+            </td>
+            <td>
+             <button class="btn btn-primary">
+              <p>
+               Third
+              </p>
+             </button>
+            </td>
+           </tr>
+           <tr>
+            <td>
+             <p>
+              <code>
+               self.disarming_transition()
+              </code>
+             </p>
+            </td>
+            <td>
+             <button class="btn btn-primary">
+              <p>
+               Fourth
+              </p>
+             </button>
+            </td>
+           </tr>
+           <tr>
+            <td>
+             <p>
+              <code>
+               self.takeoff_transition()
+              </code>
+             </p>
+            </td>
+            <td>
+             <button class="btn btn-primary">
+              <p>
+               Second
+              </p>
+             </button>
+            </td>
+           </tr>
+           <tr>
+            <td>
+             <p>
+              <code>
+               self.arming_transition()
+              </code>
+             </p>
+            </td>
+            <td>
+             <button class="btn btn-primary">
+              <p>
+               First
+              </p>
+             </button>
+            </td>
+           </tr>
+           <tr>
+            <td>
+             <p>
+              <code>
+               self.manual_transition()
+              </code>
+             </p>
+            </td>
+            <td>
+             <button class="btn btn-primary">
+              <p>
+               Fifth
+              </p>
+             </button>
+            </td>
+           </tr>
+          </table>
+         </details>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+      </div>
+      <div class="col-12">
+       <p class="text-right">
+        <a class="btn btn-outline-primary mt-4" href="13. Project Development Workflow Options.html" role="button">
+         Next Concept
+        </a>
+       </p>
+      </div>
+     </div>
+    </main>
+    <footer class="footer">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <p class="text-center">
+         udacity2.0 If you need the newest courses Plase add me wechat: udacity6
+        </p>
+       </div>
+      </div>
+     </div>
+    </footer>
+   </div>
+  </div>
+  <script src="../assets/js/jquery-3.3.1.min.js">
+  </script>
+  <script src="../assets/js/plyr.polyfilled.min.js">
+  </script>
+  <script src="../assets/js/bootstrap.min.js">
+  </script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js">
+  </script>
+  <script src="../assets/js/katex.min.js">
+  </script>
+  <script>
+   // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('12. Phases of Flight')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+ </body>
+</html>

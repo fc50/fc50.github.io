@@ -1,0 +1,857 @@
+{
+  "data": {
+    "lesson": {
+      "id": 598868,
+      "key": "8f586008-3e4f-47a1-bde5-e43c184b49d2",
+      "title": "Extended Kalman Filters",
+      "semantic_type": "Lesson",
+      "is_public": true,
+      "version": "1.0.0",
+      "locale": "en-us",
+      "summary": "In this lesson you'll learn how to estimate the state of a drone that's actually moving! You'll implement a Kalman Filter for a 1D drone and an Extended Kalman Filter for a non-linear 2D drone.",
+      "lesson_type": "Classroom",
+      "display_workspace_project_only": null,
+      "resources": {
+        "files": [
+          {
+            "name": "Videos Zip File",
+            "uri": "https://zips.udacity-data.com/8f586008-3e4f-47a1-bde5-e43c184b49d2/598868/1538762898931/Extended+Kalman+Filters+Videos.zip"
+          },
+          {
+            "name": "Transcripts Zip File",
+            "uri": "https://zips.udacity-data.com/8f586008-3e4f-47a1-bde5-e43c184b49d2/598868/1538762892284/Extended+Kalman+Filters+Subtitles.zip"
+          }
+        ],
+        "google_plus_link": null,
+        "career_resource_center_link": null,
+        "coaching_appointments_link": null,
+        "office_hours_link": null,
+        "aws_provisioning_link": null
+      },
+      "project": null,
+      "lab": null,
+      "concepts": [
+        {
+          "id": 616861,
+          "key": "b7e6f40b-a5bb-4d11-9a89-91cacbb927c2",
+          "title": "Sebastian Introduction",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "b7e6f40b-a5bb-4d11-9a89-91cacbb927c2",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 616862,
+              "key": "4d9b99a7-6f42-41ca-b739-59f9ce38d4fe",
+              "title": "Nd787 C4 L3 00 Sebastian V1",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "NwZi7JshQeE",
+                "china_cdn_id": "NwZi7JshQeE.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 598869,
+          "key": "5eeb6569-84b3-4867-9d4f-9d94e0e80036",
+          "title": "Introduction",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "5eeb6569-84b3-4867-9d4f-9d94e0e80036",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 617092,
+              "key": "046ae03f-e0b9-4f24-ba79-7e1697df3a7c",
+              "title": "Nd787 C4 L3 01 Introduction V2",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "WleBZHdI_vc",
+                "china_cdn_id": "WleBZHdI_vc.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 615308,
+          "key": "aa10818e-129e-4c39-9188-7741b5c351ff",
+          "title": "1D PID Control",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "aa10818e-129e-4c39-9188-7741b5c351ff",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 617093,
+              "key": "aceb5610-e359-474b-b51c-d00634e77f14",
+              "title": "Nd787 C4 L3 02 1D PID Control V2",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "Y9A6W9TXnxE",
+                "china_cdn_id": "Y9A6W9TXnxE.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 615309,
+          "key": "75a39212-e077-443b-8731-ffc2ecd3e295",
+          "title": "Controlling with Noisy Measurements",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "75a39212-e077-443b-8731-ffc2ecd3e295",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 617094,
+              "key": "6a5e9a83-4f84-4a49-8677-3ade453b62f8",
+              "title": "Nd787 C4 L3 03 Controlling With Noisy Measurements V2",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "j0KuThQUQZQ",
+                "china_cdn_id": "j0KuThQUQZQ.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 615310,
+          "key": "a6ef032b-61a6-486e-9ba2-cd65acc056ec",
+          "title": "Averaging Measurements",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "a6ef032b-61a6-486e-9ba2-cd65acc056ec",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 617067,
+              "key": "3fadc68b-a4d0-4bf7-b7c1-a3528db143a7",
+              "title": "Nd787 C4 L3 04 Averaging Measurements V1",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "C2EvnerFork",
+                "china_cdn_id": "C2EvnerFork.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 615311,
+          "key": "78752b80-cd67-42eb-9b12-4babec6277c7",
+          "title": "Recursive Averaging",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "78752b80-cd67-42eb-9b12-4babec6277c7",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 617096,
+              "key": "08940261-7475-4737-8258-3019b12dfca8",
+              "title": "Nd787 C4 L3 05 Recursive Averaging V2",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "WEBwezpZ5nQ",
+                "china_cdn_id": "WEBwezpZ5nQ.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 616662,
+          "key": "e15c3011-968b-4df5-995d-3f9cc28e9c0d",
+          "title": "Averaging Exercise",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "e15c3011-968b-4df5-995d-3f9cc28e9c0d",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 616663,
+              "key": "d549e24e-0c19-4830-b642-d89825f79485",
+              "title": null,
+              "semantic_type": "WorkspaceAtom",
+              "is_public": true,
+              "workspace_id": "view777be406",
+              "pool_id": "jupyter",
+              "view_id": "777be406-0407-4616-bf14-a67f00ff5e74",
+              "gpu_capable": false,
+              "configuration": {
+                "id": "reserved",
+                "blueprint": {
+                  "conf": {
+                    "disk": null,
+                    "ports": [],
+                    "allowSubmit": false,
+                    "defaultPath": "/notebooks/Averaging-Student.ipynb"
+                  },
+                  "kind": "jupyter"
+                },
+                "workspaceId": "reserved"
+              },
+              "starter_files": null
+            }
+          ]
+        },
+        {
+          "id": 615312,
+          "key": "3587f5a4-b53e-4ede-bdf2-a70ca7aa9785",
+          "title": "The Need for Control",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "3587f5a4-b53e-4ede-bdf2-a70ca7aa9785",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 617097,
+              "key": "2bccdf80-8388-4318-8ad9-ffba6475de63",
+              "title": "Nd787 C4 L3 06 The Need For Control V2",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "ITakz4-3xtw",
+                "china_cdn_id": "ITakz4-3xtw.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 615313,
+          "key": "302be7d1-123c-418a-a281-dc4cdf43d733",
+          "title": "Estimation Filters",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "302be7d1-123c-418a-a281-dc4cdf43d733",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 617098,
+              "key": "f574b84c-bd1b-4c5e-a10d-4dffc9a72e6a",
+              "title": "Nd787 C4 L3 07 Estimation Filters V2",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "ed4queOTU7A",
+                "china_cdn_id": "ed4queOTU7A.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 615314,
+          "key": "3a34889f-362c-4c78-af05-b8fded786237",
+          "title": "The Bayes Filter",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "3a34889f-362c-4c78-af05-b8fded786237",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 617071,
+              "key": "bdf0409f-2f2e-49e1-a3df-294e3a770506",
+              "title": "Nd787 C4 L3 08 The Bayes Filter V1",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "aRUyud9H2Dc",
+                "china_cdn_id": "aRUyud9H2Dc.mp4"
+              }
+            },
+            {
+              "id": 615411,
+              "key": "24e082f7-ab08-43d9-9ad4-dbe70bdc54ea",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "To help summarize this lesson and the next, we've made a document called [Estimation for Quadrotors](https://www.overleaf.com/read/vymfngphcccj). \n\nLearning about estimation filters involves a lot of math and sometimes math is best learned by reading through text at your own pace. You are encouraged to open this document and consult it as an additional resource as you go through this lesson and the next. \n\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 670727,
+              "key": "28dcc86b-df98-4059-ac60-8f0326a0ffd5",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": " ",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 615315,
+          "key": "9a484483-041b-4421-a584-a8d5e225ce7c",
+          "title": "The Kalman Filter",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "9a484483-041b-4421-a584-a8d5e225ce7c",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 617099,
+              "key": "92a6f548-40ce-4f84-bfe5-c85a0351f19c",
+              "title": "Nd787 C4 L3 09 The Kalman Filter V2",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "t_nR08qDHX4",
+                "china_cdn_id": "t_nR08qDHX4.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 615316,
+          "key": "6b6f5a9f-9961-48c4-bb87-38a7567aa664",
+          "title": "Kalman Predict",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "6b6f5a9f-9961-48c4-bb87-38a7567aa664",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 617126,
+              "key": "a323950f-a1a3-4546-8ce3-3bf8de886b6c",
+              "title": "Nd787 C4 L3 10 Kalman Predict V1 V1",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "uk6aplXeAg8",
+                "china_cdn_id": "uk6aplXeAg8.mp4"
+              }
+            },
+            {
+              "id": 619694,
+              "key": "7c9c9cde-8f35-4cb4-be4a-e3d91c7ccf42",
+              "title": "",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "7c9c9cde-8f35-4cb4-be4a-e3d91c7ccf42",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "After prediction will we have **more** or **less** uncertainty about the state?",
+                "answers": [
+                  {
+                    "id": "a1525117492086",
+                    "text": "More uncertainty",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1525117525204",
+                    "text": "Less uncertainty",
+                    "is_correct": false
+                  }
+                ]
+              }
+            },
+            {
+              "id": 619699,
+              "key": "5a7bb94b-ed27-4b99-a66d-0406ab0a9795",
+              "title": "",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "5a7bb94b-ed27-4b99-a66d-0406ab0a9795",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "A drone estimates its height as a Gaussian with a mean of 1 and variance of 0.25: <span class=\"mathquill\">\\mathcal{N}(\\mu=1, \\sigma^2 = 0.25)</span> . It's moving upwards at 1 m/s. After one second, what is it's estimate after prediction?",
+                "answers": [
+                  {
+                    "id": "a1525117604201",
+                    "text": "<span class=\"mathquill\">\\mathcal{N}(\\mu=1, \\sigma^2 = 0.25)</span>",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1525117783622",
+                    "text": "<span class=\"mathquill\">\\mathcal{N}(\\mu=2, \\sigma^2 = 0.25)</span>",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1525117798543",
+                    "text": "<span class=\"mathquill\">\\mathcal{N}(\\mu=2, \\sigma^2 < 0.25)</span>",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1525117849249",
+                    "text": "<span class=\"mathquill\">\\mathcal{N}(\\mu=2, \\sigma^2 > 0.25)</span>",
+                    "is_correct": true
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 615317,
+          "key": "1ad2dac1-25ea-42f2-bf8f-3a4077adcbc5",
+          "title": "The Measurement Function",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "1ad2dac1-25ea-42f2-bf8f-3a4077adcbc5",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 617127,
+              "key": "3f61f537-1d44-435f-b1ac-b396c26c3038",
+              "title": "Nd787 C4 L3 11 The Measurement Function V1",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "R61K0yzKWOk",
+                "china_cdn_id": "R61K0yzKWOk.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 615318,
+          "key": "3cfd400d-f659-4f05-b52e-3e74a47baab7",
+          "title": "Kalman Update",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "3cfd400d-f659-4f05-b52e-3e74a47baab7",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 617128,
+              "key": "4c111cc5-b35d-4021-9367-13310f2a7589",
+              "title": "Nd787 C4 L3 12 Kalman Update V1",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "nrONt9rDEvg",
+                "china_cdn_id": "nrONt9rDEvg.mp4"
+              }
+            },
+            {
+              "id": 619701,
+              "key": "e2e0c108-8f37-4c9b-898f-e90ba558ca18",
+              "title": "",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "e2e0c108-8f37-4c9b-898f-e90ba558ca18",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "A drone estimates its height as <span class=\"mathquill\">\\mathcal{N}(\\mu=1, \\sigma^2 = 0.25)</span>.  It receives a height sensor measurement of 1.25 meters. After the update, what is the best guess of the drone's height?",
+                "answers": [
+                  {
+                    "id": "a1525118015062",
+                    "text": " <span class=\"mathquill\">\\mu < 1.0</span>",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1525118102827",
+                    "text": " <span class=\"mathquill\">\\mu = 1.0</span>",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1525118123635",
+                    "text": " <span class=\"mathquill\">1.0 < \\mu < 1.25</span>",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1525118192615",
+                    "text": " <span class=\"mathquill\">\\mu = 1.25</span>",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1525118200791",
+                    "text": " <span class=\"mathquill\">\\mu > 1.25</span>",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1525118209215",
+                    "text": "Not enough information to know.",
+                    "is_correct": false
+                  }
+                ]
+              }
+            },
+            {
+              "id": 619702,
+              "key": "6dd8ea11-c3fb-4a0e-9c20-d4ab580dc461",
+              "title": "",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "6dd8ea11-c3fb-4a0e-9c20-d4ab580dc461",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "A drone estimates its height as <span class=\"mathquill\">\\mathcal{N}(\\mu=1, \\sigma^2 = 0.25)</span>.  It receives a height sensor measurement of 1.25 meters. After the update, what is the best guess of the drone's uncertainty,  <span class=\"mathquill\">\\sigma^2</span>?",
+                "answers": [
+                  {
+                    "id": "a1525118275092",
+                    "text": "<span class=\"mathquill\">\\sigma^2 < 0.25</span>",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1525118333636",
+                    "text": "<span class=\"mathquill\">\\sigma^2 = 0.25</span>",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1525118352430",
+                    "text": "<span class=\"mathquill\">\\sigma^2 > 0.25</span>",
+                    "is_correct": false
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 616664,
+          "key": "97a5086e-0535-4a9f-946c-3bb18ef8b107",
+          "title": "Kalman Filter Exercise",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "97a5086e-0535-4a9f-946c-3bb18ef8b107",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 616665,
+              "key": "c6f6bb48-b42c-4b50-9cc4-4d030bcee496",
+              "title": null,
+              "semantic_type": "WorkspaceAtom",
+              "is_public": true,
+              "workspace_id": "view9d00f7db",
+              "pool_id": "jupyter",
+              "view_id": "9d00f7db-025d-4085-9b1b-7614ea9543a0",
+              "gpu_capable": false,
+              "configuration": {
+                "id": "reserved",
+                "blueprint": {
+                  "conf": {
+                    "disk": null,
+                    "ports": [],
+                    "allowSubmit": false,
+                    "defaultPath": "/notebooks/Kalman_Filter-Student.ipynb"
+                  },
+                  "kind": "jupyter"
+                },
+                "workspaceId": "reserved"
+              },
+              "starter_files": null
+            }
+          ]
+        },
+        {
+          "id": 615319,
+          "key": "9e7ca17a-a4ea-4133-a415-c766b315e2c0",
+          "title": "Nonlinear Drone",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "9e7ca17a-a4ea-4133-a415-c766b315e2c0",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 617129,
+              "key": "e54fcdaa-a954-4747-83f1-08563ac70cc3",
+              "title": "Nd787 C4 L3 13 Nonlinear Drone V1",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "23dKxgmrdd0",
+                "china_cdn_id": "23dKxgmrdd0.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 615320,
+          "key": "35d1767d-1570-48cc-96dd-356a80c6d55e",
+          "title": "EKF Predict",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "35d1767d-1570-48cc-96dd-356a80c6d55e",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 617130,
+              "key": "16c7909f-f28f-41bd-9510-37abd7858d92",
+              "title": "Nd787 C4 L3 14 EKF Predict V1",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "-VvvbI8HdRw",
+                "china_cdn_id": "-VvvbI8HdRw.mp4"
+              }
+            },
+            {
+              "id": 619693,
+              "key": "d43a722a-9e58-4a93-9390-d428ed446db4",
+              "title": null,
+              "semantic_type": "WorkspaceAtom",
+              "is_public": true,
+              "workspace_id": "view015a4448",
+              "pool_id": "jupyter",
+              "view_id": "f3b82c1f-d273-4d0a-84fd-72e5dcec28f1",
+              "gpu_capable": false,
+              "configuration": {
+                "id": "reserved",
+                "blueprint": {
+                  "conf": {
+                    "ports": [],
+                    "allowSubmit": false,
+                    "defaultPath": "/notebooks/Sympy%20Demonstration.ipynb"
+                  },
+                  "kind": "jupyter"
+                },
+                "workspaceId": "reserved"
+              },
+              "starter_files": null
+            }
+          ]
+        },
+        {
+          "id": 615321,
+          "key": "51c4660c-8889-448d-9f3d-4bd1c3495e43",
+          "title": "Non-linear Measurement Model",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "51c4660c-8889-448d-9f3d-4bd1c3495e43",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 617131,
+              "key": "1a57431d-1479-4225-b71a-02861bac0433",
+              "title": "Nd787 C4 L3 15 Non-Linear Measurement Model V1",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "l8g-8PLwKvw",
+                "china_cdn_id": "l8g-8PLwKvw.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 615322,
+          "key": "616d0596-f236-4d6c-8da7-720e113d0481",
+          "title": "EKF Update",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "616d0596-f236-4d6c-8da7-720e113d0481",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 617132,
+              "key": "64243d0a-b820-436c-b5be-6b1e7709be7c",
+              "title": "Nd787 C4 L3 16 EKF Update V1",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "HzNYY1U_0Ys",
+                "china_cdn_id": "HzNYY1U_0Ys.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 616666,
+          "key": "039ed41d-8af3-4a6a-bf3a-899323627a2e",
+          "title": "EKF Exercise",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "039ed41d-8af3-4a6a-bf3a-899323627a2e",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 616667,
+              "key": "17ce53b2-1c33-4923-a279-31f509d388a9",
+              "title": null,
+              "semantic_type": "WorkspaceAtom",
+              "is_public": true,
+              "workspace_id": "view015a4448",
+              "pool_id": "jupyter",
+              "view_id": "015a4448-2090-4286-b014-1f585660c8ab",
+              "gpu_capable": false,
+              "configuration": {
+                "id": "reserved",
+                "blueprint": {
+                  "conf": {
+                    "disk": null,
+                    "ports": [],
+                    "allowSubmit": false,
+                    "defaultPath": "/notebooks/EKF-Student.ipynb"
+                  },
+                  "kind": "jupyter"
+                },
+                "workspaceId": "reserved"
+              },
+              "starter_files": null
+            }
+          ]
+        },
+        {
+          "id": 615323,
+          "key": "3134efdc-066a-439e-a7e2-5b9a61a076c6",
+          "title": "Summary",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "3134efdc-066a-439e-a7e2-5b9a61a076c6",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 617133,
+              "key": "2a5e5681-7631-41d0-9455-3f8c18d09102",
+              "title": "Nd787 C4 L3 17 Summary V1",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "hBSEeUh6Uhc",
+                "china_cdn_id": "hBSEeUh6Uhc.mp4"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

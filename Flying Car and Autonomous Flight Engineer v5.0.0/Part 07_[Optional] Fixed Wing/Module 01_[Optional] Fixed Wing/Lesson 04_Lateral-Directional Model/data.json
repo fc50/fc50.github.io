@@ -1,0 +1,657 @@
+{
+  "data": {
+    "lesson": {
+      "id": 667435,
+      "key": "bbbd0d64-490c-42ec-b9cb-b3527aafc38b",
+      "title": "Lateral-Directional Model",
+      "semantic_type": "Lesson",
+      "is_public": true,
+      "version": "1.0.0",
+      "locale": "en-us",
+      "summary": "Understand the lateral-directional dynamics of fixed wing vehicles by looking at aircraft from above and behind.",
+      "lesson_type": "Classroom",
+      "display_workspace_project_only": false,
+      "resources": {
+        "files": [
+          {
+            "name": "Videos Zip File",
+            "uri": "https://zips.udacity-data.com/bbbd0d64-490c-42ec-b9cb-b3527aafc38b/667435/1538763222773/Lateral-Directional+Model+Videos.zip"
+          },
+          {
+            "name": "Transcripts Zip File",
+            "uri": "https://zips.udacity-data.com/bbbd0d64-490c-42ec-b9cb-b3527aafc38b/667435/1538763218232/Lateral-Directional+Model+Subtitles.zip"
+          }
+        ],
+        "google_plus_link": null,
+        "career_resource_center_link": null,
+        "coaching_appointments_link": null,
+        "office_hours_link": null,
+        "aws_provisioning_link": null
+      },
+      "project": null,
+      "lab": null,
+      "concepts": [
+        {
+          "id": 667437,
+          "key": "58645c8b-f792-4d21-a73b-a5aadfb2880a",
+          "title": "Introduction to Lateral-Directional Dynamics",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "58645c8b-f792-4d21-a73b-a5aadfb2880a",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 679901,
+              "key": "f48e96b3-0aba-4fe0-bf2b-6ae49b044e23",
+              "title": "Nd787 C5 L4 A01 L Introduction To Lateral Directional Model V2",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "vlvIUyhyvE4",
+                "china_cdn_id": "vlvIUyhyvE4.mp4"
+              }
+            },
+            {
+              "id": 668020,
+              "key": "91abd0ef-24c1-42d8-91a6-97d36e643509",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/June/5b369b71_reusable-visual-assets-2/reusable-visual-assets-2.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/91abd0ef-24c1-42d8-91a6-97d36e643509",
+              "caption": "Plane is moving vertically upwards (as shown in picture) with sideslip angle <span class=\"mathquill\">\\beta</span>",
+              "alt": "",
+              "width": 383,
+              "height": 489,
+              "instructor_notes": null
+            }
+          ]
+        },
+        {
+          "id": 667438,
+          "key": "cc0b6fc1-0287-4619-ba87-78c78f625640",
+          "title": "Force-Free Motion",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "cc0b6fc1-0287-4619-ba87-78c78f625640",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 668021,
+              "key": "3945393d-cee6-48c1-82db-d2963192887a",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Force-Free Lateral-Directional Motion\n\n#### Defining the State\nLet's start by defining the state vector that we'll be tracking when analyzing the lateral-directional motion.\n\n<div class=\"mathquill\">\n\n\\mathbf{x} = \\begin{bmatrix}\n\nx_I \\\\\ny_I \\\\\nz_I \\\\\n\\phi \\\\\n\\theta \\\\\n\\psi \\\\\nu \\\\\nv \\\\\nw \\\\\np \\\\ \nr\n\\end{bmatrix}\n</div>\n\nWe can define each of these variables:\n\n| Variables | Physical meaning |\n|:--------:|:-------:|\n|     <span class=\"mathquill\">x_I, y_I, z_I</span>    |   <span class=\"mathquill\">x, y, z</span> position in **inertial frame**    |\n|    <span class=\"mathquill\">\\phi, \\theta, \\psi</span>     |   Euler angles  |\n|     <span class=\"mathquill\">u, v, w</span>    | <span class=\"mathquill\">x, y, z</span> velocity in **body frame**  |\n|     <span class=\"mathquill\">p, r</span>    |   Body rates about the <span class=\"mathquill\">x</span> and <span class=\"mathquill\">z</span> axes |\n\nNote that the pitch rate <span class=\"mathquill\">q</span> is **not** included in the state.\n\n#### Force-free equations of motion\n\nThe equations of motion for the force-free case are as follows:\n\n<div class=\"mathquill\">\n\\begin{aligned}\n\\dot{x}_I &=\n  u (\\cos \\theta \\cos \\psi) + v (\\sin \\phi \\sin \\theta \\cos \\psi - \\cos \\phi \\sin \\psi) +  w (\\cos \\phi \\sin \\theta \\cos \\psi + \\sin \\phi \\sin \\psi) \\\\\n  \\dot{y}_I &= u (\\cos \\theta \\sin \\psi) + v (\\sin \\phi \\sin \\theta \\cos \\psi +\n  \\cos \\phi \\cos \\psi) +\n  w (\\cos \\phi \\sin \\theta \\sin \\psi - \\sin \\phi \\cos \\psi) \\\\\n  \\dot{z}_I &= - u \\sin \\theta + v \\sin \\phi \\cos \\theta + w \\cos \\phi \\cos \\theta \\\\\n  \\dot{\\phi} &= p + r \\cos \\phi \\tan \\theta \\\\\n  \\dot{\\theta} &= - r \\sin \\phi \\\\\n  \\dot{\\psi} &= r \\cos \\phi \\sec \\theta \\\\\n\\dot{u} &= rv \\\\\n\\dot{v} &= pw - ru \\\\\n\\dot{w} &= -pv \\\\\n\\dot{p} &= 0 \\\\\n\\dot{r} &= 0 \n\\end{aligned}\n</div>\n\n### Reminder: Fixed Wing Cheat Sheet\n\nYou can find all of the equations for this module in the [Fixed Wing Cheat Sheet](https://www.overleaf.com/read/cvqmtzyhqjnj).",
+              "instructor_notes": ""
+            },
+            {
+              "id": 668023,
+              "key": "bc5b98e2-40db-4d54-8785-391fcf81e2ce",
+              "title": "",
+              "semantic_type": "CheckboxQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "bc5b98e2-40db-4d54-8785-391fcf81e2ce",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "Which **five** of these equations will change when we incorporate forces and moments?",
+                "answers": [
+                  {
+                    "id": "a1530306573744",
+                    "text": "<span class=\"mathquill\"> \\dot{x}_I =   u (\\cos \\theta \\cos \\psi) + v (\\sin \\phi \\sin \\theta \\cos \\psi - \\cos \\phi \\sin \\psi) +  w (\\cos \\phi \\sin \\theta \\cos \\psi + \\sin \\phi \\sin \\psi)  </span>",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1530306625453",
+                    "text": "<span class=\"mathquill\">  \\dot{y}_I = u (\\cos \\theta \\sin \\psi) + v (\\sin \\phi \\sin \\theta \\cos \\psi +   \\cos \\phi \\cos \\psi) +   w (\\cos \\phi \\sin \\theta \\sin \\psi - \\sin \\phi \\cos \\psi)  </span>",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1530306626126",
+                    "text": "<span class=\"mathquill\">  \\dot{z}_I = - u \\sin \\theta + v \\sin \\phi \\cos \\theta + w \\cos \\phi \\cos \\theta </span>",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1530306626830",
+                    "text": "<span class=\"mathquill\">  \\dot{\\phi} = p + r \\cos \\phi \\tan \\theta   </span>",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1530306628109",
+                    "text": "<span class=\"mathquill\">  \\dot{\\theta} = - r \\sin \\phi  </span>",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1530306628911",
+                    "text": "<span class=\"mathquill\"> \\dot{\\psi} = r \\cos \\phi \\sec \\theta  </span>",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1530306629772",
+                    "text": "<span class=\"mathquill\"> \\dot{u} = rv   </span>",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1530306630757",
+                    "text": "<span class=\"mathquill\"> \\dot{v} = pw - ru   </span>",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1530306631285",
+                    "text": "<span class=\"mathquill\"> \\dot{w} = -pv  </span>",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1530306631749",
+                    "text": "<span class=\"mathquill\">  \\dot{p} = 0 </span>",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1530306632541",
+                    "text": "<span class=\"mathquill\">  \\dot{r} = 0 </span>",
+                    "is_correct": true
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": 667440,
+          "key": "c1cedbca-2f77-48db-8362-5665cf85b200",
+          "title": "Incorporating Forces",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "c1cedbca-2f77-48db-8362-5665cf85b200",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 679828,
+              "key": "42a33e0e-52ee-4470-8d52-2c4c19e61e39",
+              "title": "Nd787 C5 L4 A03 L Incorporating Forces V2",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "oZjryB3BpGY",
+                "china_cdn_id": "oZjryB3BpGY.mp4"
+              }
+            },
+            {
+              "id": 668033,
+              "key": "4ee3d4e5-a14d-4ecc-9dd8-840c2623a9df",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Non-linear Equations of Motion\n\n<div class=\"mathquill\">\n\\begin{aligned}\n\\dot{x}_I &=\n  u (\\cos \\theta \\cos \\psi) + v (\\sin \\phi \\sin \\theta \\cos \\psi - \\cos \\phi \\sin \\psi) +  w (\\cos \\phi \\sin \\theta \\cos \\psi + \\sin \\phi \\sin \\psi) \\\\\n  \\dot{y}_I &= u (\\cos \\theta \\sin \\psi) + v (\\sin \\phi \\sin \\theta \\cos \\psi +\n  \\cos \\phi \\cos \\psi) +\n  w (\\cos \\phi \\sin \\theta \\sin \\psi - \\sin \\phi \\cos \\psi) \\\\\n  \\dot{z}_I &= - u \\sin \\theta + v \\sin \\phi \\cos \\theta + w \\cos \\phi \\cos \\theta \\\\\n  \\dot{\\phi} &= p + r \\cos \\phi \\tan \\theta \\\\\n  \\dot{\\theta} &= - r \\sin \\phi \\\\\n  \\dot{\\psi} &= r \\cos \\phi \\sec \\theta \\\\\n\\dot{u} &= -g \\sin \\theta + \\frac{\\rho V^2 S}{2m}\\left [ C_{X_0} + C_{X_\\alpha}\\alpha\n    \\right ] + T/m +rv \\\\\n  \\dot{v} &= g \\cos \\theta \\sin \\phi + \\frac{\\rho V^2 S}{2m}\\left [ C_{Y_0} + C_{Y_\\beta}\\beta\n    + C_{Y_p}\\frac{bp}{2V} + C_{Y_r}\\frac{br}{2V} + C_{Y_{\\delta_a}\\delta_a} + C_{Y_{\\delta_r}\\delta_r} \\right ] +pw - ru \\\\\n  \\dot{w} &= g \\cos \\theta \\cos \\phi + \\frac{\\rho V^2 S}{2m}\\left [ C_{Z_0} + C_{Z_\\alpha}\\alpha\n    \\right ] -pv \\\\\n  \\dot{p} &= \\left (I_{zz}L + I_{xz}N \\right ) / (I_{xx} I_{zz} - I^2_{xz}) \\\\\n  \\dot{r} &= \\left (I_{xz}L + I_{xx}N \\right ) / (I_{xx} I_{zz} - I^2_{xz})\n\\end{aligned}\n</div>\n\n\nNote that the <span class=\"mathquill\">L</span> and <span class=\"mathquill\">M</span> in the last two equations correspond to the rolling and yawing moments. The <span class=\"mathquill\">L</span> has nothing to do with lift (even though we use the same letter). These moments are given by:\n\n<div class=\"mathquill\">\n\\begin{aligned}\nL&=\\frac{1}{2}\\rho V^2 S b \\left [ C_{l_0} + C_{l_\\beta}\\beta + C_{l_p}\\frac{bp}{2V} + C_{l_r}\\frac{br}{2V} + C_{l_{\\delta a}} \\delta a + C_{l_{\\delta r}} \\delta r \\right ] \\\\\n  N&=\\frac{1}{2}\\rho V^2 S b \\left [ C_{r_0} + C_{r_\\beta}\\beta + C_{r_p}\\frac{bp}{2V} + C_{r_r}\\frac{br}{2V} + C_{r_{\\delta a}} \\delta a + C_{r_{\\delta r}} \\delta r \\right ]\n\\end{aligned}\n</div>",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 667441,
+          "key": "8c6a76d1-5217-4f39-ab74-c6779da0bc23",
+          "title": "Coordinated Turns",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "8c6a76d1-5217-4f39-ab74-c6779da0bc23",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 679902,
+              "key": "202d0a4c-1bba-4199-9f91-f3f2d295f7fd",
+              "title": "Nd787 C5 L4 A04 L Coordinated Turns V2",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "hQYoItsBUeQ",
+                "china_cdn_id": "hQYoItsBUeQ.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 667442,
+          "key": "688ee679-87a8-4b7d-b064-33b9522443c6",
+          "title": "Roll-Yaw Coupling",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "688ee679-87a8-4b7d-b064-33b9522443c6",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 668781,
+              "key": "a3f7e2e9-14dd-4f00-b28c-202f222bfe35",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Roll-Yaw Coupling\n\nIn a coordinated turn, we can turn sideways by rotating our lift vector. This lets us turn without experiencing sideforce! This is a bit unintuitive, and in general lateral-directional motion is more complicated than longitudinal motion.\n\nIn particular, roll and yaw are physically coupled in a way that leads to more complex dynamics. \n\nTo understand this roll-yaw coupling, we need to think about **how** lift is generated.\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 668787,
+              "key": "ac2f5bb5-cc7d-4507-b3ea-63fc2161bdb3",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/July/5b3a61a6_reusable-visual-assets-1/reusable-visual-assets-1.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/ac2f5bb5-cc7d-4507-b3ea-63fc2161bdb3",
+              "caption": "The same plane viewed from above and behind. Here it's shown following a straight line path.",
+              "alt": "",
+              "width": 960,
+              "height": 540,
+              "instructor_notes": null
+            },
+            {
+              "id": 668792,
+              "key": "0a19f510-a992-468c-bbca-ecfc9d02e4bd",
+              "title": "",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "0a19f510-a992-468c-bbca-ecfc9d02e4bd",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "Consider the plane shown above. This plane is flying in a **straight line with zero yaw rate**\n\nWhat can you say about the speed of the air flowing over the **left** wing compared to the speed of the air flowing over the **right** wing?",
+                "answers": [
+                  {
+                    "id": "a1530552772665",
+                    "text": "<span class=\"mathquill\">v_\\text{left} < v_\\text{right}</span>",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1530552887618",
+                    "text": "<span class=\"mathquill\">v_\\text{left} = v_\\text{right}</span>",
+                    "is_correct": true
+                  },
+                  {
+                    "id": "a1530552891039",
+                    "text": "<span class=\"mathquill\">v_\\text{left} > v_\\text{right}</span>",
+                    "is_correct": false
+                  }
+                ]
+              }
+            },
+            {
+              "id": 668813,
+              "key": "1e900959-f2f6-45c1-a354-b3ed22a2fda1",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/July/5b3a63b3_reusable-visual-assets-2/reusable-visual-assets-2.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/1e900959-f2f6-45c1-a354-b3ed22a2fda1",
+              "caption": "",
+              "alt": "",
+              "width": 960,
+              "height": 540,
+              "instructor_notes": null
+            },
+            {
+              "id": 668814,
+              "key": "dcf4291e-3c53-460d-8fd2-dfa279722c99",
+              "title": "",
+              "semantic_type": "RadioQuizAtom",
+              "is_public": true,
+              "instructor_notes": null,
+              "user_state": {
+                "node_key": "dcf4291e-3c53-460d-8fd2-dfa279722c99",
+                "completed_at": null,
+                "last_viewed_at": null,
+                "unstructured": null
+              },
+              "question": {
+                "prompt": "Now consider the same plane using only it's rudder to maintain a constant yaw rate (so this is **not** a coordinated turn).\n\nAs this plane flies in a circular trajectory, what can you say about the speed of the air flowing over the **left** wing compared to the speed of the air flowing over the **right** wing?\n\n",
+                "answers": [
+                  {
+                    "id": "a1530553286694",
+                    "text": "<span class=\"mathquill\">v_\\text{left} < v_\\text{right}</span>",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1530553394908",
+                    "text": "<span class=\"mathquill\">v_\\text{left} = v_\\text{right}</span>",
+                    "is_correct": false
+                  },
+                  {
+                    "id": "a1530553395583",
+                    "text": "<span class=\"mathquill\">v_\\text{left} > v_\\text{right}</span>",
+                    "is_correct": true
+                  }
+                ]
+              }
+            },
+            {
+              "id": 668821,
+              "key": "dbf42d93-b557-4102-95ea-5f674a7d477e",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/July/5b3a64dc_reusable-visual-assets-3/reusable-visual-assets-3.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/dbf42d93-b557-4102-95ea-5f674a7d477e",
+              "caption": "",
+              "alt": "",
+              "width": 960,
+              "height": 540,
+              "instructor_notes": null
+            },
+            {
+              "id": 668825,
+              "key": "425e74f2-d304-4eca-8dd0-522a6ed4c1da",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "The increased relative airspeed over the left wing causes the left wing to feel more lift than the right wing. \n\nThis increased lift will cause a rolling moment that will cause the plane to roll clockwise.\n\nThe takeaway message here: **yaw and roll are physically coupled**. This coupling is what underlies the \"Dutch Roll\" mode, which you'll learn more about later.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 667443,
+          "key": "8a09757d-6c5d-45f6-ac4e-c41013c2f80c",
+          "title": "Static Stability",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "8a09757d-6c5d-45f6-ac4e-c41013c2f80c",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 679830,
+              "key": "645490f3-e0e9-4b03-a79e-09c498ac901b",
+              "title": "Nd787 C5 L4 A06 L Static Stability V2",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "Bmg66oeHXG0",
+                "china_cdn_id": "Bmg66oeHXG0.mp4"
+              }
+            },
+            {
+              "id": 668836,
+              "key": "ee803f12-bcf9-47d9-b36b-7e03b7e7b690",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Static Stability\n\nWhen we talk about aircraft stability, we distinguish between **static stability** and **dynamic stability**. [This short article](http://www.boldmethod.com/learn-to-fly/aerodynamics/3-types-of-static-and-dynamic-stability-in-aircraft/) does a good job explaining the difference.\n\n#### Note on equations used in this video\n\nThe equations presented in this video are a bit of an oversimplification. For example, the equation you saw for the rolling moment looked like this:\n\n<div class=\"mathquill\">\nL = C_{L_{\\beta}}\\bar{q}Sb\\beta + C_{L_{\\delta A}}\\bar{q}Sb\\delta A\n</div>\n\nIn reality, the rolling moment also depends on <span class=\"mathquill\">p</span>, <span class=\"mathquill\">r</span>, and even the rudder deflection <span class=\"mathquill\">\\delta R</span>. A more complete version of this equation would be:\n<div class=\"mathquill\">\nL = \\bar{q} S b \\left [ C_{L_0} + C_{L_\\beta}\\beta + C_{L_p}\\frac{bp}{2V} + C_{L_r}\\frac{br}{2V} + C_{L_{\\delta A}} \\delta A + C_{l_{\\delta R}} \\delta R \\right ]\n</div>\n\nThese additional terms are generally small compared to the terms in the simplified version presented in the video.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 667445,
+          "key": "13929241-cb81-4615-8a44-049c76c61585",
+          "title": "The Rest of the Lesson",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "13929241-cb81-4615-8a44-049c76c61585",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 679831,
+              "key": "3a1bac08-c3fc-49aa-88fb-f657146c0757",
+              "title": "Nd787 C5 L4 A07 L Rest Of The Lesson V2",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "C5wdgT7aOTE",
+                "china_cdn_id": "C5wdgT7aOTE.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 667446,
+          "key": "f56dd7d1-9a4c-4b2f-8daa-8d23bafd328d",
+          "title": "Linearized Model",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "f56dd7d1-9a4c-4b2f-8daa-8d23bafd328d",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 668904,
+              "key": "58d7e0e0-6e09-451a-a766-bd5232ec614b",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Linearized Lateral-Directional Model\n\nThe full lateral-directional state vector contains 11 variables. When we linearize around a trim state we can ignore the x, z, and pitch variables. \n\nWe will also choose to include the sideslip angle <span class=\"mathquill\">\\beta</span> in the state, where: \n\n<div class=\"mathquill\">\n\\begin{aligned}\nv &= V \\sin \\beta \\\\ \\\\\n\\bar{v} &= V^* \\cos \\beta^* \\bar{\\beta} \\\\ \\\\\n\\dot{\\bar{\\beta}} &= \\frac{1}{V^* \\cos \\beta^*} \\dot{\\bar{v}} \n\\end{aligned}\n</div>\n\nThe linearized model we use looks like this:\n\n<div class=\"mathquill\">\n\\begin{aligned}\n\\begin{bmatrix}\n\\dot{\\bar{\\beta}} \\\\\n\\dot{\\bar{p}} \\\\\n\\dot{\\bar{r}} \\\\\n\\dot{\\bar{\\phi}} \\\\\n\\dot{\\bar{\\psi}} \\\\\n\\end{bmatrix} &= \n\\begin{bmatrix}\nY_v & \\frac{Y_p}{V^* \\cos \\beta^*} & \\frac{Y_r}{V^* \\cos \\beta^*} & \\frac{g \\cos \\theta^* \\cos \\phi^*}{V^* \\cos \\beta^*} & 0 \\\\\nL_v V^* \\cos \\beta^* & L_p & L_r & 0 & 0 \\\\\nN_v V^* \\cos \\beta^* & N_p & N_r & 0 & 0 \\\\\n0 & 1 & \\cos \\phi^* \\tan \\theta^* & q^* \\cos \\phi^* \\tan \\theta^* \\\\\n& & & -r^* \\sin \\phi^* \\tan \\theta^*  & 0 \\\\\n0 & 0 & \\cos \\phi^* \\sec \\theta^* & p^* \\cos \\phi^* \\sec \\theta^* \\\\\n& & & -r^* \\sin \\phi^* \\sec \\theta^*  & 0\n\\end{bmatrix}\n\\cdot\n\\begin{bmatrix}\n\\bar{\\beta} \\\\\n\\bar{p} \\\\\n\\bar{r} \\\\\n\\bar{\\phi} \\\\\n\\bar{\\psi} \n\\end{bmatrix} \\\\\n&+\n\\begin{bmatrix}\n\\frac{Y_{\\delta a}}{V^* \\cos \\beta^*} & \\frac{Y_{\\delta r}}{V^* \\cos \\beta^*} \\\\\nL_{\\delta a} & L_{\\delta r} & \\\\\nN_{\\delta a} & N_{\\delta r} & \\\\\n0 & 0 \\\\\n0 & 0 \\\\\n\\end{bmatrix} \\cdot\n\\begin{bmatrix}\n\\bar{\\delta} a\\\\\n\\bar{\\delta} r\n\\end{bmatrix}\n\\end{aligned}\n</div>\n\nTake a look at the [fixed wing cheat sheet](https://www.overleaf.com/read/cvqmtzyhqjnj) for a more detailed explanation of the various coefficients.",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 667448,
+          "key": "cdcef54b-e629-43d0-abc8-8ef0fec55522",
+          "title": "Identifying Dynamic Modes",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "cdcef54b-e629-43d0-abc8-8ef0fec55522",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 679836,
+              "key": "14164219-6932-4ad8-a21b-ab3314efd3d7",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Identifying Dynamic Modes\n\nIn this exercise you will have the chance to work with a partially-implemented linearized lateral-directional model.\n\nYou have the option of completing this exercise yourself (`Linearized Lateral model-Student.ipynb`) or reading/working through the solution (`Linearized Lateral model-Solution.ipynb`).",
+              "instructor_notes": ""
+            },
+            {
+              "id": 672224,
+              "key": "b522de7e-bd8d-4e88-bf66-69afa47e81ae",
+              "title": null,
+              "semantic_type": "WorkspaceAtom",
+              "is_public": true,
+              "workspace_id": "viewrJg6Bpzb77",
+              "pool_id": "jupyter",
+              "view_id": "jupyter-SkTHTz+QX",
+              "gpu_capable": false,
+              "configuration": {
+                "id": "reserved",
+                "blueprint": {
+                  "conf": {
+                    "disk": null,
+                    "ports": [],
+                    "allowSubmit": false,
+                    "defaultPath": "/notebooks/Linearized%20Lateral%20model-Student.ipynb"
+                  },
+                  "kind": "jupyter"
+                },
+                "workspaceId": "reserved"
+              },
+              "starter_files": null
+            }
+          ]
+        },
+        {
+          "id": 667450,
+          "key": "ce8550b3-f119-4e76-8407-31b7ea91e29d",
+          "title": "Stability Analysis 1: Roll Mode",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "ce8550b3-f119-4e76-8407-31b7ea91e29d",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 679832,
+              "key": "66768dbc-9036-46d7-8842-263b27154a54",
+              "title": "Nd787 C5 L4 A09 L Stability Analysis 1 V2",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "dohXBQOl8QM",
+                "china_cdn_id": "dohXBQOl8QM.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 667451,
+          "key": "4174f031-5e48-4ac3-9412-11dbf6c0c6ab",
+          "title": "Stability Analysis 2: Spiral Mode",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "4174f031-5e48-4ac3-9412-11dbf6c0c6ab",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 679833,
+              "key": "73aa4f3d-4b5d-4119-beaa-8a0ff999c23c",
+              "title": "Nd787 C5 L4 A10 L Stability Analysis 2 V2",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "GtCNe6gBi10",
+                "china_cdn_id": "GtCNe6gBi10.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 667453,
+          "key": "cff896b7-27b4-4fa1-bd73-30e5e87193bf",
+          "title": "Stability Analysis 3: Dutch Roll",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "cff896b7-27b4-4fa1-bd73-30e5e87193bf",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 679903,
+              "key": "036314a4-08bd-4033-9f8f-097a609824c6",
+              "title": "Nd787 C5 L4 A11 L Stability Analysis 3 V4",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "OFhzQSTRGwQ",
+                "china_cdn_id": "OFhzQSTRGwQ.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 667454,
+          "key": "41989b56-92ba-4e24-a8ec-429fcb94a90b",
+          "title": "Conclusion",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "41989b56-92ba-4e24-a8ec-429fcb94a90b",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 679834,
+              "key": "598e3c8a-e823-4547-9df3-d8b2ab7c2d85",
+              "title": "Nd787 C5 L4 A12 L Conclusion V2",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "C-K_pshzDuY",
+                "china_cdn_id": "C-K_pshzDuY.mp4"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "_deprecated": [
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    }
+  ]
+}

@@ -1,0 +1,608 @@
+{
+  "data": {
+    "lesson": {
+      "id": 402891,
+      "key": "7dbdaea9-3742-4a09-8809-7785b793f7a0",
+      "title": "Welcome!",
+      "semantic_type": "Lesson",
+      "is_public": true,
+      "version": "1.0.0",
+      "locale": "en-us",
+      "summary": "In this lesson you'll meet your instructors and go over some of the logistical details of this Nanodegree program.",
+      "lesson_type": "Classroom",
+      "display_workspace_project_only": null,
+      "resources": {
+        "files": [
+          {
+            "name": "Videos Zip File",
+            "uri": "https://zips.udacity-data.com/7dbdaea9-3742-4a09-8809-7785b793f7a0/402891/1538762865162/Welcome%21+Videos.zip"
+          },
+          {
+            "name": "Transcripts Zip File",
+            "uri": "https://zips.udacity-data.com/7dbdaea9-3742-4a09-8809-7785b793f7a0/402891/1538762862253/Welcome%21+Subtitles.zip"
+          }
+        ],
+        "google_plus_link": null,
+        "career_resource_center_link": null,
+        "coaching_appointments_link": null,
+        "office_hours_link": null,
+        "aws_provisioning_link": null
+      },
+      "project": null,
+      "lab": null,
+      "concepts": [
+        {
+          "id": 402893,
+          "key": "17805674-7f9a-4cb9-a02f-27d7781a1b5d",
+          "title": "Welcome to the Program",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "17805674-7f9a-4cb9-a02f-27d7781a1b5d",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 514340,
+              "key": "a7eb2c86-9374-4281-a3bc-e74d69a2c056",
+              "title": "Trailer FCND",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "w2lV5_S2_2A",
+                "china_cdn_id": "w2lV5_S2_2A.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 402895,
+          "key": "9e98b24c-af54-4e70-9de5-7472abeae2f3",
+          "title": "State of the Industry",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "9e98b24c-af54-4e70-9de5-7472abeae2f3",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 514964,
+              "key": "fd0a9a94-298c-4c80-98e5-c24f509b1d87",
+              "title": "02 Flying Cars Are Here! V3",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "eM6kMpM_bwQ",
+                "china_cdn_id": "eM6kMpM_bwQ.mp4"
+              }
+            },
+            {
+              "id": 627646,
+              "key": "d58f19a3-ee84-4f46-a670-940d496512be",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Flying Car Industry\nBe sure to check out Udacity's [Flying Car Medium blog posts](https://medium.com/udacity/tagged/flying-cars)  as well as the external industry resources listed below for up to date news and insights for the Flying Car industry.\n\n* [Uber Elevate's whitepaper](https://www.uber.com/elevate.pdf) on the future of on-demand aerial taxi urban air transport.\n* Vertical Flight Society's [updated list of companies](http://evtol.news/aircraft/) developing electric vertical take-off and landing (eVTOL) aircraft. \n* Dronecode's [opensource UAV platform](https://www.dronecode.org/).",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 550381,
+          "key": "4935efd0-1375-4772-8085-12d0cd986e3b",
+          "title": "Meet Andy and Jake",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "4935efd0-1375-4772-8085-12d0cd986e3b",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 553088,
+              "key": "21040b54-8cb2-4b2b-a67b-0180b8e4ed20",
+              "title": "03 Meet Andy And Jake",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "w8MC2-6HYyU",
+                "china_cdn_id": "w8MC2-6HYyU.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 402898,
+          "key": "9e5cadf3-bb6c-4eb6-9a21-77de4ba09dde",
+          "title": "Meet Your Instructors",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "9e5cadf3-bb6c-4eb6-9a21-77de4ba09dde",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 514249,
+              "key": "8db64c31-9a8b-46f7-8358-3b032294ec12",
+              "title": "Meet Nick and Angela",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "mPGnIDXw--0",
+                "china_cdn_id": "mPGnIDXw--0.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 553447,
+          "key": "dc6fc6e0-5444-4ed2-a01c-c37c33d199d9",
+          "title": "Meet Raff",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "dc6fc6e0-5444-4ed2-a01c-c37c33d199d9",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 553472,
+              "key": "5ab56871-eac3-4d3d-8ebe-03445a8cc99b",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Meet Raffaello D'Andrea",
+              "instructor_notes": ""
+            },
+            {
+              "id": 553461,
+              "key": "7be49143-58bb-40ad-9cb0-6e4ece421e50",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/February/5a9593f4_raffaello-dandrea/raffaello-dandrea.jpg",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/7be49143-58bb-40ad-9cb0-6e4ece421e50",
+              "caption": "",
+              "alt": "",
+              "width": 1200,
+              "height": 900,
+              "instructor_notes": null
+            },
+            {
+              "id": 553462,
+              "key": "267089d0-ec3f-43bd-b325-5c7dd181d8d9",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Alongside Sebastian, Angela, and Nick, we are extremely pleased and honored to introduce Flying Car instructor Raffaello D'Andrea.\n\nRaffaello, or Raff, is an esteemed engineer, artist, and entrepreneur. He is professor of dynamic systems and control at ETH Zurich, co-founder of Kiva Systems (now Amazon Robotics), and founder of Verity Studios. Across all ventures, Raff is a prolific inventor, with autonomous robots as his primary medium.\n\nWhile Angela, Nick, and Sebastian will primarily handle classroom instruction, Raff will join to share his real-world experience and expertise throughout the program. For starters, you can view any of these conversations with Raff:\n- [Flying Car Curriculum](https://youtu.be/kuNEtnVnTGE)\n- [Flying Cars & Self-Driving Cars](https://youtu.be/w6bP7l2o81s)\n- [Flying Cars & Machine Learning](https://youtu.be/ZUYHuAa9xfo)\n\nAnd be sure to check out Raff's TED talk at the end of this lesson!",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 402900,
+          "key": "fe4835bc-9e68-471e-84da-be1dff7c77fa",
+          "title": "Projects You Will Build",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "fe4835bc-9e68-471e-84da-be1dff7c77fa",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 514251,
+              "key": "0b452f78-c704-4702-b836-3ae9d0206189",
+              "title": "Projects You Will Build",
+              "semantic_type": "VideoAtom",
+              "is_public": true,
+              "instructor_notes": "",
+              "video": {
+                "youtube_id": "xq0gZBySFOo",
+                "china_cdn_id": "xq0gZBySFOo.mp4"
+              }
+            }
+          ]
+        },
+        {
+          "id": 402902,
+          "key": "f3bc62c2-07e0-4498-9a9c-80415db226cc",
+          "title": "Student Support",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "f3bc62c2-07e0-4498-9a9c-80415db226cc",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 673121,
+              "key": "95a472e1-ac74-43f5-bbf1-33f4c8486e25",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Support\n\nThere are several ways in which you will receive support during the program from Udacity's network of Mentors and Reviewers, as well as your fellow students.\n\n## Study Groups",
+              "instructor_notes": ""
+            },
+            {
+              "id": 673201,
+              "key": "e9f7dd2a-48f5-4b12-b2f8-a55dba2915ef",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/July/5b456183_fcnd-study-groups/fcnd-study-groups.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/e9f7dd2a-48f5-4b12-b2f8-a55dba2915ef",
+              "caption": "Click the blue chat icon on the bottom left of your classroom to open your Study Group!",
+              "alt": "",
+              "width": 200,
+              "height": 401,
+              "instructor_notes": null
+            },
+            {
+              "id": 402903,
+              "key": "c306644a-262c-46d3-a1b4-1fb194087a2a",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "In Study Groups, you'll have different rooms where you can talk to your fellow classmates, as well as Mentors for your class. \n\nYour in-classroom Mentors will be your guide through the program and will do the following:\n  * Help you set learning goals.\n  * Guide you to supplementary resources when you get stuck.\n  * Respond to any questions you have about the program.\n\nThere are separate rooms for each project, which unlock as you progress through the program, as well as a room for general discussion. \n\nTo join Study Groups, click on the blue chat icon in the left hand menu when you are in the classroom. Then, agree to the Terms of Service. Lastly, join the 'My Classmates' channel to introduce yourself and meet your classmates.\n\n---\n\n## Knowledge\n\n#### Find commonly asked Questions and Answers\nCheck out our forums called \"Knowledge\". This is where student's such as yourself post questions and get answers from the Udacity community. You can browse great answers to questions about projects, technical issues and content. Check it out by clicking the button below.\n\nIf you don't see a question that you want to be answered, go ahead and post it yourself to get a quick response! Get to Knowledge at the button below or the lightbulb icon in the left-hand menu.\n\n<center><a href=\"https://knowledge.udacity.com/?nanodegree=5ce69a5c-496f-11e8-b509-932e3a4da789&page=1\" target=\"_blank\"><button style=\"box-sizing: border-box; border-radius: 4px; background: #02B3E4; border: none; height: 44px; padding: 0 25px; color: white; cursor: pointer; font-family: Open Sans,sans-serif; display: inline-block; border: none; font-size: 12px; letter-spacing: 1px; font-weight: 600; text-transform: uppercase;\">KNOWLEDGE</button></a></center>\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 627653,
+              "key": "bc8eb868-0704-4d10-af53-6965ef43d09c",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/May/5af9fda0_screen-shot-2018-05-14-at-2.20.12-pm/screen-shot-2018-05-14-at-2.20.12-pm.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/bc8eb868-0704-4d10-af53-6965ef43d09c",
+              "caption": "Filter by Nanodegree and Project to find questions and answers classmates have posted.",
+              "alt": "",
+              "width": 650,
+              "height": 424,
+              "instructor_notes": null
+            },
+            {
+              "id": 627652,
+              "key": "728dacbd-bdca-4f68-9d16-56af3ce29a9a",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/May/5af9fd54_screen-shot-2018-05-14-at-2.17.18-pm/screen-shot-2018-05-14-at-2.17.18-pm.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/728dacbd-bdca-4f68-9d16-56af3ce29a9a",
+              "caption": "You can always get back to Knowledge by clicking on the lightbulb icon on the left of your screen.",
+              "alt": "",
+              "width": 370,
+              "height": 339,
+              "instructor_notes": null
+            },
+            {
+              "id": 674567,
+              "key": "505c0cc0-8b07-4248-881d-4fded29bbc27",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "---",
+              "instructor_notes": ""
+            },
+            {
+              "id": 508604,
+              "key": "eb8ad986-c0d8-4eb1-87b5-82da225cbddf",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "### Reviews",
+              "instructor_notes": ""
+            },
+            {
+              "id": 508612,
+              "key": "cd20da6a-348f-4661-b50d-4fbe869efea3",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/January/5a61418e_review-screenshot/review-screenshot.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/cd20da6a-348f-4661-b50d-4fbe869efea3",
+              "caption": "",
+              "alt": "",
+              "width": 1293,
+              "height": 455,
+              "instructor_notes": null
+            },
+            {
+              "id": 508606,
+              "key": "72904159-b496-4049-b31c-567ddc426018",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "For each project you submit, you will receive detailed feedback from a project Reviewer.  Sometimes, a reviewer might ask you to resubmit a project to meet specifications. In that case, an indication of needed changes will also be provided. Note that you can submit a project as many times as needed to pass.\n\n---\n\n### Feedback",
+              "instructor_notes": ""
+            },
+            {
+              "id": 508613,
+              "key": "89a61d63-7194-43aa-9944-d5bc869c1ff2",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/January/5a6141a8_waffle-yellow-on-blue/waffle-yellow-on-blue.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/89a61d63-7194-43aa-9944-d5bc869c1ff2",
+              "caption": "",
+              "alt": "",
+              "width": 150,
+              "height": 150,
+              "instructor_notes": null
+            },
+            {
+              "id": 508607,
+              "key": "d8f8d630-dcd7-4a2f-80df-361d10c5346b",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "We value your feedback and we are constantly working to improve your experience in the classroom.  In order to keep our content up-to-date and address issues quickly, we've set up a [Waffle board](https://waffle.io/udacity/fcnd-issue-reports) to track error reports and suggestions. ",
+              "instructor_notes": ""
+            },
+            {
+              "id": 508614,
+              "key": "b9b7a829-8229-4ad2-9836-c9a69032ed99",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2018/January/5a6141ba_waffle-add-issue/waffle-add-issue.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/b9b7a829-8229-4ad2-9836-c9a69032ed99",
+              "caption": "",
+              "alt": "",
+              "width": 700,
+              "height": 370,
+              "instructor_notes": null
+            },
+            {
+              "id": 508608,
+              "key": "3ce3b8f8-03ca-4ac1-858c-582a6bc52531",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "If you find an error, go to the Waffle board and file an issue by clicking on the \"Add issue\" button  (you will need a GitHub account for this).  Give your issue a descriptive title, and include the details of the issue in the body of the message.  Links and screenshots, if available, are always appreciated!\n\n---",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 323794,
+          "key": "5715791f-a8ca-466e-816e-61c7711b72f8",
+          "title": "Learning at Udacity",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "5715791f-a8ca-466e-816e-61c7711b72f8",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 323795,
+              "key": "9d75b7f7-7509-4cb3-a6cd-37bd28eceb7f",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Learning at Udacity\n",
+              "instructor_notes": ""
+            },
+            {
+              "id": 323804,
+              "key": "8d771a18-d019-4dd5-9d2a-a026006af6b2",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2017/May/5924b029_screen-shot-2017-05-23-at-10.14.54-am/screen-shot-2017-05-23-at-10.14.54-am.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/8d771a18-d019-4dd5-9d2a-a026006af6b2",
+              "caption": "",
+              "alt": null,
+              "width": 2560,
+              "height": 1440,
+              "instructor_notes": null
+            },
+            {
+              "id": 323819,
+              "key": "6627733d-a732-4903-873c-cfab7a4194f4",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "If you're a seasoned Udacity student then you most likely already have a plan for how you'll carve out time to work through the lessons and projects in this program.  If you're new to Udacity, the structure and pace of the program might take some getting used to.  Whether you've studied with us before, or this is your first time in the Udacity classroom, we'd like to share some details with you here about this program, as well as some tips and suggestions for charting a path to a successful graduation.\n\n### Expected time commitment \nWe suggest you plan to spend 15 hours per week working on this program.  That said, everyone moves at a different pace through the content, which is largely determined by the skills you come into the program with, and how deep you dive into exploring these subjects beyond the lessons in the classroom.    Be deliberate! Put your study time on your calendar, and plan to do a little bit every day rather than pushing through large amounts of work at the last minute.\n\n### Classroom lessons vs. projects\nYou will be going through lessons in the Udacity classroom that give you the tools you need to complete the projects.  However, the projects are where the real learning takes place and where you will spend the majority of your time in this program.  Start the projects early and reach out to your fellow students in Slack or to the mentors in the classroom when you get stuck.  \n\n### Access to content on your mobile device\nWhile you can access the Udacity classroom on your mobile device, the lessons in this program will include numerous hands-on exercises like programming quizzes or following along with a demonstration in a virtual machine.  So feel free to catch up on the text and video content on your mobile device while on the train ride home, but you'll get much more out of the interactive content on your personal computer.  ",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 561757,
+          "key": "48909639-6be4-4fa9-b468-4e03dc66b0ef",
+          "title": "Community Code of Conduct",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "48909639-6be4-4fa9-b468-4e03dc66b0ef",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 561758,
+              "key": "595fc12e-0bc0-4f65-babd-162f59fd38b4",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "## Community Code of Conduct\n\nYour experience in the Nanodegree program and community should be an engaging, fulfilling, and positive one. As such, we have outlined the following system for reporting behavior that does not live up to Udacity’s standards, so it can quickly be addressed by our staff. \n\nAll reports of suspected violations to the [TOU](https://www.udacity.com/legal/terms-of-service), [Community Code of Conduct](https://www.udacity.com/legal/community-guidelines) or [Honor Code](https://www.udacity.com/legal/community-guidelines) should be submitted to [report@udacity.com](mailto:report@udacity.com) and will be reviewed. If you witness or are experiencing any violations of our policies please get in touch with us. Below prohibited actions as set forth on our [Community Code of Conduct](https://www.udacity.com/legal/community-guidelines):\n\n- **Harassment:** Inappropriate, harassing, abusive, discriminatory, derogatory or violent comments or conduct. \n- **Discrimination:** Offensive comments related to gender or gender identity, sexual orientation, race, ethnicity, religion, national origin, disability or disease\n- **Distributing inappropriate content:** Use of sexual, violent, graphic, or derogatory images\n- **Bullying:** Deliberate intimidation, threats of violence or violent language directed against another person\n- **Sexual harassment:** Unwelcome sexual attention \n- **Defamation:** Obscene, fraudulent, indecent, or libelous acts that defame, abuse, harass, discriminate against or threaten others\n- **Plagiarism:** will not cheat on any homework assignment, projects or exams for the Online Courses and, specifically, will not plagiarize materials created by others\n- **Self-injury or Suicide:** We do not encourage community postings in Study Groups or Knowledge (or anywhere else) related to self-injury or suicide. If you or someone you know is exhibiting signs of self-injury or suicide, find help at the [Suicide Prevention Lifeline](https://suicidepreventionlifeline.org/) in the U.S. and [Befrienders.org](https://www.befrienders.org/) globally. \n\nWhen a potential violation is brought to our attention, we will make every effort to investigate the case thoroughly and make a decision that is fair to all parties.\n\nThank you, \n\nThe Udacity Team\n",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 550378,
+          "key": "6cf34cf6-f29c-4d64-817e-f852a6e4b249",
+          "title": "Astounding Flying Machines (Optional)",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "6cf34cf6-f29c-4d64-817e-f852a6e4b249",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 550379,
+              "key": "dc9056c3-f25e-45f7-a665-038db77f035b",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "<div style=\"max-width:854px\"><div style=\"position:relative;height:0;padding-bottom:56.25%\"><iframe src=\"https://embed.ted.com/talks/raffaello_d_andrea_the_astounding_athletic_power_of_quadcopters\" width=\"854\" height=\"480\" style=\"position:absolute;left:0;top:0;width:100%;height:100%\" frameborder=\"0\" scrolling=\"no\" allowfullscreen></iframe></div></div>",
+              "instructor_notes": ""
+            }
+          ]
+        },
+        {
+          "id": 831981,
+          "key": "99232e4b-299c-40f5-a985-3162da96288e",
+          "title": "Access the Career Portal",
+          "semantic_type": "Concept",
+          "is_public": true,
+          "user_state": {
+            "node_key": "99232e4b-299c-40f5-a985-3162da96288e",
+            "completed_at": null,
+            "last_viewed_at": null,
+            "unstructured": null
+          },
+          "resources": null,
+          "atoms": [
+            {
+              "id": 831984,
+              "key": "56b803ea-52ec-4803-99d5-41aa3fef76c4",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "You’re in this Nanodegree program to take the next big step in your career - maybe you’re looking for a new job, or you’re learning new skills for your current job … or maybe you’re not sure what to do, but you know you need to make a career change.\n\nThrough your Career Portal, you can access a suite of Career Services:\n\n* **Personalized feedback** on your resume, cover letter, LinkedIn profile, and (if applicable) GitHub profile.\n* **Curated tips and guides**, on topics ranging from informational interviews to job boards, in your Career Track.",
+              "instructor_notes": ""
+            },
+            {
+              "id": 831997,
+              "key": "2094857c-b549-4ae1-a0ee-baf57c6b2b81",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2020/May/5eb99699_screen-shot-2020-05-11-at-11.16.14-am/screen-shot-2020-05-11-at-11.16.14-am.png",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/2094857c-b549-4ae1-a0ee-baf57c6b2b81",
+              "caption": "**Enter the Career Portal by clicking on the Career Services tab in your Classroom sidebar.**",
+              "alt": "Career Services found in the Classroom sidebar.",
+              "width": 1908,
+              "height": 952,
+              "instructor_notes": null
+            },
+            {
+              "id": 831998,
+              "key": "cefc0cd6-66e7-4d30-9d72-ea25d7430d3d",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "# Your Career Portal\n\nYour **Career Track** is where you read guides and tips to support your career development journey.\n\nWhen you want a review of your job application or networking profiles, submit them in **Career Services**. You'll get honest, concise feedback from Career Coaches, including industry professionals (ie: marketing manager or software engineer).",
+              "instructor_notes": ""
+            },
+            {
+              "id": 831996,
+              "key": "384f0106-d99f-4e3b-87cb-3e8136902f63",
+              "title": null,
+              "semantic_type": "ImageAtom",
+              "is_public": true,
+              "url": "https://video.udacity-data.com/topher/2019/February/5c75d7c5_feb-26-2019-16-19-56/feb-26-2019-16-19-56.gif",
+              "non_google_url": "https://s3.cn-north-1.amazonaws.com.cn/u-img/384f0106-d99f-4e3b-87cb-3e8136902f63",
+              "caption": "",
+              "alt": "Career Portal Walkthrough",
+              "width": 1018,
+              "height": 550,
+              "instructor_notes": null
+            },
+            {
+              "id": 831999,
+              "key": "58743631-7fc1-435e-b97f-2e60cb2fc183",
+              "title": null,
+              "semantic_type": "TextAtom",
+              "is_public": true,
+              "text": "Join our [Careers Community](https://hub.udacity.com/rooms/community:hqb2c-b2a03e2d-0900-477f-beab-d7956cd29451) to connect with other job-seeking students, and get support from Career Coaches as you begin to search for your dream job! Receive daily career tips, resources, and stay up to date on all the [Career Events](https://www.udacity.com/events) Udacity offers.\n\nThe Udacity Careers team is here to help you figure out what you're looking for, plan for it, and work with you to ultimately move forward in your career development. You can always contact us at [career-support@udacity.com](mailto:career-support@udacity.com).",
+              "instructor_notes": ""
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "_deprecated": [
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    },
+    {
+      "name": "non_google_url",
+      "reason": "(2016/8/18) Not sure, ask i18n team for reason"
+    }
+  ]
+}
