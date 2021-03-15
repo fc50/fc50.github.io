@@ -1,0 +1,394 @@
+<!-- udacimak v1.4.4 -->
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="ie=edge" http-equiv="X-UA-Compatible"/>
+  <title>
+   System Architecture
+  </title>
+  <link href="../assets/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="../assets/css/plyr.css" rel="stylesheet"/>
+  <link href="../assets/css/katex.min.css" rel="stylesheet"/>
+  <link href="../assets/css/jquery.mCustomScrollbar.min.css" rel="stylesheet"/>
+  <link href="../assets/css/styles.css" rel="stylesheet"/>
+  <link href="../assets/img/udacimak.png" rel="shortcut icon" type="image/png">
+  </link>
+ </head>
+ <body>
+  <div class="wrapper">
+   <nav id="sidebar">
+    <div class="sidebar-header">
+     <h3>
+      Fixed-Wing Autopilot
+     </h3>
+    </div>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled components">
+     <li class="">
+      <a href="01. Lesson Introduction.html">
+       01. Lesson Introduction
+      </a>
+     </li>
+     <li class="">
+      <a href="02. Fixed Wing Trajectories.html">
+       02. Fixed Wing Trajectories
+      </a>
+     </li>
+     <li class="">
+      <a href="03. System Architecture.html">
+       03. System Architecture
+      </a>
+     </li>
+     <li class="">
+      <a href="04. Controller Design Principles.html">
+       04. Controller Design Principles
+      </a>
+     </li>
+     <li class="">
+      <a href="05. Lateral Autopilot.html">
+       05. Lateral Autopilot
+      </a>
+     </li>
+     <li class="">
+      <a href="06. Course Hold.html">
+       06. Course Hold
+      </a>
+     </li>
+     <li class="">
+      <a href="07. Inner Loops Roll and Sideslip Hold.html">
+       07. Inner Loops: Roll and Sideslip Hold
+      </a>
+     </li>
+     <li class="">
+      <a href="08. Longitudinal Autopilot.html">
+       08. Longitudinal Autopilot
+      </a>
+     </li>
+     <li class="">
+      <a href="09. Longitudinal Control Loops.html">
+       09. Longitudinal Control Loops
+      </a>
+     </li>
+     <li class="">
+      <a href="10. Autopilot Tuning.html">
+       10. Autopilot Tuning
+      </a>
+     </li>
+     <li class="">
+      <a href="11. Integrator Windup.html">
+       11. Integrator Windup
+      </a>
+     </li>
+     <li class="">
+      <a href="12. Conclusion.html">
+       12. Conclusion
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+   </nav>
+   <div id="content">
+    <header class="container-fluild header">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <div class="align-items-middle">
+         <button class="btn btn-toggle-sidebar" id="sidebarCollapse" type="button">
+          <div>
+          </div>
+          <div>
+          </div>
+          <div>
+          </div>
+         </button>
+         <h1 style="display: inline-block">
+          03. System Architecture
+         </h1>
+        </div>
+       </div>
+      </div>
+     </div>
+    </header>
+    <main class="container">
+     <div class="row">
+      <div class="col-12">
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h1 id="fixed-wing-control-architecture">
+          Fixed Wing Control Architecture
+         </h1>
+         <p>
+          Fixed wing control is not quite the same thing as quadrotor control. When you imagine quadrotor control you can think of some continuous trajectory through space, where the controller's job is to keep the vehicle as close to that trajectory as possible.
+         </p>
+         <p>
+          In fixed wing flight we generally try to keep the vehicle in a trim state (or close to one). This means the job of the controller is slightly different. Instead of following a continuous trajectory through space, we want to navigate through a sequence of trim states.
+         </p>
+         <p>
+          The trim states we care about will generally have a commanded airspeed
+          <span class="mathquill ud-math">
+           V_c
+          </span>
+          , altitude
+          <span class="mathquill ud-math">
+           z_c
+          </span>
+          , heading
+          <span class="mathquill ud-math">
+           \chi_c
+          </span>
+          , and sideslip angle
+          <span class="mathquill ud-math">
+           \beta_c
+          </span>
+          (though this will almost always be equal to zero).
+         </p>
+         <p>
+          The job of the controller (which we can also call the autopilot) is to generate the appropriate thrust and control surface deflections for the associated trim state.
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <figure class="figure">
+          <img alt="Highest level control diagram for fixed wing autopilot." class="img img-fluid" src="img/control-diagrams.png"/>
+          <figcaption class="figure-caption">
+           <p>
+            Highest level control diagram for fixed wing autopilot.
+           </p>
+          </figcaption>
+         </figure>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h2 id="longitudinal-and-lateral-directional-autopilots">
+          Longitudinal and Lateral-directional Autopilots
+         </h2>
+         <p>
+          As you've seen in the last few lessons, we can break the dynamics of fixed wing flight into two smaller problems: longitudinal motion and lateral-directional motion. This allows us to break our control problem into two smaller problems as well.
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <figure class="figure">
+          <img alt="" class="img img-fluid" src="img/control-diagrams-1.png"/>
+          <figcaption class="figure-caption">
+          </figcaption>
+         </figure>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <p>
+          We'll be discussing this diagram more in the rest of this lesson. Ultimately, the control diagram that we use will look something like this:
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <figure class="figure">
+          <img alt="" class="img img-fluid" src="img/control-diagrams-2.png"/>
+          <figcaption class="figure-caption">
+          </figcaption>
+         </figure>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h2 id="reminder-cascaded-control">
+          Reminder: Cascaded Control
+         </h2>
+         <p>
+          Sometimes we use a controllable quantity to directly influence a commanded quantity. For example, the bottom control loop in the diagram above uses the rudder deflection
+          <span class="mathquill ud-math">
+           \delta R
+          </span>
+          to directly control the sideslip
+          <span class="mathquill ud-math">
+           \beta_c
+          </span>
+          .
+         </p>
+         <p>
+          But sometimes we need to use some intermediate quantity. This is called "cascaded control". For example, we use the roll angle
+          <span class="mathquill ud-math">
+           \phi
+          </span>
+          as an intermediate variable to relate the aileron deflection
+          <span class="mathquill ud-math">
+           \delta A
+          </span>
+          to the commanded heading
+          <span class="mathquill ud-math">
+           \chi_c
+          </span>
+          . This means we need to use
+          <strong>
+           two
+          </strong>
+          nested control loops!
+         </p>
+         <p>
+          If you want an additional refresher on cascaded control, go back to the video called
+          <a href="https://classroom.udacity.com/nanodegrees/nd787-beta/parts/68999b8f-3344-41c6-8229-7ab110643991/modules/8db4f643-8d79-473f-a645-b7dd00452972/lessons/adf9cc77-d52c-4958-810d-89ddc5997437/concepts/0261dae7-6409-4aac-84dc-0357ae2259a6?contentVersion=1.0.0" rel="noopener noreferrer" target="_blank">
+           Intro to Cascaded Control
+          </a>
+          from the module on quadrotor control.
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h3 id="reminder-fixed-wing-cheat-sheet">
+          Reminder: Fixed Wing Cheat Sheet
+         </h3>
+         <p>
+          You can find all of the equations for this module in the
+          <a href="https://www.overleaf.com/read/cvqmtzyhqjnj" rel="noopener noreferrer" target="_blank">
+           Fixed Wing Cheat Sheet
+          </a>
+          .
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+      </div>
+      <div class="col-12">
+       <p class="text-right">
+        <a class="btn btn-outline-primary mt-4" href="04. Controller Design Principles.html" role="button">
+         Next Concept
+        </a>
+       </p>
+      </div>
+     </div>
+    </main>
+    <footer class="footer">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <p class="text-center">
+         udacity2.0 If you need the newest courses Plase add me wechat: udacity6
+        </p>
+       </div>
+      </div>
+     </div>
+    </footer>
+   </div>
+  </div>
+  <script src="../assets/js/jquery-3.3.1.min.js">
+  </script>
+  <script src="../assets/js/plyr.polyfilled.min.js">
+  </script>
+  <script src="../assets/js/bootstrap.min.js">
+  </script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js">
+  </script>
+  <script src="../assets/js/katex.min.js">
+  </script>
+  <script>
+   // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('03. System Architecture')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+ </body>
+</html>

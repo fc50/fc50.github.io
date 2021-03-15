@@ -1,0 +1,547 @@
+<!-- udacimak v1.4.4 -->
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="ie=edge" http-equiv="X-UA-Compatible"/>
+  <title>
+   Force-Free Motion
+  </title>
+  <link href="../assets/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="../assets/css/plyr.css" rel="stylesheet"/>
+  <link href="../assets/css/katex.min.css" rel="stylesheet"/>
+  <link href="../assets/css/jquery.mCustomScrollbar.min.css" rel="stylesheet"/>
+  <link href="../assets/css/styles.css" rel="stylesheet"/>
+  <link href="../assets/img/udacimak.png" rel="shortcut icon" type="image/png">
+  </link>
+ </head>
+ <body>
+  <div class="wrapper">
+   <nav id="sidebar">
+    <div class="sidebar-header">
+     <h3>
+      Lateral-Directional Model
+     </h3>
+    </div>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled components">
+     <li class="">
+      <a href="01. Introduction to Lateral-Directional Dynamics.html">
+       01. Introduction to Lateral-Directional Dynamics
+      </a>
+     </li>
+     <li class="">
+      <a href="02. Force-Free Motion.html">
+       02. Force-Free Motion
+      </a>
+     </li>
+     <li class="">
+      <a href="03. Incorporating Forces.html">
+       03. Incorporating Forces
+      </a>
+     </li>
+     <li class="">
+      <a href="04. Coordinated Turns.html">
+       04. Coordinated Turns
+      </a>
+     </li>
+     <li class="">
+      <a href="05. Roll-Yaw Coupling.html">
+       05. Roll-Yaw Coupling
+      </a>
+     </li>
+     <li class="">
+      <a href="06. Static Stability.html">
+       06. Static Stability
+      </a>
+     </li>
+     <li class="">
+      <a href="07. The Rest of the Lesson.html">
+       07. The Rest of the Lesson
+      </a>
+     </li>
+     <li class="">
+      <a href="08. Linearized Model.html">
+       08. Linearized Model
+      </a>
+     </li>
+     <li class="">
+      <a href="09. Identifying Dynamic Modes.html">
+       09. Identifying Dynamic Modes
+      </a>
+     </li>
+     <li class="">
+      <a href="10. Stability Analysis 1 Roll Mode.html">
+       10. Stability Analysis 1: Roll Mode
+      </a>
+     </li>
+     <li class="">
+      <a href="11. Stability Analysis 2 Spiral Mode.html">
+       11. Stability Analysis 2: Spiral Mode
+      </a>
+     </li>
+     <li class="">
+      <a href="12. Stability Analysis 3 Dutch Roll.html">
+       12. Stability Analysis 3: Dutch Roll
+      </a>
+     </li>
+     <li class="">
+      <a href="13. Conclusion.html">
+       13. Conclusion
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+   </nav>
+   <div id="content">
+    <header class="container-fluild header">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <div class="align-items-middle">
+         <button class="btn btn-toggle-sidebar" id="sidebarCollapse" type="button">
+          <div>
+          </div>
+          <div>
+          </div>
+          <div>
+          </div>
+         </button>
+         <h1 style="display: inline-block">
+          02. Force-Free Motion
+         </h1>
+        </div>
+       </div>
+      </div>
+     </div>
+    </header>
+    <main class="container">
+     <div class="row">
+      <div class="col-12">
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h1 id="force-free-lateral-directional-motion">
+          Force-Free Lateral-Directional Motion
+         </h1>
+         <h4 id="defining-the-state">
+          Defining the State
+         </h4>
+         <p>
+          Let's start by defining the state vector that we'll be tracking when analyzing the lateral-directional motion.
+         </p>
+         <div class="mathquill">
+          \mathbf{x} = \begin{bmatrix}
+
+x_I \\
+y_I \\
+z_I \\
+\phi \\
+\theta \\
+\psi \\
+u \\
+v \\
+w \\
+p \\ 
+r
+\end{bmatrix}
+         </div>
+         <p>
+          We can define each of these variables:
+         </p>
+         <table>
+          <thead>
+           <tr>
+            <th id="variables" style="text-align:center;">
+             Variables
+            </th>
+            <th id="physical_meaning" style="text-align:center;">
+             Physical meaning
+            </th>
+           </tr>
+          </thead>
+          <tbody>
+           <tr>
+            <td style="text-align:center;">
+             <span class="mathquill ud-math">
+              x_I, y_I, z_I
+             </span>
+            </td>
+            <td style="text-align:center;">
+             <span class="mathquill ud-math">
+              x, y, z
+             </span>
+             position in
+             <strong>
+              inertial frame
+             </strong>
+            </td>
+           </tr>
+           <tr>
+            <td style="text-align:center;">
+             <span class="mathquill ud-math">
+              \phi, \theta, \psi
+             </span>
+            </td>
+            <td style="text-align:center;">
+             Euler angles
+            </td>
+           </tr>
+           <tr>
+            <td style="text-align:center;">
+             <span class="mathquill ud-math">
+              u, v, w
+             </span>
+            </td>
+            <td style="text-align:center;">
+             <span class="mathquill ud-math">
+              x, y, z
+             </span>
+             velocity in
+             <strong>
+              body frame
+             </strong>
+            </td>
+           </tr>
+           <tr>
+            <td style="text-align:center;">
+             <span class="mathquill ud-math">
+              p, r
+             </span>
+            </td>
+            <td style="text-align:center;">
+             Body rates about the
+             <span class="mathquill ud-math">
+              x
+             </span>
+             and
+             <span class="mathquill ud-math">
+              z
+             </span>
+             axes
+            </td>
+           </tr>
+          </tbody>
+         </table>
+         <p>
+          Note that the pitch rate
+          <span class="mathquill ud-math">
+           q
+          </span>
+          is
+          <strong>
+           not
+          </strong>
+          included in the state.
+         </p>
+         <h4 id="force-free-equations-of-motion">
+          Force-free equations of motion
+         </h4>
+         <p>
+          The equations of motion for the force-free case are as follows:
+         </p>
+         <div class="mathquill">
+          \begin{aligned}
+\dot{x}_I &amp;=
+  u (\cos \theta \cos \psi) + v (\sin \phi \sin \theta \cos \psi - \cos \phi \sin \psi) +  w (\cos \phi \sin \theta \cos \psi + \sin \phi \sin \psi) \\
+  \dot{y}_I &amp;= u (\cos \theta \sin \psi) + v (\sin \phi \sin \theta \cos \psi +
+  \cos \phi \cos \psi) +
+  w (\cos \phi \sin \theta \sin \psi - \sin \phi \cos \psi) \\
+  \dot{z}_I &amp;= - u \sin \theta + v \sin \phi \cos \theta + w \cos \phi \cos \theta \\
+  \dot{\phi} &amp;= p + r \cos \phi \tan \theta \\
+  \dot{\theta} &amp;= - r \sin \phi \\
+  \dot{\psi} &amp;= r \cos \phi \sec \theta \\
+\dot{u} &amp;= rv \\
+\dot{v} &amp;= pw - ru \\
+\dot{w} &amp;= -pv \\
+\dot{p} &amp;= 0 \\
+\dot{r} &amp;= 0 
+\end{aligned}
+         </div>
+         <h3 id="reminder-fixed-wing-cheat-sheet">
+          Reminder: Fixed Wing Cheat Sheet
+         </h3>
+         <p>
+          You can find all of the equations for this module in the
+          <a href="https://www.overleaf.com/read/cvqmtzyhqjnj" rel="noopener noreferrer" target="_blank">
+           Fixed Wing Cheat Sheet
+          </a>
+          .
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <form>
+          <fieldset>
+           <legend>
+            <p>
+             Which
+             <strong>
+              five
+             </strong>
+             of these equations will change when we incorporate forces and moments?
+            </p>
+           </legend>
+          </fieldset>
+          <div>
+           <input id="a1530306573744" name="668023" type="checkbox" value="a1530306573744"/>
+           <label for="a1530306573744">
+            <p>
+             <span class="mathquill ud-math">
+              \dot{x}_I =   u (\cos \theta \cos \psi) + v (\sin \phi \sin \theta \cos \psi - \cos \phi \sin \psi) +  w (\cos \phi \sin \theta \cos \psi + \sin \phi \sin \psi)
+             </span>
+            </p>
+           </label>
+          </div>
+          <div>
+           <input id="a1530306625453" name="668023" type="checkbox" value="a1530306625453"/>
+           <label for="a1530306625453">
+            <p>
+             <span class="mathquill ud-math">
+              \dot{y}_I = u (\cos \theta \sin \psi) + v (\sin \phi \sin \theta \cos \psi +   \cos \phi \cos \psi) +   w (\cos \phi \sin \theta \sin \psi - \sin \phi \cos \psi)
+             </span>
+            </p>
+           </label>
+          </div>
+          <div>
+           <input id="a1530306626126" name="668023" type="checkbox" value="a1530306626126"/>
+           <label for="a1530306626126">
+            <p>
+             <span class="mathquill ud-math">
+              \dot{z}_I = - u \sin \theta + v \sin \phi \cos \theta + w \cos \phi \cos \theta
+             </span>
+            </p>
+           </label>
+          </div>
+          <div>
+           <input id="a1530306626830" name="668023" type="checkbox" value="a1530306626830"/>
+           <label for="a1530306626830">
+            <p>
+             <span class="mathquill ud-math">
+              \dot{\phi} = p + r \cos \phi \tan \theta
+             </span>
+            </p>
+           </label>
+          </div>
+          <div>
+           <input id="a1530306628109" name="668023" type="checkbox" value="a1530306628109"/>
+           <label for="a1530306628109">
+            <p>
+             <span class="mathquill ud-math">
+              \dot{\theta} = - r \sin \phi
+             </span>
+            </p>
+           </label>
+          </div>
+          <div>
+           <input id="a1530306628911" name="668023" type="checkbox" value="a1530306628911"/>
+           <label for="a1530306628911">
+            <p>
+             <span class="mathquill ud-math">
+              \dot{\psi} = r \cos \phi \sec \theta
+             </span>
+            </p>
+           </label>
+          </div>
+          <div>
+           <input id="a1530306629772" name="668023" type="checkbox" value="a1530306629772"/>
+           <label for="a1530306629772">
+            <p>
+             <span class="mathquill ud-math">
+              \dot{u} = rv
+             </span>
+            </p>
+           </label>
+          </div>
+          <div>
+           <input id="a1530306630757" name="668023" type="checkbox" value="a1530306630757"/>
+           <label for="a1530306630757">
+            <p>
+             <span class="mathquill ud-math">
+              \dot{v} = pw - ru
+             </span>
+            </p>
+           </label>
+          </div>
+          <div>
+           <input id="a1530306631285" name="668023" type="checkbox" value="a1530306631285"/>
+           <label for="a1530306631285">
+            <p>
+             <span class="mathquill ud-math">
+              \dot{w} = -pv
+             </span>
+            </p>
+           </label>
+          </div>
+          <div>
+           <input id="a1530306631749" name="668023" type="checkbox" value="a1530306631749"/>
+           <label for="a1530306631749">
+            <p>
+             <span class="mathquill ud-math">
+              \dot{p} = 0
+             </span>
+            </p>
+           </label>
+          </div>
+          <div>
+           <input id="a1530306632541" name="668023" type="checkbox" value="a1530306632541"/>
+           <label for="a1530306632541">
+            <p>
+             <span class="mathquill ud-math">
+              \dot{r} = 0
+             </span>
+            </p>
+           </label>
+          </div>
+         </form>
+         <details>
+          <summary>
+           <strong>
+            SOLUTION:
+           </strong>
+          </summary>
+          <ul>
+           <li>
+            <span class="mathquill">
+             \dot{u} = rv
+            </span>
+           </li>
+           <li>
+            <span class="mathquill">
+             \dot{v} = pw - ru
+            </span>
+           </li>
+           <li>
+            <span class="mathquill">
+             \dot{w} = -pv
+            </span>
+           </li>
+           <li>
+            <span class="mathquill">
+             \dot{p} = 0
+            </span>
+           </li>
+           <li>
+            <span class="mathquill">
+             \dot{r} = 0
+            </span>
+           </li>
+          </ul>
+         </details>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+      </div>
+      <div class="col-12">
+       <p class="text-right">
+        <a class="btn btn-outline-primary mt-4" href="03. Incorporating Forces.html" role="button">
+         Next Concept
+        </a>
+       </p>
+      </div>
+     </div>
+    </main>
+    <footer class="footer">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <p class="text-center">
+         udacity2.0 If you need the newest courses Plase add me wechat: udacity6
+        </p>
+       </div>
+      </div>
+     </div>
+    </footer>
+   </div>
+  </div>
+  <script src="../assets/js/jquery-3.3.1.min.js">
+  </script>
+  <script src="../assets/js/plyr.polyfilled.min.js">
+  </script>
+  <script src="../assets/js/bootstrap.min.js">
+  </script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js">
+  </script>
+  <script src="../assets/js/katex.min.js">
+  </script>
+  <script>
+   // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('02. Force-Free Motion')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+ </body>
+</html>

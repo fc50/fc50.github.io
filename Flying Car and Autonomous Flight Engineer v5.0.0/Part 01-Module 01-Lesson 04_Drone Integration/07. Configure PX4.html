@@ -1,0 +1,394 @@
+<!-- udacimak v1.4.4 -->
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="ie=edge" http-equiv="X-UA-Compatible"/>
+  <title>
+   Configure PX4
+  </title>
+  <link href="../assets/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="../assets/css/plyr.css" rel="stylesheet"/>
+  <link href="../assets/css/katex.min.css" rel="stylesheet"/>
+  <link href="../assets/css/jquery.mCustomScrollbar.min.css" rel="stylesheet"/>
+  <link href="../assets/css/styles.css" rel="stylesheet"/>
+  <link href="../assets/img/udacimak.png" rel="shortcut icon" type="image/png">
+  </link>
+ </head>
+ <body>
+  <div class="wrapper">
+   <nav id="sidebar">
+    <div class="sidebar-header">
+     <h3>
+      Drone Integration
+     </h3>
+    </div>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled components">
+     <li class="">
+      <a href="01. Drone Integration Introduction.html">
+       01. Drone Integration Introduction
+      </a>
+     </li>
+     <li class="">
+      <a href="02. Intel Aero Unboxing.html">
+       02. Intel Aero Unboxing
+      </a>
+     </li>
+     <li class="">
+      <a href="03. Intel Aero First Boot.html">
+       03. Intel Aero First Boot
+      </a>
+     </li>
+     <li class="">
+      <a href="04. A Note on Safety.html">
+       04. A Note on Safety
+      </a>
+     </li>
+     <li class="">
+      <a href="05. Intel Aero Setup.html">
+       05. Intel Aero Setup
+      </a>
+     </li>
+     <li class="">
+      <a href="06. Getting Familiar with QGroundControl.html">
+       06. Getting Familiar with QGroundControl
+      </a>
+     </li>
+     <li class="">
+      <a href="07. Configure PX4.html">
+       07. Configure PX4
+      </a>
+     </li>
+     <li class="">
+      <a href="08. Modifying Backyard Flyer.html">
+       08. Modifying Backyard Flyer
+      </a>
+     </li>
+     <li class="">
+      <a href="09. Let's go Fly!.html">
+       09. Let's go Fly!
+      </a>
+     </li>
+     <li class="">
+      <a href="10. Crazyflie Introduction.html">
+       10. Crazyflie Introduction
+      </a>
+     </li>
+     <li class="">
+      <a href="11. Crazyflie Backyard Flyer.html">
+       11. Crazyflie Backyard Flyer
+      </a>
+     </li>
+     <li class="">
+      <a href="12. Crazyflie Keyboard Control.html">
+       12. Crazyflie Keyboard Control
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+   </nav>
+   <div id="content">
+    <header class="container-fluild header">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <div class="align-items-middle">
+         <button class="btn btn-toggle-sidebar" id="sidebarCollapse" type="button">
+          <div>
+          </div>
+          <div>
+          </div>
+          <div>
+          </div>
+         </button>
+         <h1 style="display: inline-block">
+          07. Configure PX4
+         </h1>
+        </div>
+       </div>
+      </div>
+     </div>
+    </header>
+    <main class="container">
+     <div class="row">
+      <div class="col-12">
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <p>
+          Now that we are familiar with QGroundControl and know how to connect to our drone, let's go ahead and check sensor calibrations and make some configuration changes to the PX4 autopilot.
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+         <p>
+          Nd787 C1 L4 A05 L Configure PX4 1 V2
+         </p>
+        </h3>
+        <video controls="">
+         <source src="07. Nd787 C1 L4 A05 L Configure PX4 1 V2-q2S4JOSX9wA.mp4" type="video/mp4"/>
+         <track default="true" kind="subtitles" label="en" src="07. Nd787 C1 L4 A05 L Configure PX4 1 V2-q2S4JOSX9wA.en.vtt" srclang="en"/>
+        </video>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h1 id="configuring-px4">
+          Configuring PX4
+         </h1>
+         <p>
+          To recap configuring the PX4 autopilot, we:
+         </p>
+         <ul>
+          <li>
+           checked to make sure all our sensors were calibrated and ran any calibrations required
+          </li>
+          <li>
+           checked to make sure our radio was properly calibrated and determined which switches control which channels
+          </li>
+          <li>
+           updated the battery settings to match the battery we are using
+          </li>
+          <li>
+           updated the flight control mode options to ensure we have the following options available:
+           <ul>
+            <li>
+             <code>
+              Manual
+             </code>
+             - most basic level of control, the drone will not maintain altitude or position automatically, will just stay level when no input is provided
+            </li>
+            <li>
+             <code>
+              Altitude
+             </code>
+             - maintains current altitude
+            </li>
+            <li>
+             <code>
+              Position Control
+             </code>
+             - uses GPS information to hold the drone in position when the pilot gives no inputs
+            </li>
+            <li>
+             <code>
+              Offboard
+             </code>
+             - this is the mode in which we give control of the drone to our backyard flyer script
+            </li>
+           </ul>
+          </li>
+          <li>
+           slowed down the flight speed when in
+           <code>
+            Offboard
+           </code>
+           mode by changing the following parameters:
+           <ul>
+            <li>
+             <code>
+              MPC_XY_CRUISE
+             </code>
+             - changed to 4 m/s
+            </li>
+            <li>
+             <code>
+              MPC_XY_VEL_MAX
+             </code>
+             - changed to 5 m/s
+            </li>
+           </ul>
+          </li>
+         </ul>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h2 id="reminders-for-fresh-install-of-px4">
+          Reminders for Fresh Install of PX4
+         </h2>
+         <p>
+          If we've just updated your Intel Aero, or have reflashed a new version of PX4 onto our autopilot, we will need to make sure to complete the initial setup of your autopilot:
+         </p>
+         <ul>
+          <li>
+           ensure sensors have all been calibrated
+          </li>
+          <li>
+           ensure remote control has been calibrated
+          </li>
+          <li>
+           ensure the values in the battery configuration match the battery you will be using
+          </li>
+         </ul>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h2 id="for-generic-px4-autopilot">
+          For Generic PX4 Autopilot
+         </h2>
+         <p>
+          If we are working with a generic PX4 autopilot, PX4 is not by default set up to allow offboard control, so we will need to make sure to enable that.  We can find the
+          <a href="https://dev.px4.io/en/ros/offboard_control.html" rel="noopener noreferrer" target="_blank">
+           detailed instructions here
+          </a>
+          , but in short, we will need to set the
+          <code>
+           SYS_COMPANION
+          </code>
+          parameter to the value
+          <code>
+           357600
+          </code>
+          .  This value tells the PX4 that offboard control will be coming over the normal telemetry link at a baud rate of
+          <code>
+           57600
+          </code>
+          .  For details on the options available for the parameter, we can
+          <a href="https://dev.px4.io/en/advanced/parameter_reference.html#SYS_COMPANION" rel="noopener noreferrer" target="_blank">
+           look at PX4's documentation on the parameters
+          </a>
+          .
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h2 id="disclaimer">
+          Disclaimer
+         </h2>
+         <p>
+          PLEASE REMEMBER THAT YOUR RIGHT TO USE ANY CODE PROVIDED BY UDACITY IS SUBJECT TO OUR TERMS OF USE, THE FLYING CAR SPECIAL TERMS, HONOR CODE, AND COMMUNITY CODE OF CONDUCT. TO THE EXTENT UDACITY PROVIDES YOU CODE TO USE IN CONNECTION WITH DEMONSTRATING FLYING DRONES AND/OR OTHER AUTONOMOUS FLYING VEHICLES, SUCH CODE IS PROVIDED “AS IS” WITH NO REPRESENTATIONS OR WARRANTIES OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NONINFRINGEMENT. YOU ASSUME TOTAL RESPONSIBILITY AND THE ENTIRE RISK FOR YOUR USE OF ANY CODE AND/OR OPERATION OF ANY AUTONOMOUS FLYING/UNMANNED VEHICLES. TO THE FULLEST EXTENT ALLOWED UNDER THE LAW, UDACITY DISCLAIMS ANY AND ALL LIABILITY RELATING TO YOUR USE OF ANY CODE OR YOUR OPERATION OF ANY UNMANNED AIRCRAFT OR FLYING VEHICLE AS SET FORTH IN THE TERMS OF USE, INCLUDING, BUT NOT LIMITED TO PROPERTY DAMAGE, PERSONAL INJURY, OR DEATH. TO THE EXTENT THAT YOU USE UDACITY’S CODE AND/OR YOUR OWN CODE FOR THE PURPOSES OF THIS COURSE, INCLUDING, BUT NOT LIMITED TO, USE CONNECTED WITH A FLYING DRONE, OR AS OTHERWISE ALLOWED BY UDACITY, SUCH USE BY YOU SHALL COMPLY WITH ALL FEDERAL, STATE, PROVINCIAL, AND/OR LOCAL LAWS REGARDING THE LICENSURE, REGISTRATION, AND OPERATION OF UNMANNED AIRCRAFT OR OTHER VEHICLES. FOR EXAMPLE, BUT NOT IN ANY WAY AS A LIMITATION, THE U.S. FEDERAL AVIATION ADMINISTRATION HAS SPECIFIC RULES RELATING TO THE OPERATION OF UNMANNED AIRCRAFT. THERE ARE ALSO PRIVACY REGULATIONS THAT MAY BE APPLICABLE TO YOUR USE OF THE CODE AND/OR OPERATION OF UNMANNED AIRCRAFT AND/OR VEHICLES AND ARE REQUIRED TO COMPLY WITH THOSE LAWS.
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+      </div>
+      <div class="col-12">
+       <p class="text-right">
+        <a class="btn btn-outline-primary mt-4" href="08. Modifying Backyard Flyer.html" role="button">
+         Next Concept
+        </a>
+       </p>
+      </div>
+     </div>
+    </main>
+    <footer class="footer">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <p class="text-center">
+         udacity2.0 If you need the newest courses Plase add me wechat: udacity6
+        </p>
+       </div>
+      </div>
+     </div>
+    </footer>
+   </div>
+  </div>
+  <script src="../assets/js/jquery-3.3.1.min.js">
+  </script>
+  <script src="../assets/js/plyr.polyfilled.min.js">
+  </script>
+  <script src="../assets/js/bootstrap.min.js">
+  </script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js">
+  </script>
+  <script src="../assets/js/katex.min.js">
+  </script>
+  <script>
+   // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('07. Configure PX4')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+ </body>
+</html>

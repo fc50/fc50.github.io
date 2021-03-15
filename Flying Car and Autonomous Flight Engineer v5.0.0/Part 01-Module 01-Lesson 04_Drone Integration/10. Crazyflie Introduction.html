@@ -1,0 +1,288 @@
+<!-- udacimak v1.4.4 -->
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="ie=edge" http-equiv="X-UA-Compatible"/>
+  <title>
+   Crazyflie Introduction
+  </title>
+  <link href="../assets/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="../assets/css/plyr.css" rel="stylesheet"/>
+  <link href="../assets/css/katex.min.css" rel="stylesheet"/>
+  <link href="../assets/css/jquery.mCustomScrollbar.min.css" rel="stylesheet"/>
+  <link href="../assets/css/styles.css" rel="stylesheet"/>
+  <link href="../assets/img/udacimak.png" rel="shortcut icon" type="image/png">
+  </link>
+ </head>
+ <body>
+  <div class="wrapper">
+   <nav id="sidebar">
+    <div class="sidebar-header">
+     <h3>
+      Drone Integration
+     </h3>
+    </div>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled components">
+     <li class="">
+      <a href="01. Drone Integration Introduction.html">
+       01. Drone Integration Introduction
+      </a>
+     </li>
+     <li class="">
+      <a href="02. Intel Aero Unboxing.html">
+       02. Intel Aero Unboxing
+      </a>
+     </li>
+     <li class="">
+      <a href="03. Intel Aero First Boot.html">
+       03. Intel Aero First Boot
+      </a>
+     </li>
+     <li class="">
+      <a href="04. A Note on Safety.html">
+       04. A Note on Safety
+      </a>
+     </li>
+     <li class="">
+      <a href="05. Intel Aero Setup.html">
+       05. Intel Aero Setup
+      </a>
+     </li>
+     <li class="">
+      <a href="06. Getting Familiar with QGroundControl.html">
+       06. Getting Familiar with QGroundControl
+      </a>
+     </li>
+     <li class="">
+      <a href="07. Configure PX4.html">
+       07. Configure PX4
+      </a>
+     </li>
+     <li class="">
+      <a href="08. Modifying Backyard Flyer.html">
+       08. Modifying Backyard Flyer
+      </a>
+     </li>
+     <li class="">
+      <a href="09. Let's go Fly!.html">
+       09. Let's go Fly!
+      </a>
+     </li>
+     <li class="">
+      <a href="10. Crazyflie Introduction.html">
+       10. Crazyflie Introduction
+      </a>
+     </li>
+     <li class="">
+      <a href="11. Crazyflie Backyard Flyer.html">
+       11. Crazyflie Backyard Flyer
+      </a>
+     </li>
+     <li class="">
+      <a href="12. Crazyflie Keyboard Control.html">
+       12. Crazyflie Keyboard Control
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+   </nav>
+   <div id="content">
+    <header class="container-fluild header">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <div class="align-items-middle">
+         <button class="btn btn-toggle-sidebar" id="sidebarCollapse" type="button">
+          <div>
+          </div>
+          <div>
+          </div>
+          <div>
+          </div>
+         </button>
+         <h1 style="display: inline-block">
+          10. Crazyflie Introduction
+         </h1>
+        </div>
+       </div>
+      </div>
+     </div>
+    </header>
+    <main class="container">
+     <div class="row">
+      <div class="col-12">
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h2 id="getting-started-with-the-crazyflie">
+          Getting Started With the Crazyflie
+         </h2>
+         <p>
+          First things first, we will follow along with Bitcraze's
+          <a href="https://www.bitcraze.io/getting-started-with-the-crazyflie-2-0/" rel="noopener noreferrer" target="_blank">
+           detailed walkthrough
+          </a>
+          to get our crazyflie all set up and ready to fly.  Out of the box the crazyflie may not have the most up to date firmware, so we will make sure to follow Bitcraze's guide to making sure our crazyflie is completely up to date.
+         </p>
+         <p>
+          When following the guide, it's important to make sure we've installed the computer client and the necessary drivers for the antenna, as we will need to use both of these as we further configure the crazyflie and run our backyard flyer script on it.
+         </p>
+         <h3 id="additional-setup">
+          Additional Setup
+         </h3>
+         <p>
+          In addition to the setup steps outlined in the walkthrough, we want to configure our crazyflie radio connection to have a bit of a higher bandwidth.  This will help to reduce some of the latency on getting information from the crazyflie when we are running the backyard flyer script.
+         </p>
+         <p>
+          To do so, we will open the client, navigate to
+          <code>
+           Connect
+          </code>
+          , select the
+          <code>
+           Configure 2.0
+          </code>
+          option and change the bandwidth from
+          <code>
+           250k
+          </code>
+          to
+          <code>
+           2M
+          </code>
+          .
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h2 id="a-note-on-perception">
+          A Note on Perception
+         </h2>
+         <p>
+          The crazyflie is not equipped with GPS and therefore needs alternative means to be able to know its position information.  The FlowDeck enables the crazyflie to determine position, however it does pose a few limitations that will need to be considered when controlling the crazyflie with the backyard flyer script.
+         </p>
+         <p>
+          With the FlowDeck, the Crazyflie uses optical flow to measure velocity to be used for a position estimate.  This will drift over time, so the crazyflie may not be capable of doing very long straight flight segments when flying autonomously.  This also means it doesn't really have an absolute frame of reference, which means it flies in a local XYZ frame, not an NED frame.  In short, this means that when flying the backyard flyer, a 1m change North, will really just be a 1m change forward from the initial position and heading.  This is the same for all subsequent commands (e.g. a 1m change E won't necessarily go E, but will go to the right 1m).
+         </p>
+         <p>
+          What was altitude is now height above the ground as the crazyflie uses a small laser range finder to determine its height above the ground.  This results in 2 behaviors of importance.  First, the sensor doesn't have unlimited range, therefore it is possible to fly "too high", being above the sensor's range and no longer being able to get good information.  Second, it means that the crazyflie will follow the contours of the environment, meaning if we command a height of 1m but have the path go over a table, the crazyflie will increase it's height above the ground such that it is 1m above the table (its local perception of the ground).
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+      </div>
+      <div class="col-12">
+       <p class="text-right">
+        <a class="btn btn-outline-primary mt-4" href="11. Crazyflie Backyard Flyer.html" role="button">
+         Next Concept
+        </a>
+       </p>
+      </div>
+     </div>
+    </main>
+    <footer class="footer">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <p class="text-center">
+         udacity2.0 If you need the newest courses Plase add me wechat: udacity6
+        </p>
+       </div>
+      </div>
+     </div>
+    </footer>
+   </div>
+  </div>
+  <script src="../assets/js/jquery-3.3.1.min.js">
+  </script>
+  <script src="../assets/js/plyr.polyfilled.min.js">
+  </script>
+  <script src="../assets/js/bootstrap.min.js">
+  </script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js">
+  </script>
+  <script src="../assets/js/katex.min.js">
+  </script>
+  <script>
+   // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('10. Crazyflie Introduction')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+ </body>
+</html>

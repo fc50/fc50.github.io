@@ -1,0 +1,333 @@
+<!-- udacimak v1.4.4 -->
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="ie=edge" http-equiv="X-UA-Compatible"/>
+  <title>
+   Drone Integration Introduction
+  </title>
+  <link href="../assets/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="../assets/css/plyr.css" rel="stylesheet"/>
+  <link href="../assets/css/katex.min.css" rel="stylesheet"/>
+  <link href="../assets/css/jquery.mCustomScrollbar.min.css" rel="stylesheet"/>
+  <link href="../assets/css/styles.css" rel="stylesheet"/>
+  <link href="../assets/img/udacimak.png" rel="shortcut icon" type="image/png">
+  </link>
+ </head>
+ <body>
+  <div class="wrapper">
+   <nav id="sidebar">
+    <div class="sidebar-header">
+     <h3>
+      Drone Integration
+     </h3>
+    </div>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled components">
+     <li class="">
+      <a href="01. Drone Integration Introduction.html">
+       01. Drone Integration Introduction
+      </a>
+     </li>
+     <li class="">
+      <a href="02. Intel Aero Unboxing.html">
+       02. Intel Aero Unboxing
+      </a>
+     </li>
+     <li class="">
+      <a href="03. Intel Aero First Boot.html">
+       03. Intel Aero First Boot
+      </a>
+     </li>
+     <li class="">
+      <a href="04. A Note on Safety.html">
+       04. A Note on Safety
+      </a>
+     </li>
+     <li class="">
+      <a href="05. Intel Aero Setup.html">
+       05. Intel Aero Setup
+      </a>
+     </li>
+     <li class="">
+      <a href="06. Getting Familiar with QGroundControl.html">
+       06. Getting Familiar with QGroundControl
+      </a>
+     </li>
+     <li class="">
+      <a href="07. Configure PX4.html">
+       07. Configure PX4
+      </a>
+     </li>
+     <li class="">
+      <a href="08. Modifying Backyard Flyer.html">
+       08. Modifying Backyard Flyer
+      </a>
+     </li>
+     <li class="">
+      <a href="09. Let's go Fly!.html">
+       09. Let's go Fly!
+      </a>
+     </li>
+     <li class="">
+      <a href="10. Crazyflie Introduction.html">
+       10. Crazyflie Introduction
+      </a>
+     </li>
+     <li class="">
+      <a href="11. Crazyflie Backyard Flyer.html">
+       11. Crazyflie Backyard Flyer
+      </a>
+     </li>
+     <li class="">
+      <a href="12. Crazyflie Keyboard Control.html">
+       12. Crazyflie Keyboard Control
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+   </nav>
+   <div id="content">
+    <header class="container-fluild header">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <div class="align-items-middle">
+         <button class="btn btn-toggle-sidebar" id="sidebarCollapse" type="button">
+          <div>
+          </div>
+          <div>
+          </div>
+          <div>
+          </div>
+         </button>
+         <h1 style="display: inline-block">
+          01. Drone Integration Introduction
+         </h1>
+        </div>
+       </div>
+      </div>
+     </div>
+    </header>
+    <main class="container">
+     <div class="row">
+      <div class="col-12">
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <p>
+          Now that we've had a chance to control a drone in simulation, we will take a look at bringing those concepts to a real drone!
+         </p>
+         <p>
+          In this lesson, we will familiarize ourselves with some examples of commercially available drones.  We will explore some of the features, functionality, and limitations of these aerial robots.  We will focus on some example drones that are compatible with the Udacidrone interface, meaning they will be compatible with the code we've written for the simulator!
+         </p>
+         <p>
+          Whether or not you are following along with your very own drone, this lesson provides an introduction to some common parts of the drone ecosystem.  For this lesson, we will be using an Intel Aero Ready to Fly drone as an example platform, but it is important to note that many of the features and functionality we discuss is quite typical of many drones.
+         </p>
+         <p>
+          <strong>
+           Note:
+          </strong>
+          The Intel Aero drone unfortunately ceased production in early 2019, with only limited availability on the re-sale market. As noted above, a lot of this lesson will still apply to other drones as well.
+         </p>
+         <p>
+          We will go through some high-level topics (e.g. manual command and control), some of the core elements making up a drone system (not just the drone itself, but also pieces such as the remote control, ground stations, autonomous control, etc), and what it starts to look like as we move beyond having a drone as a toy to just fly around and start to run our own code on the drone, getting it to really do what we want and how we want it.
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h2 id="compatible-platforms">
+          Compatible Platforms
+         </h2>
+         <p>
+          All the python code written in the project is designed to communicate with the simulator and a real drone through the Udacidrone API.  At the moment Udacidrone fully supports all PX4 drones and development for Crazyflie support is in progress.  To ensure the best experience with integrating code onto a real drone, we recommend one of the following drones:
+         </p>
+         <ul>
+          <li>
+           Intel's
+           <a href="https://www.intel.com/content/www/us/en/products/drones/aero-ready-to-fly.html" rel="noopener noreferrer" target="_blank">
+            Aero Ready to Fly
+           </a>
+           drone
+          </li>
+          <li>
+           Bitcraze's
+           <a href="https://store.bitcraze.io/collections/bundles/products/stem-drone-bundle" rel="noopener noreferrer" target="_blank">
+            Crazyflie 2.1
+           </a>
+          </li>
+         </ul>
+         <p>
+          The Crazyflie is the recommended platform for students who are new to flying drones. Udacity has partnered with Bitcraze to offer Flying Car Nanodegree students an exclusive discount for the Crazyflie drone bundle. In order to receive the Bitcraze discount offer via email, you will need to be subscribed to the Udacity email. You may check your email subscription settings in your Udacity account settings. If you did not receive an email but would like to purchase the drone bundle, please contact your mentor and they will be able to assist you.
+         </p>
+         <p>
+          The following lessons are developed around the Intel Aero, however, Crazyflie lessons are on their way!
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h2 id="purchasing">
+          Purchasing
+         </h2>
+         <h3 id="intel-aero">
+          Intel Aero
+         </h3>
+         <p>
+          When buying the Intel Aero, there are a couple additional items to make sure you have in order to take full advantage of your Intel Aero and its onboard computer.
+         </p>
+         <ol>
+          <li>
+           <p>
+            The battery needed for flight does not come with the Aero and needs to be purchased separately.  Intel recommends either a 3S or a 4S LiPo battery with at least 4500mAh of capacity and an XT60 connector.  Consult their
+            <a href="https://github.com/intel-aero/meta-intel-aero/wiki/01-About-Intel-Aero#powering-the-intel-aero-ready-to-fly-drone-for-developers" rel="noopener noreferrer" target="_blank">
+             detailed instruction manual
+            </a>
+            for more details such as the maximum possible battery dimensions.
+           </p>
+          </li>
+          <li>
+           <p>
+            To connect the computer to a monitor, you will need a cable that has a micro-HDMI end for the Intel Aero.  For example you may want a micro-HDMI to HDMI cable (e.g. a regular TV) or micro-HDMI to DVI or micro-HDMI to display port (e.g. a computer monitor).
+           </p>
+          </li>
+          <li>
+           <p>
+            To use the computer with a keyboard and mouse, you will need an OTG micro-usb cable and a USB hub with the number of ports you may need.
+           </p>
+          </li>
+          <li>
+           <p>
+            A wall power adapter to be able to use the computer without needing to run it off a battery.  See Intel's
+            <a href="https://github.com/intel-aero/meta-intel-aero/wiki/01-About-Intel-Aero#powering-the-intel-aero-ready-to-fly-drone-for-developers" rel="noopener noreferrer" target="_blank">
+             guide for powering the intel aero
+            </a>
+            to get an idea of the power requirements for the wall adatper.
+            <strong>
+             Note that you will not be able to power the motors with these wall adapters, this is for bench work only!
+            </strong>
+           </p>
+          </li>
+         </ol>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+      </div>
+      <div class="col-12">
+       <p class="text-right">
+        <a class="btn btn-outline-primary mt-4" href="02. Intel Aero Unboxing.html" role="button">
+         Next Concept
+        </a>
+       </p>
+      </div>
+     </div>
+    </main>
+    <footer class="footer">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <p class="text-center">
+         udacity2.0 If you need the newest courses Plase add me wechat: udacity6
+        </p>
+       </div>
+      </div>
+     </div>
+    </footer>
+   </div>
+  </div>
+  <script src="../assets/js/jquery-3.3.1.min.js">
+  </script>
+  <script src="../assets/js/plyr.polyfilled.min.js">
+  </script>
+  <script src="../assets/js/bootstrap.min.js">
+  </script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js">
+  </script>
+  <script src="../assets/js/katex.min.js">
+  </script>
+  <script>
+   // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('01. Drone Integration Introduction')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+ </body>
+</html>

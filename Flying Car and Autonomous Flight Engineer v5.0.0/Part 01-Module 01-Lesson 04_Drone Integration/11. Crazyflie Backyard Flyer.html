@@ -1,0 +1,524 @@
+<!-- udacimak v1.4.4 -->
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="ie=edge" http-equiv="X-UA-Compatible"/>
+  <title>
+   Crazyflie Backyard Flyer
+  </title>
+  <link href="../assets/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="../assets/css/plyr.css" rel="stylesheet"/>
+  <link href="../assets/css/katex.min.css" rel="stylesheet"/>
+  <link href="../assets/css/jquery.mCustomScrollbar.min.css" rel="stylesheet"/>
+  <link href="../assets/css/styles.css" rel="stylesheet"/>
+  <link href="../assets/img/udacimak.png" rel="shortcut icon" type="image/png">
+  </link>
+ </head>
+ <body>
+  <div class="wrapper">
+   <nav id="sidebar">
+    <div class="sidebar-header">
+     <h3>
+      Drone Integration
+     </h3>
+    </div>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled components">
+     <li class="">
+      <a href="01. Drone Integration Introduction.html">
+       01. Drone Integration Introduction
+      </a>
+     </li>
+     <li class="">
+      <a href="02. Intel Aero Unboxing.html">
+       02. Intel Aero Unboxing
+      </a>
+     </li>
+     <li class="">
+      <a href="03. Intel Aero First Boot.html">
+       03. Intel Aero First Boot
+      </a>
+     </li>
+     <li class="">
+      <a href="04. A Note on Safety.html">
+       04. A Note on Safety
+      </a>
+     </li>
+     <li class="">
+      <a href="05. Intel Aero Setup.html">
+       05. Intel Aero Setup
+      </a>
+     </li>
+     <li class="">
+      <a href="06. Getting Familiar with QGroundControl.html">
+       06. Getting Familiar with QGroundControl
+      </a>
+     </li>
+     <li class="">
+      <a href="07. Configure PX4.html">
+       07. Configure PX4
+      </a>
+     </li>
+     <li class="">
+      <a href="08. Modifying Backyard Flyer.html">
+       08. Modifying Backyard Flyer
+      </a>
+     </li>
+     <li class="">
+      <a href="09. Let's go Fly!.html">
+       09. Let's go Fly!
+      </a>
+     </li>
+     <li class="">
+      <a href="10. Crazyflie Introduction.html">
+       10. Crazyflie Introduction
+      </a>
+     </li>
+     <li class="">
+      <a href="11. Crazyflie Backyard Flyer.html">
+       11. Crazyflie Backyard Flyer
+      </a>
+     </li>
+     <li class="">
+      <a href="12. Crazyflie Keyboard Control.html">
+       12. Crazyflie Keyboard Control
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+   </nav>
+   <div id="content">
+    <header class="container-fluild header">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <div class="align-items-middle">
+         <button class="btn btn-toggle-sidebar" id="sidebarCollapse" type="button">
+          <div>
+          </div>
+          <div>
+          </div>
+          <div>
+          </div>
+         </button>
+         <h1 style="display: inline-block">
+          11. Crazyflie Backyard Flyer
+         </h1>
+        </div>
+       </div>
+      </div>
+     </div>
+    </header>
+    <main class="container">
+     <div class="row">
+      <div class="col-12">
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h1 id="backyard-flyer-modifications">
+          Backyard Flyer Modifications
+         </h1>
+         <p>
+          Just like with the Intel Aero and the simulator, the crazyflie is also able to be controlled (to an extent) through the Udacidrone API.
+         </p>
+         <p>
+          We will need to make the following modifications to our backyard flyer script to be able to control our crazyflie:
+         </p>
+         <ol>
+          <li>
+           update the connection
+          </li>
+          <li>
+           modify arming and disarming flow
+          </li>
+          <li>
+           update waypoints
+          </li>
+          <li>
+           update takeoff target altitude
+          </li>
+          <li>
+           update waypoint acceptance thresholds
+          </li>
+         </ol>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h2 id="0-upgrade-udacidrone">
+          0. Upgrade
+          <code>
+           udacidrone
+          </code>
+         </h2>
+         <p>
+          You'll want to make sure you have the latest version of
+          <code>
+           udacidrone
+          </code>
+          . You can install the latest version by activating your virtual environment and then doing a
+          <code>
+           pip install -U git+https://github.com/udacity/udacidrone.git
+          </code>
+         </p>
+         <h2 id="1-update-connection">
+          1. Update Connection
+         </h2>
+         <p>
+          The crazyflie's default firmware uses it's own communication protocol, Crazy RealTime Protocol (CRTP), instead of Mavlink, therefore we will need to change to using the
+          <code>
+           CrazyflieConnection
+          </code>
+          that can be found in Udacidrone starting with version 0.3.0 (
+          <strong>
+           NOTE: you may have to update your version of Udacidrone
+          </strong>
+          ).
+         </p>
+         <ol>
+          <li>
+           add an import for
+           <code>
+            CrazyflieConnection
+           </code>
+          </li>
+         </ol>
+         <pre><code class="python language-python">from udacidrone.connection import CrazyflieConnection</code></pre>
+         <ol start="2">
+          <li>
+           At the bottom of the
+           <code>
+            backyard_flyer.py
+           </code>
+           script, we will replace our connection object
+          </li>
+         </ol>
+         <pre><code class="python language-python"># replace 
+conn = MavlinkConnection('tcp:{0}:{1}'.format(args.host, args.port))
+
+# with
+conn = CrazyflieConnection('radio://0/80/2M')</code></pre>
+         <p>
+          This will create a connection to the crazyflie.  The input string is the URI of the crazyflie, which is defined as a string formated as
+          <code>
+           'radio://interface id/interface channel/interface speed
+          </code>
+          .  For our setup, we have kept the default interface id and interface channel, but have increased the speed from the default value of
+          <code>
+           250K
+          </code>
+          to
+          <code>
+           2M
+          </code>
+          .  Each of these values can be adjusted through the crazyflie desktop client.  In an area with multiple crazyflie's flying around, it is best to change the interface id and channel to make sure each crazyflie is unique.
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h2 id="2-modify-arming-and-disarming">
+          2. Modify Arming and Disarming
+         </h2>
+         <p>
+          The idea of being
+          <code>
+           armed
+          </code>
+          or in
+          <code>
+           guided
+          </code>
+          mode does not exist with the crazyflie, therefore we will need to modify those parts of the flow of the script.  Even more generally, the concept of state for the crazyflie is very different than what is used with the simulator or with PX4.  As a result, the
+          <code>
+           state_callback()
+          </code>
+          callback will never be called!  Since the state callback was responsible for takeoff transition, we will need to modify another one of the callbacks to handle that purpose.
+         </p>
+         <h3 id="arming--takeoff">
+          Arming / Takeoff
+         </h3>
+         <p>
+          We will choose to augment the local position callback with code needed to be able to issue the takeoff command as needed, by adding the following code to the top of the callback:
+         </p>
+         <pre><code class="python language-python">def local_position_callback(self)
+
+    if self.flight_state == States.MANUAL:
+        self.takeoff_transition()
+
+    ...</code></pre>
+         <p>
+          Once the first local position message is received the takeoff command will be issued, since the drone starts in the
+          <code>
+           MANUAL
+          </code>
+          state.  Note that we've made the takeoff altitude much smaller than what was used in the simulator since we will be flying in an indoor environment.
+         </p>
+         <h3 id="disarming--ending-mission">
+          Disarming / Ending Mission
+         </h3>
+         <p>
+          The same problem exists at the other end of the flight; with no
+          <code>
+           armed
+          </code>
+          and
+          <code>
+           guided
+          </code>
+          information, we don't know when to consider the flight complete and the mission over.  Instead we will use the landing condition as the end of the flight.  To do this, we will
+          <strong>
+           REPLACE
+          </strong>
+          <code>
+           velocity_callback()
+          </code>
+          with the following:
+         </p>
+         <pre><code class="python language-python">def velocity_callback(self):
+    if self.flight_state == States.LANDING:
+        if abs(self.local_position[2] &lt; 0.01):
+            self.manual_transition()</code></pre>
+         <p>
+          We will still use the manual transition function as it contains all the code to consider the flight as completed and stop the connection and the script.
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h2 id="3-update-waypoints">
+          3. Update Waypoints
+         </h2>
+         <p>
+          In the simulator, we had the ability to reset our "zero" position for the world to our current position, allowing us to command a 10 meter box with fairly straightforward commands.  This is not possible with the crazyflie, so we will modify the coordinates of the box to take into account the position of the drone at takeoff (when the box coordinates are created).  To do this, we will modify
+          <code>
+           calculate_box()
+          </code>
+          to be:
+         </p>
+         <pre><code class="python language-python">def calculate_box(self):
+    cp = self.local_position
+    cp[2] = 0
+    local_waypoints = [cp + [1.0, 0.0, 0.5], cp + [1.0, 1.0, 0.5], cp + [0.0, 1.0, 0.5], cp + [0.0, 0.0, 0.5]]
+    return local_waypoints</code></pre>
+         <p>
+          Notice we've set each of the coordinates to simply be shifted by the current position of the crazyflie when the calculate box function is run. Also notice, since we are flying out crazyflie inside, we have changed the coordinates to be a much smaller box, here a 1m box at an altitude of 0.5m.
+         </p>
+         <h2 id="4-update-takeoff-target-altitude">
+          4. Update Takeoff Target Altitude
+         </h2>
+         <p>
+          For that same safety reason, we've also changed the
+          <code>
+           target_altitude
+          </code>
+          in the takeoff transition to match the 0.5m flight altitude for the box.
+          <strong>
+           If you have your own crazyflie and are planning to fly it indoors, we highly recommend changing the size of your box to make sure it can fly comfortably in the space you are using!
+          </strong>
+         </p>
+         <h2 id="5-update-waypoint-acceptance-thresholds">
+          5. Update Waypoint Acceptance Thresholds
+         </h2>
+         <p>
+          When flying the backyard flyer in the simulator, the box was 10 meters on each side, so an acceptance threshold for a waypoint of 1 meter was reasonable.  Now that we've reduced the box size to something more appropriate for inside (e.g. 1 meter on a side), we need to update the acceptance thresholds for waypoints to ensure the drone doesn't preemptively transition from one waypoint to another.
+         </p>
+         <p>
+          In the
+          <code>
+           local_position()
+          </code>
+          callback, you can change the waypoint acceptance threshold by changing the following line:
+         </p>
+         <pre><code class="python language-python">def local_position_callback(self):
+    ...
+    # change this line:
+    if np.linalg.norm(self.target_position[0:2] - self.local_position[0:2]) &lt; 1.0:
+        ...
+
+    # to this line:
+    if np.linalg.norm(self.target_position[0:2] - self.local_position[0:2]) &lt; 0.2:
+        ...</code></pre>
+         <p>
+          You may find you also need to change it for the acceptance on velocity to trigger than landing transition:
+         </p>
+         <pre><code class="python language-python">def local_position_callback(self):
+    ...
+    # change this line:
+    if np.linalg.norm(self.local_velocity[0:2]) &lt; 1.0:
+        ...
+
+    # to this line:
+    if np.linalg.norm(self.local_velocity[0:2]) &lt; 0.5:
+        ...</code></pre>
+         <p>
+          Note here we've adjusted the threshold to 0.2 meters for waypoints and 0.5 m/s for landing.  You may find you need to play around with that threshold based on the size of the box you are flying.
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h2 id="flying">
+          Flying!
+         </h2>
+         <p>
+          And now we are ready to fly our crazyflie!  To run the script we will:
+         </p>
+         <ol>
+          <li>
+           <p>
+            Plug in the crazyflie and set it on the ground, with the front pointed in the desired direction.  This starting position is the bottom left hand corner of our box, so we will make sure to point it towards our open space designated for flying.
+           </p>
+          </li>
+          <li>
+           <p>
+            Plug in the Crazyradio into the computer
+           </p>
+          </li>
+          <li>
+           <p>
+            Make sure you're in the
+            <code>
+             fcnd
+            </code>
+            workspace, and then run the script,
+            <code>
+             python backyard_flyer.py
+            </code>
+           </p>
+          </li>
+          <li>
+           <p>
+            We will see the connection complete, a short pause (this is for the sensors to calibrate) and then the crazyflie should takeoff and complete the mission!
+           </p>
+          </li>
+         </ol>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+      </div>
+      <div class="col-12">
+       <p class="text-right">
+        <a class="btn btn-outline-primary mt-4" href="12. Crazyflie Keyboard Control.html" role="button">
+         Next Concept
+        </a>
+       </p>
+      </div>
+     </div>
+    </main>
+    <footer class="footer">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <p class="text-center">
+         udacity2.0 If you need the newest courses Plase add me wechat: udacity6
+        </p>
+       </div>
+      </div>
+     </div>
+    </footer>
+   </div>
+  </div>
+  <script src="../assets/js/jquery-3.3.1.min.js">
+  </script>
+  <script src="../assets/js/plyr.polyfilled.min.js">
+  </script>
+  <script src="../assets/js/bootstrap.min.js">
+  </script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js">
+  </script>
+  <script src="../assets/js/katex.min.js">
+  </script>
+  <script>
+   // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('11. Crazyflie Backyard Flyer')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+ </body>
+</html>

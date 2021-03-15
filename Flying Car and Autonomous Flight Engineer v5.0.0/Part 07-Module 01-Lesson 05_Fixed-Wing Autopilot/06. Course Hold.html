@@ -1,0 +1,310 @@
+<!-- udacimak v1.4.4 -->
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="ie=edge" http-equiv="X-UA-Compatible"/>
+  <title>
+   Course Hold
+  </title>
+  <link href="../assets/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="../assets/css/plyr.css" rel="stylesheet"/>
+  <link href="../assets/css/katex.min.css" rel="stylesheet"/>
+  <link href="../assets/css/jquery.mCustomScrollbar.min.css" rel="stylesheet"/>
+  <link href="../assets/css/styles.css" rel="stylesheet"/>
+  <link href="../assets/img/udacimak.png" rel="shortcut icon" type="image/png">
+  </link>
+ </head>
+ <body>
+  <div class="wrapper">
+   <nav id="sidebar">
+    <div class="sidebar-header">
+     <h3>
+      Fixed-Wing Autopilot
+     </h3>
+    </div>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled components">
+     <li class="">
+      <a href="01. Lesson Introduction.html">
+       01. Lesson Introduction
+      </a>
+     </li>
+     <li class="">
+      <a href="02. Fixed Wing Trajectories.html">
+       02. Fixed Wing Trajectories
+      </a>
+     </li>
+     <li class="">
+      <a href="03. System Architecture.html">
+       03. System Architecture
+      </a>
+     </li>
+     <li class="">
+      <a href="04. Controller Design Principles.html">
+       04. Controller Design Principles
+      </a>
+     </li>
+     <li class="">
+      <a href="05. Lateral Autopilot.html">
+       05. Lateral Autopilot
+      </a>
+     </li>
+     <li class="">
+      <a href="06. Course Hold.html">
+       06. Course Hold
+      </a>
+     </li>
+     <li class="">
+      <a href="07. Inner Loops Roll and Sideslip Hold.html">
+       07. Inner Loops: Roll and Sideslip Hold
+      </a>
+     </li>
+     <li class="">
+      <a href="08. Longitudinal Autopilot.html">
+       08. Longitudinal Autopilot
+      </a>
+     </li>
+     <li class="">
+      <a href="09. Longitudinal Control Loops.html">
+       09. Longitudinal Control Loops
+      </a>
+     </li>
+     <li class="">
+      <a href="10. Autopilot Tuning.html">
+       10. Autopilot Tuning
+      </a>
+     </li>
+     <li class="">
+      <a href="11. Integrator Windup.html">
+       11. Integrator Windup
+      </a>
+     </li>
+     <li class="">
+      <a href="12. Conclusion.html">
+       12. Conclusion
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+   </nav>
+   <div id="content">
+    <header class="container-fluild header">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <div class="align-items-middle">
+         <button class="btn btn-toggle-sidebar" id="sidebarCollapse" type="button">
+          <div>
+          </div>
+          <div>
+          </div>
+          <div>
+          </div>
+         </button>
+         <h1 style="display: inline-block">
+          06. Course Hold
+         </h1>
+        </div>
+       </div>
+      </div>
+     </div>
+    </header>
+    <main class="container">
+     <div class="row">
+      <div class="col-12">
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h1 id="course-attitude-hold">
+          Course Attitude Hold
+         </h1>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <figure class="figure">
+          <img alt="The course-attitude hold controller is shown in the upper left." class="img img-fluid" src="img/control-diagrams-4.png"/>
+          <figcaption class="figure-caption">
+           <p>
+            The course-attitude hold controller is shown in the upper left.
+           </p>
+          </figcaption>
+         </figure>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <p>
+          The
+          <strong>
+           course attitude hold
+          </strong>
+          controller is a PI controller which uses the commanded heading angle
+          <span class="mathquill ud-math">
+           \chi_c
+          </span>
+          to command a roll angle
+          <span class="mathquill ud-math">
+           \phi_c
+          </span>
+          .
+         </p>
+         <div class="mathquill">
+          \begin{aligned}
+  E_{\chi_t} &amp;= \chi^c_t - \chi_t\\
+  I_{\chi_t} &amp;= I_{\chi_{t-1}} + E_{\chi_t}\Delta t\\
+  \phi^c &amp;= k_{p_\chi}E_{\chi_t} + k_{i_\chi}I_{\chi_t}
+\end{aligned}
+         </div>
+         <h4 id="the-need-for-an-integrator">
+          The Need for an Integrator
+         </h4>
+         <p>
+          The integrator term is important here. Its job is to correct for modeling errors, which are much more likely to show up here than in the inner loop. The flight path angle is a much more complex nonlinear function of the state of the vehicle, which we are linearizing around.
+         </p>
+         <p>
+          There's a potential problem lurking here. We need the course hold controller to know about the limits on the roll attitude: we don't want to bank so far over that we can't compensate for gravity with our lift vector.
+         </p>
+         <p>
+          If the changes in commanded flight path angles are too aggressive, then either the course hold controller will ask for too large of a roll change or it will need to saturate at some maximum roll
+          <span class="mathquill ud-math">
+           \phi_{\text{max}}^c
+          </span>
+          . In either case, there may be significant error in the flight path angle and this error will build up in the integrator.
+         </p>
+         <p>
+          This buildup is known as integrator "windup" and we'll discuss it more later in this lesson.
+         </p>
+         <h4 id="what-about-a-d-term">
+          What about a D term?
+         </h4>
+         <p>
+          We don't need a derivative term. Remember, the role of the derivative term is to damp the response of the system, but in a cascaded system we want to run the outer loop much more slowly than the inner loop.
+         </p>
+         <p>
+          The reason for this is that each control loop has finite response time, and the outer loop has to give the inner loop time to respond to the last command before sending the next one. If we run the outer loop too slowly, the system will not be responsive enough. If we run the outer loop too quickly the system is likely to be unstable, as the inner loop will constantly be chasing what the outer loop tells it to do.
+         </p>
+         <p>
+          Since the outer loop is running much more slowly than the inner loop, it shouldn't need any damping.
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+      </div>
+      <div class="col-12">
+       <p class="text-right">
+        <a class="btn btn-outline-primary mt-4" href="07. Inner Loops Roll and Sideslip Hold.html" role="button">
+         Next Concept
+        </a>
+       </p>
+      </div>
+     </div>
+    </main>
+    <footer class="footer">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <p class="text-center">
+         udacity2.0 If you need the newest courses Plase add me wechat: udacity6
+        </p>
+       </div>
+      </div>
+     </div>
+    </footer>
+   </div>
+  </div>
+  <script src="../assets/js/jquery-3.3.1.min.js">
+  </script>
+  <script src="../assets/js/plyr.polyfilled.min.js">
+  </script>
+  <script src="../assets/js/bootstrap.min.js">
+  </script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js">
+  </script>
+  <script src="../assets/js/katex.min.js">
+  </script>
+  <script>
+   // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('06. Course Hold')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+ </body>
+</html>
