@@ -1,0 +1,485 @@
+<!-- udacimak v1.4.4 -->
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="ie=edge" http-equiv="X-UA-Compatible"/>
+  <title>
+   Physics Review
+  </title>
+  <link href="../assets/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="../assets/css/plyr.css" rel="stylesheet"/>
+  <link href="../assets/css/katex.min.css" rel="stylesheet"/>
+  <link href="../assets/css/jquery.mCustomScrollbar.min.css" rel="stylesheet"/>
+  <link href="../assets/css/styles.css" rel="stylesheet"/>
+  <link href="../assets/img/udacimak.png" rel="shortcut icon" type="image/png">
+  </link>
+ </head>
+ <body>
+  <div class="wrapper">
+   <nav id="sidebar">
+    <div class="sidebar-header">
+     <h3>
+      Lift and Drag
+     </h3>
+    </div>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled components">
+     <li class="">
+      <a href="01. Introduction to Lift and Drag.html">
+       01. Introduction to Lift and Drag
+      </a>
+     </li>
+     <li class="">
+      <a href="02. Physics Review.html">
+       02. Physics Review
+      </a>
+     </li>
+     <li class="">
+      <a href="03. Fixed Wing Dynamics Longitudinal vs LateralDirectional.html">
+       03. Fixed Wing Dynamics: Longitudinal vs Lateral/Directional
+      </a>
+     </li>
+     <li class="">
+      <a href="04. Longitudinal Analysis 1.html">
+       04. Longitudinal Analysis 1
+      </a>
+     </li>
+     <li class="">
+      <a href="05. Longitudinal Analysis 2.html">
+       05. Longitudinal Analysis 2
+      </a>
+     </li>
+     <li class="">
+      <a href="06. Frames of Reference Summary.html">
+       06. Frames of Reference Summary
+      </a>
+     </li>
+     <li class="">
+      <a href="07. Rotation Matrices Exercise.html">
+       07. Rotation Matrices Exercise
+      </a>
+     </li>
+     <li class="">
+      <a href="08. Lift and Stall.html">
+       08. Lift and Stall
+      </a>
+     </li>
+     <li class="">
+      <a href="09. Calculating Lift.html">
+       09. Calculating Lift
+      </a>
+     </li>
+     <li class="">
+      <a href="10. Drag.html">
+       10. Drag
+      </a>
+     </li>
+     <li class="">
+      <a href="11. Pitching.html">
+       11. Pitching
+      </a>
+     </li>
+     <li class="">
+      <a href="12. Trim States and Simplified Models.html">
+       12. Trim States and Simplified Models
+      </a>
+     </li>
+     <li class="">
+      <a href="13. Straight and Level Flight.html">
+       13. Straight and Level Flight
+      </a>
+     </li>
+     <li class="">
+      <a href="14. Climbing Flight.html">
+       14. Climbing Flight
+      </a>
+     </li>
+     <li class="">
+      <a href="15. Fixed Wing Cheat Sheet.html">
+       15. Fixed Wing Cheat Sheet
+      </a>
+     </li>
+     <li class="">
+      <a href="16. Lift and Drag Exercise.html">
+       16. Lift and Drag Exercise
+      </a>
+     </li>
+     <li class="">
+      <a href="17. Conclusion.html">
+       17. Conclusion
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+   </nav>
+   <div id="content">
+    <header class="container-fluild header">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <div class="align-items-middle">
+         <button class="btn btn-toggle-sidebar" id="sidebarCollapse" type="button">
+          <div>
+          </div>
+          <div>
+          </div>
+          <div>
+          </div>
+         </button>
+         <h1 style="display: inline-block">
+          02. Physics Review
+         </h1>
+        </div>
+       </div>
+      </div>
+     </div>
+    </header>
+    <main class="container">
+     <div class="row">
+      <div class="col-12">
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h1 id="physics-review">
+          Physics Review
+         </h1>
+         <p>
+          In flight, a fixed wing aircraft experiences four forces:
+         </p>
+         <ol>
+          <li>
+           <strong>
+            Weight (W)
+           </strong>
+          </li>
+          <li>
+           <strong>
+            Thrust (T)
+           </strong>
+          </li>
+          <li>
+           <strong>
+            Lift (L)
+           </strong>
+          </li>
+          <li>
+           <strong>
+            Drag (D)
+           </strong>
+          </li>
+         </ol>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <figure class="figure">
+          <img alt="" class="img img-fluid" src="img/forces1.png"/>
+          <figcaption class="figure-caption">
+          </figcaption>
+         </figure>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <form>
+          <fieldset>
+           <legend>
+            <p>
+             The plane shown above is in equilibrium. It's flying straight and level at
+             <strong>
+              constant speed
+             </strong>
+             . The weight and thrust are known:
+            </p>
+            <div class="mathquill">
+             \begin{aligned}
+
+W = &amp; \ 7500 N \\
+T = &amp; \ 1000 N 
+
+\end{aligned}
+            </div>
+            <p>
+             Based on this information what can you say about the size of the
+             <strong>
+              lift
+             </strong>
+             force?
+            </p>
+           </legend>
+          </fieldset>
+          <div>
+           <input id="a1530212569355" name="667496" type="radio" value="a1530212569355"/>
+           <label for="a1530212569355">
+            <p>
+             <span class="mathquill ud-math">
+              L &lt; \ 7500 N
+             </span>
+            </p>
+           </label>
+          </div>
+          <div>
+           <input id="a1530212754912" name="667496" type="radio" value="a1530212754912"/>
+           <label for="a1530212754912">
+            <p>
+             <span class="mathquill ud-math">
+              L = \ 7500 N
+             </span>
+            </p>
+           </label>
+          </div>
+          <div>
+           <input id="a1530212762653" name="667496" type="radio" value="a1530212762653"/>
+           <label for="a1530212762653">
+            <p>
+             <span class="mathquill ud-math">
+              L &gt; \ 7500 N
+             </span>
+            </p>
+           </label>
+          </div>
+          <div>
+           <input id="a1530212771484" name="667496" type="radio" value="a1530212771484"/>
+           <label for="a1530212771484">
+            <p>
+             Not enough information to say anything about lift.
+            </p>
+           </label>
+          </div>
+         </form>
+         <details>
+          <summary>
+           <strong>
+            SOLUTION:
+           </strong>
+          </summary>
+          <span class="mathquill">
+           L = \ 7500 N
+          </span>
+         </details>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <form>
+          <fieldset>
+           <legend>
+            <p>
+             Now the plane shown above increases the propeller thrust to
+             <span class="mathquill ud-math">
+              T = 2500 N
+             </span>
+             . What is the approximate acceleration of the vehicle in the x direction? (assume
+             <span class="mathquill ud-math">
+              g = 10 m/s^2
+             </span>
+             )
+            </p>
+           </legend>
+          </fieldset>
+          <div>
+           <input id="a1530213099551" name="667497" type="radio" value="a1530213099551"/>
+           <label for="a1530213099551">
+            <p>
+             <span class="mathquill ud-math">
+              a_x \approx 0 m/s^2
+             </span>
+            </p>
+           </label>
+          </div>
+          <div>
+           <input id="a1530213222006" name="667497" type="radio" value="a1530213222006"/>
+           <label for="a1530213222006">
+            <p>
+             <span class="mathquill ud-math">
+              a_x \approx 0.1 m/s^2
+             </span>
+            </p>
+           </label>
+          </div>
+          <div>
+           <input id="a1530213248286" name="667497" type="radio" value="a1530213248286"/>
+           <label for="a1530213248286">
+            <p>
+             <span class="mathquill ud-math">
+              a_x \approx 0.2 m/s^2
+             </span>
+            </p>
+           </label>
+          </div>
+          <div>
+           <input id="a1530213315022" name="667497" type="radio" value="a1530213315022"/>
+           <label for="a1530213315022">
+            <p>
+             <span class="mathquill ud-math">
+              a_x \approx 0.3 m/s^2
+             </span>
+            </p>
+           </label>
+          </div>
+          <div>
+           <input id="a1530213322481" name="667497" type="radio" value="a1530213322481"/>
+           <label for="a1530213322481">
+            <p>
+             <span class="mathquill ud-math">
+              a_x \approx 1 m/s^2
+             </span>
+            </p>
+           </label>
+          </div>
+          <div>
+           <input id="a1530213353767" name="667497" type="radio" value="a1530213353767"/>
+           <label for="a1530213353767">
+            <p>
+             <span class="mathquill ud-math">
+              a_x \approx 2 m/s^2
+             </span>
+            </p>
+           </label>
+          </div>
+          <div>
+           <input id="a1530213359167" name="667497" type="radio" value="a1530213359167"/>
+           <label for="a1530213359167">
+            <p>
+             <span class="mathquill ud-math">
+              a_x \approx 3 m/s^2
+             </span>
+            </p>
+           </label>
+          </div>
+         </form>
+         <details>
+          <summary>
+           <strong>
+            SOLUTION:
+           </strong>
+          </summary>
+          <span class="mathquill">
+           a\_x \approx 2 m/s^2
+          </span>
+         </details>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+      </div>
+      <div class="col-12">
+       <p class="text-right">
+        <a class="btn btn-outline-primary mt-4" href="03. Fixed Wing Dynamics Longitudinal vs LateralDirectional.html" role="button">
+         Next Concept
+        </a>
+       </p>
+      </div>
+     </div>
+    </main>
+    <footer class="footer">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <p class="text-center">
+         udacity2.0 If you need the newest courses Plase add me wechat: udacity6
+        </p>
+       </div>
+      </div>
+     </div>
+    </footer>
+   </div>
+  </div>
+  <script src="../assets/js/jquery-3.3.1.min.js">
+  </script>
+  <script src="../assets/js/plyr.polyfilled.min.js">
+  </script>
+  <script src="../assets/js/bootstrap.min.js">
+  </script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js">
+  </script>
+  <script src="../assets/js/katex.min.js">
+  </script>
+  <script>
+   // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('02. Physics Review')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+ </body>
+</html>

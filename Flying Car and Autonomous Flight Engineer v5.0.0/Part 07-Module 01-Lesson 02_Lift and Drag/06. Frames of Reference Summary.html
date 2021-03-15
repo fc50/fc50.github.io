@@ -1,0 +1,530 @@
+<!-- udacimak v1.4.4 -->
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="ie=edge" http-equiv="X-UA-Compatible"/>
+  <title>
+   Frames of Reference Summary
+  </title>
+  <link href="../assets/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="../assets/css/plyr.css" rel="stylesheet"/>
+  <link href="../assets/css/katex.min.css" rel="stylesheet"/>
+  <link href="../assets/css/jquery.mCustomScrollbar.min.css" rel="stylesheet"/>
+  <link href="../assets/css/styles.css" rel="stylesheet"/>
+  <link href="../assets/img/udacimak.png" rel="shortcut icon" type="image/png">
+  </link>
+ </head>
+ <body>
+  <div class="wrapper">
+   <nav id="sidebar">
+    <div class="sidebar-header">
+     <h3>
+      Lift and Drag
+     </h3>
+    </div>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled components">
+     <li class="">
+      <a href="01. Introduction to Lift and Drag.html">
+       01. Introduction to Lift and Drag
+      </a>
+     </li>
+     <li class="">
+      <a href="02. Physics Review.html">
+       02. Physics Review
+      </a>
+     </li>
+     <li class="">
+      <a href="03. Fixed Wing Dynamics Longitudinal vs LateralDirectional.html">
+       03. Fixed Wing Dynamics: Longitudinal vs Lateral/Directional
+      </a>
+     </li>
+     <li class="">
+      <a href="04. Longitudinal Analysis 1.html">
+       04. Longitudinal Analysis 1
+      </a>
+     </li>
+     <li class="">
+      <a href="05. Longitudinal Analysis 2.html">
+       05. Longitudinal Analysis 2
+      </a>
+     </li>
+     <li class="">
+      <a href="06. Frames of Reference Summary.html">
+       06. Frames of Reference Summary
+      </a>
+     </li>
+     <li class="">
+      <a href="07. Rotation Matrices Exercise.html">
+       07. Rotation Matrices Exercise
+      </a>
+     </li>
+     <li class="">
+      <a href="08. Lift and Stall.html">
+       08. Lift and Stall
+      </a>
+     </li>
+     <li class="">
+      <a href="09. Calculating Lift.html">
+       09. Calculating Lift
+      </a>
+     </li>
+     <li class="">
+      <a href="10. Drag.html">
+       10. Drag
+      </a>
+     </li>
+     <li class="">
+      <a href="11. Pitching.html">
+       11. Pitching
+      </a>
+     </li>
+     <li class="">
+      <a href="12. Trim States and Simplified Models.html">
+       12. Trim States and Simplified Models
+      </a>
+     </li>
+     <li class="">
+      <a href="13. Straight and Level Flight.html">
+       13. Straight and Level Flight
+      </a>
+     </li>
+     <li class="">
+      <a href="14. Climbing Flight.html">
+       14. Climbing Flight
+      </a>
+     </li>
+     <li class="">
+      <a href="15. Fixed Wing Cheat Sheet.html">
+       15. Fixed Wing Cheat Sheet
+      </a>
+     </li>
+     <li class="">
+      <a href="16. Lift and Drag Exercise.html">
+       16. Lift and Drag Exercise
+      </a>
+     </li>
+     <li class="">
+      <a href="17. Conclusion.html">
+       17. Conclusion
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+   </nav>
+   <div id="content">
+    <header class="container-fluild header">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <div class="align-items-middle">
+         <button class="btn btn-toggle-sidebar" id="sidebarCollapse" type="button">
+          <div>
+          </div>
+          <div>
+          </div>
+          <div>
+          </div>
+         </button>
+         <h1 style="display: inline-block">
+          06. Frames of Reference Summary
+         </h1>
+        </div>
+       </div>
+      </div>
+     </div>
+    </header>
+    <main class="container">
+     <div class="row">
+      <div class="col-12">
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h1 id="longitudinal-frames-of-reference">
+          Longitudinal Frames of Reference
+         </h1>
+         <p>
+          There are three frames of reference we care about when discussing longitudinal flight.
+         </p>
+         <h5 id="1-inertial-frame">
+          1. Inertial Frame
+         </h5>
+         <p>
+          The inertial frame is just the N,E,D frame you've seen before. The origin is fixed relative to the earth and the x, y, and z axes point north, east, and down respectively.
+         </p>
+         <h5 id="2-body-frame">
+          2. Body Frame
+         </h5>
+         <p>
+          The body frame is rigidly attached to the aircraft. The origin is the center of mass of the vehicle. The x axis points through the nose, the y axis points out over the right wing, and the z axis points down through the belly of the plane.
+         </p>
+         <h5 id="3-stability-frame">
+          3. Stability Frame
+         </h5>
+         <p>
+          The stability frame (or wind frame), is similar to the body frame: the origin is the center of mass and the y axis points out over the right wing. The x, and z axes differ.
+         </p>
+         <p>
+          The x axis points into the incoming airstream. The z-axis still points "downwards" but it's perpendicular to both the x and y axes, so it won't generally go directly through the belly of the plane.
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <figure class="figure">
+          <img alt="This plane is moving rightwards and slightly downwards through still air. The relative airstream is shown as a red arrow. The gray dotted line gives &quot;horizontal&quot; in the inertial frame and the blue line is aligned to the x-axis of the vehicle's body frame." class="img img-fluid" src="img/03-longitudinal-analysis.png"/>
+          <figcaption class="figure-caption">
+           <p>
+            This plane is moving rightwards and slightly downwards through still air. The relative airstream is shown as a red arrow. The gray dotted line gives "horizontal" in the inertial frame and the blue line is aligned to the x-axis of the vehicle's body frame.
+           </p>
+          </figcaption>
+         </figure>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <p>
+          As shown in the picture above, we can define three angles which relate these three frames of reference.
+         </p>
+         <ol>
+          <li>
+           Pitch angle
+           <span class="mathquill ud-math">
+            \theta
+           </span>
+          </li>
+          <li>
+           Flight path angle
+           <span class="mathquill ud-math">
+            \gamma
+           </span>
+          </li>
+          <li>
+           Angle of Attack
+           <span class="mathquill ud-math">
+            \alpha
+           </span>
+          </li>
+         </ol>
+         <p>
+          The reason we define all these frames of reference (and the associated angles) is to make it easy to keep track of the various forces that we care about.
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <form>
+          <fieldset>
+           <legend>
+            <p>
+             Identify which of the following forces align to axes in the
+             <strong>
+              inertial frame
+             </strong>
+             (check all that apply)
+            </p>
+           </legend>
+          </fieldset>
+          <div>
+           <input id="a1530214961434" name="667515" type="checkbox" value="a1530214961434"/>
+           <label for="a1530214961434">
+            <p>
+             Weight
+            </p>
+           </label>
+          </div>
+          <div>
+           <input id="a1530215017344" name="667515" type="checkbox" value="a1530215017344"/>
+           <label for="a1530215017344">
+            <p>
+             Thrust
+            </p>
+           </label>
+          </div>
+          <div>
+           <input id="a1530215022339" name="667515" type="checkbox" value="a1530215022339"/>
+           <label for="a1530215022339">
+            <p>
+             Lift
+            </p>
+           </label>
+          </div>
+          <div>
+           <input id="a1530215025387" name="667515" type="checkbox" value="a1530215025387"/>
+           <label for="a1530215025387">
+            <p>
+             Drag
+            </p>
+           </label>
+          </div>
+         </form>
+         <details>
+          <summary>
+           <strong>
+            SOLUTION:
+           </strong>
+          </summary>
+          <ul>
+           <li>
+            Weight
+           </li>
+          </ul>
+         </details>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <form>
+          <fieldset>
+           <legend>
+            <p>
+             Identify which of the following forces align to axes in the
+             <strong>
+              body frame
+             </strong>
+             (check all that apply)
+            </p>
+           </legend>
+          </fieldset>
+          <div>
+           <input id="a1530215080381" name="667516" type="checkbox" value="a1530215080381"/>
+           <label for="a1530215080381">
+            <p>
+             Weight
+            </p>
+           </label>
+          </div>
+          <div>
+           <input id="a1530215094114" name="667516" type="checkbox" value="a1530215094114"/>
+           <label for="a1530215094114">
+            <p>
+             Thrust
+            </p>
+           </label>
+          </div>
+          <div>
+           <input id="a1530215094779" name="667516" type="checkbox" value="a1530215094779"/>
+           <label for="a1530215094779">
+            <p>
+             Lift
+            </p>
+           </label>
+          </div>
+          <div>
+           <input id="a1530215095374" name="667516" type="checkbox" value="a1530215095374"/>
+           <label for="a1530215095374">
+            <p>
+             Drag
+            </p>
+           </label>
+          </div>
+         </form>
+         <details>
+          <summary>
+           <strong>
+            SOLUTION:
+           </strong>
+          </summary>
+          <ul>
+           <li>
+            Thrust
+           </li>
+          </ul>
+         </details>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <form>
+          <fieldset>
+           <legend>
+            <p>
+             Identify which of the following forces align to axes in the
+             <strong>
+              stability frame
+             </strong>
+             (check all that apply)
+            </p>
+           </legend>
+          </fieldset>
+          <div>
+           <input id="a1530215336118" name="667518" type="checkbox" value="a1530215336118"/>
+           <label for="a1530215336118">
+            <p>
+             Weight
+            </p>
+           </label>
+          </div>
+          <div>
+           <input id="a1530215354217" name="667518" type="checkbox" value="a1530215354217"/>
+           <label for="a1530215354217">
+            <p>
+             Thrust
+            </p>
+           </label>
+          </div>
+          <div>
+           <input id="a1530215356457" name="667518" type="checkbox" value="a1530215356457"/>
+           <label for="a1530215356457">
+            <p>
+             Lift
+            </p>
+           </label>
+          </div>
+          <div>
+           <input id="a1530215358807" name="667518" type="checkbox" value="a1530215358807"/>
+           <label for="a1530215358807">
+            <p>
+             Drag
+            </p>
+           </label>
+          </div>
+         </form>
+         <details>
+          <summary>
+           <strong>
+            SOLUTION:
+           </strong>
+          </summary>
+          <ul>
+           <li>
+            Lift
+           </li>
+           <li>
+            Drag
+           </li>
+          </ul>
+         </details>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+      </div>
+      <div class="col-12">
+       <p class="text-right">
+        <a class="btn btn-outline-primary mt-4" href="07. Rotation Matrices Exercise.html" role="button">
+         Next Concept
+        </a>
+       </p>
+      </div>
+     </div>
+    </main>
+    <footer class="footer">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <p class="text-center">
+         udacity2.0 If you need the newest courses Plase add me wechat: udacity6
+        </p>
+       </div>
+      </div>
+     </div>
+    </footer>
+   </div>
+  </div>
+  <script src="../assets/js/jquery-3.3.1.min.js">
+  </script>
+  <script src="../assets/js/plyr.polyfilled.min.js">
+  </script>
+  <script src="../assets/js/bootstrap.min.js">
+  </script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js">
+  </script>
+  <script src="../assets/js/katex.min.js">
+  </script>
+  <script>
+   // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('06. Frames of Reference Summary')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+ </body>
+</html>

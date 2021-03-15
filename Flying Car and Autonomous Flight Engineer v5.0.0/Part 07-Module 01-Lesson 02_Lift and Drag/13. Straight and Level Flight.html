@@ -1,0 +1,423 @@
+<!-- udacimak v1.4.4 -->
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="ie=edge" http-equiv="X-UA-Compatible"/>
+  <title>
+   Straight and Level Flight
+  </title>
+  <link href="../assets/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="../assets/css/plyr.css" rel="stylesheet"/>
+  <link href="../assets/css/katex.min.css" rel="stylesheet"/>
+  <link href="../assets/css/jquery.mCustomScrollbar.min.css" rel="stylesheet"/>
+  <link href="../assets/css/styles.css" rel="stylesheet"/>
+  <link href="../assets/img/udacimak.png" rel="shortcut icon" type="image/png">
+  </link>
+ </head>
+ <body>
+  <div class="wrapper">
+   <nav id="sidebar">
+    <div class="sidebar-header">
+     <h3>
+      Lift and Drag
+     </h3>
+    </div>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled components">
+     <li class="">
+      <a href="01. Introduction to Lift and Drag.html">
+       01. Introduction to Lift and Drag
+      </a>
+     </li>
+     <li class="">
+      <a href="02. Physics Review.html">
+       02. Physics Review
+      </a>
+     </li>
+     <li class="">
+      <a href="03. Fixed Wing Dynamics Longitudinal vs LateralDirectional.html">
+       03. Fixed Wing Dynamics: Longitudinal vs Lateral/Directional
+      </a>
+     </li>
+     <li class="">
+      <a href="04. Longitudinal Analysis 1.html">
+       04. Longitudinal Analysis 1
+      </a>
+     </li>
+     <li class="">
+      <a href="05. Longitudinal Analysis 2.html">
+       05. Longitudinal Analysis 2
+      </a>
+     </li>
+     <li class="">
+      <a href="06. Frames of Reference Summary.html">
+       06. Frames of Reference Summary
+      </a>
+     </li>
+     <li class="">
+      <a href="07. Rotation Matrices Exercise.html">
+       07. Rotation Matrices Exercise
+      </a>
+     </li>
+     <li class="">
+      <a href="08. Lift and Stall.html">
+       08. Lift and Stall
+      </a>
+     </li>
+     <li class="">
+      <a href="09. Calculating Lift.html">
+       09. Calculating Lift
+      </a>
+     </li>
+     <li class="">
+      <a href="10. Drag.html">
+       10. Drag
+      </a>
+     </li>
+     <li class="">
+      <a href="11. Pitching.html">
+       11. Pitching
+      </a>
+     </li>
+     <li class="">
+      <a href="12. Trim States and Simplified Models.html">
+       12. Trim States and Simplified Models
+      </a>
+     </li>
+     <li class="">
+      <a href="13. Straight and Level Flight.html">
+       13. Straight and Level Flight
+      </a>
+     </li>
+     <li class="">
+      <a href="14. Climbing Flight.html">
+       14. Climbing Flight
+      </a>
+     </li>
+     <li class="">
+      <a href="15. Fixed Wing Cheat Sheet.html">
+       15. Fixed Wing Cheat Sheet
+      </a>
+     </li>
+     <li class="">
+      <a href="16. Lift and Drag Exercise.html">
+       16. Lift and Drag Exercise
+      </a>
+     </li>
+     <li class="">
+      <a href="17. Conclusion.html">
+       17. Conclusion
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+   </nav>
+   <div id="content">
+    <header class="container-fluild header">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <div class="align-items-middle">
+         <button class="btn btn-toggle-sidebar" id="sidebarCollapse" type="button">
+          <div>
+          </div>
+          <div>
+          </div>
+          <div>
+          </div>
+         </button>
+         <h1 style="display: inline-block">
+          13. Straight and Level Flight
+         </h1>
+        </div>
+       </div>
+      </div>
+     </div>
+    </header>
+    <main class="container">
+     <div class="row">
+      <div class="col-12">
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h1 id="straight-and-level-flight">
+          Straight and Level Flight
+         </h1>
+         <p>
+          One important
+          <strong>
+           trim state
+          </strong>
+          is "straight and level flight". Straight means the vehicle isn't turning. Level means it's altitude isn't changing. Since it's a trim state, the speed is constant as well.
+         </p>
+         <p>
+          When a plane is cruising, we often want to fly straight-and-level
+          <em>
+           at a particular speed
+          </em>
+          . The questions we'll answer here are:
+         </p>
+         <p>
+          For a particular speed…
+         </p>
+         <ol>
+          <li>
+           … how much thrust does the propulsion system need to provide?
+          </li>
+          <li>
+           … what angle of attack do we need to fly at?
+          </li>
+          <li>
+           … what elevator deflection is required?
+          </li>
+         </ol>
+         <p>
+          We can use the equations we've developed in this lesson to answer these questions.
+         </p>
+         <h3 id="1-how-much-thrust-is-required">
+          1. How much thrust is required?
+         </h3>
+         <p>
+          We're going to make the simplifying assumption that thrust and drag point directly opposite each other, so we can say that thrust and drag are equal.
+         </p>
+         <div class="mathquill">
+          T = D
+         </div>
+         <p>
+          If we plug in our equation for
+          <span class="mathquill ud-math">
+           D
+          </span>
+          , this becomes
+         </p>
+         <div class="mathquill">
+          T = C_D \bar{q} S
+         </div>
+         <p>
+          And since
+          <span class="mathquill ud-math">
+           \bar{q} = \rho V^2 / 2
+          </span>
+          , we can write
+         </p>
+         <div class="mathquill">
+          T = \frac{1}{2} C_D \rho V^2 S
+         </div>
+         <p>
+          This gives us the thrust in terms of the drag coefficient
+          <span class="mathquill ud-math">
+           C_D
+          </span>
+          , the air density
+          <span class="mathquill ud-math">
+           \rho
+          </span>
+          , the airspeed
+          <span class="mathquill ud-math">
+           V
+          </span>
+          , and the surface area of the wings
+          <span class="mathquill ud-math">
+           S
+          </span>
+          .
+         </p>
+         <h3 id="2-what-angle-of-attack">
+          2. What angle of attack?
+         </h3>
+         <p>
+          At trim, we know that the weight of the vehicle (
+          <span class="mathquill ud-math">
+           W
+          </span>
+          ) must be supported by the lift (
+          <span class="mathquill ud-math">
+           L
+          </span>
+          ). We can use this to solve for the angle of attack at trim (
+          <span class="mathquill ud-math">
+           \alpha_{\text{trim}}
+          </span>
+          ).
+         </p>
+         <div class="mathquill">
+          \begin{aligned}
+L &amp;= W \\
+C_L \bar{q} S &amp;= W \\
+\left[ C_{L_0} + C_{L_\alpha}\alpha_{\text{trim}} + C_{L_{\delta E}} \delta E\right] \bar{q} S &amp;= W \\
+C_{L_0} + C_{L_\alpha} \alpha_{\text{trim}} + C_{L_{\delta E}} \delta E  &amp;=  \frac{W}{\bar{q} S} 
+\end{aligned}
+         </div>
+         <p>
+          The last term on the left hand side of this equation will be
+          <strong>
+           very small
+          </strong>
+          compared to the other two terms, so we can safely ignore it and then solve for
+          <span class="mathquill ud-math">
+           \alpha_{\text{trim}}
+          </span>
+          .
+         </p>
+         <div class="mathquill">
+          \begin{aligned}
+C_{L_0} + C_{L_\alpha} \alpha_{\text{trim}} &amp;=  \frac{W}{\bar{q} S} \\ \\
+
+\alpha_{\text{trim}} &amp;= \frac{ \frac{W}{\bar{q} S} - C_{L_0}}{C_{L_\alpha}}
+
+\end{aligned}
+         </div>
+         <h3 id="what-elevator-deflection">
+          What elevator deflection?
+         </h3>
+         <p>
+          This positive angle of attack will cause a pitching moment. We need to use the elevator to balance that out. We can find
+          <span class="mathquill ud-math">
+           \delta E_{\text{trim}}
+          </span>
+          by setting the pitching moment to zero.
+         </p>
+         <div class="mathquill">
+          \begin{aligned}
+
+M &amp;= 0 \\
+C_M \bar{q} S \bar{c} &amp;= 0 \\
+C_M &amp;= 0 \\
+C_{M_0} + C_{M_\alpha} \alpha_{\text{trim}} + C_{M_{\delta E}} \delta E_{\text{trim}} &amp;= 0 \\
+\delta E_{\text{trim}} &amp; = \frac{-C_{M_0} - C_{M_\alpha} \alpha_{\text{trim}}}{C_{M_{\delta E}}}
+\end{aligned}
+         </div>
+         <h2 id="implications-for-control">
+          Implications for Control
+         </h2>
+         <p>
+          We just calculated
+          <span class="mathquill ud-math">
+           T
+          </span>
+          ,
+          <span class="mathquill ud-math">
+           \delta E
+          </span>
+          , and
+          <span class="mathquill ud-math">
+           \alpha
+          </span>
+          at trim. We made some simplifying assumptions, so these values won't be exact, but they should be very close.
+         </p>
+         <p>
+          Eventually, you will write a controller that commands the thrust and elevator deflection of a fixed wing vehicle. You will be able to greatly improve the performance of this controller by passing in these trim state values for thrust and elevator deflection as "feed forward" parameters when you want the vehicle to be in straight and level flight.
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+      </div>
+      <div class="col-12">
+       <p class="text-right">
+        <a class="btn btn-outline-primary mt-4" href="14. Climbing Flight.html" role="button">
+         Next Concept
+        </a>
+       </p>
+      </div>
+     </div>
+    </main>
+    <footer class="footer">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <p class="text-center">
+         udacity2.0 If you need the newest courses Plase add me wechat: udacity6
+        </p>
+       </div>
+      </div>
+     </div>
+    </footer>
+   </div>
+  </div>
+  <script src="../assets/js/jquery-3.3.1.min.js">
+  </script>
+  <script src="../assets/js/plyr.polyfilled.min.js">
+  </script>
+  <script src="../assets/js/bootstrap.min.js">
+  </script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js">
+  </script>
+  <script src="../assets/js/katex.min.js">
+  </script>
+  <script>
+   // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('13. Straight and Level Flight')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+ </body>
+</html>

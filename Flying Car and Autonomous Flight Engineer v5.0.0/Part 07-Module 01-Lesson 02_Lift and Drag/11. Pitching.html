@@ -1,0 +1,437 @@
+<!-- udacimak v1.4.4 -->
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <meta content="ie=edge" http-equiv="X-UA-Compatible"/>
+  <title>
+   Pitching
+  </title>
+  <link href="../assets/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="../assets/css/plyr.css" rel="stylesheet"/>
+  <link href="../assets/css/katex.min.css" rel="stylesheet"/>
+  <link href="../assets/css/jquery.mCustomScrollbar.min.css" rel="stylesheet"/>
+  <link href="../assets/css/styles.css" rel="stylesheet"/>
+  <link href="../assets/img/udacimak.png" rel="shortcut icon" type="image/png">
+  </link>
+ </head>
+ <body>
+  <div class="wrapper">
+   <nav id="sidebar">
+    <div class="sidebar-header">
+     <h3>
+      Lift and Drag
+     </h3>
+    </div>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled components">
+     <li class="">
+      <a href="01. Introduction to Lift and Drag.html">
+       01. Introduction to Lift and Drag
+      </a>
+     </li>
+     <li class="">
+      <a href="02. Physics Review.html">
+       02. Physics Review
+      </a>
+     </li>
+     <li class="">
+      <a href="03. Fixed Wing Dynamics Longitudinal vs LateralDirectional.html">
+       03. Fixed Wing Dynamics: Longitudinal vs Lateral/Directional
+      </a>
+     </li>
+     <li class="">
+      <a href="04. Longitudinal Analysis 1.html">
+       04. Longitudinal Analysis 1
+      </a>
+     </li>
+     <li class="">
+      <a href="05. Longitudinal Analysis 2.html">
+       05. Longitudinal Analysis 2
+      </a>
+     </li>
+     <li class="">
+      <a href="06. Frames of Reference Summary.html">
+       06. Frames of Reference Summary
+      </a>
+     </li>
+     <li class="">
+      <a href="07. Rotation Matrices Exercise.html">
+       07. Rotation Matrices Exercise
+      </a>
+     </li>
+     <li class="">
+      <a href="08. Lift and Stall.html">
+       08. Lift and Stall
+      </a>
+     </li>
+     <li class="">
+      <a href="09. Calculating Lift.html">
+       09. Calculating Lift
+      </a>
+     </li>
+     <li class="">
+      <a href="10. Drag.html">
+       10. Drag
+      </a>
+     </li>
+     <li class="">
+      <a href="11. Pitching.html">
+       11. Pitching
+      </a>
+     </li>
+     <li class="">
+      <a href="12. Trim States and Simplified Models.html">
+       12. Trim States and Simplified Models
+      </a>
+     </li>
+     <li class="">
+      <a href="13. Straight and Level Flight.html">
+       13. Straight and Level Flight
+      </a>
+     </li>
+     <li class="">
+      <a href="14. Climbing Flight.html">
+       14. Climbing Flight
+      </a>
+     </li>
+     <li class="">
+      <a href="15. Fixed Wing Cheat Sheet.html">
+       15. Fixed Wing Cheat Sheet
+      </a>
+     </li>
+     <li class="">
+      <a href="16. Lift and Drag Exercise.html">
+       16. Lift and Drag Exercise
+      </a>
+     </li>
+     <li class="">
+      <a href="17. Conclusion.html">
+       17. Conclusion
+      </a>
+     </li>
+    </ul>
+    <ul class="sidebar-list list-unstyled CTAs">
+     <li>
+      <a class="article" href="../index.html">
+       Back to Home
+      </a>
+     </li>
+    </ul>
+   </nav>
+   <div id="content">
+    <header class="container-fluild header">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <div class="align-items-middle">
+         <button class="btn btn-toggle-sidebar" id="sidebarCollapse" type="button">
+          <div>
+          </div>
+          <div>
+          </div>
+          <div>
+          </div>
+         </button>
+         <h1 style="display: inline-block">
+          11. Pitching
+         </h1>
+        </div>
+       </div>
+      </div>
+     </div>
+    </header>
+    <main class="container">
+     <div class="row">
+      <div class="col-12">
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <h1 id="pitching">
+          Pitching
+         </h1>
+         <p>
+          So far we've been talking a lot about the
+          <strong>
+           forces
+          </strong>
+          that act on a fixed wing aircraft. That's because the
+          <strong>
+           translational acceleration
+          </strong>
+          of an object is given by the following equation:
+         </p>
+         <div class="mathquill">
+          F = ma
+         </div>
+         <p>
+          But there are also
+          <strong>
+           moments
+          </strong>
+          which cause
+          <strong>
+           rotational accelerations
+          </strong>
+          . We will use the letters L, M, and N to denote the rotational moment about the vehicle's x, y, and z axes.
+         </p>
+         <p>
+          For longitudinal motion, we only care about the pitching moment M. The pitching moment is given by the following equation:
+         </p>
+         <div class="mathquill">
+          M = C_M \bar{q} S \bar{c}
+         </div>
+         <p>
+          Most of the interesting physics is wrapped up in the dimensionless coefficient
+          <span class="mathquill ud-math">
+           C_M
+          </span>
+          . Generally, this coefficient will be a function of the
+          <strong>
+           angle of attack
+          </strong>
+          ,
+          <strong>
+           elevator deflection
+          </strong>
+          , and
+          <strong>
+           pitching rate
+          </strong>
+          , so we can say:
+         </p>
+         <div class="mathquill">
+          C_M = f(\alpha, \delta E, q)
+         </div>
+         <p>
+          We generally assume the pitching rate is close enough to zero that it can be ignored. We model this coefficient with the following equation:
+         </p>
+         <div class="mathquill">
+          C_M = C_{M_0} + C_{M_\alpha}\alpha + C_{M_{\delta E}} \delta E
+         </div>
+         <p>
+          This coefficient
+          <span class="mathquill ud-math">
+           C_{M_\alpha}
+          </span>
+          is important. When it's
+          <strong>
+           negative
+          </strong>
+          , the vehicle will be "statically stable in pitch". So if the vehicle has some small positive angle of attack, this term will lead to a negative pitching moment which will bring the angle of attack back towards zero.
+         </p>
+         <h3 id="why-does-span-classmathquill-ud-mathmspan-depend-on-span-classmathquill-ud-mathalphaspan">
+          Why does
+          <span class="mathquill ud-math">
+           M
+          </span>
+          depend on
+          <span class="mathquill ud-math">
+           \alpha
+          </span>
+          ?
+         </h3>
+         <p>
+          It should be clear that elevator deflection will cause the vehicle to pitch. But why does the pitching moment depend on the angle of attack? Consider an airplane viewed from the side:
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <figure class="figure">
+          <img alt="" class="img img-fluid" src="img/pitching1.png"/>
+          <figcaption class="figure-caption">
+          </figcaption>
+         </figure>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <p>
+          The center of gravity for this plane is located somewhere in the plane around where the wing meets the fuselage.
+         </p>
+         <p>
+          The red arrows show the effect of lift acting everywhere on the wing.
+         </p>
+         <p>
+          We can define something called the
+          <strong>
+           center of pressure
+          </strong>
+          and treat this distributed lift force as if it were acting at one point on the wing.
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <figure class="figure">
+          <img alt="" class="img img-fluid" src="img/pitching2.png"/>
+          <figcaption class="figure-caption">
+          </figcaption>
+         </figure>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <p>
+          In this case (above), the center of pressure is directly below the center of gravity, so this will not produce any pitching moment clockwise or counter-clockwise.
+         </p>
+         <p>
+          But imagine if the center of pressure were shifted slightly forward on the wing:
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <figure class="figure">
+          <img alt="" class="img img-fluid" src="img/pitching3.png"/>
+          <figcaption class="figure-caption">
+          </figcaption>
+         </figure>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+       <div class="ud-atom">
+        <h3>
+        </h3>
+        <div>
+         <p>
+          Now the upwards pressure will cause a rotation about the center of gravity.
+         </p>
+         <p>
+          And in fact, this is exactly what happens in real aircraft. As the aircraft's angle of attack (
+          <span class="mathquill ud-math">
+           \alpha
+          </span>
+          ) changes, the center of pressure will tend to move forwards and backwards along the wing.
+         </p>
+         <p>
+          It’s this motion of the center of pressure that explains why the pitching moment depends on the vehicle’s angle of attack.
+         </p>
+        </div>
+       </div>
+       <div class="divider">
+       </div>
+      </div>
+      <div class="col-12">
+       <p class="text-right">
+        <a class="btn btn-outline-primary mt-4" href="12. Trim States and Simplified Models.html" role="button">
+         Next Concept
+        </a>
+       </p>
+      </div>
+     </div>
+    </main>
+    <footer class="footer">
+     <div class="container">
+      <div class="row">
+       <div class="col-12">
+        <p class="text-center">
+         udacity2.0 If you need the newest courses Plase add me wechat: udacity6
+        </p>
+       </div>
+      </div>
+     </div>
+    </footer>
+   </div>
+  </div>
+  <script src="../assets/js/jquery-3.3.1.min.js">
+  </script>
+  <script src="../assets/js/plyr.polyfilled.min.js">
+  </script>
+  <script src="../assets/js/bootstrap.min.js">
+  </script>
+  <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js">
+  </script>
+  <script src="../assets/js/katex.min.js">
+  </script>
+  <script>
+   // Initialize Plyr video players
+    const players = Array.from(document.querySelectorAll('video')).map(p => new Plyr(p));
+
+    // render math equations
+    let elMath = document.getElementsByClassName('mathquill');
+    for (let i = 0, len = elMath.length; i < len; i += 1) {
+      const el = elMath[i];
+
+      katex.render(el.textContent, el, {
+        throwOnError: false
+      });
+    }
+
+    // this hack will make sure Bootstrap tabs work when using Handlebars
+    if ($('#question-tabs').length && $('#user-answer-tabs').length) {
+      $("#question-tabs a.nav-link").on('click', function () {
+        $("#question-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+      $("#user-answer-tabs a.nav-link").on('click', function () {
+        $("#user-answer-tab-contents .tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    } else {
+      $("a.nav-link").on('click', function () {
+        $(".tab-pane").hide();
+        $($(this).attr("href")).show();
+      });
+    }
+
+    // side bar events
+    $(document).ready(function () {
+      $("#sidebar").mCustomScrollbar({
+        theme: "minimal"
+      });
+
+      $('#sidebarCollapse').on('click', function () {
+        $('#sidebar, #content').toggleClass('active');
+        $('.collapse.in').toggleClass('in');
+        $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+      });
+
+      // scroll to first video on page loading
+      if ($('video').length) {
+        $('html,body').animate({ scrollTop: $('div.plyr').prev().offset().top});
+      }
+
+      // auto play first video: this may not work with chrome/safari due to autoplay policy
+      if (players && players.length > 0) {
+        players[0].play();
+      }
+
+      // scroll sidebar to current concept
+      const currentInSideBar = $( "ul.sidebar-list.components li a:contains('11. Pitching')" )
+      currentInSideBar.css( "text-decoration", "underline" );
+      $("#sidebar").mCustomScrollbar('scrollTo', currentInSideBar);
+    });
+  </script>
+ </body>
+</html>
